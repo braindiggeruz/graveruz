@@ -1,0 +1,189 @@
+{
+  "design_system": {
+    "identity": {
+      "name": "Oasis Credit",
+      "archetype": "Organic & Earthy (Trust, Growth)",
+      "core_values": ["Transparency", "Speed", "Growth", "Stability"],
+      "visual_metaphor": "The Oasis: A source of life in a dry landscape. Fluid, refreshing, reliable."
+    },
+    "typography": {
+      "font_family": {
+        "heading": "Manrope, sans-serif",
+        "body": "Inter, sans-serif",
+        "mono": "JetBrains Mono, monospace"
+      },
+      "scale": {
+        "h1": "text-5xl md:text-6xl font-bold tracking-tight leading-tight",
+        "h2": "text-4xl md:text-5xl font-bold tracking-tight",
+        "h3": "text-2xl md:text-3xl font-semibold tracking-tight",
+        "body_lg": "text-lg md:text-xl leading-relaxed text-muted-foreground",
+        "body_base": "text-base leading-relaxed text-muted-foreground",
+        "caption": "text-sm font-medium tracking-wide uppercase text-muted-foreground"
+      },
+      "rules": [
+        "Use Manrope for all Headings (h1-h3).",
+        "Use Inter for all body text, inputs, and dense data.",
+        "Never use Inter for H1 or H2.",
+        "Headings must be tight (tracking-tight).",
+        "Captions must be wide (tracking-wide)."
+      ]
+    },
+    "colors": {
+      "palette": {
+        "primary": {
+          "DEFAULT": "hsl(180, 80%, 23%)",
+          "foreground": "hsl(0, 0%, 100%)",
+          "hex": "#0B6B6B",
+          "description": "Deep Teal - The water of the oasis. Trust, depth."
+        },
+        "secondary": {
+          "DEFAULT": "hsl(147, 68%, 55%)",
+          "foreground": "hsl(222, 47%, 11%)",
+          "hex": "#3DDC84",
+          "description": "Vibrant Green - Growth, success, action."
+        },
+        "accent": {
+          "DEFAULT": "hsl(48, 100%, 45%)",
+          "foreground": "hsl(222, 47%, 11%)",
+          "hex": "#E6B800",
+          "description": "Golden Sand - Wealth, warmth, sun."
+        },
+        "background": {
+          "DEFAULT": "hsl(210, 20%, 98%)",
+          "hex": "#F7FAFC",
+          "description": "Cool White - Clean, airy."
+        },
+        "foreground": {
+          "DEFAULT": "hsl(222, 47%, 11%)",
+          "hex": "#0F172A",
+          "description": "Deep Navy - Text, strong contrast."
+        },
+        "muted": {
+          "DEFAULT": "hsl(210, 40%, 96.1%)",
+          "foreground": "hsl(215.4, 16.3%, 46.9%)"
+        }
+      },
+      "usage_rules": [
+        "Primary (Teal) is for Brand Identity and Primary Buttons.",
+        "Secondary (Green) is for Success states and 'Apply Now' accents.",
+        "Accent (Gold) is for 'Special Offers' or 'High Value' highlights.",
+        "Never use gradients for text.",
+        "Backgrounds should be mostly white/off-white. Use Teal only for specific high-impact sections (Hero, Footer)."
+      ]
+    },
+    "spacing": {
+      "scale": ["p-0", "p-1", "p-2", "p-4", "p-6", "p-8", "p-12", "p-16", "p-24", "p-32"],
+      "container_padding": "px-4 md:px-8 lg:px-12",
+      "section_spacing": "py-16 md:py-24 lg:py-32",
+      "rules": [
+        "Use generous spacing. Minimum p-8 for cards.",
+        "Section gaps should be at least py-24 to allow breathing room.",
+        "Mobile images max-height: 80vh."
+      ]
+    },
+    "layout": {
+      "grid_system": "Bento Grid (Mode A)",
+      "container_max_width": "max-w-7xl mx-auto",
+      "border_radius": {
+        "default": "rounded-2xl",
+        "card": "rounded-3xl",
+        "button": "rounded-full"
+      },
+      "rules": [
+        "Use 'Bento' grids for feature lists (asymmetric spans).",
+        "Cards should have rounded-3xl corners to mimic organic shapes.",
+        "Buttons must be pill-shaped (rounded-full)."
+      ]
+    },
+    "visual_enhancers": {
+      "shadows": {
+        "card": "shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-shadow duration-300",
+        "float": "shadow-[0_20px_50px_rgb(0,0,0,0.1)]"
+      },
+      "glassmorphism": {
+        "header": "bg-white/80 backdrop-blur-md border-b border-white/20",
+        "card": "bg-white/60 backdrop-blur-xl border border-white/40 shadow-sm"
+      },
+      "textures": [
+        "Use subtle noise overlay on solid Teal backgrounds to prevent flatness.",
+        "Use 'water ripple' abstract shapes (SVG) as background patterns in Hero."
+      ]
+    },
+    "motion": {
+      "transitions": "transition-all duration-300 ease-out",
+      "hover_effects": "hover:-translate-y-1 hover:shadow-lg",
+      "loading": "Skeleton loaders with shimmering effect",
+      "rules": [
+        "No 'transition: all'. Animate specific properties (transform, opacity, colors).",
+        "Respect prefers-reduced-motion."
+      ]
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-8 py-6 text-lg font-semibold shadow-lg hover:shadow-xl transition-all",
+      "secondary": "bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-full px-8 py-6 text-lg font-semibold",
+      "outline": "border-2 border-primary text-primary hover:bg-primary/5 rounded-full px-8 py-6 text-lg font-semibold",
+      "ghost": "hover:bg-muted text-foreground rounded-full px-4 py-2"
+    },
+    "cards": {
+      "product": "bg-white rounded-3xl p-8 border border-border/50 shadow-card hover:border-primary/20 transition-all group relative overflow-hidden",
+      "feature": "bg-muted/30 rounded-2xl p-6 border border-transparent hover:bg-white hover:border-border/50 transition-all"
+    },
+    "inputs": {
+      "default": "h-12 rounded-xl border-input bg-background px-4 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+    }
+  },
+  "assets": {
+    "images": {
+      "hero_bg": {
+        "url": "https://images.unsplash.com/photo-1763209230598-3efb61fc36bb",
+        "alt": "Modern curved architecture representing Oasis growth",
+        "usage": "Hero section background or side visual"
+      },
+      "trust_handshake": {
+        "url": "https://images.unsplash.com/photo-1641145128737-d3ae8644dda7",
+        "alt": "Close up handshake",
+        "usage": "About page or Trust section"
+      },
+      "team_office": {
+        "url": "https://images.pexels.com/photos/3810792/pexels-photo-3810792.jpeg",
+        "alt": "Diverse team in modern office",
+        "usage": "Careers or About Us section"
+      },
+      "agro_product": {
+        "url": "https://images.unsplash.com/photo-1701021934374-df29f8f0ecf0",
+        "alt": "Farmer using tablet in field",
+        "usage": "Agro Credit product card"
+      },
+      "business_product": {
+        "url": "https://images.unsplash.com/photo-1753351052617-62818ffc9173",
+        "alt": "Small business owners smiling",
+        "usage": "Business Credit product card"
+      }
+    },
+    "icons": "Use Lucide React icons. Stroke width 1.5px for elegance."
+  },
+  "instructions_to_main_agent": [
+    "1. SETUP: Install 'manrope' font via Google Fonts or Fontsource.",
+    "2. THEME: Update tailwind.config.js with the HSL values provided in 'colors'.",
+    "3. LAYOUT: Implement the 'Bento Grid' for the home page features section.",
+    "4. COMPONENTS: Customize Shadcn components (Button, Card, Input) to match the 'rounded-full' and 'rounded-3xl' styles.",
+    "5. CALCULATOR: Build the Loan Calculator with a smooth slider (use Shadcn Slider) and real-time updates.",
+    "6. FORMS: Use 'react-hook-form' + 'zod' for the multi-step application.",
+    "7. LOCALIZATION: Prepare the structure for i18n (RU default).",
+    "8. ANTI-AI: Do not use generic gradients. Use the provided images and whitespace to create a premium feel."
+  ],
+  "universal_guidelines": [
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients.",
+    "Create depth through layered design elements with z-index hierarchy.",
+    "Use glass-morphism effects with backdrop filters (12-24px blur).",
+    "You MUST NOT apply universal transition. Eg: transition: all.",
+    "You MUST NOT center align the app container.",
+    "Always use modern button styles like pill-shaped.",
+    "NEVER use AI assistant Emoji characters.",
+    "Every interaction needs micro-animations.",
+    "Use 2-3x more spacing than feels comfortable.",
+    "All interactive elements MUST include data-testid attribute."
+  ]
+}
