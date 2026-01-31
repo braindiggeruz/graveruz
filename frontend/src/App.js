@@ -770,6 +770,17 @@ function App() {
               />
             </div>
 
+            {/* Honeypot field - hidden from users */}
+            <input
+              type="text"
+              name="website"
+              value={formData.website}
+              onChange={(e) => setFormData({...formData, website: e.target.value})}
+              style={{ display: 'none' }}
+              tabIndex="-1"
+              autoComplete="off"
+            />
+
             <div className="flex flex-col sm:flex-row gap-4">
               <button
                 type="submit"
