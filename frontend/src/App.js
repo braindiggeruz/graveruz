@@ -81,51 +81,96 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
+    console.log('=== FORM SUBMIT START ===');
+    console.log('Backend URL:', BACKEND_URL);
+    console.log('Form data:', { ...formData, website: '[hidden]' });
+    
     // Anti-spam: cooldown 10 seconds
     const now = Date.now();
     if (now - lastSubmitTime < 10000) {
-      alert('Пожалуйста, подождите 10 секунд перед повторной отправкой.');
+      const remainingTime = Math.ceil((10000 - (now - lastSubmitTime)) / 1000);
+      alert(`Пожалуйста, подождите ${remainingTime} секунд перед повторной отправкой.`);
+      console.log('⏱️ Cooldown active');
       return;
     }
     
     // Honeypot check
     if (formData.website) {
-      console.log('Bot detected');
+      console.log('🤖 Bot detected - silent fail');
       return; // Silent fail for bots
     }
     
+    // Basic validation
+    if (!formData.name || formData.name.trim().length < 2) {
+      alert('Пожалуйста, введите имя (минимум 2 символа)');
+      console.log('❌ Validation failed: name');
+      return;
+    }
+    
+    if (!formData.phone || formData.phone.length < 17) {
+      alert('Пожалуйста, введите полный номер телефона');
+      console.log('❌ Validation failed: phone');
+      return;
+    }
+    
+    if (!formData.description || formData.description.trim().length < 10) {
+      alert('Пожалуйста, опишите задачу подробнее (минимум 10 символов)');
+      console.log('❌ Validation failed: description');
+      return;
+    }
+    
     setIsSubmitting(true);
+    console.log('📤 Sending request...');
     
     try {
+      const payload = {
+        name: formData.name,
+        phone: formData.phone,
+        company: formData.company || '',
+        quantity: formData.quantity || '',
+        description: formData.description
+      };
+      
+      console.log('Payload:', payload);
+      
       const response = await fetch(`${BACKEND_URL}/api/leads`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          name: formData.name,
-          phone: formData.phone,
-          company: formData.company,
-          quantity: formData.quantity,
-          description: formData.description
-        }),
+        body: JSON.stringify(payload),
       });
       
+      console.log('Response status:', response.status);
+      
       if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.detail || 'Ошибка при отправке заявки');
+        let errorMessage = 'Ошибка при отправке заявки';
+        try {
+          const errorData = await response.json();
+          console.log('Error data:', errorData);
+          errorMessage = errorData.detail || errorMessage;
+        } catch (e) {
+          console.log('Could not parse error JSON');
+        }
+        throw new Error(errorMessage);
       }
+      
+      const result = await response.json();
+      console.log('✅ Success! Lead ID:', result.id);
       
       setLastSubmitTime(now);
       
       // Redirect to thanks page
-      navigate('/thanks');
+      console.log('🔄 Redirecting to /thanks');
+      window.location.href = '/thanks';
       
     } catch (error) {
-      console.error('Error:', error);
-      alert(error.message || 'Произошла ошибка. Пожалуйста, позвоните нам или напишите в Telegram: https://t.me/GraverAdm');
+      console.error('❌ Error:', error);
+      const errorMsg = error.message || 'Произошла ошибка при отправке заявки';
+      alert(`${errorMsg}\n\nПожалуйста, позвоните нам или напишите в Telegram: https://t.me/GraverAdm`);
     } finally {
       setIsSubmitting(false);
+      console.log('=== FORM SUBMIT END ===');
     }
   };
 
