@@ -117,12 +117,13 @@ function App() {
       }
       
       setLastSubmitTime(now);
-      setSubmitSuccess(true);
-      setFormData({ name: '', phone: '+998 ', company: '', quantity: '', description: '', website: '' });
-      setTimeout(() => setSubmitSuccess(false), 5000);
+      
+      // Redirect to thanks page
+      navigate('/thanks');
+      
     } catch (error) {
       console.error('Error:', error);
-      alert(error.message || 'Произошла ошибка. Пожалуйста, позвоните нам или напишите в Telegram.');
+      alert(error.message || 'Произошла ошибка. Пожалуйста, позвоните нам или напишите в Telegram: https://t.me/GraverAdm');
     } finally {
       setIsSubmitting(false);
     }
