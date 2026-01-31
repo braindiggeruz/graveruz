@@ -316,7 +316,7 @@ function App() {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
               <a 
-                href="https://t.me/GraverAdm" 
+                href="https://t.me/GraverAdm" data-track="tg" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto bg-gradient-to-r from-teal-500 to-cyan-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-teal-600 hover:to-cyan-700 transition shadow-lg shadow-teal-500/50 flex items-center justify-center group"
@@ -473,7 +473,7 @@ function App() {
                   </li>
                 </ul>
                 <a 
-                  href="https://t.me/GraverAdm" 
+                  href="https://t.me/GraverAdm" data-track="tg" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-flex items-center mt-6 text-teal-500 hover:text-teal-400 font-semibold group/link"
@@ -510,7 +510,7 @@ function App() {
                   </li>
                 </ul>
                 <a 
-                  href="https://t.me/GraverAdm" 
+                  href="https://t.me/GraverAdm" data-track="tg" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-flex items-center mt-6 text-teal-500 hover:text-teal-400 font-semibold group/link"
@@ -547,7 +547,7 @@ function App() {
                   </li>
                 </ul>
                 <a 
-                  href="https://t.me/GraverAdm" 
+                  href="https://t.me/GraverAdm" data-track="tg" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-flex items-center mt-6 text-teal-500 hover:text-teal-400 font-semibold group/link"
@@ -584,7 +584,7 @@ function App() {
                   </li>
                 </ul>
                 <a 
-                  href="https://t.me/GraverAdm" 
+                  href="https://t.me/GraverAdm" data-track="tg" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-flex items-center mt-6 text-teal-500 hover:text-teal-400 font-semibold group/link"
@@ -639,7 +639,7 @@ function App() {
                     <div><span className="text-gray-600">Применение:</span> {item.application}</div>
                   </div>
                   <a 
-                    href="https://t.me/GraverAdm" 
+                    href="https://t.me/GraverAdm" data-track="tg" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="inline-flex items-center mt-4 text-teal-500 hover:text-teal-400 font-semibold text-sm group/link"
@@ -830,7 +830,7 @@ function App() {
                 {isSubmitting ? 'Отправка...' : 'Отправить заявку'}
               </button>
               <a
-                href="https://t.me/GraverAdm"
+                href="https://t.me/GraverAdm" data-track="tg"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white/20 transition border border-white/20 flex items-center justify-center"
@@ -907,7 +907,7 @@ function App() {
           <div className="mt-12 text-center">
             <p className="text-gray-400 mb-4">Не нашли ответ на свой вопрос?</p>
             <a
-              href="https://t.me/GraverAdm"
+              href="https://t.me/GraverAdm" data-track="tg"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center bg-gradient-to-r from-teal-500 to-cyan-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-teal-600 hover:to-cyan-700 transition"
@@ -947,7 +947,7 @@ function App() {
                   <Phone size={16} className="mr-2" />
                   +998 97 480 22 88
                 </a>
-                <a href="https://t.me/GraverAdm" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-teal-500 transition" data-testid="footer-telegram">
+                <a href="https://t.me/GraverAdm" data-track="tg" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-teal-500 transition" data-testid="footer-telegram">
                   <Send size={16} className="mr-2" />
                   @GraverAdm
                 </a>
@@ -980,7 +980,7 @@ function App() {
       {/* Sticky Mobile CTA */}
       <div className="fixed bottom-0 left-0 right-0 lg:hidden bg-black/95 backdrop-blur-sm border-t border-gray-800 p-4 z-40" data-testid="sticky-mobile-cta">
         <a
-          href="https://t.me/GraverAdm"
+          href="https://t.me/GraverAdm" data-track="tg"
           target="_blank"
           rel="noopener noreferrer"
           className="block w-full bg-gradient-to-r from-teal-500 to-cyan-600 text-white px-6 py-4 rounded-lg font-semibold text-center hover:from-teal-600 hover:to-cyan-700 transition flex items-center justify-center"
