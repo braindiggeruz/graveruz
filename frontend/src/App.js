@@ -698,11 +698,13 @@ function App() {
                   type="tel"
                   required
                   value={formData.phone}
-                  onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                  className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-teal-500 focus:outline-none transition"
+                  onChange={handlePhoneChange}
+                  className={`w-full bg-gray-900/50 border ${phoneError ? 'border-red-500' : 'border-gray-700'} rounded-lg px-4 py-3 text-white focus:border-teal-500 focus:outline-none transition`}
                   placeholder="+998 XX XXX XX XX"
+                  maxLength="17"
                   data-testid="form-input-phone"
                 />
+                {phoneError && <p className="text-red-500 text-sm mt-1">{phoneError}</p>}
               </div>
             </div>
 
