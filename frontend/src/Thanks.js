@@ -18,7 +18,7 @@ function Thanks() {
     <div className="Thanks min-h-screen bg-black">
       {/* Hero Section with Background */}
       <section 
-        className="relative min-h-screen flex items-center justify-center"
+        className="relative min-h-screen flex items-center justify-center overflow-hidden"
         style={{
           backgroundImage: 'url(/pictures/thanks-bg.png)',
           backgroundSize: 'cover',
@@ -27,26 +27,51 @@ function Thanks() {
         }}
         data-testid="thanks-hero"
       >
-        {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/90" />
+        {/* Dark overlay for text readability - SEPARATED LAYER */}
+        <div 
+          className="absolute inset-0" 
+          style={{
+            background: 'linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.7), rgba(0,0,0,0.9))',
+            backdropFilter: 'blur(8px)',
+            WebkitBackdropFilter: 'blur(8px)',
+            zIndex: 0
+          }}
+        />
         
-        {/* Content */}
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+        {/* Content - CRISP TEXT LAYER */}
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center" style={{
+          filter: 'none',
+          backdropFilter: 'none',
+          WebkitBackdropFilter: 'none',
+          transform: 'none',
+          opacity: 1
+        }}>
           {/* Success Icon */}
           <div className="inline-flex items-center justify-center w-20 h-20 bg-teal-500/20 border-2 border-teal-500 rounded-full mb-8 animate-pulse">
             <Check className="text-teal-500" size={40} />
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight" style={{
+            WebkitFontSmoothing: 'antialiased',
+            MozOsxFontSmoothing: 'grayscale',
+            textRendering: 'geometricPrecision'
+          }}>
             Заявка принята.<br />
-            <span className="bg-gradient-to-r from-teal-500 to-cyan-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-teal-500 to-cyan-400 bg-clip-text text-transparent" style={{
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent'
+            }}>
               Мы уже считаем ваш тираж
             </span>
           </h1>
 
           {/* Subheading */}
-          <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed" style={{
+            WebkitFontSmoothing: 'antialiased',
+            MozOsxFontSmoothing: 'grayscale',
+            textRendering: 'geometricPrecision'
+          }}>
             Ответим в ближайшее рабочее время (10:00-20:00).<br />
             Если срочно — напишите в Telegram прямо сейчас.
           </p>
