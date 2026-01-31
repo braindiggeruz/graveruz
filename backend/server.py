@@ -82,10 +82,121 @@ class LeadCreate(BaseModel):
             raise ValueError('Описание должно содержать минимум 10 символов')
         return v.strip()
 
+# Telegram Bot Functions
+async def send_telegram_message(message: str):
+    """Send message to Telegram bot"""
+    try:
+        # First, get updates to find chat_id if not set
+        if not TELEGRAM_CHAT_ID:
+            async with httpx.AsyncClient() as client:
+                response = await client.get(
+                    f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/getUpdates"
+                )
+                data = response.json()
+                if data.get('ok') and data.get('result'):
+                    # Get the latest chat_id
+                    updates = data['result']
+                    if updates:
+                        chat_id = updates[-1]['message']['chat']['id']
+                        logger.info(f"Found chat_id: {chat_id}")
+                    else:
+                        logger.warning("No chat_id found. User needs to send /start to bot first.")
+                        return False
+                else:
+                    logger.warning("No Telegram chat_id configured. User needs to send /start to bot.")
+                    return False
+        else:
+            chat_id = TELEGRAM_CHAT_ID
+        
+        # Send message
+        async with httpx.AsyncClient() as client:
+            response = await client.post(
+                f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage",
+                json={
+                    "chat_id": chat_id,
+                    "text": message,
+                    "parse_mode": "HTML"
+                }
+            )
+            data = response.json()
+            if data.get('ok'):
+                logger.info("Telegram notification sent successfully")
+                return True
+            else:
+                logger.error(f"Telegram API error: {data}")
+                return False
+    except Exception as e:
+        logger.error(f"Error sending Telegram message: {e}")
+        return False
+
+def format_lead_message(lead: Lead) -> str:
+    """Format lead data for Telegram message"""
+    message = f"""
+🔔 <b>Новая заявка с сайта Graver.uz</b>
+
+👤 <b>Имя:</b> {lead.name}
+📱 <b>Телефон:</b> {lead.phone}
+"""
+    if lead.company:
+        message += f"🏢 <b>Компания:</b> {lead.company}\n"
+    if lead.quantity:
+        message += f"📦 <b>Тираж:</b> {lead.quantity} шт\n"
+    
+    message += f"""
+📝 <b>Описание:</b>
+{lead.description}
+
+⏰ <b>Время:</b> {lead.timestamp.strftime('%d.%m.%Y %H:%M')}
+🆔 <b>ID заявки:</b> {lead.id}
+
+<i>Свяжитесь с клиентом в течение 15 минут!</i>
+"""
+    return message
+
+
 # Add your routes to the router instead of directly to app
 @api_router.get("/")
 async def root():
-    return {"message": "Hello World"}
+    return {"message": "Graver.uz API v1.0"}
+
+@api_router.post("/leads", response_model=Lead)
+async def create_lead(input: LeadCreate):
+    """Create new lead and send to Telegram"""
+    try:
+        # Create lead object
+        lead_dict = input.model_dump()
+        lead_obj = Lead(**lead_dict)
+        
+        # Save to MongoDB
+        doc = lead_obj.model_dump()
+        doc['timestamp'] = doc['timestamp'].isoformat()
+        
+        result = await db.leads.insert_one(doc)
+        logger.info(f"Lead created: {lead_obj.id}")
+        
+        # Send to Telegram
+        message = format_lead_message(lead_obj)
+        telegram_sent = await send_telegram_message(message)
+        
+        if not telegram_sent:
+            logger.warning("Telegram notification failed, but lead saved to DB")
+        
+        return lead_obj
+    except Exception as e:
+        logger.error(f"Error creating lead: {e}")
+        raise HTTPException(status_code=500, detail="Ошибка при создании заявки")
+
+@api_router.get("/leads", response_model=List[Lead])
+async def get_leads(limit: int = 100):
+    """Get all leads"""
+    leads = await db.leads.find({}, {"_id": 0}).sort("timestamp", -1).to_list(limit)
+    
+    # Convert ISO string timestamps back to datetime objects
+    for lead in leads:
+        if isinstance(lead['timestamp'], str):
+            lead['timestamp'] = datetime.fromisoformat(lead['timestamp'])
+    
+    return leads
 
 @api_router.post("/status", response_model=StatusCheck)
 async def create_status_check(input: StatusCheckCreate):
