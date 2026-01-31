@@ -82,6 +82,128 @@
                 document.head.appendChild(tailwindScript);
             }
         </script>
+        
+        <!-- SPA PageView + UTM + Event Tracking -->
+        <script>
+        (function () {
+          // 1) SPA PageView tracking for React Router
+          function trackPage(){
+            var path = window.location.pathname + window.location.search;
+            var title = document.title;
+            
+            if (window.gtag) {
+              gtag('event','page_view', {
+                page_path: path, 
+                page_location: window.location.href, 
+                page_title: title,
+                send_to: 'G-Z7V0FSGE4Y'
+              });
+            }
+            if (window.fbq) {
+              fbq('track','PageView');
+            }
+            console.log('📊 PageView tracked:', path);
+          }
+
+          // Initial page view
+          setTimeout(trackPage, 100);
+
+          // Patch history for SPA navigation
+          var pushState = history.pushState;
+          var replaceState = history.replaceState;
+          
+          history.pushState = function(){
+            pushState.apply(history, arguments);
+            setTimeout(trackPage, 0);
+          };
+          
+          history.replaceState = function(){
+            replaceState.apply(history, arguments);
+            setTimeout(trackPage, 0);
+          };
+          
+          window.addEventListener('popstate', function(){ 
+            setTimeout(trackPage, 0); 
+          });
+
+          // 2) UTM capture + persist
+          var params = new URLSearchParams(window.location.search);
+          var keys = ["utm_source","utm_medium","utm_campaign","utm_term","utm_content"];
+          var utm = {};
+          keys.forEach(function(k){ 
+            var v=params.get(k); 
+            if(v) utm[k]=v; 
+          });
+          if (Object.keys(utm).length) {
+            localStorage.setItem("utm", JSON.stringify(utm));
+            console.log('✅ UTM saved:', utm);
+          }
+
+          function fillHidden(form){
+            try {
+              var saved = JSON.parse(localStorage.getItem("utm") || "{}");
+              Object.keys(saved).forEach(function(k){
+                var input = form.querySelector('input[name="'+k+'"]');
+                if (input && !input.value) input.value = saved[k];
+              });
+              console.log('✅ UTM filled in form');
+            } catch(e){}
+          }
+
+          // 3) Click tracking (tel / telegram)
+          document.addEventListener("click", function(e){
+            var a = e.target.closest("a");
+            if(!a) return;
+            var t = a.getAttribute("data-track");
+            if(!t) return;
+
+            var eventName = t === "tel" ? "click_tel" : "click_telegram";
+            
+            if (window.gtag) {
+              gtag("event", eventName, {
+                link_url: a.href,
+                transport_type: "beacon"
+              });
+            }
+            if (window.fbq) {
+              fbq("trackCustom", t === "tel" ? "ClickTel" : "ClickTelegram");
+            }
+            
+            console.log('🎯 Click tracked:', eventName, a.href);
+          });
+
+          // 4) Lead tracking function (to be called on success)
+          window.__trackLeadSuccess = function(){
+            if (window.gtag) {
+              gtag("event","form_submit",{
+                form_id:"leadForm", 
+                transport_type:"beacon"
+              });
+            }
+            if (window.fbq) {
+              fbq("track","Lead");
+            }
+            console.log('🎉 Lead tracked!');
+          };
+
+          // 5) Auto-fill UTM on form load
+          window.addEventListener('DOMContentLoaded', function(){
+            var form = document.getElementById("leadForm");
+            if(form){
+              fillHidden(form);
+            }
+          });
+          
+          // Also check periodically (for SPA forms that load later)
+          setInterval(function(){
+            var form = document.getElementById("leadForm");
+            if(form && !form.dataset.utmFilled){
+              fillHidden(form);
+              form.dataset.utmFilled = "true";
+            }
+          }, 1000);
+        })();
+        </script>
     </head>
     <body>
         <noscript>You need to enable JavaScript to run this app.</noscript>
