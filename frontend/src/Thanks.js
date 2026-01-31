@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Send, Home, Check, Clock, Award, Package } from 'lucide-react';
 import './App.css';
 
 function Thanks() {
+  useEffect(() => {
+    // Track lead conversion on page load
+    if (window.__trackLeadSuccess) {
+      window.__trackLeadSuccess();
+    }
+  }, []);
+
   const handleBackHome = () => {
     window.location.href = '/';
   };
