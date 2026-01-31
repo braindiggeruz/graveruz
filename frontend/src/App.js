@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './App.css';
 import { Phone, Send, Check, Zap, Users, Award, Package, Clock, MessageCircle, Mail, MapPin, ChevronDown } from 'lucide-react';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
 function App() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     phone: '+998 ',
