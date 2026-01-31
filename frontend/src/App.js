@@ -78,12 +78,25 @@ function App() {
     setIsSubmitting(true);
     
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      const response = await fetch(`${BACKEND_URL}/api/leads`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.detail || 'Ошибка при отправке заявки');
+      }
+      
       setSubmitSuccess(true);
       setFormData({ name: '', phone: '', company: '', quantity: '', description: '' });
       setTimeout(() => setSubmitSuccess(false), 5000);
     } catch (error) {
       console.error('Error:', error);
+      alert(error.message || 'Произошла ошибка. Пожалуйста, позвоните нам или напишите в Telegram.');
     } finally {
       setIsSubmitting(false);
     }
