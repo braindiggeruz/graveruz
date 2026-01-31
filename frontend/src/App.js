@@ -673,8 +673,9 @@ function App() {
           {submitSuccess && (
             <div className="mb-8 bg-teal-500/10 border border-teal-500/30 rounded-xl p-6 text-center" data-testid="success-message">
               <Check className="inline-block text-teal-500 mb-2" size={32} />
-              <p className="text-white font-semibold">Заявка принята!</p>
-              <p className="text-gray-400 text-sm mt-2">Мы свяжемся с вами в течение 2 часов</p>
+              <p className="text-white font-semibold text-lg">Заявка успешно отправлена!</p>
+              <p className="text-gray-300 text-sm mt-2">Мы получили вашу заявку и свяжемся с вами в течение 15 минут (в рабочее время 10:00-20:00).</p>
+              <p className="text-gray-400 text-xs mt-2">Также можете написать нам напрямую в Telegram: <a href="https://t.me/GraverAdm" target="_blank" rel="noopener noreferrer" className="text-teal-500 hover:underline">@GraverAdm</a></p>
             </div>
           )}
 
