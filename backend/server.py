@@ -158,23 +158,27 @@ async def create_lead(input: LeadCreate):
         lead_dict = input.model_dump()
         lead_obj = Lead(**lead_dict)
         
+        logger.info(f"📥 New lead received: {lead_obj.name} | {lead_obj.phone[:8]}***")
+        
         # Save to MongoDB
         doc = lead_obj.model_dump()
         doc['timestamp'] = doc['timestamp'].isoformat()
         
         result = await db.leads.insert_one(doc)
-        logger.info(f"Lead created: {lead_obj.id}")
+        logger.info(f"💾 Lead saved to DB: {lead_obj.id}")
         
         # Send to Telegram
         message = format_lead_message(lead_obj)
         telegram_sent = await send_telegram_message(message)
         
         if not telegram_sent:
-            logger.warning("Telegram notification failed, but lead saved to DB")
+            logger.warning("⚠️ Telegram notification failed, but lead saved to DB")
+            # Still return 200 because lead is saved
         
         return lead_obj
+        
     except Exception as e:
-        logger.error(f"Error creating lead: {e}")
+        logger.error(f"❌ Error creating lead: {str(e)}")
         raise HTTPException(status_code=500, detail="Ошибка при создании заявки")
 
 @api_router.get("/leads", response_model=List[Lead])
