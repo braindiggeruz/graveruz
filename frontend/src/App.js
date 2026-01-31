@@ -160,6 +160,11 @@ function App() {
       
       setLastSubmitTime(now);
       
+      // Track lead success
+      if (window.__trackLeadSuccess) {
+        window.__trackLeadSuccess();
+      }
+      
       // Redirect to thanks page
       console.log('🔄 Redirecting to /thanks');
       window.location.href = '/thanks';
