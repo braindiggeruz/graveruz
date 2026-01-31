@@ -7,7 +7,7 @@ const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 function App() {
   const [formData, setFormData] = useState({
     name: '',
-    phone: '',
+    phone: '+998 ',
     company: '',
     quantity: '',
     description: ''
@@ -15,6 +15,7 @@ function App() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const [phoneError, setPhoneError] = useState('');
 
   const portfolioItems = [
     {
@@ -107,6 +108,47 @@ function App() {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
       setShowMobileMenu(false);
+    }
+  };
+
+  const validatePhone = (phone) => {
+    const phoneRegex = /^\+998\s?\d{2}\s?\d{3}\s?\d{2}\s?\d{2}$/;
+    return phoneRegex.test(phone);
+  };
+
+  const handlePhoneChange = (e) => {
+    let value = e.target.value;
+    
+    // Ensure it starts with +998
+    if (!value.startsWith('+998')) {
+      value = '+998 ' + value.replace(/^\+998\s?/, '');
+    }
+    
+    // Remove non-numeric characters except +
+    value = value.replace(/[^\d+\s]/g, '');
+    
+    // Format: +998 XX XXX XX XX
+    if (value.length > 4) {
+      const parts = value.slice(5).replace(/\s/g, '');
+      let formatted = '+998 ';
+      if (parts.length > 0) formatted += parts.slice(0, 2);
+      if (parts.length > 2) formatted += ' ' + parts.slice(2, 5);
+      if (parts.length > 5) formatted += ' ' + parts.slice(5, 7);
+      if (parts.length > 7) formatted += ' ' + parts.slice(7, 9);
+      value = formatted;
+    }
+    
+    setFormData({...formData, phone: value});
+    
+    // Validate
+    if (value.length >= 17) {
+      if (!validatePhone(value)) {
+        setPhoneError('Неверный формат телефона');
+      } else {
+        setPhoneError('');
+      }
+    } else {
+      setPhoneError('');
     }
   };
 
