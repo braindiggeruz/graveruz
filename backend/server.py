@@ -23,7 +23,7 @@ db = client[os.environ['DB_NAME']]
 
 # Telegram Bot Configuration
 TELEGRAM_BOT_TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN', '8569240441:AAE71KSPzz_2hcNcpP1Mc5fCeVT1oOumi34')
-TELEGRAM_CHAT_ID = os.environ.get('TELEGRAM_CHAT_ID', '')  # Will be set after user sends /start to bot
+TELEGRAM_CHAT_ID = os.environ.get('TELEGRAM_CHAT_ID', '7508701316')  # Hardcoded fallback for preview
 
 # Create the main app without a prefix
 app = FastAPI()
@@ -86,30 +86,16 @@ class LeadCreate(BaseModel):
 async def send_telegram_message(message: str):
     """Send message to Telegram bot"""
     try:
-        # First, get updates to find chat_id if not set
-        if not TELEGRAM_CHAT_ID:
-            async with httpx.AsyncClient() as client:
-                response = await client.get(
-                    f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/getUpdates"
-                )
-                data = response.json()
-                if data.get('ok') and data.get('result'):
-                    # Get the latest chat_id
-                    updates = data['result']
-                    if updates:
-                        chat_id = updates[-1]['message']['chat']['id']
-                        logger.info(f"Found chat_id: {chat_id}")
-                    else:
-                        logger.warning("No chat_id found. User needs to send /start to bot first.")
-                        return False
-                else:
-                    logger.warning("No Telegram chat_id configured. User needs to send /start to bot.")
-                    return False
-        else:
-            chat_id = TELEGRAM_CHAT_ID
+        chat_id = TELEGRAM_CHAT_ID
+        
+        if not chat_id:
+            logger.error("TELEGRAM_CHAT_ID not configured in environment")
+            return False
+        
+        logger.info(f"Attempting to send Telegram message to chat_id: {chat_id[:4]}***")
         
         # Send message
-        async with httpx.AsyncClient() as client:
+        async with httpx.AsyncClient(timeout=10.0) as client:
             response = await client.post(
                 f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage",
                 json={
@@ -119,14 +105,19 @@ async def send_telegram_message(message: str):
                 }
             )
             data = response.json()
+            
             if data.get('ok'):
-                logger.info("Telegram notification sent successfully")
+                logger.info("✅ Telegram notification sent successfully")
                 return True
             else:
-                logger.error(f"Telegram API error: {data}")
+                logger.error(f"❌ Telegram API error: {data.get('error_code')} - {data.get('description')}")
                 return False
+                
+    except httpx.TimeoutException:
+        logger.error("❌ Telegram API timeout")
+        return False
     except Exception as e:
-        logger.error(f"Error sending Telegram message: {e}")
+        logger.error(f"❌ Error sending Telegram message: {str(e)}")
         return False
 
 def format_lead_message(lead: Lead) -> str:
