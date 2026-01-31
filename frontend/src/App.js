@@ -10,12 +10,14 @@ function App() {
     phone: '+998 ',
     company: '',
     quantity: '',
-    description: ''
+    description: '',
+    website: '' // honeypot field
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [phoneError, setPhoneError] = useState('');
+  const [lastSubmitTime, setLastSubmitTime] = useState(0);
 
   const portfolioItems = [
     {
@@ -76,6 +78,20 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    // Anti-spam: cooldown 10 seconds
+    const now = Date.now();
+    if (now - lastSubmitTime < 10000) {
+      alert('Пожалуйста, подождите 10 секунд перед повторной отправкой.');
+      return;
+    }
+    
+    // Honeypot check
+    if (formData.website) {
+      console.log('Bot detected');
+      return; // Silent fail for bots
+    }
+    
     setIsSubmitting(true);
     
     try {
@@ -84,7 +100,13 @@ function App() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          company: formData.company,
+          quantity: formData.quantity,
+          description: formData.description
+        }),
       });
       
       if (!response.ok) {
@@ -92,8 +114,9 @@ function App() {
         throw new Error(errorData.detail || 'Ошибка при отправке заявки');
       }
       
+      setLastSubmitTime(now);
       setSubmitSuccess(true);
-      setFormData({ name: '', phone: '', company: '', quantity: '', description: '' });
+      setFormData({ name: '', phone: '+998 ', company: '', quantity: '', description: '', website: '' });
       setTimeout(() => setSubmitSuccess(false), 5000);
     } catch (error) {
       console.error('Error:', error);
