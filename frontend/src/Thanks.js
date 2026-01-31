@@ -54,7 +54,7 @@ function Thanks() {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="https://t.me/GraverAdm"
+              href="https://t.me/GraverAdm" data-track="tg"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto bg-gradient-to-r from-teal-500 to-cyan-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-teal-600 hover:to-cyan-700 transition shadow-lg shadow-teal-500/50 flex items-center justify-center group"
@@ -153,10 +153,10 @@ function Thanks() {
               {/* Phone */}
               <div className="bg-black/50 rounded-xl p-6 border border-gray-800">
                 <p className="text-gray-400 text-sm mb-2">Телефоны:</p>
-                <a href="tel:+998770802288" className="text-white text-lg font-semibold hover:text-teal-500 transition block">
+                <a href="tel:+998770802288" data-track="tel" className="text-white text-lg font-semibold hover:text-teal-500 transition block">
                   +998 77 080 22 88
                 </a>
-                <a href="tel:+998974802288" className="text-gray-400 text-sm hover:text-teal-500 transition block mt-1">
+                <a href="tel:+998974802288" data-track="tel" className="text-gray-400 text-sm hover:text-teal-500 transition block mt-1">
                   +998 97 480 22 88
                 </a>
               </div>
@@ -165,7 +165,7 @@ function Thanks() {
               <div className="bg-black/50 rounded-xl p-6 border border-gray-800">
                 <p className="text-gray-400 text-sm mb-2">Telegram:</p>
                 <a 
-                  href="https://t.me/GraverAdm" 
+                  href="https://t.me/GraverAdm" data-track="tg" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-white text-lg font-semibold hover:text-teal-500 transition flex items-center"
