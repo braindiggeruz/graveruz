@@ -1,14 +1,16 @@
-from fastapi import FastAPI, APIRouter
+from fastapi import FastAPI, APIRouter, HTTPException
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
 import os
 import logging
 from pathlib import Path
-from pydantic import BaseModel, Field, ConfigDict
-from typing import List
+from pydantic import BaseModel, Field, ConfigDict, validator
+from typing import List, Optional
 import uuid
 from datetime import datetime, timezone
+import httpx
+import re
 
 
 ROOT_DIR = Path(__file__).parent
@@ -18,6 +20,10 @@ load_dotenv(ROOT_DIR / '.env')
 mongo_url = os.environ['MONGO_URL']
 client = AsyncIOMotorClient(mongo_url)
 db = client[os.environ['DB_NAME']]
+
+# Telegram Bot Configuration
+TELEGRAM_BOT_TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN', '8569240441:AAE71KSPzz_2hcNcpP1Mc5fCeVT1oOumi34')
+TELEGRAM_CHAT_ID = os.environ.get('TELEGRAM_CHAT_ID', '')  # Will be set after user sends /start to bot
 
 # Create the main app without a prefix
 app = FastAPI()
@@ -36,6 +42,45 @@ class StatusCheck(BaseModel):
 
 class StatusCheckCreate(BaseModel):
     client_name: str
+
+class Lead(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    name: str
+    phone: str
+    company: Optional[str] = None
+    quantity: Optional[str] = None
+    description: str
+    timestamp: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+    status: str = "new"  # new, contacted, completed
+
+class LeadCreate(BaseModel):
+    name: str
+    phone: str
+    company: Optional[str] = None
+    quantity: Optional[str] = None
+    description: str
+    
+    @validator('phone')
+    def validate_phone(cls, v):
+        # Uzbek phone format: +998 XX XXX XX XX
+        phone_pattern = re.compile(r'^\+998\s?\d{2}\s?\d{3}\s?\d{2}\s?\d{2}$')
+        if not phone_pattern.match(v):
+            raise ValueError('Неверный формат телефона. Используйте: +998 XX XXX XX XX')
+        return v
+    
+    @validator('name')
+    def validate_name(cls, v):
+        if len(v.strip()) < 2:
+            raise ValueError('Имя должно содержать минимум 2 символа')
+        return v.strip()
+    
+    @validator('description')
+    def validate_description(cls, v):
+        if len(v.strip()) < 10:
+            raise ValueError('Описание должно содержать минимум 10 символов')
+        return v.strip()
 
 # Add your routes to the router instead of directly to app
 @api_router.get("/")
