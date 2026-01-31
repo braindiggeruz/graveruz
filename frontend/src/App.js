@@ -24,28 +24,28 @@ function App() {
   const portfolioItems = [
     {
       id: 1,
-      title: 'Часы с персональной гравировкой',
-      category: 'Премиальные подарки',
-      description: 'Элитные часы с индивидуальной гравировкой для топ-менеджмента',
-      image: '/portfolio/1.png',
-      material: 'Металл, стекло',
-      application: 'Подарки руководителям'
-    },
-    {
-      id: 2,
       title: 'Корпоративные награды',
       category: 'Награды и признание',
       description: 'Премиальные награды с гравировкой для сотрудников и партнёров',
-      image: '/portfolio/3.png',
+      image: '/portfolio/1.png',
       material: 'Металл, дерево',
       application: 'Награждение персонала'
+    },
+    {
+      id: 2,
+      title: 'Часы с персональной гравировкой',
+      category: 'Премиальные подарки',
+      description: 'Элитные часы с индивидуальной гравировкой для топ-менеджмента',
+      image: '/portfolio/10.png',
+      material: 'Металл, стекло',
+      application: 'Подарки руководителям'
     },
     {
       id: 3,
       title: 'Брендированные термосы',
       category: 'Корпоративная продукция',
       description: 'Качественные термосы с логотипом компании для команды',
-      image: '/portfolio/4.png',
+      image: '/portfolio/3.png',
       material: 'Анодированный алюминий',
       application: 'Подарки сотрудникам'
     },
@@ -54,7 +54,7 @@ function App() {
       title: 'Премиальный подарочный набор',
       category: 'Корпоративные подарки',
       description: 'Эксклюзивный набор с брендированием для VIP-клиентов',
-      image: '/portfolio/10.png',
+      image: '/portfolio/4.png',
       material: 'Комбинированные материалы',
       application: 'Подарки клиентам'
     },
