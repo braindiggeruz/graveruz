@@ -741,7 +741,14 @@ function App() {
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="bg-black/50 border border-gray-800 rounded-2xl p-8" data-testid="contact-form">
+          <form onSubmit={handleSubmit} id="leadForm" className="bg-black/50 border border-gray-800 rounded-2xl p-8" data-testid="contact-form">
+            {/* Hidden UTM fields */}
+            <input type="hidden" name="utm_source" />
+            <input type="hidden" name="utm_medium" />
+            <input type="hidden" name="utm_campaign" />
+            <input type="hidden" name="utm_term" />
+            <input type="hidden" name="utm_content" />
+            
             <div className="grid md:grid-cols-2 gap-6 mb-6">
               <div>
                 <label className="block text-gray-300 font-semibold mb-2">Ваше имя *</label>
