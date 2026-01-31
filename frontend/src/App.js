@@ -247,11 +247,11 @@ function App() {
 
             {/* Phone Numbers */}
             <div className="hidden md:flex flex-col items-end space-y-1">
-              <a href="tel:+998770802288" className="text-white font-semibold hover:text-teal-500 transition flex items-center" data-testid="phone-number-1">
+              <a href="tel:+998770802288" className="text-white font-semibold hover:text-teal-500 transition flex items-center" data-testid="phone-number-1" data-track="tel">
                 <Phone size={16} className="mr-2" />
                 +998 77 080 22 88
               </a>
-              <a href="tel:+998974802288" className="text-gray-400 text-sm hover:text-teal-500 transition flex items-center" data-testid="phone-number-2">
+              <a href="tel:+998974802288" className="text-gray-400 text-sm hover:text-teal-500 transition flex items-center" data-testid="phone-number-2" data-track="tel">
                 <Phone size={14} className="mr-2" />
                 +998 97 480 22 88
               </a>
@@ -277,11 +277,11 @@ function App() {
                 <button onClick={() => scrollToSection('faq')} className="text-gray-300 hover:text-teal-500 transition text-left">FAQ</button>
                 <button onClick={() => scrollToSection('contact')} className="text-gray-300 hover:text-teal-500 transition text-left">Контакты</button>
                 <div className="flex flex-col space-y-2 pt-2 border-t border-gray-800">
-                  <a href="tel:+998770802288" className="text-white font-semibold hover:text-teal-500 transition flex items-center">
+                  <a href="tel:+998770802288" className="text-white font-semibold hover:text-teal-500 transition flex items-center" data-track="tel">
                     <Phone size={16} className="mr-2" />
                     +998 77 080 22 88
                   </a>
-                  <a href="tel:+998974802288" className="text-gray-400 hover:text-teal-500 transition flex items-center">
+                  <a href="tel:+998974802288" className="text-gray-400 hover:text-teal-500 transition flex items-center" data-track="tel">
                     <Phone size={14} className="mr-2" />
                     +998 97 480 22 88
                   </a>
@@ -939,11 +939,11 @@ function App() {
             <div>
               <h3 className="text-white font-bold mb-4">Контакты</h3>
               <div className="space-y-3 text-gray-400 text-sm">
-                <a href="tel:+998770802288" className="flex items-center hover:text-teal-500 transition" data-testid="footer-phone-1">
+                <a href="tel:+998770802288" className="flex items-center hover:text-teal-500 transition" data-testid="footer-phone-1" data-track="tel">
                   <Phone size={16} className="mr-2" />
                   +998 77 080 22 88
                 </a>
-                <a href="tel:+998974802288" className="flex items-center hover:text-teal-500 transition" data-testid="footer-phone-2">
+                <a href="tel:+998974802288" className="flex items-center hover:text-teal-500 transition" data-testid="footer-phone-2" data-track="tel">
                   <Phone size={16} className="mr-2" />
                   +998 97 480 22 88
                 </a>
