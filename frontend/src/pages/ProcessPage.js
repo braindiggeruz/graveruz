@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { Phone, Send, ArrowLeft, FileCheck, Clock, Truck, CheckCircle, Package } from 'lucide-react';
+import { Send, ArrowLeft } from 'lucide-react';
 
 const translations = {
   ru: {
@@ -9,14 +9,16 @@ const translations = {
     subtitle: "Прозрачный процесс от заявки до готовой продукции",
     meta: "Как работает Graver.uz: от заявки до получения корпоративных подарков. Прозрачный процесс, контроль качества.",
     back: "На главную",
-    cta: "Оставить заявку"
+    cta: "Оставить заявку",
+    home: "Главная"
   },
   uz: {
     title: "Ish jarayoni",
     subtitle: "Arizadan tayyor mahsulotgacha shaffof jarayon",
     meta: "Graver.uz qanday ishlaydi: arizadan korporativ sovg'alarni olishgacha. Shaffof jarayon, sifat nazorati.",
     back: "Bosh sahifa",
-    cta: "Ariza qoldirish"
+    cta: "Ariza qoldirish",
+    home: "Bosh sahifa"
   }
 };
 
@@ -36,6 +38,8 @@ const stepsUz = [
   { title: "5. Topshirish", time: "Kelishilgan muddatda", desc: "Yetkazib berish yoki olib ketish. Barcha hujjatlar." }
 ];
 
+const BASE_URL = 'https://graver.uz';
+
 export default function ProcessPage() {
   const { locale = 'ru' } = useParams();
   const t = translations[locale] || translations.ru;
@@ -46,11 +50,33 @@ export default function ProcessPage() {
     window.scrollTo(0, 0);
   }, [locale]);
 
+  // Breadcrumb Schema
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": t.home,
+        "item": `${BASE_URL}/${locale}`
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": t.title,
+        "item": `${BASE_URL}/${locale}/process`
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-black">
       <Helmet>
         <title>{t.title} | Graver.uz</title>
         <meta name="description" content={t.meta} />
+        <link rel="canonical" href={`${BASE_URL}/${locale}/process`} />
+        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
       </Helmet>
 
       <header className="bg-black/95 border-b border-gray-800 py-4">
@@ -67,11 +93,19 @@ export default function ProcessPage() {
         </div>
       </header>
 
+      {/* Breadcrumb UI */}
+      <nav className="bg-gray-900/50 border-b border-gray-800">
+        <div className="max-w-7xl mx-auto px-4 py-3">
+          <ol className="flex items-center space-x-2 text-sm">
+            <li><Link to={`/${locale}`} className="text-gray-400 hover:text-teal-500">{t.home}</Link></li>
+            <li className="text-gray-600">/</li>
+            <li className="text-teal-500">{t.title}</li>
+          </ol>
+        </div>
+      </nav>
+
       <section className="py-16 bg-gradient-to-b from-gray-900 to-black">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <Link to={`/${locale}`} className="inline-flex items-center text-gray-400 hover:text-teal-500 mb-8">
-            <ArrowLeft size={16} className="mr-2" />{t.back}
-          </Link>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">{t.title}</h1>
           <p className="text-xl text-gray-400">{t.subtitle}</p>
         </div>
