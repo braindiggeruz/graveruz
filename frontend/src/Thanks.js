@@ -113,16 +113,16 @@ function Thanks() {
 
           {/* Main Heading */}
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-            Заявка принята.<br />
+            {t.title}<br />
             <span className="bg-gradient-to-r from-teal-500 to-cyan-400 bg-clip-text text-transparent">
-              Мы уже считаем ваш тираж
+              {t.titleAccent}
             </span>
           </h1>
 
           {/* Subheading */}
           <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Ответим в ближайшее рабочее время (10:00-20:00).<br />
-            Если срочно — напишите в Telegram прямо сейчас.
+            {t.subtitle}<br />
+            {t.subtitleUrgent}
           </p>
 
           {/* CTA Buttons */}
@@ -135,7 +135,7 @@ function Thanks() {
               data-testid="thanks-telegram-cta"
             >
               <Send className="mr-2 group-hover:translate-x-1 transition-transform" size={20} />
-              Написать в Telegram
+              {t.telegramCta}
             </a>
             <button
               onClick={handleBackHome}
@@ -143,7 +143,7 @@ function Thanks() {
               data-testid="thanks-home-cta"
             >
               <Home className="mr-2" size={20} />
-              Вернуться на главную
+              {t.homeCta}
             </button>
           </div>
         </div>
