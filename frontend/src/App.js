@@ -350,6 +350,7 @@ function App() {
             <div className="lg:hidden pb-4 border-t border-gray-800 mt-4 pt-4">
               <nav className="flex flex-col space-y-3">
                 <button onClick={() => scrollToSection('services')} className="text-gray-300 hover:text-teal-500 transition text-left">{t('nav.services')}</button>
+                <a href={`/${locale}/${locale === 'uz' ? 'mahsulotlar-katalogi' : 'catalog-products'}`} className="text-gray-300 hover:text-teal-500 transition text-left">{t('nav.catalog')}</a>
                 <button onClick={() => scrollToSection('portfolio')} className="text-gray-300 hover:text-teal-500 transition text-left">{t('nav.portfolio')}</button>
                 <button onClick={() => scrollToSection('process')} className="text-gray-300 hover:text-teal-500 transition text-left">{t('nav.process')}</button>
                 <button onClick={() => scrollToSection('faq')} className="text-gray-300 hover:text-teal-500 transition text-left">{t('nav.faq')}</button>
