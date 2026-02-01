@@ -16,6 +16,9 @@ export default function SEOHead({ page = 'home' }) {
     uz: 'uz-Latn'
   };
   
+  // FAQ items for schema
+  const faqItems = t('faq.items');
+  
   // Add canonical and hreflang tags via DOM manipulation (more reliable for SPA)
   useEffect(() => {
     // Remove existing alternate/canonical links
@@ -48,6 +51,57 @@ export default function SEOHead({ page = 'home' }) {
     };
   }, [locale, currentPath, canonicalUrl, supportedLocales, getLocalizedPath]);
   
+  // Build FAQ Schema
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": Array.isArray(faqItems) ? faqItems.map(item => ({
+      "@type": "Question",
+      "name": item.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.a
+      }
+    })) : []
+  };
+  
+  // Build Organization Schema
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Graver.uz",
+    "description": t('meta.description'),
+    "url": BASE_URL,
+    "telephone": ["+998770802288", "+998974802288"],
+    "email": "info@graver.uz",
+    "image": `${BASE_URL}/portfolio/1.webp`,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": locale === 'ru' ? "улица Мукими" : "Muqimiy ko'chasi",
+      "addressLocality": locale === 'ru' ? "Ташкент" : "Toshkent",
+      "addressCountry": "UZ"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "41.2995",
+      "longitude": "69.2401"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Uzbekistan"
+    },
+    "openingHours": "Mo-Su 10:00-20:00",
+    "priceRange": "$$",
+    "sameAs": [
+      "https://t.me/GraverAdm"
+    ],
+    "serviceType": [
+      locale === 'ru' ? "Лазерная гравировка" : "Lazer gravyurasi",
+      locale === 'ru' ? "Корпоративные подарки" : "Korporativ sovg'alar",
+      locale === 'ru' ? "Брендирование" : "Brendlash"
+    ]
+  };
+  
   return (
     <Helmet>
       {/* Basic Meta */}
@@ -68,40 +122,12 @@ export default function SEOHead({ page = 'home' }) {
       
       {/* JSON-LD Organization Schema */}
       <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "LocalBusiness",
-          "name": "Graver.uz",
-          "description": t('meta.description'),
-          "url": BASE_URL,
-          "telephone": ["+998770802288", "+998974802288"],
-          "email": "info@graver.uz",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": locale === 'ru' ? "улица Мукими" : "Muqimiy ko'chasi",
-            "addressLocality": locale === 'ru' ? "Ташкент" : "Toshkent",
-            "addressCountry": "UZ"
-          },
-          "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": "41.2995",
-            "longitude": "69.2401"
-          },
-          "areaServed": {
-            "@type": "Country",
-            "name": "Uzbekistan"
-          },
-          "openingHours": "Mo-Su 10:00-20:00",
-          "priceRange": "$$",
-          "sameAs": [
-            "https://t.me/GraverAdm"
-          ],
-          "serviceType": [
-            locale === 'ru' ? "Лазерная гравировка" : "Lazer gravyurasi",
-            locale === 'ru' ? "Корпоративные подарки" : "Korporativ sovg'alar",
-            locale === 'ru' ? "Брендирование" : "Brendlash"
-          ]
-        })}
+        {JSON.stringify(organizationSchema)}
+      </script>
+      
+      {/* JSON-LD FAQ Schema for Rich Snippets */}
+      <script type="application/ld+json">
+        {JSON.stringify(faqSchema)}
       </script>
     </Helmet>
   );
