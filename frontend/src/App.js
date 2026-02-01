@@ -1,12 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import './App.css';
 import { Phone, Send, Check, Zap, Users, Award, Package, Clock, MessageCircle, Mail, MapPin, ChevronDown } from 'lucide-react';
+import { useI18n, SUPPORTED_LOCALES } from './i18n';
+import SEOHead from './components/SEOHead';
+import LanguageSwitcher from './components/LanguageSwitcher';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || window.location.origin;
 
 function App() {
   const navigate = useNavigate();
+  const { locale } = useParams();
+  const { t, setLocale } = useI18n();
+  
+  // Validate locale param
+  useEffect(() => {
+    if (locale && !SUPPORTED_LOCALES.includes(locale)) {
+      navigate('/ru', { replace: true });
+    }
+  }, [locale, navigate]);
+  
   const [formStep, setFormStep] = useState(1); // Multi-step form
   const [formData, setFormData] = useState({
     name: '',
