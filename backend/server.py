@@ -22,8 +22,8 @@ client = AsyncIOMotorClient(mongo_url)
 db = client[os.environ['DB_NAME']]
 
 # Telegram Bot Configuration
-TELEGRAM_BOT_TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN', '8569240441:AAE71KSPzz_2hcNcpP1Mc5fCeVT1oOumi34')
-TELEGRAM_CHAT_ID = os.environ.get('TELEGRAM_CHAT_ID', '7508701316')  # Hardcoded fallback for preview
+TELEGRAM_BOT_TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN')
+TELEGRAM_CHAT_ID = os.environ.get('TELEGRAM_CHAT_ID')
 
 # Create the main app without a prefix
 app = FastAPI()
