@@ -1,0 +1,65 @@
+{
+  "site": {
+    "title": "Graver.uz Blogi",
+    "description": "B2B uchun korporativ sovg'alar, brendlash va lazer gravirovkasi haqida maqolalar"
+  },
+  "nav": {
+    "articles": "Maqolalar",
+    "guides": "Qo'llanmalar",
+    "production": "Ishlab chiqarish",
+    "mainSite": "Asosiy sayt"
+  },
+  "article": {
+    "toc": "Maqola tarkibi",
+    "faq": "Ko'p so'raladigan savollar",
+    "readMore": "Maqolani o'qish",
+    "relatedPosts": "Shuningdek o'qing",
+    "author": "Muallif",
+    "publishedAt": "Nashr etilgan",
+    "tags": "Teglar"
+  },
+  "breadcrumbs": {
+    "home": "Blog",
+    "category": "Kategoriya",
+    "tag": "Teg",
+    "author": "Muallif"
+  },
+  "cta": {
+    "primary": "Maket va hisob-kitob olish",
+    "secondary": "Telegram'ga yozish",
+    "whatsapp": "WhatsApp",
+    "ctaTitle": "Tirojingiz uchun hisob-kitob kerakmi?",
+    "ctaDescription": "Logotipni yuboring, miqdor va muddatni ko'rsating — biz maket va smeta tayyorlaymiz",
+    "howToOrder": "Gravirovkali korporativ sovg'alarni qanday buyurtma qilish mumkin",
+    "howToOrderSteps": "3 ta oddiy qadam: Logotip, tiroj va muddatni yuboring → Tasdiqlash uchun maket oling → Ishlab chiqarishni boshlaymiz"
+  },
+  "categories": {
+    "гайды": "Qo'llanmalar",
+    "производство": "Ishlab chiqarish",
+    "закупки": "Xaridlar",
+    "награды": "Mukofotlar",
+    "наборы": "To'plamlar"
+  },
+  "footer": {
+    "about": "Toshkentda lazer gravirovkali korporativ sovg'alar. Maketni tasdiqlaysiz — keyin ishlab chiqarish.",
+    "categories": "Kategoriyalar",
+    "contacts": "Kontaktlar",
+    "seo": "SEO",
+    "copyright": "© 2026 Graver.uz — Lazer gravirovkali korporativ sovg'alar"
+  },
+  "404": {
+    "title": "Sahifa topilmadi",
+    "description": "Ehtimol, sahifa o'chirilgan yoki siz noto'g'ri havolaga o'tdingiz.",
+    "back": "Bosh sahifaga qaytish",
+    "contact": "Biz bilan bog'lanish"
+  },
+  "hero": {
+    "title": "Blog",
+    "subtitle": "O'zbekistonda biznes uchun gravirovkali korporativ sovg'alar bo'yicha qo'llanmalar va maslahatlar",
+    "allArticles": "Barcha maqolalar"
+  },
+  "pagination": {
+    "articlesInCategory": "ta maqola bu kategoriyada",
+    "articlesWithTag": "ta maqola bu teg bilan"
+  }
+}
