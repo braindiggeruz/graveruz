@@ -7,68 +7,106 @@ Build a high-conversion B2B corporate gifting website for "Graver.uz" brand with
 - Portfolio showcase
 - GA4 and Meta Pixel tracking
 - Russian language UI
+- **SEO Blog on SSG** for content marketing
 
 ## Tech Stack
-- Frontend: React, Tailwind CSS, Lucide Icons
-- Backend: FastAPI (Python)
-- Database: MongoDB
-- Integrations: Telegram Bot API, GA4, Meta Pixel
+- **Main Site (Frontend):** React, Tailwind CSS, Lucide Icons
+- **Main Site (Backend):** FastAPI (Python)
+- **Database:** MongoDB
+- **Blog:** Astro SSG (Static Site Generator)
+- **Integrations:** Telegram Bot API, GA4, Meta Pixel
 
 ## Changelog
-- **2026-02-01 (Phase 1 CRO Complete):**
-  - Hero Section: New H1 "макет утверждаете вы, не мы", updated subheadline
-  - CTA Priority: "Запросить расчёт" is now PRIMARY (green), Telegram is SECONDARY (outline)
-  - 2-Step Form with Progress Bar: Step 1 (Company, Order Type, Quantity), Step 2 (Name, Phone, Email, Comment)
-  - Portfolio CTA: Changed "Хочу так же" → "Запросить расчёт" (scrolls to form)
-  - Mobile Sticky CTA: Two buttons (Запросить расчёт + Telegram icon)
-  - Added alt-text to portfolio images for SEO
-  - Added GA4 event tracking: form_step_1_complete, form_step_2_complete
-- **2026-02-01**: Fixed blurry text on /thanks page
-- **2026-02-01**: Fixed portfolio image-to-card mapping
 
-## Completed Features
-- ✅ Landing page with hero, benefits, services, portfolio, process, FAQ sections
-- ✅ 2-step contact form with validation, progress bar, and spam protection
-- ✅ Telegram bot integration for lead notifications
-- ✅ /thanks page with crisp text
-- ✅ GA4 and Meta Pixel tracking scripts
-- ✅ Portfolio section with correct image mapping and SEO alt-text
-- ✅ Mobile sticky CTA bar
-- ✅ Hero with optimized CTA hierarchy
+### 2026-02-01: SEO Blog Created (SSG)
+- Created full SSG blog on Astro with 5 SEO-optimized articles
+- Implemented: sitemap.xml, robots.txt, rss.xml (auto-generated)
+- JSON-LD schemas: Organization, WebSite, Article, BreadcrumbList, FAQPage
+- Category/Tag/Author pages with proper SEO
+- TOC, Related Posts, FAQ sections on each article
+- Blog runs on port 4000
 
-## Known Issues
-- ⚠️ PR_END_OF_FILE_ERROR during Meta Pixel testing (TLS/infrastructure issue)
+### 2026-02-01 (Phase 1 CRO Complete):
+- Hero Section: New H1 "макет утверждаете вы, не мы"
+- 2-Step Form with Progress Bar
+- Portfolio CTA: "Запросить расчёт"
+- Mobile Sticky CTA
+- GA4 event tracking
 
-## Roadmap
+### 2026-02-01: Bug fixes
+- Fixed blurry text on /thanks page
+- Fixed portfolio image-to-card mapping
 
-### Phase 2: HIGH PRIORITY (Next)
-- [ ] Trust Signals Block: "50+ компаний", "1000+ заказов", "Гарантия качества"
-- [ ] Services: Add "Для кого" (HR/Marketing/Events) and "Цена от"
-- [ ] FAQ: Add 5 key objection-handling questions
+## Blog Articles (5 published)
 
-### Phase 3: MEDIUM PRIORITY
-- [ ] GA4 Events: click_telegram, click_phone, portfolio_click, service_click
-- [ ] Microcopy: "Обсудить проект" → "Запросить расчёт" everywhere
+1. `/corporate-gifts-logo-tashkent` - Корпоративные подарки с логотипом в Ташкенте
+2. `/logo-engraving-bulk-guide` - Гравировка логотипа на подарках оптом
+3. `/supplier-corporate-gifts-tashkent` - Поставщик корпоративных подарков: чек-лист
+4. `/plaques-awards-order-tashkent` - Плакетки и награды на заказ
+5. `/corporate-gift-sets-what-inside` - Корпоративные подарочные наборы
 
-### Phase 4: SEO & POLISH
-- [ ] Schema.org JSON-LD: Organization, LocalBusiness, FAQ
-- [ ] Meta description optimization
-- [ ] Image optimization: WebP format, lazy-load
+## SEO Features Implemented
+- ✅ Static HTML (100% SSG, no JS required for content)
+- ✅ Canonical URLs on every page
+- ✅ OG/Twitter meta tags
+- ✅ JSON-LD schemas (Organization, Article, BreadcrumbList, FAQPage)
+- ✅ Auto-generated sitemap.xml
+- ✅ robots.txt with sitemap reference
+- ✅ RSS feed
+- ✅ Breadcrumbs
+- ✅ TOC (Table of Contents)
+- ✅ Related posts
+- ✅ Internal linking between articles
+- ✅ FAQ sections with schema markup
 
 ## File Structure
 ```
 /app
 ├── backend/
-│   ├── .env (TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID, MONGO_URL, DB_NAME)
-│   ├── requirements.txt
 │   └── server.py
-└── frontend/
-    ├── .env (REACT_APP_BACKEND_URL)
-    ├── public/
-    │   ├── index.html (tracking scripts)
-    │   └── portfolio/ (1.png, 3.png, 4.png, 5.png, 6.png, 10.png)
-    └── src/
-        ├── App.css (custom select styling added)
-        ├── App.js (main landing page - CRO optimized)
-        └── Thanks.js (/thanks page)
+├── frontend/
+│   └── src/
+│       ├── App.js (main landing page)
+│       └── Thanks.js (/thanks page)
+└── blog/                    # NEW: Astro SSG Blog
+    ├── astro.config.mjs
+    ├── src/
+    │   ├── layouts/
+    │   │   └── BaseLayout.astro
+    │   ├── pages/
+    │   │   ├── index.astro
+    │   │   ├── [slug].astro
+    │   │   ├── 404.astro
+    │   │   ├── rss.xml.js
+    │   │   ├── category/[category].astro
+    │   │   ├── tag/[tag].astro
+    │   │   └── author/[author].astro
+    │   └── content/
+    │       └── posts/
+    │           ├── corporate-gifts-logo-tashkent.md
+    │           ├── logo-engraving-bulk-guide.md
+    │           ├── supplier-corporate-gifts-tashkent.md
+    │           ├── plaques-awards-order-tashkent.md
+    │           └── corporate-gift-sets-what-inside.md
+    └── public/
+        └── robots.txt
 ```
+
+## Services
+- Main site (React): port 3000
+- Backend (FastAPI): port 8001
+- Blog (Astro SSG): port 4000
+
+## Roadmap
+
+### Done ✅
+- Main landing page with CRO optimizations
+- Lead form with Telegram integration
+- SEO Blog with 5 articles
+
+### Next Steps
+- Deploy blog to subdomain (blog.graver.uz)
+- Submit sitemap to Google Search Console
+- Add more articles (content plan)
+- Trust signals block on main site
+- FAQ expansion on main site
