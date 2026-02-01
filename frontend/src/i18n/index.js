@@ -12,6 +12,19 @@ const translations = {
 const SUPPORTED_LOCALES = ['ru', 'uz'];
 const DEFAULT_LOCALE = 'ru';
 
+// Route mapping for B2C pages (different slugs per locale)
+const ROUTE_MAP = {
+  'catalog-products': 'mahsulotlar-katalogi',
+  'watches-with-logo': 'logotipli-soat',
+  'lighters-engraving': 'gravirovkali-zajigalka',
+  'engraved-gifts': 'gravirovkali-sovgalar'
+};
+
+// Reverse map for UZ -> RU
+const ROUTE_MAP_REVERSE = Object.fromEntries(
+  Object.entries(ROUTE_MAP).map(([ru, uz]) => [uz, ru])
+);
+
 const I18nContext = createContext(null);
 
 export function I18nProvider({ children }) {
