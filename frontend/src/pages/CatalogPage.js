@@ -156,7 +156,9 @@ export default function CatalogPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {cats.map((cat) => (
               <div key={cat.id} className="bg-gray-900 border border-gray-800 rounded-2xl p-6 hover:border-teal-500/30 transition">
-                <div className="w-10 h-10 bg-teal-500/10 rounded-lg mb-4" />
+                <div className="w-full h-32 mb-4 rounded-lg overflow-hidden">
+                  <img src={cat.img} alt={cat.name} className="w-full h-full object-cover" loading="lazy" />
+                </div>
                 <h3 className="text-lg font-bold text-white mb-1">{cat.name}</h3>
                 <p className="text-teal-500 font-semibold mb-1">{cat.price}</p>
                 <p className="text-gray-400 text-sm mb-4">{cat.desc}</p>
