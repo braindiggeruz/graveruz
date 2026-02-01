@@ -6,11 +6,12 @@ import "@/index.css";
 import { I18nProvider, SUPPORTED_LOCALES } from "@/i18n";
 import App from "@/App";
 
-// Code splitting: Thanks page loaded only when needed
+// Code splitting: Pages loaded only when needed
 const Thanks = lazy(() => import("@/Thanks"));
-
-// 404 page
 const NotFound = lazy(() => import("@/components/NotFound"));
+const ProcessPage = lazy(() => import("@/pages/ProcessPage"));
+const GuaranteesPage = lazy(() => import("@/pages/GuaranteesPage"));
+const ContactsPage = lazy(() => import("@/pages/ContactsPage"));
 
 // Loading fallback for lazy components
 const LoadingFallback = () => (
@@ -44,10 +45,16 @@ root.render(
               
               {/* Legacy redirects for SEO (old URLs without locale) */}
               <Route path="/thanks" element={<Navigate to="/ru/thanks" replace />} />
+              <Route path="/process" element={<Navigate to="/ru/process" replace />} />
+              <Route path="/guarantees" element={<Navigate to="/ru/guarantees" replace />} />
+              <Route path="/contacts" element={<Navigate to="/ru/contacts" replace />} />
               
               {/* Localized routes with validation */}
               <Route path="/:locale" element={<LocaleRoute element={<App />} />} />
               <Route path="/:locale/thanks" element={<LocaleRoute element={<Thanks />} />} />
+              <Route path="/:locale/process" element={<LocaleRoute element={<ProcessPage />} />} />
+              <Route path="/:locale/guarantees" element={<LocaleRoute element={<GuaranteesPage />} />} />
+              <Route path="/:locale/contacts" element={<LocaleRoute element={<ContactsPage />} />} />
               
               {/* 404 for unmatched routes */}
               <Route path="*" element={<NotFound />} />
