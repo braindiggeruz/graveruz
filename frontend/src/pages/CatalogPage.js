@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Send, ArrowRight, AlertTriangle } from 'lucide-react';
 import B2CForm from '../components/B2CForm';
+import LanguageSwitcher from '../components/LanguageSwitcher';
 
 const BASE_URL = 'https://graver.uz';
 
