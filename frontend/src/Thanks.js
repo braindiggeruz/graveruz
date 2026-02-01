@@ -154,10 +154,10 @@ function Thanks() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Что дальше?
+              {t.nextTitle}
             </h2>
             <p className="text-gray-400 text-lg">
-              Прозрачный процесс от заявки до получения готовой продукции
+              {t.nextSubtitle}
             </p>
           </div>
 
@@ -167,13 +167,13 @@ function Thanks() {
               <div className="flex items-center justify-center w-16 h-16 bg-teal-500/10 rounded-xl mb-6">
                 <span className="text-3xl font-bold text-teal-500">01</span>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">Макет</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">{t.step1Title}</h3>
               <p className="text-gray-400 leading-relaxed">
-                Сначала делаем цифровой превью с точным размещением вашего логотипа. Вы утверждаете каждую деталь до производства.
+                {t.step1Desc}
               </p>
               <div className="mt-4 flex items-center text-teal-500">
                 <Clock size={18} className="mr-2" />
-                <span className="text-sm">В течение 2 часов</span>
+                <span className="text-sm">{t.step1Time}</span>
               </div>
             </div>
 
@@ -182,13 +182,13 @@ function Thanks() {
               <div className="flex items-center justify-center w-16 h-16 bg-teal-500/10 rounded-xl mb-6">
                 <span className="text-3xl font-bold text-teal-500">02</span>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">Производство</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">{t.step2Title}</h3>
               <p className="text-gray-400 leading-relaxed">
-                Гравируем партию согласно утверждённому макету. Контроль качества каждой единицы на всех этапах.
+                {t.step2Desc}
               </p>
               <div className="mt-4 flex items-center text-teal-500">
                 <Package size={18} className="mr-2" />
-                <span className="text-sm">1-3 рабочих дня</span>
+                <span className="text-sm">{t.step2Time}</span>
               </div>
             </div>
 
@@ -197,13 +197,13 @@ function Thanks() {
               <div className="flex items-center justify-center w-16 h-16 bg-teal-500/10 rounded-xl mb-6">
                 <span className="text-3xl font-bold text-teal-500">03</span>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">Выдача</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">{t.step3Title}</h3>
               <p className="text-gray-400 leading-relaxed">
-                Доставка или самовывоз в оговорённые сроки. Все документы для юрлиц. Прозрачность на каждом шаге.
+                {t.step3Desc}
               </p>
               <div className="mt-4 flex items-center text-teal-500">
                 <Award size={18} className="mr-2" />
-                <span className="text-sm">Гарантия качества</span>
+                <span className="text-sm">{t.step3Time}</span>
               </div>
             </div>
           </div>
@@ -216,17 +216,17 @@ function Thanks() {
           <div className="bg-gradient-to-br from-gray-900 to-black border border-teal-500/30 rounded-2xl p-8 md:p-12">
             <div className="text-center mb-8">
               <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                Быстрый контакт
+                {t.quickContact}
               </h3>
               <p className="text-gray-400">
-                Обычно отвечаем в течение 15-60 минут в рабочее время
+                {t.quickContactDesc}
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
               {/* Phone */}
               <div className="bg-black/50 rounded-xl p-6 border border-gray-800">
-                <p className="text-gray-400 text-sm mb-2">Телефоны:</p>
+                <p className="text-gray-400 text-sm mb-2">{t.phones}</p>
                 <a href="tel:+998770802288" data-track="tel" className="text-white text-lg font-semibold hover:text-teal-500 transition block">
                   +998 77 080 22 88
                 </a>
@@ -255,12 +255,12 @@ function Thanks() {
               <div className="grid md:grid-cols-2 gap-6 text-center md:text-left">
                 <div>
                   <p className="text-gray-300 leading-relaxed">
-                    <span className="text-teal-500 font-semibold">Работаем с корпоративными заказами:</span> мерч, награды, подарочные наборы для сотрудников и клиентов.
+                    <span className="text-teal-500 font-semibold">{t.corporate}</span> {t.corporateDesc}
                   </p>
                 </div>
                 <div>
                   <p className="text-gray-300 leading-relaxed">
-                    <span className="text-teal-500 font-semibold">Без сюрпризов:</span> сначала макет с точным превью — потом производство. Полный контроль на каждом этапе.
+                    <span className="text-teal-500 font-semibold">{t.noSurprises}</span> {t.noSurprisesDesc}
                   </p>
                 </div>
               </div>
@@ -273,7 +273,7 @@ function Thanks() {
       <footer className="bg-black border-t border-gray-800 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center text-gray-500 text-sm">
-            <p>© 2025 Graver.uz — Премиальная лазерная гравировка в Ташкенте</p>
+            <p>{t.copyright}</p>
           </div>
         </div>
       </footer>
