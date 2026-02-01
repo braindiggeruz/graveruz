@@ -13,11 +13,14 @@ function App() {
   const { locale } = useParams();
   const { t, setLocale } = useI18n();
   
-  // Validate locale param
+  // Validate locale param and set html lang
   useEffect(() => {
     if (locale && !SUPPORTED_LOCALES.includes(locale)) {
       navigate('/ru', { replace: true });
     }
+    // Set html lang attribute
+    const langCode = locale === 'uz' ? 'uz-Latn' : (locale || 'ru');
+    document.documentElement.lang = langCode;
   }, [locale, navigate]);
   
   const [formStep, setFormStep] = useState(1); // Multi-step form
