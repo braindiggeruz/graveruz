@@ -634,7 +634,8 @@ function App() {
                 <div className="aspect-square overflow-hidden bg-gray-800">
                   <img 
                     src={item.image} 
-                    alt={item.title}
+                    alt={item.alt || item.title}
+                    loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     onError={(e) => {
                       e.target.style.display = 'none';
@@ -656,15 +657,14 @@ function App() {
                     <div><span className="text-gray-600">Материал:</span> {item.material}</div>
                     <div><span className="text-gray-600">Применение:</span> {item.application}</div>
                   </div>
-                  <a 
-                    href="https://t.me/GraverAdm" data-track="tg" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
+                  <button 
+                    onClick={() => scrollToSection('contact')}
                     className="inline-flex items-center mt-4 text-teal-500 hover:text-teal-400 font-semibold text-sm group/link"
+                    data-testid={`portfolio-cta-${index + 1}`}
                   >
-                    Хочу так же
-                    <Send className="ml-2 group-hover/link:translate-x-1 transition-transform" size={14} />
-                  </a>
+                    Запросить расчёт
+                    <ChevronDown className="ml-2 rotate-[-90deg] group-hover/link:translate-x-1 transition-transform" size={14} />
+                  </button>
                 </div>
               </div>
             ))}
