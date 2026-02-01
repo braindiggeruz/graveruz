@@ -3,6 +3,8 @@ import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Phone, Send, ArrowLeft, MapPin, Clock } from 'lucide-react';
 
+const BASE_URL = 'https://graver.uz';
+
 const translations = {
   ru: {
     title: "Контакты",
@@ -17,7 +19,8 @@ const translations = {
     addressValue: "Ташкент, улица Мукими",
     hours: "Режим работы",
     hoursValue: "Пн-Вс: 10:00 - 20:00",
-    hoursDesc: "Заявки 24/7"
+    hoursDesc: "Заявки 24/7",
+    home: "Главная"
   },
   uz: {
     title: "Kontaktlar",
@@ -32,7 +35,8 @@ const translations = {
     addressValue: "Toshkent, Muqimiy ko'chasi",
     hours: "Ish vaqti",
     hoursValue: "Du-Ya: 10:00 - 20:00",
-    hoursDesc: "Arizalar 24/7"
+    hoursDesc: "Arizalar 24/7",
+    home: "Bosh sahifa"
   }
 };
 
@@ -45,11 +49,33 @@ export default function ContactsPage() {
     window.scrollTo(0, 0);
   }, [locale]);
 
+  // Breadcrumb Schema
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": t.home,
+        "item": `${BASE_URL}/${locale}`
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": t.title,
+        "item": `${BASE_URL}/${locale}/contacts`
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-black">
       <Helmet>
         <title>{t.title} | Graver.uz</title>
         <meta name="description" content={t.meta} />
+        <link rel="canonical" href={`${BASE_URL}/${locale}/contacts`} />
+        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
       </Helmet>
 
       <header className="bg-black/95 border-b border-gray-800 py-4">
@@ -66,11 +92,19 @@ export default function ContactsPage() {
         </div>
       </header>
 
+      {/* Breadcrumb UI */}
+      <nav className="bg-gray-900/50 border-b border-gray-800">
+        <div className="max-w-7xl mx-auto px-4 py-3">
+          <ol className="flex items-center space-x-2 text-sm">
+            <li><Link to={`/${locale}`} className="text-gray-400 hover:text-teal-500">{t.home}</Link></li>
+            <li className="text-gray-600">/</li>
+            <li className="text-teal-500">{t.title}</li>
+          </ol>
+        </div>
+      </nav>
+
       <section className="py-16 bg-gradient-to-b from-gray-900 to-black">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <Link to={`/${locale}`} className="inline-flex items-center text-gray-400 hover:text-teal-500 mb-8">
-            <ArrowLeft size={16} className="mr-2" />{t.back}
-          </Link>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">{t.title}</h1>
           <p className="text-xl text-gray-400">{t.subtitle}</p>
         </div>
