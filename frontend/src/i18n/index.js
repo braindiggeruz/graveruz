@@ -28,13 +28,13 @@ export function I18nProvider({ children }) {
   const pathLocale = getLocaleFromPath(location.pathname);
   const [locale, setLocaleState] = useState(pathLocale || DEFAULT_LOCALE);
   
-  // Redirect root to /ru/
+  // Redirect only root "/" to default locale
   useEffect(() => {
-    if (location.pathname === '/' || !pathLocale) {
+    if (location.pathname === '/') {
       const savedLocale = localStorage.getItem('graver-locale') || DEFAULT_LOCALE;
-      navigate(`/${savedLocale}${location.pathname === '/' ? '' : location.pathname}`, { replace: true });
+      navigate(`/${savedLocale}`, { replace: true });
     }
-  }, [location.pathname, pathLocale, navigate]);
+  }, [location.pathname, navigate]);
   
   // Update locale when path changes
   useEffect(() => {
