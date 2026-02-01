@@ -1,0 +1,268 @@
+{
+  "meta": {
+    "title": "Graver.uz — Korporativ sovg'alar lazer gravyurasi bilan | Toshkent",
+    "description": "Toshkentda biznes uchun premium lazer gravyurasi. Avval maket — keyin ishlab chiqarish. Korporativ sovg'alar, mukofotlar, brendlash.",
+    "ogTitle": "Graver.uz — Korporativ sovg'alar lazer gravyurasi bilan",
+    "ogDescription": "Biznes uchun premium lazer gravyurasi. Avval maket — keyin ishlab chiqarish."
+  },
+  "nav": {
+    "services": "Xizmatlar",
+    "portfolio": "Portfolio",
+    "process": "Jarayon",
+    "faq": "FAQ",
+    "contacts": "Kontaktlar"
+  },
+  "hero": {
+    "badge": "Toshkent • Premium B2B yechimlar",
+    "title": "Korporativ sovg'alar —",
+    "titleAccent": "maketni siz tasdiqlaysiz, biz emas",
+    "subtitle": "Ishlab chiqarishdan oldin yakuniy natijani ko'rasiz.",
+    "subtitleLine2": "Premium lazer gravyurasi. 1 dan 10,000+ donagacha.",
+    "subtitleAccent": "1-3 kun odatiy muddat. Sifat kafolati.",
+    "ctaPrimary": "Hisob so'rash",
+    "ctaSecondary": "Telegramda tezkor maslahat",
+    "stats": {
+      "approval": "Ishlab chiqarishdan oldin tasdiqlash",
+      "days": "Kun odatiy ishlab chiqarish",
+      "volume": "Har qanday hajm",
+      "guarantee": "Sifat kafolati"
+    }
+  },
+  "benefits": {
+    "title": "Nima uchun yirik kompaniyalar",
+    "titleAccent": "Graver.uz ni tanlaydi",
+    "subtitle": "Korporativ buyurtmalar uchun ishonchli hamkor. Shaffof jarayon, kafolatlangan sifat.",
+    "items": {
+      "preview": {
+        "title": "Ishlab chiqarishdan oldin maket",
+        "description": "Aniq o'lchamlar va joylashuvga ega raqamli ko'rib chiqish. Siz ishni boshlashdan oldin har bir tafsilotni tasdiqlaysiz — kutilmagan hodisalar yo'q."
+      },
+      "volumes": {
+        "title": "Har qanday hajmdagi tirajlar",
+        "description": "Yakka premium sovg'alardan minglab donagacha. Har bir mahsulotni ismlar va lavozimlar bilan personalizatsiya qilish."
+      },
+      "timing": {
+        "title": "Aniq muddatlar",
+        "description": "Oddiy buyurtmalar 1-3 kun. So'rov bo'yicha shoshilinch ishlab chiqarish. Korporativ taqvimingiz va tadbirlaringiz uchun shaffof rejalashtirish."
+      },
+      "materials": {
+        "title": "Har qanday materiallar",
+        "description": "Metall, anodlangan alyuminiy, yog'och, shisha, charm, premium plastmassalar. Har bir vazifa uchun Fiber, CO2, MOPA, UV texnologiyalari."
+      },
+      "files": {
+        "title": "Sizning fayllaringiz bilan ishlaymiz",
+        "description": "Logotiplar, brend-gaydlar, vektor, foto. Maket bo'lmasa — korporativ uslubingizga mos yaratamiz. Brendbuk talablariga rioya qilamiz."
+      },
+      "b2b": {
+        "title": "B2B xizmat",
+        "description": "Yuridik shaxslar bilan ishlash, yopuvchi hujjatlar, kelishuv bo'yicha to'lovni kechiktirish. Yirik buyurtmalar uchun shaxsiy menejer."
+      }
+    }
+  },
+  "services": {
+    "title": "Xizmatlar",
+    "titleAccent": "korporativ mijozlar uchun",
+    "subtitle": "Har qanday biznes vazifalari uchun brendlash va personalizatsiya",
+    "cta": "Loyihani muhokama qilish",
+    "popular": "Mashhur",
+    "items": {
+      "gifts": {
+        "title": "Korporativ sovg'alar",
+        "description": "Kompaniya logotipi bilan premium sovg'a to'plamlari. Ruchkalar, kundaliklar, flaskalar, termoslar, pichoqlar, soatlar, qutichalar — hammasi sizning brendingiz bilan.",
+        "features": ["1 dan 10,000+ donagacha tirajlar", "Xodimlar ismlari bilan personalizatsiya", "Tayyor premium qadoqlash"]
+      },
+      "awards": {
+        "title": "Mukofotlar va tan olish",
+        "description": "Xodimlar va hamkorlarni mukofotlash uchun kubok, medal, plaketka, lavhalar. Shisha, metall, yog'och, akril — premium ijro.",
+        "features": ["Tadbir uchun individual dizayn", "Ism, sana, yutuqlarni gravyura qilish", "Eksklyuziv shakl va materiallar"]
+      },
+      "branding": {
+        "title": "Mahsulotni brendlash",
+        "description": "Mahsulotingizga logotip va korporativ uslubni qo'llash. Seriyali markirovka, QR-kodlar, hisobga olish va kuzatish uchun noyob raqamlar.",
+        "features": ["Metall va plastmassada barqaror markirovka", "QR-kodlar va seriya raqamlari", "Katta tirajlar uchun avtomatlashtirish"]
+      },
+      "custom": {
+        "title": "Individual loyihalar",
+        "description": "Nostandart vazifalar, eksklyuziv yechimlar, murakkab geometriya. Sizning materiallaringiz va mahsulotlaringiz bilan ishlaymiz.",
+        "features": ["Murakkab sirtlar va shakllar", "Texnik maslahat", "Namunalar va material sinovlari"]
+      }
+    }
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "titleAccent": "bizning ishlarimiz",
+    "subtitle": "B2B mijozlar uchun real loyihalar",
+    "cta": "Hisob so'rash",
+    "material": "Material",
+    "application": "Qo'llanilishi",
+    "items": {
+      "1": {
+        "title": "Korporativ mukofotlar",
+        "category": "Mukofotlar va tan olish",
+        "description": "Xodimlar va hamkorlar uchun gravyurali premium mukofotlar",
+        "material": "Metall, yog'och",
+        "application": "Xodimlarni mukofotlash"
+      },
+      "2": {
+        "title": "Shaxsiy gravyurali soatlar",
+        "category": "Premium sovg'alar",
+        "description": "Top-menejerlar uchun individual gravyurali elit soatlar",
+        "material": "Metall, shisha",
+        "application": "Rahbarlarga sovg'alar"
+      },
+      "3": {
+        "title": "Brendlangan termoslar",
+        "category": "Korporativ mahsulotlar",
+        "description": "Jamoa uchun kompaniya logotipi bilan sifatli termoslar",
+        "material": "Anodlangan alyuminiy",
+        "application": "Xodimlarga sovg'alar"
+      },
+      "4": {
+        "title": "Premium sovg'a to'plami",
+        "category": "Korporativ sovg'alar",
+        "description": "VIP-mijozlar uchun brendlangan eksklyuziv to'plam",
+        "material": "Aralash materiallar",
+        "application": "Mijozlarga sovg'alar"
+      },
+      "5": {
+        "title": "Korporativ qadoqlash",
+        "category": "Brendlangan qadoqlash",
+        "description": "Korporativ tadbirlar uchun logotipli nafis qadoqlash",
+        "material": "Karton, metall",
+        "application": "Korporativ tadbirlar"
+      },
+      "6": {
+        "title": "Premium mukofot",
+        "category": "Premium-sinf mukofotlari",
+        "description": "Yoritish bilan shisha va metalldan eksklyuziv mukofot",
+        "material": "Shisha, metall",
+        "application": "Nufuzli mukofotlar"
+      }
+    }
+  },
+  "process": {
+    "title": "Biz qanday",
+    "titleAccent": "ishlaymiz",
+    "subtitle": "Arizadan qabul qilishgacha shaffof jarayon",
+    "timing": "Odatiy ishlab chiqarish muddati: maketni tasdiqlagandan keyin 1-3 kun",
+    "steps": {
+      "1": {
+        "title": "Ariza",
+        "description": "Telegramga yozing yoki hisoblash formasini to'ldiring. Logotip, mahsulot fotosurati yuboring, vazifa va tirajni tasvirlab bering."
+      },
+      "2": {
+        "title": "Maket",
+        "description": "Aniq joylashuv va o'lchamlar bilan raqamli maket yaratamiz. Ishlab chiqarishdan oldin yakuniy natijani ko'rasiz."
+      },
+      "3": {
+        "title": "Tasdiqlash",
+        "description": "Maketni tasdiqlaysiz, kerak bo'lsa o'zgartirishlar kiritasiz. Muddat va narxni belgilaymiz."
+      },
+      "4": {
+        "title": "Ishlab chiqarish",
+        "description": "Tasdiqlangan maketga muvofiq gravyura qilamiz. Har bir bosqichda sifat nazorati."
+      }
+    }
+  },
+  "form": {
+    "title": "Hisob",
+    "titleAccent": "so'rash",
+    "subtitle": "Formani to'ldiring, biz 2 soat ichida tijorat taklifini tayyorlaymiz",
+    "step": "Qadam",
+    "of": "dan",
+    "step1Title": "Loyiha haqida ayting",
+    "step2Title": "Qanday bog'lanish mumkin?",
+    "company": "Kompaniya",
+    "companyPlaceholder": "MChJ 'Sizning kompaniyangiz'",
+    "orderType": "Buyurtma turi",
+    "orderTypePlaceholder": "Buyurtma turini tanlang",
+    "orderTypes": {
+      "gifts": "Korporativ sovg'alar",
+      "awards": "Mukofotlar va tan olish",
+      "branding": "Mahsulotni brendlash",
+      "marking": "Sanoat markirovkasi",
+      "other": "Boshqa"
+    },
+    "quantity": "Taxminiy tiraj",
+    "quantityPlaceholder": "Hajmni tanlang",
+    "quantities": {
+      "1-10": "1-10 dona",
+      "11-100": "11-100 dona",
+      "101-1000": "101-1000 dona",
+      "1000+": "1000+ dona"
+    },
+    "name": "Ismingiz",
+    "namePlaceholder": "Alijon Karimov",
+    "phone": "Telefon",
+    "phonePlaceholder": "+998 XX XXX XX XX",
+    "email": "Email",
+    "emailOptional": "(ixtiyoriy)",
+    "emailPlaceholder": "email@company.uz",
+    "comment": "Izoh",
+    "commentPlaceholder": "Qo'shimcha istaklar, muddatlar, materiallar...",
+    "next": "Keyingi",
+    "back": "Orqaga",
+    "submit": "Ariza yuborish",
+    "submitting": "Yuborilmoqda...",
+    "consent": "Tugmani bosish orqali shaxsiy ma'lumotlarni qayta ishlashga rozilik bildirasiz",
+    "faster": "Tezroq kerakmi?",
+    "telegram": "Telegramga yozish",
+    "phoneError": "Telefon formati noto'g'ri",
+    "fillAll": "Iltimos, barcha maydonlarni to'ldiring",
+    "minName": "Iltimos, ismni kiriting (kamida 2 belgi)",
+    "fullPhone": "Iltimos, to'liq telefon raqamini kiriting",
+    "cooldown": "Iltimos, qayta yuborishdan oldin {seconds} soniya kuting."
+  },
+  "faq": {
+    "title": "Tez-tez",
+    "titleAccent": "beriladigan savollar",
+    "notFound": "Savolingizga javob topmadingizmi?",
+    "askTelegram": "Telegramda savol berish",
+    "items": [
+      {
+        "q": "Korporativ buyurtma uchun minimal tiraj qancha?",
+        "a": "Minimal tiraj yo'q. 1 ta eksklyuziv sovg'adan minglab donagacha tayyorlaymiz. 50+ donadan narx pasayadi."
+      },
+      {
+        "q": "Har bir xodim uchun personalizatsiya qilish mumkinmi?",
+        "a": "Ha, tirajdagi har bir mahsulot uchun individual ism, lavozim, sana gravyura qilamiz. Ro'yxat yuboring — tasdiqlash uchun maketlar tayyorlaymiz."
+      },
+      {
+        "q": "Yuridik shaxslar bilan ishlaysizmi?",
+        "a": "Ha, yuridik shaxslar bilan ishlaymiz. Barcha yopuvchi hujjatlar, hisob-fakturalar, dalolatnomalar taqdim etamiz. Doimiy mijozlar uchun to'lovni kechiktirish mumkin."
+      },
+      {
+        "q": "Ishlab chiqarish qancha vaqt oladi?",
+        "a": "Oddiy buyurtmalar — maketni tasdiqlagandan keyin 1-3 kun. Katta tirajlar va murakkab loyihalar — individual muhokama qilinadi. Shoshilinch ishlab chiqarish — so'rov bo'yicha."
+      },
+      {
+        "q": "Ishni boshlash uchun bizdan nima kerak?",
+        "a": "Vektor formatida logotip (AI/SVG/PDF) yoki sifatli foto. Tavsif: nima qo'yiladi, qaysi buyumlarga, tiraj, qachongacha. Tayyor maket bo'lmasa — o'zimiz yaratamiz."
+      },
+      {
+        "q": "Qaysi materiallarda gravyura qilasiz?",
+        "a": "Metall (po'lat, alyuminiy, latun), anodlangan alyuminiy, yog'och, charm, shisha, akril, premium plastmassalar. Fiber, CO2, MOPA va UV texnologiyalari."
+      },
+      {
+        "q": "Ishlab chiqarishdan oldin natijani ko'rish mumkinmi?",
+        "a": "Albatta. Bu bizning standart ishimiz: aniq o'lchamlar va joylashuvga ega raqamli maket olasiz, uni tasdiqlaysiz, va faqat shundan keyin ishlab chiqarishni boshlaymiz."
+      },
+      {
+        "q": "Sovg'a qadoqlash taqdim etasizmi?",
+        "a": "Ha, tayyor premium qadoqlash taklif qilamiz: qutichalar, paketlar, lentalar, ochiq xatlar — hammasi sizning korporativ uslubingizga mos."
+      }
+    ]
+  },
+  "footer": {
+    "description": "Toshkentda biznes uchun premium lazer gravyurasi va brendlash. Korporativ sovg'alar, mukofotlar, markirovka.",
+    "contacts": "Kontaktlar",
+    "address": "Toshkent, Muqimiy ko'chasi",
+    "workingHours": "Ish vaqti",
+    "schedule": "Du-Ya: 10:00 - 20:00",
+    "requests24": "Arizalar 24/7 qabul qilinadi",
+    "copyright": "© 2025 Graver.uz — Toshkentda premium lazer gravyurasi"
+  },
+  "common": {
+    "required": "*"
+  }
+}
