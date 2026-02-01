@@ -272,6 +272,8 @@ function App() {
 
   return (
     <div className="App">
+      <SEOHead />
+      
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 bg-black/95 backdrop-blur-sm z-50 border-b border-gray-800" data-testid="main-header">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -285,11 +287,12 @@ function App() {
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-8">
-              <button onClick={() => scrollToSection('services')} className="text-gray-300 hover:text-teal-500 transition">Услуги</button>
-              <button onClick={() => scrollToSection('portfolio')} className="text-gray-300 hover:text-teal-500 transition">Портфолио</button>
-              <button onClick={() => scrollToSection('process')} className="text-gray-300 hover:text-teal-500 transition">Процесс</button>
-              <button onClick={() => scrollToSection('faq')} className="text-gray-300 hover:text-teal-500 transition">FAQ</button>
-              <button onClick={() => scrollToSection('contact')} className="text-gray-300 hover:text-teal-500 transition">Контакты</button>
+              <button onClick={() => scrollToSection('services')} className="text-gray-300 hover:text-teal-500 transition">{t('nav.services')}</button>
+              <button onClick={() => scrollToSection('portfolio')} className="text-gray-300 hover:text-teal-500 transition">{t('nav.portfolio')}</button>
+              <button onClick={() => scrollToSection('process')} className="text-gray-300 hover:text-teal-500 transition">{t('nav.process')}</button>
+              <button onClick={() => scrollToSection('faq')} className="text-gray-300 hover:text-teal-500 transition">{t('nav.faq')}</button>
+              <button onClick={() => scrollToSection('contact')} className="text-gray-300 hover:text-teal-500 transition">{t('nav.contacts')}</button>
+              <LanguageSwitcher />
             </nav>
 
             {/* Phone Numbers */}
@@ -318,11 +321,14 @@ function App() {
           {showMobileMenu && (
             <div className="lg:hidden pb-4 border-t border-gray-800 mt-4 pt-4">
               <nav className="flex flex-col space-y-3">
-                <button onClick={() => scrollToSection('services')} className="text-gray-300 hover:text-teal-500 transition text-left">Услуги</button>
-                <button onClick={() => scrollToSection('portfolio')} className="text-gray-300 hover:text-teal-500 transition text-left">Портфолио</button>
-                <button onClick={() => scrollToSection('process')} className="text-gray-300 hover:text-teal-500 transition text-left">Процесс</button>
-                <button onClick={() => scrollToSection('faq')} className="text-gray-300 hover:text-teal-500 transition text-left">FAQ</button>
-                <button onClick={() => scrollToSection('contact')} className="text-gray-300 hover:text-teal-500 transition text-left">Контакты</button>
+                <button onClick={() => scrollToSection('services')} className="text-gray-300 hover:text-teal-500 transition text-left">{t('nav.services')}</button>
+                <button onClick={() => scrollToSection('portfolio')} className="text-gray-300 hover:text-teal-500 transition text-left">{t('nav.portfolio')}</button>
+                <button onClick={() => scrollToSection('process')} className="text-gray-300 hover:text-teal-500 transition text-left">{t('nav.process')}</button>
+                <button onClick={() => scrollToSection('faq')} className="text-gray-300 hover:text-teal-500 transition text-left">{t('nav.faq')}</button>
+                <button onClick={() => scrollToSection('contact')} className="text-gray-300 hover:text-teal-500 transition text-left">{t('nav.contacts')}</button>
+                <div className="pt-2 border-t border-gray-800">
+                  <LanguageSwitcher />
+                </div>
                 <div className="flex flex-col space-y-2 pt-2 border-t border-gray-800">
                   <a href="tel:+998770802288" className="text-white font-semibold hover:text-teal-500 transition flex items-center" data-track="tel">
                     <Phone size={16} className="mr-2" />
