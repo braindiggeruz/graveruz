@@ -1092,17 +1092,25 @@ function App() {
       </footer>
 
       {/* Sticky Mobile CTA */}
-      <div className="fixed bottom-0 left-0 right-0 lg:hidden bg-black/95 backdrop-blur-sm border-t border-gray-800 p-4 z-40" data-testid="sticky-mobile-cta">
-        <a
-          href="https://t.me/GraverAdm" data-track="tg"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block w-full bg-gradient-to-r from-teal-500 to-cyan-600 text-white px-6 py-4 rounded-lg font-semibold text-center hover:from-teal-600 hover:to-cyan-700 transition flex items-center justify-center"
-          data-testid="sticky-telegram-button"
-        >
-          <Send className="mr-2" size={20} />
-          Написать в Telegram
-        </a>
+      <div className="fixed bottom-0 left-0 right-0 lg:hidden bg-black/95 backdrop-blur-sm border-t border-gray-800 p-3 z-40" data-testid="sticky-mobile-cta">
+        <div className="flex gap-2">
+          <button
+            onClick={() => scrollToSection('contact')}
+            className="flex-1 bg-gradient-to-r from-teal-500 to-cyan-600 text-white px-4 py-3 rounded-lg font-semibold text-center hover:from-teal-600 hover:to-cyan-700 transition min-h-[48px]"
+            data-testid="sticky-form-button"
+          >
+            Запросить расчёт
+          </button>
+          <a
+            href="https://t.me/GraverAdm" data-track="tg"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-gray-800 text-white px-4 py-3 rounded-lg font-semibold text-center hover:bg-gray-700 transition flex items-center justify-center border border-gray-700 min-h-[48px]"
+            data-testid="sticky-telegram-button"
+          >
+            <Send size={20} />
+          </a>
+        </div>
       </div>
     </div>
   );
