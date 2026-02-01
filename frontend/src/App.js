@@ -1134,7 +1134,7 @@ function App() {
       {/* Footer */}
       <footer className="bg-black border-t border-gray-800 py-12" data-testid="footer">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
+          <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <div className="w-10 h-10 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-lg flex items-center justify-center">
@@ -1143,12 +1143,12 @@ function App() {
                 <span className="text-2xl font-bold text-white">Graver<span className="text-teal-500">.uz</span></span>
               </div>
               <p className="text-gray-400 text-sm leading-relaxed">
-                Премиальная лазерная гравировка и брендирование для бизнеса в Ташкенте. Корпоративные подарки, награды, маркировка.
+                {t('footer.description')}
               </p>
             </div>
 
             <div>
-              <h3 className="text-white font-bold mb-4">Контакты</h3>
+              <h3 className="text-white font-bold mb-4">{t('footer.contacts')}</h3>
               <div className="space-y-3 text-gray-400 text-sm">
                 <a href="tel:+998770802288" className="flex items-center hover:text-teal-500 transition" data-testid="footer-phone-1" data-track="tel">
                   <Phone size={16} className="mr-2" />
@@ -1164,26 +1164,43 @@ function App() {
                 </a>
                 <div className="flex items-start">
                   <MapPin size={16} className="mr-2 mt-1 flex-shrink-0" />
-                  <span>Ташкент, улица Мукими</span>
+                  <span>{t('footer.address')}</span>
                 </div>
               </div>
             </div>
 
             <div>
-              <h3 className="text-white font-bold mb-4">Режим работы</h3>
+              <h3 className="text-white font-bold mb-4">{t('nav.blog')}</h3>
               <div className="space-y-2 text-gray-400 text-sm">
-                <p><Clock size={16} className="inline mr-2" />Пн-Вс: 10:00 - 20:00</p>
-                <p className="text-teal-500 font-semibold">Заявки принимаем 24/7</p>
-                <p className="mt-4 pt-4 border-t border-gray-800 text-xs text-gray-500">
-                  ИП Graver.uz<br />
-                  Ташкент, Узбекистан
-                </p>
+                {t('blog.posts').slice(0, 3).map((post, index) => (
+                  <a 
+                    key={index}
+                    href={`/blog/${locale}/${post.slug}`}
+                    className="block hover:text-teal-500 transition line-clamp-1"
+                  >
+                    {post.title}
+                  </a>
+                ))}
+                <a 
+                  href={`/blog/${locale}`}
+                  className="block text-teal-500 hover:text-teal-400 font-medium mt-3"
+                >
+                  {t('blog.allPosts')} →
+                </a>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-white font-bold mb-4">{t('footer.workingHours')}</h3>
+              <div className="space-y-2 text-gray-400 text-sm">
+                <p><Clock size={16} className="inline mr-2" />{t('footer.schedule')}</p>
+                <p className="text-teal-500 font-semibold">{t('footer.requests24')}</p>
               </div>
             </div>
           </div>
 
           <div className="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
-            <p>© 2025 Graver.uz — Премиальная лазерная гравировка в Ташкенте</p>
+            <p>{t('footer.copyright')}</p>
           </div>
         </div>
       </footer>
