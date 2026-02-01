@@ -10,7 +10,33 @@
     "portfolio": "Портфолио",
     "process": "Процесс",
     "faq": "FAQ",
-    "contacts": "Контакты"
+    "contacts": "Контакты",
+    "blog": "Блог"
+  },
+  "blog": {
+    "title": "Полезные",
+    "titleAccent": "статьи",
+    "subtitle": "Гайды и советы по корпоративным подаркам и брендированию",
+    "readMore": "Читать статью",
+    "allPosts": "Все статьи",
+    "category": "Гайды",
+    "posts": [
+      {
+        "slug": "corporate-gifts-logo-tashkent",
+        "title": "Корпоративные подарки с логотипом в Ташкенте",
+        "excerpt": "Как выбрать, согласовать макет и уложиться в сроки"
+      },
+      {
+        "slug": "logo-engraving-bulk-guide",
+        "title": "Гравировка логотипа на подарках оптом",
+        "excerpt": "Требования к файлам, макет и контроль качества партии"
+      },
+      {
+        "slug": "supplier-corporate-gifts-tashkent",
+        "title": "Поставщик корпоративных подарков",
+        "excerpt": "Чек-лист закупщика для B2B в Ташкенте"
+      }
+    ]
   },
   "hero": {
     "badge": "Ташкент • Premium B2B решения",
