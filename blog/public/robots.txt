@@ -5,7 +5,11 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://gifting-hub-16.preview.emergentagent.com/sitemap-index.xml
+Sitemap: https://blog.graver.uz/sitemap-index.xml
+
+# Alternative language RSS feeds
+# /ru/rss.xml - Russian
+# /uz/rss.xml - Uzbek (Latin)
 
 # Crawl-delay (optional, for polite crawling)
 Crawl-delay: 1
