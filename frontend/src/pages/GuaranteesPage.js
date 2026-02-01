@@ -46,27 +46,43 @@ export default function GuaranteesPage() {
   useEffect(() => {
     document.documentElement.lang = locale === 'uz' ? 'uz-Latn' : 'ru';
     window.scrollTo(0, 0);
-  }, [locale]);
-
-  // Breadcrumb Schema
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": t.home,
-        "item": `${BASE_URL}/${locale}`
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": t.title,
-        "item": `${BASE_URL}/${locale}/guarantees`
-      }
-    ]
-  };
+    
+    // Inject JSON-LD via DOM (more reliable for CSR)
+    const breadcrumbSchema = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": t.home,
+          "item": `${BASE_URL}/${locale}`
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": t.title,
+          "item": `${BASE_URL}/${locale}/guarantees`
+        }
+      ]
+    };
+    
+    // Remove old schema if exists
+    const oldSchema = document.getElementById('breadcrumb-schema');
+    if (oldSchema) oldSchema.remove();
+    
+    // Add new schema
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.id = 'breadcrumb-schema';
+    script.textContent = JSON.stringify(breadcrumbSchema);
+    document.head.appendChild(script);
+    
+    return () => {
+      const schema = document.getElementById('breadcrumb-schema');
+      if (schema) schema.remove();
+    };
+  }, [locale, t.home, t.title]);
 
   return (
     <div className="min-h-screen bg-black">
@@ -74,7 +90,6 @@ export default function GuaranteesPage() {
         <title>{t.title} | Graver.uz</title>
         <meta name="description" content={t.meta} />
         <link rel="canonical" href={`${BASE_URL}/${locale}/guarantees`} />
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
       </Helmet>
 
       <header className="bg-black/95 border-b border-gray-800 py-4">
