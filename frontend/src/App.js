@@ -116,22 +116,24 @@ function App() {
       return;
     }
     
-    if (!formData.description || formData.description.trim().length < 10) {
-      alert('Пожалуйста, опишите задачу подробнее (минимум 10 символов)');
-      console.log('❌ Validation failed: description');
-      return;
-    }
-    
     setIsSubmitting(true);
     console.log('📤 Sending request...');
     
+    // Track form step 2 complete
+    if (window.gtag) {
+      window.gtag('event', 'form_step_2_complete', { event_category: 'form' });
+    }
+    
     try {
+      // Build description from form data
+      const description = `Тип: ${formData.orderType || 'Не указан'}\nТираж: ${formData.quantity || 'Не указан'}\n${formData.comment ? 'Комментарий: ' + formData.comment : ''}`.trim();
+      
       const payload = {
         name: formData.name,
         phone: formData.phone,
         company: formData.company || '',
         quantity: formData.quantity || '',
-        description: formData.description
+        description: description
       };
       
       console.log('Payload:', payload);
