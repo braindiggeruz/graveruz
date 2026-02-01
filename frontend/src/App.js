@@ -290,6 +290,7 @@ function App() {
               <button onClick={() => scrollToSection('portfolio')} className="text-gray-300 hover:text-teal-500 transition">{t('nav.portfolio')}</button>
               <button onClick={() => scrollToSection('process')} className="text-gray-300 hover:text-teal-500 transition">{t('nav.process')}</button>
               <button onClick={() => scrollToSection('faq')} className="text-gray-300 hover:text-teal-500 transition">{t('nav.faq')}</button>
+              <a href={`/blog/${locale}`} className="text-gray-300 hover:text-teal-500 transition" data-testid="nav-blog">{t('nav.blog')}</a>
               <button onClick={() => scrollToSection('contact')} className="text-gray-300 hover:text-teal-500 transition">{t('nav.contacts')}</button>
               <LanguageSwitcher />
             </nav>
