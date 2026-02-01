@@ -1,8 +1,70 @@
 import React, { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { Send, Home, Check, Clock, Award, Package } from 'lucide-react';
 import './App.css';
 
+// Simple translations for Thanks page
+const thanksTranslations = {
+  ru: {
+    title: 'Заявка принята.',
+    titleAccent: 'Мы уже считаем ваш тираж',
+    subtitle: 'Ответим в ближайшее рабочее время (10:00-20:00).',
+    subtitleUrgent: 'Если срочно — напишите в Telegram прямо сейчас.',
+    telegramCta: 'Написать в Telegram',
+    homeCta: 'Вернуться на главную',
+    nextTitle: 'Что дальше?',
+    nextSubtitle: 'Прозрачный процесс от заявки до получения готовой продукции',
+    step1Title: 'Макет',
+    step1Desc: 'Сначала делаем цифровой превью с точным размещением вашего логотипа. Вы утверждаете каждую деталь до производства.',
+    step1Time: 'В течение 2 часов',
+    step2Title: 'Производство',
+    step2Desc: 'Гравируем партию согласно утверждённому макету. Контроль качества каждой единицы на всех этапах.',
+    step2Time: '1-3 рабочих дня',
+    step3Title: 'Выдача',
+    step3Desc: 'Доставка или самовывоз в оговорённые сроки. Все документы для юрлиц. Прозрачность на каждом шаге.',
+    step3Time: 'Гарантия качества',
+    quickContact: 'Быстрый контакт',
+    quickContactDesc: 'Обычно отвечаем в течение 15-60 минут в рабочее время',
+    phones: 'Телефоны:',
+    corporate: 'Работаем с корпоративными заказами:',
+    corporateDesc: 'мерч, награды, подарочные наборы для сотрудников и клиентов.',
+    noSurprises: 'Без сюрпризов:',
+    noSurprisesDesc: 'сначала макет с точным превью — потом производство. Полный контроль на каждом этапе.',
+    copyright: '© 2025 Graver.uz — Премиальная лазерная гравировка в Ташкенте'
+  },
+  uz: {
+    title: 'Ariza qabul qilindi.',
+    titleAccent: 'Biz allaqachon tirajingizni hisoblaymiz',
+    subtitle: 'Yaqin ish vaqtida (10:00-20:00) javob beramiz.',
+    subtitleUrgent: 'Shoshilinch bo\'lsa — hoziroq Telegramga yozing.',
+    telegramCta: 'Telegramga yozish',
+    homeCta: 'Bosh sahifaga qaytish',
+    nextTitle: 'Keyingi qadamlar?',
+    nextSubtitle: 'Arizadan tayyor mahsulotgacha shaffof jarayon',
+    step1Title: 'Maket',
+    step1Desc: 'Avval logotipingizning aniq joylashuvi bilan raqamli ko\'rib chiqish qilamiz. Ishlab chiqarishdan oldin har bir tafsilotni tasdiqlaysiz.',
+    step1Time: '2 soat ichida',
+    step2Title: 'Ishlab chiqarish',
+    step2Desc: 'Tasdiqlangan maketga muvofiq partiyani gravyura qilamiz. Barcha bosqichlarda har bir birlikning sifat nazorati.',
+    step2Time: '1-3 ish kuni',
+    step3Title: 'Topshirish',
+    step3Desc: 'Kelishilgan muddatlarda yetkazib berish yoki olib ketish. Yuridik shaxslar uchun barcha hujjatlar. Har bir qadamda shaffoflik.',
+    step3Time: 'Sifat kafolati',
+    quickContact: 'Tezkor aloqa',
+    quickContactDesc: 'Odatda ish vaqtida 15-60 daqiqa ichida javob beramiz',
+    phones: 'Telefonlar:',
+    corporate: 'Korporativ buyurtmalar bilan ishlaymiz:',
+    corporateDesc: 'merch, mukofotlar, xodimlar va mijozlar uchun sovg\'a to\'plamlari.',
+    noSurprises: 'Kutilmagan hodisalarsiz:',
+    noSurprisesDesc: 'avval aniq ko\'rib chiqish bilan maket — keyin ishlab chiqarish. Har bir bosqichda to\'liq nazorat.',
+    copyright: '© 2025 Graver.uz — Toshkentda premium lazer gravyurasi'
+  }
+};
+
 function Thanks() {
+  const { locale = 'ru' } = useParams();
+  const t = thanksTranslations[locale] || thanksTranslations.ru;
+
   useEffect(() => {
     // Track lead conversion on page load
     if (window.__trackLeadSuccess) {
@@ -11,7 +73,7 @@ function Thanks() {
   }, []);
 
   const handleBackHome = () => {
-    window.location.href = '/';
+    window.location.href = `/${locale}`;
   };
 
   return (
