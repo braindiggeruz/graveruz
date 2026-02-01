@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { t } from '../../../../i18n/utils';
+
+const locale = 'uz';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('uz/posts');
+  const categories = [...new Set(posts.map(post => post.data.category))];
+  return categories.map(category => ({
+    params: { category: category.toLowerCase() },
+    props: { category, posts: posts.filter(p => p.data.category === category) }
+  }));
+}
+
+const { category, posts } = Astro.props;
+const sortedPosts = posts.sort((a, b) => 
+  new Date(b.data.publishedAt).getTime() - new Date(a.data.publishedAt).getTime()
+);
+
+const siteUrl = import.meta.env.SITE || 'https://blog.graver.uz';
+const localizedCategory = t(locale, `categories.${category.toLowerCase()}`) || category;
+const title = `${localizedCategory} — Korporativ sovg'alar haqida maqolalar | Graver.uz`;
+const description = `"${localizedCategory}" kategoriyasidagi maqolalar: qo'llanmalar va amaliy tavsiyalar.`;
+
+const breadcrumbs = [
+  { name: t(locale, 'breadcrumbs.home'), url: `${siteUrl}/${locale}/` },
+  { name: localizedCategory, url: `${siteUrl}/${locale}/category/${encodeURIComponent(category.toLowerCase())}` }
+];
+---
+
+<BaseLayout title={title} description={description} locale={locale} breadcrumbs={breadcrumbs}>
+  <section class="container" style="padding: 64px 20px;">
+    <nav class="breadcrumbs">
+      <a href={`/${locale}/`}>{t(locale, 'breadcrumbs.home')}</a>
+      <span>›</span>
+      <span>{localizedCategory}</span>
+    </nav>
+    
+    <h1 style="font-size: 2.5rem; color: #fff; margin-bottom: 16px;">
+      {t(locale, 'breadcrumbs.category')}: <span style="color: #14b8a6;">{localizedCategory}</span>
+    </h1>
+    <p style="color: #888; margin-bottom: 48px; font-size: 1.1rem;">
+      {sortedPosts.length} {t(locale, 'pagination.articlesInCategory')}
+    </p>
+    
+    <div class="posts-grid">
+      {sortedPosts.map(post => (
+        <article class="post-card">
+          <div class="post-card-content">
+            <span class="category">{localizedCategory}</span>
+            <h3><a href={`/${locale}/${post.slug}`} style="color: inherit; text-decoration: none;">{post.data.title}</a></h3>
+            <p>{post.data.excerpt}</p>
+            <a href={`/${locale}/${post.slug}`} class="read-more">{t(locale, 'article.readMore')} →</a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
