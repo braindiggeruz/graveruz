@@ -12,6 +12,11 @@ const NotFound = lazy(() => import("@/components/NotFound"));
 const ProcessPage = lazy(() => import("@/pages/ProcessPage"));
 const GuaranteesPage = lazy(() => import("@/pages/GuaranteesPage"));
 const ContactsPage = lazy(() => import("@/pages/ContactsPage"));
+// B2C Catalog Pages
+const CatalogPage = lazy(() => import("@/pages/CatalogPage"));
+const WatchesPage = lazy(() => import("@/pages/WatchesPage"));
+const LightersPage = lazy(() => import("@/pages/LightersPage"));
+const EngravedGiftsPage = lazy(() => import("@/pages/EngravedGiftsPage"));
 
 // Loading fallback for lazy components
 const LoadingFallback = () => (
