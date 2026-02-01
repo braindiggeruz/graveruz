@@ -18,11 +18,11 @@ const content = {
     cta: 'Оставить заявку',
     details: 'Подробнее',
     categories: [
-      { id: 'watches', icon: Watch, name: 'Часы с логотипом', price: '450 000 – 2 000 000 сум', desc: 'Наши модели с гравировкой логотипа или инициалов', link: 'watches-with-logo' },
-      { id: 'lighters', icon: Flame, name: 'Зажигалки (аналог Zippo)', price: '140 000 – 290 000 сум', desc: '1 или 2 стороны + топливо опционально', link: 'lighters-engraving' },
-      { id: 'pen', icon: PenTool, name: 'Ручки с гравировкой', price: '25 000 – 200 000 сум', desc: 'Зависит от модели и тиража', link: 'engraved-gifts' },
-      { id: 'powerbank', icon: Battery, name: 'Повербанки с гравировкой', price: '90 000 – 600 000 сум', desc: 'Зависит от бренда и сложности', link: 'engraved-gifts' },
-      { id: 'diary', icon: BookOpen, name: 'Ежедневники', price: '50 000 – 250 000 сум', desc: 'Гравировка или УФ печать', link: 'engraved-gifts' }
+      { id: 'watches', name: 'Часы с логотипом', price: '450 000 – 2 000 000 сум', desc: 'Наши модели с гравировкой логотипа или инициалов', link: 'watches-with-logo' },
+      { id: 'lighters', name: 'Зажигалки (аналог Zippo)', price: '140 000 – 290 000 сум', desc: '1 или 2 стороны + топливо опционально', link: 'lighters-engraving' },
+      { id: 'pen', name: 'Ручки с гравировкой', price: '25 000 – 200 000 сум', desc: 'Зависит от модели и тиража', link: 'engraved-gifts' },
+      { id: 'powerbank', name: 'Повербанки с гравировкой', price: '90 000 – 600 000 сум', desc: 'Зависит от бренда и сложности', link: 'engraved-gifts' },
+      { id: 'diary', name: 'Ежедневники', price: '50 000 – 250 000 сум', desc: 'Гравировка или УФ печать', link: 'engraved-gifts' }
     ],
     faq: [
       { q: 'Можно ли принести своё изделие?', a: 'Обычно нет — работаем на нашей продукции, чтобы гарантировать результат. Исключения обсуждаются в Telegram.' },
@@ -44,11 +44,11 @@ const content = {
     cta: 'Ariza qoldirish',
     details: 'Batafsil',
     categories: [
-      { id: 'watches', icon: Watch, name: 'Logotipli soat', price: '450 000 – 2 000 000 so\'m', desc: 'Logo yoki initsiallar bilan bizning modellar', link: 'logotipli-soat' },
-      { id: 'lighters', icon: Flame, name: 'Zajigalka (Zippo analogi)', price: '140 000 – 290 000 so\'m', desc: '1 yoki 2 tomon + yoqilg\'i ixtiyoriy', link: 'gravirovkali-zajigalka' },
-      { id: 'pen', icon: PenTool, name: 'Gravirovkali ruchka', price: '25 000 – 200 000 so\'m', desc: 'Model va tirajga bog\'liq', link: 'gravirovkali-sovgalar' },
-      { id: 'powerbank', icon: Battery, name: 'Gravirovkali powerbank', price: '90 000 – 600 000 so\'m', desc: 'Brend va murakkablikka bog\'liq', link: 'gravirovkali-sovgalar' },
-      { id: 'diary', icon: BookOpen, name: 'Kundaliklar', price: '50 000 – 250 000 so\'m', desc: 'Gravirovka yoki UV bosma', link: 'gravirovkali-sovgalar' }
+      { id: 'watches', name: 'Logotipli soat', price: '450 000 – 2 000 000 so\'m', desc: 'Logo yoki initsiallar bilan bizning modellar', link: 'logotipli-soat' },
+      { id: 'lighters', name: 'Zajigalka (Zippo analogi)', price: '140 000 – 290 000 so\'m', desc: '1 yoki 2 tomon + yoqilg\'i ixtiyoriy', link: 'gravirovkali-zajigalka' },
+      { id: 'pen', name: 'Gravirovkali ruchka', price: '25 000 – 200 000 so\'m', desc: 'Model va tirajga bog\'liq', link: 'gravirovkali-sovgalar' },
+      { id: 'powerbank', name: 'Gravirovkali powerbank', price: '90 000 – 600 000 so\'m', desc: 'Brend va murakkablikka bog\'liq', link: 'gravirovkali-sovgalar' },
+      { id: 'diary', name: 'Kundaliklar', price: '50 000 – 250 000 so\'m', desc: 'Gravirovka yoki UV bosma', link: 'gravirovkali-sovgalar' }
     ],
     faq: [
       { q: 'O\'z mahsulotimni keltirsa bo\'ladimi?', a: 'Odatda yo\'q — natijani kafolatlash uchun o\'z mahsulotlarimizda ishlaymiz. Istisnolar Telegramda muhokama qilinadi.' },
