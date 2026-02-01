@@ -50,26 +50,15 @@ function Thanks() {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight" style={{
-            WebkitFontSmoothing: 'antialiased',
-            MozOsxFontSmoothing: 'grayscale',
-            textRendering: 'geometricPrecision'
-          }}>
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
             Заявка принята.<br />
-            <span className="bg-gradient-to-r from-teal-500 to-cyan-400 bg-clip-text text-transparent" style={{
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent'
-            }}>
+            <span className="bg-gradient-to-r from-teal-500 to-cyan-400 bg-clip-text text-transparent">
               Мы уже считаем ваш тираж
             </span>
           </h1>
 
           {/* Subheading */}
-          <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed" style={{
-            WebkitFontSmoothing: 'antialiased',
-            MozOsxFontSmoothing: 'grayscale',
-            textRendering: 'geometricPrecision'
-          }}>
+          <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
             Ответим в ближайшее рабочее время (10:00-20:00).<br />
             Если срочно — напишите в Telegram прямо сейчас.
           </p>
