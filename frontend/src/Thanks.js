@@ -19,33 +19,31 @@ function Thanks() {
       {/* Hero Section with Background */}
       <section 
         className="relative min-h-screen flex items-center justify-center overflow-hidden"
-        style={{
-          backgroundImage: 'url(/pictures/thanks-bg.png)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}
         data-testid="thanks-hero"
       >
-        {/* Dark overlay for text readability - SEPARATED LAYER */}
+        {/* Background image layer - lowest z-index */}
         <div 
-          className="absolute inset-0" 
+          className="absolute inset-0"
           style={{
-            background: 'linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.7), rgba(0,0,0,0.9))',
-            backdropFilter: 'blur(8px)',
-            WebkitBackdropFilter: 'blur(8px)',
+            backgroundImage: 'url(/pictures/thanks-bg.png)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
             zIndex: 0
           }}
         />
         
-        {/* Content - CRISP TEXT LAYER */}
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center" style={{
-          filter: 'none',
-          backdropFilter: 'none',
-          WebkitBackdropFilter: 'none',
-          transform: 'none',
-          opacity: 1
-        }}>
+        {/* Blur overlay - applied ONLY to background, not to content above */}
+        <div 
+          className="absolute inset-0" 
+          style={{
+            backgroundColor: 'rgba(0,0,0,0.85)',
+            zIndex: 1
+          }}
+        />
+        
+        {/* Content - CRISP TEXT LAYER with higher z-index */}
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center" style={{ zIndex: 2 }}>
           {/* Success Icon */}
           <div className="inline-flex items-center justify-center w-20 h-20 bg-teal-500/20 border-2 border-teal-500 rounded-full mb-8 animate-pulse">
             <Check className="text-teal-500" size={40} />
