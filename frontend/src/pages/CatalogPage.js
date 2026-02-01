@@ -129,9 +129,12 @@ export default function CatalogPage() {
             </div>
             <span className="text-2xl font-bold text-white">Graver<span className="text-teal-500">.uz</span></span>
           </Link>
-          <a href="https://t.me/GraverAdm" className="bg-teal-500 text-white px-4 py-2 rounded-lg font-medium hover:bg-teal-600 transition flex items-center">
-            <Send size={16} className="mr-2" />Telegram
-          </a>
+          <div className="flex items-center gap-4">
+            <LanguageSwitcher />
+            <a href="https://t.me/GraverAdm" className="bg-teal-500 text-white px-4 py-2 rounded-lg font-medium hover:bg-teal-600 transition flex items-center">
+              <Send size={16} className="mr-2" />Telegram
+            </a>
+          </div>
         </div>
       </header>
 
