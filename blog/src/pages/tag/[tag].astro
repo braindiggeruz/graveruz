@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  const allTags = posts.flatMap(post => post.data.tags);
+  const uniqueTags = [...new Set(allTags)];
+  
+  return uniqueTags.map(tag => ({
+    params: { tag: tag.toLowerCase() },
+    props: { 
+      tag, 
+      posts: posts.filter(p => p.data.tags.map(t => t.toLowerCase()).includes(tag.toLowerCase())) 
+    }
+  }));
+}
+
+const { tag, posts } = Astro.props;
+const sortedPosts = posts.sort((a, b) => 
+  new Date(b.data.publishedAt).getTime() - new Date(a.data.publishedAt).getTime()
+);
+
+const siteUrl = 'https://gifting-hub-16.preview.emergentagent.com';
+const title = `${tag} — Статьи по теме | Graver.uz`;
+const description = `Статьи по теме "${tag}": полезные материалы о корпоративных подарках, брендировании и гравировке.`;
+
+const breadcrumbs = [
+  { name: 'Главная', url: siteUrl },
+  { name: `Тег: ${tag}`, url: `${siteUrl}/tag/${encodeURIComponent(tag.toLowerCase())}` }
+];
+---
+
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs}>
+  <section class="container" style="padding: 64px 20px;">
+    <nav class="breadcrumbs">
+      <a href="/">Блог</a>
+      <span>›</span>
+      <span>Тег: {tag}</span>
+    </nav>
+    
+    <h1 style="font-size: 2.5rem; color: #fff; margin-bottom: 16px;">
+      Тег: <span style="color: #14b8a6;">#{tag}</span>
+    </h1>
+    <p style="color: #888; margin-bottom: 48px; font-size: 1.1rem;">
+      {sortedPosts.length} {sortedPosts.length === 1 ? 'статья' : 'статей'} с этим тегом
+    </p>
+    
+    <div class="posts-grid">
+      {sortedPosts.map(post => (
+        <article class="post-card">
+          <div class="post-card-content">
+            <span class="category">{post.data.category}</span>
+            <h3>
+              <a href={`/${post.slug}`} style="color: inherit; text-decoration: none;">
+                {post.data.title}
+              </a>
+            </h3>
+            <p>{post.data.excerpt}</p>
+            <a href={`/${post.slug}`} class="read-more">Читать статью →</a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
