@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://gifting-portal-1.preview.emergentagent.com',
+  site: 'https://giftseo-optimizer.preview.emergentagent.com',
   integrations: [sitemap()],
   markdown: {
     shikiConfig: {
