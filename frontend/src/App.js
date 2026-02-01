@@ -7,12 +7,15 @@ const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || window.location.origin;
 
 function App() {
   const navigate = useNavigate();
+  const [formStep, setFormStep] = useState(1); // Multi-step form
   const [formData, setFormData] = useState({
     name: '',
     phone: '+998 ',
     company: '',
-    quantity: '',
-    description: '',
+    orderType: '', // Подарки / Награды / Брендирование / Другое
+    quantity: '', // 1-10 / 11-100 / 101-1000 / 1000+
+    comment: '',
+    email: '',
     website: '' // honeypot field
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
