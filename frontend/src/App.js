@@ -120,6 +120,12 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
+    // Prevent double-submit
+    if (isSubmitting) {
+      console.log('⚠️ Already submitting, ignoring');
+      return;
+    }
+    
     console.log('=== FORM SUBMIT START ===');
     console.log('Backend URL:', BACKEND_URL);
     console.log('Form data:', { ...formData, website: '[hidden]' });
@@ -155,10 +161,12 @@ function App() {
     setIsSubmitting(true);
     console.log('📤 Sending request...');
     
-    // Track form step 2 complete
-    if (window.gtag) {
-      window.gtag('event', 'form_step_2_complete', { event_category: 'form' });
-    }
+    // Track form step 2 complete (non-blocking)
+    try {
+      if (window.gtag) {
+        window.gtag('event', 'form_step_2_complete', { event_category: 'form' });
+      }
+    } catch (e) { /* ignore analytics errors */ }
     
     try {
       // Build description from form data
@@ -174,14 +182,21 @@ function App() {
       
       console.log('Payload:', payload);
       
+      // Create AbortController for timeout
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 15000); // 15s timeout
+      
       const response = await fetch(`${BACKEND_URL}/api/leads`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
         body: JSON.stringify(payload),
+        signal: controller.signal
       });
       
+      clearTimeout(timeoutId);
       console.log('Response status:', response.status);
       
       if (!response.ok) {
@@ -201,22 +216,34 @@ function App() {
       
       setLastSubmitTime(now);
       
-      // Track lead success
-      if (window.__trackLeadSuccess) {
-        window.__trackLeadSuccess();
-      }
+      // Track lead success (non-blocking)
+      try {
+        if (window.__trackLeadSuccess) {
+          window.__trackLeadSuccess();
+        }
+      } catch (e) { /* ignore analytics errors */ }
       
-      // Redirect to thanks page with locale
-      console.log('🔄 Redirecting to thanks page');
-      window.location.href = `/${locale || 'ru'}/thanks`;
+      // Redirect to thanks page with locale - use assign for better compatibility
+      const targetUrl = `/${locale || 'ru'}/thanks`;
+      console.log('🔄 Redirecting to:', targetUrl);
+      
+      // Small delay to ensure analytics fires
+      setTimeout(() => {
+        window.location.assign(targetUrl);
+      }, 100);
       
     } catch (error) {
       console.error('❌ Error:', error);
-      const errorMsg = error.message || 'Произошла ошибка при отправке заявки';
-      alert(`${errorMsg}\n\nПожалуйста, позвоните нам или напишите в Telegram: https://t.me/GraverAdm`);
-    } finally {
       setIsSubmitting(false);
-      console.log('=== FORM SUBMIT END ===');
+      
+      let errorMsg = 'Произошла ошибка при отправке заявки';
+      if (error.name === 'AbortError') {
+        errorMsg = 'Превышено время ожидания. Попробуйте ещё раз.';
+      } else if (error.message) {
+        errorMsg = error.message;
+      }
+      
+      alert(`${errorMsg}\n\nПожалуйста, позвоните нам или напишите в Telegram: https://t.me/GraverAdm`);
     }
   };
 
