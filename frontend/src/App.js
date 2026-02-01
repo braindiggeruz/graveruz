@@ -658,10 +658,10 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Портфолио <span className="text-teal-500">наших работ</span>
+              {t('portfolio.title')} <span className="text-teal-500">{t('portfolio.titleAccent')}</span>
             </h2>
             <p className="text-xl text-gray-400">
-              Реальные проекты для B2B клиентов
+              {t('portfolio.subtitle')}
             </p>
           </div>
 
@@ -692,19 +692,19 @@ function App() {
                   </picture>
                 </div>
                 <div className="p-6">
-                  <span className="text-teal-500 text-sm font-semibold">{item.category}</span>
-                  <h3 className="text-xl font-bold text-white mt-2 mb-3">{item.title}</h3>
-                  <p className="text-gray-400 text-sm mb-4">{item.description}</p>
+                  <span className="text-teal-500 text-sm font-semibold">{t(`portfolio.items.${item.id}.category`)}</span>
+                  <h3 className="text-xl font-bold text-white mt-2 mb-3">{t(`portfolio.items.${item.id}.title`)}</h3>
+                  <p className="text-gray-400 text-sm mb-4">{t(`portfolio.items.${item.id}.description`)}</p>
                   <div className="space-y-2 text-xs text-gray-400">
-                    <div><span className="text-gray-500">Материал:</span> {item.material}</div>
-                    <div><span className="text-gray-500">Применение:</span> {item.application}</div>
+                    <div><span className="text-gray-500">{t('portfolio.material')}:</span> {t(`portfolio.items.${item.id}.material`)}</div>
+                    <div><span className="text-gray-500">{t('portfolio.application')}:</span> {t(`portfolio.items.${item.id}.application`)}</div>
                   </div>
                   <button 
                     onClick={() => scrollToSection('contact')}
                     className="inline-flex items-center mt-4 text-teal-500 hover:text-teal-400 font-semibold text-sm group/link"
                     data-testid={`portfolio-cta-${index + 1}`}
                   >
-                    Запросить расчёт
+                    {t('portfolio.cta')}
                     <ChevronDown className="ml-2 rotate-[-90deg] group-hover/link:translate-x-1 transition-transform" size={14} />
                   </button>
                 </div>
