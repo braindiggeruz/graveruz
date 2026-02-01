@@ -749,17 +749,31 @@ function App() {
 
       {/* Contact Form Section */}
       <section className="py-20 bg-gray-900" id="contact" data-testid="contact-section">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Запросить <span className="text-teal-500">расчёт</span>
             </h2>
-            <p className="text-xl text-gray-400">
+            <p className="text-lg text-gray-400">
               Заполните форму, и мы подготовим коммерческое предложение в течение 2 часов
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} id="leadForm" className="bg-black/50 border border-gray-800 rounded-2xl p-8" data-testid="contact-form">
+          <form onSubmit={handleSubmit} id="leadForm" className="bg-black/50 border border-gray-800 rounded-2xl p-6 sm:p-8" data-testid="contact-form">
+            {/* Progress Bar */}
+            <div className="mb-8">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-sm text-gray-400">Шаг {formStep} из 2</span>
+                <span className="text-sm text-teal-500 font-semibold">{formStep === 1 ? 'Расскажите о проекте' : 'Как с вами связаться?'}</span>
+              </div>
+              <div className="w-full bg-gray-800 rounded-full h-2">
+                <div 
+                  className="bg-gradient-to-r from-teal-500 to-cyan-500 h-2 rounded-full transition-all duration-500"
+                  style={{ width: formStep === 1 ? '50%' : '100%' }}
+                />
+              </div>
+            </div>
+            
             {/* Hidden UTM fields */}
             <input type="hidden" name="utm_source" />
             <input type="hidden" name="utm_medium" />
@@ -767,108 +781,183 @@ function App() {
             <input type="hidden" name="utm_term" />
             <input type="hidden" name="utm_content" />
             
-            <div className="grid md:grid-cols-2 gap-6 mb-6">
-              <div>
-                <label className="block text-gray-300 font-semibold mb-2">Ваше имя *</label>
+            {/* STEP 1: Project Info */}
+            {formStep === 1 && (
+              <div className="space-y-6" data-testid="form-step-1">
+                <div>
+                  <label className="block text-gray-300 font-semibold mb-2">Компания *</label>
+                  <input
+                    type="text"
+                    required
+                    value={formData.company}
+                    onChange={(e) => setFormData({...formData, company: e.target.value})}
+                    className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-teal-500 focus:outline-none transition"
+                    placeholder="ООО 'Ваша компания'"
+                    data-testid="form-input-company"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-gray-300 font-semibold mb-2">Тип заказа *</label>
+                  <select
+                    required
+                    value={formData.orderType}
+                    onChange={(e) => setFormData({...formData, orderType: e.target.value})}
+                    className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-teal-500 focus:outline-none transition appearance-none cursor-pointer"
+                    data-testid="form-input-orderType"
+                  >
+                    <option value="" disabled>Выберите тип заказа</option>
+                    <option value="Подарки">Корпоративные подарки</option>
+                    <option value="Награды">Награды и признание</option>
+                    <option value="Брендирование">Брендирование продукции</option>
+                    <option value="Маркировка">Промышленная маркировка</option>
+                    <option value="Другое">Другое</option>
+                  </select>
+                </div>
+                
+                <div>
+                  <label className="block text-gray-300 font-semibold mb-2">Примерный тираж *</label>
+                  <select
+                    required
+                    value={formData.quantity}
+                    onChange={(e) => setFormData({...formData, quantity: e.target.value})}
+                    className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-teal-500 focus:outline-none transition appearance-none cursor-pointer"
+                    data-testid="form-input-quantity"
+                  >
+                    <option value="" disabled>Выберите объём</option>
+                    <option value="1-10">1-10 единиц</option>
+                    <option value="11-100">11-100 единиц</option>
+                    <option value="101-1000">101-1000 единиц</option>
+                    <option value="1000+">1000+ единиц</option>
+                  </select>
+                </div>
+
+                <button
+                  type="button"
+                  onClick={() => {
+                    if (!formData.company || !formData.orderType || !formData.quantity) {
+                      alert('Пожалуйста, заполните все поля');
+                      return;
+                    }
+                    // Track step 1 complete
+                    if (window.gtag) {
+                      window.gtag('event', 'form_step_1_complete', { event_category: 'form' });
+                    }
+                    setFormStep(2);
+                  }}
+                  className="w-full bg-gradient-to-r from-teal-500 to-cyan-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-teal-600 hover:to-cyan-700 transition"
+                  data-testid="form-next-button"
+                >
+                  Далее →
+                </button>
+              </div>
+            )}
+            
+            {/* STEP 2: Contact Info */}
+            {formStep === 2 && (
+              <div className="space-y-6" data-testid="form-step-2">
+                <div>
+                  <label className="block text-gray-300 font-semibold mb-2">Ваше имя *</label>
+                  <input
+                    type="text"
+                    required
+                    value={formData.name}
+                    onChange={(e) => setFormData({...formData, name: e.target.value})}
+                    className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-teal-500 focus:outline-none transition"
+                    placeholder="Александр Петров"
+                    data-testid="form-input-name"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-gray-300 font-semibold mb-2">Телефон *</label>
+                  <input
+                    type="tel"
+                    required
+                    value={formData.phone}
+                    onChange={handlePhoneChange}
+                    className={`w-full bg-gray-900/50 border ${phoneError ? 'border-red-500' : 'border-gray-700'} rounded-lg px-4 py-3 text-white focus:border-teal-500 focus:outline-none transition`}
+                    placeholder="+998 XX XXX XX XX"
+                    maxLength="17"
+                    data-testid="form-input-phone"
+                  />
+                  {phoneError && <p className="text-red-500 text-sm mt-1">{phoneError}</p>}
+                </div>
+                
+                <div>
+                  <label className="block text-gray-300 font-semibold mb-2">Email <span className="text-gray-500 font-normal">(опционально)</span></label>
+                  <input
+                    type="email"
+                    value={formData.email}
+                    onChange={(e) => setFormData({...formData, email: e.target.value})}
+                    className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-teal-500 focus:outline-none transition"
+                    placeholder="email@company.uz"
+                    data-testid="form-input-email"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-gray-300 font-semibold mb-2">Комментарий <span className="text-gray-500 font-normal">(опционально)</span></label>
+                  <textarea
+                    value={formData.comment}
+                    onChange={(e) => setFormData({...formData, comment: e.target.value})}
+                    rows={3}
+                    className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-teal-500 focus:outline-none transition resize-none"
+                    placeholder="Дополнительные пожелания, сроки, материалы..."
+                    data-testid="form-input-comment"
+                  />
+                </div>
+
+                {/* Honeypot field - hidden from users */}
                 <input
                   type="text"
-                  required
-                  value={formData.name}
-                  onChange={(e) => setFormData({...formData, name: e.target.value})}
-                  className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-teal-500 focus:outline-none transition"
-                  placeholder="Александр Петров"
-                  data-testid="form-input-name"
+                  name="website"
+                  value={formData.website}
+                  onChange={(e) => setFormData({...formData, website: e.target.value})}
+                  style={{ display: 'none' }}
+                  tabIndex="-1"
+                  autoComplete="off"
                 />
-              </div>
-              <div>
-                <label className="block text-gray-300 font-semibold mb-2">Телефон *</label>
-                <input
-                  type="tel"
-                  required
-                  value={formData.phone}
-                  onChange={handlePhoneChange}
-                  className={`w-full bg-gray-900/50 border ${phoneError ? 'border-red-500' : 'border-gray-700'} rounded-lg px-4 py-3 text-white focus:border-teal-500 focus:outline-none transition`}
-                  placeholder="+998 XX XXX XX XX"
-                  maxLength="17"
-                  data-testid="form-input-phone"
-                />
-                {phoneError && <p className="text-red-500 text-sm mt-1">{phoneError}</p>}
-              </div>
-            </div>
 
-            <div className="grid md:grid-cols-2 gap-6 mb-6">
-              <div>
-                <label className="block text-gray-300 font-semibold mb-2">Компания</label>
-                <input
-                  type="text"
-                  value={formData.company}
-                  onChange={(e) => setFormData({...formData, company: e.target.value})}
-                  className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-teal-500 focus:outline-none transition"
-                  placeholder="ООО 'Ваша компания'"
-                  data-testid="form-input-company"
-                />
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <button
+                    type="button"
+                    onClick={() => setFormStep(1)}
+                    className="sm:w-auto bg-gray-800 text-white px-6 py-4 rounded-lg font-semibold hover:bg-gray-700 transition border border-gray-700"
+                    data-testid="form-back-button"
+                  >
+                    ← Назад
+                  </button>
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="flex-1 bg-gradient-to-r from-teal-500 to-cyan-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-teal-600 hover:to-cyan-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                    data-testid="form-submit-button"
+                  >
+                    {isSubmitting ? 'Отправка...' : 'Отправить заявку'}
+                  </button>
+                </div>
               </div>
-              <div>
-                <label className="block text-gray-300 font-semibold mb-2">Тираж (шт)</label>
-                <input
-                  type="number"
-                  value={formData.quantity}
-                  onChange={(e) => setFormData({...formData, quantity: e.target.value})}
-                  className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-teal-500 focus:outline-none transition"
-                  placeholder="100"
-                  data-testid="form-input-quantity"
-                />
-              </div>
-            </div>
+            )}
 
-            <div className="mb-6">
-              <label className="block text-gray-300 font-semibold mb-2">Описание задачи *</label>
-              <textarea
-                required
-                value={formData.description}
-                onChange={(e) => setFormData({...formData, description: e.target.value})}
-                rows={4}
-                className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-teal-500 focus:outline-none transition resize-none"
-                placeholder="Опишите, что хотите сделать: предмет, материал, что наносить (логотип/текст/фото), к какому сроку..."
-                data-testid="form-input-description"
-              />
-            </div>
-
-            {/* Honeypot field - hidden from users */}
-            <input
-              type="text"
-              name="website"
-              value={formData.website}
-              onChange={(e) => setFormData({...formData, website: e.target.value})}
-              style={{ display: 'none' }}
-              tabIndex="-1"
-              autoComplete="off"
-            />
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="flex-1 bg-gradient-to-r from-teal-500 to-cyan-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-teal-600 hover:to-cyan-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
-                data-testid="form-submit-button"
-              >
-                {isSubmitting ? 'Отправка...' : 'Отправить заявку'}
-              </button>
+            <p className="text-gray-500 text-sm mt-6 text-center">
+              Нажимая кнопку, вы соглашаетесь на обработку персональных данных
+            </p>
+            
+            {/* Alternative - Telegram */}
+            <div className="mt-6 pt-6 border-t border-gray-800 text-center">
+              <p className="text-gray-400 text-sm mb-3">Нужно быстрее?</p>
               <a
                 href="https://t.me/GraverAdm" data-track="tg"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white/20 transition border border-white/20 flex items-center justify-center"
+                className="inline-flex items-center text-teal-500 hover:text-teal-400 font-semibold transition"
                 data-testid="form-telegram-alternative"
               >
-                <Send className="mr-2" size={20} />
-                Или в Telegram
+                <Send className="mr-2" size={18} />
+                Написать в Telegram
               </a>
             </div>
-
-            <p className="text-gray-500 text-sm mt-4 text-center">
-              Нажимая кнопку, вы соглашаетесь на обработку персональных данных
-            </p>
           </form>
         </div>
       </section>
