@@ -207,9 +207,9 @@ function App() {
         window.__trackLeadSuccess();
       }
       
-      // Redirect to thanks page
-      console.log('🔄 Redirecting to /thanks');
-      window.location.href = '/thanks';
+      // Redirect to thanks page with locale
+      console.log('🔄 Redirecting to thanks page');
+      window.location.href = `/${locale || 'ru'}/thanks`;
       
     } catch (error) {
       console.error('❌ Error:', error);
