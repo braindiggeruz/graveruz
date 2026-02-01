@@ -1,8 +1,12 @@
 ---
-// Base Layout with full SEO
+import { locales, defaultLocale, getLocalizedUrl, getAlternateUrls } from '../i18n/config';
+import type { Locale } from '../i18n/config';
+import { t } from '../i18n/utils';
+
 export interface Props {
   title: string;
   description: string;
+  locale: Locale;
   canonical?: string;
   image?: string;
   article?: {
@@ -14,16 +18,28 @@ export interface Props {
   };
   breadcrumbs?: { name: string; url: string }[];
   faq?: { question: string; answer: string }[];
+  alternateSlug?: string; // For linking translations
 }
 
-const { title, description, canonical, image, article, breadcrumbs, faq } = Astro.props;
+const { title, description, locale, canonical, image, article, breadcrumbs, faq, alternateSlug } = Astro.props;
 
-const siteUrl = 'https://gifting-hub-16.preview.emergentagent.com';
+const siteUrl = import.meta.env.SITE || 'https://blog.graver.uz';
 const mainSiteUrl = 'https://gifting-hub-16.emergent.host';
-const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).href;
+
+// Build canonical URL
+const currentPath = Astro.url.pathname;
+const canonicalUrl = canonical || `${siteUrl}${currentPath}`;
+
+// Build alternate URLs for hreflang
+const pathWithoutLocale = currentPath.replace(/^\/(ru|uz)/, '');
+const alternateUrls = locales.map(loc => ({
+  locale: loc,
+  url: `${siteUrl}/${loc}${pathWithoutLocale || '/'}`
+}));
+
 const ogImage = image || `${siteUrl}/images/og-default.jpg`;
 
-// NEED LINKS - заглушки для контактов
+// Contact links
 const telegramLink = 'https://t.me/GraverAdm';
 const whatsappLink = 'https://wa.me/998770802288';
 const phoneNumber = '+998 77 080 22 88';
@@ -44,7 +60,7 @@ const organizationSchema = {
   },
   "address": {
     "@type": "PostalAddress",
-    "addressLocality": "Ташкент",
+    "addressLocality": locale === 'uz' ? "Toshkent" : "Ташкент",
     "addressCountry": "UZ"
   }
 };
@@ -52,8 +68,9 @@ const organizationSchema = {
 const webSiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "Блог Graver.uz",
-  "url": siteUrl
+  "name": t(locale, 'site.title'),
+  "url": `${siteUrl}/${locale}/`,
+  "inLanguage": locale
 };
 
 const articleSchema = article ? {
@@ -64,6 +81,7 @@ const articleSchema = article ? {
   "image": ogImage,
   "datePublished": article.publishedAt,
   "dateModified": article.updatedAt || article.publishedAt,
+  "inLanguage": locale,
   "author": {
     "@type": "Person",
     "name": article.author
@@ -105,10 +123,15 @@ const faqSchema = faq && faq.length > 0 ? {
     }
   }))
 } : null;
+
+// Current locale switcher URL
+const getLocaleUrl = (targetLocale: Locale) => {
+  return `/${targetLocale}${pathWithoutLocale || '/'}`;
+};
 ---
 
 <!DOCTYPE html>
-<html lang="ru">
+<html lang={locale}>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -117,10 +140,18 @@ const faqSchema = faq && faq.length > 0 ? {
   <title>{title}</title>
   <meta name="title" content={title} />
   <meta name="description" content={description} />
-  <meta name="keywords" content="корпоративные подарки, лазерная гравировка, брендирование, Ташкент, B2B, награды" />
+  <meta name="keywords" content={locale === 'uz' 
+    ? "korporativ sovg'alar, lazer gravirovka, brendlash, Toshkent, B2B, mukofotlar"
+    : "корпоративные подарки, лазерная гравировка, брендирование, Ташкент, B2B, награды"} />
   
   <!-- Canonical -->
   <link rel="canonical" href={canonicalUrl} />
+  
+  <!-- Hreflang -->
+  {alternateUrls.map(alt => (
+    <link rel="alternate" hreflang={alt.locale} href={alt.url} />
+  ))}
+  <link rel="alternate" hreflang="x-default" href={`${siteUrl}/ru${pathWithoutLocale || '/'}`} />
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content={article ? "article" : "website"} />
@@ -128,8 +159,8 @@ const faqSchema = faq && faq.length > 0 ? {
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:image" content={ogImage} />
-  <meta property="og:locale" content="ru_RU" />
-  <meta property="og:site_name" content="Блог Graver.uz" />
+  <meta property="og:locale" content={locale === 'uz' ? 'uz_UZ' : 'ru_RU'} />
+  <meta property="og:site_name" content={t(locale, 'site.title')} />
   
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -142,7 +173,7 @@ const faqSchema = faq && faq.length > 0 ? {
   <meta name="robots" content="index, follow" />
   
   <!-- RSS -->
-  <link rel="alternate" type="application/rss+xml" title="Блог Graver.uz RSS" href={`${siteUrl}/rss.xml`} />
+  <link rel="alternate" type="application/rss+xml" title={`${t(locale, 'site.title')} RSS`} href={`${siteUrl}/${locale}/rss.xml`} />
   
   <!-- Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -160,11 +191,7 @@ const faqSchema = faq && faq.length > 0 ? {
   {faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
   
   <style is:global>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -173,23 +200,11 @@ const faqSchema = faq && faq.length > 0 ? {
       line-height: 1.7;
     }
     
-    a {
-      color: #14b8a6;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
+    a { color: #14b8a6; text-decoration: none; transition: color 0.2s; }
+    a:hover { color: #0d9488; }
     
-    a:hover {
-      color: #0d9488;
-    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
     
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    
-    /* Header */
     .header {
       background: #111;
       border-bottom: 1px solid #222;
@@ -199,38 +214,36 @@ const faqSchema = faq && faq.length > 0 ? {
       z-index: 100;
     }
     
-    .header-inner {
+    .header-inner { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+    
+    .logo { font-size: 1.5rem; font-weight: 700; color: #fff; }
+    .logo span { color: #14b8a6; }
+    
+    .nav-links { display: flex; gap: 24px; list-style: none; align-items: center; }
+    .nav-links a { color: #999; font-size: 0.9rem; }
+    .nav-links a:hover { color: #14b8a6; }
+    
+    /* Language Switcher */
+    .lang-switcher {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      gap: 4px;
+      background: #222;
+      padding: 4px;
+      border-radius: 8px;
     }
     
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #fff;
+    .lang-switcher a {
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #888;
+      transition: all 0.2s;
     }
     
-    .logo span {
-      color: #14b8a6;
-    }
+    .lang-switcher a:hover { color: #fff; background: #333; }
+    .lang-switcher a.active { color: #fff; background: #14b8a6; }
     
-    .nav-links {
-      display: flex;
-      gap: 24px;
-      list-style: none;
-    }
-    
-    .nav-links a {
-      color: #999;
-      font-size: 0.9rem;
-    }
-    
-    .nav-links a:hover {
-      color: #14b8a6;
-    }
-    
-    /* CTA Button */
     .cta-primary {
       display: inline-flex;
       align-items: center;
@@ -264,11 +277,8 @@ const faqSchema = faq && faq.length > 0 ? {
       transition: background 0.2s;
     }
     
-    .cta-secondary:hover {
-      background: rgba(20, 184, 166, 0.1);
-    }
+    .cta-secondary:hover { background: rgba(20, 184, 166, 0.1); }
     
-    /* Breadcrumbs */
     .breadcrumbs {
       display: flex;
       gap: 8px;
@@ -278,18 +288,10 @@ const faqSchema = faq && faq.length > 0 ? {
       flex-wrap: wrap;
     }
     
-    .breadcrumbs a {
-      color: #888;
-    }
+    .breadcrumbs a { color: #888; }
+    .breadcrumbs span { color: #444; }
     
-    .breadcrumbs span {
-      color: #444;
-    }
-    
-    /* Article */
-    .article-header {
-      margin-bottom: 40px;
-    }
+    .article-header { margin-bottom: 40px; }
     
     .article-meta {
       display: flex;
@@ -315,17 +317,9 @@ const faqSchema = faq && faq.length > 0 ? {
       margin-bottom: 16px;
     }
     
-    .article-excerpt {
-      font-size: 1.2rem;
-      color: #999;
-      line-height: 1.6;
-    }
+    .article-excerpt { font-size: 1.2rem; color: #999; line-height: 1.6; }
     
-    /* Content */
-    .article-content {
-      max-width: 800px;
-    }
-    
+    .article-content { max-width: 800px; }
     .article-content h2 {
       font-size: 1.75rem;
       font-weight: 700;
@@ -335,57 +329,17 @@ const faqSchema = faq && faq.length > 0 ? {
       border-top: 1px solid #222;
     }
     
-    .article-content h3 {
-      font-size: 1.35rem;
-      font-weight: 600;
-      color: #e5e5e5;
-      margin: 32px 0 16px;
-    }
+    .article-content h3 { font-size: 1.35rem; font-weight: 600; color: #e5e5e5; margin: 32px 0 16px; }
+    .article-content p { margin-bottom: 20px; color: #ccc; }
+    .article-content ul, .article-content ol { margin: 0 0 24px 24px; color: #ccc; }
+    .article-content li { margin-bottom: 8px; }
+    .article-content strong { color: #fff; }
     
-    .article-content p {
-      margin-bottom: 20px;
-      color: #ccc;
-    }
+    .article-content table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 0.9rem; }
+    .article-content th { background: #1a1a1a; color: #14b8a6; padding: 12px 16px; text-align: left; border: 1px solid #333; }
+    .article-content td { padding: 12px 16px; border: 1px solid #333; color: #ccc; }
+    .article-content tr:nth-child(even) { background: #111; }
     
-    .article-content ul, .article-content ol {
-      margin: 0 0 24px 24px;
-      color: #ccc;
-    }
-    
-    .article-content li {
-      margin-bottom: 8px;
-    }
-    
-    .article-content strong {
-      color: #fff;
-    }
-    
-    .article-content table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 24px 0;
-      font-size: 0.9rem;
-    }
-    
-    .article-content th {
-      background: #1a1a1a;
-      color: #14b8a6;
-      padding: 12px 16px;
-      text-align: left;
-      border: 1px solid #333;
-    }
-    
-    .article-content td {
-      padding: 12px 16px;
-      border: 1px solid #333;
-      color: #ccc;
-    }
-    
-    .article-content tr:nth-child(even) {
-      background: #111;
-    }
-    
-    /* CTA Box */
     .cta-box {
       background: linear-gradient(135deg, rgba(20, 184, 166, 0.1), rgba(6, 182, 212, 0.05));
       border: 1px solid rgba(20, 184, 166, 0.3);
@@ -395,298 +349,86 @@ const faqSchema = faq && faq.length > 0 ? {
       text-align: center;
     }
     
-    .cta-box h3 {
-      color: #fff;
-      font-size: 1.5rem;
-      margin-bottom: 12px;
-    }
+    .cta-box h3 { color: #fff; font-size: 1.5rem; margin-bottom: 12px; }
+    .cta-box p { color: #999; margin-bottom: 24px; }
+    .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
     
-    .cta-box p {
-      color: #999;
-      margin-bottom: 24px;
-    }
+    .toc { background: #111; border: 1px solid #222; border-radius: 12px; padding: 24px; margin: 32px 0; }
+    .toc h4 { color: #fff; font-size: 1rem; margin-bottom: 16px; }
+    .toc ul { list-style: none; margin: 0; padding: 0; }
+    .toc li { margin-bottom: 8px; }
+    .toc a { color: #888; font-size: 0.9rem; }
+    .toc a:hover { color: #14b8a6; }
     
-    .cta-buttons {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
+    .faq-section { margin: 48px 0; padding-top: 32px; border-top: 1px solid #222; }
+    .faq-section h2 { font-size: 1.75rem; color: #fff; margin-bottom: 24px; }
+    .faq-item { background: #111; border: 1px solid #222; border-radius: 12px; margin-bottom: 16px; overflow: hidden; }
+    .faq-question { padding: 20px 24px; color: #fff; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+    .faq-question::after { content: '+'; color: #14b8a6; font-size: 1.5rem; }
+    .faq-item[open] .faq-question::after { content: '−'; }
+    .faq-answer { padding: 0 24px 20px; color: #999; line-height: 1.7; }
     
-    /* TOC */
-    .toc {
-      background: #111;
-      border: 1px solid #222;
-      border-radius: 12px;
-      padding: 24px;
-      margin: 32px 0;
-    }
+    .related-posts { margin: 48px 0; padding-top: 32px; border-top: 1px solid #222; }
+    .related-posts h3 { font-size: 1.5rem; color: #fff; margin-bottom: 24px; }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+    .related-card { background: #111; border: 1px solid #222; border-radius: 12px; padding: 24px; transition: border-color 0.2s; }
+    .related-card:hover { border-color: #14b8a6; }
+    .related-card h4 { color: #fff; font-size: 1.1rem; margin-bottom: 8px; }
+    .related-card p { color: #888; font-size: 0.9rem; }
     
-    .toc h4 {
-      color: #fff;
-      font-size: 1rem;
-      margin-bottom: 16px;
-    }
+    .footer { background: #111; border-top: 1px solid #222; padding: 48px 0; margin-top: 64px; }
+    .footer-inner { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
+    .footer h4 { color: #fff; font-size: 1rem; margin-bottom: 16px; }
+    .footer ul { list-style: none; }
+    .footer li { margin-bottom: 8px; }
+    .footer a { color: #888; font-size: 0.9rem; }
+    .footer-bottom { margin-top: 40px; padding-top: 24px; border-top: 1px solid #222; text-align: center; color: #666; font-size: 0.85rem; }
     
-    .toc ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
+    .posts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 32px; }
+    .post-card { background: #111; border: 1px solid #222; border-radius: 16px; overflow: hidden; transition: border-color 0.2s, transform 0.2s; }
+    .post-card:hover { border-color: #14b8a6; transform: translateY(-4px); }
+    .post-card-content { padding: 24px; }
+    .post-card .category { display: inline-block; background: rgba(20, 184, 166, 0.15); color: #14b8a6; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; margin-bottom: 12px; }
+    .post-card h3 { color: #fff; font-size: 1.25rem; margin-bottom: 12px; line-height: 1.4; }
+    .post-card p { color: #888; font-size: 0.9rem; margin-bottom: 16px; }
+    .post-card .read-more { color: #14b8a6; font-weight: 600; font-size: 0.9rem; }
     
-    .toc li {
-      margin-bottom: 8px;
-    }
-    
-    .toc a {
-      color: #888;
-      font-size: 0.9rem;
-    }
-    
-    .toc a:hover {
-      color: #14b8a6;
-    }
-    
-    /* FAQ */
-    .faq-section {
-      margin: 48px 0;
-      padding-top: 32px;
-      border-top: 1px solid #222;
-    }
-    
-    .faq-section h2 {
-      font-size: 1.75rem;
-      color: #fff;
-      margin-bottom: 24px;
-    }
-    
-    .faq-item {
-      background: #111;
-      border: 1px solid #222;
-      border-radius: 12px;
-      margin-bottom: 16px;
-      overflow: hidden;
-    }
-    
-    .faq-question {
-      padding: 20px 24px;
-      color: #fff;
-      font-weight: 600;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    
-    .faq-question::after {
-      content: '+';
-      color: #14b8a6;
-      font-size: 1.5rem;
-    }
-    
-    .faq-item[open] .faq-question::after {
-      content: '−';
-    }
-    
-    .faq-answer {
-      padding: 0 24px 20px;
-      color: #999;
-      line-height: 1.7;
-    }
-    
-    /* Related Posts */
-    .related-posts {
-      margin: 48px 0;
-      padding-top: 32px;
-      border-top: 1px solid #222;
-    }
-    
-    .related-posts h3 {
-      font-size: 1.5rem;
-      color: #fff;
-      margin-bottom: 24px;
-    }
-    
-    .related-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-    }
-    
-    .related-card {
-      background: #111;
-      border: 1px solid #222;
-      border-radius: 12px;
-      padding: 24px;
-      transition: border-color 0.2s;
-    }
-    
-    .related-card:hover {
-      border-color: #14b8a6;
-    }
-    
-    .related-card h4 {
-      color: #fff;
-      font-size: 1.1rem;
-      margin-bottom: 8px;
-    }
-    
-    .related-card p {
-      color: #888;
-      font-size: 0.9rem;
-    }
-    
-    /* Footer */
-    .footer {
-      background: #111;
-      border-top: 1px solid #222;
-      padding: 48px 0;
-      margin-top: 64px;
-    }
-    
-    .footer-inner {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 40px;
-    }
-    
-    .footer h4 {
-      color: #fff;
-      font-size: 1rem;
-      margin-bottom: 16px;
-    }
-    
-    .footer ul {
-      list-style: none;
-    }
-    
-    .footer li {
-      margin-bottom: 8px;
-    }
-    
-    .footer a {
-      color: #888;
-      font-size: 0.9rem;
-    }
-    
-    .footer-bottom {
-      margin-top: 40px;
-      padding-top: 24px;
-      border-top: 1px solid #222;
-      text-align: center;
-      color: #666;
-      font-size: 0.85rem;
-    }
-    
-    /* Post Cards */
-    .posts-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 32px;
-    }
-    
-    .post-card {
-      background: #111;
-      border: 1px solid #222;
-      border-radius: 16px;
-      overflow: hidden;
-      transition: border-color 0.2s, transform 0.2s;
-    }
-    
-    .post-card:hover {
-      border-color: #14b8a6;
-      transform: translateY(-4px);
-    }
-    
-    .post-card-content {
-      padding: 24px;
-    }
-    
-    .post-card .category {
-      display: inline-block;
-      background: rgba(20, 184, 166, 0.15);
-      color: #14b8a6;
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      margin-bottom: 12px;
-    }
-    
-    .post-card h3 {
-      color: #fff;
-      font-size: 1.25rem;
-      margin-bottom: 12px;
-      line-height: 1.4;
-    }
-    
-    .post-card p {
-      color: #888;
-      font-size: 0.9rem;
-      margin-bottom: 16px;
-    }
-    
-    .post-card .read-more {
-      color: #14b8a6;
-      font-weight: 600;
-      font-size: 0.9rem;
-    }
-    
-    /* Hero */
-    .hero {
-      padding: 80px 0;
-      text-align: center;
-      background: linear-gradient(180deg, #0a0a0a 0%, #111 100%);
-    }
-    
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 16px;
-    }
-    
-    .hero h1 span {
-      color: #14b8a6;
-    }
-    
-    .hero p {
-      font-size: 1.2rem;
-      color: #888;
-      max-width: 600px;
-      margin: 0 auto 32px;
-    }
+    .hero { padding: 80px 0; text-align: center; background: linear-gradient(180deg, #0a0a0a 0%, #111 100%); }
+    .hero h1 { font-size: 3rem; font-weight: 700; color: #fff; margin-bottom: 16px; }
+    .hero h1 span { color: #14b8a6; }
+    .hero p { font-size: 1.2rem; color: #888; max-width: 600px; margin: 0 auto 32px; }
     
     @media (max-width: 768px) {
-      .article-title {
-        font-size: 1.75rem;
-      }
-      
-      .hero h1 {
-        font-size: 2rem;
-      }
-      
-      .nav-links {
-        display: none;
-      }
-      
-      .cta-buttons {
-        flex-direction: column;
-      }
+      .article-title { font-size: 1.75rem; }
+      .hero h1 { font-size: 2rem; }
+      .nav-links { display: none; }
+      .cta-buttons { flex-direction: column; }
     }
   </style>
 </head>
 <body>
   <header class="header">
     <div class="container header-inner">
-      <a href="/" class="logo">Graver<span>.uz</span> Блог</a>
+      <a href={`/${locale}/`} class="logo">Graver<span>.uz</span> {locale === 'uz' ? 'Blog' : 'Блог'}</a>
       <nav>
         <ul class="nav-links">
-          <li><a href="/">Статьи</a></li>
-          <li><a href="/category/гайды">Гайды</a></li>
-          <li><a href="/category/производство">Производство</a></li>
-          <li><a href={mainSiteUrl} target="_blank">Основной сайт →</a></li>
+          <li><a href={`/${locale}/`}>{t(locale, 'nav.articles')}</a></li>
+          <li><a href={`/${locale}/category/гайды`}>{t(locale, 'nav.guides')}</a></li>
+          <li><a href={`/${locale}/category/производство`}>{t(locale, 'nav.production')}</a></li>
+          <li><a href={mainSiteUrl} target="_blank">{t(locale, 'nav.mainSite')} →</a></li>
+          <li>
+            <div class="lang-switcher">
+              <a href={getLocaleUrl('ru')} class={locale === 'ru' ? 'active' : ''}>RU</a>
+              <a href={getLocaleUrl('uz')} class={locale === 'uz' ? 'active' : ''}>UZ</a>
+            </div>
+          </li>
         </ul>
       </nav>
+      <!-- Mobile lang switcher -->
+      <div class="lang-switcher" style="display: none;">
+        <a href={getLocaleUrl('ru')} class={locale === 'ru' ? 'active' : ''}>RU</a>
+        <a href={getLocaleUrl('uz')} class={locale === 'uz' ? 'active' : ''}>UZ</a>
+      </div>
     </div>
   </header>
   
@@ -699,22 +441,20 @@ const faqSchema = faq && faq.length > 0 ? {
       <div class="footer-inner">
         <div>
           <h4>Graver.uz</h4>
-          <p style="color: #888; font-size: 0.9rem; margin-top: 8px;">
-            Корпоративные подарки с лазерной гравировкой в Ташкенте. Утверждаете макет — затем производство.
-          </p>
+          <p style="color: #888; font-size: 0.9rem; margin-top: 8px;">{t(locale, 'footer.about')}</p>
         </div>
         <div>
-          <h4>Категории</h4>
+          <h4>{t(locale, 'footer.categories')}</h4>
           <ul>
-            <li><a href="/category/гайды">Гайды</a></li>
-            <li><a href="/category/производство">Производство</a></li>
-            <li><a href="/category/закупки">Закупки</a></li>
-            <li><a href="/category/награды">Награды</a></li>
-            <li><a href="/category/наборы">Наборы</a></li>
+            <li><a href={`/${locale}/category/гайды`}>{t(locale, 'categories.гайды')}</a></li>
+            <li><a href={`/${locale}/category/производство`}>{t(locale, 'categories.производство')}</a></li>
+            <li><a href={`/${locale}/category/закупки`}>{t(locale, 'categories.закупки')}</a></li>
+            <li><a href={`/${locale}/category/награды`}>{t(locale, 'categories.награды')}</a></li>
+            <li><a href={`/${locale}/category/наборы`}>{t(locale, 'categories.наборы')}</a></li>
           </ul>
         </div>
         <div>
-          <h4>Контакты</h4>
+          <h4>{t(locale, 'footer.contacts')}</h4>
           <ul>
             <li><a href={telegramLink} target="_blank">Telegram</a></li>
             <li><a href={whatsappLink} target="_blank">WhatsApp</a></li>
@@ -722,17 +462,21 @@ const faqSchema = faq && faq.length > 0 ? {
           </ul>
         </div>
         <div>
-          <h4>SEO</h4>
+          <h4>{t(locale, 'footer.seo')}</h4>
           <ul>
             <li><a href="/sitemap-index.xml">Sitemap</a></li>
-            <li><a href="/rss.xml">RSS Feed</a></li>
+            <li><a href={`/${locale}/rss.xml`}>RSS Feed</a></li>
           </ul>
         </div>
       </div>
-      <div class="footer-bottom">
-        © 2026 Graver.uz — Корпоративные подарки с лазерной гравировкой
-      </div>
+      <div class="footer-bottom">{t(locale, 'footer.copyright')}</div>
     </div>
   </footer>
+  
+  <style>
+    @media (max-width: 768px) {
+      .header-inner .lang-switcher:last-child { display: flex !important; }
+    }
+  </style>
 </body>
 </html>
