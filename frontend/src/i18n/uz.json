@@ -10,7 +10,33 @@
     "portfolio": "Portfolio",
     "process": "Jarayon",
     "faq": "FAQ",
-    "contacts": "Kontaktlar"
+    "contacts": "Kontaktlar",
+    "blog": "Blog"
+  },
+  "blog": {
+    "title": "Foydali",
+    "titleAccent": "maqolalar",
+    "subtitle": "Korporativ sovg'alar va brendlash bo'yicha qo'llanmalar",
+    "readMore": "Maqolani o'qish",
+    "allPosts": "Barcha maqolalar",
+    "category": "Qo'llanmalar",
+    "posts": [
+      {
+        "slug": "corporate-gifts-logo-tashkent",
+        "title": "Toshkentda logotipli korporativ sovg'alar",
+        "excerpt": "Qanday tanlash, maketni kelishish va muddatga ulgurib qolish"
+      },
+      {
+        "slug": "logo-engraving-bulk-guide",
+        "title": "Sovg'alarga logotip gravyurasi ulgurji",
+        "excerpt": "Fayllarga talablar, maket va partiya sifat nazorati"
+      },
+      {
+        "slug": "supplier-corporate-gifts-tashkent",
+        "title": "Korporativ sovg'alar yetkazib beruvchisi",
+        "excerpt": "Toshkentda B2B uchun xaridor chek-listi"
+      }
+    ]
   },
   "hero": {
     "badge": "Toshkent • Premium B2B yechimlar",
