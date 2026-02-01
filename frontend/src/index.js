@@ -1,9 +1,9 @@
 import React, { Suspense, lazy } from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useParams } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import "@/index.css";
-import { I18nProvider } from "@/i18n";
+import { I18nProvider, SUPPORTED_LOCALES } from "@/i18n";
 import App from "@/App";
 
 // Code splitting: Thanks page loaded only when needed
@@ -19,6 +19,18 @@ const LoadingFallback = () => (
   </div>
 );
 
+// Locale validator wrapper
+const LocaleRoute = ({ element }) => {
+  const { locale } = useParams();
+  
+  // If locale is invalid, show 404
+  if (!SUPPORTED_LOCALES.includes(locale)) {
+    return <NotFound />;
+  }
+  
+  return element;
+};
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
@@ -30,9 +42,9 @@ root.render(
               {/* Redirect root to default locale */}
               <Route path="/" element={<Navigate to="/ru" replace />} />
               
-              {/* Localized routes */}
-              <Route path="/:locale" element={<App />} />
-              <Route path="/:locale/thanks" element={<Thanks />} />
+              {/* Localized routes with validation */}
+              <Route path="/:locale" element={<LocaleRoute element={<App />} />} />
+              <Route path="/:locale/thanks" element={<LocaleRoute element={<Thanks />} />} />
               
               {/* 404 for unmatched routes */}
               <Route path="*" element={<NotFound />} />
