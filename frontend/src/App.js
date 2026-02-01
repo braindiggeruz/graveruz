@@ -676,9 +676,9 @@ function App() {
                   <span className="text-teal-500 text-sm font-semibold">{item.category}</span>
                   <h3 className="text-xl font-bold text-white mt-2 mb-3">{item.title}</h3>
                   <p className="text-gray-400 text-sm mb-4">{item.description}</p>
-                  <div className="space-y-2 text-xs text-gray-500">
-                    <div><span className="text-gray-600">Материал:</span> {item.material}</div>
-                    <div><span className="text-gray-600">Применение:</span> {item.application}</div>
+                  <div className="space-y-2 text-xs text-gray-400">
+                    <div><span className="text-gray-500">Материал:</span> {item.material}</div>
+                    <div><span className="text-gray-500">Применение:</span> {item.application}</div>
                   </div>
                   <button 
                     onClick={() => scrollToSection('contact')}
