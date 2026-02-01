@@ -62,17 +62,28 @@ export function I18nProvider({ children }) {
     
     localStorage.setItem('graver-locale', newLocale);
     
-    // Replace locale in current path
+    // Replace locale in current path with route mapping
     const currentPath = location.pathname;
+    const hash = location.hash || '';
     const segments = currentPath.split('/').filter(Boolean);
     
     if (SUPPORTED_LOCALES.includes(segments[0])) {
+      const oldLocale = segments[0];
       segments[0] = newLocale;
+      
+      // Map route slugs if switching between RU and UZ
+      if (segments[1]) {
+        if (oldLocale === 'ru' && newLocale === 'uz' && ROUTE_MAP[segments[1]]) {
+          segments[1] = ROUTE_MAP[segments[1]];
+        } else if (oldLocale === 'uz' && newLocale === 'ru' && ROUTE_MAP_REVERSE[segments[1]]) {
+          segments[1] = ROUTE_MAP_REVERSE[segments[1]];
+        }
+      }
     } else {
       segments.unshift(newLocale);
     }
     
-    navigate('/' + segments.join('/'));
+    navigate('/' + segments.join('/') + hash);
   };
   
   const t = (key, params = {}) => {
