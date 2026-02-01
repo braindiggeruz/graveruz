@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { t } from '../../i18n/utils';
+
+const locale = 'uz';
+const posts = await getCollection('uz/posts');
+const sortedPosts = posts.sort((a, b) => 
+  new Date(b.data.publishedAt).getTime() - new Date(a.data.publishedAt).getTime()
+);
+
+const title = `${t(locale, 'site.title')} — Gravirovkali korporativ sovg'alar | Toshkent`;
+const description = t(locale, 'site.description');
+---
+
+<BaseLayout title={title} description={description} locale={locale}>
+  <section class="hero">
+    <div class="container">
+      <h1>{t(locale, 'hero.title')} <span>Graver.uz</span></h1>
+      <p>{t(locale, 'hero.subtitle')}</p>
+      <a href="https://gifting-hub-16.emergent.host/#contact" class="cta-primary" target="_blank">
+        {t(locale, 'cta.primary')} →
+      </a>
+    </div>
+  </section>
+  
+  <section class="container" style="padding: 64px 20px;">
+    <h2 style="font-size: 2rem; color: #fff; margin-bottom: 32px;">{t(locale, 'hero.allArticles')}</h2>
+    
+    <div class="posts-grid">
+      {sortedPosts.map(post => (
+        <article class="post-card">
+          <div class="post-card-content">
+            <span class="category">{t(locale, `categories.${post.data.category.toLowerCase()}`) || post.data.category}</span>
+            <h3>
+              <a href={`/${locale}/${post.slug}`} style="color: inherit; text-decoration: none;">
+                {post.data.title}
+              </a>
+            </h3>
+            <p>{post.data.excerpt}</p>
+            <a href={`/${locale}/${post.slug}`} class="read-more">{t(locale, 'article.readMore')} →</a>
+          </div>
+        </article>
+      ))}
+    </div>
+    
+    {sortedPosts.length === 0 && (
+      <p style="color: #888; text-align: center; padding: 48px;">
+        Maqolalar tez orada paydo bo'ladi.
+      </p>
+    )}
+  </section>
+</BaseLayout>
