@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -11,54 +11,63 @@
         <meta property="og:title" content="Graver.uz — Корпоративные подарки с лазерной гравировкой" />
         <meta property="og:description" content="Премиальная лазерная гравировка для бизнеса. Сначала макет — потом производство. ☎ +998 77 080 22 88" />
         <meta property="og:type" content="website" />
+        
+        <!-- Optimized Google Fonts: preconnect + preload + non-blocking load -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet" />
-        <!--
-        manifest.json provides metadata used when your web app is installed on a
-        user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-        -->
-        <!--
-        Notice the use of %PUBLIC_URL% in the tags above.
-        It will be replaced with the URL of the `public` folder during the build.
-        Only files inside the `public` folder can be referenced from the HTML.
+        <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" /></noscript>
 
-        Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-        work correctly both with client-side routing and a non-root public URL.
-        Learn how to configure a non-root public URL by running `npm run build`.
-        -->
         <title>Graver.uz — Корпоративные подарки с лазерной гравировкой | Ташкент</title>
         
-        <!-- Google tag (gtag.js) - GA4 -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z7V0FSGE4Y"></script>
+        <!-- DEFERRED Analytics: Load after user interaction or idle -->
         <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-Z7V0FSGE4Y', {
-            send_page_view: false
+        (function(){
+          var analyticsLoaded = false;
+          
+          function loadAnalytics() {
+            if (analyticsLoaded) return;
+            analyticsLoaded = true;
+            
+            // GA4
+            var ga = document.createElement('script');
+            ga.async = true;
+            ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-Z7V0FSGE4Y';
+            document.head.appendChild(ga);
+            
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            window.gtag = gtag;
+            gtag('js', new Date());
+            gtag('config', 'G-Z7V0FSGE4Y', { send_page_view: false });
+            
+            // Meta Pixel
+            !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+            n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+            (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '1415140489470568');
+            fbq('track', 'PageView');
+            
+            console.log('📊 Analytics loaded');
+          }
+          
+          // Load on first interaction or after 3s idle
+          ['click','scroll','touchstart','keydown'].forEach(function(evt){
+            document.addEventListener(evt, loadAnalytics, {once:true, passive:true});
           });
+          
+          if ('requestIdleCallback' in window) {
+            requestIdleCallback(loadAnalytics, {timeout: 3000});
+          } else {
+            setTimeout(loadAnalytics, 3000);
+          }
+        })();
         </script>
         
-        <!-- Meta Pixel Code -->
-        <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '1415140489470568');
-        fbq('track', 'PageView');
-        </script>
-        <noscript><img height="1" width="1" style="display:none"
-        src="https://www.facebook.com/tr?id=1415140489470568&ev=PageView&noscript=1"
-        /></noscript>
-        <!-- End Meta Pixel Code -->
-        
-        <script src="https://assets.emergent.sh/scripts/emergent-main.js"></script>
+        <script defer src="https://assets.emergent.sh/scripts/emergent-main.js"></script>
         <!--
         These two scripts have been added for the Visual Edits, please do not edit or remove them
         -->
