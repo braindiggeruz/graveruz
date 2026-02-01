@@ -24,6 +24,72 @@
     <priority>1.0</priority>
   </url>
   
+  <!-- Process page RU -->
+  <url>
+    <loc>https://graver.uz/ru/process</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver.uz/ru/process"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver.uz/uz/process"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver.uz/ru/process"/>
+    <lastmod>2025-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Process page UZ -->
+  <url>
+    <loc>https://graver.uz/uz/process</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver.uz/ru/process"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver.uz/uz/process"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver.uz/ru/process"/>
+    <lastmod>2025-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Guarantees page RU -->
+  <url>
+    <loc>https://graver.uz/ru/guarantees</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver.uz/ru/guarantees"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver.uz/uz/guarantees"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver.uz/ru/guarantees"/>
+    <lastmod>2025-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Guarantees page UZ -->
+  <url>
+    <loc>https://graver.uz/uz/guarantees</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver.uz/ru/guarantees"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver.uz/uz/guarantees"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver.uz/ru/guarantees"/>
+    <lastmod>2025-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Contacts page RU -->
+  <url>
+    <loc>https://graver.uz/ru/contacts</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver.uz/ru/contacts"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver.uz/uz/contacts"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver.uz/ru/contacts"/>
+    <lastmod>2025-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Contacts page UZ -->
+  <url>
+    <loc>https://graver.uz/uz/contacts</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver.uz/ru/contacts"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver.uz/uz/contacts"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver.uz/ru/contacts"/>
+    <lastmod>2025-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
   <!-- Thanks page RU -->
   <url>
     <loc>https://graver.uz/ru/thanks</loc>
