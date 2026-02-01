@@ -1,10 +1,18 @@
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { Send, Watch, Flame, PenTool, Battery, BookOpen, ArrowRight, AlertTriangle } from 'lucide-react';
+import { Send, ArrowRight, AlertTriangle, Watch, Flame, PenTool, Battery, BookOpen } from 'lucide-react';
 import B2CForm from '../components/B2CForm';
 
 const BASE_URL = 'https://graver.uz';
+
+const iconMap = {
+  watches: Watch,
+  lighters: Flame,
+  pen: PenTool,
+  powerbank: Battery,
+  diary: BookOpen
+};
 
 const content = {
   ru: {
@@ -165,11 +173,11 @@ export default function CatalogPage() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {t.categories.map((cat) => {
-              const Icon = cat.icon;
+              const Icon = iconMap[cat.id];
               return (
                 <div key={cat.id} className="bg-gray-900 border border-gray-800 rounded-2xl p-6 hover:border-teal-500/30 transition">
                   <div className="w-12 h-12 bg-teal-500/10 rounded-xl flex items-center justify-center mb-4">
-                    <Icon className="text-teal-500" size={24} />
+                    {Icon && <Icon className="text-teal-500" size={24} />}
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2">{cat.name}</h3>
                   <p className="text-teal-500 font-semibold mb-2">{cat.price}</p>
