@@ -30,60 +30,78 @@ function App() {
       title: 'Корпоративные награды',
       category: 'Награды и признание',
       description: 'Премиальные награды с гравировкой для сотрудников и партнёров',
-      image: '/portfolio/1.png',
+      image: '/portfolio/1.webp',
+      imageFallback: '/portfolio/1.png',
       alt: 'Премиальная корпоративная награда с лазерной гравировкой для партнёров',
       material: 'Металл, дерево',
-      application: 'Награждение персонала'
+      application: 'Награждение персонала',
+      width: 1376,
+      height: 768
     },
     {
       id: 2,
       title: 'Часы с персональной гравировкой',
       category: 'Премиальные подарки',
       description: 'Элитные часы с индивидуальной гравировкой для топ-менеджмента',
-      image: '/portfolio/10.png',
+      image: '/portfolio/10.webp',
+      imageFallback: '/portfolio/10.png',
       alt: 'Премиальные часы с персональной гравировкой для руководителей',
       material: 'Металл, стекло',
-      application: 'Подарки руководителям'
+      application: 'Подарки руководителям',
+      width: 1408,
+      height: 768
     },
     {
       id: 3,
       title: 'Брендированные термосы',
       category: 'Корпоративная продукция',
       description: 'Качественные термосы с логотипом компании для команды',
-      image: '/portfolio/3.png',
+      image: '/portfolio/3.webp',
+      imageFallback: '/portfolio/3.png',
       alt: 'Брендированные термосы с логотипом компании для сотрудников',
       material: 'Анодированный алюминий',
-      application: 'Подарки сотрудникам'
+      application: 'Подарки сотрудникам',
+      width: 1376,
+      height: 768
     },
     {
       id: 4,
       title: 'Премиальный подарочный набор',
       category: 'Корпоративные подарки',
       description: 'Эксклюзивный набор с брендированием для VIP-клиентов',
-      image: '/portfolio/4.png',
+      image: '/portfolio/4.webp',
+      imageFallback: '/portfolio/4.png',
       alt: 'Эксклюзивный подарочный набор с брендированием для VIP-клиентов',
       material: 'Комбинированные материалы',
-      application: 'Подарки клиентам'
+      application: 'Подарки клиентам',
+      width: 1408,
+      height: 768
     },
     {
       id: 5,
       title: 'Корпоративная упаковка',
       category: 'Брендированная упаковка',
       description: 'Элегантная упаковка с логотипом для корпоративных мероприятий',
-      image: '/portfolio/5.png',
+      image: '/portfolio/5.webp',
+      imageFallback: '/portfolio/5.png',
       alt: 'Премиальная корпоративная упаковка с логотипом для мероприятий',
       material: 'Картон, металл',
-      application: 'Корпоративные события'
+      application: 'Корпоративные события',
+      width: 1200,
+      height: 896
     },
     {
       id: 6,
       title: 'Премиальная награда',
       category: 'Награды премиум-класса',
       description: 'Эксклюзивная награда из стекла и металла с подсветкой',
-      image: '/portfolio/6.png',
+      image: '/portfolio/6.webp',
+      imageFallback: '/portfolio/6.png',
       alt: 'Эксклюзивная премиальная награда из стекла и металла',
       material: 'Стекло, металл',
-      application: 'Престижные премии'
+      application: 'Престижные премии',
+      width: 1200,
+      height: 896
     }
   ];
 
@@ -632,22 +650,27 @@ function App() {
             {portfolioItems.map((item, index) => (
               <div key={item.id} className="group relative bg-black/50 border border-gray-800 rounded-2xl overflow-hidden hover:border-teal-500/50 transition" data-testid={`portfolio-item-${index + 1}`}>
                 <div className="aspect-square overflow-hidden bg-gray-800">
-                  <img 
-                    src={item.image} 
-                    alt={item.alt || item.title}
-                    loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    onError={(e) => {
-                      e.target.style.display = 'none';
-                      e.target.parentElement.innerHTML = `<div class="flex items-center justify-center h-full text-gray-500">
-                        <div class="text-center">
-                          <Package size={48} class="mx-auto mb-2 opacity-50" />
-                          <p class="text-sm">Изображение загружается...</p>
-                          <p class="text-xs text-gray-600 mt-2">${item.image}</p>
-                        </div>
-                      </div>`;
-                    }}
-                  />
+                  <picture>
+                    <source srcSet={item.image} type="image/webp" />
+                    <img 
+                      src={item.imageFallback} 
+                      alt={item.alt || item.title}
+                      loading="lazy"
+                      width={item.width}
+                      height={item.height}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.parentElement.innerHTML = `<div class="flex items-center justify-center h-full text-gray-500">
+                          <div class="text-center">
+                            <Package size={48} class="mx-auto mb-2 opacity-50" />
+                            <p class="text-sm">Изображение загружается...</p>
+                            <p class="text-xs text-gray-400 mt-2">${item.image}</p>
+                          </div>
+                        </div>`;
+                      }}
+                    />
+                  </picture>
                 </div>
                 <div className="p-6">
                   <span className="text-teal-500 text-sm font-semibold">{item.category}</span>
