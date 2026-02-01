@@ -1,0 +1,11 @@
+# Robots.txt for Graver.uz Blog
+# SSG generated - all content is indexable
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://gifting-hub-16.preview.emergentagent.com/sitemap-index.xml
+
+# Crawl-delay (optional, for polite crawling)
+Crawl-delay: 1
