@@ -417,10 +417,10 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Почему крупные компании<br />выбирают <span className="text-teal-500">Graver.uz</span>
+              {t('benefits.title')}<br /><span className="text-teal-500">{t('benefits.titleAccent')}</span>
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              Надёжный партнёр для корпоративных заказов. Прозрачный процесс, гарантированное качество.
+              {t('benefits.subtitle')}
             </p>
           </div>
 
@@ -429,9 +429,9 @@ function App() {
               <div className="w-14 h-14 bg-teal-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-teal-500/20 transition">
                 <Check className="text-teal-500" size={28} />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">Макет до производства</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">{t('benefits.items.preview.title')}</h3>
               <p className="text-gray-400 leading-relaxed">
-                Цифровое превью с точными размерами и размещением. Вы утверждаете каждую деталь до старта работ — никаких неприятных сюрпризов.
+                {t('benefits.items.preview.description')}
               </p>
             </div>
 
@@ -439,9 +439,9 @@ function App() {
               <div className="w-14 h-14 bg-teal-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-teal-500/20 transition">
                 <Package className="text-teal-500" size={28} />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">Тиражи любого объёма</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">{t('benefits.items.volumes.title')}</h3>
               <p className="text-gray-400 leading-relaxed">
-                От единичных премиальных подарков до серий на тысячи единиц. Персонализация каждого изделия с именами и должностями.
+                {t('benefits.items.volumes.description')}
               </p>
             </div>
 
@@ -449,9 +449,9 @@ function App() {
               <div className="w-14 h-14 bg-teal-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-teal-500/20 transition">
                 <Clock className="text-teal-500" size={28} />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">Точные сроки</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">{t('benefits.items.timing.title')}</h3>
               <p className="text-gray-400 leading-relaxed">
-                Типовые заказы 1-3 дня. Срочное производство по запросу. Прозрачное планирование под ваш корпоративный календарь и мероприятия.
+                {t('benefits.items.timing.description')}
               </p>
             </div>
 
@@ -459,9 +459,9 @@ function App() {
               <div className="w-14 h-14 bg-teal-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-teal-500/20 transition">
                 <Zap className="text-teal-500" size={28} />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">Любые материалы</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">{t('benefits.items.materials.title')}</h3>
               <p className="text-gray-400 leading-relaxed">
-                Металл, анодированный алюминий, дерево, стекло, кожа, премиальные пластики. Fiber, CO2, MOPA, UV-технологии под каждую задачу.
+                {t('benefits.items.materials.description')}
               </p>
             </div>
 
@@ -469,9 +469,9 @@ function App() {
               <div className="w-14 h-14 bg-teal-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-teal-500/20 transition">
                 <Award className="text-teal-500" size={28} />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">Работаем с вашими файлами</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">{t('benefits.items.files.title')}</h3>
               <p className="text-gray-400 leading-relaxed">
-                Логотипы, бренд-гайды, вектор, фото. Если макета нет — создадим под ваш фирменный стиль. Соблюдаем все требования брендбука.
+                {t('benefits.items.files.description')}
               </p>
             </div>
 
@@ -479,9 +479,9 @@ function App() {
               <div className="w-14 h-14 bg-teal-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-teal-500/20 transition">
                 <Users className="text-teal-500" size={28} />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">B2B сервис</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">{t('benefits.items.b2b.title')}</h3>
               <p className="text-gray-400 leading-relaxed">
-                Работа с юрлицами, закрывающие документы, отсрочка платежа по согласованию. Персональный менеджер для крупных заказов.
+                {t('benefits.items.b2b.description')}
               </p>
             </div>
           </div>
