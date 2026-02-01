@@ -353,18 +353,18 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
           <div className="text-center space-y-8">
             <div className="inline-block">
-              <span className="text-teal-500 font-semibold tracking-wide uppercase text-sm border border-teal-500/30 px-4 py-2 rounded-full">Ташкент • Premium B2B решения</span>
+              <span className="text-teal-500 font-semibold tracking-wide uppercase text-sm border border-teal-500/30 px-4 py-2 rounded-full">{t('hero.badge')}</span>
             </div>
             
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white leading-tight">
-              Корпоративные подарки —<br />
-              <span className="bg-gradient-to-r from-teal-500 to-cyan-400 bg-clip-text text-transparent">макет утверждаете вы, не мы</span>
+              {t('hero.title')}<br />
+              <span className="bg-gradient-to-r from-teal-500 to-cyan-400 bg-clip-text text-transparent">{t('hero.titleAccent')}</span>
             </h1>
             
             <p className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Вы видите финальный результат до производства.<br className="hidden sm:block" />
-              Лазерная гравировка премиум-класса. От 1 до 10,000+ единиц.<br className="hidden sm:block" />
-              <span className="text-teal-500 font-semibold">1-3 дня типовой срок. Гарантия качества.</span>
+              {t('hero.subtitle')}<br className="hidden sm:block" />
+              {t('hero.subtitleLine2')}<br className="hidden sm:block" />
+              <span className="text-teal-500 font-semibold">{t('hero.subtitleAccent')}</span>
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
@@ -374,7 +374,7 @@ function App() {
                 className="w-full sm:w-auto bg-gradient-to-r from-teal-500 to-cyan-600 text-white px-10 py-5 rounded-lg font-bold text-lg hover:from-teal-600 hover:to-cyan-700 transition shadow-lg shadow-teal-500/50 min-h-[56px]"
                 data-testid="hero-primary-cta"
               >
-                Запросить расчёт
+                {t('hero.ctaPrimary')}
               </button>
               {/* SECONDARY CTA - Telegram */}
               <a 
@@ -385,7 +385,7 @@ function App() {
                 data-testid="hero-secondary-cta"
               >
                 <Send className="mr-2 group-hover:translate-x-1 transition-transform" size={18} />
-                Быстрая консультация в Telegram
+                {t('hero.ctaSecondary')}
               </a>
             </div>
 
@@ -393,19 +393,19 @@ function App() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-12 max-w-4xl mx-auto">
               <div className="text-center space-y-2">
                 <div className="text-3xl font-bold text-teal-500">100%</div>
-                <div className="text-sm text-gray-400">Утверждение<br />до производства</div>
+                <div className="text-sm text-gray-400">{t('hero.stats.approval')}</div>
               </div>
               <div className="text-center space-y-2">
                 <div className="text-3xl font-bold text-teal-500">1-3</div>
-                <div className="text-sm text-gray-400">Дня типовое<br />производство</div>
+                <div className="text-sm text-gray-400">{t('hero.stats.days')}</div>
               </div>
               <div className="text-center space-y-2">
                 <div className="text-3xl font-bold text-teal-500">∞</div>
-                <div className="text-sm text-gray-400">Любой объём<br />тиража</div>
+                <div className="text-sm text-gray-400">{t('hero.stats.volume')}</div>
               </div>
               <div className="text-center space-y-2">
                 <div className="text-3xl font-bold text-teal-500">✓</div>
-                <div className="text-sm text-gray-400">Гарантия<br />качества</div>
+                <div className="text-sm text-gray-400">{t('hero.stats.guarantee')}</div>
               </div>
             </div>
           </div>
