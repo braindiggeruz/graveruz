@@ -1,0 +1,146 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { t } from '../../../i18n/utils';
+
+const locale = 'uz';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('uz/posts');
+  return posts.map(post => ({
+    params: { slug: post.slug },
+    props: { post }
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+const siteUrl = import.meta.env.SITE || 'https://blog.graver.uz';
+const mainSiteUrl = 'https://gifting-hub-16.emergent.host';
+const telegramLink = 'https://t.me/GraverAdm';
+const whatsappLink = 'https://wa.me/998770802288';
+
+const breadcrumbs = [
+  { name: t(locale, 'breadcrumbs.home'), url: `${siteUrl}/${locale}/` },
+  { name: t(locale, `categories.${post.data.category.toLowerCase()}`) || post.data.category, url: `${siteUrl}/${locale}/category/${encodeURIComponent(post.data.category.toLowerCase())}` },
+  { name: post.data.title, url: `${siteUrl}/${locale}/${post.slug}` }
+];
+
+const allPosts = await getCollection('uz/posts');
+const relatedPosts = allPosts
+  .filter(p => p.slug !== post.slug)
+  .filter(p => p.data.category === post.data.category || p.data.tags.some(tag => post.data.tags.includes(tag)))
+  .slice(0, 3);
+
+const headings = post.body.match(/^##\s+(.+)$/gm) || [];
+const toc = headings.map(h => ({
+  text: h.replace(/^##\s+/, ''),
+  id: h.replace(/^##\s+/, '').toLowerCase().replace(/[^\w]/gi, '-').replace(/-+/g, '-')
+}));
+---
+
+<BaseLayout 
+  title={`${post.data.title} | Graver.uz`}
+  description={post.data.excerpt}
+  locale={locale}
+  image={post.data.coverImage ? `${siteUrl}${post.data.coverImage}` : undefined}
+  article={{
+    publishedAt: post.data.publishedAt,
+    updatedAt: post.data.updatedAt,
+    author: post.data.author,
+    category: post.data.category,
+    tags: post.data.tags
+  }}
+  breadcrumbs={breadcrumbs}
+  faq={post.data.faq}
+>
+  <article class="container" style="padding: 48px 20px;">
+    <nav class="breadcrumbs">
+      <a href={`/${locale}/`}>{t(locale, 'breadcrumbs.home')}</a>
+      <span>›</span>
+      <a href={`/${locale}/category/${encodeURIComponent(post.data.category.toLowerCase())}`}>{t(locale, `categories.${post.data.category.toLowerCase()}`) || post.data.category}</a>
+      <span>›</span>
+      <span>{post.data.title.slice(0, 50)}...</span>
+    </nav>
+    
+    <header class="article-header">
+      <div class="article-meta">
+        <span class="category">{t(locale, `categories.${post.data.category.toLowerCase()}`) || post.data.category}</span>
+        <span>{new Date(post.data.publishedAt).toLocaleDateString('uz-UZ', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+        <span>{t(locale, 'article.author')}: {post.data.author}</span>
+      </div>
+      <h1 class="article-title">{post.data.title}</h1>
+      <p class="article-excerpt">{post.data.excerpt}</p>
+    </header>
+    
+    <div class="cta-box">
+      <h3>{t(locale, 'cta.ctaTitle')}</h3>
+      <p>{t(locale, 'cta.ctaDescription')}</p>
+      <div class="cta-buttons">
+        <a href={`${mainSiteUrl}/#contact`} class="cta-primary" target="_blank">{t(locale, 'cta.primary')}</a>
+        <a href={telegramLink} class="cta-secondary" target="_blank">{t(locale, 'cta.secondary')}</a>
+      </div>
+    </div>
+    
+    {toc.length > 0 && (
+      <nav class="toc">
+        <h4>{t(locale, 'article.toc')}</h4>
+        <ul>
+          {toc.map(item => (
+            <li><a href={`#${item.id}`}>{item.text}</a></li>
+          ))}
+        </ul>
+      </nav>
+    )}
+    
+    <div class="article-content">
+      <Content />
+    </div>
+    
+    {post.data.faq && post.data.faq.length > 0 && (
+      <section class="faq-section">
+        <h2>{t(locale, 'article.faq')}</h2>
+        {post.data.faq.map(item => (
+          <details class="faq-item">
+            <summary class="faq-question">{item.question}</summary>
+            <div class="faq-answer">{item.answer}</div>
+          </details>
+        ))}
+      </section>
+    )}
+    
+    <div class="cta-box">
+      <h3>{t(locale, 'cta.howToOrder')}</h3>
+      <p><strong>{t(locale, 'cta.howToOrderSteps')}</strong></p>
+      <div class="cta-buttons">
+        <a href={`${mainSiteUrl}/#contact`} class="cta-primary" target="_blank">{t(locale, 'cta.primary')}</a>
+        <a href={whatsappLink} class="cta-secondary" target="_blank">{t(locale, 'cta.whatsapp')}</a>
+      </div>
+    </div>
+    
+    {relatedPosts.length > 0 && (
+      <section class="related-posts">
+        <h3>{t(locale, 'article.relatedPosts')}</h3>
+        <div class="related-grid">
+          {relatedPosts.map(related => (
+            <a href={`/${locale}/${related.slug}`} class="related-card">
+              <h4>{related.data.title}</h4>
+              <p>{related.data.excerpt.slice(0, 100)}...</p>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+    
+    <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid #222;">
+      <span style="color: #888; font-size: 0.9rem;">{t(locale, 'article.tags')}: </span>
+      {post.data.tags.map((tag, i) => (
+        <>
+          <a href={`/${locale}/tag/${encodeURIComponent(tag.toLowerCase())}`} style="font-size: 0.9rem;">{tag}</a>
+          {i < post.data.tags.length - 1 && <span style="color: #444;">, </span>}
+        </>
+      ))}
+    </div>
+  </article>
+</BaseLayout>
