@@ -42,6 +42,9 @@ root.render(
               {/* Redirect root to default locale */}
               <Route path="/" element={<Navigate to="/ru" replace />} />
               
+              {/* Legacy redirects for SEO (old URLs without locale) */}
+              <Route path="/thanks" element={<Navigate to="/ru/thanks" replace />} />
+              
               {/* Localized routes with validation */}
               <Route path="/:locale" element={<LocaleRoute element={<App />} />} />
               <Route path="/:locale/thanks" element={<LocaleRoute element={<Thanks />} />} />
