@@ -9,7 +9,8 @@ B2B corporate gifting website with premium dark theme, focusing on lead conversi
 ├── backend/          # FastAPI (Python) - Lead processing, Telegram notifications
 ├── blog/             # Astro SSG - SEO Blog (RU/UZ)
 └── frontend/         # React SPA - Main landing page (RU/UZ)
-    └── src/pages/    # Trust pages (process, guarantees, contacts)
+    └── src/pages/    # Trust pages + B2C catalog
+    └── src/components/B2CForm.js  # B2C lead qualification form
 ```
 
 ## Completed Work
@@ -47,6 +48,36 @@ B2B corporate gifting website with premium dark theme, focusing on lead conversi
 - `/ru/contacts`, `/uz/contacts` - Контакты
 - FAQ Schema (FAQPage) for rich snippets
 - Sitemap updated with all new pages
+
+### Phase 6: BreadcrumbList Schema ✅ (Feb 2026)
+- JSON-LD BreadcrumbList on all trust pages
+- DOM injection via useEffect for CSR compatibility
+
+### Phase 7: B2C Catalog Pages ✅ (Feb 2026)
+**4 new page types × 2 languages = 8 URLs:**
+- `/ru/catalog-products` | `/uz/mahsulotlar-katalogi` - Витрина продукции
+- `/ru/watches-with-logo` | `/uz/logotipli-soat` - Часы с логотипом
+- `/ru/lighters-engraving` | `/uz/gravirovkali-zajigalka` - Зажигалки
+- `/ru/engraved-gifts` | `/uz/gravirovkali-sovgalar` - Ручки/повербанки/ежедневники
+
+**B2C Form Qualification:**
+- Category select (watches/lighters/pen/powerbank/diary)
+- Conditional fields (sides/fuel for lighters, color for watches, method for diary)
+- Mandatory confirm checkbox: "Выбираю продукцию Graver (не своё)"
+- File upload required (logo/text)
+- Quantity, city, deadline, phone
+- Submit to /api/leads with lead_type: "b2c_catalog"
+
+**SEO on each page:**
+- Unique title/meta description
+- Canonical URL per locale
+- BreadcrumbList JSON-LD (3 levels: Home → Catalog → Product)
+- FAQPage JSON-LD
+- Important disclaimer: "Работаем на нашей продукции"
+
+**Navigation updates:**
+- Header nav: "Продукция" link to catalog
+- B2C corridor link after services section
 
 ## Current State
 - **Main Site**: Fully bilingual (RU/UZ), optimized, with trust pages
