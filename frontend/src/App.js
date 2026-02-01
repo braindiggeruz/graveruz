@@ -325,6 +325,7 @@ function App() {
                 <button onClick={() => scrollToSection('portfolio')} className="text-gray-300 hover:text-teal-500 transition text-left">{t('nav.portfolio')}</button>
                 <button onClick={() => scrollToSection('process')} className="text-gray-300 hover:text-teal-500 transition text-left">{t('nav.process')}</button>
                 <button onClick={() => scrollToSection('faq')} className="text-gray-300 hover:text-teal-500 transition text-left">{t('nav.faq')}</button>
+                <a href={`/blog/${locale}`} className="text-gray-300 hover:text-teal-500 transition text-left">{t('nav.blog')}</a>
                 <button onClick={() => scrollToSection('contact')} className="text-gray-300 hover:text-teal-500 transition text-left">{t('nav.contacts')}</button>
                 <div className="pt-2 border-t border-gray-800">
                   <LanguageSwitcher />
