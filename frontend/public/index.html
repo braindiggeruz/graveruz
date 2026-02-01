@@ -272,7 +272,15 @@
                 Made with Emergent
             </p>
         </a>
+        <!-- DEFERRED PostHog: Load after interaction -->
         <script>
+        (function(){
+          var posthogLoaded = false;
+          
+          function loadPostHog() {
+            if (posthogLoaded) return;
+            posthogLoaded = true;
+            
             !(function (t, e) {
                 var o, n, p, r;
                 e.__SV ||
@@ -322,9 +330,7 @@
                                     return u.toString(1) + ".people (stub)";
                                 },
                                 o =
-                                    "init me ws ys ps bs capture je Di ks register register_once register_for_session unregister unregister_for_session Ps getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty Es $s createPersonProfile Is opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing Ss debug xs getPageViewId captureTraceFeedback captureTraceMetric".split(
-                                        " ",
-                                    ),
+                                    "init capture identify".split(" "),
                                 n = 0;
                             n < o.length;
                             n++
@@ -336,12 +342,25 @@
             })(document, window.posthog || []);
             posthog.init("phc_xAvL2Iq4tFmANRE7kzbKwaSqp1HJjN7x48s3vr0CMjs", {
                 api_host: "https://us.i.posthog.com",
-                person_profiles: "identified_only", // or 'always' to create profiles for anonymous users as well,
-                session_recording: {
-                    recordCrossOriginIframes: true,
-                    capturePerformance: false,
-                },
+                person_profiles: "identified_only",
+                disable_session_recording: true,
+                autocapture: false,
+                capture_pageview: false
             });
+            console.log('📈 PostHog loaded (recording disabled)');
+          }
+          
+          // Load on first interaction or after 5s idle
+          ['click','scroll','touchstart'].forEach(function(evt){
+            document.addEventListener(evt, loadPostHog, {once:true, passive:true});
+          });
+          
+          if ('requestIdleCallback' in window) {
+            requestIdleCallback(loadPostHog, {timeout: 5000});
+          } else {
+            setTimeout(loadPostHog, 5000);
+          }
+        })();
         </script>
     </body>
 </html>
