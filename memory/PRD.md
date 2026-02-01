@@ -1,112 +1,77 @@
-# Graver.uz - B2B Corporate Gifting Website
+# Graver.uz — PRD & Progress
 
 ## Original Problem Statement
-Build a high-conversion B2B corporate gifting website for "Graver.uz" brand with:
-- Premium dark theme (black + teal/cyan accents)
-- Lead capture form with Telegram bot integration
-- Portfolio showcase
-- GA4 and Meta Pixel tracking
-- Russian language UI
-- **SEO Blog on SSG** for content marketing
+B2B corporate gifting website with premium dark theme, focusing on lead conversion to Telegram. Multi-phase project including CRO/SEO optimization and bilingual SEO blog.
 
-## Tech Stack
-- **Main Site (Frontend):** React, Tailwind CSS, Lucide Icons
-- **Main Site (Backend):** FastAPI (Python)
-- **Database:** MongoDB
-- **Blog:** Astro SSG (Static Site Generator)
-- **Integrations:** Telegram Bot API, GA4, Meta Pixel
-
-## Changelog
-
-### 2026-02-01: SEO Blog Created (SSG)
-- Created full SSG blog on Astro with 5 SEO-optimized articles
-- Implemented: sitemap.xml, robots.txt, rss.xml (auto-generated)
-- JSON-LD schemas: Organization, WebSite, Article, BreadcrumbList, FAQPage
-- Category/Tag/Author pages with proper SEO
-- TOC, Related Posts, FAQ sections on each article
-- Blog runs on port 4000
-
-### 2026-02-01 (Phase 1 CRO Complete):
-- Hero Section: New H1 "макет утверждаете вы, не мы"
-- 2-Step Form with Progress Bar
-- Portfolio CTA: "Запросить расчёт"
-- Mobile Sticky CTA
-- GA4 event tracking
-
-### 2026-02-01: Bug fixes
-- Fixed blurry text on /thanks page
-- Fixed portfolio image-to-card mapping
-
-## Blog Articles (5 published)
-
-1. `/corporate-gifts-logo-tashkent` - Корпоративные подарки с логотипом в Ташкенте
-2. `/logo-engraving-bulk-guide` - Гравировка логотипа на подарках оптом
-3. `/supplier-corporate-gifts-tashkent` - Поставщик корпоративных подарков: чек-лист
-4. `/plaques-awards-order-tashkent` - Плакетки и награды на заказ
-5. `/corporate-gift-sets-what-inside` - Корпоративные подарочные наборы
-
-## SEO Features Implemented
-- ✅ Static HTML (100% SSG, no JS required for content)
-- ✅ Canonical URLs on every page
-- ✅ OG/Twitter meta tags
-- ✅ JSON-LD schemas (Organization, Article, BreadcrumbList, FAQPage)
-- ✅ Auto-generated sitemap.xml
-- ✅ robots.txt with sitemap reference
-- ✅ RSS feed
-- ✅ Breadcrumbs
-- ✅ TOC (Table of Contents)
-- ✅ Related posts
-- ✅ Internal linking between articles
-- ✅ FAQ sections with schema markup
-
-## File Structure
+## Architecture
 ```
 /app
-├── backend/
-│   └── server.py
-├── frontend/
-│   └── src/
-│       ├── App.js (main landing page)
-│       └── Thanks.js (/thanks page)
-└── blog/                    # NEW: Astro SSG Blog
-    ├── astro.config.mjs
-    ├── src/
-    │   ├── layouts/
-    │   │   └── BaseLayout.astro
-    │   ├── pages/
-    │   │   ├── index.astro
-    │   │   ├── [slug].astro
-    │   │   ├── 404.astro
-    │   │   ├── rss.xml.js
-    │   │   ├── category/[category].astro
-    │   │   ├── tag/[tag].astro
-    │   │   └── author/[author].astro
-    │   └── content/
-    │       └── posts/
-    │           ├── corporate-gifts-logo-tashkent.md
-    │           ├── logo-engraving-bulk-guide.md
-    │           ├── supplier-corporate-gifts-tashkent.md
-    │           ├── plaques-awards-order-tashkent.md
-    │           └── corporate-gift-sets-what-inside.md
-    └── public/
-        └── robots.txt
+├── backend/          # FastAPI (Python) - Lead processing, Telegram notifications
+├── blog/             # Astro SSG - SEO Blog (RU/UZ)
+└── frontend/         # React SPA - Main landing page (RU/UZ)
 ```
 
-## Services
-- Main site (React): port 3000
-- Backend (FastAPI): port 8001
-- Blog (Astro SSG): port 4000
+## Completed Work
 
-## Roadmap
+### Phase 1: Performance Optimization ✅ (Feb 2026)
+- Images: PNG → WebP (97% reduction, 7MB → 168KB)
+- Third-party scripts: Deferred loading (GA4, FB Pixel, PostHog)
+- Service Worker: Runtime caching for static assets
+- Code splitting: React.lazy for Thanks page
+- Fonts: Non-blocking load with preload
+- Contrast: WCAG AA compliance (text-gray-600 → text-gray-400)
 
-### Done ✅
-- Main landing page with CRO optimizations
-- Lead form with Telegram integration
-- SEO Blog with 5 articles
+### Phase 2: I18N Main Site ✅ (Feb 2026)
+- URL routing: `/ru/`, `/uz/` with auto-redirect from `/`
+- i18n JSON files: `ru.json`, `uz.json`
+- hreflang tags: `ru`, `uz-Latn`, `x-default`
+- Canonical URLs per language
+- Language switcher in header
+- Sitemap with hreflang links
+- Thanks page translated
 
-### Next Steps
-- Deploy blog to subdomain (blog.graver.uz)
-- Submit sitemap to Google Search Console
-- Add more articles (content plan)
-- Trust signals block on main site
-- FAQ expansion on main site
+### Phase 3: SPA Tech SEO ✅ (Feb 2026)
+- 404 page with noindex, prerender-status-code
+- Invalid locales → 404 (`/de`, `/en`)
+- Legacy redirects (`/thanks` → `/ru/thanks`)
+- JSON-LD Organization/LocalBusiness schema
+- Unique title/description per route
+
+### Phase 4: Blog ↔ Main Linking ✅ (Feb 2026)
+- Blog link in header navigation (RU/UZ)
+- Blog link in mobile menu
+- "Latest Posts" section with 3 articles (RU/UZ)
+- Blog links in footer
+- All links locale-aware
+
+## Current State
+- **Main Site**: Fully bilingual (RU/UZ), optimized for performance
+- **Blog**: Astro SSG with 5 articles in each language
+- **API**: Lead submission working with Telegram notifications
+
+## Pending Issues
+1. **P0**: Form submission intermittent failure (user verification pending)
+2. **P2**: Meta Pixel test events blocked (infrastructure TLS issue)
+
+## Backlog
+
+### P1 - Next
+- Phase 5: Trust pages (/process, /guarantees, /contacts)
+- Phase 6: CRO/SEO overhaul per audit document
+- Blog Phase 2: Author pages, enhanced schema
+
+### P2 - Future
+- Refactor App.js into components (Hero, Portfolio, Form, FAQ)
+- Blog content clusters & internal linking
+- Blog related posts logic
+
+## Tech Stack
+- **Frontend**: React 18, Tailwind CSS, react-helmet-async
+- **Blog**: Astro 4.x, Markdown, Tailwind
+- **Backend**: FastAPI, MongoDB, httpx
+- **Integrations**: Telegram Bot API, GA4, Meta Pixel, PostHog
+
+## Key URLs
+- Main site: `/ru`, `/uz`
+- Blog: `/blog/ru`, `/blog/uz`
+- API: `/api/leads`
