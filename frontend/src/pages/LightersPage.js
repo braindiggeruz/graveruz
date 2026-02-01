@@ -6,74 +6,61 @@ import B2CForm from '../components/B2CForm';
 
 const BASE_URL = 'https://graver.uz';
 
-const content = {
-  ru: {
-    slug: 'lighters-engraving',
-    title: 'Зажигалки с гравировкой (аналог Zippo)',
-    subtitle: 'Наши зажигалки — серебро или чёрный',
-    meta: 'Зажигалки с гравировкой в Ташкенте. Аналог Zippo, 1 или 2 стороны. Цена от 140 000 сум. Топливо отдельно.',
-    home: 'Главная',
-    catalog: 'Каталог',
-    important: 'Важно',
-    importantText: 'Используем наши зажигалки (silver/black). На изделиях клиента не работаем.',
-    options: 'Варианты',
-    optionsList: [
-      { name: '1 сторона', price: '140 000 сум' },
-      { name: '2 стороны', price: '190 000 сум' },
-      { name: 'Топливо', price: '+100 000 сум (отдельно)' }
-    ],
-    features: [
-      'Металл, ветрозащитный механизм',
-      'Гравировка логотипа, текста, рисунка',
-      'Серебристый или чёрный корпус',
-      'Подарочная коробка'
-    ],
-    faq: [
-      { q: 'Можно на своей зажигалке?', a: 'Нет — работаем только на наших, чтобы гарантировать качество.' },
-      { q: 'Какой материал?', a: 'Металл, ветрозащитный механизм — аналог Zippo.' },
-      { q: 'Что можно нанести?', a: 'Логотип, текст, рисунок, символы — до 2 сторон.' },
-      { q: 'Как согласовать?', a: 'Пришлите файл → получите макет → утвердите → производство.' },
-      { q: 'Сколько по времени?', a: '2-4 дня после утверждения макета.' },
-      { q: 'Топливо идёт в комплекте?', a: 'Нет, заправка +100 000 сум по желанию.' }
-    ],
-    gallery: 'Примеры'
-  },
-  uz: {
-    slug: 'gravirovkali-zajigalka',
-    title: 'Gravirovkali zajigalka (Zippo analogi)',
-    subtitle: 'Bizning zajigalkalar — kumush yoki qora',
-    meta: 'Toshkentda gravirovkali zajigalka. Zippo analogi, 1 yoki 2 tomon. Narx 140 000 so\'mdan. Yoqilg\'i alohida.',
-    home: 'Bosh sahifa',
-    catalog: 'Katalog',
-    important: 'Muhim',
-    importantText: 'O\'z zajigalkalarimizdan foydalanamiz (kumush/qora). Mijoz mahsulotlarida ishlamaymiz.',
-    options: 'Variantlar',
-    optionsList: [
-      { name: '1 tomon', price: '140 000 so\'m' },
-      { name: '2 tomon', price: '190 000 so\'m' },
-      { name: 'Yoqilg\'i', price: '+100 000 so\'m (alohida)' }
-    ],
-    features: [
-      'Metall, shamoldan himoyalangan mexanizm',
-      'Logo, matn, rasm gravirovkasi',
-      'Kumush yoki qora korpus',
-      'Sovg\'a qutisi'
-    ],
-    faq: [
-      { q: 'O\'z zajigalkamda qilsa bo\'ladimi?', a: 'Yo\'q — sifatni kafolatlash uchun faqat o\'zimiznikida ishlaymiz.' },
-      { q: 'Qanday material?', a: 'Metall, shamoldan himoyalangan mexanizm — Zippo analogi.' },
-      { q: 'Nima qo\'yish mumkin?', a: 'Logo, matn, rasm, belgilar — 2 tomongacha.' },
-      { q: 'Qanday kelishiladi?', a: 'Fayl yuboring → maket oling → tasdiqlang → ishlab chiqarish.' },
-      { q: 'Qancha vaqt ketadi?', a: 'Maketni tasdiqlagandan keyin 2-4 kun.' },
-      { q: 'Yoqilg\'i komplektga kiradimi?', a: 'Yo\'q, to\'ldirish +100 000 so\'m ixtiyoriy.' }
-    ],
-    gallery: 'Namunalar'
-  }
+const ruContent = {
+  slug: 'lighters-engraving',
+  title: 'Зажигалки с гравировкой (аналог Zippo)',
+  subtitle: 'Наши зажигалки — серебро или чёрный',
+  meta: 'Зажигалки с гравировкой в Ташкенте. Аналог Zippo. Цена от 140 000 сум.',
+  home: 'Главная',
+  catalog: 'Каталог',
+  important: 'Важно',
+  importantText: 'Используем наши зажигалки (silver/black). На изделиях клиента не работаем.',
+  options: 'Варианты'
 };
+
+const uzContent = {
+  slug: 'gravirovkali-zajigalka',
+  title: 'Gravirovkali zajigalka (Zippo analogi)',
+  subtitle: 'Bizning zajigalkalar — kumush yoki qora',
+  meta: 'Toshkentda gravirovkali zajigalka. Zippo analogi. Narx 140 000 so\'mdan.',
+  home: 'Bosh sahifa',
+  catalog: 'Katalog',
+  important: 'Muhim',
+  importantText: 'O\'z zajigalkalarimizdan foydalanamiz (kumush/qora). Mijoz mahsulotlarida ishlamaymiz.',
+  options: 'Variantlar'
+};
+
+const ruOptions = [
+  { name: '1 сторона', price: '140 000 сум' },
+  { name: '2 стороны', price: '190 000 сум' },
+  { name: 'Топливо', price: '+100 000 сум' }
+];
+const uzOptions = [
+  { name: '1 tomon', price: '140 000 so\'m' },
+  { name: '2 tomon', price: '190 000 so\'m' },
+  { name: 'Yoqilg\'i', price: '+100 000 so\'m' }
+];
+
+const ruFeatures = ['Металл, ветрозащитный механизм', 'Гравировка логотипа, текста', 'Серебристый или чёрный', 'Подарочная коробка'];
+const uzFeatures = ['Metall, shamoldan himoyalangan', 'Logo, matn gravirovkasi', 'Kumush yoki qora', 'Sovg\'a qutisi'];
+
+const ruFaq = [
+  { q: 'Можно на своей зажигалке?', a: 'Нет — работаем только на наших.' },
+  { q: 'Какой материал?', a: 'Металл, ветрозащитный механизм.' },
+  { q: 'Сколько по времени?', a: '2-4 дня после макета.' }
+];
+const uzFaq = [
+  { q: 'O\'z zajigalkamda qilsa bo\'ladimi?', a: 'Yo\'q — faqat o\'zimiznikida ishlaymiz.' },
+  { q: 'Qanday material?', a: 'Metall, shamoldan himoyalangan.' },
+  { q: 'Qancha vaqt?', a: 'Maketdan keyin 2-4 kun.' }
+];
 
 export default function LightersPage() {
   const { locale = 'ru' } = useParams();
-  const t = content[locale] || content.ru;
+  const t = locale === 'uz' ? uzContent : ruContent;
+  const options = locale === 'uz' ? uzOptions : ruOptions;
+  const features = locale === 'uz' ? uzFeatures : ruFeatures;
+  const faq = locale === 'uz' ? uzFaq : ruFaq;
   const catalogSlug = locale === 'uz' ? 'mahsulotlar-katalogi' : 'catalog-products';
   const pageUrl = `${BASE_URL}/${locale}/${t.slug}`;
 
@@ -101,7 +88,7 @@ export default function LightersPage() {
     const faqSchema = {
       "@context": "https://schema.org",
       "@type": "FAQPage",
-      "mainEntity": t.faq.map(item => ({
+      "mainEntity": faq.map(item => ({
         "@type": "Question", "name": item.q,
         "acceptedAnswer": { "@type": "Answer", "text": item.a }
       }))
@@ -118,7 +105,7 @@ export default function LightersPage() {
       document.getElementById('breadcrumb-schema')?.remove();
       document.getElementById('faq-schema')?.remove();
     };
-  }, [locale, t, pageUrl, catalogSlug]);
+  }, [locale, t, pageUrl, catalogSlug, faq]);
 
   return (
     <div className="min-h-screen bg-black">
@@ -126,8 +113,6 @@ export default function LightersPage() {
         <title>{t.title} | Graver.uz</title>
         <meta name="description" content={t.meta} />
         <link rel="canonical" href={pageUrl} />
-        <meta property="og:title" content={t.title} />
-        <meta property="og:description" content={t.meta} />
       </Helmet>
 
       <header className="bg-black/95 border-b border-gray-800 py-4">
@@ -163,7 +148,6 @@ export default function LightersPage() {
         </div>
       </section>
 
-      {/* Important */}
       <section className="py-6">
         <div className="max-w-3xl mx-auto px-4">
           <div className="bg-yellow-900/20 border border-yellow-600/30 rounded-xl p-5 flex items-start">
@@ -176,12 +160,11 @@ export default function LightersPage() {
         </div>
       </section>
 
-      {/* Options */}
-      <section className="py-8">
+      <section className="py-6">
         <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-xl font-bold text-white mb-4">{t.options}</h2>
+          <h2 className="text-lg font-bold text-white mb-4">{t.options}</h2>
           <div className="grid grid-cols-3 gap-4">
-            {t.optionsList.map((opt, i) => (
+            {options.map((opt, i) => (
               <div key={i} className="bg-gray-900 border border-gray-800 rounded-xl p-4 text-center">
                 <p className="text-white font-medium">{opt.name}</p>
                 <p className="text-teal-500 font-bold">{opt.price}</p>
@@ -191,11 +174,10 @@ export default function LightersPage() {
         </div>
       </section>
 
-      {/* Features */}
-      <section className="py-6">
+      <section className="py-4">
         <div className="max-w-3xl mx-auto px-4">
           <div className="grid grid-cols-2 gap-3">
-            {t.features.map((f, i) => (
+            {features.map((f, i) => (
               <div key={i} className="flex items-center text-gray-300">
                 <Check className="text-teal-500 mr-2 flex-shrink-0" size={16} />
                 <span className="text-sm">{f}</span>
@@ -205,36 +187,32 @@ export default function LightersPage() {
         </div>
       </section>
 
-      {/* Gallery */}
-      <section className="py-8">
+      <section className="py-6">
         <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-lg font-bold text-white mb-4">{t.gallery}</h2>
           <div className="grid grid-cols-3 gap-3">
             {[1, 2, 3].map(i => (
               <div key={i} className="aspect-square bg-gray-800 rounded-lg overflow-hidden">
-                <img src="/portfolio/4.webp" alt="Зажигалка с гравировкой" className="w-full h-full object-cover" loading="lazy" />
+                <img src="/portfolio/4.webp" alt="Зажигалка" className="w-full h-full object-cover" loading="lazy" />
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Form */}
       <section className="py-12 bg-gray-900">
         <div className="max-w-2xl mx-auto px-4">
           <B2CForm locale={locale} defaultCategory="lighters" pageUrl={pageUrl} />
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="py-12">
+      <section className="py-10">
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="text-xl font-bold text-white mb-6 text-center">FAQ</h2>
           <div className="space-y-3">
-            {t.faq.map((item, i) => (
-              <details key={i} className="group bg-gray-900 border border-gray-800 rounded-xl overflow-hidden">
-                <summary className="px-5 py-3 cursor-pointer list-none flex items-center justify-between text-white text-sm font-medium">
-                  <span>{item.q}</span>
+            {faq.map((item, i) => (
+              <details key={i} className="group bg-gray-900 border border-gray-800 rounded-xl">
+                <summary className="px-5 py-3 cursor-pointer list-none flex justify-between text-white text-sm font-medium">
+                  {item.q}
                   <span className="text-teal-500 group-open:rotate-180 transition-transform">▼</span>
                 </summary>
                 <div className="px-5 pb-3 text-gray-400 text-sm">{item.a}</div>
@@ -244,10 +222,8 @@ export default function LightersPage() {
         </div>
       </section>
 
-      <footer className="bg-black border-t border-gray-800 py-8">
-        <div className="max-w-7xl mx-auto px-4 text-center text-gray-500 text-sm">
-          <p>© 2025 Graver.uz</p>
-        </div>
+      <footer className="bg-black border-t border-gray-800 py-6">
+        <div className="max-w-7xl mx-auto px-4 text-center text-gray-500 text-sm">© 2025 Graver.uz</div>
       </footer>
     </div>
   );
