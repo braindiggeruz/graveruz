@@ -683,6 +683,21 @@ function App() {
         </div>
       </section>
 
+      {/* B2C Corridor Link */}
+      <div className="bg-gray-900/50 py-4">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <a 
+            href={`/${locale}/${locale === 'uz' ? 'mahsulotlar-katalogi' : 'catalog-products'}`}
+            className="text-gray-400 hover:text-teal-500 transition inline-flex items-center text-sm"
+            data-testid="b2c-corridor-link"
+          >
+            {locale === 'uz' 
+              ? "O'zingiz uchun sovg'a? Mavjud mahsulotlar →" 
+              : "Ищете подарок для себя? Смотрите продукцию в наличии →"}
+          </a>
+        </div>
+      </div>
+
       {/* Portfolio Section */}
       <section className="py-20 bg-gray-900" id="portfolio" data-testid="portfolio-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
