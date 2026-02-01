@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Homepage RU -->
+  <url>
+    <loc>https://graver.uz/ru</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver.uz/ru"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver.uz/uz"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver.uz/ru"/>
+    <lastmod>2025-02-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Homepage UZ -->
+  <url>
+    <loc>https://graver.uz/uz</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver.uz/ru"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver.uz/uz"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver.uz/ru"/>
+    <lastmod>2025-02-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Thanks page RU -->
+  <url>
+    <loc>https://graver.uz/ru/thanks</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver.uz/ru/thanks"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver.uz/uz/thanks"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver.uz/ru/thanks"/>
+    <lastmod>2025-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <!-- Thanks page UZ -->
+  <url>
+    <loc>https://graver.uz/uz/thanks</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver.uz/ru/thanks"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver.uz/uz/thanks"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver.uz/ru/thanks"/>
+    <lastmod>2025-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+</urlset>
