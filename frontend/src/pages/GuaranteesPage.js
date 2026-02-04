@@ -2,25 +2,9 @@ import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Send, Shield } from 'lucide-react';
-
-const translations = {
-  ru: {
-    title: "Гарантии качества",
-    subtitle: "Ваша уверенность — наш приоритет",
-    meta: "Гарантии Graver.uz: утверждение макета до производства, контроль качества, переделка при несоответствии.",
-    back: "На главную",
-    cta: "Оставить заявку",
-    home: "Главная"
-  },
-  uz: {
-    title: "Sifat kafolatlari",
-    subtitle: "Sizning ishonchingiz — bizning ustuvorligimiz",
-    meta: "Graver.uz kafolatlari: ishlab chiqarishdan oldin maketni tasdiqlash, sifat nazorati.",
-    back: "Bosh sahifa",
-    cta: "Ariza qoldirish",
-    home: "Bosh sahifa"
-  }
-};
+import LanguageSwitcher from '../components/LanguageSwitcher';
+import { BASE_URL, buildCanonical, buildAlternate, HREFLANG_MAP } from '../config/seo';
+import { useI18n } from '../i18n';
 
 const guaranteesRu = [
   { title: "Макет до производства", desc: "Вы видите цифровой макет с точным размещением логотипа до начала работ." },
@@ -36,42 +20,37 @@ const guaranteesUz = [
   { title: "Mahsulotlarga kafolat", desc: "Gravyura ishqalanishga chidamli. Nuqson bo'lsa — almashtirish." }
 ];
 
-const BASE_URL = 'https://graver.uz';
-
 export default function GuaranteesPage() {
   const { locale = 'ru' } = useParams();
-  const t = translations[locale] || translations.ru;
+  const { t } = useI18n();
   const guarantees = locale === 'uz' ? guaranteesUz : guaranteesRu;
+  
+  const home = locale === 'uz' ? 'Bosh sahifa' : 'Главная';
+  const title = locale === 'uz' ? 'Sifat kafolatlari' : 'Гарантии качества';
+  const subtitle = locale === 'uz' ? 'Sizning ishonchingiz — bizning ustuvorligimiz' : 'Ваша уверенность — наш приоритет';
+  const cta = locale === 'uz' ? 'Ariza qoldirish' : 'Оставить заявку';
+  
+  const pathname = `/${locale}/guarantees`;
+  const canonicalUrl = buildCanonical(pathname);
+  const ruUrl = buildAlternate(pathname, locale, 'ru');
+  const uzUrl = buildAlternate(pathname, locale, 'uz');
 
   useEffect(() => {
     document.documentElement.lang = locale === 'uz' ? 'uz-Latn' : 'ru';
     window.scrollTo(0, 0);
     
-    // Inject JSON-LD via DOM (more reliable for CSR)
     const breadcrumbSchema = {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": t.home,
-          "item": `${BASE_URL}/${locale}`
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": t.title,
-          "item": `${BASE_URL}/${locale}/guarantees`
-        }
+        { "@type": "ListItem", "position": 1, "name": home, "item": `${BASE_URL}/${locale}` },
+        { "@type": "ListItem", "position": 2, "name": title, "item": canonicalUrl }
       ]
     };
     
-    // Remove old schema if exists
     const oldSchema = document.getElementById('breadcrumb-schema');
     if (oldSchema) oldSchema.remove();
     
-    // Add new schema
     const script = document.createElement('script');
     script.type = 'application/ld+json';
     script.id = 'breadcrumb-schema';
@@ -79,17 +58,20 @@ export default function GuaranteesPage() {
     document.head.appendChild(script);
     
     return () => {
-      const schema = document.getElementById('breadcrumb-schema');
-      if (schema) schema.remove();
+      document.getElementById('breadcrumb-schema')?.remove();
     };
-  }, [locale, t.home, t.title]);
+  }, [locale, home, title, canonicalUrl]);
 
   return (
     <div className="min-h-screen bg-black">
       <Helmet>
-        <title>{t.title} | Graver.uz</title>
-        <meta name="description" content={t.meta} />
-        <link rel="canonical" href={`${BASE_URL}/${locale}/guarantees`} />
+        <title>{t('meta.guarantees.title')}</title>
+        <meta name="description" content={t('meta.guarantees.description')} />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={canonicalUrl} />
+        <link rel="alternate" hreflang={HREFLANG_MAP.ru} href={ruUrl} />
+        <link rel="alternate" hreflang={HREFLANG_MAP.uz} href={uzUrl} />
+        <link rel="alternate" hreflang="x-default" href={ruUrl} />
       </Helmet>
 
       <header className="bg-black/95 border-b border-gray-800 py-4">
@@ -100,27 +82,29 @@ export default function GuaranteesPage() {
             </div>
             <span className="text-2xl font-bold text-white">Graver<span className="text-teal-500">.uz</span></span>
           </Link>
-          <a href="https://t.me/GraverAdm" className="bg-teal-500 text-white px-4 py-2 rounded-lg font-medium hover:bg-teal-600 transition flex items-center">
-            <Send size={16} className="mr-2" />Telegram
-          </a>
+          <div className="flex items-center gap-4">
+            <LanguageSwitcher />
+            <a href="https://t.me/GraverAdm" className="bg-teal-500 text-white px-4 py-2 rounded-lg font-medium hover:bg-teal-600 transition flex items-center">
+              <Send size={16} className="mr-2" />Telegram
+            </a>
+          </div>
         </div>
       </header>
 
-      {/* Breadcrumb UI */}
       <nav className="bg-gray-900/50 border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-4 py-3">
           <ol className="flex items-center space-x-2 text-sm">
-            <li><Link to={`/${locale}`} className="text-gray-400 hover:text-teal-500">{t.home}</Link></li>
+            <li><Link to={`/${locale}`} className="text-gray-400 hover:text-teal-500">{home}</Link></li>
             <li className="text-gray-600">/</li>
-            <li className="text-teal-500">{t.title}</li>
+            <li className="text-teal-500">{title}</li>
           </ol>
         </div>
       </nav>
 
       <section className="py-16 bg-gradient-to-b from-gray-900 to-black">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">{t.title}</h1>
-          <p className="text-xl text-gray-400">{t.subtitle}</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">{title}</h1>
+          <p className="text-xl text-gray-400">{subtitle}</p>
         </div>
       </section>
 
@@ -144,7 +128,7 @@ export default function GuaranteesPage() {
         <div className="max-w-2xl mx-auto px-4 text-center">
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to={`/${locale}#contact`} className="bg-gradient-to-r from-teal-500 to-cyan-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-teal-600 hover:to-cyan-700 transition">
-              {t.cta}
+              {cta}
             </Link>
             <a href="https://t.me/GraverAdm" className="bg-gray-800 text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-700 transition border border-gray-700 flex items-center justify-center">
               <Send size={18} className="mr-2" />Telegram
