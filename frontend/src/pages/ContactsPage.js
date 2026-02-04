@@ -57,15 +57,7 @@ export default function ContactsPage() {
 
   return (
     <div className="min-h-screen bg-black">
-      <Helmet>
-        <title>{t('meta.contacts.title')}</title>
-        <meta name="description" content={t('meta.contacts.description')} />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href={canonicalUrl} />
-        <link rel="alternate" hreflang={HREFLANG_MAP.ru} href={ruUrl} />
-        <link rel="alternate" hreflang={HREFLANG_MAP.uz} href={uzUrl} />
-        <link rel="alternate" hreflang="x-default" href={ruUrl} />
-      </Helmet>
+      <SEOHead page="contacts" />
 
       <header className="bg-black/95 border-b border-gray-800 py-4">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
