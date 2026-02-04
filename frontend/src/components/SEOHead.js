@@ -151,9 +151,9 @@ export default function SEOHead({ page = 'home', noindex = false }) {
       <link rel="canonical" href={canonicalUrl} />
       
       {/* Hreflang */}
-      <link rel="alternate" hreflang={HREFLANG_MAP.ru} href={ruUrl} />
-      <link rel="alternate" hreflang={HREFLANG_MAP.uz} href={uzUrl} />
-      <link rel="alternate" hreflang="x-default" href={defaultUrl} />
+      <link rel="alternate" hrefLang={HREFLANG_MAP.ru} href={ruUrl} />
+      <link rel="alternate" hrefLang={HREFLANG_MAP.uz} href={uzUrl} />
+      <link rel="alternate" hrefLang="x-default" href={defaultUrl} />
       
       {/* Open Graph */}
       <meta property="og:title" content={title} />
