@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
 import { Send, AlertTriangle, Check } from 'lucide-react';
 import B2CForm from '../components/B2CForm';
+import B2CSeo from '../components/B2CSeo';
 import LanguageSwitcher from '../components/LanguageSwitcher';
 import { BASE_URL, buildCanonical, buildAlternate, HREFLANG_MAP } from '../config/seo';
 
