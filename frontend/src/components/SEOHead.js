@@ -62,6 +62,57 @@ export default function SEOHead({ page = 'home', noindex = false }) {
   // Debug log
   console.log('🔧 SEOHead rendering:', { page, canonicalUrl, ruUrl, uzUrl, title });
   
+  // Workaround: Inject SEO tags via DOM (react-helmet-async v2 link bug)
+  React.useEffect(() => {
+    // Remove old SEO tags
+    document.querySelectorAll('[data-seo-head]').forEach(el => el.remove());
+    
+    // Add canonical
+    const canonical = document.createElement('link');
+    canonical.rel = 'canonical';
+    canonical.href = canonicalUrl;
+    canonical.setAttribute('data-seo-head', 'true');
+    document.head.appendChild(canonical);
+    
+    // Add hreflang ru
+    const hreflangRu = document.createElement('link');
+    hreflangRu.rel = 'alternate';
+    hreflangRu.hreflang = HREFLANG_MAP.ru;
+    hreflangRu.href = ruUrl;
+    hreflangRu.setAttribute('data-seo-head', 'true');
+    document.head.appendChild(hreflangRu);
+    
+    // Add hreflang uz
+    const hreflangUz = document.createElement('link');
+    hreflangUz.rel = 'alternate';
+    hreflangUz.hreflang = HREFLANG_MAP.uz;
+    hreflangUz.href = uzUrl;
+    hreflangUz.setAttribute('data-seo-head', 'true');
+    document.head.appendChild(hreflangUz);
+    
+    // Add hreflang x-default
+    const hreflangDefault = document.createElement('link');
+    hreflangDefault.rel = 'alternate';
+    hreflangDefault.hreflang = 'x-default';
+    hreflangDefault.href = defaultUrl;
+    hreflangDefault.setAttribute('data-seo-head', 'true');
+    document.head.appendChild(hreflangDefault);
+    
+    // Add robots meta
+    let robotsMeta = document.querySelector('meta[name="robots"]');
+    if (!robotsMeta) {
+      robotsMeta = document.createElement('meta');
+      robotsMeta.name = 'robots';
+      robotsMeta.setAttribute('data-seo-head', 'true');
+      document.head.appendChild(robotsMeta);
+    }
+    robotsMeta.content = robotsContent;
+    
+    return () => {
+      document.querySelectorAll('[data-seo-head]').forEach(el => el.remove());
+    };
+  }, [canonicalUrl, ruUrl, uzUrl, defaultUrl, robotsContent]);
+  
   // Build LocalBusiness schema (only verified data)
   const organizationSchema = {
     "@context": "https://schema.org",
