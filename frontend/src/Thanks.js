@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { Send, Home, Check, Clock, Award, Package } from 'lucide-react';
+import { useI18n } from './i18n';
 import './App.css';
 
-// Simple translations for Thanks page
 const thanksTranslations = {
   ru: {
     title: 'Заявка принята.',
@@ -63,14 +64,30 @@ const thanksTranslations = {
 
 function Thanks() {
   const { locale = 'ru' } = useParams();
+  const { t: i18nT } = useI18n();
   const t = thanksTranslations[locale] || thanksTranslations.ru;
 
   useEffect(() => {
-    // Track lead conversion on page load
+    document.documentElement.lang = locale === 'uz' ? 'uz-Latn' : 'ru';
+    
+    // Track view_thanks event for GA4
+    if (window.gtag) {
+      window.gtag('event', 'view_thanks', {
+        page_path: window.location.pathname,
+        page_title: 'Thanks Page'
+      });
+    }
+    
+    // Track Lead event for Meta Pixel
+    if (window.fbq) {
+      window.fbq('track', 'Lead');
+    }
+    
+    // Fallback for legacy tracking
     if (window.__trackLeadSuccess) {
       window.__trackLeadSuccess();
     }
-  }, []);
+  }, [locale]);
 
   const handleBackHome = () => {
     window.location.href = `/${locale}`;
@@ -78,12 +95,18 @@ function Thanks() {
 
   return (
     <div className="Thanks min-h-screen bg-black">
+      <Helmet>
+        <title>{i18nT('meta.thanks.title')}</title>
+        <meta name="description" content={i18nT('meta.thanks.description')} />
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
+
       {/* Hero Section with Background */}
       <section 
         className="relative min-h-screen flex items-center justify-center overflow-hidden"
         data-testid="thanks-hero"
       >
-        {/* Background image layer - lowest z-index */}
+        {/* Background image layer */}
         <div 
           className="absolute inset-0"
           style={{
@@ -95,16 +118,13 @@ function Thanks() {
           }}
         />
         
-        {/* Blur overlay - applied ONLY to background, not to content above */}
+        {/* Solid dark overlay - NO BLUR on content */}
         <div 
-          className="absolute inset-0" 
-          style={{
-            backgroundColor: 'rgba(0,0,0,0.85)',
-            zIndex: 1
-          }}
+          className="absolute inset-0 bg-black/85"
+          style={{ zIndex: 1 }}
         />
         
-        {/* Content - CRISP TEXT LAYER with higher z-index */}
+        {/* Content - CRISP TEXT LAYER */}
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center" style={{ zIndex: 2 }}>
           {/* Success Icon */}
           <div className="inline-flex items-center justify-center w-20 h-20 bg-teal-500/20 border-2 border-teal-500 rounded-full mb-8 animate-pulse">
@@ -139,7 +159,7 @@ function Thanks() {
             </a>
             <button
               onClick={handleBackHome}
-              className="w-full sm:w-auto bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white/20 transition border border-white/20 flex items-center justify-center"
+              className="w-full sm:w-auto bg-white/10 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white/20 transition border border-white/20 flex items-center justify-center"
               data-testid="thanks-home-cta"
             >
               <Home className="mr-2" size={20} />
