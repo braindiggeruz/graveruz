@@ -1,9 +1,25 @@
 {
   "meta": {
     "title": "Graver.uz — Korporativ sovg'alar lazer gravyurasi bilan | Toshkent",
-    "description": "Toshkentda biznes uchun premium lazer gravyurasi. Avval maket — keyin ishlab chiqarish. Korporativ sovg'alar, mukofotlar, brendlash.",
+    "description": "Toshkentda biznes uchun premium lazer gravyurasi. Avval maket — keyin ishlab chiqarish. Kutilmagan hodisalarsiz. Korporativ sovg'alar, mukofotlar, brendlash.",
     "ogTitle": "Graver.uz — Korporativ sovg'alar lazer gravyurasi bilan",
-    "ogDescription": "Biznes uchun premium lazer gravyurasi. Avval maket — keyin ishlab chiqarish."
+    "ogDescription": "Biznes uchun premium lazer gravyurasi. Avval maket — keyin ishlab chiqarish.",
+    "process": {
+      "title": "Qanday ishlaymiz — Graver.uz",
+      "description": "Arizadan tayyor mahsulotgacha shaffof jarayon. Avval maket — keyin ishlab chiqarish. Kutilmagan hodisalarsiz. Toshkent."
+    },
+    "guarantees": {
+      "title": "Sifat kafolati — Graver.uz",
+      "description": "Har bir mahsulot sifatini kafolatlaymiz. Ishlab chiqarishdan oldin maketni tasdiqlash, barcha bosqichlarda nazorat, halol muddatlar."
+    },
+    "contacts": {
+      "title": "Kontaktlar — Graver.uz | Toshkent",
+      "description": "Biz bilan bog'laning: +998 77 080 22 88, Telegram @GraverAdm. Toshkent, har kuni 10:00-20:00."
+    },
+    "thanks": {
+      "title": "Ariza qabul qilindi — Graver.uz",
+      "description": "Arizangiz qabul qilindi. Tez orada siz bilan bog'lanamiz."
+    }
   },
   "nav": {
     "services": "Xizmatlar",
