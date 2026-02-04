@@ -4,14 +4,13 @@ import { Helmet } from 'react-helmet-async';
 import { Send, AlertTriangle, Check } from 'lucide-react';
 import B2CForm from '../components/B2CForm';
 import LanguageSwitcher from '../components/LanguageSwitcher';
-
-const BASE_URL = 'https://graver.uz';
+import { BASE_URL, buildCanonical, buildAlternate, HREFLANG_MAP } from '../config/seo';
 
 const ruContent = {
   slug: 'lighters-engraving',
   title: 'Зажигалки с гравировкой (аналог Zippo)',
   subtitle: 'Наши зажигалки — серебро или чёрный',
-  meta: 'Зажигалки с гравировкой в Ташкенте. Аналог Zippo. Цена от 140 000 сум.',
+  meta: 'Зажигалки с гравировкой в Ташкенте. Аналог Zippo. Цена от 140 000 сум. Сначала макет — потом производство.',
   home: 'Главная',
   catalog: 'Каталог',
   important: 'Важно',
@@ -23,7 +22,7 @@ const uzContent = {
   slug: 'gravirovkali-zajigalka',
   title: 'Gravirovkali zajigalka (Zippo analogi)',
   subtitle: 'Bizning zajigalkalar — kumush yoki qora',
-  meta: 'Toshkentda gravirovkali zajigalka. Zippo analogi. Narx 140 000 so\'mdan.',
+  meta: 'Toshkentda gravirovkali zajigalka. Zippo analogi. Narx 140 000 so\'mdan. Avval maket — keyin ishlab chiqarish.',
   home: 'Bosh sahifa',
   catalog: 'Katalog',
   important: 'Muhim',
@@ -63,7 +62,11 @@ export default function LightersPage() {
   const features = locale === 'uz' ? uzFeatures : ruFeatures;
   const faq = locale === 'uz' ? uzFaq : ruFaq;
   const catalogSlug = locale === 'uz' ? 'mahsulotlar-katalogi' : 'catalog-products';
-  const pageUrl = `${BASE_URL}/${locale}/${t.slug}`;
+  
+  const pathname = `/${locale}/${t.slug}`;
+  const canonicalUrl = buildCanonical(pathname);
+  const ruUrl = buildAlternate(pathname, locale, 'ru');
+  const uzUrl = buildAlternate(pathname, locale, 'uz');
 
   useEffect(() => {
     document.documentElement.lang = locale === 'uz' ? 'uz-Latn' : 'ru';
@@ -75,7 +78,7 @@ export default function LightersPage() {
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": t.home, "item": `${BASE_URL}/${locale}` },
         { "@type": "ListItem", "position": 2, "name": t.catalog, "item": `${BASE_URL}/${locale}/${catalogSlug}` },
-        { "@type": "ListItem", "position": 3, "name": t.title, "item": pageUrl }
+        { "@type": "ListItem", "position": 3, "name": t.title, "item": canonicalUrl }
       ]
     };
     const oldSchema = document.getElementById('breadcrumb-schema');
@@ -106,14 +109,18 @@ export default function LightersPage() {
       document.getElementById('breadcrumb-schema')?.remove();
       document.getElementById('faq-schema')?.remove();
     };
-  }, [locale, t, pageUrl, catalogSlug, faq]);
+  }, [locale, t, canonicalUrl, catalogSlug, faq]);
 
   return (
     <div className="min-h-screen bg-black">
       <Helmet>
         <title>{t.title} | Graver.uz</title>
         <meta name="description" content={t.meta} />
-        <link rel="canonical" href={pageUrl} />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={canonicalUrl} />
+        <link rel="alternate" hreflang={HREFLANG_MAP.ru} href={ruUrl} />
+        <link rel="alternate" hreflang={HREFLANG_MAP.uz} href={uzUrl} />
+        <link rel="alternate" hreflang="x-default" href={ruUrl} />
       </Helmet>
 
       <header className="bg-black/95 border-b border-gray-800 py-4">
@@ -194,9 +201,15 @@ export default function LightersPage() {
       <section className="py-6">
         <div className="max-w-3xl mx-auto px-4">
           <div className="grid grid-cols-3 gap-3">
-            {[1, 2, 3].map(i => (
+            {[1, 2, 3].map((i, index) => (
               <div key={i} className="aspect-square bg-gray-800 rounded-lg overflow-hidden">
-                <img src="/portfolio/4.webp" alt="Зажигалка" className="w-full h-full object-cover" loading="lazy" />
+                <img 
+                  src="/portfolio/4.webp" 
+                  alt="Зажигалка" 
+                  className="w-full h-full object-cover" 
+                  loading={index === 0 ? "eager" : "lazy"}
+                  fetchpriority={index === 0 ? "high" : undefined}
+                />
               </div>
             ))}
           </div>
@@ -205,7 +218,7 @@ export default function LightersPage() {
 
       <section className="py-12 bg-gray-900">
         <div className="max-w-2xl mx-auto px-4">
-          <B2CForm locale={locale} defaultCategory="lighters" pageUrl={pageUrl} />
+          <B2CForm locale={locale} defaultCategory="lighters" pageUrl={canonicalUrl} />
         </div>
       </section>
 

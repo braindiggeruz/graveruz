@@ -4,14 +4,13 @@ import { Helmet } from 'react-helmet-async';
 import { Send, AlertTriangle, Check } from 'lucide-react';
 import B2CForm from '../components/B2CForm';
 import LanguageSwitcher from '../components/LanguageSwitcher';
-
-const BASE_URL = 'https://graver.uz';
+import { BASE_URL, buildCanonical, buildAlternate, HREFLANG_MAP } from '../config/seo';
 
 const ruContent = {
   slug: 'watches-with-logo',
   title: 'Часы с логотипом и гравировкой',
   subtitle: 'Наши модели — сначала макет, потом нанесение',
-  meta: 'Часы с гравировкой логотипа в Ташкенте. 450 000 – 2 000 000 сум.',
+  meta: 'Часы с гравировкой логотипа в Ташкенте. 450 000 – 2 000 000 сум. Сначала макет — потом производство.',
   home: 'Главная',
   catalog: 'Каталог',
   important: 'Важно',
@@ -24,7 +23,7 @@ const uzContent = {
   slug: 'logotipli-soat',
   title: 'Logotip va gravirovkali soat',
   subtitle: 'Bizning modellar — avval maket, keyin qo\'llash',
-  meta: 'Toshkentda logotipli gravirovkali soat. 450 000 – 2 000 000 so\'m.',
+  meta: 'Toshkentda logotipli gravirovkali soat. 450 000 – 2 000 000 so\'m. Avval maket — keyin ishlab chiqarish.',
   home: 'Bosh sahifa',
   catalog: 'Katalog',
   important: 'Muhim',
@@ -53,7 +52,11 @@ export default function WatchesPage() {
   const features = locale === 'uz' ? uzFeatures : ruFeatures;
   const faq = locale === 'uz' ? uzFaq : ruFaq;
   const catalogSlug = locale === 'uz' ? 'mahsulotlar-katalogi' : 'catalog-products';
-  const pageUrl = `${BASE_URL}/${locale}/${t.slug}`;
+  
+  const pathname = `/${locale}/${t.slug}`;
+  const canonicalUrl = buildCanonical(pathname);
+  const ruUrl = buildAlternate(pathname, locale, 'ru');
+  const uzUrl = buildAlternate(pathname, locale, 'uz');
 
   useEffect(() => {
     document.documentElement.lang = locale === 'uz' ? 'uz-Latn' : 'ru';
@@ -65,7 +68,7 @@ export default function WatchesPage() {
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": t.home, "item": `${BASE_URL}/${locale}` },
         { "@type": "ListItem", "position": 2, "name": t.catalog, "item": `${BASE_URL}/${locale}/${catalogSlug}` },
-        { "@type": "ListItem", "position": 3, "name": t.title, "item": pageUrl }
+        { "@type": "ListItem", "position": 3, "name": t.title, "item": canonicalUrl }
       ]
     };
     const oldSchema = document.getElementById('breadcrumb-schema');
@@ -96,14 +99,18 @@ export default function WatchesPage() {
       document.getElementById('breadcrumb-schema')?.remove();
       document.getElementById('faq-schema')?.remove();
     };
-  }, [locale, t, pageUrl, catalogSlug, faq]);
+  }, [locale, t, canonicalUrl, catalogSlug, faq]);
 
   return (
     <div className="min-h-screen bg-black">
       <Helmet>
         <title>{t.title} | Graver.uz</title>
         <meta name="description" content={t.meta} />
-        <link rel="canonical" href={pageUrl} />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={canonicalUrl} />
+        <link rel="alternate" hreflang={HREFLANG_MAP.ru} href={ruUrl} />
+        <link rel="alternate" hreflang={HREFLANG_MAP.uz} href={uzUrl} />
+        <link rel="alternate" hreflang="x-default" href={ruUrl} />
       </Helmet>
 
       <header className="bg-black/95 border-b border-gray-800 py-4">
@@ -172,9 +179,15 @@ export default function WatchesPage() {
       <section className="py-8">
         <div className="max-w-4xl mx-auto px-4">
           <div className="grid grid-cols-3 gap-4">
-            {[1, 2, 3].map(i => (
+            {[1, 2, 3].map((i, index) => (
               <div key={i} className="aspect-square bg-gray-800 rounded-xl overflow-hidden">
-                <img src="/portfolio/10.webp" alt="Часы" className="w-full h-full object-cover" loading="lazy" />
+                <img 
+                  src="/portfolio/10.webp" 
+                  alt="Часы" 
+                  className="w-full h-full object-cover" 
+                  loading={index === 0 ? "eager" : "lazy"}
+                  fetchpriority={index === 0 ? "high" : undefined}
+                />
               </div>
             ))}
           </div>
@@ -183,7 +196,7 @@ export default function WatchesPage() {
 
       <section className="py-12 bg-gray-900">
         <div className="max-w-2xl mx-auto px-4">
-          <B2CForm locale={locale} defaultCategory="watches" pageUrl={pageUrl} />
+          <B2CForm locale={locale} defaultCategory="watches" pageUrl={canonicalUrl} />
         </div>
       </section>
 
