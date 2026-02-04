@@ -118,15 +118,13 @@ export default function CatalogPage() {
 
   return (
     <div className="min-h-screen bg-black">
-      <Helmet>
-        <title>{t.title} | Graver.uz</title>
-        <meta name="description" content={t.meta} />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href={canonicalUrl} />
-        <link rel="alternate" hreflang={HREFLANG_MAP.ru} href={ruUrl} />
-        <link rel="alternate" hreflang={HREFLANG_MAP.uz} href={uzUrl} />
-        <link rel="alternate" hreflang="x-default" href={ruUrl} />
-      </Helmet>
+      <B2CSeo 
+        title={`${t.title} | Graver.uz`}
+        description={t.meta}
+        canonicalUrl={canonicalUrl}
+        ruUrl={ruUrl}
+        uzUrl={uzUrl}
+      />
 
       <header className="bg-black/95 border-b border-gray-800 py-4">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
