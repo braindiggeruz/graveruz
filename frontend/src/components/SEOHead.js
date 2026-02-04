@@ -59,6 +59,9 @@ export default function SEOHead({ page = 'home', noindex = false }) {
   // OG locale
   const ogLocale = locale === 'ru' ? 'ru_RU' : 'uz_UZ';
   
+  // Debug log
+  console.log('🔧 SEOHead rendering:', { page, canonicalUrl, ruUrl, uzUrl, title });
+  
   // Build LocalBusiness schema (only verified data)
   const organizationSchema = {
     "@context": "https://schema.org",
