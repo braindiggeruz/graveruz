@@ -1,10 +1,7 @@
-# Graver.uz robots.txt
+# Graver robots.txt
 User-agent: *
 Allow: /
+Disallow: /thanks
+Disallow: /api/
 
-# Sitemap
-Sitemap: https://graver.uz/sitemap.xml
-
-# Disallow internal/thanks pages from aggressive crawling
-User-agent: *
-Crawl-delay: 1
+Sitemap: https://www.graver-studio.uz/sitemap.xml
