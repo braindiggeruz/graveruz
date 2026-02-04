@@ -4,14 +4,13 @@ import { Helmet } from 'react-helmet-async';
 import { Send, ArrowRight, AlertTriangle } from 'lucide-react';
 import B2CForm from '../components/B2CForm';
 import LanguageSwitcher from '../components/LanguageSwitcher';
-
-const BASE_URL = 'https://graver.uz';
+import { BASE_URL, buildCanonical, buildAlternate, HREFLANG_MAP } from '../config/seo';
 
 const ruContent = {
   slug: 'catalog-products',
   title: 'Продукция с гравировкой (в наличии)',
   subtitle: 'Выберите категорию и получите макет',
-  meta: 'Часы, ручки, зажигалки, повербанки и ежедневники с лазерной гравировкой.',
+  meta: 'Часы, ручки, зажигалки, повербанки и ежедневники с лазерной гравировкой в Ташкенте. Сначала макет — потом производство.',
   home: 'Главная',
   disclaimer: 'Мы делаем гравировку на нашей продукции из каталога. На изделиях клиента обычно не работаем.',
   disclaimerTg: 'Есть своё изделие? Напишите в Telegram →',
@@ -23,7 +22,7 @@ const uzContent = {
   slug: 'mahsulotlar-katalogi',
   title: 'Gravirovkali mahsulotlar (mavjud)',
   subtitle: 'Kategoriyani tanlang va maket oling',
-  meta: 'Soat, ruchka, zajigalka, powerbank va kundaliklar lazer gravirovkasi bilan.',
+  meta: 'Toshkentda soat, ruchka, zajigalka, powerbank va kundaliklar lazer gravirovkasi bilan. Avval maket — keyin ishlab chiqarish.',
   home: 'Bosh sahifa',
   disclaimer: 'Biz katalogdagi mahsulotlarimizda gravirovka qilamiz. Mijoz mahsulotlarida ishlamaymiz.',
   disclaimerTg: 'Mahsulotingiz bormi? Telegramga yozing →',
@@ -64,7 +63,11 @@ export default function CatalogPage() {
   const t = locale === 'uz' ? uzContent : ruContent;
   const cats = locale === 'uz' ? uzCategories : ruCategories;
   const faq = locale === 'uz' ? uzFaq : ruFaq;
-  const pageUrl = `${BASE_URL}/${locale}/${t.slug}`;
+  
+  const pathname = `/${locale}/${t.slug}`;
+  const canonicalUrl = buildCanonical(pathname);
+  const ruUrl = buildAlternate(pathname, locale, 'ru');
+  const uzUrl = buildAlternate(pathname, locale, 'uz');
 
   useEffect(() => {
     document.documentElement.lang = locale === 'uz' ? 'uz-Latn' : 'ru';
@@ -75,7 +78,7 @@ export default function CatalogPage() {
       "@type": "BreadcrumbList",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": t.home, "item": `${BASE_URL}/${locale}` },
-        { "@type": "ListItem", "position": 2, "name": t.title, "item": pageUrl }
+        { "@type": "ListItem", "position": 2, "name": t.title, "item": canonicalUrl }
       ]
     };
     const oldSchema = document.getElementById('breadcrumb-schema');
@@ -107,7 +110,7 @@ export default function CatalogPage() {
       document.getElementById('breadcrumb-schema')?.remove();
       document.getElementById('faq-schema')?.remove();
     };
-  }, [locale, t, pageUrl, faq]);
+  }, [locale, t, canonicalUrl, faq]);
 
   const scrollToForm = () => {
     document.getElementById('b2c-form')?.scrollIntoView({ behavior: 'smooth' });
@@ -118,7 +121,11 @@ export default function CatalogPage() {
       <Helmet>
         <title>{t.title} | Graver.uz</title>
         <meta name="description" content={t.meta} />
-        <link rel="canonical" href={pageUrl} />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={canonicalUrl} />
+        <link rel="alternate" hreflang={HREFLANG_MAP.ru} href={ruUrl} />
+        <link rel="alternate" hreflang={HREFLANG_MAP.uz} href={uzUrl} />
+        <link rel="alternate" hreflang="x-default" href={ruUrl} />
       </Helmet>
 
       <header className="bg-black/95 border-b border-gray-800 py-4">
@@ -158,10 +165,16 @@ export default function CatalogPage() {
       <section className="py-12">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {cats.map((cat) => (
+            {cats.map((cat, index) => (
               <div key={cat.id} className="bg-gray-900 border border-gray-800 rounded-2xl p-6 hover:border-teal-500/30 transition">
                 <div className="w-full h-32 mb-4 rounded-lg overflow-hidden">
-                  <img src={cat.img} alt={cat.name} className="w-full h-full object-cover" loading="lazy" />
+                  <img 
+                    src={cat.img} 
+                    alt={cat.name} 
+                    className="w-full h-full object-cover" 
+                    loading={index === 0 ? "eager" : "lazy"}
+                    fetchpriority={index === 0 ? "high" : undefined}
+                  />
                 </div>
                 <h3 className="text-lg font-bold text-white mb-1">{cat.name}</h3>
                 <p className="text-teal-500 font-semibold mb-1">{cat.price}</p>
@@ -194,7 +207,7 @@ export default function CatalogPage() {
 
       <section className="py-12 bg-gray-900">
         <div className="max-w-2xl mx-auto px-4">
-          <B2CForm locale={locale} pageUrl={pageUrl} />
+          <B2CForm locale={locale} pageUrl={canonicalUrl} />
         </div>
       </section>
 
