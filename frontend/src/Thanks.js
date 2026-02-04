@@ -70,6 +70,16 @@ function Thanks() {
   useEffect(() => {
     document.documentElement.lang = locale === 'uz' ? 'uz-Latn' : 'ru';
     
+    // Add noindex meta for thanks page (SEO)
+    let robotsMeta = document.querySelector('meta[name="robots"]');
+    if (!robotsMeta) {
+      robotsMeta = document.createElement('meta');
+      robotsMeta.name = 'robots';
+      robotsMeta.setAttribute('data-thanks-seo', 'true');
+      document.head.appendChild(robotsMeta);
+    }
+    robotsMeta.content = 'noindex, nofollow';
+    
     // Track view_thanks event for GA4
     if (window.gtag) {
       window.gtag('event', 'view_thanks', {
@@ -87,6 +97,10 @@ function Thanks() {
     if (window.__trackLeadSuccess) {
       window.__trackLeadSuccess();
     }
+    
+    return () => {
+      document.querySelectorAll('[data-thanks-seo]').forEach(el => el.remove());
+    };
   }, [locale]);
 
   const handleBackHome = () => {
