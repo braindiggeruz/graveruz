@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
 import { Send, Shield } from 'lucide-react';
 import LanguageSwitcher from '../components/LanguageSwitcher';
 import { BASE_URL, buildCanonical, buildAlternate, HREFLANG_MAP } from '../config/seo';
 import { useI18n } from '../i18n';
+import SEOHead from '../components/SEOHead';
 
 const guaranteesRu = [
   { title: "Макет до производства", desc: "Вы видите цифровой макет с точным размещением логотипа до начала работ." },

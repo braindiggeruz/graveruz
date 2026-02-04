@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
 import { Phone, Send, MapPin, Clock } from 'lucide-react';
 import LanguageSwitcher from '../components/LanguageSwitcher';
 import { BASE_URL, buildCanonical, buildAlternate, HREFLANG_MAP } from '../config/seo';
 import { useI18n } from '../i18n';
+import SEOHead from '../components/SEOHead';
 
 export default function ContactsPage() {
   const { locale = 'ru' } = useParams();
