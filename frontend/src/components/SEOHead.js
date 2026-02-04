@@ -59,9 +59,6 @@ export default function SEOHead({ page = 'home', noindex = false }) {
   // OG locale
   const ogLocale = locale === 'ru' ? 'ru_RU' : 'uz_UZ';
   
-  // Debug log
-  console.log('🔧 SEOHead rendering:', { page, canonicalUrl, ruUrl, uzUrl, title });
-  
   // Workaround: Inject SEO tags via DOM (react-helmet-async v2 link bug)
   React.useEffect(() => {
     // Remove old SEO tags
