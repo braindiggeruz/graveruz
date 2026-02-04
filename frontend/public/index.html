@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#14b8a6" />
-        <meta name="description" content="Премиальная лазерная гравировка для бизнеса в Ташкенте. Утверждаете макет — затем производство. Корпоративные подарки, награды, брендирование. ☎ +998 77 080 22 88" />
+        <meta name="description" content="Премиальная лазерная гравировка для бизнеса в Ташкенте. Сначала макет — потом производство. Без сюрпризов. Корпоративные подарки, награды, брендирование. ☎ +998 77 080 22 88" />
         <meta name="keywords" content="лазерная гравировка, корпоративные подарки, брендирование, награды, Ташкент, бизнес, B2B, Graver" />
         
         <!-- Open Graph -->
@@ -25,6 +25,9 @@
         <script>
         (function(){
           var analyticsLoaded = false;
+          
+          // Queue for pending page views (if trackPage called before analytics load)
+          window.__pendingPageViews = [];
           
           function loadAnalytics() {
             if (analyticsLoaded) return;
@@ -49,9 +52,18 @@
             t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
             (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
             fbq('init', '1415140489470568');
-            fbq('track', 'PageView');
             
             console.log('📊 Analytics loaded');
+            
+            // Flush pending page views
+            if (window.__pendingPageViews && window.__pendingPageViews.length > 0) {
+              window.__pendingPageViews.forEach(function(pv) {
+                gtag('event','page_view', pv.ga4);
+                fbq('track','PageView');
+                console.log('📊 Flushed pending PageView:', pv.path);
+              });
+              window.__pendingPageViews = [];
+            }
           }
           
           // Load on first interaction or after 3s idle
@@ -92,30 +104,47 @@
             }
         </script>
         
-        <!-- SPA PageView + UTM + Event Tracking -->
+        <!-- SPA PageView + UTM + Event Tracking (with guard for deferred analytics) -->
         <script>
         (function () {
-          // 1) SPA PageView tracking for React Router
+          var initialPageTracked = false;
+          
+          // SPA PageView tracking for React Router
           function trackPage(){
-            var path = window.location.pathname + window.location.search;
+            var path = window.location.pathname;
+            var fullUrl = window.location.href;
             var title = document.title;
             
-            if (window.gtag) {
-              gtag('event','page_view', {
-                page_path: path, 
-                page_location: window.location.href, 
-                page_title: title,
-                send_to: 'G-Z7V0FSGE4Y'
-              });
+            var ga4Data = {
+              page_path: path, 
+              page_location: fullUrl, 
+              page_title: title,
+              send_to: 'G-Z7V0FSGE4Y'
+            };
+            
+            // Guard: if gtag not ready, queue for later
+            if (!window.gtag) {
+              console.log('📊 gtag not ready, queuing page_view:', path);
+              window.__pendingPageViews = window.__pendingPageViews || [];
+              window.__pendingPageViews.push({ path: path, ga4: ga4Data });
+              return;
             }
+            
+            gtag('event','page_view', ga4Data);
+            
             if (window.fbq) {
               fbq('track','PageView');
             }
             console.log('📊 PageView tracked:', path);
           }
 
-          // Initial page view
-          setTimeout(trackPage, 100);
+          // Initial page view - delayed to ensure analytics has a chance to load
+          setTimeout(function() {
+            if (!initialPageTracked) {
+              initialPageTracked = true;
+              trackPage();
+            }
+          }, 150);
 
           // Patch history for SPA navigation
           var pushState = history.pushState;
@@ -135,7 +164,7 @@
             setTimeout(trackPage, 0); 
           });
 
-          // 2) UTM capture + persist
+          // UTM capture + persist
           var params = new URLSearchParams(window.location.search);
           var keys = ["utm_source","utm_medium","utm_campaign","utm_term","utm_content"];
           var utm = {};
@@ -159,7 +188,7 @@
             } catch(e){}
           }
 
-          // 3) Click tracking (tel / telegram)
+          // Click tracking (tel / telegram)
           document.addEventListener("click", function(e){
             var a = e.target.closest("a");
             if(!a) return;
@@ -181,7 +210,7 @@
             console.log('🎯 Click tracked:', eventName, a.href);
           });
 
-          // 4) Lead tracking function (to be called on success)
+          // Lead tracking function (to be called on success)
           window.__trackLeadSuccess = function(){
             if (window.gtag) {
               gtag("event","form_submit",{
@@ -195,7 +224,7 @@
             console.log('🎉 Lead tracked!');
           };
 
-          // 5) Auto-fill UTM on form load
+          // Auto-fill UTM on form load
           window.addEventListener('DOMContentLoaded', function(){
             var form = document.getElementById("leadForm");
             if(form){
@@ -272,96 +301,6 @@
                 Made with Emergent
             </p>
         </a>
-        <!-- DEFERRED PostHog: Load after interaction -->
-        <script>
-        (function(){
-          var posthogLoaded = false;
-          
-          function loadPostHog() {
-            if (posthogLoaded) return;
-            posthogLoaded = true;
-            
-            !(function (t, e) {
-                var o, n, p, r;
-                e.__SV ||
-                    ((window.posthog = e),
-                    (e._i = []),
-                    (e.init = function (i, s, a) {
-                        function g(t, e) {
-                            var o = e.split(".");
-                            2 == o.length && ((t = t[o[0]]), (e = o[1])),
-                                (t[e] = function () {
-                                    t.push(
-                                        [e].concat(
-                                            Array.prototype.slice.call(
-                                                arguments,
-                                                0,
-                                            ),
-                                        ),
-                                    );
-                                });
-                        }
-                        ((p = t.createElement("script")).type =
-                            "text/javascript"),
-                            (p.crossOrigin = "anonymous"),
-                            (p.async = !0),
-                            (p.src =
-                                s.api_host.replace(
-                                    ".i.posthog.com",
-                                    "-assets.i.posthog.com",
-                                ) + "/static/array.js"),
-                            (r =
-                                t.getElementsByTagName(
-                                    "script",
-                                )[0]).parentNode.insertBefore(p, r);
-                        var u = e;
-                        for (
-                            void 0 !== a ? (u = e[a] = []) : (a = "posthog"),
-                                u.people = u.people || [],
-                                u.toString = function (t) {
-                                    var e = "posthog";
-                                    return (
-                                        "posthog" !== a && (e += "." + a),
-                                        t || (e += " (stub)"),
-                                        e
-                                    );
-                                },
-                                u.people.toString = function () {
-                                    return u.toString(1) + ".people (stub)";
-                                },
-                                o =
-                                    "init capture identify".split(" "),
-                                n = 0;
-                            n < o.length;
-                            n++
-                        )
-                            g(u, o[n]);
-                        e._i.push([i, s, a]);
-                    }),
-                    (e.__SV = 1));
-            })(document, window.posthog || []);
-            posthog.init("phc_xAvL2Iq4tFmANRE7kzbKwaSqp1HJjN7x48s3vr0CMjs", {
-                api_host: "https://us.i.posthog.com",
-                person_profiles: "identified_only",
-                disable_session_recording: true,
-                autocapture: false,
-                capture_pageview: false
-            });
-            console.log('📈 PostHog loaded (recording disabled)');
-          }
-          
-          // Load on first interaction or after 5s idle
-          ['click','scroll','touchstart'].forEach(function(evt){
-            document.addEventListener(evt, loadPostHog, {once:true, passive:true});
-          });
-          
-          if ('requestIdleCallback' in window) {
-            requestIdleCallback(loadPostHog, {timeout: 5000});
-          } else {
-            setTimeout(loadPostHog, 5000);
-          }
-        })();
-        </script>
         
         <!-- Service Worker Registration -->
         <script>
