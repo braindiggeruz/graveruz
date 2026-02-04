@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
-  <!-- Homepage RU -->
   <url>
     <loc>https://www.graver-studio.uz/ru</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru"/>
@@ -12,19 +10,7 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  
-  <!-- Homepage UZ -->
-  <url>
-    <loc>https://www.graver-studio.uz/uz</loc>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru"/>
-    <lastmod>2026-02-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  
-  <!-- Process RU -->
+
   <url>
     <loc>https://www.graver-studio.uz/ru/process</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/process"/>
@@ -34,19 +20,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
-  <!-- Process UZ -->
-  <url>
-    <loc>https://www.graver-studio.uz/uz/process</loc>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/process"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/process"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/process"/>
-    <lastmod>2026-02-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- Guarantees RU -->
+
   <url>
     <loc>https://www.graver-studio.uz/ru/guarantees</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/guarantees"/>
@@ -56,19 +30,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
-  <!-- Guarantees UZ -->
-  <url>
-    <loc>https://www.graver-studio.uz/uz/guarantees</loc>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/guarantees"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/guarantees"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/guarantees"/>
-    <lastmod>2026-02-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- Contacts RU -->
+
   <url>
     <loc>https://www.graver-studio.uz/ru/contacts</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/contacts"/>
@@ -78,19 +40,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
-  <!-- Contacts UZ -->
-  <url>
-    <loc>https://www.graver-studio.uz/uz/contacts</loc>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/contacts"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/contacts"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/contacts"/>
-    <lastmod>2026-02-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- Catalog RU -->
+
   <url>
     <loc>https://www.graver-studio.uz/ru/catalog-products</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/catalog-products"/>
@@ -98,84 +48,36 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/catalog-products"/>
     <lastmod>2026-02-04</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
-  
-  <!-- Catalog UZ -->
-  <url>
-    <loc>https://www.graver-studio.uz/uz/mahsulotlar-katalogi</loc>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/catalog-products"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/mahsulotlar-katalogi"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/catalog-products"/>
-    <lastmod>2026-02-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <!-- Watches RU -->
+
   <url>
     <loc>https://www.graver-studio.uz/ru/watches-with-logo</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/watches-with-logo"/>
     <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/logotipli-soat"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/watches-with-logo"/>
     <lastmod>2026-02-04</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  
-  <!-- Watches UZ -->
-  <url>
-    <loc>https://www.graver-studio.uz/uz/logotipli-soat</loc>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/watches-with-logo"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/logotipli-soat"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/watches-with-logo"/>
-    <lastmod>2026-02-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- Lighters RU -->
+
   <url>
     <loc>https://www.graver-studio.uz/ru/lighters-engraving</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/lighters-engraving"/>
     <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/gravirovkali-zajigalka"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/lighters-engraving"/>
     <lastmod>2026-02-04</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  
-  <!-- Lighters UZ -->
-  <url>
-    <loc>https://www.graver-studio.uz/uz/gravirovkali-zajigalka</loc>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/lighters-engraving"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/gravirovkali-zajigalka"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/lighters-engraving"/>
-    <lastmod>2026-02-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- Engraved Gifts RU -->
+
   <url>
     <loc>https://www.graver-studio.uz/ru/engraved-gifts</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/engraved-gifts"/>
     <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/gravirovkali-sovgalar"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/engraved-gifts"/>
     <lastmod>2026-02-04</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  
-  <!-- Engraved Gifts UZ -->
-  <url>
-    <loc>https://www.graver-studio.uz/uz/gravirovkali-sovgalar</loc>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/engraved-gifts"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/gravirovkali-sovgalar"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/engraved-gifts"/>
-    <lastmod>2026-02-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
 </urlset>
