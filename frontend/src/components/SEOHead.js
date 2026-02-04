@@ -1,134 +1,133 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useLocation } from 'react-router-dom';
 import { useI18n } from '../i18n';
+import { BASE_URL, HREFLANG_MAP, buildCanonical, buildAlternate, getDefaultPath } from '../config/seo';
 
-const BASE_URL = 'https://graver.uz';
-
-export default function SEOHead({ page = 'home' }) {
-  const { locale, t, supportedLocales, getLocalizedPath } = useI18n();
+/**
+ * SEOHead Component
+ * Manages all SEO meta tags via react-helmet-async
+ * 
+ * @param {string} page - Page identifier: 'home', 'process', 'guarantees', 'contacts', 'thanks', '404'
+ * @param {boolean} noindex - Force noindex,nofollow (for thanks, 404)
+ */
+export default function SEOHead({ page = 'home', noindex = false }) {
+  const location = useLocation();
+  const { locale, t } = useI18n();
   
-  const currentPath = window.location.pathname;
-  const canonicalUrl = `${BASE_URL}${currentPath}`;
+  // Get only pathname (no query, no hash)
+  const pathname = location.pathname;
+  const canonicalUrl = buildCanonical(pathname);
   
-  // hreflang mapping
-  const hreflangMap = {
-    ru: 'ru',
-    uz: 'uz-Latn'
+  // Build alternate URLs for hreflang
+  const ruUrl = buildAlternate(pathname, locale, 'ru');
+  const uzUrl = buildAlternate(pathname, locale, 'uz');
+  const defaultUrl = `${BASE_URL}${getDefaultPath(pathname, locale)}`;
+  
+  // Determine title and description based on page
+  let title, description;
+  
+  if (page === 'home') {
+    title = t('meta.title');
+    description = t('meta.description');
+  } else if (page === 'process') {
+    title = t('meta.process.title');
+    description = t('meta.process.description');
+  } else if (page === 'guarantees') {
+    title = t('meta.guarantees.title');
+    description = t('meta.guarantees.description');
+  } else if (page === 'contacts') {
+    title = t('meta.contacts.title');
+    description = t('meta.contacts.description');
+  } else if (page === 'thanks') {
+    title = t('meta.thanks.title');
+    description = t('meta.thanks.description');
+    noindex = true; // Always noindex thanks page
+  } else if (page === '404') {
+    title = '404 — Страница не найдена | Graver.uz';
+    description = 'Запрашиваемая страница не найдена.';
+    noindex = true; // Always noindex 404
+  } else {
+    // Fallback to home meta
+    title = t('meta.title');
+    description = t('meta.description');
+  }
+  
+  // Robots directive
+  const robotsContent = noindex ? 'noindex, nofollow' : 'index, follow';
+  
+  // OG locale
+  const ogLocale = locale === 'ru' ? 'ru_RU' : 'uz_UZ';
+  
+  // Build LocalBusiness schema (only verified data)
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Graver.uz",
+    "url": BASE_URL,
+    "telephone": ["+998770802288", "+998974802288"],
+    "email": "info@graver.uz",
+    "areaServed": {
+      "@type": "City",
+      "name": "Tashkent"
+    }
   };
   
-  // FAQ items for schema
-  const faqItems = t('faq.items');
-  
-  // Add canonical and hreflang tags via DOM manipulation (more reliable for SPA)
-  useEffect(() => {
-    // Remove existing alternate/canonical links
-    document.querySelectorAll('link[rel="canonical"], link[rel="alternate"][hreflang]').forEach(el => el.remove());
-    
-    // Add canonical
-    const canonical = document.createElement('link');
-    canonical.rel = 'canonical';
-    canonical.href = canonicalUrl;
-    document.head.appendChild(canonical);
-    
-    // Add hreflang tags
-    supportedLocales.forEach(loc => {
-      const hreflang = document.createElement('link');
-      hreflang.rel = 'alternate';
-      hreflang.hreflang = hreflangMap[loc];
-      hreflang.href = `${BASE_URL}${getLocalizedPath(currentPath, loc)}`;
-      document.head.appendChild(hreflang);
-    });
-    
-    // Add x-default
-    const xdefault = document.createElement('link');
-    xdefault.rel = 'alternate';
-    xdefault.hreflang = 'x-default';
-    xdefault.href = `${BASE_URL}/ru`;
-    document.head.appendChild(xdefault);
-    
-    return () => {
-      document.querySelectorAll('link[rel="canonical"], link[rel="alternate"][hreflang]').forEach(el => el.remove());
-    };
-  }, [locale, currentPath, canonicalUrl, supportedLocales, getLocalizedPath]);
-  
-  // Build FAQ Schema
-  const faqSchema = {
+  // FAQ Schema - only for home page where FAQ is visible
+  const faqItems = page === 'home' ? t('faq.items') : null;
+  const faqSchema = faqItems && Array.isArray(faqItems) ? {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": Array.isArray(faqItems) ? faqItems.map(item => ({
+    "mainEntity": faqItems.map(item => ({
       "@type": "Question",
       "name": item.q,
       "acceptedAnswer": {
         "@type": "Answer",
         "text": item.a
       }
-    })) : []
-  };
-  
-  // Build Organization Schema
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Graver.uz",
-    "description": t('meta.description'),
-    "url": BASE_URL,
-    "telephone": ["+998770802288", "+998974802288"],
-    "email": "info@graver.uz",
-    "image": `${BASE_URL}/portfolio/1.webp`,
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": locale === 'ru' ? "улица Мукими" : "Muqimiy ko'chasi",
-      "addressLocality": locale === 'ru' ? "Ташкент" : "Toshkent",
-      "addressCountry": "UZ"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "41.2995",
-      "longitude": "69.2401"
-    },
-    "areaServed": {
-      "@type": "Country",
-      "name": "Uzbekistan"
-    },
-    "openingHours": "Mo-Su 10:00-20:00",
-    "priceRange": "$$",
-    "sameAs": [
-      "https://t.me/GraverAdm"
-    ],
-    "serviceType": [
-      locale === 'ru' ? "Лазерная гравировка" : "Lazer gravyurasi",
-      locale === 'ru' ? "Корпоративные подарки" : "Korporativ sovg'alar",
-      locale === 'ru' ? "Брендирование" : "Brendlash"
-    ]
-  };
+    }))
+  } : null;
   
   return (
     <Helmet>
       {/* Basic Meta */}
-      <title>{t('meta.title')}</title>
-      <meta name="description" content={t('meta.description')} />
+      <html lang={locale === 'uz' ? 'uz-Latn' : 'ru'} />
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      <meta name="robots" content={robotsContent} />
+      
+      {/* Canonical */}
+      <link rel="canonical" href={canonicalUrl} />
+      
+      {/* Hreflang */}
+      <link rel="alternate" hreflang={HREFLANG_MAP.ru} href={ruUrl} />
+      <link rel="alternate" hreflang={HREFLANG_MAP.uz} href={uzUrl} />
+      <link rel="alternate" hreflang="x-default" href={defaultUrl} />
       
       {/* Open Graph */}
-      <meta property="og:title" content={t('meta.ogTitle')} />
-      <meta property="og:description" content={t('meta.ogDescription')} />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={canonicalUrl} />
-      <meta property="og:locale" content={locale === 'ru' ? 'ru_RU' : 'uz_UZ'} />
+      <meta property="og:locale" content={ogLocale} />
+      <meta property="og:site_name" content="Graver.uz" />
       
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={t('meta.ogTitle')} />
-      <meta name="twitter:description" content={t('meta.ogDescription')} />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
       
-      {/* JSON-LD Organization Schema */}
+      {/* JSON-LD: Organization Schema (always) */}
       <script type="application/ld+json">
         {JSON.stringify(organizationSchema)}
       </script>
       
-      {/* JSON-LD FAQ Schema for Rich Snippets */}
-      <script type="application/ld+json">
-        {JSON.stringify(faqSchema)}
-      </script>
+      {/* JSON-LD: FAQ Schema (only on home) */}
+      {faqSchema && (
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
+      )}
     </Helmet>
   );
 }
