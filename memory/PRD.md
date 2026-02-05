@@ -112,7 +112,7 @@ B2B corporate gifting website with premium dark theme, focusing on lead conversi
 
 ## Current State
 - **Main Site**: Fully bilingual (RU/UZ), optimized, SEO-correct
-- **Blog**: Astro SSG with 5 articles in each language
+- **Blog**: React-based blog integrated into main SPA (RU/UZ), with test articles
 - **API**: Lead submission working with Telegram group notifications
 - **SEO**: Full schema markup, correct canonicals, hreflang implementation
 
@@ -124,8 +124,10 @@ B2B corporate gifting website with premium dark theme, focusing on lead conversi
 
 ### P0 - Immediate
 - User verification of lead submission flow
+- **Deploy to production** to apply blog and sitemap fixes
 
 ### P1 - Next
+- Add more blog content (real articles, not test)
 - Refactor portfolio section with filters
 - Redesign "How we work" section on main page
 - Refactor monolithic App.js into smaller components
@@ -136,7 +138,7 @@ B2B corporate gifting website with premium dark theme, focusing on lead conversi
 
 ## Tech Stack
 - **Frontend**: React 18, Tailwind CSS, react-helmet-async v2
-- **Blog**: Astro 4.x, Markdown, Tailwind
+- **Blog**: Integrated into React SPA (data in `/src/data/blogPosts.js`)
 - **Backend**: FastAPI, MongoDB, httpx
 - **Integrations**: Telegram Bot API, GA4, Meta Pixel
 
@@ -144,21 +146,16 @@ B2B corporate gifting website with premium dark theme, focusing on lead conversi
 - Main: `/ru`, `/uz`
 - Trust: `/ru/process`, `/ru/guarantees`, `/ru/contacts` (+ UZ versions)
 - B2C: `/ru/catalog-products`, `/ru/watches-with-logo`, etc.
-- Blog: `/blog/ru`, `/blog/uz`
+- Blog: `/ru/blog`, `/uz/blog`, `/ru/blog/:slug`, `/uz/blog/:slug`
 - API: `/api/leads`
 
-## Files Modified (Phase 8)
-- `/app/frontend/src/config/seo.js` (NEW)
-- `/app/frontend/src/components/SEOHead.js` (REWRITTEN)
-- `/app/frontend/src/components/B2CSeo.js` (NEW)
-- `/app/frontend/src/pages/ProcessPage.js`
-- `/app/frontend/src/pages/GuaranteesPage.js`
-- `/app/frontend/src/pages/ContactsPage.js`
-- `/app/frontend/src/pages/CatalogPage.js`
-- `/app/frontend/src/pages/WatchesPage.js`
-- `/app/frontend/src/pages/LightersPage.js`
-- `/app/frontend/src/pages/EngravedGiftsPage.js`
-- `/app/frontend/src/Thanks.js`
-- `/app/frontend/src/i18n/ru.json`
-- `/app/frontend/src/i18n/uz.json`
-- `/app/frontend/public/index.html` (PostHog removed, tracking fixed)
+## Files Modified (Phase 9 - Blog Integration)
+- `/app/frontend/public/robots.txt` — removed broken sitemap-index.xml reference
+- `/app/frontend/public/sitemap.xml` — added blog URLs (20 entries total)
+- `/app/frontend/src/index.js` — added blog routes + legacy redirects
+- `/app/frontend/src/App.js` — fixed blog navigation hrefs
+- `/app/frontend/src/pages/BlogIndex.js` (NEW)
+- `/app/frontend/src/pages/BlogPost.js` (NEW)
+- `/app/frontend/src/data/blogPosts.js` (NEW)
+- `/app/frontend/src/content/blog/ru/test-article.md` (NEW)
+- `/app/frontend/src/content/blog/uz/test-maqola.md` (NEW)
