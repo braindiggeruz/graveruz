@@ -2,7 +2,8 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://seo-gifting.preview.emergentagent.com',
+  site: 'https://www.graver-studio.uz/blog',
+  base: '/blog',
   integrations: [sitemap()],
   markdown: {
     shikiConfig: {
