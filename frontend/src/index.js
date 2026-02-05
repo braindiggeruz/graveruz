@@ -19,7 +19,11 @@ const LightersPage = lazy(() => import("@/pages/LightersPage"));
 const EngravedGiftsPage = lazy(() => import("@/pages/EngravedGiftsPage"));
 // Blog Pages
 const BlogIndex = lazy(() => import("@/pages/BlogIndex"));
-const BlogPost = lazy(() => import("@/pages/BlogPost"));
+// BlogPost temporarily disabled
+const BlogPost = () => { 
+  const { locale } = require('react-router-dom').useParams();
+  return require('react-router-dom').Navigate({ to: '/' + locale + '/blog', replace: true });
+};
 
 // Loading fallback for lazy components
 const LoadingFallback = () => (
