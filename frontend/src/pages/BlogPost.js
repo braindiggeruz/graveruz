@@ -13,7 +13,6 @@ function renderMarkdown(content) {
   const lines = content.split('\n');
   const elements = [];
   let listItems = [];
-  let inList = false;
   
   const flushList = () => {
     if (listItems.length > 0) {
@@ -24,11 +23,9 @@ function renderMarkdown(content) {
       );
       listItems = [];
     }
-    inList = false;
   };
   
   lines.forEach((line, index) => {
-    // Headers
     if (line.startsWith('# ')) {
       flushList();
       elements.push(<h1 key={index} className="text-3xl font-bold text-white mt-8 mb-4">{line.slice(2)}</h1>);
@@ -38,20 +35,12 @@ function renderMarkdown(content) {
     } else if (line.startsWith('### ')) {
       flushList();
       elements.push(<h3 key={index} className="text-xl font-bold text-white mt-4 mb-2">{line.slice(4)}</h3>);
-    }
-    // List items
-    else if (line.startsWith('- ')) {
-      inList = true;
+    } else if (line.startsWith('- ')) {
       listItems.push(line.slice(2));
-    }
-    // Empty line
-    else if (line.trim() === '') {
+    } else if (line.trim() === '') {
       flushList();
-    }
-    // Paragraph
-    else if (line.trim()) {
+    } else if (line.trim()) {
       flushList();
-      // Simple bold/italic
       let text = line
         .replace(/\*\*(.+?)\*\*/g, '<strong class="font-bold text-white">$1</strong>')
         .replace(/\*(.+?)\*/g, '<em class="italic">$1</em>');
@@ -67,49 +56,22 @@ function renderMarkdown(content) {
 
 export default function BlogPost() {
   const { locale, slug } = useParams();
-  const { t } = useI18n();
   const post = getPostBySlug(locale, slug);
 
-  // 404 if post not found
-  if (!post) {
-    return <Navigate to={`/${locale}/blog`} replace />;
-  }
-
   const isRu = locale === 'ru';
-  const canonicalUrl = `${BASE_URL}/${locale}/blog/${slug}`;
+  const canonicalUrl = post ? `${BASE_URL}/${locale}/blog/${slug}` : '';
   
-  // Alternate URL (if counterpart exists)
-  const alternateSlug = getAlternateSlug(slug);
+  const alternateSlug = slug ? getAlternateSlug(slug) : null;
   const altLocale = locale === 'ru' ? 'uz' : 'ru';
   const alternateUrl = alternateSlug ? `${BASE_URL}/${altLocale}/blog/${alternateSlug}` : null;
   
   const ruUrl = locale === 'ru' ? canonicalUrl : alternateUrl;
   const uzUrl = locale === 'uz' ? canonicalUrl : alternateUrl;
 
-  // Article JSON-LD
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": post.title,
-    "description": post.description,
-    "datePublished": post.date,
-    "author": {
-      "@type": "Organization",
-      "name": "Graver.uz"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Graver.uz",
-      "url": BASE_URL
-    },
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": canonicalUrl
-    }
-  };
-
-  // SEO tags via useEffect
+  // SEO tags via useEffect (must be called unconditionally)
   React.useEffect(() => {
+    if (!post) return;
+    
     document.querySelectorAll('[data-seo-blog]').forEach(el => el.remove());
     
     const canonical = document.createElement('link');
@@ -146,7 +108,34 @@ export default function BlogPost() {
     return () => {
       document.querySelectorAll('[data-seo-blog]').forEach(el => el.remove());
     };
-  }, [canonicalUrl, ruUrl, uzUrl]);
+  }, [post, canonicalUrl, ruUrl, uzUrl]);
+
+  // 404 redirect if post not found (after hooks)
+  if (!post) {
+    return <Navigate to={`/${locale}/blog`} replace />;
+  }
+
+  // Article JSON-LD
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": post.title,
+    "description": post.description,
+    "datePublished": post.date,
+    "author": {
+      "@type": "Organization",
+      "name": "Graver.uz"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Graver.uz",
+      "url": BASE_URL
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": canonicalUrl
+    }
+  };
 
   // Related services links
   const relatedServices = isRu ? [
