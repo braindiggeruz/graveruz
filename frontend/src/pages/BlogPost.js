@@ -5,78 +5,42 @@ import { ArrowLeft, Calendar, Tag } from 'lucide-react';
 import { BASE_URL, HREFLANG_MAP } from '../config/seo';
 import { getPostBySlug, getAlternateSlug } from '../data/blogPosts';
 
-// Simple markdown renderer
-function renderMarkdown(content) {
-  if (!content) return null;
-  
-  const lines = content.split('\n');
-  const elements = [];
-  let listItems = [];
-  
-  const flushList = () => {
-    if (listItems.length > 0) {
-      elements.push(
-        <ul key={'list-' + elements.length} className="list-disc list-inside space-y-2 my-4 text-gray-300">
-          {listItems.map((item, i) => <li key={i}>{item}</li>)}
-        </ul>
-      );
-      listItems = [];
-    }
-  };
-  
-  for (let i = 0; i < lines.length; i++) {
-    const line = lines[i];
-    if (line.startsWith('# ')) {
-      flushList();
-      elements.push(<h1 key={'h1-' + i} className="text-3xl font-bold text-white mt-8 mb-4">{line.substring(2)}</h1>);
-    } else if (line.startsWith('## ')) {
-      flushList();
-      elements.push(<h2 key={'h2-' + i} className="text-2xl font-bold text-white mt-6 mb-3">{line.substring(3)}</h2>);
-    } else if (line.startsWith('### ')) {
-      flushList();
-      elements.push(<h3 key={'h3-' + i} className="text-xl font-bold text-white mt-4 mb-2">{line.substring(4)}</h3>);
-    } else if (line.startsWith('- ')) {
-      listItems.push(line.substring(2));
-    } else if (line.trim() === '') {
-      flushList();
-    } else if (line.trim()) {
-      flushList();
-      elements.push(<p key={'p-' + i} className="text-gray-300 leading-relaxed my-4">{line}</p>);
-    }
-  }
-  
-  flushList();
-  return elements;
-}
-
 export default function BlogPost() {
-  const { locale, slug } = useParams();
+  const params = useParams();
+  const locale = params.locale;
+  const slug = params.slug;
   const post = getPostBySlug(locale, slug);
 
   const isRu = locale === 'ru';
-  const canonicalUrl = post ? BASE_URL + '/' + locale + '/blog/' + slug : '';
   
-  const alternateSlug = slug ? getAlternateSlug(slug) : null;
-  const altLocale = locale === 'ru' ? 'uz' : 'ru';
-  const alternateUrl = alternateSlug ? BASE_URL + '/' + altLocale + '/blog/' + alternateSlug : null;
-  
-  const ruUrl = locale === 'ru' ? canonicalUrl : alternateUrl;
-  const uzUrl = locale === 'uz' ? canonicalUrl : alternateUrl;
+  // Build URLs without template literals
+  var canonicalUrl = post ? (BASE_URL + '/' + locale + '/blog/' + slug) : '';
+  var alternateSlug = slug ? getAlternateSlug(slug) : null;
+  var altLocale = locale === 'ru' ? 'uz' : 'ru';
+  var alternateUrl = alternateSlug ? (BASE_URL + '/' + altLocale + '/blog/' + alternateSlug) : null;
+  var ruUrl = locale === 'ru' ? canonicalUrl : alternateUrl;
+  var uzUrl = locale === 'uz' ? canonicalUrl : alternateUrl;
 
   // SEO tags via useEffect
-  React.useEffect(() => {
+  React.useEffect(function() {
     if (!post) return;
     
-    document.querySelectorAll('[data-seo-blog]').forEach(function(el) { el.remove(); });
+    // Remove old tags
+    var oldTags = document.querySelectorAll('[data-seo-blog]');
+    for (var i = 0; i < oldTags.length; i++) {
+      oldTags[i].remove();
+    }
     
-    const canonical = document.createElement('link');
+    // Canonical
+    var canonical = document.createElement('link');
     canonical.rel = 'canonical';
     canonical.href = canonicalUrl;
     canonical.setAttribute('data-seo-blog', 'true');
     document.head.appendChild(canonical);
     
+    // Hreflang RU
     if (ruUrl) {
-      const hreflangRu = document.createElement('link');
+      var hreflangRu = document.createElement('link');
       hreflangRu.rel = 'alternate';
       hreflangRu.hreflang = HREFLANG_MAP.ru;
       hreflangRu.href = ruUrl;
@@ -84,8 +48,9 @@ export default function BlogPost() {
       document.head.appendChild(hreflangRu);
     }
     
+    // Hreflang UZ
     if (uzUrl) {
-      const hreflangUz = document.createElement('link');
+      var hreflangUz = document.createElement('link');
       hreflangUz.rel = 'alternate';
       hreflangUz.hreflang = HREFLANG_MAP.uz;
       hreflangUz.href = uzUrl;
@@ -93,7 +58,8 @@ export default function BlogPost() {
       document.head.appendChild(hreflangUz);
     }
     
-    const hreflangDefault = document.createElement('link');
+    // Hreflang default
+    var hreflangDefault = document.createElement('link');
     hreflangDefault.rel = 'alternate';
     hreflangDefault.hreflang = 'x-default';
     hreflangDefault.href = ruUrl || canonicalUrl;
@@ -101,49 +67,70 @@ export default function BlogPost() {
     document.head.appendChild(hreflangDefault);
     
     return function() {
-      document.querySelectorAll('[data-seo-blog]').forEach(function(el) { el.remove(); });
+      var tags = document.querySelectorAll('[data-seo-blog]');
+      for (var j = 0; j < tags.length; j++) {
+        tags[j].remove();
+      }
     };
   }, [post, canonicalUrl, ruUrl, uzUrl]);
 
+  // Redirect if no post
   if (!post) {
-    return <Navigate to={'/' + locale + '/blog'} replace />;
+    var redirectPath = '/' + locale + '/blog';
+    return React.createElement(Navigate, { to: redirectPath, replace: true });
   }
 
-  const articleSchema = {
+  // Article schema
+  var articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": post.title,
     "description": post.description,
     "datePublished": post.date,
-    "author": {
-      "@type": "Organization",
-      "name": "Graver.uz"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Graver.uz",
-      "url": BASE_URL
-    },
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": canonicalUrl
-    }
+    "author": { "@type": "Organization", "name": "Graver.uz" },
+    "publisher": { "@type": "Organization", "name": "Graver.uz", "url": BASE_URL },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl }
   };
 
-  const relatedServices = isRu ? [
-    { href: '/' + locale + '/catalog-products', label: 'Каталог продукции' },
-    { href: '/' + locale + '/watches-with-logo', label: 'Часы с логотипом' },
-    { href: '/' + locale + '/lighters-engraving', label: 'Зажигалки с гравировкой' },
-    { href: '/' + locale + '/engraved-gifts', label: 'Подарки с гравировкой' }
-  ] : [
-    { href: '/' + locale + '/mahsulotlar-katalogi', label: 'Mahsulotlar katalogi' },
-    { href: '/' + locale + '/logotipli-soat', label: 'Logotipli soat' },
-    { href: '/' + locale + '/gravirovkali-zajigalka', label: 'Gravirovkali zajigalka' },
-    { href: '/' + locale + '/gravirovkali-sovgalar', label: "Gravirovkali sovg'alar" }
-  ];
+  // Related services
+  var relatedServices = [];
+  if (isRu) {
+    relatedServices = [
+      { href: '/' + locale + '/catalog-products', label: 'Каталог продукции' },
+      { href: '/' + locale + '/watches-with-logo', label: 'Часы с логотипом' },
+      { href: '/' + locale + '/lighters-engraving', label: 'Зажигалки с гравировкой' },
+      { href: '/' + locale + '/engraved-gifts', label: 'Подарки с гравировкой' }
+    ];
+  } else {
+    relatedServices = [
+      { href: '/' + locale + '/mahsulotlar-katalogi', label: 'Mahsulotlar katalogi' },
+      { href: '/' + locale + '/logotipli-soat', label: 'Logotipli soat' },
+      { href: '/' + locale + '/gravirovkali-zajigalka', label: 'Gravirovkali zajigalka' },
+      { href: '/' + locale + '/gravirovkali-sovgalar', label: "Gravirovkali sovg'alar" }
+    ];
+  }
 
-  const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
-  const formattedDate = new Date(post.date).toLocaleDateString(locale === 'ru' ? 'ru-RU' : 'uz-UZ', dateOptions);
+  var dateOpts = { year: 'numeric', month: 'long', day: 'numeric' };
+  var dateLocale = locale === 'ru' ? 'ru-RU' : 'uz-UZ';
+  var formattedDate = new Date(post.date).toLocaleDateString(dateLocale, dateOpts);
+
+  // Render markdown simply
+  var contentLines = post.content ? post.content.split('\n') : [];
+  var contentElements = [];
+  for (var k = 0; k < contentLines.length; k++) {
+    var line = contentLines[k];
+    if (line.indexOf('# ') === 0) {
+      contentElements.push(React.createElement('h1', { key: 'h1-' + k, className: 'text-3xl font-bold text-white mt-8 mb-4' }, line.substring(2)));
+    } else if (line.indexOf('## ') === 0) {
+      contentElements.push(React.createElement('h2', { key: 'h2-' + k, className: 'text-2xl font-bold text-white mt-6 mb-3' }, line.substring(3)));
+    } else if (line.indexOf('### ') === 0) {
+      contentElements.push(React.createElement('h3', { key: 'h3-' + k, className: 'text-xl font-bold text-white mt-4 mb-2' }, line.substring(4)));
+    } else if (line.indexOf('- ') === 0) {
+      contentElements.push(React.createElement('li', { key: 'li-' + k, className: 'text-gray-300 ml-4' }, line.substring(2)));
+    } else if (line.trim()) {
+      contentElements.push(React.createElement('p', { key: 'p-' + k, className: 'text-gray-300 leading-relaxed my-4' }, line));
+    }
+  }
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -192,9 +179,9 @@ export default function BlogPost() {
             
             {post.keywords && post.keywords.length > 0 && (
               <div className="flex flex-wrap gap-2 mt-4">
-                {post.keywords.map(function(kw, i) {
+                {post.keywords.map(function(kw, idx) {
                   return (
-                    <span key={i} className="inline-flex items-center text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">
+                    <span key={idx} className="inline-flex items-center text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">
                       <Tag size={10} className="mr-1" />
                       {kw}
                     </span>
@@ -205,7 +192,7 @@ export default function BlogPost() {
           </header>
 
           <div className="prose prose-invert max-w-none">
-            {renderMarkdown(post.content)}
+            {contentElements}
           </div>
 
           <div className="mt-12 p-6 bg-gray-900 border border-gray-800 rounded-xl">
@@ -213,10 +200,10 @@ export default function BlogPost() {
               {isRu ? 'Связанные услуги' : "Bog'liq xizmatlar"}
             </h3>
             <div className="grid grid-cols-2 gap-3">
-              {relatedServices.map(function(service, i) {
+              {relatedServices.map(function(service, idx) {
                 return (
                   <Link 
-                    key={i}
+                    key={idx}
                     to={service.href}
                     className="text-teal-500 hover:text-teal-400 text-sm transition"
                   >
