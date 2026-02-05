@@ -318,7 +318,7 @@ function App() {
               <button onClick={() => scrollToSection('portfolio')} className="text-gray-300 hover:text-teal-500 transition">{t('nav.portfolio')}</button>
               <button onClick={() => scrollToSection('process')} className="text-gray-300 hover:text-teal-500 transition">{t('nav.process')}</button>
               <button onClick={() => scrollToSection('faq')} className="text-gray-300 hover:text-teal-500 transition">{t('nav.faq')}</button>
-              <a href={`/blog/${locale}`} className="text-gray-300 hover:text-teal-500 transition" data-testid="nav-blog">{t('nav.blog')}</a>
+              <a href={`/${locale}/blog`} className="text-gray-300 hover:text-teal-500 transition" data-testid="nav-blog">{t('nav.blog')}</a>
               <button onClick={() => scrollToSection('contact')} className="text-gray-300 hover:text-teal-500 transition">{t('nav.contacts')}</button>
               <LanguageSwitcher />
             </nav>
@@ -354,7 +354,7 @@ function App() {
                 <button onClick={() => scrollToSection('portfolio')} className="text-gray-300 hover:text-teal-500 transition text-left">{t('nav.portfolio')}</button>
                 <button onClick={() => scrollToSection('process')} className="text-gray-300 hover:text-teal-500 transition text-left">{t('nav.process')}</button>
                 <button onClick={() => scrollToSection('faq')} className="text-gray-300 hover:text-teal-500 transition text-left">{t('nav.faq')}</button>
-                <a href={`/blog/${locale}`} className="text-gray-300 hover:text-teal-500 transition text-left">{t('nav.blog')}</a>
+                <a href={`/${locale}/blog`} className="text-gray-300 hover:text-teal-500 transition text-left">{t('nav.blog')}</a>
                 <button onClick={() => scrollToSection('contact')} className="text-gray-300 hover:text-teal-500 transition text-left">{t('nav.contacts')}</button>
                 <div className="pt-2 border-t border-gray-800">
                   <LanguageSwitcher />
@@ -1065,7 +1065,7 @@ function App() {
             {t('blog.posts').map((post, index) => (
               <a 
                 key={index}
-                href={`/blog/${locale}/${post.slug}`}
+                href={`/${locale}/blog/${post.slug}`}
                 className="group bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden hover:border-teal-500/50 transition"
                 data-testid={`blog-post-${index + 1}`}
               >
@@ -1092,7 +1092,7 @@ function App() {
 
           <div className="text-center mt-12">
             <a 
-              href={`/blog/${locale}`}
+              href={`/${locale}/blog`}
               className="inline-flex items-center text-teal-500 hover:text-teal-400 font-semibold text-lg transition group"
               data-testid="blog-all-posts"
             >
@@ -1219,14 +1219,14 @@ function App() {
                 {t('blog.posts').slice(0, 3).map((post, index) => (
                   <a 
                     key={index}
-                    href={`/blog/${locale}/${post.slug}`}
+                    href={`/${locale}/blog/${post.slug}`}
                     className="block hover:text-teal-500 transition line-clamp-1"
                   >
                     {post.title}
                   </a>
                 ))}
                 <a 
-                  href={`/blog/${locale}`}
+                  href={`/${locale}/blog`}
                   className="block text-teal-500 hover:text-teal-400 font-medium mt-3"
                 >
                   {t('blog.allPosts')} →
