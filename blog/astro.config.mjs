@@ -3,7 +3,6 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://www.graver-studio.uz/blog',
-  base: '/blog',
   integrations: [sitemap()],
   markdown: {
     shikiConfig: {
