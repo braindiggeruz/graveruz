@@ -111,35 +111,51 @@ B2B corporate gifting website with premium dark theme, focusing on lead conversi
 - All 6 key URLs verified: canonical ✅, hreflang ✅, robots ✅, unique title ✅
 
 ## Current State
-- **Main Site**: Fully bilingual (RU/UZ), optimized, SEO-correct
-- **Blog**: React-based blog with 5 RU + 3 UZ SEO-optimized articles
-- **API**: Lead submission working with Telegram group notifications
-- **SEO**: Full schema markup, correct canonicals, hreflang implementation
-- **Sitemap**: 26 URLs with hreflang pairs
+- **Main Site**: Fully bilingual (RU/UZ), SEO-optimized
+- **Blog**: 10 RU + 10 UZ SEO-optimized articles (COMPLETE)
+- **Sitemap**: 38 URLs with hreflang pairs
+- **SEO**: Article schema, LocalBusiness, FAQ
+- **API**: Lead submission with Telegram notifications
+
+## Blog Articles (COMPLETE 10/10 RU + 10/10 UZ)
+### RU
+1. kak-vybrat-korporativnyj-podarok
+2. lazernaya-gravirovka-podarkov
+3. podarochnye-nabory-s-logotipom
+4. welcome-pack-dlya-sotrudnikov
+5. brendirovanie-suvenirov
+6. top-idei-podarkov-na-novyj-god (NEW)
+7. kak-podgotovit-maket-logotipa (NEW)
+8. podarki-na-navruz (NEW)
+9. ekonomiya-na-korporativnyh-suvenirax (NEW)
+10. chek-list-zakupshchika-podarkov (NEW)
+
+### UZ
+1. korporativ-sovgani-qanday-tanlash
+2. lazer-gravirovka-sovgalar
+3. logotipli-sovga-toplami
+4. welcome-pack-yangi-xodimlar (NEW)
+5. suvenir-brendlash (NEW)
+6. yangi-yil-sovga-goyalari (NEW)
+7. logotip-maketi-tayyorlash (NEW)
+8. navruz-sovgalari (NEW)
+9. suvenir-byudjetini-tejash (NEW)
+10. xaridor-chek-listi-b2b (NEW)
 
 ## Pending Issues
-1. **P0**: Deploy to production (user action required)
-2. **P1**: Form submission verification (user testing recommended)
-3. **P2**: Meta Pixel test events blocked (infrastructure TLS issue in preview)
+1. **P0**: Deploy to production → GSC setup
+2. **P1**: Form submission verification
 
 ## Backlog
-
-### P0 - Immediate (This Week)
-- ✅ Blog system implemented
-- ✅ 5 RU articles created
-- ✅ 3 UZ articles created
-- Deploy to production → GSC setup
-- Add remaining 5 UZ articles
-
-### P1 - Next Week
-- Add 5 more articles (seasonal: Navruz, New Year ideas)
-- Internal linking improvements on service pages
-- BreadcrumbList schema on all pages
+### P1 - Next
+- BreadcrumbList schema
+- Internal linking improvements
+- Product schema on B2C pages
 
 ### P2 - Future
-- Blog Phase 2: Author pages, enhanced schema
-- Blog Phase 3: Content clusters & internal linking
-- Product schema on B2C pages
+- Blog author pages
+- Content clusters
+- Off-page SEO (local directories)
 
 ## Tech Stack
 - **Frontend**: React 18, Tailwind CSS, react-helmet-async v2
