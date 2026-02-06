@@ -1,10 +1,29 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { ArrowLeft, Calendar, ChevronRight } from 'lucide-react';
+import { ArrowLeft, Calendar, ChevronRight, Star } from 'lucide-react';
 import { useI18n } from '../i18n';
 import { BASE_URL, HREFLANG_MAP } from '../config/seo';
-import { getPostsByLocale } from '../data/blogPosts';
+import { getPostsByLocale, getPostBySlug } from '../data/blogPosts';
+
+// Featured/foundational article slugs for "Recommended" section
+const featuredSlugsRu = [
+  'kak-vybrat-korporativnyj-podarok',
+  'lazernaya-gravirovka-podarkov',
+  'podarochnye-nabory-s-logotipom',
+  'brendirovanie-suvenirov',
+  'chek-list-zakupshchika-podarkov',
+  'top-idei-podarkov-na-novyj-god'
+];
+
+const featuredSlugsUz = [
+  'korporativ-sovgani-qanday-tanlash',
+  'lazer-gravirovka-sovgalar',
+  'logotipli-sovga-toplami',
+  'suvenir-brendlash',
+  'xaridor-chek-listi-b2b',
+  'yangi-yil-sovga-goyalari'
+];
 
 export default function BlogIndex() {
   const { locale } = useParams();
