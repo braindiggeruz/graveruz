@@ -59,11 +59,46 @@ function BlogPostPage() {
     hdef.href = ruUrl || canonicalUrl;
     hdef.setAttribute('data-seo-blog', 'true');
     document.head.appendChild(hdef);
+
+    // Inject Article JSON-LD
+    var articleLd = document.createElement('script');
+    articleLd.type = 'application/ld+json';
+    articleLd.setAttribute('data-seo-blog', 'true');
+    articleLd.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: post.title,
+      description: post.description,
+      datePublished: post.date,
+      dateModified: post.date,
+      url: canonicalUrl,
+      mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
+      author: { "@type": "Organization", name: "Graver.uz", url: BASE_URL },
+      publisher: { "@type": "Organization", name: "Graver.uz", url: BASE_URL },
+      inLanguage: locale === 'ru' ? "ru" : "uz"
+    });
+    document.head.appendChild(articleLd);
+
+    // Inject BreadcrumbList JSON-LD
+    var isRuLang = locale === 'ru';
+    var breadcrumbLd = document.createElement('script');
+    breadcrumbLd.type = 'application/ld+json';
+    breadcrumbLd.setAttribute('data-seo-blog', 'true');
+    breadcrumbLd.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: isRuLang ? "Главная" : "Bosh sahifa", item: BASE_URL + "/" + locale },
+        { "@type": "ListItem", position: 2, name: isRuLang ? "Блог" : "Blog", item: BASE_URL + "/" + locale + "/blog" },
+        { "@type": "ListItem", position: 3, name: post.title, item: canonicalUrl }
+      ]
+    });
+    document.head.appendChild(breadcrumbLd);
     
     return function cleanup() {
       document.querySelectorAll('[data-seo-blog]').forEach(function(el) { el.remove(); });
     };
-  }, [post, canonicalUrl, ruUrl, uzUrl]);
+  }, [post, canonicalUrl, ruUrl, uzUrl, locale]);
 
   if (!post) {
     return React.createElement(Navigate, { to: '/' + locale + '/blog', replace: true });
