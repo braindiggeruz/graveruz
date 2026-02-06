@@ -36,6 +36,12 @@ export default function BlogIndex() {
     ? 'Статьи о корпоративных подарках, лазерной гравировке и брендировании в Ташкенте.'
     : "Toshkentda korporativ sovg'alar, lazer gravyurasi va brendlash haqida maqolalar.";
 
+  // Get featured posts for "Recommended" section
+  const featuredSlugs = isRu ? featuredSlugsRu : featuredSlugsUz;
+  const featuredPosts = featuredSlugs
+    .map(slug => getPostBySlug(locale, slug))
+    .filter(Boolean);
+
   const canonicalUrl = `${BASE_URL}/${locale}/blog`;
   const ruUrl = `${BASE_URL}/ru/blog`;
   const uzUrl = `${BASE_URL}/uz/blog`;
