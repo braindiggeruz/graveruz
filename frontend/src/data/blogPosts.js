@@ -2022,12 +2022,22 @@ const slugMapping = {
   'podarochnye-nabory-s-logotipom': 'logotipli-sovga-toplami',
   'welcome-pack-dlya-sotrudnikov': 'welcome-pack-yangi-xodimlar',
   'brendirovanie-suvenirov': 'suvenir-brendlash',
+  'top-idei-podarkov-na-novyj-god': 'yangi-yil-sovga-goyalari',
+  'kak-podgotovit-maket-logotipa': 'logotip-maketi-tayyorlash',
+  'podarki-na-navruz': 'navruz-sovgalari',
+  'ekonomiya-na-korporativnyh-suvenirax': 'suvenir-byudjetini-tejash',
+  'chek-list-zakupshchika-podarkov': 'xaridor-chek-listi-b2b',
   // UZ -> RU
   'korporativ-sovgani-qanday-tanlash': 'kak-vybrat-korporativnyj-podarok',
   'lazer-gravirovka-sovgalar': 'lazernaya-gravirovka-podarkov',
   'logotipli-sovga-toplami': 'podarochnye-nabory-s-logotipom',
   'welcome-pack-yangi-xodimlar': 'welcome-pack-dlya-sotrudnikov',
-  'suvenir-brendlash': 'brendirovanie-suvenirov'
+  'suvenir-brendlash': 'brendirovanie-suvenirov',
+  'yangi-yil-sovga-goyalari': 'top-idei-podarkov-na-novyj-god',
+  'logotip-maketi-tayyorlash': 'kak-podgotovit-maket-logotipa',
+  'navruz-sovgalari': 'podarki-na-navruz',
+  'suvenir-byudjetini-tejash': 'ekonomiya-na-korporativnyh-suvenirax',
+  'xaridor-chek-listi-b2b': 'chek-list-zakupshchika-podarkov'
 };
 
 export function getAlternateSlug(slug) {
