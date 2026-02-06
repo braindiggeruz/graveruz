@@ -130,6 +130,27 @@ export default function BlogIndex() {
             </p>
           </div>
 
+          {/* Featured/Recommended Articles Section */}
+          {featuredPosts.length > 0 && (
+            <div className="mb-12 p-6 bg-gradient-to-r from-teal-900/20 to-cyan-900/20 border border-teal-700/30 rounded-xl" data-testid="featured-articles-section">
+              <h2 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                <Star size={18} className="text-teal-400" />
+                {isRu ? 'Рекомендуемые статьи' : 'Tavsiya etilgan maqolalar'}
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {featuredPosts.map((fp, idx) => (
+                  <Link
+                    key={idx}
+                    to={`/${locale}/blog/${fp.slug}`}
+                    className="text-teal-400 hover:text-teal-300 transition hover:underline text-sm"
+                  >
+                    → {fp.title}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
           {posts.length === 0 ? (
             <div className="text-center py-12">
               <p className="text-gray-400">
