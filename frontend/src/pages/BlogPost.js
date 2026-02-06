@@ -149,9 +149,7 @@ function BlogPostPage() {
       React.createElement('meta', { property: 'og:title', content: post.title }),
       React.createElement('meta', { property: 'og:description', content: post.description }),
       React.createElement('meta', { property: 'og:url', content: canonicalUrl }),
-      React.createElement('meta', { property: 'og:type', content: 'article' }),
-      React.createElement('script', { type: 'application/ld+json' }, JSON.stringify(articleSchema)),
-      React.createElement('script', { type: 'application/ld+json' }, JSON.stringify(breadcrumbSchema))
+      React.createElement('meta', { property: 'og:type', content: 'article' })
     ),
     React.createElement('header', { className: 'fixed top-0 left-0 right-0 bg-black/95 backdrop-blur-sm z-50 border-b border-gray-800' },
       React.createElement('div', { className: 'max-w-7xl mx-auto px-4 sm:px-6 lg:px-8' },
