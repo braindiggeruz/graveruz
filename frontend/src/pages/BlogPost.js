@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import { Link, useParams, Navigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { ArrowLeft, Calendar, Tag } from 'lucide-react';
+import { ArrowLeft, Calendar, Tag, Lightbulb, BookOpen } from 'lucide-react';
 import { BASE_URL, HREFLANG_MAP } from '../config/seo';
-import { getPostBySlug, getAlternateSlug } from '../data/blogPosts';
+import { getPostBySlug, getAlternateSlug, blogPosts } from '../data/blogPosts';
+import { getSeoOverride } from '../data/blogSeoOverrides';
 
 function BlogPostPage() {
   const params = useParams();
@@ -11,6 +12,9 @@ function BlogPostPage() {
   const slug = params.slug || '';
   const post = getPostBySlug(locale, slug);
   const isRu = locale === 'ru';
+  
+  // Get SEO override for this post
+  const seoOverride = getSeoOverride(locale, slug);
 
   const canonicalUrl = post ? BASE_URL + '/' + locale + '/blog/' + slug : '';
   const altSlug = slug ? getAlternateSlug(slug) : null;
@@ -18,6 +22,9 @@ function BlogPostPage() {
   const altUrl = altSlug ? BASE_URL + '/' + altLocale + '/blog/' + altSlug : null;
   const ruUrl = isRu ? canonicalUrl : altUrl;
   const uzUrl = isRu ? altUrl : canonicalUrl;
+
+  // Determine title: use override if exists, otherwise default
+  const pageTitle = seoOverride?.titleTag || (post ? post.title + ' — Graver.uz' : 'Graver.uz');
 
   useEffect(function addSeoTags() {
     if (!post) return;
@@ -62,14 +69,56 @@ function BlogPostPage() {
     return React.createElement(Navigate, { to: '/' + locale + '/blog', replace: true });
   }
 
-  var schema = {
+  // Enhanced Article Schema
+  var articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: post.title,
     description: post.description,
     datePublished: post.date,
-    author: { "@type": "Organization", name: "Graver.uz" },
-    publisher: { "@type": "Organization", name: "Graver.uz", url: BASE_URL }
+    dateModified: post.date,
+    url: canonicalUrl,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": canonicalUrl
+    },
+    author: { 
+      "@type": "Organization", 
+      name: "Graver.uz",
+      url: BASE_URL
+    },
+    publisher: { 
+      "@type": "Organization", 
+      name: "Graver.uz", 
+      url: BASE_URL
+    },
+    inLanguage: isRu ? "ru" : "uz"
+  };
+
+  // BreadcrumbList Schema
+  var breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: isRu ? "Главная" : "Bosh sahifa",
+        item: BASE_URL + "/" + locale
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: isRu ? "Блог" : "Blog",
+        item: BASE_URL + "/" + locale + "/blog"
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: post.title,
+        item: canonicalUrl
+      }
+    ]
   };
 
   var services = isRu ? [
@@ -85,6 +134,12 @@ function BlogPostPage() {
   ];
 
   var dateStr = new Date(post.date).toLocaleDateString(isRu ? 'ru-RU' : 'uz-UZ', { year: 'numeric', month: 'long', day: 'numeric' });
+
+  // Get related posts from override or fallback to post.relatedPosts
+  var relatedSlugs = seoOverride?.relatedSlugs || post.relatedPosts || [];
+  var relatedPosts = relatedSlugs
+    .map(function(s) { return getPostBySlug(locale, s); })
+    .filter(Boolean);
 
   var contentParts = [];
   if (post.content) {
@@ -105,12 +160,15 @@ function BlogPostPage() {
 
   return React.createElement('div', { className: 'min-h-screen bg-black text-white' },
     React.createElement(Helmet, null,
-      React.createElement('title', null, post.title + ' — Graver.uz'),
+      React.createElement('title', null, pageTitle),
       React.createElement('meta', { name: 'description', content: post.description }),
       React.createElement('meta', { name: 'robots', content: 'index, follow' }),
       React.createElement('meta', { property: 'og:title', content: post.title }),
       React.createElement('meta', { property: 'og:description', content: post.description }),
-      React.createElement('script', { type: 'application/ld+json' }, JSON.stringify(schema))
+      React.createElement('meta', { property: 'og:url', content: canonicalUrl }),
+      React.createElement('meta', { property: 'og:type', content: 'article' }),
+      React.createElement('script', { type: 'application/ld+json' }, JSON.stringify(articleSchema)),
+      React.createElement('script', { type: 'application/ld+json' }, JSON.stringify(breadcrumbSchema))
     ),
     React.createElement('header', { className: 'fixed top-0 left-0 right-0 bg-black/95 backdrop-blur-sm z-50 border-b border-gray-800' },
       React.createElement('div', { className: 'max-w-7xl mx-auto px-4 sm:px-6 lg:px-8' },
@@ -130,6 +188,20 @@ function BlogPostPage() {
     ),
     React.createElement('main', { className: 'pt-24 pb-20' },
       React.createElement('article', { className: 'max-w-3xl mx-auto px-4 sm:px-6 lg:px-8', 'data-testid': 'blog-post-content' },
+        // Breadcrumb navigation
+        React.createElement('nav', { className: 'text-sm text-gray-500 mb-6', 'aria-label': 'Breadcrumb' },
+          React.createElement('ol', { className: 'flex items-center space-x-2' },
+            React.createElement('li', null,
+              React.createElement(Link, { to: '/' + locale, className: 'hover:text-teal-500 transition' }, isRu ? 'Главная' : 'Bosh sahifa')
+            ),
+            React.createElement('li', null, ' / '),
+            React.createElement('li', null,
+              React.createElement(Link, { to: '/' + locale + '/blog', className: 'hover:text-teal-500 transition' }, isRu ? 'Блог' : 'Blog')
+            ),
+            React.createElement('li', null, ' / '),
+            React.createElement('li', { className: 'text-gray-400 truncate max-w-[200px]' }, post.title)
+          )
+        ),
         React.createElement('header', { className: 'mb-8' },
           React.createElement('div', { className: 'flex items-center text-sm text-gray-500 mb-4' },
             React.createElement(Calendar, { size: 14, className: 'mr-2' }),
@@ -146,8 +218,41 @@ function BlogPostPage() {
             })
           )
         ),
+        // Quick Answer Block (if exists in override)
+        seoOverride && seoOverride.quickAnswer && React.createElement('div', { 
+          className: 'bg-gradient-to-r from-teal-900/30 to-cyan-900/30 border border-teal-700/50 rounded-xl p-5 mb-8',
+          'data-testid': 'quick-answer-block'
+        },
+          React.createElement('div', { className: 'flex items-start gap-3' },
+            React.createElement(Lightbulb, { size: 20, className: 'text-teal-400 mt-0.5 flex-shrink-0' }),
+            React.createElement('div', null,
+              React.createElement('p', { className: 'text-teal-300 font-semibold mb-1' }, isRu ? 'Быстрый ответ' : 'Tezkor javob'),
+              React.createElement('p', { className: 'text-gray-300 leading-relaxed' }, seoOverride.quickAnswer)
+            )
+          )
+        ),
         React.createElement('div', { className: 'prose prose-invert max-w-none' }, contentParts),
-        React.createElement('div', { className: 'mt-12 p-6 bg-gray-900 border border-gray-800 rounded-xl' },
+        // Related Articles Section (if exists)
+        relatedPosts.length > 0 && React.createElement('div', { 
+          className: 'mt-12 p-6 bg-gray-900/50 border border-gray-800 rounded-xl',
+          'data-testid': 'related-articles-section'
+        },
+          React.createElement('h3', { className: 'text-lg font-bold text-white mb-4 flex items-center gap-2' },
+            React.createElement(BookOpen, { size: 18, className: 'text-teal-500' }),
+            isRu ? 'Рекомендуем прочитать' : "Tavsiya etamiz"
+          ),
+          React.createElement('div', { className: 'space-y-3' },
+            relatedPosts.map(function(rp, idx) {
+              return React.createElement(Link, { 
+                key: idx, 
+                to: '/' + locale + '/blog/' + rp.slug, 
+                className: 'block text-teal-400 hover:text-teal-300 transition hover:underline'
+              }, '→ ' + rp.title);
+            })
+          )
+        ),
+        // Related Services Section
+        React.createElement('div', { className: 'mt-6 p-6 bg-gray-900 border border-gray-800 rounded-xl' },
           React.createElement('h3', { className: 'text-lg font-bold text-white mb-4' }, isRu ? 'Связанные услуги' : "Bog'liq xizmatlar"),
           React.createElement('div', { className: 'grid grid-cols-2 gap-3' },
             services.map(function(s, idx) {
