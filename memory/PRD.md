@@ -112,29 +112,34 @@ B2B corporate gifting website with premium dark theme, focusing on lead conversi
 
 ## Current State
 - **Main Site**: Fully bilingual (RU/UZ), optimized, SEO-correct
-- **Blog**: React-based blog integrated into main SPA (RU/UZ), with test articles
+- **Blog**: React-based blog with 5 RU + 3 UZ SEO-optimized articles
 - **API**: Lead submission working with Telegram group notifications
 - **SEO**: Full schema markup, correct canonicals, hreflang implementation
+- **Sitemap**: 26 URLs with hreflang pairs
 
 ## Pending Issues
-1. **P1**: Form submission verification (user testing recommended)
-2. **P2**: Meta Pixel test events blocked (infrastructure TLS issue in preview)
+1. **P0**: Deploy to production (user action required)
+2. **P1**: Form submission verification (user testing recommended)
+3. **P2**: Meta Pixel test events blocked (infrastructure TLS issue in preview)
 
 ## Backlog
 
-### P0 - Immediate
-- User verification of lead submission flow
-- **Deploy to production** to apply blog and sitemap fixes
+### P0 - Immediate (This Week)
+- ✅ Blog system implemented
+- ✅ 5 RU articles created
+- ✅ 3 UZ articles created
+- Deploy to production → GSC setup
+- Add remaining 5 UZ articles
 
-### P1 - Next
-- Add more blog content (real articles, not test)
-- Refactor portfolio section with filters
-- Redesign "How we work" section on main page
-- Refactor monolithic App.js into smaller components
+### P1 - Next Week
+- Add 5 more articles (seasonal: Navruz, New Year ideas)
+- Internal linking improvements on service pages
+- BreadcrumbList schema on all pages
 
 ### P2 - Future
 - Blog Phase 2: Author pages, enhanced schema
 - Blog Phase 3: Content clusters & internal linking
+- Product schema on B2C pages
 
 ## Tech Stack
 - **Frontend**: React 18, Tailwind CSS, react-helmet-async v2
@@ -149,13 +154,25 @@ B2B corporate gifting website with premium dark theme, focusing on lead conversi
 - Blog: `/ru/blog`, `/uz/blog`, `/ru/blog/:slug`, `/uz/blog/:slug`
 - API: `/api/leads`
 
-## Files Modified (Phase 9 - Blog Integration)
-- `/app/frontend/public/robots.txt` — removed broken sitemap-index.xml reference
-- `/app/frontend/public/sitemap.xml` — added blog URLs (20 entries total)
-- `/app/frontend/src/index.js` — added blog routes + legacy redirects
+## Blog Articles (Current)
+### RU (5 articles)
+1. kak-vybrat-korporativnyj-podarok - Как выбрать корпоративный подарок
+2. lazernaya-gravirovka-podarkov - Лазерная гравировка подарков
+3. podarochnye-nabory-s-logotipom - Подарочные наборы с логотипом
+4. welcome-pack-dlya-sotrudnikov - Welcome Pack для сотрудников
+5. brendirovanie-suvenirov - Брендирование сувениров
+
+### UZ (3 articles)
+1. korporativ-sovgani-qanday-tanlash
+2. lazer-gravirovka-sovgalar
+3. logotipli-sovga-toplami
+
+## Files Modified (Phase 9 - Blog + SEO Content)
+- `/app/frontend/public/robots.txt` — clean, single sitemap
+- `/app/frontend/public/sitemap.xml` — 26 URLs with blog articles
+- `/app/frontend/src/index.js` — blog routes + legacy redirects
 - `/app/frontend/src/App.js` — fixed blog navigation hrefs
 - `/app/frontend/src/pages/BlogIndex.js` (NEW)
 - `/app/frontend/src/pages/BlogPost.js` (NEW)
-- `/app/frontend/src/data/blogPosts.js` (NEW)
-- `/app/frontend/src/content/blog/ru/test-article.md` (NEW)
-- `/app/frontend/src/content/blog/uz/test-maqola.md` (NEW)
+- `/app/frontend/src/data/blogPosts.js` — 5 RU + 3 UZ articles with full content
+- `/app/SEO_ROADMAP.md` (NEW) — Detailed 30-day SEO plan
