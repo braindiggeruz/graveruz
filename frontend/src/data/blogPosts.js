@@ -1283,6 +1283,715 @@ Ha, sizning mahsulotlaringiz bilan ishlaymiz. Brendlaymiz va qadoqlaymiz.
 
 **Tayyorlash qancha vaqt?**
 5 dan 14 kungacha, murakkablik va partiyaga qarab.`
+    },
+    {
+      slug: 'welcome-pack-yangi-xodimlar',
+      title: "Yangi xodimlar uchun Welcome Pack",
+      description: "Welcome Pack tuzish bo'yicha qo'llanma: tarkibi, brendlash, tashkil etish. HR uchun amaliy maslahatlar.",
+      date: '2026-02-07',
+      keywords: ['welcome pack', 'onboarding', 'yangi xodimlar', 'HR'],
+      category: "HR",
+      relatedPosts: ['logotipli-sovga-toplami', 'korporativ-sovgani-qanday-tanlash'],
+      content: `# Yangi xodimlar uchun Welcome Pack
+
+Welcome Pack — bu yangi xodim birinchi ish kunida oladigan brendlangan buyumlar to'plami. Bu HR-brending vositasi bo'lib, adaptatsiyaga yordam beradi va ijobiy birinchi taassurot yaratadi.
+
+## Welcome Pack nima uchun kerak?
+
+- Yangi xodimning adaptatsiyasini tezlashtiradi
+- Birinchi kundan sadoqatni oshiradi
+- Kompaniya qadriyatlari va madaniyatini ko'rsatadi
+- Onboardingda WOW-effekt yaratadi
+- HR-brendni mustahkamlaydi
+
+## Welcome Pack tarkibi
+
+### Asosiy buyumlar
+- Firmaviy futbolka yoki hudi
+- Logotipli bloknot va ruchka
+- Beydj yoki kirish kartasi
+- Krujka yoki termokrujka
+- CEOdan xush kelibsiz xati
+
+### Foydali qo'shimchalar
+- Stikerlar va yopishtirmalar
+- Antistress yoki o'yinchoq
+- Shokolad yoki shirinliklar
+- Ofis xaritasi
+- Hamkasblar kontaktlari
+
+### Premium opsiyalar
+- Logotipli ryukzak
+- Powerbank
+- Simsiz quloqchinlar
+- Servislarga obuna
+
+## Jarayonni qanday tashkil qilish
+
+### 1-qadam: Byudjetni aniqlang
+Odatiy Welcome Pack byudjeti: xodimga $20 dan $100 gacha.
+
+### 2-qadam: Tarkibni tanlang
+Ish xususiyatini hisobga oling. IT-mutaxassislarga — tech-aksessuarlar, sotuvchilarga — zamonaviy bloknot.
+
+### 3-qadam: Brendlashni buyurtma qiling
+Barcha buyumlar yagona uslubda kompaniya logotipiga ega bo'lishi kerak.
+
+### 4-qadam: Qadoqlashni o'ylang
+Chiroyli quti yoki firmaviy paket taassurotni kuchaytiradi.
+
+### 5-qadam: Zaxira yarating
+Yangi xodimlar uchun 10-20 to'plamni zaxirada saqlang.
+
+## Welcome Pack yaratishda xatolar
+
+- Arzon va sifatsiz buyumlar
+- Personalizatsiya yo'qligi
+- Kechiktirib berish (birinchi kunda emas)
+- Eskirgan dizayn yoki logotip
+- Keraksiz narsalar ko'pligi
+
+## Chek-list
+
+- Byudjet tasdiqlangan
+- To'plam tarkibi aniqlangan
+- Brendlash maketlari kelishilgan
+- Qadoqlash tanlangan
+- Berish jarayoni tavsiflangan
+- Zaxira yaratilgan
+
+## FAQ
+
+**Optimal byudjet qancha?**
+O'rta biznes uchun — to'plamga $30-50. Bu sifatli buyumlarni kiritish imkonini beradi.
+
+**Tarkibni qanchalik tez-tez yangilash kerak?**
+Yiliga bir marta yoki rebrendingda tavsiya qilinadi.
+
+**Har bir to'plamni personalizatsiya qilish mumkinmi?**
+Ha, xodim ismini bloknot yoki krujkaga qo'shish mumkin.
+
+**Qancha to'plam buyurtma qilish kerak?**
+Bir yilga oldindan hisoblang + 20% zaxira.
+
+**Berishga kim javobgar?**
+Odatda HR yoki office-manager birinchi kunda to'plamni topshiradi.`
+    },
+    {
+      slug: 'suvenir-brendlash',
+      title: "Suvenirlarni brendlash: usullar va materiallar",
+      description: "Suvenir mahsulotlariga logotip qo'llash usullari: lazer gravirovka, tampoprint, shelkografiya, UV-bosma.",
+      date: '2026-02-08',
+      keywords: ['brendlash', 'logotip qo\'llash', 'suvenir mahsulotlari', 'bosma usullari'],
+      category: 'Texnologiyalar',
+      relatedPosts: ['lazer-gravirovka-sovgalar', 'logotip-maketi-tayyorlash'],
+      content: `# Suvenirlarni brendlash: usullar va materiallar
+
+Brendlash oddiy suvenirni marketing vositasiga aylantiradi. Usul tanlash mahsulot materialiga, byudjetga va sifat talablariga bog'liq.
+
+## Brendlash usullari
+
+### Lazer gravirovka
+**Mos keladi:** metall, yog'och, charm, shisha
+
+**Afzalliklari:**
+- Uzoq muddatlilik (o'chilmaydi)
+- Premium ko'rinish
+- Mayda detallar aniqligi
+
+**Kamchiliklari:**
+- Bir rangli
+- Bosmadan qimmatroq
+
+### Tampoprint
+**Mos keladi:** plastik, keramika, metall
+
+**Afzalliklari:**
+- Rangli bosma
+- Qulay narx
+- Egri sirtlarga mos
+
+**Kamchiliklari:**
+- Vaqt o'tishi bilan o'chilishi mumkin
+- Cheklangan maydon
+
+### Shelkografiya
+**Mos keladi:** to'qimachilik, plastik, qog'oz
+
+**Afzalliklari:**
+- Yorqin ranglar
+- Katta partiyalar uchun qulay
+- Matoda bardoshli
+
+**Kamchiliklari:**
+- Kichik partiylarda qimmat
+- Trafaret tayyorlash kerak
+
+### UV-bosma
+**Mos keladi:** plastik, metall, shisha, yog'och
+
+**Afzalliklari:**
+- To'liq rangli bosma
+- Foto sifati
+- Tez quritiladi
+
+**Kamchiliklari:**
+- Tampoprintdan qimmatroq
+- Gravirovkadan kam bardoshli
+
+### Tisnenie (bosim)
+**Mos keladi:** charm, karton, qog'oz
+
+**Afzalliklari:**
+- Taktil effekt
+- Premium ko'rinish
+- Uzoq muddatlilik
+
+**Kamchiliklari:**
+- Faqat bir rangli
+- Shtamp kerak
+
+## Material bo'yicha usul tanlash
+
+| Material | Tavsiya etilgan usul |
+|----------|---------------------|
+| Metall | Lazer gravirovka |
+| Plastik | Tampoprint, UV-bosma |
+| To'qimachilik | Shelkografiya, kashta |
+| Charm | Tisnenie, gravirovka |
+| Shisha | Gravirovka, peskostroy |
+| Yog'och | Gravirovka, UV-bosma |
+| Keramika | Tampoprint, dekal |
+
+## Maket tayyorlash
+
+Sifatli brendlash uchun to'g'ri maket kerak:
+
+- **Vektor** (AI, EPS, CDR) — gravirovka va bosma uchun
+- **Yuqori razreshenli rastr** (300 dpi) — UV-bosma uchun
+- **Rang modeli** — bosma uchun CMYK, gravirovka uchun qora-oq
+
+## Chek-list
+
+- Brendlash usuli tanlangan
+- Maket kerakli formatda tayyorlangan
+- Ranglar kelishilgan (Pantone)
+- Partiya aniqlangan
+- Namuna tasdiqlangan
+
+## FAQ
+
+**Qaysi usul eng uzoq muddatli?**
+Lazer gravirovka — u o'chilmaydi va rangini yo'qotmaydi.
+
+**Suvenirga foto bosish mumkinmi?**
+Ha, UV-bosma to'liq rangli tasvirlarni qo'llash imkonini beradi.
+
+**Minimal partiya qancha?**
+Lazer gravirovka uchun — 1 donadan. Shelkografiya uchun — 50 donadan.
+
+**Partiyadan oldin sifatni qanday tekshirish?**
+Biz tasdiqlash uchun test namunasi qilamiz.`
+    },
+    {
+      slug: 'yangi-yil-sovga-goyalari',
+      title: "Yangi yilga korporativ sovg'a g'oyalari",
+      description: "Xodimlar va hamkorlar uchun eng yaxshi yangi yil sovg'a g'oyalari: byudjetdan premiumgacha. Toshkentda nima sovg'a qilish kerak.",
+      date: '2026-02-09',
+      keywords: ["yangi yil sovg'alari", "bayram sovg'alari", "korporativ sovg'alar", 'Toshkent'],
+      category: 'Mavsumiy',
+      relatedPosts: ['korporativ-sovgani-qanday-tanlash', 'logotipli-sovga-toplami'],
+      content: `# Yangi yilga korporativ sovg'a g'oyalari
+
+Yangi yil — korporativ sovg'alar uchun eng muhim bayram. To'g'ri tanlangan sovg'a xodimlar va hamkorlar bilan munosabatlarni mustahkamlaydi. Ushbu qo'llanmada — Toshkent kompaniyalari uchun tasdiqlangan g'oyalar.
+
+## Byudjetli g'oyalar ($10 gacha)
+
+Barcha xodimlarga ommaviy sovg'alar:
+
+- Logotipli firmaviy archa shari
+- Yangi yil printli termokrujka
+- Brendlangan qadoqdagi shirinlik to'plamlari
+- Gravirovkali stol kalendarlari
+- Premium sinfli bloknot
+
+## O'rta segment ($10-30)
+
+Asosiy xodimlar va kichik jamoalar uchun:
+
+- Sovg'a to'plamlari (termos + krujka)
+- Lazer gravirovkali powerbank
+- Tisneniyli charm kundaliklar
+- Logotipli simsiz zaryadlovchilar
+- Yog'ochdan stol organayzerlar
+
+## Premium sovg'alar ($30-100)
+
+Rahbarlar va VIP-mijozlar uchun:
+
+- Yog'och qutidagi to'plam
+- Gravirovkali soat
+- Charm aksessuarlar (hamyon, vizitnitsa)
+- Futlyardagi elita ruchkalar
+- Personallashtirilgan flyagalar
+
+## Hamkorlar uchun sovg'alar
+
+Ishbilarmonlik sovg'alari bo'lishi kerak:
+
+- Namoyon, lekin ortiqcha emas
+- Ishda foydali
+- Ehtiyotkorlik bilan brendlangan
+- Sifatli qadoqlangan
+
+## Yangi yil sovg'alari trendlari
+
+Bu mavsumda mashhur:
+
+- Eko-sovg'alar (bambuk, qayta ishlangan materiallar)
+- Tech-gadjetlar (simsiz quloqchinlar, powerbank)
+- Personalizatsiya (qabul qiluvchi ismi)
+- Mahalliy mahsulotlar (firmaviy qadoqdagi o'zbek shirinliklari)
+
+## Chek-list
+
+- Xodimga byudjet aniqlangan
+- Qabul qiluvchilar ro'yxati tuzilgan
+- Sovg'a kategoriyalari tanlangan
+- Brendlash dizayni tasdiqlangan
+- Buyurtma kamida 3 hafta oldin berilgan
+- Yetkazib berish/topshirish o'ylangan
+
+## FAQ
+
+**Tayyorgarlikni qachon boshlash kerak?**
+Optimal — noyabrda. Dekabrda ish yuki maksimal, muddatlar uzayadi.
+
+**Turli bo'limlarga turli sovg'a qilish mumkinmi?**
+Ha, bitta buyurtma doirasida turli to'plamlar yig'amiz.
+
+**Viloyatlarga jo'natish uchun qanday qadoqlash?**
+O'zbekiston bo'ylab jo'natish uchun transport qadoqlash taqdim etamiz.
+
+**Dekabrda shoshilinch buyurtma qilasizmi?**
+Ha, lekin qo'shimcha to'lov bilan. Oldindan buyurtma qilishni tavsiya qilamiz.
+
+**Tabrik xati qo'shish mumkinmi?**
+Ha, bosma bilan personallashtirilgan ochiq kartalar qilamiz.`
+    },
+    {
+      slug: 'logotip-maketi-tayyorlash',
+      title: "Gravirovka uchun logotip maketini tayyorlash",
+      description: "Lazer gravirovka uchun maketga texnik talablar: fayl formatlari, razreshen, ranglar. Tayyorgarlik chek-listi.",
+      date: '2026-02-10',
+      keywords: ['logotip maketi', 'maket tayyorlash', 'lazer gravirovka', 'vektor'],
+      category: 'Texnologiyalar',
+      relatedPosts: ['lazer-gravirovka-sovgalar', 'suvenir-brendlash'],
+      content: `# Gravirovka uchun logotip maketini tayyorlash
+
+Gravirovka sifati to'g'ridan-to'g'ri maket sifatiga bog'liq. Ushbu maqolada — to'liq texnik talablar va fayllarni tayyorlashda tez-tez uchraydigan xatolar.
+
+## Fayl formatlari
+
+### Ideal formatlar (vektor)
+- AI (Adobe Illustrator)
+- EPS (Encapsulated PostScript)
+- CDR (CorelDRAW)
+- PDF (vektorli)
+- SVG (Scalable Vector Graphics)
+
+### Qabul qilinadigan formatlar (rastr)
+- PNG (shaffoflik bilan, 300+ dpi)
+- TIFF (siqishsiz)
+- PSD (qatlamlar bilan)
+
+### Mos kelmaydi
+- JPG (siqish artefaktlari)
+- GIF (past sifat)
+- Logotip skrinshotlari va fotolari
+
+## Vektor maketga talablar
+
+- Barcha shriftlar chiziqlarga o'tkazilgan
+- Ochiq konturlar yo'q
+- Minimal chiziq qalinligi: 0.3 mm
+- Logotip bir rangda (qora)
+- Gradiyentlar va yarim tonlarsiz
+- Effektlarsiz (soya, yorug'lik)
+
+## Rastr maketga talablar
+
+- Razreshen: kamida 300 dpi
+- Loyqa bo'lmagan aniq chegaralar
+- Kontrastli tasvir
+- Format: shaffof fonli PNG
+
+## Gravirovka o'lchamlari
+
+Tavsiya etilgan minimal o'lchamlar:
+
+| Element | Minimum |
+|---------|---------|
+| Logotip | 10×10 mm |
+| Matn | balandlik 3 mm |
+| Chiziqlar | qalinlik 0.3 mm |
+| Mayda detallar | 1 mm |
+
+## Tez-tez uchraydigan xatolar
+
+- Shriftlar chiziqlarga o'tkazilmagan (ochilganda almashadi)
+- Juda mayda detallar (o'qilmaydi)
+- Gradiyentlar (lazer bilan qayta ishlanmaydi)
+- Past razreshenli rastr (piksellanish)
+- Veb-saytdan fayl (72 dpi, mos kelmaydi)
+
+## Maketni qanday tekshirish
+
+1. Faylni Illustrator yoki CorelDRAWda oching
+2. Shriftlarni chiziqlarga o'tkazing (Ctrl+Shift+O)
+3. Barcha effektlarni olib tashlang
+4. Chiziq qalinligini tekshiring
+5. Gravirovka o'lchamiga kichraytiring — hammasi o'qiladimi?
+
+## Tayyorlik chek-listi
+
+- Fayl vektor formatida
+- Shriftlar chiziqlarda
+- Logotip qora-oq
+- Gradiyentlar va effektlar yo'q
+- Chiziqlar 0.3 mm dan kam emas
+- 1:1 masshtabda test bosma
+
+## FAQ
+
+**Rastrni vektorga o'tkazasizmi?**
+Ha, vektorlash xizmati mavjud. Narx logotip murakkabligiga bog'liq.
+
+**Faqat JPG bo'lsa nima qilish kerak?**
+Yuboring — sifatni baholaymiz. Aniq va katta bo'lsa, vektorlash mumkin.
+
+**Optimal fayl o'lchami qancha?**
+Vektor uchun o'lcham muhim emas. Rastr uchun — 300 dpi da kamida 1000×1000 piksel.
+
+**Maketga tuzatish kiritasizmi?**
+Ha, kichik tuzatishlar bepul. Sezilarli qayta ishlash — kelishuv bo'yicha.
+
+**Faylni qanday yuborish kerak?**
+Email, Telegram, WhatsApp — qulay usulda.`
+    },
+    {
+      slug: 'navruz-sovgalari',
+      title: "Navro'zga korporativ sovg'alar: an'analar va g'oyalar",
+      description: "Xodimlar va hamkorlar uchun Navro'z sovg'a g'oyalari. An'anaviy va zamonaviy korporativ suvenir variantlari.",
+      date: '2026-02-11',
+      keywords: ["navro'z sovg'alari", "navro'z", "korporativ sovg'alar", 'Toshkent', "O'zbekiston"],
+      category: 'Mavsumiy',
+      relatedPosts: ['korporativ-sovgani-qanday-tanlash', 'logotipli-sovga-toplami'],
+      content: `# Navro'zga korporativ sovg'alar
+
+Navro'z — O'zbekistondagi eng muhim bayram. Ushbu kunga korporativ sovg'alar an'analarga hurmatni ko'rsatadi va xodimlar hamda hamkorlar bilan aloqani mustahkamlaydi.
+
+## Navro'zning biznes uchun ahamiyati
+
+Navro'z (21-mart) — quyosh taqvimi bo'yicha yangi yil boshlanishi. O'zbekistonda bu davlat bayrami va quyidagilar uchun vaqt:
+
+- Xodimlarni ishlari uchun minnatdorchilik bildirish
+- Hamkorlik munosabatlarini mustahkamlash
+- Mijozlarni tabriqlash
+
+## An'anaviy sovg'a g'oyalari
+
+### Sumalak to'plamlari
+Navro'zning an'anaviy taomi. Logotipli firmaviy qadoqda sovg'a qilish mumkin.
+
+### Sovg'a savatlari
+- Milliy shirinliklar
+- Quritilgan mevalar va yong'oqlar
+- Bayramona qadoqdagi choy
+
+### Dekorativ elementlar
+- Xon-atlas (milliy mato)
+- O'zbek naqshli keramika
+- Qo'lda yasalgan suvenirlar
+
+## Brendlangan zamonaviy g'oyalar
+
+### Xodimlar uchun
+- Bahoriy dizaynli gravirovkali termoslar
+- Tisneniyli kundaliklar
+- Bayram printli krujkalar
+
+### Hamkorlar uchun
+- Milliy uslubdagi sovg'a to'plamlari
+- Gravirovkali stol suvenirlari
+- An'anaviy taomlar bilan VIP-qutilari
+
+### Mijozlar uchun
+- Tabrik ochiq kartalari
+- Logotipli kichik suvenirlar
+- Sertifikatlar va chegirmalar
+
+## Navro'z uslubidagi qadoqlash
+
+- Yashil va sariq ranglar (bahor ramzlari)
+- Milliy naqshlar
+- Sumalak, lola tasvirlari
+- O'zbek tilidagi yozuvlar
+
+## Tayyorgarlik muddatlari
+
+- 4-5 hafta oldin: kontseptsiya kelishish
+- 3-4 hafta oldin: maketlarni tasdiqlash
+- 2-3 hafta oldin: ishlab chiqarish
+- 1 hafta oldin: yetkazib berish va komplektlash
+
+## Chek-list
+
+- Byudjet aniqlangan
+- Qabul qiluvchilar ro'yxati tayyor
+- Kontseptsiya kelishilgan (an'anaviy/zamonaviy)
+- Maketlar tasdiqlangan
+- Buyurtma kamida 3 hafta oldin berilgan
+- Logistika o'ylangan
+
+## FAQ
+
+**Sovg'alarni qachon topshirish yaxshi?**
+Navro'zdan 1-3 kun oldin yoki bayramning dastlabki kunlarida.
+
+**An'anaviy va zamonaviyni birlashtirish mumkinmi?**
+Ha, masalan: firmaviy termokrujkada milliy shirinliklar.
+
+**Milliy ramzli sovg'alar qilasizmi?**
+Ha, o'zbek tilidagi naqshlar va yozuvlarni qo'llaymiz.
+
+**Navro'zga minimal buyurtma qancha?**
+10 donadan. Katta partiyada — chegirmalar.
+
+**Viloyatlarga yetkazib berasizmi?**
+Ha, butun O'zbekiston bo'ylab jo'natamiz.`
+    },
+    {
+      slug: 'suvenir-byudjetini-tejash',
+      title: "Korporativ suvenirlarda sifatni yo'qotmasdan qanday tejash mumkin",
+      description: "Korporativ sovg'alar byudjetini optimallashtirish usullari: material tanlash, partiyalar, mavsumiylik. Amaliy maslahatlar.",
+      date: '2026-02-12',
+      keywords: ['suvenirlarda tejash', 'byudjet', "korporativ sovg'alar", 'optimallashtirish'],
+      category: "Qo'llanmalar",
+      relatedPosts: ['korporativ-sovgani-qanday-tanlash', 'suvenir-brendlash'],
+      content: `# Korporativ suvenirlarda qanday tejash mumkin
+
+Korporativ sovg'alar — sezilarli xarajat moddasi. Lekin sifat va taassurotni yo'qotmasdan byudjetni sezilarli qisqartirish mumkin. Ushbu qo'llanmada — optimallashtirish uchun tasdiqlangan usullar.
+
+## To'g'ri partiyani tanlang
+
+Birlik narxi partiya oshgani sari pasayadi:
+
+| Partiya | Tejash |
+|---------|----------|
+| 10-50 dona | Bazaviy narx |
+| 50-100 dona | -10-15% |
+| 100-500 dona | -15-25% |
+| 500+ dona | -25-35% |
+
+**Maslahat:** Yillik buyurtmalarni birlashtiring. Barcha bayramlar uchun birdaniga buyurtma bering.
+
+## Brendlashni optimallashtiring
+
+### Arzonroq
+- Bir rangli bosma
+- Lazer gravirovka (uzoqroq xizmat qiladi)
+- Standart logotip o'lchamlari
+
+### Qimmatroq
+- To'liq rangli bosma
+- Murakkab sirtlarga qo'llash
+- Nostandart o'lchamlar
+
+## Universal mahsulotlarni tanlang
+
+Tejamkor va talab qilinadigan:
+- Gravirovkali ruchkalar
+- Krujkalar
+- Bloknot
+- Fleshkalar
+- Breloklar
+
+Qimmat va tor ixtisoslashtirilgan:
+- Soatlar
+- Charm buyumlar
+- Elektronika
+
+## Oldindan rejalashtiring
+
+Shoshilinch buyurtmalar 20-50% ga qimmatroq. Rejalashtiring:
+
+- Yangi yil — buyurtma oktabr-noyabrda
+- 8-mart — buyurtma yanvar-fevralda
+- Navro'z — buyurtma fevralda
+
+## Mavsumiy aksiyalardan foydalaning
+
+Past mavsum (kam buyurtmalar, past narxlar):
+- May-iyun
+- Avgust-sentabr
+
+Yuqori mavsum (ko'p buyurtmalar, yuqori narxlar):
+- Noyabr-dekabr
+- Fevral-mart
+
+## Alternativ materiallar
+
+| Qimmat | Alternativa | Tejash |
+|--------|-------------|--------|
+| Tabiiy charm | Eko-charm | 40-60% |
+| Metall | Premium plastik | 30-50% |
+| Qimmatbaho yog'och | Bambuk | 20-40% |
+
+## Tejash chek-listi
+
+- Yillik sovg'alar rejasi tuzilgan
+- Buyurtmalar partiyalarga birlashtirilgan
+- Universal mahsulotlar tanlangan
+- Brendlash optimallashtirilgan
+- Buyurtma past mavsumda berilgan
+- Yetkazib beruvchilar takliflari solishtirilgan
+
+## FAQ
+
+**Tejashda sifat pasayadimi?**
+Yo'q, agar partiya va muddatlarda tejasangiz, materiallarni emas.
+
+**Chegirma uchun minimal partiya qancha?**
+50 donadan ulgurji narxlar boshlanadi.
+
+**Namuna buyurtma qilish mumkinmi?**
+Ha, partiyadan oldin test namunasi qilamiz.
+
+**Gravirovka yoki bosmadan qaysi biri arzonroq?**
+Partiyaga bog'liq. Kichikda — gravirovka, kattada — bosma.
+
+**Bo'lib to'lash qilasizmi?**
+Ha, doimiy mijozlar uchun moslashuvchan shartlar mavjud.`
+    },
+    {
+      slug: 'xaridor-chek-listi-b2b',
+      title: "B2B xaridor uchun korporativ sovg'alar chek-listi",
+      description: "HR va xaridorlar uchun to'liq chek-list: rejalashtirishdan topshirishgacha. Xatolar, muddatlar, hujjatlar.",
+      date: '2026-02-13',
+      keywords: ['chek-list', 'xaridlar', "korporativ sovg'alar", 'HR', 'B2B'],
+      category: "HR",
+      relatedPosts: ['korporativ-sovgani-qanday-tanlash', 'welcome-pack-yangi-xodimlar'],
+      content: `# B2B xaridor uchun korporativ sovg'alar chek-listi
+
+Ushbu qo'llanma — korporativ sovg'alarga javobgar HR-mutaxassislar va xaridorlar uchun. Rejalashtirishdan topshirishgacha bosqichma-bosqich reja.
+
+## 1-bosqich: Rejalashtirish (2-3 oy oldin)
+
+### Parametrlarni aniqlang
+- [ ] Sabab (Yangi yil, 8-mart, kompaniya yubileyi)
+- [ ] Qabul qiluvchilar soni
+- [ ] Birlikka/umumiy byudjet
+- [ ] Kategoriyalar (xodimlar/mijozlar/hamkorlar)
+- [ ] Topshirish sanasi
+
+### Rahbariyat bilan kelishing
+- [ ] Byudjet tasdiqlangan
+- [ ] Kontseptsiya ma'qullangan
+- [ ] Mas'ul tayinlangan
+
+## 2-bosqich: Sovg'a tanlash (1.5-2 oy oldin)
+
+### Tadqiqot
+- [ ] 2-3 yetkazib beruvchidan takliflar so'ralgan
+- [ ] Narxlar va shartlar solishtirilgan
+- [ ] Yetkazib beruvchilar sharhlari tekshirilgan
+- [ ] Namunalar so'ralgan
+
+### Tanlash
+- [ ] Sovg'alar byudjetga mos
+- [ ] Maqsadli auditoriyaga mos
+- [ ] Amaliy va o'rinli
+- [ ] Brendlash mumkin
+
+## 3-bosqich: Brendlash (1-1.5 oy oldin)
+
+### Maket tayyorlash
+- [ ] Logotip vektor formatida
+- [ ] Qo'llash o'lchami kelishilgan
+- [ ] Brendlash usuli tanlangan
+- [ ] Rang va joylashuv tasdiqlangan
+
+### Kelishish
+- [ ] Maket marketing tomonidan ma'qullangan
+- [ ] Test namunasi olingan
+- [ ] Sifat kutilgandek
+
+## 4-bosqich: Buyurtma va ishlab chiqarish (3-4 hafta oldin)
+
+### Rasmiylashtirish
+- [ ] Shartnoma imzolangan
+- [ ] Spetsifikatsiya kelishilgan
+- [ ] Oldindan to'lov kiritilgan
+- [ ] Muddatlar belgilangan
+
+### Nazorat
+- [ ] Buyurtma tasdig'i olingan
+- [ ] Ishlab chiqarish holati kuzatiladi
+- [ ] Tayyor bo'lish sanasi kelishilgan
+
+## 5-bosqich: Qabul qilish va logistika (1-2 hafta oldin)
+
+### Qabul qilish
+- [ ] Miqdor tekshirilgan
+- [ ] Sifat tekshirilgan (tanlab)
+- [ ] Brendlash maketga mos
+- [ ] Qabul qilish dalolatnomasi imzolangan
+
+### Logistika
+- [ ] Saqlash joyi aniqlangan
+- [ ] Qabul qiluvchilar ro'yxati tuzilgan
+- [ ] Yetkazib berish/topshirish rejalashtirilgan
+- [ ] Qadoqlash tayyorlangan (kerak bo'lsa)
+
+## 6-bosqich: Topshirish
+
+### Tayyorgarlik
+- [ ] Qabul qiluvchilar ro'yxati dolzarb
+- [ ] Sovg'alar komplektlangan
+- [ ] Ochiq kartalar/tabriklar tayyor
+- [ ] Fotograf tashkil qilingan (kerak bo'lsa)
+
+### Topshirishdan keyin
+- [ ] Fikr-mulohazalar yig'ilgan
+- [ ] Hisobot uchun suratlar olingan
+- [ ] Yetkazib beruvchi bilan hujjatlar yopilgan
+- [ ] Keyingi buyurtma uchun xulosalar
+
+## Odatiy xatolar
+
+- Juda kech buyurtma berish (shoshilinch qo'shimcha to'lov)
+- Sifatdan tejash (salbiy taassurot)
+- Mos kelmaydigan sovg'alar (afzalliklar hisobga olinmagan)
+- Turli kategoriyalarga bir xil sovg'alar
+- Personalizatsiya yo'qligi
+
+## FAQ
+
+**Sovg'alarga odatda kim javobgar?**
+HR, ma'muriy bo'lim yoki marketing — kompaniyaga bog'liq.
+
+**Rahbariyatga byudjetni qanday asoslash?**
+ROI ko'rsating: xodimlar sadoqati, hamkorliklarni mustahkamlash, kompaniya imidji.
+
+**Tender kerakmi?**
+Yirik kompaniyalar va davlat xaridlari uchun — ha. O'rta biznes uchun — 2-3 taklifni solishtirish yetarli.
+
+**Topshirishgacha sovg'alarni qanday saqlash?**
+Quruq xonada, asl qadoqda. Oziq-ovqat mahsulotlari uchun — yaroqlilik muddatiga rioya qiling.
+
+**Qoldiqlarga nima qilish kerak?**
+Yangi xodimga ishlatish, keyingi bayramga yoki tadbirlarda sovrin sifatida.`
     }
   ]
 };
