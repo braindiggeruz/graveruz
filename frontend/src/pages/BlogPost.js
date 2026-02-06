@@ -104,58 +104,6 @@ function BlogPostPage() {
     return React.createElement(Navigate, { to: '/' + locale + '/blog', replace: true });
   }
 
-  // Enhanced Article Schema
-  var articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: post.title,
-    description: post.description,
-    datePublished: post.date,
-    dateModified: post.date,
-    url: canonicalUrl,
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": canonicalUrl
-    },
-    author: { 
-      "@type": "Organization", 
-      name: "Graver.uz",
-      url: BASE_URL
-    },
-    publisher: { 
-      "@type": "Organization", 
-      name: "Graver.uz", 
-      url: BASE_URL
-    },
-    inLanguage: isRu ? "ru" : "uz"
-  };
-
-  // BreadcrumbList Schema
-  var breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: isRu ? "Главная" : "Bosh sahifa",
-        item: BASE_URL + "/" + locale
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: isRu ? "Блог" : "Blog",
-        item: BASE_URL + "/" + locale + "/blog"
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: post.title,
-        item: canonicalUrl
-      }
-    ]
-  };
-
   var services = isRu ? [
     { href: '/' + locale + '/catalog-products', label: 'Каталог продукции' },
     { href: '/' + locale + '/watches-with-logo', label: 'Часы с логотипом' },
