@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { Link, useParams, Navigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { ArrowLeft, Calendar, Tag, Lightbulb, BookOpen } from 'lucide-react';
+import { ArrowLeft, Calendar, Tag, Lightbulb, BookOpen, HelpCircle } from 'lucide-react';
 import { BASE_URL, HREFLANG_MAP } from '../config/seo';
 import { getPostBySlug, getAlternateSlug, blogPosts } from '../data/blogPosts';
-import { getSeoOverride } from '../data/blogSeoOverrides';
+import { getSeoOverride, getFaqData } from '../data/blogSeoOverrides';
 
 function BlogPostPage() {
   const params = useParams();
