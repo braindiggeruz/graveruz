@@ -77,6 +77,7 @@ root.render(
               <Route path="/:locale/logotipli-soat" element={<LocaleRoute element={<WatchesPage />} />} />
               <Route path="/:locale/lighters-engraving" element={<LocaleRoute element={<LightersPage />} />} />
               <Route path="/:locale/gravirovkali-zajigalka" element={<LocaleRoute element={<LightersPage />} />} />
+              <Route path="/:locale/products/lighters" element={<LocaleRoute element={<LightersPage />} />} />
               <Route path="/:locale/engraved-gifts" element={<LocaleRoute element={<EngravedGiftsPage />} />} />
               <Route path="/:locale/gravirovkali-sovgalar" element={<LocaleRoute element={<EngravedGiftsPage />} />} />
               
