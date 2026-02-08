@@ -78,13 +78,14 @@ function LightersPage() {
   const ruUrl = `${BASE_URL}/ru/products/lighters`;
   const uzUrl = `${BASE_URL}/uz/products/lighters`;
   
+  // PATCH 1: SEO-optimized Title & Description from audit
   const pageTitle = isRu 
     ? 'Эксклюзивные зажигалки с лазерной гравировкой — Graver.uz'
-    : "Lazer gravyurasi bilan eksklyuziv zajigalkalar — Graver.uz";
+    : 'Lazer gravyurasi bilan eksklyuziv zajigalkalar – Graver.uz';
   
   const pageDescription = isRu
-    ? 'Закажите премиальные зажигалки с лазерной гравировкой логотипа, имени или фото. Идеальный корпоративный или личный подарок. Модели Silver, Black Matte, Black Texture. Доставка по Ташкенту.'
-    : "Logotip, ism yoki surat bilan lazer gravyurali premium zajigalkalarni buyurtma qiling. Ideal korporativ yoki shaxsiy sovg'a. Silver, Black Matte, Black Texture modellari. Toshkent bo'ylab yetkazib berish.";
+    ? 'Закажите зажигалки с лазерной гравировкой в Ташкенте. Гравировка логотипов, имен и фото на зажигалках Zippo-типа. Срок 1-3 дня. Цены от 140 000 сум.'
+    : "Toshkentda lazer gravyurasi bilan zajigalkalarga buyurtma bering. Zippo turidagi zajigalkalarga logotiplar, ismlar va fotosuratlar gravyurasi. 1-3 kun ichida. Narxlar 140 000 so'mdan.";
 
   // Inject JSON-LD schemas via useEffect
   useEffect(() => {
