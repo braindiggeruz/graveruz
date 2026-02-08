@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { ArrowLeft, Calendar, ChevronRight, Star } from 'lucide-react';
+import { ArrowLeft, Calendar, ChevronRight, Star, TrendingUp, Clock, FolderOpen } from 'lucide-react';
 import { useI18n } from '../i18n';
 import { BASE_URL, HREFLANG_MAP } from '../config/seo';
 import { getPostsByLocale, getPostBySlug } from '../data/blogPosts';
 
-// Featured/foundational article slugs for "Recommended" section
+// Featured/foundational article slugs for "Popular" section
 const featuredSlugsRu = [
   'kak-vybrat-korporativnyj-podarok',
   'lazernaya-gravirovka-podarkov',
@@ -23,6 +23,21 @@ const featuredSlugsUz = [
   'suvenir-brendlash',
   'xaridor-chek-listi-b2b',
   'yangi-yil-sovga-goyalari'
+];
+
+// Categories for blog hub structure (P1.1)
+const categoriesRu = [
+  { name: 'Гайды', slug: 'guides', count: 4 },
+  { name: 'Брендирование', slug: 'branding', count: 3 },
+  { name: 'Праздники', slug: 'holidays', count: 2 },
+  { name: 'Бизнес', slug: 'business', count: 1 }
+];
+
+const categoriesUz = [
+  { name: "Qo'llanmalar", slug: 'guides', count: 4 },
+  { name: 'Brendlash', slug: 'branding', count: 3 },
+  { name: 'Bayramlar', slug: 'holidays', count: 2 },
+  { name: 'Biznes', slug: 'business', count: 1 }
 ];
 
 export default function BlogIndex() {
