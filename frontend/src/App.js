@@ -1292,6 +1292,23 @@ function App() {
                 <p><Clock size={16} className="inline mr-2" />{t('footer.schedule')}</p>
                 <p className="text-teal-500 font-semibold">{t('footer.requests24')}</p>
               </div>
+              
+              {/* Quick Links for Internal Linking (P1.3) */}
+              <h3 className="text-white font-bold mt-6 mb-3">{locale === 'uz' ? 'Tez havolalar' : 'Быстрые ссылки'}</h3>
+              <div className="space-y-2 text-gray-400 text-sm">
+                <Link to={`/${locale}/blog`} className="block hover:text-teal-500 transition">
+                  {locale === 'uz' ? 'Blog' : 'Блог'}
+                </Link>
+                <a href="#services" className="block hover:text-teal-500 transition">
+                  {locale === 'uz' ? 'Xizmatlar' : 'Услуги'}
+                </a>
+                <a href="#portfolio" className="block hover:text-teal-500 transition">
+                  {locale === 'uz' ? 'Portfolio' : 'Портфолио'}
+                </a>
+                <a href="#contact" className="block hover:text-teal-500 transition">
+                  {locale === 'uz' ? 'Aloqa' : 'Контакты'}
+                </a>
+              </div>
             </div>
           </div>
 
