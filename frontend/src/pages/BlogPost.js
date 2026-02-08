@@ -253,11 +253,21 @@ function BlogPostPage() {
           )
         ),
         // Related Services Section
-        React.createElement('div', { className: 'mt-6 p-6 bg-gray-900 border border-gray-800 rounded-xl' },
+        React.createElement('div', { 
+          className: 'mt-6 p-6 bg-gray-900 border border-gray-800 rounded-xl',
+          'data-testid': 'related-services-section'
+        },
           React.createElement('h3', { className: 'text-lg font-bold text-white mb-4' }, isRu ? 'Связанные услуги' : "Bog'liq xizmatlar"),
-          React.createElement('div', { className: 'grid grid-cols-2 gap-3' },
+          React.createElement('div', { className: 'grid grid-cols-1 sm:grid-cols-2 gap-4' },
             services.map(function(s, idx) {
-              return React.createElement(Link, { key: idx, to: s.href, className: 'text-teal-500 hover:text-teal-400 text-sm transition' }, '→ ' + s.label);
+              return React.createElement(Link, { 
+                key: idx, 
+                to: s.href, 
+                className: 'block p-3 bg-gray-800/50 rounded-lg hover:bg-gray-800 transition group'
+              },
+                React.createElement('span', { className: 'text-teal-500 group-hover:text-teal-400 font-medium text-sm' }, '→ ' + s.label),
+                s.desc && React.createElement('p', { className: 'text-gray-500 text-xs mt-1' }, s.desc)
+              );
             })
           )
         ),
