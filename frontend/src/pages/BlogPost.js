@@ -105,11 +105,34 @@ function BlogPostPage() {
       ]
     });
     document.head.appendChild(breadcrumbLd);
+
+    // Inject FAQPage JSON-LD (P1.2)
+    var faq = getFaqData(slug);
+    if (faq && faq.length > 0) {
+      var faqLd = document.createElement('script');
+      faqLd.type = 'application/ld+json';
+      faqLd.setAttribute('data-seo-blog', 'true');
+      faqLd.textContent = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faq.map(function(item) {
+          return {
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: item.a
+            }
+          };
+        })
+      });
+      document.head.appendChild(faqLd);
+    }
     
     return function cleanup() {
       document.querySelectorAll('[data-seo-blog]').forEach(function(el) { el.remove(); });
     };
-  }, [post, canonicalUrl, ruUrl, uzUrl, locale]);
+  }, [post, canonicalUrl, ruUrl, uzUrl, locale, slug]);
 
   if (!post) {
     return React.createElement(Navigate, { to: '/' + locale + '/blog', replace: true });
