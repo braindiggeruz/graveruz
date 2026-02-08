@@ -15,7 +15,10 @@ const products = [
     descRu: 'Зеркальная никелированная поверхность с классическим блеском. Идеально подходит для контурных гравировок, надписей и лаконичных логотипов — линии получаются четкими и контрастными.',
     descUz: "Oynadek yaltiragan nikel qoplamali klassik yuzasi. Konturli gravirovkalar, yozuvlar va lakonik logotiplar uchun juda mos — chiziqlar aniq va kontrast chiqadi.",
     bestFor: ['logos', 'text', 'contour'],
-    color: 'from-gray-300 to-gray-100'
+    color: 'from-gray-300 to-gray-100',
+    image: 'https://customer-assets.emergentagent.com/job_gift-seo-fix/artifacts/4ihfymxb_r109_silver_gloss_clean.jpg',
+    altRu: 'Серебристая глянцевая зажигалка R-109 с лазерной гравировкой',
+    altUz: 'R-109 kumushrang yaltiroq zajigalka lazer gravyurasi bilan'
   },
   {
     id: 'black-matte',
@@ -26,7 +29,10 @@ const products = [
     descRu: 'Черное полуматовое покрытие с мягким сатиновым эффектом. Отличный выбор для фотогравировок и сложных дизайнов — специальная подкраска обеспечивает глубокий контраст и высокую детализацию изображения.',
     descUz: "Yarim mat qora qoplama, yengil satin effekt bilan. Foto-gravirovkalar va murakkab dizaynlar uchun ideal — maxsus qoplama tasvirning chuqur kontrasti va yuqori detallashuvini ta'minlaydi.",
     bestFor: ['photos', 'detailed', 'portraits'],
-    color: 'from-gray-800 to-gray-900'
+    color: 'from-gray-800 to-gray-900',
+    image: 'https://customer-assets.emergentagent.com/job_gift-seo-fix/artifacts/nngktupr_r110_black_matte_clean.jpg',
+    altRu: 'Чёрная матовая зажигалка R-110 для фотогравировки',
+    altUz: 'R-110 qora mat zajigalka foto-gravirovka uchun'
   },
   {
     id: 'black-texture',
@@ -37,7 +43,10 @@ const products = [
     descRu: 'Черная зажигалка с выраженной зернистой фактурой. Подходит для контурных работ без теней и бликов, отлично смотрится с глубокими гравировками и брутальными, графичными дизайнами.',
     descUz: "Qalin donali teksturaga ega qora zajigalka. Soya va yaltirashsiz konturli gravirovkalar uchun mos, chuqur va grafik dizaynlar bilan juda yaxshi ko'rinadi.",
     bestFor: ['graphic', 'deep', 'brutal'],
-    color: 'from-gray-700 to-black'
+    color: 'from-gray-700 to-black',
+    image: 'https://customer-assets.emergentagent.com/job_gift-seo-fix/artifacts/y6oyh6d2_r111_black_texture.jpg',
+    altRu: 'Текстурированная чёрная зажигалка R-111 для глубокой гравировки',
+    altUz: 'R-111 teksturali qora zajigalka chuqur gravirovka uchun'
   },
   {
     id: 'brushed-steel',
@@ -48,7 +57,10 @@ const products = [
     descRu: 'Шлифованная сталь с текстурой «царапки». Практичная поверхность без бликов и отпечатков, выглядит строго и аккуратно — универсальный вариант для надписей и повседневного использования.',
     descUz: "Chiziqli teksturali silliqlangan po'lat yuzasi. Barmoq izlari va yaltirashni kam ko'rsatadigan, amaliy variant — yozuvlar va kundalik foydalanish uchun universal.",
     bestFor: ['text', 'universal', 'daily'],
-    color: 'from-gray-500 to-gray-400'
+    color: 'from-gray-500 to-gray-400',
+    image: 'https://customer-assets.emergentagent.com/job_gift-seo-fix/artifacts/46fmjowk_r112_brushed_steel.jpg',
+    altRu: 'Зажигалка R-112 из шлифованной стали — универсальный выбор',
+    altUz: "R-112 silliqlangan po'lat zajigalka — universal tanlov"
   }
 ];
 
@@ -248,6 +260,30 @@ function LightersPage() {
       <section className="pt-24 pb-16 relative overflow-hidden" data-testid="lighters-hero">
         <div className="absolute inset-0 bg-gradient-to-b from-orange-900/20 to-black" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          {/* Language Switcher */}
+          <div className="flex justify-end mb-4" data-testid="language-switcher">
+            <div className="inline-flex bg-gray-800 rounded-lg p-1 border border-gray-700">
+              <Link
+                to="/ru/products/lighters"
+                className={`px-4 py-2 rounded-md text-sm font-medium transition ${
+                  isRu ? 'bg-teal-600 text-white' : 'text-gray-400 hover:text-white'
+                }`}
+                data-testid="lang-ru"
+              >
+                RU
+              </Link>
+              <Link
+                to="/uz/products/lighters"
+                className={`px-4 py-2 rounded-md text-sm font-medium transition ${
+                  !isRu ? 'bg-teal-600 text-white' : 'text-gray-400 hover:text-white'
+                }`}
+                data-testid="lang-uz"
+              >
+                UZ
+              </Link>
+            </div>
+          </div>
+
           {/* Breadcrumb */}
           <nav className="text-sm text-gray-500 mb-6" aria-label="Breadcrumb">
             <ol className="flex items-center space-x-2">
@@ -315,11 +351,17 @@ function LightersPage() {
                 className="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden hover:border-orange-500/50 transition group"
                 data-testid={`product-card-${idx + 1}`}
               >
-                {/* Product Image Placeholder */}
-                <div className={`aspect-square bg-gradient-to-br ${product.color} flex items-center justify-center relative`}>
-                  <div className="absolute inset-0 bg-black/20" />
-                  <Flame size={64} className="text-white/50" />
-                  <span className="absolute top-3 right-3 bg-black/50 text-white text-xs px-2 py-1 rounded">
+                {/* Product Image */}
+                <div className="aspect-square relative overflow-hidden bg-gray-800">
+                  <img
+                    src={product.image}
+                    alt={isRu ? product.altRu : product.altUz}
+                    width={400}
+                    height={400}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                  <span className="absolute top-3 right-3 bg-black/70 text-white text-xs px-2 py-1 rounded">
                     {product.sku}
                   </span>
                 </div>
