@@ -72,14 +72,14 @@ const specs = {
   weight: '55-60 г'
 };
 
-// Engraving types
+// Engraving types (Benefits)
 const engravingTypes = [
-  { nameRu: 'Логотипы', nameUz: 'Logotiplar', icon: '🏢' },
-  { nameRu: 'Надписи', nameUz: 'Yozuvlar', icon: '✍️' },
-  { nameRu: 'Портреты', nameUz: 'Portretlar', icon: '👤' },
-  { nameRu: 'Фотографии', nameUz: 'Fotosuratlar', icon: '📷' },
-  { nameRu: 'Графика', nameUz: 'Grafika', icon: '🎨' },
-  { nameRu: 'QR-коды', nameUz: 'QR-kodlar', icon: '📱' }
+  { nameRu: 'Чёткая лазерная гравировка по металлу: линии читаются, края ровные', nameUz: "Metallga aniq lazer gravyura: chiziqlar o'qiladi, konturlar silliq", icon: '✓' },
+  { nameRu: 'Макет до нанесения: вы видите, как будет выглядеть готовый вариант', nameUz: "Gravyuradan oldin maket: tayyor ko'rinishini avval ko'rasiz", icon: '✓' },
+  { nameRu: 'Подходит для подарка и брендинга: инициалы, символы, логотипы', nameUz: "Sovg'a va brendlash uchun: initsial, belgi, logotip, qisqa ibora", icon: '✓' },
+  { nameRu: 'Премиальный "вес" вещи: минимализм, который запоминается', nameUz: "Minimalizm + \"vazn\": ko'rinishi jiddiy, esda qoladi", icon: '✓' },
+  { nameRu: 'Гравируем на нашей продукции — стабильный результат', nameUz: "Gravyurani o'z mahsulotimizga qilamiz — sirt toza, natija barqaror", icon: '✓' },
+  { nameRu: 'Можно сделать лаконично или "с историей" — на одной или двух сторонах', nameUz: "Bir tomonga yoki ikki tomonga: qisqa yoki \"ma'noli\" variant", icon: '✓' }
 ];
 
 function LightersPage() {
@@ -387,26 +387,23 @@ function LightersPage() {
         </div>
       </section>
 
-      {/* Engraving Types Section */}
+      {/* Engraving Types Section (Benefits) */}
       <section className="py-20 bg-black" data-testid="lighters-engraving">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              {isRu ? 'Что можно нанести' : 'Nima qo\'yish mumkin'}
+              {isRu ? 'Преимущества' : 'Afzalliklar'}
             </h2>
-            <p className="text-gray-400 text-lg">
-              {isRu ? 'Лазерная гравировка любой сложности' : 'Har qanday murakkablikdagi lazer gravyurasi'}
-            </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {engravingTypes.map((type, idx) => (
               <div 
                 key={idx}
-                className="bg-gray-900 border border-gray-800 rounded-xl p-6 text-center hover:border-orange-500/50 transition"
+                className="bg-gray-900 border border-gray-800 rounded-xl p-6 flex items-start gap-3 hover:border-orange-500/50 transition"
               >
-                <span className="text-4xl mb-3 block">{type.icon}</span>
-                <span className="text-white font-medium">{isRu ? type.nameRu : type.nameUz}</span>
+                <span className="text-teal-500 text-xl flex-shrink-0">{type.icon}</span>
+                <span className="text-gray-300 text-sm">{isRu ? type.nameRu : type.nameUz}</span>
               </div>
             ))}
           </div>
@@ -492,8 +489,8 @@ function LightersPage() {
           </h2>
           <p className="text-xl text-gray-400 mb-8">
             {isRu 
-              ? 'Свяжитесь с нами для расчёта стоимости и обсуждения вашего дизайна'
-              : "Narxni hisoblash va dizayningizni muhokama qilish uchun biz bilan bog'laning"}
+              ? 'Отправьте текст/идею и (если есть) логотип — подготовим вариант для согласования.'
+              : "Matn/g'oyani va (bo'lsa) logotipni yuboring — kelishish uchun variant tayyorlaymiz."}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
@@ -504,17 +501,24 @@ function LightersPage() {
               data-testid="lighters-cta-telegram"
             >
               <Send size={20} className="mr-2" />
-              {isRu ? 'Написать в Telegram' : 'Telegramga yozish'}
+              {isRu ? 'Получить макет' : 'Maketni olish'}
             </a>
             <a 
-              href="tel:+998770802288"
+              href="https://t.me/GraverAdm"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center bg-gray-800 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-700 transition border border-gray-700"
               data-testid="lighters-cta-phone"
             >
-              <Phone size={20} className="mr-2" />
-              +998 77 080 22 88
+              <Send size={20} className="mr-2" />
+              {isRu ? 'Написать в Telegram' : 'Telegramga yozish'}
             </a>
           </div>
+          <p className="text-gray-500 text-sm mt-4">
+            {isRu 
+              ? 'Удобно, если нужно быстро выбрать вариант и формат гравировки.'
+              : "Variant va gravyura formatini tez tanlash uchun qulay."}
+          </p>
           <div className="mt-8">
             <a 
               href="/catalogs/graver-lighters-catalog-2026.pdf"
