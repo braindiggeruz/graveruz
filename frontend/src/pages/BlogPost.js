@@ -114,15 +114,17 @@ function BlogPostPage() {
   }
 
   var services = isRu ? [
-    { href: '/' + locale + '/catalog-products', label: 'Каталог продукции' },
-    { href: '/' + locale + '/watches-with-logo', label: 'Часы с логотипом' },
-    { href: '/' + locale + '/lighters-engraving', label: 'Зажигалки с гравировкой' },
-    { href: '/' + locale + '/engraved-gifts', label: 'Подарки с гравировкой' }
+    { href: '/' + locale + '/catalog-products', label: 'Каталог продукции', desc: 'Все изделия с лазерной гравировкой' },
+    { href: '/' + locale + '/corporate-gifts', label: 'Корпоративные подарки', desc: 'Премиальные наборы с логотипом' },
+    { href: '/' + locale + '/awards-medals', label: 'Награды и медали', desc: 'Кубки и медали с гравировкой' },
+    { href: '/' + locale + '/branding', label: 'Брендирование', desc: 'Нанесение логотипа на изделия' },
+    { href: '/' + locale + '/contacts', label: 'Контакты', desc: 'Связаться с нами' }
   ] : [
-    { href: '/' + locale + '/mahsulotlar-katalogi', label: 'Mahsulotlar katalogi' },
-    { href: '/' + locale + '/logotipli-soat', label: 'Logotipli soat' },
-    { href: '/' + locale + '/gravirovkali-zajigalka', label: 'Gravirovkali zajigalka' },
-    { href: '/' + locale + '/gravirovkali-sovgalar', label: "Gravirovkali sovg'alar" }
+    { href: '/' + locale + '/mahsulotlar-katalogi', label: 'Mahsulotlar katalogi', desc: 'Lazer gravyurasi bilan barcha mahsulotlar' },
+    { href: '/' + locale + '/korporativ-sovgalar', label: "Korporativ sovg'alar", desc: 'Logotipli premium to\'plamlar' },
+    { href: '/' + locale + '/mukofotlar-medallar', label: 'Mukofotlar va medallar', desc: 'Gravyura bilan kubklar' },
+    { href: '/' + locale + '/brendlash', label: 'Brendlash', desc: 'Mahsulotlarga logotip qo\'yish' },
+    { href: '/' + locale + '/aloqa', label: 'Aloqa', desc: 'Biz bilan bog\'laning' }
   ];
 
   var dateStr = new Date(post.date).toLocaleDateString(isRu ? 'ru-RU' : 'uz-UZ', { year: 'numeric', month: 'long', day: 'numeric' });
