@@ -51,11 +51,17 @@ export default function BlogIndex() {
     ? 'Статьи о корпоративных подарках, лазерной гравировке и брендировании в Ташкенте.'
     : "Toshkentda korporativ sovg'alar, lazer gravyurasi va brendlash haqida maqolalar.";
 
-  // Get featured posts for "Recommended" section
+  // Get featured posts for "Popular" section
   const featuredSlugs = isRu ? featuredSlugsRu : featuredSlugsUz;
   const featuredPosts = featuredSlugs
     .map(slug => getPostBySlug(locale, slug))
     .filter(Boolean);
+
+  // Get categories for hub structure (P1.1)
+  const categories = isRu ? categoriesRu : categoriesUz;
+  
+  // Get latest 3 posts (sorted by date)
+  const latestPosts = [...posts].sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 3);
 
   const canonicalUrl = `${BASE_URL}/${locale}/blog`;
   const ruUrl = `${BASE_URL}/ru/blog`;
