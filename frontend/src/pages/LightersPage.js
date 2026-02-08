@@ -92,8 +92,35 @@ function LightersPage() {
     const oldSchemas = document.querySelectorAll('[data-seo-lighters]');
     oldSchemas.forEach(el => el.remove());
 
-    // Product schemas for each lighter
-    products.forEach((product, idx) => {
+    // PATCH: AggregateOffer Product schema (per audit recommendation)
+    const mainProductSchema = document.createElement('script');
+    mainProductSchema.type = 'application/ld+json';
+    mainProductSchema.setAttribute('data-seo-lighters', 'true');
+    mainProductSchema.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": isRu ? "Зажигалки с персональной гравировкой" : "Shaxsiy gravyurali zajigalkalar",
+      "image": `${BASE_URL}/og-blog.png`,
+      "description": isRu 
+        ? "Эксклюзивные зажигалки с лазерной гравировкой логотипа, имени или фото"
+        : "Logotip, ism yoki surat bilan lazer gravyurali eksklyuziv zajigalkalar",
+      "brand": {
+        "@type": "Brand",
+        "name": "Graver.uz"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "lowPrice": "140000",
+        "highPrice": "170000",
+        "priceCurrency": "UZS",
+        "offerCount": "4",
+        "availability": "https://schema.org/InStock"
+      }
+    });
+    document.head.appendChild(mainProductSchema);
+
+    // Individual product schemas
+    products.forEach((product) => {
       const productSchema = document.createElement('script');
       productSchema.type = 'application/ld+json';
       productSchema.setAttribute('data-seo-lighters', 'true');
@@ -103,10 +130,7 @@ function LightersPage() {
         "name": isRu ? `Зажигалка ${product.nameRu} с гравировкой` : `${product.nameUz} gravyurali zajigalka`,
         "description": isRu ? product.descRu : product.descUz,
         "sku": product.sku,
-        "brand": {
-          "@type": "Brand",
-          "name": "Graver.uz"
-        },
+        "brand": { "@type": "Brand", "name": "Graver.uz" },
         "offers": {
           "@type": "Offer",
           "url": canonicalUrl,
@@ -120,7 +144,7 @@ function LightersPage() {
       document.head.appendChild(productSchema);
     });
 
-    // BreadcrumbList schema
+    // BreadcrumbList schema (per audit spec)
     const breadcrumbSchema = document.createElement('script');
     breadcrumbSchema.type = 'application/ld+json';
     breadcrumbSchema.setAttribute('data-seo-lighters', 'true');
