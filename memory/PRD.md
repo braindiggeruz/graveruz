@@ -114,7 +114,7 @@ curl.exe -s https://www.graver-studio.uz/ru/products/lighters | Select-String "P
 ```
 
 ## Key URLs
-- Preview: https://gift-seo-fix.preview.emergentagent.com
+- Preview: https://lighting-gallery.preview.emergentagent.com
 - Production: https://www.graver-studio.uz
 - Lighters: `/ru/products/lighters`, `/uz/products/lighters`
 - PDF Catalog: `/catalogs/graver-lighters-catalog-2026.pdf`
