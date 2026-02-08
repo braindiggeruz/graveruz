@@ -146,10 +146,19 @@ function BlogPostPage() {
       React.createElement('title', null, pageTitle),
       React.createElement('meta', { name: 'description', content: post.description }),
       React.createElement('meta', { name: 'robots', content: 'index, follow' }),
+      // OpenGraph
       React.createElement('meta', { property: 'og:title', content: post.title }),
       React.createElement('meta', { property: 'og:description', content: post.description }),
       React.createElement('meta', { property: 'og:url', content: canonicalUrl }),
-      React.createElement('meta', { property: 'og:type', content: 'article' })
+      React.createElement('meta', { property: 'og:type', content: 'article' }),
+      React.createElement('meta', { property: 'og:image', content: BASE_URL + '/og-blog.png' }),
+      React.createElement('meta', { property: 'og:site_name', content: 'Graver.uz' }),
+      React.createElement('meta', { property: 'og:locale', content: isRu ? 'ru_RU' : 'uz_UZ' }),
+      // Twitter Card
+      React.createElement('meta', { name: 'twitter:card', content: 'summary_large_image' }),
+      React.createElement('meta', { name: 'twitter:title', content: post.title }),
+      React.createElement('meta', { name: 'twitter:description', content: post.description }),
+      React.createElement('meta', { name: 'twitter:image', content: BASE_URL + '/og-blog.png' })
     ),
     React.createElement('header', { className: 'fixed top-0 left-0 right-0 bg-black/95 backdrop-blur-sm z-50 border-b border-gray-800' },
       React.createElement('div', { className: 'max-w-7xl mx-auto px-4 sm:px-6 lg:px-8' },
