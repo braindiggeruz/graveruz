@@ -159,10 +159,38 @@ function LightersPage() {
     });
     document.head.appendChild(breadcrumbSchema);
 
+    // PATCH 2 & 3: Canonical and Hreflang via DOM (react-helmet-async workaround)
+    const canonicalLink = document.createElement('link');
+    canonicalLink.rel = 'canonical';
+    canonicalLink.href = canonicalUrl;
+    canonicalLink.setAttribute('data-seo-lighters', 'true');
+    document.head.appendChild(canonicalLink);
+
+    const hreflangRu = document.createElement('link');
+    hreflangRu.rel = 'alternate';
+    hreflangRu.hreflang = 'ru';
+    hreflangRu.href = ruUrl;
+    hreflangRu.setAttribute('data-seo-lighters', 'true');
+    document.head.appendChild(hreflangRu);
+
+    const hreflangUz = document.createElement('link');
+    hreflangUz.rel = 'alternate';
+    hreflangUz.hreflang = 'uz';
+    hreflangUz.href = uzUrl;
+    hreflangUz.setAttribute('data-seo-lighters', 'true');
+    document.head.appendChild(hreflangUz);
+
+    const hreflangDefault = document.createElement('link');
+    hreflangDefault.rel = 'alternate';
+    hreflangDefault.hreflang = 'x-default';
+    hreflangDefault.href = ruUrl;
+    hreflangDefault.setAttribute('data-seo-lighters', 'true');
+    document.head.appendChild(hreflangDefault);
+
     return () => {
       document.querySelectorAll('[data-seo-lighters]').forEach(el => el.remove());
     };
-  }, [locale, isRu, canonicalUrl]);
+  }, [locale, isRu, canonicalUrl, ruUrl, uzUrl]);
 
   const formatPrice = (price) => {
     return new Intl.NumberFormat(isRu ? 'ru-RU' : 'uz-UZ').format(price);
