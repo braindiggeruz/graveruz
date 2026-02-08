@@ -1,118 +1,123 @@
 # Graver.uz - Product Requirements Document
 
 ## Original Problem Statement
-Comprehensive technical SEO overhaul on bilingual (Russian/Uzbek) corporate gifting website "graver.uz". Key objectives:
-- Fix critical production issues
-- Launch fully functional and indexable blog
-- Establish foundation for content marketing and lead generation
+Comprehensive technical SEO overhaul on bilingual (Russian/Uzbek) corporate gifting website "graver.uz" with product catalog integration.
 
 ## What's Been Implemented
 
-### Phase 1: Blog System (COMPLETED - Feb 2026)
-- Blog index pages (`/ru/blog`, `/uz/blog`)
-- Individual article pages (`/:locale/blog/:slug`)
-- 20 articles (10 RU, 10 UZ) stored in `/app/frontend/src/data/blogPosts.js`
+### Phase 1-3: Blog & SEO Foundation (COMPLETED)
+- Blog system with 20 articles (RU/UZ)
+- SEO tags, canonical, hreflang
+- JSON-LD schemas (Article, BreadcrumbList, FAQPage)
 
-### Phase 2: SEO Foundation (COMPLETED - Feb 2026)
-- Clean `robots.txt` with single sitemap link
-- Valid `sitemap.xml` with 38 URLs (core pages + all blog articles)
+### Phase 4: Second Pass SEO Fixes (COMPLETED)
+- Canonical/Hreflang in Helmet
+- Blog Hub Structure (Popular, Categories, Latest)
+- FAQPage Schema for articles
+- Footer Internal Linking
 
-### Phase 3: SEO Enhancements (COMPLETED - Feb 2026)
-- Title Optimization via `blogSeoOverrides.js`
-- OG tags + Twitter Card on all pages
-- Article JSON-LD with image and logo
+### Phase 5: Lighters Catalog Integration (COMPLETED - Feb 8, 2026)
 
-### Phase 4: Second Pass SEO Fixes (COMPLETED - Feb 8, 2026)
+**New Product Landing Page: `/products/lighters`**
 
-Based on second SEO audit, implemented critical fixes:
+| Feature | Status |
+|---------|--------|
+| URL: `/ru/products/lighters` | ✅ Works |
+| URL: `/uz/products/lighters` | ✅ Works |
+| SEO Title | ✅ 60 chars optimized |
+| Meta Description | ✅ 160 chars |
+| Canonical & Hreflang | ✅ In Helmet |
+| Product Schema (4 products) | ✅ JSON-LD |
+| BreadcrumbList Schema | ✅ JSON-LD |
+| Hero Section | ✅ With CTAs |
+| Product Cards (4) | ✅ With prices |
+| Engraving Types | ✅ 6 types |
+| Specifications | ✅ Tech specs |
+| CTA Section | ✅ Telegram + Phone |
+| PDF Download | ✅ `/catalogs/graver-lighters-catalog-2026.pdf` |
 
-| # | Issue | Fix | Status |
-|---|-------|-----|--------|
-| P0.1 | Canonical/Hreflang не в HTML | Добавлено в Helmet | ✅ FIXED |
-| P0.2 | BreadcrumbList не видна | Инжектируется через useEffect | ✅ FIXED |
-| P1.1 | Нет структуры блог-хаба | Popular + Categories + Latest | ✅ FIXED |
-| P1.2 | Нет FAQPage Schema | Добавлено для 6 статей | ✅ FIXED |
-| P1.3 | Нет footer linking | Быстрые ссылки в footer | ✅ FIXED |
+**Homepage Updates:**
+- New "Наша продукция" section with product preview
+- "Смотреть все модели" + "Скачать каталог" CTAs
+- 4 product cards with prices
+
+**Navigation Updates:**
+- "Продукция" menu link → `/products/lighters`
+- Mobile menu updated
+
+**Sitemap Updates:**
+- Added `/ru/products/lighters` (priority 0.9)
+- Added `/uz/products/lighters` (priority 0.8)
 
 ## Architecture
 
 ```
-/app
-├── backend/
-│   └── server.py (FastAPI + MongoDB)
-└── frontend/
-    ├── public/
-    │   ├── robots.txt
-    │   ├── sitemap.xml
-    │   ├── og-blog.png
-    │   └── index.html
-    └── src/
-        ├── data/
-        │   ├── blogPosts.js (20 articles)
-        │   └── blogSeoOverrides.js (SEO + FAQ data)
-        ├── pages/
-        │   ├── BlogIndex.js (Hub: Popular, Categories, Latest)
-        │   └── BlogPost.js (Quick Answer, FAQ, Related)
-        └── App.js (Footer with Quick Links)
+/app/frontend/
+├── public/
+│   ├── catalogs/
+│   │   └── graver-lighters-catalog-2026.pdf (61.7MB)
+│   ├── sitemap.xml (40+ URLs)
+│   └── robots.txt
+└── src/
+    ├── pages/
+    │   ├── LightersPage.js (NEW)
+    │   ├── BlogPost.js
+    │   ├── BlogIndex.js
+    │   └── ...
+    └── App.js (Products section added)
 ```
 
-## SEO Implementation Details
+## Product Data (from PDF Catalog)
 
-### JSON-LD Schemas (per blog post)
-1. **Article** — headline, description, image, dates, author, publisher
-2. **BreadcrumbList** — Главная → Блог → Article
-3. **FAQPage** — 2-3 FAQ per article (for 6 articles)
+| Model | SKU | Price (UZS) | Best For |
+|-------|-----|-------------|----------|
+| Silver Gloss | R-109 | 140,000 | Logos, text, contour |
+| Black Matte | R-110 | 150,000 | Photos, detailed |
+| Black Texture | R-111 | 170,000 | Graphic, deep |
+| Brushed Steel | R-112 | 160,000 | Text, universal |
 
-### Blog Hub Structure (P1.1)
-- **Рекомендуемые статьи** — 6 foundational articles
-- **Популярное** — trending articles grid
-- **Категории** — Гайды (4), Брендирование (3), Праздники (2), Бизнес (1)
-- **Последние статьи** — 3 most recent with dates
-
-### Internal Linking (P1.3)
-- Footer: Блог, Услуги, Портфолио, Контакты
-- Blog posts: Related Articles (3), Related Services (5)
+Specifications: 57x38x13mm, 55-60g
 
 ## Current Status
 - **Local Codebase**: ✅ Ready for deployment
-- **Production**: ⏳ Awaiting user action to deploy
-- **Testing**: ✅ All SEO fixes verified via screenshots
+- **Production**: ⏳ Awaiting deploy
+- **Testing**: ✅ All features verified
 
 ## Prioritized Backlog
 
 ### P0 - Critical (Blocked)
-- [ ] Production deployment (user must click "Save" in Custom Domains)
+- [ ] Production deployment
 
 ### P1 - High Priority (After Deploy)
-- [ ] Submit sitemap to Google Search Console
-- [ ] Request indexing for `/ru/blog` and top-5 articles
-- [ ] Validate Rich Results: https://search.google.com/test/rich-results
+- [ ] Submit sitemap to GSC
+- [ ] Request indexing for `/products/lighters`
+- [ ] Validate Product Rich Results
 
 ### P2 - Medium Priority
-- [ ] SSR pre-rendering for SEO tags (requires Next.js)
-- [ ] Core Web Vitals optimization
-- [ ] More FAQ data for remaining articles
-
-### P3 - Future Enhancements
-- [ ] Blog author pages
-- [ ] Markdown file storage for articles
-- [ ] Off-page SEO (directory submissions)
+- [ ] Add real product images
+- [ ] More product catalogs (watches, gifts)
+- [ ] Product image gallery
 
 ## Verify Commands (Post-Deploy)
 ```powershell
-# Schemas
-curl.exe -s https://www.graver-studio.uz/ru/blog/kak-vybrat-korporativnyj-podarok | Select-String "FAQPage"
+# Lighters page
+curl.exe -I https://www.graver-studio.uz/ru/products/lighters
+# Expected: 200 OK
 
-# Canonical
-curl.exe -s https://www.graver-studio.uz/ru/blog | Select-String "canonical"
+# PDF catalog
+curl.exe -I https://www.graver-studio.uz/catalogs/graver-lighters-catalog-2026.pdf
+# Expected: 200 OK, application/pdf
 
-# Blog hub
-curl.exe -s https://www.graver-studio.uz/ru/blog | Select-String "blog-popular-section"
+# Product Schema
+curl.exe -s https://www.graver-studio.uz/ru/products/lighters | Select-String "Product"
+# Expected: 4 Product schemas
 ```
 
 ## Key URLs
 - Preview: https://gift-seo-fix.preview.emergentagent.com
 - Production: https://www.graver-studio.uz
+- Lighters: `/ru/products/lighters`, `/uz/products/lighters`
+- PDF Catalog: `/catalogs/graver-lighters-catalog-2026.pdf`
 
 ---
 Last Updated: February 8, 2026
