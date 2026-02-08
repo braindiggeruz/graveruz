@@ -329,11 +329,11 @@ function App() {
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-8">
               <button onClick={() => scrollToSection('services')} className="text-gray-300 hover:text-teal-500 transition">{t('nav.services')}</button>
-              <a href={`/${locale}/${locale === 'uz' ? 'mahsulotlar-katalogi' : 'catalog-products'}`} className="text-gray-300 hover:text-teal-500 transition" data-testid="nav-catalog">{t('nav.catalog')}</a>
+              <Link to={`/${locale}/products/lighters`} className="text-gray-300 hover:text-teal-500 transition" data-testid="nav-catalog">{t('nav.catalog')}</Link>
               <button onClick={() => scrollToSection('portfolio')} className="text-gray-300 hover:text-teal-500 transition">{t('nav.portfolio')}</button>
               <button onClick={() => scrollToSection('process')} className="text-gray-300 hover:text-teal-500 transition">{t('nav.process')}</button>
               <button onClick={() => scrollToSection('faq')} className="text-gray-300 hover:text-teal-500 transition">{t('nav.faq')}</button>
-              <a href={`/${locale}/blog`} className="text-gray-300 hover:text-teal-500 transition" data-testid="nav-blog">{t('nav.blog')}</a>
+              <Link to={`/${locale}/blog`} className="text-gray-300 hover:text-teal-500 transition" data-testid="nav-blog">{t('nav.blog')}</Link>
               <button onClick={() => scrollToSection('contact')} className="text-gray-300 hover:text-teal-500 transition">{t('nav.contacts')}</button>
               <LanguageSwitcher />
             </nav>
