@@ -483,14 +483,121 @@ function LightersPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-black border-t border-gray-800 py-8">
-        <div className="max-w-7xl mx-auto px-4 text-center text-gray-500 text-sm">
-          <p>© 2026 Graver.uz — {isRu ? 'Премиальная лазерная гравировка в Ташкенте' : 'Toshkentda premium lazer gravyurasi'}</p>
-          <div className="mt-4 flex justify-center gap-6">
-            <Link to={`/${locale}`} className="hover:text-teal-500 transition">{isRu ? 'Главная' : 'Bosh sahifa'}</Link>
-            <Link to={`/${locale}/blog`} className="hover:text-teal-500 transition">{isRu ? 'Блог' : 'Blog'}</Link>
-            <a href={`/${locale}#contact`} className="hover:text-teal-500 transition">{isRu ? 'Контакты' : 'Aloqa'}</a>
+      {/* PATCH 4: Internal Linking - Related Blog Articles */}
+      <section className="py-16 bg-gray-900/50" data-testid="lighters-related-articles">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-white mb-8 text-center">
+            {isRu ? 'Полезные статьи' : 'Foydali maqolalar'}
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <Link 
+              to={`/${locale}/blog/${isRu ? 'lazernaya-gravirovka-podarkov' : 'lazer-gravirovka-sovgalar'}`}
+              className="bg-gray-900 border border-gray-800 rounded-xl p-6 hover:border-teal-500/50 transition group"
+            >
+              <h3 className="text-white font-semibold mb-2 group-hover:text-teal-400">
+                {isRu ? 'Лазерная гравировка подарков: полный гайд' : "Sovg'alarga lazer gravyurasi: to'liq qo'llanma"}
+              </h3>
+              <p className="text-gray-500 text-sm">
+                {isRu ? 'Всё о технологии и материалах' : "Texnologiya va materiallar haqida"}
+              </p>
+            </Link>
+            <Link 
+              to={`/${locale}/blog/${isRu ? 'kak-vybrat-korporativnyj-podarok' : 'korporativ-sovgani-qanday-tanlash'}`}
+              className="bg-gray-900 border border-gray-800 rounded-xl p-6 hover:border-teal-500/50 transition group"
+            >
+              <h3 className="text-white font-semibold mb-2 group-hover:text-teal-400">
+                {isRu ? 'Как выбрать корпоративный подарок' : "Korporativ sovg'ani qanday tanlash"}
+              </h3>
+              <p className="text-gray-500 text-sm">
+                {isRu ? 'Практические советы по выбору' : "Tanlash bo'yicha amaliy maslahatlar"}
+              </p>
+            </Link>
+            <Link 
+              to={`/${locale}/blog/${isRu ? 'brendirovanie-suvenirov' : 'suvenir-brendlash'}`}
+              className="bg-gray-900 border border-gray-800 rounded-xl p-6 hover:border-teal-500/50 transition group"
+            >
+              <h3 className="text-white font-semibold mb-2 group-hover:text-teal-400">
+                {isRu ? 'Брендирование сувениров' : "Suvenir brendlash"}
+              </h3>
+              <p className="text-gray-500 text-sm">
+                {isRu ? 'Методы и материалы' : "Usullar va materiallar"}
+              </p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* PATCH 7: Related Products Links */}
+      <section className="py-12 bg-black" data-testid="lighters-related-products">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-xl font-bold text-white mb-6 text-center">
+            {isRu ? 'Другие продукты с гравировкой' : "Boshqa gravyurali mahsulotlar"}
+          </h2>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link 
+              to={`/${locale}/${isRu ? 'watches-with-logo' : 'logotipli-soat'}`}
+              className="bg-gray-900 border border-gray-800 rounded-lg px-6 py-3 text-gray-300 hover:text-teal-400 hover:border-teal-500/50 transition"
+            >
+              {isRu ? '⌚ Часы с логотипом' : "⌚ Logotipli soat"}
+            </Link>
+            <Link 
+              to={`/${locale}/${isRu ? 'engraved-gifts' : 'gravirovkali-sovgalar'}`}
+              className="bg-gray-900 border border-gray-800 rounded-lg px-6 py-3 text-gray-300 hover:text-teal-400 hover:border-teal-500/50 transition"
+            >
+              {isRu ? '🎁 Подарки с гравировкой' : "🎁 Gravyurali sovg'alar"}
+            </Link>
+            <Link 
+              to={`/${locale}/${isRu ? 'catalog-products' : 'mahsulotlar-katalogi'}`}
+              className="bg-gray-900 border border-gray-800 rounded-lg px-6 py-3 text-gray-300 hover:text-teal-400 hover:border-teal-500/50 transition"
+            >
+              {isRu ? '📦 Весь каталог' : "📦 Barcha katalog"}
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* PATCH 6: Enhanced Footer */}
+      <footer className="bg-black border-t border-gray-800 py-12" data-testid="lighters-footer">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid md:grid-cols-4 gap-8 mb-8">
+            <div>
+              <h4 className="text-white font-bold mb-4">{isRu ? 'Навигация' : 'Navigatsiya'}</h4>
+              <div className="space-y-2">
+                <Link to={`/${locale}`} className="block text-gray-400 hover:text-teal-500 transition text-sm">{isRu ? 'Главная' : 'Bosh sahifa'}</Link>
+                <Link to={`/${locale}/blog`} className="block text-gray-400 hover:text-teal-500 transition text-sm">{isRu ? 'Блог' : 'Blog'}</Link>
+                <a href={`/${locale}#services`} className="block text-gray-400 hover:text-teal-500 transition text-sm">{isRu ? 'Услуги' : 'Xizmatlar'}</a>
+                <a href={`/${locale}#contact`} className="block text-gray-400 hover:text-teal-500 transition text-sm">{isRu ? 'Контакты' : 'Aloqa'}</a>
+              </div>
+            </div>
+            <div>
+              <h4 className="text-white font-bold mb-4">{isRu ? 'Продукция' : 'Mahsulotlar'}</h4>
+              <div className="space-y-2">
+                <Link to={`/${locale}/products/lighters`} className="block text-teal-500 text-sm">{isRu ? 'Зажигалки' : 'Zajigalkalar'}</Link>
+                <Link to={`/${locale}/${isRu ? 'watches-with-logo' : 'logotipli-soat'}`} className="block text-gray-400 hover:text-teal-500 transition text-sm">{isRu ? 'Часы' : "Soatlar"}</Link>
+                <Link to={`/${locale}/${isRu ? 'catalog-products' : 'mahsulotlar-katalogi'}`} className="block text-gray-400 hover:text-teal-500 transition text-sm">{isRu ? 'Каталог' : 'Katalog'}</Link>
+              </div>
+            </div>
+            <div>
+              <h4 className="text-white font-bold mb-4">{isRu ? 'Контакты' : 'Aloqa'}</h4>
+              <div className="space-y-2 text-gray-400 text-sm">
+                <a href="tel:+998770802288" className="block hover:text-teal-500 transition">+998 77 080 22 88</a>
+                <a href="https://t.me/GraverAdm" target="_blank" rel="noopener noreferrer" className="block hover:text-teal-500 transition">Telegram</a>
+              </div>
+            </div>
+            <div>
+              <h4 className="text-white font-bold mb-4">{isRu ? 'Каталог' : 'Katalog'}</h4>
+              <a 
+                href="/catalogs/graver-lighters-catalog-2026.pdf"
+                download
+                className="inline-flex items-center text-orange-400 hover:text-orange-300 transition text-sm"
+              >
+                <Download size={14} className="mr-2" />
+                {isRu ? 'Скачать PDF' : 'PDF yuklab olish'}
+              </a>
+            </div>
+          </div>
+          <div className="text-center text-gray-500 text-sm border-t border-gray-800 pt-8">
+            <p>© 2026 Graver.uz — {isRu ? 'Премиальная лазерная гравировка в Ташкенте' : 'Toshkentda premium lazer gravyurasi'}</p>
           </div>
         </div>
       </footer>
