@@ -15,6 +15,8 @@ function BlogPostPage() {
   
   // Get SEO override for this post
   const seoOverride = getSeoOverride(locale, slug);
+  // Get FAQ data for FAQPage Schema
+  const faqData = getFaqData(slug);
 
   const canonicalUrl = post ? BASE_URL + '/' + locale + '/blog/' + slug : '';
   const altSlug = slug ? getAlternateSlug(slug) : null;
