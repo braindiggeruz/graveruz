@@ -157,6 +157,11 @@ function BlogPostPage() {
       React.createElement('title', null, pageTitle),
       React.createElement('meta', { name: 'description', content: post.description }),
       React.createElement('meta', { name: 'robots', content: 'index, follow' }),
+      // Canonical & Hreflang (P0 CRITICAL - must be in Helmet for crawlers)
+      React.createElement('link', { rel: 'canonical', href: canonicalUrl }),
+      ruUrl && React.createElement('link', { rel: 'alternate', hreflang: 'ru', href: ruUrl }),
+      uzUrl && React.createElement('link', { rel: 'alternate', hreflang: 'uz', href: uzUrl }),
+      React.createElement('link', { rel: 'alternate', hreflang: 'x-default', href: ruUrl || canonicalUrl }),
       // OpenGraph
       React.createElement('meta', { property: 'og:title', content: post.title }),
       React.createElement('meta', { property: 'og:description', content: post.description }),
