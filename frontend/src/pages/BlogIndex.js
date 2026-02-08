@@ -93,6 +93,14 @@ export default function BlogIndex() {
         <meta property="og:description" content={pageDescription} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:image" content="https://www.graver-studio.uz/og-blog.png" />
+        <meta property="og:site_name" content="Graver.uz" />
+        <meta property="og:locale" content={isRu ? 'ru_RU' : 'uz_UZ'} />
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription} />
+        <meta name="twitter:image" content="https://www.graver-studio.uz/og-blog.png" />
       </Helmet>
 
       {/* Header */}
