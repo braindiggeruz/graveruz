@@ -282,6 +282,24 @@ function BlogPostPage() {
             })
           )
         ),
+        // FAQ Section (P1.2 - Visual display for users)
+        faqData && faqData.length > 0 && React.createElement('div', { 
+          className: 'mt-6 p-6 bg-gradient-to-r from-gray-900 to-gray-800 border border-gray-700 rounded-xl',
+          'data-testid': 'faq-section'
+        },
+          React.createElement('h3', { className: 'text-lg font-bold text-white mb-4 flex items-center gap-2' },
+            React.createElement(HelpCircle, { size: 18, className: 'text-teal-500' }),
+            isRu ? 'Часто задаваемые вопросы' : "Ko'p so'raladigan savollar"
+          ),
+          React.createElement('div', { className: 'space-y-4' },
+            faqData.map(function(item, idx) {
+              return React.createElement('div', { key: idx, className: 'border-b border-gray-700 pb-3 last:border-0' },
+                React.createElement('p', { className: 'text-white font-medium mb-1' }, item.q),
+                React.createElement('p', { className: 'text-gray-400 text-sm' }, item.a)
+              );
+            })
+          )
+        ),
         // Related Services Section
         React.createElement('div', { 
           className: 'mt-6 p-6 bg-gray-900 border border-gray-800 rounded-xl',
