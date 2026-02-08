@@ -118,6 +118,47 @@ export const blogSeoOverridesUz = {
   }
 };
 
+// FAQ data for FAQPage Schema (P1.2)
+export const blogFaqData = {
+  // RU FAQs
+  'kak-vybrat-korporativnyj-podarok': [
+    { q: 'Как выбрать корпоративный подарок?', a: 'Выбирайте по цели, аудитории и бюджету. Практичные подарки с аккуратным логотипом работают лучше всего.' },
+    { q: 'Какой бюджет на корпоративные подарки?', a: 'Зависит от аудитории: для сотрудников 500-2000 сум, для VIP-клиентов от 5000 сум.' },
+    { q: 'Можно ли нанести логотип на любой подарок?', a: 'Да, мы наносим логотип лазерной гравировкой на металл, дерево, кожу и стекло.' }
+  ],
+  'lazernaya-gravirovka-podarkov': [
+    { q: 'На каких материалах делается лазерная гравировка?', a: 'Металл, дерево, кожа, стекло, пластик. Лучше всего смотрится на металле и дереве.' },
+    { q: 'Сколько времени занимает гравировка?', a: 'От 1 до 3 дней в зависимости от тиража и сложности макета.' },
+    { q: 'Можно ли принести свои изделия для гравировки?', a: 'Да, принесите образец — мы оценим и протестируем.' }
+  ],
+  'brendirovanie-suvenirov': [
+    { q: 'Какие методы брендирования существуют?', a: 'Лазерная гравировка, тампопечать, УФ-печать, шелкография. Выбор зависит от материала и тиража.' },
+    { q: 'Какой минимальный тираж для брендирования?', a: 'От 10 штук для гравировки, от 50 для печати.' }
+  ],
+  'welcome-pack-dlya-sotrudnikov': [
+    { q: 'Что входит в Welcome Pack?', a: 'Базовый набор: ежедневник, ручка, кружка, футболка с логотипом. Можно добавить power bank, наушники.' },
+    { q: 'За сколько дней готовится Welcome Pack?', a: 'Стандартный набор — 3-5 дней, кастомный — от 7 дней.' }
+  ],
+  // UZ FAQs
+  'korporativ-sovgani-qanday-tanlash': [
+    { q: "Korporativ sovg'ani qanday tanlash kerak?", a: "Maqsad, auditoriya va byudjetga qarab tanlang. Logotipli amaliy sovg'alar eng yaxshi ishlaydi." },
+    { q: "Har qanday sovg'aga logotip qo'ysa bo'ladimi?", a: "Ha, biz metall, yog'och, charm va shishaga lazer gravyurasi bilan logotip qo'yamiz." }
+  ],
+  'lazer-gravirovka-sovgalar': [
+    { q: "Lazer gravyurasi qaysi materiallarda qilinadi?", a: "Metall, yog'och, charm, shisha, plastik. Metall va yog'ochda eng yaxshi ko'rinadi." },
+    { q: "Gravyura qancha vaqt oladi?", a: "Tiraj va maket murakkabligiga qarab 1-3 kun." }
+  ]
+};
+
+/**
+ * Get FAQ data for a post
+ * @param {string} slug - post slug
+ * @returns {array|null} FAQ items or null
+ */
+export function getFaqData(slug) {
+  return blogFaqData[slug] || null;
+}
+
 /**
  * Get SEO override for a post
  * @param {string} locale - 'ru' or 'uz'
