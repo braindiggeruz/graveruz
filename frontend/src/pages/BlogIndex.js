@@ -89,6 +89,12 @@ export default function BlogIndex() {
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
         <meta name="robots" content="index, follow" />
+        {/* Canonical & Hreflang (P0.1 FIX) */}
+        <link rel="canonical" href={canonicalUrl} />
+        <link rel="alternate" hreflang="ru" href={ruUrl} />
+        <link rel="alternate" hreflang="uz" href={uzUrl} />
+        <link rel="alternate" hreflang="x-default" href={ruUrl} />
+        {/* OpenGraph */}
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={pageDescription} />
         <meta property="og:type" content="website" />
