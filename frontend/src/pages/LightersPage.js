@@ -12,8 +12,8 @@ const products = [
     nameRu: 'Silver Gloss',
     nameUz: 'Silver Gloss',
     price: 140000,
-    descRu: 'Зеркальная никелированная поверхность с классическим блеском. Идеально подходит для контурных гравировок, надписей и лаконичных логотипов — линии получаются четкими и контрастными.',
-    descUz: "Oynadek yaltiragan nikel qoplamali klassik yuzasi. Konturli gravirovkalar, yozuvlar va lakonik logotiplar uchun juda mos — chiziqlar aniq va kontrast chiqadi.",
+    descRu: 'Минималистичная персонализация: имя, дата, инициалы — чисто и строго.',
+    descUz: "Minimal va tartibli: ism, sana, initsial — toza ko'rinadi.",
     bestFor: ['logos', 'text', 'contour'],
     color: 'from-gray-300 to-gray-100',
     image: 'https://customer-assets.emergentagent.com/job_gift-seo-fix/artifacts/4ihfymxb_r109_silver_gloss_clean.jpg',
@@ -26,8 +26,8 @@ const products = [
     nameRu: 'Black Matte',
     nameUz: 'Black Matte',
     price: 150000,
-    descRu: 'Черное полуматовое покрытие с мягким сатиновым эффектом. Отличный выбор для фотогравировок и сложных дизайнов — специальная подкраска обеспечивает глубокий контраст и высокую детализацию изображения.',
-    descUz: "Yarim mat qora qoplama, yengil satin effekt bilan. Foto-gravirovkalar va murakkab dizaynlar uchun ideal — maxsus qoplama tasvirning chuqur kontrasti va yuqori detallashuvini ta'minlaydi.",
+    descRu: 'Логотип или символ + короткая подпись: баланс "видно" и "смысл".',
+    descUz: "Logotip yoki belgi + qisqa yozuv: ko'rinish va ma'no muvozanati.",
     bestFor: ['photos', 'detailed', 'portraits'],
     color: 'from-gray-800 to-gray-900',
     image: 'https://customer-assets.emergentagent.com/job_gift-seo-fix/artifacts/nngktupr_r110_black_matte_clean.jpg',
@@ -40,8 +40,8 @@ const products = [
     nameRu: 'Black Texture',
     nameUz: 'Black Texture',
     price: 170000,
-    descRu: 'Черная зажигалка с выраженной зернистой фактурой. Подходит для контурных работ без теней и бликов, отлично смотрится с глубокими гравировками и брутальными, графичными дизайнами.',
-    descUz: "Qalin donali teksturaga ega qora zajigalka. Soya va yaltirashsiz konturli gravirovkalar uchun mos, chuqur va grafik dizaynlar bilan juda yaxshi ko'rinadi.",
+    descRu: 'Контрастный стиль для монограммы или короткой фразы — выглядит собрано.',
+    descUz: "Kontrastli uslub: monogramma yoki qisqa ibora uchun juda mos.",
     bestFor: ['graphic', 'deep', 'brutal'],
     color: 'from-gray-700 to-black',
     image: 'https://customer-assets.emergentagent.com/job_gift-seo-fix/artifacts/y6oyh6d2_r111_black_texture.jpg',
@@ -54,8 +54,8 @@ const products = [
     nameRu: 'Brushed Steel',
     nameUz: 'Brushed Steel',
     price: 160000,
-    descRu: 'Шлифованная сталь с текстурой «царапки». Практичная поверхность без бликов и отпечатков, выглядит строго и аккуратно — универсальный вариант для надписей и повседневного использования.',
-    descUz: "Chiziqli teksturali silliqlangan po'lat yuzasi. Barmoq izlari va yaltirashni kam ko'rsatadigan, amaliy variant — yozuvlar va kundalik foydalanish uchun universal.",
+    descRu: 'Максимум индивидуальности: знак/логотип и отдельная подпись (если на странице есть гравировка с двух сторон).',
+    descUz: "Maksimal individuallik: belgi/logotip va alohida yozuv (agar sahifada ikki tomon opsiyasi bo'lsa).",
     bestFor: ['text', 'universal', 'daily'],
     color: 'from-gray-500 to-gray-400',
     image: 'https://customer-assets.emergentagent.com/job_gift-seo-fix/artifacts/46fmjowk_r112_brushed_steel.jpg',
@@ -301,31 +301,34 @@ function LightersPage() {
               {isRu ? 'Премиум коллекция' : 'Premium kolleksiya'}
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              {isRu ? 'Зажигалки с персональной' : 'Shaxsiy gravyurali'}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500"> {isRu ? 'гравировкой' : 'zajigalkalar'}</span>
+              {isRu ? 'Металлические зажигалки с лазерной гравировкой' : 'Metall zajigalkalarda lazer gravyura'}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500"> {isRu ? '— персональный подарок без лишних слов' : "— ortiqcha gaplarsiz esda qoladigan sovg'a"}</span>
             </h1>
             <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
               {isRu 
-                ? '«Огонь — самый маленький символ свободы, который можно носить в кармане.» Эксклюзивные зажигалки с кастомизацией для личного и корпоративного использования.'
-                : '"Olov — cho\'ntagingizda olib yurish mumkin bo\'lgan erkinlikning eng kichik ramzi." Shaxsiy va korporativ foydalanish uchun eksklyuziv zajigalkalar.'}
+                ? 'Имя, дата, фраза или логотип — аккуратно наносим на металл. Сначала согласуем макет, затем делаем гравировку, чтобы результат выглядел достойно.'
+                : "Ism, sana, ibora yoki logotipni metallga tartibli tushiramiz. Avval maketni kelishamiz, keyin gravyura qilamiz — natija chiroyli va \"premium\" ko'rinadi."}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
-                href="#products" 
+                href="https://t.me/GraverAdm"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center bg-gradient-to-r from-orange-500 to-red-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-orange-600 hover:to-red-700 transition"
                 data-testid="lighters-cta-models"
               >
-                {isRu ? 'Смотреть модели' : 'Modellarni ko\'rish'}
+                {isRu ? 'Получить макет' : 'Maketni olish'}
                 <ChevronRight size={20} className="ml-2" />
               </a>
               <a 
-                href="/catalogs/graver-lighters-catalog-2026.pdf"
-                download
+                href="https://t.me/GraverAdm"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center bg-gray-800 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-700 transition border border-gray-700"
                 data-testid="lighters-cta-download"
               >
-                <Download size={20} className="mr-2" />
-                {isRu ? 'Скачать каталог (PDF)' : 'Katalogni yuklab olish (PDF)'}
+                <Send size={20} className="mr-2" />
+                {isRu ? 'Написать в Telegram' : 'Telegramga yozish'}
               </a>
             </div>
           </div>
