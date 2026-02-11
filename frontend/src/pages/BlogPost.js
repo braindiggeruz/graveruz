@@ -121,8 +121,11 @@ function BlogPostPage() {
     .map(function(s) { return getPostBySlug(locale, s); })
     .filter(Boolean);
 
-  var contentParts = [];
-  if (post.content) {
+  var contentBody = null;
+  if (post && post.contentHtml) {
+    contentBody = React.createElement('div', { dangerouslySetInnerHTML: { __html: post.contentHtml } });
+  } else if (post && post.content) {
+    var contentParts = [];
     var lines = post.content.split('\n');
     for (var i = 0; i < lines.length; i++) {
       var ln = lines[i];
@@ -136,6 +139,7 @@ function BlogPostPage() {
         contentParts.push(React.createElement('p', { key: 'p-' + i, className: 'text-gray-300 leading-relaxed my-3' }, ln));
       }
     }
+    contentBody = contentParts;
   }
 
   return React.createElement('div', { className: 'min-h-screen bg-black text-white' },
@@ -209,7 +213,7 @@ function BlogPostPage() {
             )
           )
         ),
-        React.createElement('div', { className: 'prose prose-invert max-w-none' }, contentParts),
+        React.createElement('div', { className: 'prose prose-invert max-w-none' }, contentBody),
         // Related Articles Section (if exists)
         relatedPosts.length > 0 && React.createElement('div', { 
           className: 'mt-12 p-6 bg-gray-900/50 border border-gray-800 rounded-xl',

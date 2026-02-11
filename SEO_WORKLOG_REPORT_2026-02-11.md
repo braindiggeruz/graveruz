@@ -33,13 +33,14 @@
 
 - Цель: закрыть P0 SEO safety без выдуманных фактов и не ломая сборку.
 - Добавлена защита для root `/`: `noindex, follow` + canonical/hreflang на `/ru`/`/uz`.
+- Для стабильности prerender root применяется postbuild-патч `build/index.html`.
 - Убраны непроверяемые факты из meta: цены/сроки на `/products/lighters` и цены на `/engraved-gifts`.
 - Article schema в блогах очищен от author/publisher (нет подтверждения в UI).
 - `sitemap.xml` очищен от `lastmod` (нет источника дат).
 - Сохранены SPA-редиректы и прежняя схема prerender через `react-snap`.
 - Зафиксирована LTS рекомендация Node через `.nvmrc` и README.
 - Схемы FAQ оставлены только там, где FAQ реально отрисован.
-- Требуется финальная сборка и проверка prerender HTML после изменений.
+- Сборка и prerender подтверждены, включая root `/`.
 
 ## 3) Files changed (точный список + 1–3 bullet points)
 
@@ -49,7 +50,7 @@
   - Документированы server-side 301 правила для legacy путей.
   - Добавлены варианты для Nginx/Netlify/Vercel/Cloudflare.
 - [frontend/package.json](frontend/package.json)
-  - `postbuild` включает `react-snap`.
+  - `postbuild` включает `react-snap` + postbuild патч root.
   - `reactSnap.include` зафиксировал полный список RU/UZ маршрутов и постов.
 - [frontend/public/index.html](frontend/public/index.html)
   - Добавлены guards для аналитики и Emergent-скрипта при prerender.
@@ -81,7 +82,10 @@
   - Убраны nullish-операторы для совместимости.
 - [frontend/src/index.js](frontend/src/index.js)
   - Root редирект на `/ru`.
+  - React-snap guard для root redirect + fallback ссылка.
   - SPA редиректы legacy `/blog`, `/lighters` и локализованные аналоги.
+- [frontend/scripts/postbuild-root-noindex.js](frontend/scripts/postbuild-root-noindex.js)
+  - Принудительно выставляет `noindex, follow` в build/index.html.
 - [frontend/src/pages/BlogIndex.js](frontend/src/pages/BlogIndex.js)
   - Метаданные и SEO-структура для индекса блога.
 - [frontend/src/pages/BlogPost.js](frontend/src/pages/BlogPost.js)
@@ -115,16 +119,17 @@
   - `ru`, `uz-Latn`, `x-default` генерируются через `buildAlternate` или явные `ruUrl/uzUrl`.
 - Robots meta:
   - `noindex, nofollow` включается для `/thanks` и `404`.
+  - Root `/` принудительно `noindex, follow` (postbuild patch для prerender HTML).
   - Остальные страницы — `index, follow`.
 
 ## 5) Prerender (react-snap) — доказательства
 
 Конфиг (package.json):
-- scripts: `build` -> `craco build`, `postbuild` -> `react-snap`
+- scripts: `build` -> `craco build`, `postbuild` -> `react-snap && node scripts/postbuild-root-noindex.js`
 - `reactSnap.include` содержит RU/UZ маршруты + посты блога.
 
 Команда сборки:
-- `npm run build` (build + postbuild/react-snap). Результат: 38/38 маршрутов успешно пререндерены.
+- `npm run build` (build + postbuild/react-snap + root noindex patch). Результат: 39/39 маршрутов успешно пререндерены.
 
 Фактические пререндеренные HTML (`frontend/build`):
 - build/index.html
@@ -142,6 +147,18 @@
 - build/ru/blog/welcome-pack-dlya-sotrudnikov/index.html
 - build/ru/catalog-products/index.html
 - build/ru/contacts/index.html
+
+## 6) Blog pack publish (RU+UZ, 10+10)
+
+Кратко:
+- Добавлены 10 RU и 10 UZ постов из DOCX, включая HTML body.
+- BlogPost рендерит HTML-контент для новых статей, markdown остаётся для старых.
+- Обновлены `reactSnap.include` и sitemap с hreflang для 20 новых URL.
+- Сборка: `npm install --legacy-peer-deps`, затем `npm run build` (craco + react-snap), 59 маршрутов.
+
+Проверки prerender:
+- build/ru/blog/korporativnye-podarki-s-logotipom-polnyy-gayd/index.html
+- build/uz/blog/korporativ-sovgalar-logotip-bilan-to-liq-qollanma/index.html
 - build/ru/engraved-gifts/index.html
 - build/ru/guarantees/index.html
 - build/ru/process/index.html
@@ -168,9 +185,13 @@
 - build/uz/products/lighters/index.html
 
 Примеры head (из prerender HTML):
+- build/index.html
+  - robots: noindex, follow
+  - canonical: https://www.graver-studio.uz/ru
+  - hreflang: ru/uz-Latn/x-default
 - build/ru/products/lighters/index.html
   - title: Эксклюзивные зажигалки с лазерной гравировкой — Graver.uz
-  - description: Закажите зажигалки с лазерной гравировкой... Срок 1-3 дня. Цены от 140 000 сум.
+  - description: Закажите зажигалки с лазерной гравировкой в Ташкенте...
   - canonical: https://www.graver-studio.uz/ru/products/lighters
   - hreflang: ru/uz-Latn/x-default
 - build/uz/products/lighters/index.html
@@ -341,4 +362,4 @@ Organization/LocalBusiness:
 ## 13) Remaining TODO (P2)
 
 - Подтвердить канал деплоя и механизм server-side редиректов в Emergent.
-- Прогнать финальный build + spot-check prerender HTML после всех коммитов.
+- После деплоя проверить root `/` на `noindex, follow` и корректные canonical/hreflang.

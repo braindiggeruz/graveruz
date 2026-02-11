@@ -135,7 +135,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- BLOG POSTS RU (10 articles) -->
+  <!-- BLOG POSTS RU (20 articles) -->
   <url>
     <loc>https://www.graver-studio.uz/ru/blog/kak-vybrat-korporativnyj-podarok</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/blog/kak-vybrat-korporativnyj-podarok"/>
@@ -217,7 +217,7 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- BLOG POSTS UZ (10 articles) -->
+  <!-- BLOG POSTS UZ (20 articles) -->
   <url>
     <loc>https://www.graver-studio.uz/uz/blog/korporativ-sovgani-qanday-tanlash</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/blog/kak-vybrat-korporativnyj-podarok"/>
@@ -295,6 +295,86 @@
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/blog/chek-list-zakupshchika-podarkov"/>
     <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/blog/xaridor-chek-listi-b2b"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/blog/chek-list-zakupshchika-podarkov"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.graver-studio.uz/uz/blog/korporativ-sovgalar-logotip-bilan-to-liq-qollanma</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/blog/korporativnye-podarki-s-logotipom-polnyy-gayd"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/blog/korporativ-sovgalar-logotip-bilan-to-liq-qollanma"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/blog/korporativnye-podarki-s-logotipom-polnyy-gayd"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.graver-studio.uz/uz/blog/korporativ-sovgalar-gravyurasi-usullari</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/blog/korporativnye-podarki-s-gravirovkoy-metody"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/blog/korporativ-sovgalar-gravyurasi-usullari"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/blog/korporativnye-podarki-s-gravirovkoy-metody"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.graver-studio.uz/uz/blog/lazer-gravyurasi-texnologiyasi</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/blog/lazernaya-gravirovka-podarkov-tehnologiya"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/blog/lazer-gravyurasi-texnologiyasi"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/blog/lazernaya-gravirovka-podarkov-tehnologiya"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.graver-studio.uz/uz/blog/kompaniya-merchi-brendlash</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/blog/merch-dlya-kompanii-brendirovanie"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/blog/kompaniya-merchi-brendlash"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/blog/merch-dlya-kompanii-brendirovanie"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.graver-studio.uz/uz/blog/xodimlar-uchun-sovgalar-hr-qollanma</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/blog/podarki-sotrudnikam-hr-gayd"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/blog/xodimlar-uchun-sovgalar-hr-qollanma"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/blog/podarki-sotrudnikam-hr-gayd"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.graver-studio.uz/uz/blog/mijoz-hamkorlar-uchun-sovgalar-vip</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/blog/podarki-klientam-partneram-vip"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/blog/mijoz-hamkorlar-uchun-sovgalar-vip"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/blog/podarki-klientam-partneram-vip"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.graver-studio.uz/uz/blog/logotipli-zajigalka-va-soat</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/blog/brendirovannye-zazhigalki-i-chasy-s-logotipom"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/blog/logotipli-zajigalka-va-soat"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/blog/brendirovannye-zazhigalki-i-chasy-s-logotipom"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.graver-studio.uz/uz/blog/korporativ-sovga-toplamlari</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/blog/korporativnye-podarochnye-nabory"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/blog/korporativ-sovga-toplamlari"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/blog/korporativnye-podarochnye-nabory"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.graver-studio.uz/uz/blog/navruz-uchun-korporativ-sovgalar</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/blog/korporativnye-podarki-na-navruz"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/blog/navruz-uchun-korporativ-sovgalar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/blog/korporativnye-podarki-na-navruz"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.graver-studio.uz/uz/blog/yangi-xodimlar-uchun-welcome-pack</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/blog/welcome-pack-novym-sotrudnikam"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/blog/yangi-xodimlar-uchun-welcome-pack"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/blog/welcome-pack-novym-sotrudnikam"/>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

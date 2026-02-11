@@ -30,20 +30,45 @@ const LoadingFallback = () => (
   </div>
 );
 
-const RootRedirect = () => (
-  <>
-    <SeoMeta
-      title="Graver.uz"
-      description="Корпоративные подарки с лазерной гравировкой."
-      canonicalUrl={`${BASE_URL}/ru`}
-      ruUrl={`${BASE_URL}/ru`}
-      uzUrl={`${BASE_URL}/uz`}
-      locale="ru"
-      robots="noindex, follow"
-    />
-    <Navigate to="/ru" replace />
-  </>
-);
+const isReactSnap = () => {
+  if (typeof window === "undefined") {
+    return false;
+  }
+
+  const userAgent = navigator && navigator.userAgent ? navigator.userAgent : "";
+  return Boolean(
+    window.__REACT_SNAP__ ||
+      /ReactSnap/i.test(userAgent) ||
+      (window.location && window.location.port === "45678"),
+  );
+};
+
+const RootRedirect = () => {
+  const shouldRedirect = !isReactSnap();
+
+  return (
+    <>
+      <SeoMeta
+        title="Graver.uz"
+        description="Корпоративные подарки с лазерной гравировкой."
+        canonicalUrl={`${BASE_URL}/ru`}
+        ruUrl={`${BASE_URL}/ru`}
+        uzUrl={`${BASE_URL}/uz`}
+        locale="ru"
+        robots="noindex, follow"
+      />
+      {shouldRedirect ? (
+        <Navigate to="/ru" replace />
+      ) : (
+        <div className="min-h-screen bg-black flex items-center justify-center">
+          <a className="text-teal-500 underline" href="/ru">
+            Перейти на русскую версию
+          </a>
+        </div>
+      )}
+    </>
+  );
+};
 
 // Locale validator wrapper
 const LocaleRoute = ({ element }) => {

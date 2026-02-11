@@ -59,7 +59,7 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "postbuild": "react-snap",
+    "postbuild": "react-snap && node scripts/postbuild-root-noindex.js",
     "test": "craco test"
   },
   "reactSnap": {
@@ -103,7 +103,27 @@
       "/uz/blog/logotip-maketi-tayyorlash",
       "/uz/blog/navruz-sovgalari",
       "/uz/blog/suvenir-byudjetini-tejash",
-      "/uz/blog/xaridor-chek-listi-b2b"
+      "/uz/blog/xaridor-chek-listi-b2b",
+      "/ru/blog/korporativnye-podarki-s-logotipom-polnyy-gayd",
+      "/uz/blog/korporativ-sovgalar-logotip-bilan-to-liq-qollanma",
+      "/ru/blog/korporativnye-podarki-s-gravirovkoy-metody",
+      "/uz/blog/korporativ-sovgalar-gravyurasi-usullari",
+      "/ru/blog/lazernaya-gravirovka-podarkov-tehnologiya",
+      "/uz/blog/lazer-gravyurasi-texnologiyasi",
+      "/ru/blog/merch-dlya-kompanii-brendirovanie",
+      "/uz/blog/kompaniya-merchi-brendlash",
+      "/ru/blog/podarki-sotrudnikam-hr-gayd",
+      "/uz/blog/xodimlar-uchun-sovgalar-hr-qollanma",
+      "/ru/blog/podarki-klientam-partneram-vip",
+      "/uz/blog/mijoz-hamkorlar-uchun-sovgalar-vip",
+      "/ru/blog/brendirovannye-zazhigalki-i-chasy-s-logotipom",
+      "/uz/blog/logotipli-zajigalka-va-soat",
+      "/ru/blog/korporativnye-podarochnye-nabory",
+      "/uz/blog/korporativ-sovga-toplamlari",
+      "/ru/blog/korporativnye-podarki-na-navruz",
+      "/uz/blog/navruz-uchun-korporativ-sovgalar",
+      "/ru/blog/welcome-pack-novym-sotrudnikam",
+      "/uz/blog/yangi-xodimlar-uchun-welcome-pack"
     ]
   },
   "browserslist": {
