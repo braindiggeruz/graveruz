@@ -51,7 +51,10 @@ export default function ContactsPage() {
     document.head.appendChild(script);
     
     return () => {
-      document.getElementById('breadcrumb-schema')?.remove();
+      var breadcrumbSchemaEl = document.getElementById('breadcrumb-schema');
+      if (breadcrumbSchemaEl) {
+        breadcrumbSchemaEl.remove();
+      }
     };
   }, [locale, home, title, canonicalUrl]);
 

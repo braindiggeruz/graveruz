@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import SeoMeta from '../components/SeoMeta';
 import { ArrowLeft, Download, Phone, Send, Flame, Shield, Ruler, Scale, ChevronRight } from 'lucide-react';
 import { BASE_URL } from '../config/seo';
 
@@ -96,8 +96,8 @@ function LightersPage() {
     : 'Lazer gravyurasi bilan eksklyuziv zajigalkalar – Graver.uz';
   
   const pageDescription = isRu
-    ? 'Закажите зажигалки с лазерной гравировкой в Ташкенте. Гравировка логотипов, имен и фото на зажигалках Zippo-типа. Срок 1-3 дня. Цены от 140 000 сум.'
-    : "Toshkentda lazer gravyurasi bilan zajigalkalarga buyurtma bering. Zippo turidagi zajigalkalarga logotiplar, ismlar va fotosuratlar gravyurasi. 1-3 kun ichida. Narxlar 140 000 so'mdan.";
+    ? 'Закажите зажигалки с лазерной гравировкой в Ташкенте. Гравировка логотипов, имен и фото на зажигалках Zippo-типа.'
+    : "Toshkentda lazer gravyurasi bilan zajigalkalarga buyurtma bering. Zippo turidagi zajigalkalarga logotiplar, ismlar va fotosuratlar gravyurasi.";
 
   // Inject JSON-LD schemas via useEffect
   useEffect(() => {
@@ -120,14 +120,7 @@ function LightersPage() {
         "@type": "Brand",
         "name": "Graver.uz"
       },
-      "offers": {
-        "@type": "AggregateOffer",
-        "lowPrice": "140000",
-        "highPrice": "170000",
-        "priceCurrency": "UZS",
-        "offerCount": "4",
-        "availability": "https://schema.org/InStock"
-      }
+      "offers": undefined
     });
     document.head.appendChild(mainProductSchema);
 
@@ -141,17 +134,7 @@ function LightersPage() {
         "@type": "Product",
         "name": isRu ? `Зажигалка ${product.nameRu} с гравировкой` : `${product.nameUz} gravyurali zajigalka`,
         "description": isRu ? product.descRu : product.descUz,
-        "sku": product.sku,
-        "brand": { "@type": "Brand", "name": "Graver.uz" },
-        "offers": {
-          "@type": "Offer",
-          "url": canonicalUrl,
-          "priceCurrency": "UZS",
-          "price": product.price.toString(),
-          "priceValidUntil": "2026-12-31",
-          "itemCondition": "https://schema.org/NewCondition",
-          "availability": "https://schema.org/InStock"
-        }
+        "brand": { "@type": "Brand", "name": "Graver.uz" }
       });
       document.head.appendChild(productSchema);
     });
@@ -171,38 +154,10 @@ function LightersPage() {
     });
     document.head.appendChild(breadcrumbSchema);
 
-    // PATCH 2 & 3: Canonical and Hreflang via DOM (react-helmet-async workaround)
-    const canonicalLink = document.createElement('link');
-    canonicalLink.rel = 'canonical';
-    canonicalLink.href = canonicalUrl;
-    canonicalLink.setAttribute('data-seo-lighters', 'true');
-    document.head.appendChild(canonicalLink);
-
-    const hreflangRu = document.createElement('link');
-    hreflangRu.rel = 'alternate';
-    hreflangRu.hreflang = 'ru';
-    hreflangRu.href = ruUrl;
-    hreflangRu.setAttribute('data-seo-lighters', 'true');
-    document.head.appendChild(hreflangRu);
-
-    const hreflangUz = document.createElement('link');
-    hreflangUz.rel = 'alternate';
-    hreflangUz.hreflang = 'uz';
-    hreflangUz.href = uzUrl;
-    hreflangUz.setAttribute('data-seo-lighters', 'true');
-    document.head.appendChild(hreflangUz);
-
-    const hreflangDefault = document.createElement('link');
-    hreflangDefault.rel = 'alternate';
-    hreflangDefault.hreflang = 'x-default';
-    hreflangDefault.href = ruUrl;
-    hreflangDefault.setAttribute('data-seo-lighters', 'true');
-    document.head.appendChild(hreflangDefault);
-
     return () => {
       document.querySelectorAll('[data-seo-lighters]').forEach(el => el.remove());
     };
-  }, [locale, isRu, canonicalUrl, ruUrl, uzUrl]);
+  }, [locale, isRu, canonicalUrl]);
 
   const formatPrice = (price) => {
     return new Intl.NumberFormat(isRu ? 'ru-RU' : 'uz-UZ').format(price);
@@ -210,23 +165,15 @@ function LightersPage() {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      <Helmet>
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href={canonicalUrl} />
-        <link rel="alternate" hreflang="ru" href={ruUrl} />
-        <link rel="alternate" hreflang="uz" href={uzUrl} />
-        <link rel="alternate" hreflang="x-default" href={ruUrl} />
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription} />
-        <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content={`${BASE_URL}/og-blog.png`} />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={pageTitle} />
-        <meta name="twitter:description" content={pageDescription} />
-      </Helmet>
+      <SeoMeta
+        title={pageTitle}
+        description={pageDescription}
+        canonicalUrl={canonicalUrl}
+        ruUrl={ruUrl}
+        uzUrl={uzUrl}
+        locale={locale}
+        ogType="website"
+      />
 
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 bg-black/95 backdrop-blur-sm z-50 border-b border-gray-800">

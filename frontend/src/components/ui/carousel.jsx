@@ -46,11 +46,15 @@ const Carousel = React.forwardRef((
   }, [])
 
   const scrollPrev = React.useCallback(() => {
-    api?.scrollPrev()
+    if (api) {
+      api.scrollPrev()
+    }
   }, [api])
 
   const scrollNext = React.useCallback(() => {
-    api?.scrollNext()
+    if (api) {
+      api.scrollNext()
+    }
   }, [api])
 
   const handleKeyDown = React.useCallback((event) => {
@@ -81,7 +85,9 @@ const Carousel = React.forwardRef((
     api.on("select", onSelect)
 
     return () => {
-      api?.off("select", onSelect)
+      if (api) {
+        api.off("select", onSelect)
+      }
     };
   }, [api, onSelect])
 
@@ -92,7 +98,7 @@ const Carousel = React.forwardRef((
         api: api,
         opts,
         orientation:
-          orientation || (opts?.axis === "y" ? "vertical" : "horizontal"),
+          orientation || ((opts && opts.axis === "y") ? "vertical" : "horizontal"),
         scrollPrev,
         scrollNext,
         canScrollPrev,

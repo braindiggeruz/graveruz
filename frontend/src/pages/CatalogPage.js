@@ -32,7 +32,7 @@ const uzContent = {
 
 const ruCategories = [
   { id: 'watches', name: 'Часы с логотипом', price: '450 000 – 2 000 000 сум', desc: 'Наши модели', link: 'watches-with-logo', img: '/catalog/watches.png' },
-  { id: 'lighters', name: 'Зажигалки (аналог Zippo)', price: '140 000 – 290 000 сум', desc: '1 или 2 стороны', link: 'lighters-engraving', img: '/catalog/lighters.png' },
+  { id: 'lighters', name: 'Зажигалки (аналог Zippo)', price: '140 000 – 290 000 сум', desc: '1 или 2 стороны', link: 'products/lighters', img: '/catalog/lighters.png' },
   { id: 'pen', name: 'Ручки с гравировкой', price: '25 000 – 200 000 сум', desc: 'Зависит от модели', link: 'engraved-gifts', img: '/catalog/pen.png' },
   { id: 'powerbank', name: 'Повербанки', price: '90 000 – 600 000 сум', desc: 'Зависит от бренда', link: 'engraved-gifts', img: '/catalog/powerbank.png' },
   { id: 'diary', name: 'Ежедневники', price: '50 000 – 250 000 сум', desc: 'Гравировка или УФ', link: 'engraved-gifts', img: '/catalog/diary.png' }
@@ -40,7 +40,7 @@ const ruCategories = [
 
 const uzCategories = [
   { id: 'watches', name: 'Logotipli soat', price: '450 000 – 2 000 000', desc: 'Bizning modellar', link: 'logotipli-soat', img: '/catalog/watches.png' },
-  { id: 'lighters', name: 'Zajigalka (Zippo)', price: '140 000 – 290 000', desc: '1 yoki 2 tomon', link: 'gravirovkali-zajigalka', img: '/catalog/lighters.png' },
+  { id: 'lighters', name: 'Zajigalka (Zippo)', price: '140 000 – 290 000', desc: '1 yoki 2 tomon', link: 'products/lighters', img: '/catalog/lighters.png' },
   { id: 'pen', name: 'Gravirovkali ruchka', price: '25 000 – 200 000', desc: 'Modelga qarab', link: 'gravirovkali-sovgalar', img: '/catalog/pen.png' },
   { id: 'powerbank', name: 'Powerbank', price: '90 000 – 600 000', desc: 'Brendga qarab', link: 'gravirovkali-sovgalar', img: '/catalog/powerbank.png' },
   { id: 'diary', name: 'Kundaliklar', price: '50 000 – 250 000', desc: 'Gravirovka/UV', link: 'gravirovkali-sovgalar', img: '/catalog/diary.png' }
@@ -107,13 +107,22 @@ export default function CatalogPage() {
     document.head.appendChild(faqScript);
 
     return () => {
-      document.getElementById('breadcrumb-schema')?.remove();
-      document.getElementById('faq-schema')?.remove();
+      var breadcrumbSchemaEl = document.getElementById('breadcrumb-schema');
+      if (breadcrumbSchemaEl) {
+        breadcrumbSchemaEl.remove();
+      }
+      var faqSchemaEl = document.getElementById('faq-schema');
+      if (faqSchemaEl) {
+        faqSchemaEl.remove();
+      }
     };
   }, [locale, t, canonicalUrl, faq]);
 
   const scrollToForm = () => {
-    document.getElementById('b2c-form')?.scrollIntoView({ behavior: 'smooth' });
+    var formEl = document.getElementById('b2c-form');
+    if (formEl) {
+      formEl.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -124,6 +133,7 @@ export default function CatalogPage() {
         canonicalUrl={canonicalUrl}
         ruUrl={ruUrl}
         uzUrl={uzUrl}
+        locale={locale}
       />
 
       <header className="bg-black/95 border-b border-gray-800 py-4">

@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
 import { Send, Home, Check, Clock, Award, Package } from 'lucide-react';
 import { useI18n } from './i18n';
+import { buildCanonical, buildAlternate } from './config/seo';
+import SeoMeta from './components/SeoMeta';
 import './App.css';
 
 const thanksTranslations = {
@@ -70,16 +71,6 @@ function Thanks() {
   useEffect(() => {
     document.documentElement.lang = locale === 'uz' ? 'uz-Latn' : 'ru';
     
-    // Add noindex meta for thanks page (SEO)
-    let robotsMeta = document.querySelector('meta[name="robots"]');
-    if (!robotsMeta) {
-      robotsMeta = document.createElement('meta');
-      robotsMeta.name = 'robots';
-      robotsMeta.setAttribute('data-thanks-seo', 'true');
-      document.head.appendChild(robotsMeta);
-    }
-    robotsMeta.content = 'noindex, nofollow';
-    
     // Track view_thanks event for GA4
     if (window.gtag) {
       window.gtag('event', 'view_thanks', {
@@ -98,9 +89,6 @@ function Thanks() {
       window.__trackLeadSuccess();
     }
     
-    return () => {
-      document.querySelectorAll('[data-thanks-seo]').forEach(el => el.remove());
-    };
   }, [locale]);
 
   const handleBackHome = () => {
@@ -109,11 +97,15 @@ function Thanks() {
 
   return (
     <div className="Thanks min-h-screen bg-black">
-      <Helmet>
-        <title>{i18nT('meta.thanks.title')}</title>
-        <meta name="description" content={i18nT('meta.thanks.description')} />
-        <meta name="robots" content="noindex, nofollow" />
-      </Helmet>
+      <SeoMeta
+        title={i18nT('meta.thanks.title')}
+        description={i18nT('meta.thanks.description')}
+        canonicalUrl={buildCanonical(`/${locale}/thanks`)}
+        ruUrl={buildAlternate(`/${locale}/thanks`, locale, 'ru')}
+        uzUrl={buildAlternate(`/${locale}/thanks`, locale, 'uz')}
+        locale={locale}
+        noindex={true}
+      />
 
       {/* Hero Section with Background */}
       <section 

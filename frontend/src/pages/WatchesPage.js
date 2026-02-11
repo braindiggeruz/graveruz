@@ -96,8 +96,14 @@ export default function WatchesPage() {
     document.head.appendChild(faqScript);
 
     return () => {
-      document.getElementById('breadcrumb-schema')?.remove();
-      document.getElementById('faq-schema')?.remove();
+      var breadcrumbSchema = document.getElementById('breadcrumb-schema');
+      if (breadcrumbSchema) {
+        breadcrumbSchema.remove();
+      }
+      var faqSchemaEl = document.getElementById('faq-schema');
+      if (faqSchemaEl) {
+        faqSchemaEl.remove();
+      }
     };
   }, [locale, t, canonicalUrl, catalogSlug, faq]);
 
@@ -109,6 +115,7 @@ export default function WatchesPage() {
         canonicalUrl={canonicalUrl}
         ruUrl={ruUrl}
         uzUrl={uzUrl}
+        locale={locale}
       />
 
       <header className="bg-black/95 border-b border-gray-800 py-4">
