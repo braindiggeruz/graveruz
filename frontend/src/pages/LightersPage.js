@@ -125,8 +125,7 @@ function LightersPage() {
         "lowPrice": "140000",
         "highPrice": "170000",
         "priceCurrency": "UZS",
-        "offerCount": "4",
-        "availability": "https://schema.org/InStock"
+        "offerCount": "4"
       }
     });
     document.head.appendChild(mainProductSchema);
@@ -147,10 +146,7 @@ function LightersPage() {
           "@type": "Offer",
           "url": canonicalUrl,
           "priceCurrency": "UZS",
-          "price": product.price.toString(),
-          "priceValidUntil": "2026-12-31",
-          "itemCondition": "https://schema.org/NewCondition",
-          "availability": "https://schema.org/InStock"
+          "price": product.price.toString()
         }
       });
       document.head.appendChild(productSchema);

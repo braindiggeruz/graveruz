@@ -67,19 +67,6 @@ export default function SEOHead({
     description = descriptionOverride;
   }
   
-  // Build LocalBusiness schema (only verified data)
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Graver.uz",
-    "url": BASE_URL,
-    "telephone": ["+998770802288", "+998974802288"],
-    "areaServed": {
-      "@type": "City",
-      "name": "Tashkent"
-    }
-  };
-
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -117,9 +104,6 @@ export default function SEOHead({
         ogImage={ogImage}
       />
       <Helmet>
-        <script type="application/ld+json">
-          {JSON.stringify(organizationSchema)}
-        </script>
         <script type="application/ld+json">
           {JSON.stringify(websiteSchema)}
         </script>
