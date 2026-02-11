@@ -96,8 +96,8 @@ function LightersPage() {
     : 'Lazer gravyurasi bilan eksklyuziv zajigalkalar – Graver.uz';
   
   const pageDescription = isRu
-    ? 'Закажите зажигалки с лазерной гравировкой в Ташкенте. Гравировка логотипов, имен и фото на зажигалках Zippo-типа. Срок 1-3 дня. Цены от 140 000 сум.'
-    : "Toshkentda lazer gravyurasi bilan zajigalkalarga buyurtma bering. Zippo turidagi zajigalkalarga logotiplar, ismlar va fotosuratlar gravyurasi. 1-3 kun ichida. Narxlar 140 000 so'mdan.";
+    ? 'Закажите зажигалки с лазерной гравировкой в Ташкенте. Гравировка логотипов, имен и фото на зажигалках Zippo-типа.'
+    : "Toshkentda lazer gravyurasi bilan zajigalkalarga buyurtma bering. Zippo turidagi zajigalkalarga logotiplar, ismlar va fotosuratlar gravyurasi.";
 
   // Inject JSON-LD schemas via useEffect
   useEffect(() => {
