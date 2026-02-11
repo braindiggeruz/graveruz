@@ -46,6 +46,12 @@ const BlogRedirect = ({ fromLocale }) => {
   return <Navigate to={`/${fromLocale}/blog/${slug}`} replace />;
 };
 
+// Legacy lighters slugs -> canonical /products/lighters
+const LightersRedirect = () => {
+  const { locale } = useParams();
+  return <Navigate to={`/${locale}/products/lighters`} replace />;
+};
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
@@ -75,8 +81,8 @@ root.render(
               <Route path="/:locale/mahsulotlar-katalogi" element={<LocaleRoute element={<CatalogPage />} />} />
               <Route path="/:locale/watches-with-logo" element={<LocaleRoute element={<WatchesPage />} />} />
               <Route path="/:locale/logotipli-soat" element={<LocaleRoute element={<WatchesPage />} />} />
-              <Route path="/:locale/lighters-engraving" element={<LocaleRoute element={<LightersPage />} />} />
-              <Route path="/:locale/gravirovkali-zajigalka" element={<LocaleRoute element={<LightersPage />} />} />
+              <Route path="/:locale/lighters-engraving" element={<LocaleRoute element={<LightersRedirect />} />} />
+              <Route path="/:locale/gravirovkali-zajigalka" element={<LocaleRoute element={<LightersRedirect />} />} />
               <Route path="/:locale/products/lighters" element={<LocaleRoute element={<LightersPage />} />} />
               <Route path="/:locale/engraved-gifts" element={<LocaleRoute element={<EngravedGiftsPage />} />} />
               <Route path="/:locale/gravirovkali-sovgalar" element={<LocaleRoute element={<EngravedGiftsPage />} />} />

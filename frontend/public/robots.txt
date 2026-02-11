@@ -2,6 +2,8 @@
 User-agent: *
 Allow: /
 Disallow: /thanks
+Disallow: /ru/thanks
+Disallow: /uz/thanks
 Disallow: /api/
 
 Sitemap: https://www.graver-studio.uz/sitemap.xml

@@ -100,13 +100,22 @@ export default function EngravedGiftsPage() {
     document.head.appendChild(faqScript);
 
     return () => {
-      document.getElementById('breadcrumb-schema')?.remove();
-      document.getElementById('faq-schema')?.remove();
+      var breadcrumbSchemaEl = document.getElementById('breadcrumb-schema');
+      if (breadcrumbSchemaEl) {
+        breadcrumbSchemaEl.remove();
+      }
+      var faqSchemaEl = document.getElementById('faq-schema');
+      if (faqSchemaEl) {
+        faqSchemaEl.remove();
+      }
     };
   }, [locale, t, canonicalUrl, catalogSlug, faq]);
 
   const scrollToForm = () => {
-    document.getElementById('b2c-form')?.scrollIntoView({ behavior: 'smooth' });
+    var formEl = document.getElementById('b2c-form');
+    if (formEl) {
+      formEl.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -117,6 +126,7 @@ export default function EngravedGiftsPage() {
         canonicalUrl={canonicalUrl}
         ruUrl={ruUrl}
         uzUrl={uzUrl}
+        locale={locale}
       />
 
       <header className="bg-black/95 border-b border-gray-800 py-4">

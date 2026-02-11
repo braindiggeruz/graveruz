@@ -338,7 +338,11 @@ export default function B2CForm({ locale = 'ru', defaultCategory = '', pageUrl =
         <div>
           <label className="block text-gray-300 font-medium mb-2">{t.file} *</label>
           <div
-            onClick={() => fileInputRef.current?.click()}
+            onClick={() => {
+              if (fileInputRef.current) {
+                fileInputRef.current.click();
+              }
+            }}
             className={`border-2 border-dashed ${errors.file ? 'border-red-500' : 'border-gray-700'} rounded-lg p-4 text-center cursor-pointer hover:border-teal-500/50 transition`}
           >
             <input

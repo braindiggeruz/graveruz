@@ -5,6 +5,23 @@ import { Home, AlertTriangle } from 'lucide-react';
 
 export default function NotFound() {
   const location = useLocation();
+  const pathLocale = location.pathname.split('/').filter(Boolean)[0];
+  const isUz = pathLocale === 'uz';
+  const copy = isUz ? {
+    title: 'Sahifa topilmadi',
+    description: "So'ralgan sahifa mavjud emas yoki ko'chirilgan.",
+    requestedUrl: 'So\'ralgan URL:',
+    homeCta: 'Bosh sahifa',
+    help: 'Yordam kerakmi? Biz bilan bog\'laning:',
+    telegramLabel: 'Telegram @GraverAdm'
+  } : {
+    title: 'Страница не найдена',
+    description: 'Запрашиваемая страница не существует или была перемещена.',
+    requestedUrl: 'Запрошенный URL:',
+    homeCta: 'На главную',
+    help: 'Нужна помощь? Свяжитесь с нами:',
+    telegramLabel: '@GraverAdm в Telegram'
+  };
   
   // Set document title and log 404 for analytics
   useEffect(() => {
@@ -21,10 +38,10 @@ export default function NotFound() {
   return (
     <>
       <Helmet>
-        <title>404 — Страница не найдена | Graver.uz</title>
+        <title>{`404 — ${copy.title} | Graver.uz`}</title>
         <meta name="robots" content="noindex, nofollow" />
         <meta name="prerender-status-code" content="404" />
-        <meta name="description" content="Запрашиваемая страница не найдена. Вернитесь на главную страницу Graver.uz." />
+        <meta name="description" content={copy.description} />
       </Helmet>
       
       <div className="min-h-screen bg-black flex items-center justify-center px-4" data-testid="not-found-page">
@@ -38,52 +55,39 @@ export default function NotFound() {
           
           <h1 className="text-7xl font-bold text-teal-500 mb-4">404</h1>
           <h2 className="text-2xl font-semibold text-white mb-4">
-            Страница не найдена
+            {copy.title}
           </h2>
-          <p className="text-lg text-gray-300 mb-2">Sahifa topilmadi</p>
           <p className="text-gray-400 mb-8">
-            Запрашиваемая страница не существует или была перемещена.
-            <br />
-            <span className="text-gray-500 text-sm">So'ralgan sahifa mavjud emas yoki ko'chirilgan.</span>
+            {copy.description}
           </p>
           
           {/* Path display */}
           <div className="bg-gray-900 border border-gray-800 rounded-lg p-4 mb-8">
-            <p className="text-gray-500 text-sm mb-1">Запрошенный URL:</p>
+            <p className="text-gray-500 text-sm mb-1">{copy.requestedUrl}</p>
             <code className="text-teal-400 text-sm break-all">{location.pathname}</code>
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
-              to="/ru" 
+              to={isUz ? '/uz' : '/ru'}
               className="inline-flex items-center justify-center bg-gradient-to-r from-teal-500 to-cyan-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-teal-600 hover:to-cyan-700 transition shadow-lg shadow-teal-500/30"
-              data-testid="404-home-ru"
+              data-testid={isUz ? '404-home-uz' : '404-home-ru'}
             >
               <Home className="mr-2" size={20} />
-              На главную (RU)
-            </Link>
-            <Link 
-              to="/uz" 
-              className="inline-flex items-center justify-center bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-700 transition border border-gray-700"
-              data-testid="404-home-uz"
-            >
-              <Home className="mr-2" size={20} />
-              Bosh sahifa (UZ)
+              {copy.homeCta}
             </Link>
           </div>
           
           {/* Quick contact */}
           <div className="mt-12 pt-8 border-t border-gray-800">
-            <p className="text-gray-400 text-sm">
-              Нужна помощь? Свяжитесь с нами:
-            </p>
+            <p className="text-gray-400 text-sm">{copy.help}</p>
             <a 
               href="https://t.me/GraverAdm" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-teal-500 hover:text-teal-400 font-medium"
             >
-              @GraverAdm в Telegram
+              {copy.telegramLabel}
             </a>
           </div>
         </div>
