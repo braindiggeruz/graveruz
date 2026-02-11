@@ -47,16 +47,6 @@ function BlogPostPage() {
       dateModified: post.date,
       url: canonicalUrl,
       mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
-      author: { "@type": "Organization", name: "Graver.uz", url: BASE_URL },
-      publisher: { 
-        "@type": "Organization", 
-        name: "Graver.uz", 
-        url: BASE_URL,
-        logo: {
-          "@type": "ImageObject",
-          url: BASE_URL + '/og-blog.png'
-        }
-      },
       inLanguage: locale === 'ru' ? "ru" : "uz"
     });
     document.head.appendChild(articleLd);

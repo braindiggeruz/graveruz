@@ -120,13 +120,7 @@ function LightersPage() {
         "@type": "Brand",
         "name": "Graver.uz"
       },
-      "offers": {
-        "@type": "AggregateOffer",
-        "lowPrice": "140000",
-        "highPrice": "170000",
-        "priceCurrency": "UZS",
-        "offerCount": "4"
-      }
+      "offers": undefined
     });
     document.head.appendChild(mainProductSchema);
 
@@ -140,14 +134,7 @@ function LightersPage() {
         "@type": "Product",
         "name": isRu ? `Зажигалка ${product.nameRu} с гравировкой` : `${product.nameUz} gravyurali zajigalka`,
         "description": isRu ? product.descRu : product.descUz,
-        "sku": product.sku,
-        "brand": { "@type": "Brand", "name": "Graver.uz" },
-        "offers": {
-          "@type": "Offer",
-          "url": canonicalUrl,
-          "priceCurrency": "UZS",
-          "price": product.price.toString()
-        }
+        "brand": { "@type": "Brand", "name": "Graver.uz" }
       });
       document.head.appendChild(productSchema);
     });
