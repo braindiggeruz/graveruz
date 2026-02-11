@@ -11,6 +11,10 @@
 # production
 /build
 
+# local seo audit artifacts
+build_meta_report.tsv
+build_meta_dups.txt
+
 # misc
 .DS_Store
 .env.local
