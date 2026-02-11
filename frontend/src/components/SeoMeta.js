@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useLocation } from 'react-router-dom';
 import { BASE_URL, HREFLANG_MAP } from '../config/seo';
 
 const DEFAULT_OG_IMAGE = `${BASE_URL}/og-blog.png`;
@@ -12,40 +13,49 @@ export default function SeoMeta({
   uzUrl,
   locale = 'ru',
   noindex = false,
+  robots,
   ogImage = DEFAULT_OG_IMAGE,
   ogType = 'website',
   siteName = 'Graver.uz',
   includeHtmlLang = true
 }) {
-  const robotsContent = noindex ? 'noindex, nofollow' : 'index, follow';
+  const location = useLocation();
+  const isRootPath = location && location.pathname === '/';
+  const rootCanonical = `${BASE_URL}/ru`;
+  const resolvedCanonicalUrl = isRootPath ? rootCanonical : canonicalUrl;
+  const resolvedRuUrl = isRootPath ? `${BASE_URL}/ru` : ruUrl;
+  const resolvedUzUrl = isRootPath ? `${BASE_URL}/uz` : uzUrl;
+  const robotsContent = isRootPath
+    ? 'noindex, follow'
+    : (robots || (noindex ? 'noindex, nofollow' : 'index, follow'));
   const ogLocale = locale === 'ru' ? 'ru_RU' : 'uz_UZ';
-  const defaultUrl = ruUrl || canonicalUrl;
+  const defaultUrl = resolvedRuUrl || resolvedCanonicalUrl;
 
   useEffect(() => {
     document.querySelectorAll('[data-seo-meta]').forEach((el) => el.remove());
 
-    if (canonicalUrl) {
+    if (resolvedCanonicalUrl) {
       const canonical = document.createElement('link');
       canonical.rel = 'canonical';
-      canonical.href = canonicalUrl;
+      canonical.href = resolvedCanonicalUrl;
       canonical.setAttribute('data-seo-meta', 'true');
       document.head.appendChild(canonical);
     }
 
-    if (ruUrl) {
+    if (resolvedRuUrl) {
       const hreflangRu = document.createElement('link');
       hreflangRu.rel = 'alternate';
       hreflangRu.hreflang = HREFLANG_MAP.ru;
-      hreflangRu.href = ruUrl;
+      hreflangRu.href = resolvedRuUrl;
       hreflangRu.setAttribute('data-seo-meta', 'true');
       document.head.appendChild(hreflangRu);
     }
 
-    if (uzUrl) {
+    if (resolvedUzUrl) {
       const hreflangUz = document.createElement('link');
       hreflangUz.rel = 'alternate';
       hreflangUz.hreflang = HREFLANG_MAP.uz;
-      hreflangUz.href = uzUrl;
+      hreflangUz.href = resolvedUzUrl;
       hreflangUz.setAttribute('data-seo-meta', 'true');
       document.head.appendChild(hreflangUz);
     }
@@ -71,7 +81,7 @@ export default function SeoMeta({
     return () => {
       document.querySelectorAll('[data-seo-meta]').forEach((el) => el.remove());
     };
-  }, [canonicalUrl, ruUrl, uzUrl, defaultUrl, robotsContent]);
+  }, [resolvedCanonicalUrl, resolvedRuUrl, resolvedUzUrl, defaultUrl, robotsContent]);
 
   return (
     <Helmet>
@@ -80,15 +90,15 @@ export default function SeoMeta({
       <meta name="description" content={description} />
       <meta name="robots" content={robotsContent} />
 
-      {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
-      {ruUrl && <link rel="alternate" hrefLang={HREFLANG_MAP.ru} href={ruUrl} />}
-      {uzUrl && <link rel="alternate" hrefLang={HREFLANG_MAP.uz} href={uzUrl} />}
+      {resolvedCanonicalUrl && <link rel="canonical" href={resolvedCanonicalUrl} />}
+      {resolvedRuUrl && <link rel="alternate" hrefLang={HREFLANG_MAP.ru} href={resolvedRuUrl} />}
+      {resolvedUzUrl && <link rel="alternate" hrefLang={HREFLANG_MAP.uz} href={resolvedUzUrl} />}
       {defaultUrl && <link rel="alternate" hrefLang="x-default" href={defaultUrl} />}
 
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content={ogType} />
-      <meta property="og:url" content={canonicalUrl} />
+      <meta property="og:url" content={resolvedCanonicalUrl} />
       <meta property="og:image" content={ogImage} />
       <meta property="og:site_name" content={siteName} />
       <meta property="og:locale" content={ogLocale} />

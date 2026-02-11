@@ -5,6 +5,8 @@ import { HelmetProvider } from "react-helmet-async";
 import "@/index.css";
 import { I18nProvider, SUPPORTED_LOCALES } from "@/i18n";
 import App from "@/App";
+import SeoMeta from "@/components/SeoMeta";
+import { BASE_URL } from "@/config/seo";
 
 // Code splitting: Pages loaded only when needed
 const Thanks = lazy(() => import("@/Thanks"));
@@ -26,6 +28,21 @@ const LoadingFallback = () => (
   <div className="min-h-screen bg-black flex items-center justify-center">
     <div className="text-teal-500 text-lg">Загрузка...</div>
   </div>
+);
+
+const RootRedirect = () => (
+  <>
+    <SeoMeta
+      title="Graver.uz"
+      description="Корпоративные подарки с лазерной гравировкой."
+      canonicalUrl={`${BASE_URL}/ru`}
+      ruUrl={`${BASE_URL}/ru`}
+      uzUrl={`${BASE_URL}/uz`}
+      locale="ru"
+      robots="noindex, follow"
+    />
+    <Navigate to="/ru" replace />
+  </>
 );
 
 // Locale validator wrapper
@@ -61,7 +78,7 @@ root.render(
           <Suspense fallback={<LoadingFallback />}>
             <Routes>
               {/* Redirect root to default locale */}
-              <Route path="/" element={<Navigate to="/ru" replace />} />
+              <Route path="/" element={<RootRedirect />} />
               
               {/* Legacy redirects for SEO (old URLs without locale) */}
               <Route path="/thanks" element={<Navigate to="/ru/thanks" replace />} />
