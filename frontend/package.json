@@ -65,6 +65,7 @@
   "reactSnap": {
     "crawl": false,
     "include": [
+      "/",
       "/ru",
       "/uz",
       "/ru/process",
