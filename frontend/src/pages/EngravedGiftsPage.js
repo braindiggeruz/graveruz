@@ -10,7 +10,7 @@ const ruContent = {
   slug: 'engraved-gifts',
   title: 'Ручки, повербанки и ежедневники с гравировкой',
   subtitle: 'Персонализированные подарки из нашего каталога',
-  meta: 'Ручки, повербанки и ежедневники с гравировкой в Ташкенте. Цены от 25 000 сум. Сначала макет — потом производство.',
+  meta: 'Ручки, повербанки и ежедневники с гравировкой в Ташкенте. Сначала макет — потом производство.',
   home: 'Главная',
   catalog: 'Каталог',
   important: 'Важно',
@@ -21,7 +21,7 @@ const uzContent = {
   slug: 'gravirovkali-sovgalar',
   title: 'Gravirovkali ruchka, powerbank va kundaliklar',
   subtitle: 'Katalogdan shaxsiylashtirilgan sovg\'alar',
-  meta: 'Toshkentda gravirovkali ruchka, powerbank va kundaliklar. Narx 25 000 so\'mdan. Avval maket — keyin ishlab chiqarish.',
+  meta: 'Toshkentda gravirovkali ruchka, powerbank va kundaliklar. Avval maket — keyin ishlab chiqarish.',
   home: 'Bosh sahifa',
   catalog: 'Katalog',
   important: 'Muhim',
@@ -100,13 +100,22 @@ export default function EngravedGiftsPage() {
     document.head.appendChild(faqScript);
 
     return () => {
-      document.getElementById('breadcrumb-schema')?.remove();
-      document.getElementById('faq-schema')?.remove();
+      var breadcrumbSchemaEl = document.getElementById('breadcrumb-schema');
+      if (breadcrumbSchemaEl) {
+        breadcrumbSchemaEl.remove();
+      }
+      var faqSchemaEl = document.getElementById('faq-schema');
+      if (faqSchemaEl) {
+        faqSchemaEl.remove();
+      }
     };
   }, [locale, t, canonicalUrl, catalogSlug, faq]);
 
   const scrollToForm = () => {
-    document.getElementById('b2c-form')?.scrollIntoView({ behavior: 'smooth' });
+    var formEl = document.getElementById('b2c-form');
+    if (formEl) {
+      formEl.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -117,6 +126,7 @@ export default function EngravedGiftsPage() {
         canonicalUrl={canonicalUrl}
         ruUrl={ruUrl}
         uzUrl={uzUrl}
+        locale={locale}
       />
 
       <header className="bg-black/95 border-b border-gray-800 py-4">

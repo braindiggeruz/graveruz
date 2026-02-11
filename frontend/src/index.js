@@ -5,6 +5,8 @@ import { HelmetProvider } from "react-helmet-async";
 import "@/index.css";
 import { I18nProvider, SUPPORTED_LOCALES } from "@/i18n";
 import App from "@/App";
+import SeoMeta from "@/components/SeoMeta";
+import { BASE_URL } from "@/config/seo";
 
 // Code splitting: Pages loaded only when needed
 const Thanks = lazy(() => import("@/Thanks"));
@@ -28,6 +30,46 @@ const LoadingFallback = () => (
   </div>
 );
 
+const isReactSnap = () => {
+  if (typeof window === "undefined") {
+    return false;
+  }
+
+  const userAgent = navigator && navigator.userAgent ? navigator.userAgent : "";
+  return Boolean(
+    window.__REACT_SNAP__ ||
+      /ReactSnap/i.test(userAgent) ||
+      (window.location && window.location.port === "45678"),
+  );
+};
+
+const RootRedirect = () => {
+  const shouldRedirect = !isReactSnap();
+
+  return (
+    <>
+      <SeoMeta
+        title="Graver.uz"
+        description="Корпоративные подарки с лазерной гравировкой."
+        canonicalUrl={`${BASE_URL}/ru`}
+        ruUrl={`${BASE_URL}/ru`}
+        uzUrl={`${BASE_URL}/uz`}
+        locale="ru"
+        robots="noindex, follow"
+      />
+      {shouldRedirect ? (
+        <Navigate to="/ru" replace />
+      ) : (
+        <div className="min-h-screen bg-black flex items-center justify-center">
+          <a className="text-teal-500 underline" href="/ru">
+            Перейти на русскую версию
+          </a>
+        </div>
+      )}
+    </>
+  );
+};
+
 // Locale validator wrapper
 const LocaleRoute = ({ element }) => {
   const { locale } = useParams();
@@ -46,6 +88,12 @@ const BlogRedirect = ({ fromLocale }) => {
   return <Navigate to={`/${fromLocale}/blog/${slug}`} replace />;
 };
 
+// Legacy lighters slugs -> canonical /products/lighters
+const LightersRedirect = () => {
+  const { locale } = useParams();
+  return <Navigate to={`/${locale}/products/lighters`} replace />;
+};
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
@@ -55,7 +103,7 @@ root.render(
           <Suspense fallback={<LoadingFallback />}>
             <Routes>
               {/* Redirect root to default locale */}
-              <Route path="/" element={<Navigate to="/ru" replace />} />
+              <Route path="/" element={<RootRedirect />} />
               
               {/* Legacy redirects for SEO (old URLs without locale) */}
               <Route path="/thanks" element={<Navigate to="/ru/thanks" replace />} />
@@ -75,8 +123,8 @@ root.render(
               <Route path="/:locale/mahsulotlar-katalogi" element={<LocaleRoute element={<CatalogPage />} />} />
               <Route path="/:locale/watches-with-logo" element={<LocaleRoute element={<WatchesPage />} />} />
               <Route path="/:locale/logotipli-soat" element={<LocaleRoute element={<WatchesPage />} />} />
-              <Route path="/:locale/lighters-engraving" element={<LocaleRoute element={<LightersPage />} />} />
-              <Route path="/:locale/gravirovkali-zajigalka" element={<LocaleRoute element={<LightersPage />} />} />
+              <Route path="/:locale/lighters-engraving" element={<LocaleRoute element={<LightersRedirect />} />} />
+              <Route path="/:locale/gravirovkali-zajigalka" element={<LocaleRoute element={<LightersRedirect />} />} />
               <Route path="/:locale/products/lighters" element={<LocaleRoute element={<LightersPage />} />} />
               <Route path="/:locale/engraved-gifts" element={<LocaleRoute element={<EngravedGiftsPage />} />} />
               <Route path="/:locale/gravirovkali-sovgalar" element={<LocaleRoute element={<EngravedGiftsPage />} />} />

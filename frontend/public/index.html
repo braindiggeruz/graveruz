@@ -38,6 +38,11 @@
         <!-- DEFERRED Analytics: Load after user interaction or idle -->
         <script>
         (function(){
+          var userAgent = (typeof navigator !== 'undefined' && navigator.userAgent) ? navigator.userAgent : '';
+          var isReactSnap = !!window.__REACT_SNAP__ || /ReactSnap/i.test(userAgent) || (window.location && window.location.hostname === 'localhost' && window.location.port === '45678');
+          if (isReactSnap) {
+            return;
+          }
           var analyticsLoaded = false;
           
           // Queue for pending page views (if trackPage called before analytics load)
@@ -93,7 +98,16 @@
         })();
         </script>
         
-        <script defer src="https://assets.emergent.sh/scripts/emergent-main.js"></script>
+        <script>
+          var emergentUserAgent = (typeof navigator !== 'undefined' && navigator.userAgent) ? navigator.userAgent : '';
+          var isReactSnap = !!window.__REACT_SNAP__ || /ReactSnap/i.test(emergentUserAgent) || (window.location && window.location.hostname === 'localhost' && window.location.port === '45678');
+          if (!isReactSnap) {
+            var emergentScript = document.createElement('script');
+            emergentScript.defer = true;
+            emergentScript.src = 'https://assets.emergent.sh/scripts/emergent-main.js';
+            document.head.appendChild(emergentScript);
+          }
+        </script>
         <!--
         These two scripts have been added for the Visual Edits, please do not edit or remove them
         -->

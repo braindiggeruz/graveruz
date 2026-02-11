@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { Link, useParams, Navigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import SeoMeta from '../components/SeoMeta';
 import { ArrowLeft, Calendar, Tag, Lightbulb, BookOpen, HelpCircle } from 'lucide-react';
-import { BASE_URL, HREFLANG_MAP } from '../config/seo';
+import { BASE_URL } from '../config/seo';
 import { getPostBySlug, getAlternateSlug, blogPosts } from '../data/blogPosts';
 import { getSeoOverride, getFaqData } from '../data/blogSeoOverrides';
 
@@ -26,41 +26,12 @@ function BlogPostPage() {
   const uzUrl = isRu ? altUrl : canonicalUrl;
 
   // Determine title: use override if exists, otherwise default
-  const pageTitle = seoOverride?.titleTag || (post ? post.title + ' — Graver.uz' : 'Graver.uz');
+  const pageTitle = (seoOverride && seoOverride.titleTag) || (post ? post.title + ' — Graver.uz' : 'Graver.uz');
 
   useEffect(function addSeoTags() {
     if (!post) return;
     var oldTags = document.querySelectorAll('[data-seo-blog]');
     oldTags.forEach(function(el) { el.remove(); });
-    
-    var can = document.createElement('link');
-    can.rel = 'canonical';
-    can.href = canonicalUrl;
-    can.setAttribute('data-seo-blog', 'true');
-    document.head.appendChild(can);
-    
-    if (ruUrl) {
-      var hru = document.createElement('link');
-      hru.rel = 'alternate';
-      hru.hreflang = HREFLANG_MAP.ru;
-      hru.href = ruUrl;
-      hru.setAttribute('data-seo-blog', 'true');
-      document.head.appendChild(hru);
-    }
-    if (uzUrl) {
-      var huz = document.createElement('link');
-      huz.rel = 'alternate';
-      huz.hreflang = HREFLANG_MAP.uz;
-      huz.href = uzUrl;
-      huz.setAttribute('data-seo-blog', 'true');
-      document.head.appendChild(huz);
-    }
-    var hdef = document.createElement('link');
-    hdef.rel = 'alternate';
-    hdef.hreflang = 'x-default';
-    hdef.href = ruUrl || canonicalUrl;
-    hdef.setAttribute('data-seo-blog', 'true');
-    document.head.appendChild(hdef);
 
     // Inject Article JSON-LD
     var articleLd = document.createElement('script');
@@ -76,16 +47,6 @@ function BlogPostPage() {
       dateModified: post.date,
       url: canonicalUrl,
       mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
-      author: { "@type": "Organization", name: "Graver.uz", url: BASE_URL },
-      publisher: { 
-        "@type": "Organization", 
-        name: "Graver.uz", 
-        url: BASE_URL,
-        logo: {
-          "@type": "ImageObject",
-          url: BASE_URL + '/og-blog.png'
-        }
-      },
       inLanguage: locale === 'ru' ? "ru" : "uz"
     });
     document.head.appendChild(articleLd);
@@ -132,7 +93,7 @@ function BlogPostPage() {
     return function cleanup() {
       document.querySelectorAll('[data-seo-blog]').forEach(function(el) { el.remove(); });
     };
-  }, [post, canonicalUrl, ruUrl, uzUrl, locale, slug]);
+  }, [post, canonicalUrl, locale, slug]);
 
   if (!post) {
     return React.createElement(Navigate, { to: '/' + locale + '/blog', replace: true });
@@ -140,28 +101,31 @@ function BlogPostPage() {
 
   var services = isRu ? [
     { href: '/' + locale + '/catalog-products', label: 'Каталог продукции', desc: 'Все изделия с лазерной гравировкой' },
-    { href: '/' + locale + '/corporate-gifts', label: 'Корпоративные подарки', desc: 'Премиальные наборы с логотипом' },
-    { href: '/' + locale + '/awards-medals', label: 'Награды и медали', desc: 'Кубки и медали с гравировкой' },
-    { href: '/' + locale + '/branding', label: 'Брендирование', desc: 'Нанесение логотипа на изделия' },
+    { href: '/' + locale + '/watches-with-logo', label: 'Часы с логотипом', desc: 'Премиальные модели с гравировкой' },
+    { href: '/' + locale + '/products/lighters', label: 'Зажигалки с гравировкой', desc: 'Zippo-стиль, 1-2 стороны' },
+    { href: '/' + locale + '/engraved-gifts', label: 'Подарки с гравировкой', desc: 'Ручки, powerbank, ежедневники' },
     { href: '/' + locale + '/contacts', label: 'Контакты', desc: 'Связаться с нами' }
   ] : [
     { href: '/' + locale + '/mahsulotlar-katalogi', label: 'Mahsulotlar katalogi', desc: 'Lazer gravyurasi bilan barcha mahsulotlar' },
-    { href: '/' + locale + '/korporativ-sovgalar', label: "Korporativ sovg'alar", desc: 'Logotipli premium to\'plamlar' },
-    { href: '/' + locale + '/mukofotlar-medallar', label: 'Mukofotlar va medallar', desc: 'Gravyura bilan kubklar' },
-    { href: '/' + locale + '/brendlash', label: 'Brendlash', desc: 'Mahsulotlarga logotip qo\'yish' },
-    { href: '/' + locale + '/aloqa', label: 'Aloqa', desc: 'Biz bilan bog\'laning' }
+    { href: '/' + locale + '/logotipli-soat', label: 'Logotipli soat', desc: 'Premium modellar va gravyura' },
+    { href: '/' + locale + '/products/lighters', label: 'Zajigalkalar', desc: 'Zippo uslubi, 1-2 tomon' },
+    { href: '/' + locale + '/gravirovkali-sovgalar', label: "Gravirovkali sovg'alar", desc: 'Ruchka, powerbank, kundaliklar' },
+    { href: '/' + locale + '/contacts', label: 'Kontaktlar', desc: 'Biz bilan bog\'laning' }
   ];
 
   var dateStr = new Date(post.date).toLocaleDateString(isRu ? 'ru-RU' : 'uz-UZ', { year: 'numeric', month: 'long', day: 'numeric' });
 
   // Get related posts from override or fallback to post.relatedPosts
-  var relatedSlugs = seoOverride?.relatedSlugs || post.relatedPosts || [];
+  var relatedSlugs = (seoOverride && seoOverride.relatedSlugs) || post.relatedPosts || [];
   var relatedPosts = relatedSlugs
     .map(function(s) { return getPostBySlug(locale, s); })
     .filter(Boolean);
 
-  var contentParts = [];
-  if (post.content) {
+  var contentBody = null;
+  if (post && post.contentHtml) {
+    contentBody = React.createElement('div', { dangerouslySetInnerHTML: { __html: post.contentHtml } });
+  } else if (post && post.content) {
+    var contentParts = [];
     var lines = post.content.split('\n');
     for (var i = 0; i < lines.length; i++) {
       var ln = lines[i];
@@ -175,32 +139,19 @@ function BlogPostPage() {
         contentParts.push(React.createElement('p', { key: 'p-' + i, className: 'text-gray-300 leading-relaxed my-3' }, ln));
       }
     }
+    contentBody = contentParts;
   }
 
   return React.createElement('div', { className: 'min-h-screen bg-black text-white' },
-    React.createElement(Helmet, null,
-      React.createElement('title', null, pageTitle),
-      React.createElement('meta', { name: 'description', content: post.description }),
-      React.createElement('meta', { name: 'robots', content: 'index, follow' }),
-      // Canonical & Hreflang (P0 CRITICAL - must be in Helmet for crawlers)
-      React.createElement('link', { rel: 'canonical', href: canonicalUrl }),
-      ruUrl && React.createElement('link', { rel: 'alternate', hreflang: 'ru', href: ruUrl }),
-      uzUrl && React.createElement('link', { rel: 'alternate', hreflang: 'uz', href: uzUrl }),
-      React.createElement('link', { rel: 'alternate', hreflang: 'x-default', href: ruUrl || canonicalUrl }),
-      // OpenGraph
-      React.createElement('meta', { property: 'og:title', content: post.title }),
-      React.createElement('meta', { property: 'og:description', content: post.description }),
-      React.createElement('meta', { property: 'og:url', content: canonicalUrl }),
-      React.createElement('meta', { property: 'og:type', content: 'article' }),
-      React.createElement('meta', { property: 'og:image', content: BASE_URL + '/og-blog.png' }),
-      React.createElement('meta', { property: 'og:site_name', content: 'Graver.uz' }),
-      React.createElement('meta', { property: 'og:locale', content: isRu ? 'ru_RU' : 'uz_UZ' }),
-      // Twitter Card
-      React.createElement('meta', { name: 'twitter:card', content: 'summary_large_image' }),
-      React.createElement('meta', { name: 'twitter:title', content: post.title }),
-      React.createElement('meta', { name: 'twitter:description', content: post.description }),
-      React.createElement('meta', { name: 'twitter:image', content: BASE_URL + '/og-blog.png' })
-    ),
+    React.createElement(SeoMeta, {
+      title: pageTitle,
+      description: post.description,
+      canonicalUrl: canonicalUrl,
+      ruUrl: ruUrl,
+      uzUrl: uzUrl,
+      locale: locale,
+      ogType: 'article'
+    }),
     React.createElement('header', { className: 'fixed top-0 left-0 right-0 bg-black/95 backdrop-blur-sm z-50 border-b border-gray-800' },
       React.createElement('div', { className: 'max-w-7xl mx-auto px-4 sm:px-6 lg:px-8' },
         React.createElement('div', { className: 'flex justify-between items-center py-4' },
@@ -262,7 +213,7 @@ function BlogPostPage() {
             )
           )
         ),
-        React.createElement('div', { className: 'prose prose-invert max-w-none' }, contentParts),
+        React.createElement('div', { className: 'prose prose-invert max-w-none' }, contentBody),
         // Related Articles Section (if exists)
         relatedPosts.length > 0 && React.createElement('div', { 
           className: 'mt-12 p-6 bg-gray-900/50 border border-gray-800 rounded-xl',

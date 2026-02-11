@@ -7,7 +7,6 @@
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru"/>
     <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru"/>
-    <lastmod>2026-02-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -15,7 +14,6 @@
     <loc>https://www.graver-studio.uz/uz</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru"/>
     <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz"/>
-    <lastmod>2026-02-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -25,13 +23,12 @@
     <loc>https://www.graver-studio.uz/ru/process</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/process"/>
     <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/process"/>
-    <lastmod>2026-02-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/process"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.graver-studio.uz/uz/process</loc>
-    <lastmod>2026-02-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -39,13 +36,12 @@
     <loc>https://www.graver-studio.uz/ru/guarantees</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/guarantees"/>
     <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/guarantees"/>
-    <lastmod>2026-02-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/guarantees"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.graver-studio.uz/uz/guarantees</loc>
-    <lastmod>2026-02-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -53,13 +49,12 @@
     <loc>https://www.graver-studio.uz/ru/contacts</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/contacts"/>
     <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/contacts"/>
-    <lastmod>2026-02-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/contacts"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.graver-studio.uz/uz/contacts</loc>
-    <lastmod>2026-02-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -69,13 +64,12 @@
     <loc>https://www.graver-studio.uz/ru/catalog-products</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/catalog-products"/>
     <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/mahsulotlar-katalogi"/>
-    <lastmod>2026-02-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/catalog-products"/>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.graver-studio.uz/uz/mahsulotlar-katalogi</loc>
-    <lastmod>2026-02-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -83,32 +77,22 @@
     <loc>https://www.graver-studio.uz/ru/watches-with-logo</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/watches-with-logo"/>
     <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/logotipli-soat"/>
-    <lastmod>2026-02-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/watches-with-logo"/>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.graver-studio.uz/uz/logotipli-soat</loc>
-    <lastmod>2026-02-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://www.graver-studio.uz/ru/lighters-engraving</loc>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/lighters-engraving"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/gravirovkali-zajigalka"/>
-    <lastmod>2026-02-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
+
   <!-- Products/Lighters NEW -->
   <url>
     <loc>https://www.graver-studio.uz/ru/products/lighters</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/products/lighters"/>
     <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/products/lighters"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/products/lighters"/>
-    <lastmod>2026-02-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -116,27 +100,19 @@
     <loc>https://www.graver-studio.uz/uz/products/lighters</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/products/lighters"/>
     <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/products/lighters"/>
-    <lastmod>2026-02-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.graver-studio.uz/uz/gravirovkali-zajigalka</loc>
-    <lastmod>2026-02-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.graver-studio.uz/ru/engraved-gifts</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/engraved-gifts"/>
     <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/gravirovkali-sovgalar"/>
-    <lastmod>2026-02-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/engraved-gifts"/>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.graver-studio.uz/uz/gravirovkali-sovgalar</loc>
-    <lastmod>2026-02-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -146,7 +122,7 @@
     <loc>https://www.graver-studio.uz/ru/blog</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/blog"/>
     <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/blog"/>
-    <lastmod>2026-02-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/blog"/>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -154,17 +130,17 @@
     <loc>https://www.graver-studio.uz/uz/blog</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/blog"/>
     <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/blog"/>
-    <lastmod>2026-02-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/blog"/>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- BLOG POSTS RU (10 articles) -->
+  <!-- BLOG POSTS RU (20 articles) -->
   <url>
     <loc>https://www.graver-studio.uz/ru/blog/kak-vybrat-korporativnyj-podarok</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/blog/kak-vybrat-korporativnyj-podarok"/>
     <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/blog/korporativ-sovgani-qanday-tanlash"/>
-    <lastmod>2026-02-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/blog/kak-vybrat-korporativnyj-podarok"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -172,7 +148,7 @@
     <loc>https://www.graver-studio.uz/ru/blog/lazernaya-gravirovka-podarkov</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/blog/lazernaya-gravirovka-podarkov"/>
     <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/blog/lazer-gravirovka-sovgalar"/>
-    <lastmod>2026-02-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/blog/lazernaya-gravirovka-podarkov"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -180,7 +156,7 @@
     <loc>https://www.graver-studio.uz/ru/blog/podarochnye-nabory-s-logotipom</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/blog/podarochnye-nabory-s-logotipom"/>
     <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/blog/logotipli-sovga-toplami"/>
-    <lastmod>2026-02-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/blog/podarochnye-nabory-s-logotipom"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -188,7 +164,7 @@
     <loc>https://www.graver-studio.uz/ru/blog/welcome-pack-dlya-sotrudnikov</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/blog/welcome-pack-dlya-sotrudnikov"/>
     <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/blog/welcome-pack-yangi-xodimlar"/>
-    <lastmod>2026-02-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/blog/welcome-pack-dlya-sotrudnikov"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -196,7 +172,7 @@
     <loc>https://www.graver-studio.uz/ru/blog/brendirovanie-suvenirov</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/blog/brendirovanie-suvenirov"/>
     <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/blog/suvenir-brendlash"/>
-    <lastmod>2026-02-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/blog/brendirovanie-suvenirov"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -204,7 +180,7 @@
     <loc>https://www.graver-studio.uz/ru/blog/top-idei-podarkov-na-novyj-god</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/blog/top-idei-podarkov-na-novyj-god"/>
     <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/blog/yangi-yil-sovga-goyalari"/>
-    <lastmod>2026-02-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/blog/top-idei-podarkov-na-novyj-god"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -212,7 +188,7 @@
     <loc>https://www.graver-studio.uz/ru/blog/kak-podgotovit-maket-logotipa</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/blog/kak-podgotovit-maket-logotipa"/>
     <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/blog/logotip-maketi-tayyorlash"/>
-    <lastmod>2026-02-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/blog/kak-podgotovit-maket-logotipa"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -220,7 +196,7 @@
     <loc>https://www.graver-studio.uz/ru/blog/podarki-na-navruz</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/blog/podarki-na-navruz"/>
     <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/blog/navruz-sovgalari"/>
-    <lastmod>2026-02-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/blog/podarki-na-navruz"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -228,7 +204,7 @@
     <loc>https://www.graver-studio.uz/ru/blog/ekonomiya-na-korporativnyh-suvenirax</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/blog/ekonomiya-na-korporativnyh-suvenirax"/>
     <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/blog/suvenir-byudjetini-tejash"/>
-    <lastmod>2026-02-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/blog/ekonomiya-na-korporativnyh-suvenirax"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -236,17 +212,17 @@
     <loc>https://www.graver-studio.uz/ru/blog/chek-list-zakupshchika-podarkov</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/blog/chek-list-zakupshchika-podarkov"/>
     <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/blog/xaridor-chek-listi-b2b"/>
-    <lastmod>2026-02-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/blog/chek-list-zakupshchika-podarkov"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
-  <!-- BLOG POSTS UZ (10 articles) -->
+  <!-- BLOG POSTS UZ (20 articles) -->
   <url>
     <loc>https://www.graver-studio.uz/uz/blog/korporativ-sovgani-qanday-tanlash</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/blog/kak-vybrat-korporativnyj-podarok"/>
     <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/blog/korporativ-sovgani-qanday-tanlash"/>
-    <lastmod>2026-02-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/blog/kak-vybrat-korporativnyj-podarok"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -254,7 +230,7 @@
     <loc>https://www.graver-studio.uz/uz/blog/lazer-gravirovka-sovgalar</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/blog/lazernaya-gravirovka-podarkov"/>
     <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/blog/lazer-gravirovka-sovgalar"/>
-    <lastmod>2026-02-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/blog/lazernaya-gravirovka-podarkov"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -262,7 +238,7 @@
     <loc>https://www.graver-studio.uz/uz/blog/logotipli-sovga-toplami</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/blog/podarochnye-nabory-s-logotipom"/>
     <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/blog/logotipli-sovga-toplami"/>
-    <lastmod>2026-02-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/blog/podarochnye-nabory-s-logotipom"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -270,7 +246,7 @@
     <loc>https://www.graver-studio.uz/uz/blog/welcome-pack-yangi-xodimlar</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/blog/welcome-pack-dlya-sotrudnikov"/>
     <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/blog/welcome-pack-yangi-xodimlar"/>
-    <lastmod>2026-02-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/blog/welcome-pack-dlya-sotrudnikov"/>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -278,7 +254,7 @@
     <loc>https://www.graver-studio.uz/uz/blog/suvenir-brendlash</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/blog/brendirovanie-suvenirov"/>
     <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/blog/suvenir-brendlash"/>
-    <lastmod>2026-02-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/blog/brendirovanie-suvenirov"/>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -286,7 +262,7 @@
     <loc>https://www.graver-studio.uz/uz/blog/yangi-yil-sovga-goyalari</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/blog/top-idei-podarkov-na-novyj-god"/>
     <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/blog/yangi-yil-sovga-goyalari"/>
-    <lastmod>2026-02-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/blog/top-idei-podarkov-na-novyj-god"/>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -294,7 +270,7 @@
     <loc>https://www.graver-studio.uz/uz/blog/logotip-maketi-tayyorlash</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/blog/kak-podgotovit-maket-logotipa"/>
     <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/blog/logotip-maketi-tayyorlash"/>
-    <lastmod>2026-02-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/blog/kak-podgotovit-maket-logotipa"/>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -302,7 +278,7 @@
     <loc>https://www.graver-studio.uz/uz/blog/navruz-sovgalari</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/blog/podarki-na-navruz"/>
     <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/blog/navruz-sovgalari"/>
-    <lastmod>2026-02-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/blog/podarki-na-navruz"/>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -310,7 +286,7 @@
     <loc>https://www.graver-studio.uz/uz/blog/suvenir-byudjetini-tejash</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/blog/ekonomiya-na-korporativnyh-suvenirax"/>
     <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/blog/suvenir-byudjetini-tejash"/>
-    <lastmod>2026-02-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/blog/ekonomiya-na-korporativnyh-suvenirax"/>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -318,7 +294,87 @@
     <loc>https://www.graver-studio.uz/uz/blog/xaridor-chek-listi-b2b</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/blog/chek-list-zakupshchika-podarkov"/>
     <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/blog/xaridor-chek-listi-b2b"/>
-    <lastmod>2026-02-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/blog/chek-list-zakupshchika-podarkov"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.graver-studio.uz/uz/blog/korporativ-sovgalar-logotip-bilan-to-liq-qollanma</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/blog/korporativnye-podarki-s-logotipom-polnyy-gayd"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/blog/korporativ-sovgalar-logotip-bilan-to-liq-qollanma"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/blog/korporativnye-podarki-s-logotipom-polnyy-gayd"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.graver-studio.uz/uz/blog/korporativ-sovgalar-gravyurasi-usullari</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/blog/korporativnye-podarki-s-gravirovkoy-metody"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/blog/korporativ-sovgalar-gravyurasi-usullari"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/blog/korporativnye-podarki-s-gravirovkoy-metody"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.graver-studio.uz/uz/blog/lazer-gravyurasi-texnologiyasi</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/blog/lazernaya-gravirovka-podarkov-tehnologiya"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/blog/lazer-gravyurasi-texnologiyasi"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/blog/lazernaya-gravirovka-podarkov-tehnologiya"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.graver-studio.uz/uz/blog/kompaniya-merchi-brendlash</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/blog/merch-dlya-kompanii-brendirovanie"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/blog/kompaniya-merchi-brendlash"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/blog/merch-dlya-kompanii-brendirovanie"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.graver-studio.uz/uz/blog/xodimlar-uchun-sovgalar-hr-qollanma</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/blog/podarki-sotrudnikam-hr-gayd"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/blog/xodimlar-uchun-sovgalar-hr-qollanma"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/blog/podarki-sotrudnikam-hr-gayd"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.graver-studio.uz/uz/blog/mijoz-hamkorlar-uchun-sovgalar-vip</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/blog/podarki-klientam-partneram-vip"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/blog/mijoz-hamkorlar-uchun-sovgalar-vip"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/blog/podarki-klientam-partneram-vip"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.graver-studio.uz/uz/blog/logotipli-zajigalka-va-soat</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/blog/brendirovannye-zazhigalki-i-chasy-s-logotipom"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/blog/logotipli-zajigalka-va-soat"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/blog/brendirovannye-zazhigalki-i-chasy-s-logotipom"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.graver-studio.uz/uz/blog/korporativ-sovga-toplamlari</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/blog/korporativnye-podarochnye-nabory"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/blog/korporativ-sovga-toplamlari"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/blog/korporativnye-podarochnye-nabory"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.graver-studio.uz/uz/blog/navruz-uchun-korporativ-sovgalar</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/blog/korporativnye-podarki-na-navruz"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/blog/navruz-uchun-korporativ-sovgalar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/blog/korporativnye-podarki-na-navruz"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.graver-studio.uz/uz/blog/yangi-xodimlar-uchun-welcome-pack</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.graver-studio.uz/ru/blog/welcome-pack-novym-sotrudnikam"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://www.graver-studio.uz/uz/blog/yangi-xodimlar-uchun-welcome-pack"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.graver-studio.uz/ru/blog/welcome-pack-novym-sotrudnikam"/>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

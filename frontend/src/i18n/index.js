@@ -101,7 +101,7 @@ export function I18nProvider({ children }) {
     
     // Replace params like {seconds} with actual values
     if (typeof value === 'string' && Object.keys(params).length > 0) {
-      return value.replace(/\{(\w+)\}/g, (_, param) => params[param] ?? `{${param}}`);
+      return value.replace(/\{(\w+)\}/g, (_, param) => (params[param] != null ? params[param] : `{${param}}`));
     }
     
     return value;
