@@ -1,10 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, Link } from 'react-router-dom';
 import './App.css';
-import { Phone, Send, Check, Zap, Users, Award, Package, Clock, MessageCircle, Mail, MapPin, ChevronDown } from 'lucide-react';
+import { Phone, Send, Check, Zap, Users, Award, Package, Clock, MessageCircle, Mail, MapPin, ChevronDown, BookOpen, Flame, Download, ChevronRight } from 'lucide-react';
 import { useI18n, SUPPORTED_LOCALES } from './i18n';
 import SEOHead from './components/SEOHead';
 import LanguageSwitcher from './components/LanguageSwitcher';
+import { getPostBySlug } from './data/blogPosts';
+
+// Featured blog articles for homepage "From Blog" section
+const homepageBlogSlugsRu = [
+  'kak-vybrat-korporativnyj-podarok',
+  'lazernaya-gravirovka-podarkov',
+  'podarochnye-nabory-s-logotipom',
+  'brendirovanie-suvenirov'
+];
+const homepageBlogSlugsUz = [
+  'korporativ-sovgani-qanday-tanlash',
+  'lazer-gravirovka-sovgalar',
+  'logotipli-sovga-toplami',
+  'suvenir-brendlash'
+];
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || window.location.origin;
 
@@ -314,11 +329,11 @@ function App() {
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-8">
               <button onClick={() => scrollToSection('services')} className="text-gray-300 hover:text-teal-500 transition">{t('nav.services')}</button>
-              <a href={`/${locale}/${locale === 'uz' ? 'mahsulotlar-katalogi' : 'catalog-products'}`} className="text-gray-300 hover:text-teal-500 transition" data-testid="nav-catalog">{t('nav.catalog')}</a>
+              <Link to={`/${locale}/products/lighters`} className="text-gray-300 hover:text-teal-500 transition" data-testid="nav-catalog">{t('nav.catalog')}</Link>
               <button onClick={() => scrollToSection('portfolio')} className="text-gray-300 hover:text-teal-500 transition">{t('nav.portfolio')}</button>
               <button onClick={() => scrollToSection('process')} className="text-gray-300 hover:text-teal-500 transition">{t('nav.process')}</button>
               <button onClick={() => scrollToSection('faq')} className="text-gray-300 hover:text-teal-500 transition">{t('nav.faq')}</button>
-              <a href={`/blog/${locale}`} className="text-gray-300 hover:text-teal-500 transition" data-testid="nav-blog">{t('nav.blog')}</a>
+              <Link to={`/${locale}/blog`} className="text-gray-300 hover:text-teal-500 transition" data-testid="nav-blog">{t('nav.blog')}</Link>
               <button onClick={() => scrollToSection('contact')} className="text-gray-300 hover:text-teal-500 transition">{t('nav.contacts')}</button>
               <LanguageSwitcher />
             </nav>
@@ -350,11 +365,11 @@ function App() {
             <div className="lg:hidden pb-4 border-t border-gray-800 mt-4 pt-4">
               <nav className="flex flex-col space-y-3">
                 <button onClick={() => scrollToSection('services')} className="text-gray-300 hover:text-teal-500 transition text-left">{t('nav.services')}</button>
-                <a href={`/${locale}/${locale === 'uz' ? 'mahsulotlar-katalogi' : 'catalog-products'}`} className="text-gray-300 hover:text-teal-500 transition text-left">{t('nav.catalog')}</a>
+                <Link to={`/${locale}/products/lighters`} className="text-gray-300 hover:text-teal-500 transition text-left">{t('nav.catalog')}</Link>
                 <button onClick={() => scrollToSection('portfolio')} className="text-gray-300 hover:text-teal-500 transition text-left">{t('nav.portfolio')}</button>
                 <button onClick={() => scrollToSection('process')} className="text-gray-300 hover:text-teal-500 transition text-left">{t('nav.process')}</button>
                 <button onClick={() => scrollToSection('faq')} className="text-gray-300 hover:text-teal-500 transition text-left">{t('nav.faq')}</button>
-                <a href={`/blog/${locale}`} className="text-gray-300 hover:text-teal-500 transition text-left">{t('nav.blog')}</a>
+                <Link to={`/${locale}/blog`} className="text-gray-300 hover:text-teal-500 transition text-left">{t('nav.blog')}</Link>
                 <button onClick={() => scrollToSection('contact')} className="text-gray-300 hover:text-teal-500 transition text-left">{t('nav.contacts')}</button>
                 <div className="pt-2 border-t border-gray-800">
                   <LanguageSwitcher />
@@ -698,6 +713,78 @@ function App() {
         </div>
       </div>
 
+      {/* Products Section - Lighters Catalog Promo */}
+      <section className="py-20 bg-gradient-to-b from-black to-gray-900" id="products" data-testid="products-section">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 bg-orange-500/20 text-orange-400 px-4 py-2 rounded-full text-sm mb-6">
+                <Flame size={16} />
+                {locale === 'uz' ? 'Yangi katalog' : 'Новый каталог'}
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                {locale === 'uz' ? 'Gravyurali zajigalkalar' : 'Зажигалки с гравировкой'}
+              </h2>
+              <p className="text-xl text-gray-400 mb-8 leading-relaxed">
+                {locale === 'uz' 
+                  ? "Logotip, ism yoki surat bilan eksklyuziv zajigalkalar. Korporativ yoki shaxsiy sovg'a uchun ideal."
+                  : "Эксклюзивные зажигалки с лазерной гравировкой логотипа, имени или фото. Идеальный подарок для любого повода."}
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link 
+                  to={`/${locale}/products/lighters`}
+                  className="inline-flex items-center justify-center bg-gradient-to-r from-orange-500 to-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-orange-600 hover:to-red-700 transition"
+                  data-testid="products-cta-view"
+                >
+                  {locale === 'uz' ? 'Barcha modellarni ko\'rish' : 'Смотреть все модели'}
+                  <ChevronRight size={18} className="ml-2" />
+                </Link>
+                <a 
+                  href="/catalogs/graver-lighters-catalog-2026.pdf"
+                  download
+                  className="inline-flex items-center justify-center bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-700 transition border border-gray-700"
+                  data-testid="products-cta-download"
+                >
+                  <Download size={18} className="mr-2" />
+                  {locale === 'uz' ? 'Katalogni yuklab olish' : 'Скачать каталог (PDF)'}
+                </a>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              {/* Product Cards Preview */}
+              <div className="bg-gradient-to-br from-gray-300 to-gray-100 aspect-square rounded-2xl flex items-center justify-center">
+                <div className="text-center">
+                  <Flame size={48} className="text-gray-600 mx-auto mb-2" />
+                  <span className="text-gray-700 font-semibold">Silver Gloss</span>
+                  <p className="text-orange-600 font-bold">140,000 {locale === 'uz' ? "so'm" : 'сум'}</p>
+                </div>
+              </div>
+              <div className="bg-gradient-to-br from-gray-800 to-gray-900 aspect-square rounded-2xl flex items-center justify-center">
+                <div className="text-center">
+                  <Flame size={48} className="text-gray-400 mx-auto mb-2" />
+                  <span className="text-white font-semibold">Black Matte</span>
+                  <p className="text-orange-400 font-bold">150,000 {locale === 'uz' ? "so'm" : 'сум'}</p>
+                </div>
+              </div>
+              <div className="bg-gradient-to-br from-gray-700 to-black aspect-square rounded-2xl flex items-center justify-center">
+                <div className="text-center">
+                  <Flame size={48} className="text-gray-500 mx-auto mb-2" />
+                  <span className="text-white font-semibold">Black Texture</span>
+                  <p className="text-orange-400 font-bold">170,000 {locale === 'uz' ? "so'm" : 'сум'}</p>
+                </div>
+              </div>
+              <div className="bg-gradient-to-br from-gray-500 to-gray-400 aspect-square rounded-2xl flex items-center justify-center">
+                <div className="text-center">
+                  <Flame size={48} className="text-gray-700 mx-auto mb-2" />
+                  <span className="text-gray-800 font-semibold">Brushed Steel</span>
+                  <p className="text-orange-600 font-bold">160,000 {locale === 'uz' ? "so'm" : 'сум'}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Portfolio Section */}
       <section className="py-20 bg-gray-900" id="portfolio" data-testid="portfolio-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -830,6 +917,43 @@ function App() {
                 ⚡ Типовой срок производства: 1-3 дня после утверждения макета
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Blog Preview Section */}
+      <section className="py-16 bg-gray-900/50" data-testid="blog-preview-section">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-white flex items-center gap-3">
+              <BookOpen size={24} className="text-teal-500" />
+              {locale === 'uz' ? 'Blogdan' : 'Из блога'}
+            </h2>
+            <Link 
+              to={`/${locale || 'ru'}/blog`} 
+              className="text-teal-500 hover:text-teal-400 font-semibold text-sm transition"
+            >
+              {locale === 'uz' ? "Barcha maqolalar →" : 'Все статьи →'}
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {(locale === 'uz' ? homepageBlogSlugsUz : homepageBlogSlugsRu).map((slug, idx) => {
+              const post = getPostBySlug(locale || 'ru', slug);
+              if (!post) return null;
+              return (
+                <Link
+                  key={idx}
+                  to={`/${locale || 'ru'}/blog/${slug}`}
+                  className="block bg-black/50 border border-gray-800 rounded-xl p-4 hover:border-teal-500/50 transition group"
+                  data-testid={`homepage-blog-link-${idx + 1}`}
+                >
+                  <h3 className="text-sm font-semibold text-white group-hover:text-teal-400 transition line-clamp-2 mb-2">
+                    {post.title}
+                  </h3>
+                  <p className="text-xs text-gray-500 line-clamp-2">{post.description}</p>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -1065,7 +1189,7 @@ function App() {
             {t('blog.posts').map((post, index) => (
               <a 
                 key={index}
-                href={`/blog/${locale}/${post.slug}`}
+                href={`/${locale}/blog/${post.slug}`}
                 className="group bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden hover:border-teal-500/50 transition"
                 data-testid={`blog-post-${index + 1}`}
               >
@@ -1092,7 +1216,7 @@ function App() {
 
           <div className="text-center mt-12">
             <a 
-              href={`/blog/${locale}`}
+              href={`/${locale}/blog`}
               className="inline-flex items-center text-teal-500 hover:text-teal-400 font-semibold text-lg transition group"
               data-testid="blog-all-posts"
             >
@@ -1219,14 +1343,14 @@ function App() {
                 {t('blog.posts').slice(0, 3).map((post, index) => (
                   <a 
                     key={index}
-                    href={`/blog/${locale}/${post.slug}`}
+                    href={`/${locale}/blog/${post.slug}`}
                     className="block hover:text-teal-500 transition line-clamp-1"
                   >
                     {post.title}
                   </a>
                 ))}
                 <a 
-                  href={`/blog/${locale}`}
+                  href={`/${locale}/blog`}
                   className="block text-teal-500 hover:text-teal-400 font-medium mt-3"
                 >
                   {t('blog.allPosts')} →
@@ -1239,6 +1363,23 @@ function App() {
               <div className="space-y-2 text-gray-400 text-sm">
                 <p><Clock size={16} className="inline mr-2" />{t('footer.schedule')}</p>
                 <p className="text-teal-500 font-semibold">{t('footer.requests24')}</p>
+              </div>
+              
+              {/* Quick Links for Internal Linking (P1.3) */}
+              <h3 className="text-white font-bold mt-6 mb-3">{locale === 'uz' ? 'Tez havolalar' : 'Быстрые ссылки'}</h3>
+              <div className="space-y-2 text-gray-400 text-sm">
+                <Link to={`/${locale}/blog`} className="block hover:text-teal-500 transition">
+                  {locale === 'uz' ? 'Blog' : 'Блог'}
+                </Link>
+                <a href="#services" className="block hover:text-teal-500 transition">
+                  {locale === 'uz' ? 'Xizmatlar' : 'Услуги'}
+                </a>
+                <a href="#portfolio" className="block hover:text-teal-500 transition">
+                  {locale === 'uz' ? 'Portfolio' : 'Портфолио'}
+                </a>
+                <a href="#contact" className="block hover:text-teal-500 transition">
+                  {locale === 'uz' ? 'Aloqa' : 'Контакты'}
+                </a>
               </div>
             </div>
           </div>

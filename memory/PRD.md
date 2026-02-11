@@ -1,164 +1,123 @@
-# Graver.uz — PRD & Progress
+# Graver.uz - Product Requirements Document
 
 ## Original Problem Statement
-B2B corporate gifting website with premium dark theme, focusing on lead conversion to Telegram. Multi-phase project including CRO/SEO optimization and bilingual SEO blog.
+Comprehensive technical SEO overhaul on bilingual (Russian/Uzbek) corporate gifting website "graver.uz" with product catalog integration.
+
+## What's Been Implemented
+
+### Phase 1-3: Blog & SEO Foundation (COMPLETED)
+- Blog system with 20 articles (RU/UZ)
+- SEO tags, canonical, hreflang
+- JSON-LD schemas (Article, BreadcrumbList, FAQPage)
+
+### Phase 4: Second Pass SEO Fixes (COMPLETED)
+- Canonical/Hreflang in Helmet
+- Blog Hub Structure (Popular, Categories, Latest)
+- FAQPage Schema for articles
+- Footer Internal Linking
+
+### Phase 5: Lighters Catalog Integration (COMPLETED - Feb 8, 2026)
+
+**New Product Landing Page: `/products/lighters`**
+
+| Feature | Status |
+|---------|--------|
+| URL: `/ru/products/lighters` | ✅ Works |
+| URL: `/uz/products/lighters` | ✅ Works |
+| SEO Title | ✅ 60 chars optimized |
+| Meta Description | ✅ 160 chars |
+| Canonical & Hreflang | ✅ In Helmet |
+| Product Schema (4 products) | ✅ JSON-LD |
+| BreadcrumbList Schema | ✅ JSON-LD |
+| Hero Section | ✅ With CTAs |
+| Product Cards (4) | ✅ With prices |
+| Engraving Types | ✅ 6 types |
+| Specifications | ✅ Tech specs |
+| CTA Section | ✅ Telegram + Phone |
+| PDF Download | ✅ `/catalogs/graver-lighters-catalog-2026.pdf` |
+
+**Homepage Updates:**
+- New "Наша продукция" section with product preview
+- "Смотреть все модели" + "Скачать каталог" CTAs
+- 4 product cards with prices
+
+**Navigation Updates:**
+- "Продукция" menu link → `/products/lighters`
+- Mobile menu updated
+
+**Sitemap Updates:**
+- Added `/ru/products/lighters` (priority 0.9)
+- Added `/uz/products/lighters` (priority 0.8)
 
 ## Architecture
+
 ```
-/app
-├── backend/          # FastAPI (Python) - Lead processing, Telegram notifications
-├── blog/             # Astro SSG - SEO Blog (RU/UZ)
-└── frontend/         # React SPA - Main landing page (RU/UZ)
-    └── src/config/seo.js       # Centralized SEO config (BASE_URL, ROUTE_MAP)
-    └── src/components/SEOHead.js   # Universal SEO component
-    └── src/components/B2CSeo.js    # B2C pages SEO component
-    └── src/pages/              # Trust pages + B2C catalog
+/app/frontend/
+├── public/
+│   ├── catalogs/
+│   │   └── graver-lighters-catalog-2026.pdf (61.7MB)
+│   ├── sitemap.xml (40+ URLs)
+│   └── robots.txt
+└── src/
+    ├── pages/
+    │   ├── LightersPage.js (NEW)
+    │   ├── BlogPost.js
+    │   ├── BlogIndex.js
+    │   └── ...
+    └── App.js (Products section added)
 ```
 
-## Completed Work
+## Product Data (from PDF Catalog)
 
-### Phase 1: Performance Optimization ✅ (Feb 2026)
-- Images: PNG → WebP (97% reduction, 7MB → 168KB)
-- Third-party scripts: Deferred loading (GA4, FB Pixel)
-- Service Worker: Runtime caching for static assets
-- Code splitting: React.lazy for all pages
-- Fonts: Non-blocking load with preload
-- Contrast: WCAG AA compliance
+| Model | SKU | Price (UZS) | Best For |
+|-------|-----|-------------|----------|
+| Silver Gloss | R-109 | 140,000 | Logos, text, contour |
+| Black Matte | R-110 | 150,000 | Photos, detailed |
+| Black Texture | R-111 | 170,000 | Graphic, deep |
+| Brushed Steel | R-112 | 160,000 | Text, universal |
 
-### Phase 2: I18N Main Site ✅ (Feb 2026)
-- URL routing: `/ru/`, `/uz/` with auto-redirect from `/`
-- i18n JSON files: `ru.json`, `uz.json`
-- hreflang tags: `ru`, `uz-Latn`, `x-default`
-- Canonical URLs per language
-- Language switcher in header
-- Sitemap with hreflang links
+Specifications: 57x38x13mm, 55-60g
 
-### Phase 3: SPA Tech SEO ✅ (Feb 2026)
-- 404 page with noindex, prerender-status-code
-- Invalid locales → 404
-- Legacy redirects
-- JSON-LD Organization/LocalBusiness schema
+## Current Status
+- **Local Codebase**: ✅ Ready for deployment
+- **Production**: ⏳ Awaiting deploy
+- **Testing**: ✅ All features verified
 
-### Phase 4: Blog ↔ Main Linking ✅ (Feb 2026)
-- Blog link in header/footer navigation
-- "Latest Posts" section with 3 articles (RU/UZ)
-- Footer blog links
+## Prioritized Backlog
 
-### Phase 5: Trust Pages + FAQ Schema ✅ (Feb 2026)
-- `/ru/process`, `/uz/process` - Процесс работы
-- `/ru/guarantees`, `/uz/guarantees` - Гарантии качества
-- `/ru/contacts`, `/uz/contacts` - Контакты
-- FAQ Schema (FAQPage) for rich snippets
-- Sitemap updated with all new pages
+### P0 - Critical (Blocked)
+- [ ] Production deployment
 
-### Phase 6: BreadcrumbList Schema ✅ (Feb 2026)
-- JSON-LD BreadcrumbList on all trust pages
-- DOM injection via useEffect for CSR compatibility
+### P1 - High Priority (After Deploy)
+- [ ] Submit sitemap to GSC
+- [ ] Request indexing for `/products/lighters`
+- [ ] Validate Product Rich Results
 
-### Phase 7: B2C Catalog Pages ✅ (Feb 2026)
-**4 new page types × 2 languages = 8 URLs:**
-- `/ru/catalog-products` | `/uz/mahsulotlar-katalogi` - Витрина продукции
-- `/ru/watches-with-logo` | `/uz/logotipli-soat` - Часы с логотипом
-- `/ru/lighters-engraving` | `/uz/gravirovkali-zajigalka` - Зажигалки
-- `/ru/engraved-gifts` | `/uz/gravirovkali-sovgalar` - Ручки/повербанки/ежедневники
+### P2 - Medium Priority
+- [ ] Add real product images
+- [ ] More product catalogs (watches, gifts)
+- [ ] Product image gallery
 
-### Phase 8: Comprehensive SEO & CRO Overhaul ✅ (Feb 4, 2026)
-**CRITICAL FIX: Domain migration from graver.uz to www.graver-studio.uz**
+## Verify Commands (Post-Deploy)
+```powershell
+# Lighters page
+curl.exe -I https://www.graver-studio.uz/ru/products/lighters
+# Expected: 200 OK
 
-**Completed:**
-1. **Centralized SEO Config** (`/src/config/seo.js`):
-   - Single source of truth: `BASE_URL = 'https://www.graver-studio.uz'`
-   - ROUTE_MAP for B2C slug mapping (RU↔UZ)
-   - Helper functions: buildCanonical(), buildAlternate(), getDefaultPath()
+# PDF catalog
+curl.exe -I https://www.graver-studio.uz/catalogs/graver-lighters-catalog-2026.pdf
+# Expected: 200 OK, application/pdf
 
-2. **SEOHead Component** - Universal SEO tags via react-helmet-async + DOM workaround:
-   - Canonical URL (no UTM, no hash)
-   - hreflang: ru, uz-Latn, x-default
-   - Unique title/description per page (via i18n keys)
-   - robots meta (index,follow or noindex,nofollow)
-   - LocalBusiness schema (verified data only: name, url, telephone, email, areaServed)
-   - FAQPage schema (only on pages with visible FAQ)
-
-3. **Trust Pages SEO** - Unique meta for each:
-   - `/ru/process` → "Как мы работаем — Graver.uz"
-   - `/ru/guarantees` → "Гарантии качества — Graver.uz"
-   - `/ru/contacts` → "Контакты — Graver.uz | Ташкент"
-
-4. **Thanks Page** (`/ru/thanks`, `/uz/thanks`):
-   - noindex, nofollow ✅
-   - UX Fix: Removed backdrop-filter blur, text is now readable ✅
-   - Analytics: view_thanks event (GA4) + Lead event (Meta Pixel) ✅
-
-5. **404 Page**: noindex,nofollow, no canonical (correct)
-
-6. **Schema Cleanup**:
-   - LocalBusiness: Removed unverified address/geo/openingHours
-   - FAQPage: Only on pages with visible FAQ content
-   - BreadcrumbList: On all internal pages (not on homepage)
-
-7. **SPA Tracking Fix**:
-   - PostHog removed (unused, saves ~50KB)
-   - GA4 + Meta Pixel: Guard/queue system to prevent lost page_view
-   - Initial page_view deferred (150ms) to allow analytics load
-   - Pending page_view flushed after analytics initialization
-
-8. **Static Files**:
-   - robots.txt: Correct domain, Disallow /thanks and /api
-   - sitemap.xml: 18 URLs with correct hreflang pairs, no /thanks
-
-**Verification Results:**
-- `grep "https://graver.uz"` = 0 matches (old domain removed)
-- All 6 key URLs verified: canonical ✅, hreflang ✅, robots ✅, unique title ✅
-
-## Current State
-- **Main Site**: Fully bilingual (RU/UZ), optimized, SEO-correct
-- **Blog**: Astro SSG with 5 articles in each language
-- **API**: Lead submission working with Telegram group notifications
-- **SEO**: Full schema markup, correct canonicals, hreflang implementation
-
-## Pending Issues
-1. **P1**: Form submission verification (user testing recommended)
-2. **P2**: Meta Pixel test events blocked (infrastructure TLS issue in preview)
-
-## Backlog
-
-### P0 - Immediate
-- User verification of lead submission flow
-
-### P1 - Next
-- Refactor portfolio section with filters
-- Redesign "How we work" section on main page
-- Refactor monolithic App.js into smaller components
-
-### P2 - Future
-- Blog Phase 2: Author pages, enhanced schema
-- Blog Phase 3: Content clusters & internal linking
-
-## Tech Stack
-- **Frontend**: React 18, Tailwind CSS, react-helmet-async v2
-- **Blog**: Astro 4.x, Markdown, Tailwind
-- **Backend**: FastAPI, MongoDB, httpx
-- **Integrations**: Telegram Bot API, GA4, Meta Pixel
+# Product Schema
+curl.exe -s https://www.graver-studio.uz/ru/products/lighters | Select-String "Product"
+# Expected: 4 Product schemas
+```
 
 ## Key URLs
-- Main: `/ru`, `/uz`
-- Trust: `/ru/process`, `/ru/guarantees`, `/ru/contacts` (+ UZ versions)
-- B2C: `/ru/catalog-products`, `/ru/watches-with-logo`, etc.
-- Blog: `/blog/ru`, `/blog/uz`
-- API: `/api/leads`
+- Preview: https://lighting-gallery.preview.emergentagent.com
+- Production: https://www.graver-studio.uz
+- Lighters: `/ru/products/lighters`, `/uz/products/lighters`
+- PDF Catalog: `/catalogs/graver-lighters-catalog-2026.pdf`
 
-## Files Modified (Phase 8)
-- `/app/frontend/src/config/seo.js` (NEW)
-- `/app/frontend/src/components/SEOHead.js` (REWRITTEN)
-- `/app/frontend/src/components/B2CSeo.js` (NEW)
-- `/app/frontend/src/pages/ProcessPage.js`
-- `/app/frontend/src/pages/GuaranteesPage.js`
-- `/app/frontend/src/pages/ContactsPage.js`
-- `/app/frontend/src/pages/CatalogPage.js`
-- `/app/frontend/src/pages/WatchesPage.js`
-- `/app/frontend/src/pages/LightersPage.js`
-- `/app/frontend/src/pages/EngravedGiftsPage.js`
-- `/app/frontend/src/Thanks.js`
-- `/app/frontend/src/i18n/ru.json`
-- `/app/frontend/src/i18n/uz.json`
-- `/app/frontend/public/index.html` (PostHog removed, tracking fixed)
+---
+Last Updated: February 8, 2026

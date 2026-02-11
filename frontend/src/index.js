@@ -17,6 +17,9 @@ const CatalogPage = lazy(() => import("@/pages/CatalogPage"));
 const WatchesPage = lazy(() => import("@/pages/WatchesPage"));
 const LightersPage = lazy(() => import("@/pages/LightersPage"));
 const EngravedGiftsPage = lazy(() => import("@/pages/EngravedGiftsPage"));
+// Blog Pages
+const BlogIndex = lazy(() => import("@/pages/BlogIndex"));
+const BlogPost = lazy(() => import("@/pages/BlogPost"));
 
 // Loading fallback for lazy components
 const LoadingFallback = () => (
@@ -35,6 +38,12 @@ const LocaleRoute = ({ element }) => {
   }
   
   return element;
+};
+
+// Blog redirect helper (for old /blog/ru/:slug -> /ru/blog/:slug)
+const BlogRedirect = ({ fromLocale }) => {
+  const { slug } = useParams();
+  return <Navigate to={`/${fromLocale}/blog/${slug}`} replace />;
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -68,8 +77,20 @@ root.render(
               <Route path="/:locale/logotipli-soat" element={<LocaleRoute element={<WatchesPage />} />} />
               <Route path="/:locale/lighters-engraving" element={<LocaleRoute element={<LightersPage />} />} />
               <Route path="/:locale/gravirovkali-zajigalka" element={<LocaleRoute element={<LightersPage />} />} />
+              <Route path="/:locale/products/lighters" element={<LocaleRoute element={<LightersPage />} />} />
               <Route path="/:locale/engraved-gifts" element={<LocaleRoute element={<EngravedGiftsPage />} />} />
               <Route path="/:locale/gravirovkali-sovgalar" element={<LocaleRoute element={<EngravedGiftsPage />} />} />
+              
+              {/* Blog Routes */}
+              <Route path="/:locale/blog" element={<LocaleRoute element={<BlogIndex />} />} />
+              <Route path="/:locale/blog/:slug" element={<LocaleRoute element={<BlogPost />} />} />
+              
+              {/* Legacy blog redirects (old URLs: /blog/ru -> /ru/blog) */}
+              <Route path="/blog" element={<Navigate to="/ru/blog" replace />} />
+              <Route path="/blog/ru" element={<Navigate to="/ru/blog" replace />} />
+              <Route path="/blog/uz" element={<Navigate to="/uz/blog" replace />} />
+              <Route path="/blog/ru/:slug" element={<BlogRedirect fromLocale="ru" />} />
+              <Route path="/blog/uz/:slug" element={<BlogRedirect fromLocale="uz" />} />
               
               {/* 404 for unmatched routes */}
               <Route path="*" element={<NotFound />} />

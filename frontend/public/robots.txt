@@ -5,4 +5,3 @@ Disallow: /thanks
 Disallow: /api/
 
 Sitemap: https://www.graver-studio.uz/sitemap.xml
-Sitemap: https://www.graver-studio.uz/blog/sitemap-index.xml

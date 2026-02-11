@@ -4,7 +4,7 @@
  * NEVER define BASE_URL locally in components.
  */
 
-export const BASE_URL = 'https://www.graver-studio.uz';
+export const BASE_URL = process.env.REACT_APP_BASE_URL || 'https://www.graver-studio.uz';
 
 // Route mapping for B2C pages with different slugs per locale
 export const ROUTE_MAP = {
