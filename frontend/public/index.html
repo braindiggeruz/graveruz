@@ -34,6 +34,48 @@
         <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" /></noscript>
 
         <title>Graver.uz — Корпоративные подарки с лазерной гравировкой | Ташкент</title>
+
+        <!-- Service Worker Hard Block (Prod + kill switch) -->
+        <script>
+        (function() {
+          if (!('serviceWorker' in navigator)) return;
+
+          var host = window.location.hostname;
+          var isProdHost = [
+            'graver-studio.uz',
+            'www.graver-studio.uz'
+          ].indexOf(host) !== -1;
+          var forceKill = window.location.search.indexOf('sw-kill=1') !== -1;
+
+          if (!isProdHost && !forceKill) return;
+
+          var sw = navigator.serviceWorker;
+          var registerKey = 'register';
+          if (sw && sw[registerKey]) {
+            sw[registerKey] = function() {
+              return Promise.resolve({ scope: '/' });
+            };
+          }
+
+          sw.getRegistrations()
+            .then(function(regs) {
+              regs.forEach(function(reg) {
+                reg.unregister();
+              });
+            })
+            .catch(function() {});
+
+          if (forceKill && 'caches' in window) {
+            caches.keys()
+              .then(function(keys) {
+                keys.forEach(function(key) {
+                  caches.delete(key);
+                });
+              })
+              .catch(function() {});
+          }
+        })();
+        </script>
         
         <!-- DEFERRED Analytics: Load after user interaction or idle -->
         <script>
@@ -330,40 +372,5 @@
             </p>
         </a>
         
-        <!-- Service Worker Disabled in Production -->
-        <script>
-        (function() {
-          if (!('serviceWorker' in navigator)) return;
-
-          var host = window.location.hostname;
-          var isProdHost = [
-            'graver-studio.uz',
-            'www.graver-studio.uz',
-            'graver.uz',
-            'www.graver.uz'
-          ].indexOf(host) !== -1;
-          var forceKill = window.location.search.indexOf('sw-kill=1') !== -1;
-
-          if (!isProdHost && !forceKill) return;
-
-          navigator.serviceWorker.getRegistrations()
-            .then(function(regs) {
-              regs.forEach(function(reg) {
-                reg.unregister();
-              });
-            })
-            .catch(function() {});
-
-          if ('caches' in window) {
-            caches.keys()
-              .then(function(keys) {
-                keys.forEach(function(key) {
-                  caches.delete(key);
-                });
-              })
-              .catch(function() {});
-          }
-        })();
-        </script>
     </body>
 </html>

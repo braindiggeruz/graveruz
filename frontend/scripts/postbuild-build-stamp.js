@@ -14,13 +14,14 @@ function resolveBuildStamp() {
     gitSha = '';
   }
 
-  const buildId = gitSha || process.env.BUILD_ID || process.env.GIT_SHA || 'unknown';
+  const buildIdBase = gitSha || process.env.BUILD_ID || process.env.GIT_SHA || 'unknown';
   const epoch = process.env.SOURCE_DATE_EPOCH;
   const buildTime = (epoch && !Number.isNaN(Number(epoch)))
     ? new Date(Number(epoch) * 1000).toISOString()
     : new Date().toISOString();
 
-  return { buildId, buildTime };
+  const buildStamp = `${buildIdBase}-${buildTime}`;
+  return { buildStamp };
 }
 
 function collectHtmlFiles(dir, results) {
@@ -49,10 +50,10 @@ if (!fs.existsSync(buildDir)) {
   process.exit(0);
 }
 
-const { buildId, buildTime } = resolveBuildStamp();
+const { buildStamp } = resolveBuildStamp();
 const buildTxtPath = path.join(buildDir, 'build.txt');
-fs.writeFileSync(buildTxtPath, `${buildId}\t${buildTime}\n`, 'utf8');
+fs.writeFileSync(buildTxtPath, `${buildStamp}\n`, 'utf8');
 
 const htmlFiles = [];
 collectHtmlFiles(buildDir, htmlFiles);
-htmlFiles.forEach((filePath) => stampHtmlFile(filePath, buildId));
+htmlFiles.forEach((filePath) => stampHtmlFile(filePath, buildStamp));
