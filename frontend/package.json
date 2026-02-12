@@ -125,6 +125,10 @@
       "/uz/blog/navruz-uchun-korporativ-sovgalar",
       "/ru/blog/welcome-pack-novym-sotrudnikam",
       "/uz/blog/yangi-xodimlar-uchun-welcome-pack"
+    ],
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
     ]
   },
   "browserslist": {
