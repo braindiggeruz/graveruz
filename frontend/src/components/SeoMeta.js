@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 import { BASE_URL, HREFLANG_MAP } from '../config/seo';
@@ -30,58 +30,6 @@ export default function SeoMeta({
     : (robots || (noindex ? 'noindex, nofollow' : 'index, follow'));
   const ogLocale = locale === 'ru' ? 'ru_RU' : 'uz_UZ';
   const defaultUrl = resolvedRuUrl || resolvedCanonicalUrl;
-
-  useEffect(() => {
-    document.querySelectorAll('[data-seo-meta]').forEach((el) => el.remove());
-
-    if (resolvedCanonicalUrl) {
-      const canonical = document.createElement('link');
-      canonical.rel = 'canonical';
-      canonical.href = resolvedCanonicalUrl;
-      canonical.setAttribute('data-seo-meta', 'true');
-      document.head.appendChild(canonical);
-    }
-
-    if (resolvedRuUrl) {
-      const hreflangRu = document.createElement('link');
-      hreflangRu.rel = 'alternate';
-      hreflangRu.hreflang = HREFLANG_MAP.ru;
-      hreflangRu.href = resolvedRuUrl;
-      hreflangRu.setAttribute('data-seo-meta', 'true');
-      document.head.appendChild(hreflangRu);
-    }
-
-    if (resolvedUzUrl) {
-      const hreflangUz = document.createElement('link');
-      hreflangUz.rel = 'alternate';
-      hreflangUz.hreflang = HREFLANG_MAP.uz;
-      hreflangUz.href = resolvedUzUrl;
-      hreflangUz.setAttribute('data-seo-meta', 'true');
-      document.head.appendChild(hreflangUz);
-    }
-
-    if (defaultUrl) {
-      const hreflangDefault = document.createElement('link');
-      hreflangDefault.rel = 'alternate';
-      hreflangDefault.hreflang = 'x-default';
-      hreflangDefault.href = defaultUrl;
-      hreflangDefault.setAttribute('data-seo-meta', 'true');
-      document.head.appendChild(hreflangDefault);
-    }
-
-    let robotsMeta = document.querySelector('meta[name="robots"]');
-    if (!robotsMeta) {
-      robotsMeta = document.createElement('meta');
-      robotsMeta.name = 'robots';
-      document.head.appendChild(robotsMeta);
-    }
-    robotsMeta.setAttribute('data-seo-meta', 'true');
-    robotsMeta.content = robotsContent;
-
-    return () => {
-      document.querySelectorAll('[data-seo-meta]').forEach((el) => el.remove());
-    };
-  }, [resolvedCanonicalUrl, resolvedRuUrl, resolvedUzUrl, defaultUrl, robotsContent]);
 
   return (
     <Helmet>

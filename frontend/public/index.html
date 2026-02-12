@@ -330,17 +330,40 @@
             </p>
         </a>
         
-        <!-- Service Worker Registration -->
+        <!-- Service Worker Disabled in Production -->
         <script>
-        if ('serviceWorker' in navigator) {
-          window.addEventListener('load', function() {
-            navigator.serviceWorker.register('/sw.js').then(function(reg) {
-              console.log('[SW] Registered:', reg.scope);
-            }).catch(function(err) {
-              console.log('[SW] Registration failed:', err);
-            });
-          });
-        }
+        (function() {
+          if (!('serviceWorker' in navigator)) return;
+
+          var host = window.location.hostname;
+          var isProdHost = [
+            'graver-studio.uz',
+            'www.graver-studio.uz',
+            'graver.uz',
+            'www.graver.uz'
+          ].indexOf(host) !== -1;
+          var forceKill = window.location.search.indexOf('sw-kill=1') !== -1;
+
+          if (!isProdHost && !forceKill) return;
+
+          navigator.serviceWorker.getRegistrations()
+            .then(function(regs) {
+              regs.forEach(function(reg) {
+                reg.unregister();
+              });
+            })
+            .catch(function() {});
+
+          if ('caches' in window) {
+            caches.keys()
+              .then(function(keys) {
+                keys.forEach(function(key) {
+                  caches.delete(key);
+                });
+              })
+              .catch(function() {});
+          }
+        })();
         </script>
     </body>
 </html>
