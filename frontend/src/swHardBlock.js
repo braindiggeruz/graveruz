@@ -3,7 +3,8 @@ export function initSWHardBlock() {
     return;
   }
 
-  window.__SW_HARD_BLOCK__ = 'SW_HARD_BLOCK_V1';
+  var runtimeMarker = 'sw-hardblock-runtime:v1';
+  window.__SW_HARD_BLOCK__ = runtimeMarker;
 
   var host = window.location.hostname;
   var isProdHost = host === 'graver-studio.uz' || host === 'www.graver-studio.uz';
@@ -23,9 +24,9 @@ export function initSWHardBlock() {
     sw.register = function() {
       if (!window.__swHardBlockRegisterLogged) {
         window.__swHardBlockRegisterLogged = true;
-        console.info('[SW] Registration blocked');
+        console.info('[SW] Registration blocked:', runtimeMarker);
       }
-      return Promise.reject(new Error('Service Worker disabled on production.'));
+      return Promise.resolve({ scope: window.location.origin + '/' });
     };
   }
 
