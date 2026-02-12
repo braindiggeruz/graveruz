@@ -29,6 +29,16 @@ Output: frontend/build
 - Deploy only from the main branch.
 - Do not deploy from workspace branches or conflict_* branches.
 
+### Source Of Truth
+
+Before any Redeploy, verify Emergent is deploying GitHub main, not a workspace snapshot.
+
+1. Open the GitHub integration panel for the project.
+2. Confirm the connected branch is main.
+3. Confirm the latest GitHub commit SHA matches main on GitHub.
+4. Use "Save to GitHub" to sync any workspace changes back to main.
+5. If the workspace SHA does not match main, re-sync or re-import main before deploy.
+
 ### Steps
 
 1. Merge the PR into main.

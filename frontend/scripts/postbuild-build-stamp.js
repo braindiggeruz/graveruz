@@ -20,7 +20,8 @@ function resolveBuildStamp() {
     ? new Date(Number(epoch) * 1000).toISOString()
     : new Date().toISOString();
 
-  return { buildId, buildTime };
+  const buildStamp = `${buildId}-${buildTime}`;
+  return { buildStamp };
 }
 
 function collectHtmlFiles(dir, results) {
@@ -49,10 +50,10 @@ if (!fs.existsSync(buildDir)) {
   process.exit(0);
 }
 
-const { buildId, buildTime } = resolveBuildStamp();
+const { buildStamp } = resolveBuildStamp();
 const buildTxtPath = path.join(buildDir, 'build.txt');
-fs.writeFileSync(buildTxtPath, `${buildId}\t${buildTime}\n`, 'utf8');
+fs.writeFileSync(buildTxtPath, `${buildStamp}\n`, 'utf8');
 
 const htmlFiles = [];
 collectHtmlFiles(buildDir, htmlFiles);
-htmlFiles.forEach((filePath) => stampHtmlFile(filePath, buildId));
+htmlFiles.forEach((filePath) => stampHtmlFile(filePath, buildStamp));

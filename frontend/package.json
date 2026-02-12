@@ -60,7 +60,8 @@
     "start": "craco start",
     "build": "craco build",
     "postbuild": "react-snap && node scripts/postbuild-root-noindex.js && node scripts/postbuild-build-stamp.js",
-    "test": "craco test"
+    "test": "craco test",
+    "verify:prod": "node scripts/verify-prod.mjs"
   },
   "reactSnap": {
     "crawl": false,
