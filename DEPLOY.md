@@ -29,6 +29,16 @@ Output: frontend/build
 - Deploy only from the main branch.
 - Do not deploy from workspace branches or conflict_* branches.
 
+### Source Of Truth
+
+Before any Redeploy, verify Emergent is deploying GitHub main, not a workspace snapshot.
+
+1. Open the GitHub integration panel for the project.
+2. Confirm the connected branch is main.
+3. Confirm the latest GitHub commit SHA matches main on GitHub.
+4. Use "Save to GitHub" to sync any workspace changes back to main.
+5. If the workspace SHA does not match main, re-sync or re-import main before deploy.
+
 ### Steps
 
 1. Merge the PR into main.
@@ -37,6 +47,19 @@ Output: frontend/build
 4. Deploy main and confirm the live commit matches the main SHA.
 
 If the live commit or branch does not match main, stop and redeploy from main.
+
+### If Production Shows Old View-Source
+
+Signs:
+- build-id meta missing or stale
+- view-source still contains serviceWorker.register
+
+Fix:
+1. Open Emergent project.
+2. Confirm GitHub integration is active.
+3. Confirm branch = main.
+4. Click "Save to GitHub" to sync workspace to main.
+5. Redeploy and re-run `npm run verify:prod`.
 
 ## Post-Deploy Verification
 

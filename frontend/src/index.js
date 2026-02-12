@@ -1,3 +1,4 @@
+import { initSWHardBlock } from "@/swHardBlock";
 import React, { Suspense, lazy } from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route, Navigate, useParams } from "react-router-dom";
@@ -93,6 +94,8 @@ const LightersRedirect = () => {
   const { locale } = useParams();
   return <Navigate to={`/${locale}/products/lighters`} replace />;
 };
+
+initSWHardBlock();
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
