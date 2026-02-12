@@ -48,6 +48,19 @@ Before any Redeploy, verify Emergent is deploying GitHub main, not a workspace s
 
 If the live commit or branch does not match main, stop and redeploy from main.
 
+### If Production Shows Old View-Source
+
+Signs:
+- build-id meta missing or stale
+- view-source still contains serviceWorker.register
+
+Fix:
+1. Open Emergent project.
+2. Confirm GitHub integration is active.
+3. Confirm branch = main.
+4. Click "Save to GitHub" to sync workspace to main.
+5. Redeploy and re-run `npm run verify:prod`.
+
 ## Post-Deploy Verification
 
 - Confirm build stamp exists:
