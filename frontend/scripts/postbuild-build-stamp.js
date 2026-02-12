@@ -53,6 +53,8 @@ if (!fs.existsSync(buildDir)) {
 const { buildStamp } = resolveBuildStamp();
 const buildTxtPath = path.join(buildDir, 'build.txt');
 fs.writeFileSync(buildTxtPath, `${buildStamp}\n`, 'utf8');
+const buildIdPath = path.join(buildDir, '__build_id.txt');
+fs.writeFileSync(buildIdPath, `${buildStamp}\n`, 'utf8');
 
 const htmlFiles = [];
 collectHtmlFiles(buildDir, htmlFiles);

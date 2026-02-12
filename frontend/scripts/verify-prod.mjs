@@ -5,7 +5,7 @@ const urls = [
   `${BASE_URL}/ru/?sw-kill=1&v=${Date.now()}`
 ];
 
-const marker = 'SW_HARD_BLOCK_V1';
+const marker = 'sw-hardblock-runtime:v1';
 let hasFailure = false;
 
 function countMatches(text, regex) {
@@ -26,6 +26,28 @@ async function checkRuntimeMarker(html) {
   const scriptContent = await fetchText(scriptUrl);
   const ok = scriptContent.includes(marker);
   return { ok, reason: ok ? 'runtime block present' : 'runtime block marker missing' };
+}
+
+async function checkBuildIdEndpoint() {
+  try {
+    const response = await fetch(`${BASE_URL}/__build_id.txt`, { headers: { 'cache-control': 'no-cache' } });
+    if (!response.ok) {
+      return { ok: false, reason: `__build_id.txt not found (status ${response.status})` };
+    }
+    const body = (await response.text()).trim();
+    if (body.toLowerCase().includes('<!doctype html')) {
+      return { ok: false, reason: '__build_id.txt returned HTML' };
+    }
+    return { ok: true, reason: body };
+  } catch (error) {
+    return { ok: false, reason: `__build_id.txt fetch error (${error.message})` };
+  }
+}
+
+const buildIdCheck = await checkBuildIdEndpoint();
+console.log(`__build_id.txt: ${buildIdCheck.ok ? 'OK' : 'FAIL'} - ${buildIdCheck.reason}`);
+if (!buildIdCheck.ok) {
+  hasFailure = true;
 }
 
 for (const url of urls) {

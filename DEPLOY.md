@@ -61,6 +61,12 @@ Fix:
 4. Click "Save to GitHub" to sync workspace to main.
 5. Redeploy and re-run `npm run verify:prod`.
 
+### Build ID Endpoint
+
+The deployment writes a deterministic build ID to `/__build_id.txt`.
+If this path returns HTML or 404, the deployment is serving a stale build or a
+SPA fallback instead of the latest static assets.
+
 ## Post-Deploy Verification
 
 - Confirm build stamp exists:
