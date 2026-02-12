@@ -4,7 +4,6 @@ import SeoMeta from './SeoMeta';
 /**
  * B2CSeo Component
  * Simplified SEO component for B2C pages with custom titles/descriptions
- * Uses DOM injection workaround for canonical/hreflang (react-helmet-async v2 issue)
  */
 export default function B2CSeo({ 
   title, 
