@@ -6,13 +6,49 @@ import { BASE_URL } from '../config/seo';
 import { getPostBySlug, getAlternateSlug, getPostsByLocale } from '../data/blogPosts';
 import { getSeoOverride, getFaqData } from '../data/blogSeoOverrides';
 
-const PHASE1_RU_SLUGS = new Set([
-  'kak-vybrat-korporativnyj-podarok',
-  'lazernaya-gravirovka-podarkov',
-  'podarochnye-nabory-s-logotipom',
-  'brendirovanie-suvenirov',
-  'chek-list-zakupshchika-podarkov'
-]);
+function normalizeBlogHref(href, locale) {
+  if (!href || typeof href !== 'string') return href;
+  if (href.indexOf('/blog/') === 0) return '/' + locale + href;
+  if (href.indexOf('https://graver-studio.uz/blog/') === 0) {
+    return href.replace('https://graver-studio.uz/blog/', '/' + locale + '/blog/');
+  }
+  if (href.indexOf('http://graver-studio.uz/blog/') === 0) {
+    return href.replace('http://graver-studio.uz/blog/', '/' + locale + '/blog/');
+  }
+  return href;
+}
+
+function normalizeInlineText(text, locale) {
+  if (!text) return '';
+  return text
+    .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, function(_, label, href) {
+      return '<a href="' + normalizeBlogHref(href, locale) + '">' + label + '</a>';
+    });
+}
+
+function normalizeHtmlContent(html, locale) {
+  if (!html) return html;
+
+  return normalizeInlineText(
+    html
+      .replace(/href=(['"])\/blog\/([^'"]+)\1/g, function(_, quote, path) {
+        return 'href=' + quote + '/' + locale + '/blog/' + path + quote;
+      })
+      .replace(/href=(['"])https?:\/\/graver-studio\.uz\/blog\/([^'"]+)\1/g, function(_, quote, path) {
+        return 'href=' + quote + '/' + locale + '/blog/' + path + quote;
+      }),
+    locale,
+  );
+}
+
+function isValidFaqItem(item) {
+  if (!item || typeof item.q !== 'string' || typeof item.a !== 'string') return false;
+  var q = item.q.trim();
+  var a = item.a.trim();
+  if (!q || !a) return false;
+  return !/sample\s*q\d*/i.test(q + ' ' + a);
+}
 
 function BlogPostPage() {
   const params = useParams();
@@ -24,8 +60,7 @@ function BlogPostPage() {
   // Get SEO override for this post
   const seoOverride = getSeoOverride(locale, slug);
   // Get FAQ data for FAQPage Schema
-  const faqData = getFaqData(slug);
-  const isPhase1RuPost = locale === 'ru' && PHASE1_RU_SLUGS.has(slug);
+  const faqData = (getFaqData(slug) || []).filter(isValidFaqItem);
 
   const canonicalUrl = post ? BASE_URL + '/' + locale + '/blog/' + slug : '';
   const altSlug = slug ? getAlternateSlug(slug) : null;
@@ -43,12 +78,6 @@ function BlogPostPage() {
     var oldTags = document.querySelectorAll('[data-seo-blog]');
     oldTags.forEach(function(el) { el.remove(); });
 
-    if (!isPhase1RuPost) {
-      return function cleanup() {
-        document.querySelectorAll('[data-seo-blog]').forEach(function(el) { el.remove(); });
-      };
-    }
-
     // Inject Article JSON-LD
     var articleLd = document.createElement('script');
     articleLd.type = 'application/ld+json';
@@ -60,7 +89,9 @@ function BlogPostPage() {
       description: (seoOverride && (seoOverride.ogDescription || seoOverride.description)) || post.description,
       url: canonicalUrl,
       mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
-      inLanguage: locale === 'ru' ? "ru" : "uz"
+      inLanguage: locale === 'ru' ? "ru" : "uz",
+      author: { "@type": "Organization", name: "Graver.uz" },
+      publisher: { "@type": "Organization", name: "Graver.uz", url: BASE_URL }
     });
     document.head.appendChild(articleLd);
 
@@ -81,15 +112,14 @@ function BlogPostPage() {
     document.head.appendChild(breadcrumbLd);
 
     // Inject FAQPage JSON-LD (P1.2)
-    var faq = getFaqData(slug);
-    if (faq && faq.length > 0) {
+    if (faqData.length >= 2) {
       var faqLd = document.createElement('script');
       faqLd.type = 'application/ld+json';
       faqLd.setAttribute('data-seo-blog', 'true');
       faqLd.textContent = JSON.stringify({
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        mainEntity: faq.map(function(item) {
+        mainEntity: faqData.map(function(item) {
           return {
             "@type": "Question",
             name: item.q,
@@ -106,7 +136,7 @@ function BlogPostPage() {
     return function cleanup() {
       document.querySelectorAll('[data-seo-blog]').forEach(function(el) { el.remove(); });
     };
-  }, [post, canonicalUrl, locale, slug, isPhase1RuPost, seoOverride]);
+  }, [post, canonicalUrl, locale, seoOverride, faqData]);
 
   if (!post) {
     return React.createElement(Navigate, { to: '/' + locale + '/blog', replace: true });
@@ -172,22 +202,48 @@ function BlogPostPage() {
 
   var contentBody = null;
   if (post && post.contentHtml) {
-    contentBody = React.createElement('div', { dangerouslySetInnerHTML: { __html: post.contentHtml } });
+    contentBody = React.createElement('div', { dangerouslySetInnerHTML: { __html: normalizeHtmlContent(post.contentHtml, locale) } });
   } else if (post && post.content) {
     var contentParts = [];
     var lines = post.content.split('\n');
+    var listItems = [];
+    var listGroup = 0;
+
+    var flushList = function() {
+      if (!listItems.length) return;
+      contentParts.push(
+        React.createElement('ul', { key: 'ul-' + listGroup, className: 'list-disc ml-6 my-3 space-y-1' },
+          listItems.map(function(item, idx) {
+            return React.createElement('li', {
+              key: 'li-' + listGroup + '-' + idx,
+              className: 'text-gray-300',
+              dangerouslySetInnerHTML: { __html: normalizeInlineText(item, locale) }
+            });
+          })
+        )
+      );
+      listItems = [];
+      listGroup += 1;
+    };
+
     for (var i = 0; i < lines.length; i++) {
       var ln = lines[i];
       if (ln.indexOf('# ') === 0) {
-        contentParts.push(React.createElement('h2', { key: 'h-' + i, className: 'text-2xl font-bold text-white mt-6 mb-3' }, ln.substring(2)));
+        flushList();
+        contentParts.push(React.createElement('h2', { key: 'h-' + i, className: 'text-2xl font-bold text-white mt-6 mb-3', dangerouslySetInnerHTML: { __html: normalizeInlineText(ln.substring(2), locale) } }));
       } else if (ln.indexOf('## ') === 0) {
-        contentParts.push(React.createElement('h3', { key: 'hh-' + i, className: 'text-xl font-bold text-white mt-4 mb-2' }, ln.substring(3)));
+        flushList();
+        contentParts.push(React.createElement('h3', { key: 'hh-' + i, className: 'text-xl font-bold text-white mt-4 mb-2', dangerouslySetInnerHTML: { __html: normalizeInlineText(ln.substring(3), locale) } }));
       } else if (ln.indexOf('- ') === 0) {
-        contentParts.push(React.createElement('li', { key: 'li-' + i, className: 'text-gray-300 ml-4 my-1' }, ln.substring(2)));
+        listItems.push(ln.substring(2));
       } else if (ln.trim()) {
-        contentParts.push(React.createElement('p', { key: 'p-' + i, className: 'text-gray-300 leading-relaxed my-3' }, ln));
+        flushList();
+        contentParts.push(React.createElement('p', { key: 'p-' + i, className: 'text-gray-300 leading-relaxed my-3', dangerouslySetInnerHTML: { __html: normalizeInlineText(ln, locale) } }));
+      } else {
+        flushList();
       }
     }
+    flushList();
     contentBody = contentParts;
   }
 
