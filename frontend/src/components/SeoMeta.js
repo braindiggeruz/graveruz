@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { BASE_URL, HREFLANG_MAP } from '../config/seo';
 
 const DEFAULT_OG_IMAGE = `${BASE_URL}/og-blog.png`;
+const DEFAULT_DESCRIPTION = 'Премиальная лазерная гравировка для бизнеса в Ташкенте. Сначала макет — потом производство.';
 
 export default function SeoMeta({
   title,
@@ -25,6 +26,7 @@ export default function SeoMeta({
   const resolvedCanonicalUrl = isRootPath ? rootCanonical : canonicalUrl;
   const resolvedRuUrl = isRootPath ? `${BASE_URL}/ru` : ruUrl;
   const resolvedUzUrl = isRootPath ? `${BASE_URL}/uz` : uzUrl;
+  const resolvedDescription = description || DEFAULT_DESCRIPTION;
   const robotsContent = isRootPath
     ? 'noindex, follow'
     : (robots || (noindex ? 'noindex, nofollow' : 'index, follow'));
@@ -35,7 +37,7 @@ export default function SeoMeta({
     <Helmet>
       {includeHtmlLang && <html lang={locale === 'uz' ? 'uz-Latn' : 'ru'} />}
       <title>{title}</title>
-      <meta name="description" content={description} />
+      <meta name="description" content={resolvedDescription} />
       <meta name="robots" content={robotsContent} />
 
       {resolvedCanonicalUrl && <link rel="canonical" href={resolvedCanonicalUrl} />}
@@ -44,16 +46,16 @@ export default function SeoMeta({
       {defaultUrl && <link rel="alternate" hrefLang="x-default" href={defaultUrl} />}
 
       <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
+      <meta property="og:description" content={resolvedDescription} />
       <meta property="og:type" content={ogType} />
-      <meta property="og:url" content={resolvedCanonicalUrl} />
+      {resolvedCanonicalUrl && <meta property="og:url" content={resolvedCanonicalUrl} />}
       <meta property="og:image" content={ogImage} />
       <meta property="og:site_name" content={siteName} />
       <meta property="og:locale" content={ogLocale} />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
+      <meta name="twitter:description" content={resolvedDescription} />
       <meta name="twitter:image" content={ogImage} />
     </Helmet>
   );
