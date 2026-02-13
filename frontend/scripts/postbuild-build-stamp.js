@@ -3,7 +3,8 @@ const path = require('path');
 const { execSync } = require('child_process');
 
 const buildDir = path.resolve(__dirname, '..', 'build');
-const baseUrl = process.env.REACT_APP_BASE_URL || 'https://www.graver-studio.uz';
+const rawBaseUrl = process.env.REACT_APP_BASE_URL || 'https://graver-studio.uz';
+const baseUrl = rawBaseUrl.replace(/\/+$/, '');
 
 function resolveBuildStamp() {
   let gitSha = '';
