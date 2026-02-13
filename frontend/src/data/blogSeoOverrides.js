@@ -6,23 +6,50 @@
  */
 
 export const blogSeoOverrides = {
-  // 1. kak-vybrat-korporativnyj-podarok — title too long
+  // 1. kak-vybrat-korporativnyj-podarok — Phase 1
   'kak-vybrat-korporativnyj-podarok': {
+    title: 'Как выбрать корпоративный подарок для сотрудников и клиентов — Graver.uz',
+    description: 'Практичный алгоритм выбора корпоративных подарков: цель, бюджет, сегменты, брендирование, упаковка и контроль качества.',
+    ogTitle: 'Как выбрать корпоративный подарок: чек-лист для бизнеса',
+    ogDescription: 'Пошаговый подход к выбору корпоративных подарков для сотрудников, партнёров и клиентов без лишних затрат.',
     titleTag: 'Выбор корпоративного подарка: практические советы — Graver.uz',
     quickAnswer: 'Быстрый ответ: выбирайте по цели, аудитории и бюджету. Лучше всего работают практичные подарки с аккуратным логотипом и качественной упаковкой.',
-    relatedSlugs: ['podarochnye-nabory-s-logotipom', 'brendirovanie-suvenirov', 'chek-list-zakupshchika-podarkov']
+    relatedSlugs: ['podarochnye-nabory-s-logotipom', 'brendirovanie-suvenirov', 'chek-list-zakupshchika-podarkov'],
+    faq: [
+      { q: 'С чего начинать выбор корпоративного подарка?', a: 'Начните с цели: мотивация сотрудников, поддержка лояльности клиентов или укрепление партнёрских отношений. От цели зависят формат подарка и бюджет.' },
+      { q: 'Как распределить бюджет по сегментам?', a: 'Разделите получателей на 2-3 сегмента и задайте бюджет на человека для каждой группы. Это помогает избежать перерасхода и сохранить уместность подарка.' },
+      { q: 'Что важнее: сам сувенир или упаковка?', a: 'Работает связка: полезный предмет, аккуратное брендирование и достойная упаковка. Без упаковки даже хороший подарок воспринимается проще.' }
+    ]
   },
 
-  // 2. lazernaya-gravirovka-podarkov — title OK, add quick answer + links
+  // 2. lazernaya-gravirovka-podarkov — Phase 1
   'lazernaya-gravirovka-podarkov': {
+    title: 'Лазерная гравировка подарков для бизнеса: материалы и сроки — Graver.uz',
+    description: 'Разбираем, на каких материалах работает лазерная гравировка, как подготовить макет и как рассчитать сроки тиража.',
+    ogTitle: 'Лазерная гравировка подарков: что важно до запуска тиража',
+    ogDescription: 'Материалы, технические ограничения и практический чек-лист перед заказом гравировки корпоративных подарков.',
     quickAnswer: 'Быстрый ответ: лазерная гравировка подходит для металла, дерева, кожи и стекла. Её выбирают за стойкость, аккуратность и премиальный вид.',
-    relatedSlugs: ['kak-podgotovit-maket-logotipa', 'brendirovanie-suvenirov', 'podarochnye-nabory-s-logotipom']
+    relatedSlugs: ['kak-podgotovit-maket-logotipa', 'brendirovanie-suvenirov', 'podarochnye-nabory-s-logotipom'],
+    faq: [
+      { q: 'Какие материалы лучше всего подходят для лазерной гравировки?', a: 'Наиболее предсказуемый результат получается на металле, дереве, коже и стекле. Для каждого материала подбираются отдельные параметры мощности и скорости.' },
+      { q: 'Нужен ли векторный макет?', a: 'Да, для стабильного качества лучше использовать векторные форматы. Если есть только растр, сначала выполняют подготовку и упрощение контуров.' },
+      { q: 'Можно ли сделать персонализацию в одном тираже?', a: 'Да, можно добавить имена, должности или короткие надписи для каждого изделия в рамках одного проекта.' }
+    ]
   },
 
-  // 3. podarochnye-nabory-s-logotipom — title OK
+  // 3. podarochnye-nabory-s-logotipom — Phase 1
   'podarochnye-nabory-s-logotipom': {
+    title: 'Подарочные наборы с логотипом: как собрать под бюджет — Graver.uz',
+    description: 'Готовая схема сборки корпоративных подарочных наборов: состав, упаковка, уровни бюджета и контроль сроков.',
+    ogTitle: 'Подарочные наборы с логотипом для сотрудников и клиентов',
+    ogDescription: 'Как собрать набор, который выглядит дороже своей стоимости и усиливает бренд компании.',
     quickAnswer: 'Быстрый ответ: набор продаёт сильнее одиночного сувенира — единая упаковка и 2–4 полезных предмета с брендингом.',
-    relatedSlugs: ['kak-vybrat-korporativnyj-podarok', 'welcome-pack-dlya-sotrudnikov', 'brendirovanie-suvenirov']
+    relatedSlugs: ['kak-vybrat-korporativnyj-podarok', 'welcome-pack-dlya-sotrudnikov', 'brendirovanie-suvenirov'],
+    faq: [
+      { q: 'Сколько предметов оптимально для корпоративного набора?', a: 'Обычно 3-4 предмета достаточно, чтобы набор выглядел цельно и полезно. Избыточная комплектация часто увеличивает бюджет без заметного эффекта.' },
+      { q: 'Как выбрать упаковку под разные сегменты?', a: 'Для массовых тиражей подходит плотный картон, для ключевых клиентов — жёсткая коробка или шкатулка с брендированием.' },
+      { q: 'Нужна ли персонализация внутри набора?', a: 'Да, персонализация повышает ценность. Обычно персонализируют один предмет, чтобы не раздувать сроки и стоимость.' }
+    ]
   },
 
   // 4. welcome-pack-dlya-sotrudnikov — title too long
@@ -32,11 +59,20 @@ export const blogSeoOverrides = {
     relatedSlugs: ['podarochnye-nabory-s-logotipom', 'kak-vybrat-korporativnyj-podarok', 'brendirovanie-suvenirov']
   },
 
-  // 5. brendirovanie-suvenirov — title too long
+  // 5. brendirovanie-suvenirov — Phase 1
   'brendirovanie-suvenirov': {
+    title: 'Брендирование сувениров: методы нанесения и выбор материала — Graver.uz',
+    description: 'Сравнение методов брендирования сувениров для B2B: гравировка, печать, УФ-нанесение, тиснение и критерии выбора.',
+    ogTitle: 'Брендирование сувениров: какой метод выбрать бизнесу',
+    ogDescription: 'Объясняем, какой способ нанесения логотипа выбрать по материалу, тиражу и требуемому ресурсу.',
     titleTag: 'Брендирование сувениров: методы и материалы — Graver.uz',
     quickAnswer: 'Быстрый ответ: метод брендирования выбирают по материалу и тиражу. Гравировка, печать и УФ-нанесение дают разный эффект и стойкость.',
-    relatedSlugs: ['lazernaya-gravirovka-podarkov', 'kak-podgotovit-maket-logotipa', 'podarochnye-nabory-s-logotipom']
+    relatedSlugs: ['lazernaya-gravirovka-podarkov', 'kak-podgotovit-maket-logotipa', 'podarochnye-nabory-s-logotipom'],
+    faq: [
+      { q: 'Как выбрать метод брендирования под материал?', a: 'Для металла и дерева часто выбирают гравировку, для пластика и цветной графики — печатные технологии. Ключевой критерий — сочетание стойкости и визуального эффекта.' },
+      { q: 'Что влияет на итоговую стоимость нанесения?', a: 'Стоимость зависит от тиража, размера зоны нанесения, числа цветов и сложности подготовки макета.' },
+      { q: 'Можно ли сначала сделать тестовый образец?', a: 'Да, тестовый образец позволяет проверить читаемость, цвет и качество нанесения до запуска партии.' }
+    ]
   },
 
   // 6. top-idei-podarkov-na-novyj-god — title too long
@@ -67,10 +103,19 @@ export const blogSeoOverrides = {
     relatedSlugs: ['chek-list-zakupshchika-podarkov', 'kak-vybrat-korporativnyj-podarok', 'podarochnye-nabory-s-logotipom']
   },
 
-  // 10. chek-list-zakupshchika-podarkov — title OK
+  // 10. chek-list-zakupshchika-podarkov — Phase 1
   'chek-list-zakupshchika-podarkov': {
+    title: 'Чек-лист закупщика корпоративных подарков: от брифа до приёмки — Graver.uz',
+    description: 'Пошаговый чек-лист закупки корпоративных подарков: планирование, тендер, согласование макета, производство и контроль качества.',
+    ogTitle: 'Чек-лист закупки корпоративных подарков для HR и Procurement',
+    ogDescription: 'Готовый процесс закупки корпоративных подарков без срывов сроков и перерасхода бюджета.',
     quickAnswer: 'Быстрый ответ: чек-лист закупки — цели → бюджет → получатели → изделия → макеты → согласование → производство → приёмка.',
-    relatedSlugs: ['kak-vybrat-korporativnyj-podarok', 'brendirovanie-suvenirov', 'ekonomiya-na-korporativnyh-suvenirax']
+    relatedSlugs: ['kak-vybrat-korporativnyj-podarok', 'brendirovanie-suvenirov', 'ekonomiya-na-korporativnyh-suvenirax'],
+    faq: [
+      { q: 'Когда запускать закупку корпоративных подарков?', a: 'Оптимально начинать за 6-10 недель до даты вручения, чтобы пройти согласования и избежать срочных наценок.' },
+      { q: 'Какие документы важно зафиксировать?', a: 'Ключевые документы: бриф, спецификация, согласованный макет, график этапов и критерии приёмки.' },
+      { q: 'Как снизить риск срыва сроков?', a: 'Закладывайте буфер, утверждайте образец до тиража и фиксируйте контрольные точки по производству и логистике.' }
+    ]
   }
 };
 
@@ -156,6 +201,9 @@ export const blogFaqData = {
  * @returns {array|null} FAQ items or null
  */
 export function getFaqData(slug) {
+  if (blogSeoOverrides[slug] && Array.isArray(blogSeoOverrides[slug].faq)) {
+    return blogSeoOverrides[slug].faq;
+  }
   return blogFaqData[slug] || null;
 }
 
