@@ -25,11 +25,14 @@ if (!fs.existsSync(buildDir)) {
   process.exit(0);
 }
 
+if (!isPreviewEnv) {
+  console.log('[postbuild] Production build: keep robots index/follow (skip noindex rewrite).');
+  process.exit(0);
+}
+
 const targets = [];
-if (isPreviewEnv) {
+if (fs.existsSync(buildIndexPath)) {
   collectHtmlFiles(buildDir, targets);
-} else if (fs.existsSync(buildIndexPath)) {
-  targets.push(buildIndexPath);
 } else {
   console.log("[postbuild] build/index.html not found, skipping.");
   process.exit(0);
@@ -50,6 +53,5 @@ targets.forEach((filePath) => {
 if (updatedCount === 0) {
   console.log("[postbuild] noindex already set.");
 } else {
-  const scope = isPreviewEnv ? 'all build HTML' : 'build/index.html';
-  console.log(`[postbuild] Set noindex on ${scope}.`);
+  console.log('[postbuild] Set noindex on all build HTML (preview).');
 }
