@@ -6,4 +6,4 @@ Disallow: /ru/thanks
 Disallow: /uz/thanks
 Disallow: /api/
 
-Sitemap: https://www.graver-studio.uz/sitemap.xml
+Sitemap: https://graver-studio.uz/sitemap.xml
