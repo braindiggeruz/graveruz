@@ -3,6 +3,8 @@
  * Structure: RU and UZ versions with cross-linking
  */
 
+import { getMappedAlternateSlug } from '../config/blogSlugMap.js';
+
 export const blogPosts = {
   ru: [
     {
@@ -3355,57 +3357,8 @@ export function getPostBySlug(locale, slug) {
   return posts.find(p => p.slug === slug) || null;
 }
 
-/**
- * Check if a post has a counterpart in another locale
- */
-const slugMapping = {
-  // RU -> UZ
-  'kak-vybrat-korporativnyj-podarok': 'korporativ-sovgani-qanday-tanlash',
-  'lazernaya-gravirovka-podarkov': 'lazer-gravirovka-sovgalar',
-  'podarochnye-nabory-s-logotipom': 'logotipli-sovga-toplami',
-  'welcome-pack-dlya-sotrudnikov': 'welcome-pack-yangi-xodimlar',
-  'brendirovanie-suvenirov': 'suvenir-brendlash',
-  'top-idei-podarkov-na-novyj-god': 'yangi-yil-sovga-goyalari',
-  'kak-podgotovit-maket-logotipa': 'logotip-maketi-tayyorlash',
-  'podarki-na-navruz': 'navruz-sovgalari',
-  'ekonomiya-na-korporativnyh-suvenirax': 'suvenir-byudjetini-tejash',
-  'chek-list-zakupshchika-podarkov': 'xaridor-chek-listi-b2b',
-  // UZ -> RU
-  'korporativ-sovgani-qanday-tanlash': 'kak-vybrat-korporativnyj-podarok',
-  'lazer-gravirovka-sovgalar': 'lazernaya-gravirovka-podarkov',
-  'logotipli-sovga-toplami': 'podarochnye-nabory-s-logotipom',
-  'welcome-pack-yangi-xodimlar': 'welcome-pack-dlya-sotrudnikov',
-  'suvenir-brendlash': 'brendirovanie-suvenirov',
-  'yangi-yil-sovga-goyalari': 'top-idei-podarkov-na-novyj-god',
-  'logotip-maketi-tayyorlash': 'kak-podgotovit-maket-logotipa',
-  'navruz-sovgalari': 'podarki-na-navruz',
-  'suvenir-byudjetini-tejash': 'ekonomiya-na-korporativnyh-suvenirax',
-  'xaridor-chek-listi-b2b': 'chek-list-zakupshchika-podarkov',
-
-  'korporativnye-podarki-s-logotipom-polnyy-gayd': 'korporativ-sovgalar-logotip-bilan-to-liq-qollanma',
-  'korporativnye-podarki-s-gravirovkoy-metody': 'korporativ-sovgalar-gravyurasi-usullari',
-  'lazernaya-gravirovka-podarkov-tehnologiya': 'lazer-gravyurasi-texnologiyasi',
-  'merch-dlya-kompanii-brendirovanie': 'kompaniya-merchi-brendlash',
-  'podarki-sotrudnikam-hr-gayd': 'xodimlar-uchun-sovgalar-hr-qollanma',
-  'podarki-klientam-partneram-vip': 'mijoz-hamkorlar-uchun-sovgalar-vip',
-  'brendirovannye-zazhigalki-i-chasy-s-logotipom': 'logotipli-zajigalka-va-soat',
-  'korporativnye-podarochnye-nabory': 'korporativ-sovga-toplamlari',
-  'korporativnye-podarki-na-navruz': 'navruz-uchun-korporativ-sovgalar',
-  'welcome-pack-novym-sotrudnikam': 'yangi-xodimlar-uchun-welcome-pack',
-  'korporativ-sovgalar-logotip-bilan-to-liq-qollanma': 'korporativnye-podarki-s-logotipom-polnyy-gayd',
-  'korporativ-sovgalar-gravyurasi-usullari': 'korporativnye-podarki-s-gravirovkoy-metody',
-  'lazer-gravyurasi-texnologiyasi': 'lazernaya-gravirovka-podarkov-tehnologiya',
-  'kompaniya-merchi-brendlash': 'merch-dlya-kompanii-brendirovanie',
-  'xodimlar-uchun-sovgalar-hr-qollanma': 'podarki-sotrudnikam-hr-gayd',
-  'mijoz-hamkorlar-uchun-sovgalar-vip': 'podarki-klientam-partneram-vip',
-  'logotipli-zajigalka-va-soat': 'brendirovannye-zazhigalki-i-chasy-s-logotipom',
-  'korporativ-sovga-toplamlari': 'korporativnye-podarochnye-nabory',
-  'navruz-uchun-korporativ-sovgalar': 'korporativnye-podarki-na-navruz',
-  'yangi-xodimlar-uchun-welcome-pack': 'welcome-pack-novym-sotrudnikam',
-};
-
 export function getAlternateSlug(slug) {
-  return slugMapping[slug] || null;
+  return getMappedAlternateSlug('ru', slug) || getMappedAlternateSlug('uz', slug) || null;
 }
 
 /**

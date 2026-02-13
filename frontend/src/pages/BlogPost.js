@@ -3,8 +3,9 @@ import { Link, useParams, Navigate } from 'react-router-dom';
 import SeoMeta from '../components/SeoMeta';
 import { ArrowLeft, Calendar, Tag, Lightbulb, BookOpen, HelpCircle } from 'lucide-react';
 import { BASE_URL } from '../config/seo';
-import { getPostBySlug, getAlternateSlug, getPostsByLocale } from '../data/blogPosts';
+import { getPostBySlug, getPostsByLocale } from '../data/blogPosts';
 import { getSeoOverride, getFaqData } from '../data/blogSeoOverrides';
+import { getMappedAlternateSlug } from '../config/blogSlugMap';
 
 function normalizeBlogHref(href, locale) {
   if (!href || typeof href !== 'string') return href;
@@ -63,7 +64,7 @@ function BlogPostPage() {
   const faqData = (getFaqData(slug) || []).filter(isValidFaqItem);
 
   const canonicalUrl = post ? BASE_URL + '/' + locale + '/blog/' + slug : '';
-  const altSlug = slug ? getAlternateSlug(slug) : null;
+  const altSlug = slug ? getMappedAlternateSlug(locale, slug) : null;
   const altLocale = isRu ? 'uz' : 'ru';
   const altUrl = altSlug ? BASE_URL + '/' + altLocale + '/blog/' + altSlug : null;
   const ruUrl = isRu ? canonicalUrl : altUrl;
