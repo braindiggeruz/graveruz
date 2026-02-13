@@ -3,4 +3,4 @@
 /static/*        /static/:splat 200
 /ru/*           /200.html 200
 /uz/*           /200.html 200
-/*               /index.html 200
+/               /index.html 200
