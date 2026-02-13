@@ -3,7 +3,7 @@ import { Link, useParams, Navigate } from 'react-router-dom';
 import SeoMeta from '../components/SeoMeta';
 import { ArrowLeft, Calendar, Tag, Lightbulb, BookOpen, HelpCircle } from 'lucide-react';
 import { BASE_URL } from '../config/seo';
-import { getPostBySlug, getAlternateSlug, blogPosts } from '../data/blogPosts';
+import { getPostBySlug, getAlternateSlug, getPostsByLocale } from '../data/blogPosts';
 import { getSeoOverride, getFaqData } from '../data/blogSeoOverrides';
 
 function BlogPostPage() {
@@ -121,6 +121,42 @@ function BlogPostPage() {
     .map(function(s) { return getPostBySlug(locale, s); })
     .filter(Boolean);
 
+  var allPosts = getPostsByLocale(locale)
+    .filter(function(p) { return p.slug !== slug; });
+
+  var recommendedPosts = relatedPosts.slice(0);
+  if (recommendedPosts.length < 3) {
+    allPosts.forEach(function(p) {
+      if (recommendedPosts.length >= 5) return;
+      if (!recommendedPosts.some(function(rp) { return rp.slug === p.slug; })) {
+        recommendedPosts.push(p);
+      }
+    });
+  } else {
+    recommendedPosts = recommendedPosts.slice(0, 5);
+  }
+
+  var moneyLinks = isRu ? [
+    { href: '/' + locale + '/catalog-products', label: 'Каталог продукции' },
+    { href: '/' + locale + '/engraved-gifts', label: 'Подарки с гравировкой' },
+    { href: '/' + locale + '/products/lighters', label: 'Зажигалки с гравировкой' }
+  ] : [
+    { href: '/' + locale + '/mahsulotlar-katalogi', label: 'Mahsulotlar katalogi' },
+    { href: '/' + locale + '/gravirovkali-sovgalar', label: "Gravirovkali sovg'alar" },
+    { href: '/' + locale + '/products/lighters', label: 'Zajigalkalar' }
+  ];
+
+  var utilityLinks = [
+    { href: '/' + locale + '/process', label: isRu ? 'Процесс' : 'Jarayon' },
+    { href: '/' + locale + '/guarantees', label: isRu ? 'Гарантии' : 'Kafolatlar' },
+    { href: '/' + locale + '/contacts', label: isRu ? 'Контакты' : 'Kontaktlar' }
+  ];
+
+  var hubLink = {
+    href: '/' + locale + '/blog',
+    label: isRu ? 'Все статьи блога' : 'Blogdagi barcha maqolalar'
+  };
+
   var contentBody = null;
   if (post && post.contentHtml) {
     contentBody = React.createElement('div', { dangerouslySetInnerHTML: { __html: post.contentHtml } });
@@ -215,7 +251,7 @@ function BlogPostPage() {
         ),
         React.createElement('div', { className: 'prose prose-invert max-w-none' }, contentBody),
         // Related Articles Section (if exists)
-        relatedPosts.length > 0 && React.createElement('div', { 
+        recommendedPosts.length > 0 && React.createElement('div', { 
           className: 'mt-12 p-6 bg-gray-900/50 border border-gray-800 rounded-xl',
           'data-testid': 'related-articles-section'
         },
@@ -224,13 +260,48 @@ function BlogPostPage() {
             isRu ? 'Рекомендуем прочитать' : "Tavsiya etamiz"
           ),
           React.createElement('div', { className: 'space-y-3' },
-            relatedPosts.map(function(rp, idx) {
+            recommendedPosts.map(function(rp, idx) {
               return React.createElement(Link, { 
                 key: idx, 
                 to: '/' + locale + '/blog/' + rp.slug, 
                 className: 'block text-teal-400 hover:text-teal-300 transition hover:underline'
               }, '→ ' + rp.title);
             })
+          )
+        ),
+        React.createElement('div', {
+          className: 'mt-6 p-6 bg-gray-900 border border-gray-800 rounded-xl',
+          'data-testid': 'internal-links-section'
+        },
+          React.createElement('h3', { className: 'text-lg font-bold text-white mb-4' }, isRu ? 'Полезные ссылки' : 'Foydali havolalar'),
+          React.createElement('div', { className: 'grid grid-cols-1 md:grid-cols-3 gap-4' },
+            React.createElement('div', null,
+              React.createElement('p', { className: 'text-xs text-gray-500 mb-2' }, isRu ? 'Каталог и услуги' : 'Katalog va xizmatlar'),
+              moneyLinks.map(function(link, idx) {
+                return React.createElement(Link, {
+                  key: 'money-' + idx,
+                  to: link.href,
+                  className: 'block text-teal-400 hover:text-teal-300 transition hover:underline text-sm'
+                }, '→ ' + link.label);
+              })
+            ),
+            React.createElement('div', null,
+              React.createElement('p', { className: 'text-xs text-gray-500 mb-2' }, isRu ? 'Процесс и контакты' : "Jarayon va kontaktlar"),
+              utilityLinks.map(function(link, idx) {
+                return React.createElement(Link, {
+                  key: 'util-' + idx,
+                  to: link.href,
+                  className: 'block text-teal-400 hover:text-teal-300 transition hover:underline text-sm'
+                }, '→ ' + link.label);
+              })
+            ),
+            React.createElement('div', null,
+              React.createElement('p', { className: 'text-xs text-gray-500 mb-2' }, isRu ? 'Хаб' : 'Xab'),
+              React.createElement(Link, {
+                to: hubLink.href,
+                className: 'block text-teal-400 hover:text-teal-300 transition hover:underline text-sm'
+              }, '→ ' + hubLink.label)
+            )
           )
         ),
         // FAQ Section (P1.2 - Visual display for users)

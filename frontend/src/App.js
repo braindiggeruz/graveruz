@@ -50,6 +50,7 @@ function App() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [phoneError, setPhoneError] = useState('');
   const [lastSubmitTime, setLastSubmitTime] = useState(0);
+  const faqItems = Array.isArray(t('faq.items')) ? t('faq.items') : [];
 
   const portfolioItems = [
     {
@@ -803,8 +804,8 @@ function App() {
                 <div className="aspect-square overflow-hidden bg-gray-800">
                   <picture>
                     <source srcSet={item.image} type="image/webp" />
-                    <img 
-                      src={item.imageFallback} 
+                    <img
+                      src={item.imageFallback}
                       alt={item.alt || item.title}
                       loading="lazy"
                       width={item.width}
@@ -831,7 +832,7 @@ function App() {
                     <div><span className="text-gray-500">{t('portfolio.material')}:</span> {t(`portfolio.items.${item.id}.material`)}</div>
                     <div><span className="text-gray-500">{t('portfolio.application')}:</span> {t(`portfolio.items.${item.id}.application`)}</div>
                   </div>
-                  <button 
+                  <button
                     onClick={() => scrollToSection('contact')}
                     className="inline-flex items-center mt-4 text-teal-500 hover:text-teal-400 font-semibold text-sm group/link"
                     data-testid={`portfolio-cta-${index + 1}`}
@@ -1284,7 +1285,7 @@ function App() {
           </div>
 
           <div className="mt-12 text-center">
-            <p className="text-gray-400 mb-4">Не нашли ответ на свой вопрос?</p>
+            <p className="text-gray-400 mb-4">{t('faq.notFound')}</p>
             <a
               href="https://t.me/GraverAdm" data-track="tg"
               target="_blank"
@@ -1293,7 +1294,7 @@ function App() {
               data-testid="faq-contact-cta"
             >
               <MessageCircle className="mr-2" size={20} />
-              Задать вопрос в Telegram
+              {t('faq.askTelegram')}
             </a>
           </div>
         </div>

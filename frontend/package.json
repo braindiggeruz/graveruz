@@ -59,7 +59,7 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "postbuild": "react-snap && node scripts/postbuild-root-noindex.js && node scripts/postbuild-build-stamp.js",
+    "postbuild": "react-snap && node scripts/postbuild-root-noindex.js && node scripts/postbuild-build-stamp.js && node scripts/postbuild-sitemap.js",
     "test": "craco test",
     "verify:prod": "node scripts/verify-prod.mjs"
   },
