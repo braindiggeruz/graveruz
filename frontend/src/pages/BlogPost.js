@@ -6,6 +6,14 @@ import { BASE_URL } from '../config/seo';
 import { getPostBySlug, getAlternateSlug, getPostsByLocale } from '../data/blogPosts';
 import { getSeoOverride, getFaqData } from '../data/blogSeoOverrides';
 
+const PHASE1_RU_SLUGS = new Set([
+  'kak-vybrat-korporativnyj-podarok',
+  'lazernaya-gravirovka-podarkov',
+  'podarochnye-nabory-s-logotipom',
+  'brendirovanie-suvenirov',
+  'chek-list-zakupshchika-podarkov'
+]);
+
 function BlogPostPage() {
   const params = useParams();
   const locale = params.locale || 'ru';
@@ -17,6 +25,7 @@ function BlogPostPage() {
   const seoOverride = getSeoOverride(locale, slug);
   // Get FAQ data for FAQPage Schema
   const faqData = getFaqData(slug);
+  const isPhase1RuPost = locale === 'ru' && PHASE1_RU_SLUGS.has(slug);
 
   const canonicalUrl = post ? BASE_URL + '/' + locale + '/blog/' + slug : '';
   const altSlug = slug ? getAlternateSlug(slug) : null;
@@ -26,12 +35,19 @@ function BlogPostPage() {
   const uzUrl = isRu ? altUrl : canonicalUrl;
 
   // Determine title: use override if exists, otherwise default
-  const pageTitle = (seoOverride && seoOverride.titleTag) || (post ? post.title + ' — Graver.uz' : 'Graver.uz');
+  const pageTitle = (seoOverride && (seoOverride.title || seoOverride.titleTag)) || (post ? post.title + ' — Graver.uz' : 'Graver.uz');
+  const pageDescription = (seoOverride && (seoOverride.description || seoOverride.ogDescription)) || (post ? post.description : '');
 
   useEffect(function addSeoTags() {
     if (!post) return;
     var oldTags = document.querySelectorAll('[data-seo-blog]');
     oldTags.forEach(function(el) { el.remove(); });
+
+    if (!isPhase1RuPost) {
+      return function cleanup() {
+        document.querySelectorAll('[data-seo-blog]').forEach(function(el) { el.remove(); });
+      };
+    }
 
     // Inject Article JSON-LD
     var articleLd = document.createElement('script');
@@ -40,11 +56,8 @@ function BlogPostPage() {
     articleLd.textContent = JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Article",
-      headline: post.title,
-      description: post.description,
-      image: BASE_URL + '/og-blog.png',
-      datePublished: post.date,
-      dateModified: post.date,
+      headline: (seoOverride && (seoOverride.ogTitle || seoOverride.title || seoOverride.titleTag)) || post.title,
+      description: (seoOverride && (seoOverride.ogDescription || seoOverride.description)) || post.description,
       url: canonicalUrl,
       mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
       inLanguage: locale === 'ru' ? "ru" : "uz"
@@ -93,7 +106,7 @@ function BlogPostPage() {
     return function cleanup() {
       document.querySelectorAll('[data-seo-blog]').forEach(function(el) { el.remove(); });
     };
-  }, [post, canonicalUrl, locale, slug]);
+  }, [post, canonicalUrl, locale, slug, isPhase1RuPost, seoOverride]);
 
   if (!post) {
     return React.createElement(Navigate, { to: '/' + locale + '/blog', replace: true });
@@ -181,7 +194,7 @@ function BlogPostPage() {
   return React.createElement('div', { className: 'min-h-screen bg-black text-white' },
     React.createElement(SeoMeta, {
       title: pageTitle,
-      description: post.description,
+      description: pageDescription,
       canonicalUrl: canonicalUrl,
       ruUrl: ruUrl,
       uzUrl: uzUrl,
