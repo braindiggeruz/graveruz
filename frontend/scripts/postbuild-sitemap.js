@@ -2,7 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const { pathToFileURL } = require('url');
 
-const baseUrl = process.env.REACT_APP_BASE_URL || 'https://graver-studio.uz';
+const rawBaseUrl = process.env.REACT_APP_BASE_URL || 'https://graver-studio.uz';
+const baseUrl = rawBaseUrl.replace(/\/+$/, '');
 const buildDir = path.resolve(__dirname, '..', 'build');
 const publicDir = path.resolve(__dirname, '..', 'public');
 

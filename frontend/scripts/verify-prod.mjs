@@ -1,4 +1,4 @@
-const BASE_URL = 'https://graver-studio.uz';
+const BASE_URL = 'https://graver-studio.uz'.replace(/\/+$/, '');
 const urls = [
   `${BASE_URL}/ru/?v=${Date.now()}`,
   `${BASE_URL}/uz/?v=${Date.now()}`,
