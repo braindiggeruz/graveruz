@@ -17,6 +17,7 @@ type Env = {
 const BLOG_PREFIXES = ['/ru/blog', '/uz/blog'];
 const RATE_WINDOW_MS = 60_000;
 const rateBuckets = new Map<string, { count: number; windowStart: number }>();
+const inflightRenders = new Map<string, Promise<Response>>();
 
 function isBlogPath(pathname: string): boolean {
   return BLOG_PREFIXES.some((prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`));
@@ -184,9 +185,10 @@ async function tryRenderHtml(publicUrl: URL, env: Env): Promise<string> {
   throw wrapped;
 }
 
-function classifyPrerenderReason(error: unknown): 'timeout' | 'binding' | 'nav' | 'content' | 'unknown' {
+function classifyPrerenderReason(error: unknown): 'rate_limit' | 'timeout' | 'binding' | 'nav' | 'content' | 'unknown' {
   const message = error instanceof Error ? error.message : String(error);
   const text = (message || '').toLowerCase();
+  if (text.includes('429') || text.includes('rate limit')) return 'rate_limit';
   if (text.includes('timeout')) return 'timeout';
   if (text.includes('binding') || text.includes('browser')) return 'binding';
   if (text.includes('navigation') || text.includes('nav')) return 'nav';
@@ -197,7 +199,7 @@ function classifyPrerenderReason(error: unknown): 'timeout' | 'binding' | 'nav' 
 async function fetchOrigin(
   request: Request,
   withErrorFlag = false,
-  reasonCode?: 'timeout' | 'binding' | 'nav' | 'content' | 'unknown',
+  reasonCode?: 'rate_limit' | 'timeout' | 'binding' | 'nav' | 'content' | 'unknown',
 ): Promise<Response> {
   const originResponse = await fetch(request);
   if (!withErrorFlag) {
@@ -208,6 +210,9 @@ async function fetchOrigin(
   };
   if (reasonCode) {
     extraHeaders['x-prerender-error-reason'] = reasonCode;
+    if (reasonCode === 'rate_limit') {
+      extraHeaders['retry-after'] = '60';
+    }
   }
   const headers = copyHeadersWith(originResponse.headers, extraHeaders);
   return new Response(originResponse.body, {
@@ -260,41 +265,66 @@ export default {
     const publicUrl = normalizePublicUrl(incomingUrl);
     const cache = (caches as unknown as { default: Cache }).default;
     const cacheKey = makeCacheKey(publicUrl);
+    const inflightKey = cacheKey.url;
 
     const cached = await cache.match(cacheKey);
     if (cached) {
       return withPrerenderHeaders(cached, 'HIT');
     }
 
-    try {
-      const html = await tryRenderHtml(publicUrl, env);
-      const ttl = toInt(env.CACHE_TTL_SECONDS, 3600);
+    const existingInflight = inflightRenders.get(inflightKey);
+    if (existingInflight) {
+      const inflightResponse = await existingInflight;
+      return inflightResponse.clone();
+    }
 
-      const prerendered = new Response(html, {
-        status: 200,
-        headers: {
-          'content-type': 'text/html; charset=utf-8',
-          'cache-control': `public, max-age=0, s-maxage=${ttl}`,
-          'x-prerender': '1',
-          'x-prerender-cache': 'MISS',
-        },
-      });
+    const renderPromise = (async (): Promise<Response> => {
+      try {
+        const html = await tryRenderHtml(publicUrl, env);
+        const ttl = toInt(env.CACHE_TTL_SECONDS, 3600);
 
-      if (shouldCachePrerenderResponse(prerendered)) {
-        ctx.waitUntil(cache.put(cacheKey, prerendered.clone()));
+        const prerendered = new Response(html, {
+          status: 200,
+          headers: {
+            'content-type': 'text/html; charset=utf-8',
+            'cache-control': `public, max-age=0, s-maxage=${ttl}`,
+            'x-prerender': '1',
+            'x-prerender-cache': 'MISS',
+          },
+        });
+
+        if (shouldCachePrerenderResponse(prerendered)) {
+          ctx.waitUntil(cache.put(cacheKey, prerendered.clone()));
+        }
+        return prerendered;
+      } catch (error) {
+        const reasonCode = classifyPrerenderReason(error);
+        const errorObj = error as Error & { candidate?: string };
+        const candidate = errorObj?.candidate;
+        console.error('prerender_failed', {
+          url: request.url,
+          candidate,
+          err: errorObj?.message ?? String(error),
+          stack: errorObj?.stack,
+        });
+
+        if (reasonCode === 'rate_limit') {
+          const fallbackCached = await cache.match(cacheKey);
+          if (fallbackCached) {
+            return withPrerenderHeaders(fallbackCached, 'HIT');
+          }
+        }
+
+        return fetchOrigin(request, true, reasonCode);
       }
-      return prerendered;
-    } catch (error) {
-      const reasonCode = classifyPrerenderReason(error);
-      const errorObj = error as Error & { candidate?: string };
-      const candidate = errorObj?.candidate;
-      console.error('prerender_failed', {
-        url: request.url,
-        candidate,
-        err: errorObj?.message ?? String(error),
-        stack: errorObj?.stack,
-      });
-      return fetchOrigin(request, true, reasonCode);
+    })();
+
+    inflightRenders.set(inflightKey, renderPromise);
+    try {
+      const response = await renderPromise;
+      return response.clone();
+    } finally {
+      inflightRenders.delete(inflightKey);
     }
   },
 };
