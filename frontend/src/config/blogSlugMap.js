@@ -19,7 +19,12 @@ export const BLOG_SLUG_MAP = {
     'korporativnye-podarki-na-navruz': 'navruz-uchun-korporativ-sovgalar',
     'welcome-pack-novym-sotrudnikam': 'yangi-xodimlar-uchun-welcome-pack',
     'kak-podgotovit-maket-logotipa': 'logotip-maketi-tayyorlash',
-    'welcome-pack-dlya-sotrudnikov': 'welcome-pack-yangi-xodimlar'
+    'welcome-pack-dlya-sotrudnikov': 'welcome-pack-yangi-xodimlar',
+    'merch-dlya-it-kompaniy-tashkent': 'merch-dlya-it-kompaniy-tashkent',
+    'podarki-dlya-bankov-i-finteha-tashkent': 'podarki-dlya-bankov-i-finteha-tashkent',
+    'chasy-s-logotipom-korporativnye-podarki-tashkent': 'chasy-s-logotipom-korporativnye-podarki-tashkent',
+    'podarki-na-korporativnye-sobytiya-tashkent': 'podarki-na-korporativnye-sobytiya-tashkent',
+    'podarki-dlya-horeca-i-restoranov-tashkent': 'podarki-dlya-horeca-i-restoranov-tashkent'
   },
   uz: {
     'korporativ-sovgani-qanday-tanlash': 'kak-vybrat-korporativnyj-podarok',
@@ -41,7 +46,12 @@ export const BLOG_SLUG_MAP = {
     'navruz-uchun-korporativ-sovgalar': 'korporativnye-podarki-na-navruz',
     'yangi-xodimlar-uchun-welcome-pack': 'welcome-pack-novym-sotrudnikam',
     'logotip-maketi-tayyorlash': 'kak-podgotovit-maket-logotipa',
-    'welcome-pack-yangi-xodimlar': 'welcome-pack-dlya-sotrudnikov'
+    'welcome-pack-yangi-xodimlar': 'welcome-pack-dlya-sotrudnikov',
+    'merch-dlya-it-kompaniy-tashkent': 'merch-dlya-it-kompaniy-tashkent',
+    'podarki-dlya-bankov-i-finteha-tashkent': 'podarki-dlya-bankov-i-finteha-tashkent',
+    'chasy-s-logotipom-korporativnye-podarki-tashkent': 'chasy-s-logotipom-korporativnye-podarki-tashkent',
+    'podarki-na-korporativnye-sobytiya-tashkent': 'podarki-na-korporativnye-sobytiya-tashkent',
+    'podarki-dlya-horeca-i-restoranov-tashkent': 'podarki-dlya-horeca-i-restoranov-tashkent'
   }
 };
 

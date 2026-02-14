@@ -387,6 +387,87 @@ export const blogPosts = {
 <p><strong>Нужна помощь с подбором и запуском?</strong> Оставьте заявку через раздел контактов — команда подготовит рабочий план под ваш тираж.</p>
 <h2>Related articles</h2>
 <ul><li><a href="/ru/blog/podarki-sotrudnikam-hr-gayd">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/welcome-pack-dlya-sotrudnikov">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/kak-vybrat-korporativnyj-podarok">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/lazernaya-gravirovka-podarkov">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/podarochnye-nabory-s-logotipom">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/brendirovanie-suvenirov">Смотрите также: связанный материал</a></li></ul>`}
+    ,
+    {
+      slug: "merch-dlya-it-kompaniy-tashkent",
+      title: "Мерч для IT-компаний в Ташкенте: как выделиться и усилить HR-бренд",
+      description: "Премиальный мерч для IT-компаний в Ташкенте: худи, powerbank, welcome pack и аксессуары с лазерной гравировкой. Макет до производства.",
+      date: "2026-02-14",
+      keywords: ["мерч для IT-компаний", "корпоративный мерч", "HR-бренд", "welcome pack", "Ташкент"],
+      category: "Pillar",
+      relatedPosts: ['podarki-dlya-bankov-i-finteha-tashkent', 'podarki-na-korporativnye-sobytiya-tashkent', 'welcome-pack-novym-sotrudnikam', 'chasy-s-logotipom-korporativnye-podarki-tashkent', 'podarki-dlya-horeca-i-restoranov-tashkent', 'lazernaya-gravirovka-podarkov'],
+      contentHtml: `<p>В IT-сфере мерч давно стал частью бренда работодателя и точкой контакта с командой. Правильно собранный набор повышает узнаваемость и поддерживает лояльность сотрудников.</p>
+<h2>Что включить в набор</h2>
+<ul><li>Практичные позиции: худи, термокружка, powerbank, блокнот</li><li>Единый визуальный стиль по брендбуку</li><li>Именная персонализация для ключевых сотрудников</li></ul>
+<h2>Как запустить без лишних рисков</h2>
+<ol><li>Согласовать цели и бюджет на получателя</li><li>Подготовить макет и тестовый образец</li><li>Утвердить тираж, упаковку и сценарий выдачи</li></ol>
+<p><strong>Нужен каталог идей под ваш бюджет?</strong> Оставьте заявку и команда подберёт IT-мерч под задачи найма и удержания.</p>
+<h2>Related articles</h2>
+<ul><li><a href="/ru/blog/podarki-dlya-bankov-i-finteha-tashkent">Корпоративные подарки для банков и финтеха</a></li><li><a href="/ru/blog/podarki-na-korporativnye-sobytiya-tashkent">Подарки на корпоративные события</a></li><li><a href="/ru/blog/welcome-pack-novym-sotrudnikam">Welcome pack для новых сотрудников</a></li><li><a href="/ru/blog/chasy-s-logotipom-korporativnye-podarki-tashkent">Часы с логотипом как премиальный подарок</a></li><li><a href="/ru/blog/podarki-dlya-horeca-i-restoranov-tashkent">Подарки и мерч для HoReCa</a></li><li><a href="/ru/blog/lazernaya-gravirovka-podarkov">Лазерная гравировка подарков</a></li></ul>`},
+    {
+      slug: "podarki-dlya-bankov-i-finteha-tashkent",
+      title: "Корпоративные подарки для банков и финтеха в Ташкенте: VIP и статус",
+      description: "Премиальные корпоративные подарки для банков и финтех-компаний в Ташкенте: VIP-наборы, Parker, кожаные изделия с гравировкой. Макет до производства.",
+      date: "2026-02-14",
+      keywords: ["подарки для банков", "финтех", "VIP подарки", "корпоративные подарки", "Ташкент"],
+      category: "Pillar",
+      relatedPosts: ['podarki-klientam-partneram-vip', 'kak-podgotovit-maket-logotipa', 'merch-dlya-it-kompaniy-tashkent', 'chasy-s-logotipom-korporativnye-podarki-tashkent', 'podarki-na-korporativnye-sobytiya-tashkent', 'podarki-dlya-horeca-i-restoranov-tashkent'],
+      contentHtml: `<p>Для банков и финтеха подарок — это инструмент доверия и долгосрочных отношений. В этом сегменте особенно важны статус, качество исполнения и персонализация.</p>
+<h2>Что работает лучше всего</h2>
+<ul><li>VIP-наборы: ручки, ежедневники, кожаные аксессуары</li><li>Точечная персонализация под получателя</li><li>Премиальная упаковка и аккуратная логистика</li></ul>
+<h2>Критерии выбора</h2>
+<ol><li>Соответствие брендбуку и тону коммуникации</li><li>Надёжные материалы и стойкое нанесение</li><li>Контроль качества на тестовой партии</li></ol>
+<p><strong>Нужен закрытый каталог для финансового сектора?</strong> Запросите подборку под ваш формат клиентов и партнёров.</p>
+<h2>Related articles</h2>
+<ul><li><a href="/ru/blog/podarki-klientam-partneram-vip">Подарки клиентам и партнёрам</a></li><li><a href="/ru/blog/kak-podgotovit-maket-logotipa">Как подготовить макет логотипа</a></li><li><a href="/ru/blog/merch-dlya-it-kompaniy-tashkent">Мерч для IT-компаний</a></li><li><a href="/ru/blog/chasy-s-logotipom-korporativnye-podarki-tashkent">Часы с логотипом</a></li><li><a href="/ru/blog/podarki-na-korporativnye-sobytiya-tashkent">Подарки на корпоративные события</a></li><li><a href="/ru/blog/podarki-dlya-horeca-i-restoranov-tashkent">Подарки для HoReCa</a></li></ul>`},
+    {
+      slug: "chasy-s-logotipom-korporativnye-podarki-tashkent",
+      title: "Часы с логотипом на заказ в Ташкенте: премиальный корпоративный подарок",
+      description: "Изготовление часов с логотипом компании в Ташкенте. Премиальный подарок для сотрудников и партнёров: гравировка на циферблате и крышке.",
+      date: "2026-02-14",
+      keywords: ["часы с логотипом", "премиальный подарок", "гравировка часов", "корпоративные подарки", "Ташкент"],
+      category: "Pillar",
+      relatedPosts: ['podarki-klientam-partneram-vip', 'podarki-sotrudnikam-hr-gayd', 'merch-dlya-it-kompaniy-tashkent', 'podarki-dlya-bankov-i-finteha-tashkent', 'podarki-na-korporativnye-sobytiya-tashkent', 'podarki-dlya-horeca-i-restoranov-tashkent'],
+      contentHtml: `<p>Часы с логотипом — статусный формат корпоративного подарка для руководителей, партнёров и ключевых сотрудников. Такой подарок подчёркивает уважение и ценность отношений.</p>
+<h2>Когда формат особенно уместен</h2>
+<ul><li>Юбилеи компании и награждение команды</li><li>Подарки VIP-клиентам и партнёрам</li><li>Закрытые мероприятия и официальные поводы</li></ul>
+<h2>Что важно в производстве</h2>
+<ol><li>Точный макет и тестовая визуализация</li><li>Выбор модели под целевую аудиторию</li><li>Контроль качества гравировки и упаковки</li></ol>
+<p><strong>Нужен каталог моделей под гравировку?</strong> Подготовим подборку с вариантами персонализации.</p>
+<h2>Related articles</h2>
+<ul><li><a href="/ru/blog/podarki-klientam-partneram-vip">VIP-подарки для клиентов и партнёров</a></li><li><a href="/ru/blog/podarki-sotrudnikam-hr-gayd">Подарки для награждения сотрудников</a></li><li><a href="/ru/blog/merch-dlya-it-kompaniy-tashkent">Мерч для IT-компаний</a></li><li><a href="/ru/blog/podarki-dlya-bankov-i-finteha-tashkent">Подарки для банков и финтеха</a></li><li><a href="/ru/blog/podarki-na-korporativnye-sobytiya-tashkent">Подарки на корпоративные события</a></li><li><a href="/ru/blog/podarki-dlya-horeca-i-restoranov-tashkent">Подарки для HoReCa</a></li></ul>`},
+    {
+      slug: "podarki-na-korporativnye-sobytiya-tashkent",
+      title: "Подарки на корпоративные события в Ташкенте: идеи и брендирование",
+      description: "Идеи подарков на корпоративные события в Ташкенте: открытие офиса, юбилей компании, тимбилдинг. Брендированные сувениры с логотипом.",
+      date: "2026-02-14",
+      keywords: ["подарки на корпоративные события", "тимбилдинг", "юбилей компании", "брендированные сувениры", "Ташкент"],
+      category: "Pillar",
+      relatedPosts: ['chasy-s-logotipom-korporativnye-podarki-tashkent', 'podarki-sotrudnikam-hr-gayd', 'welcome-pack-novym-sotrudnikam', 'merch-dlya-it-kompaniy-tashkent', 'podarki-dlya-bankov-i-finteha-tashkent', 'podarki-dlya-horeca-i-restoranov-tashkent'],
+      contentHtml: `<p>Событийные подарки помогают усилить эффект от корпоративных мероприятий: открытия офиса, годовщины, тимбилдинга и клиентских встреч. Важно выбрать формат под задачу события.</p>
+<h2>Быстрый сценарий подбора</h2>
+<ul><li>Определите аудиторию: сотрудники, партнёры, гости</li><li>Согласуйте бюджет и сроки производства</li><li>Выберите носители и способ персонализации</li></ul>
+<h2>Что чаще всего заказывают</h2>
+<ol><li>Наборы и аксессуары для массовых событий</li><li>Статусные позиции для юбилеев и награждений</li><li>Welcome-формат для онбординга и новых команд</li></ol>
+<p><strong>Нужен чек-лист под ваше событие?</strong> Подготовим подборку форматов под бюджет и сроки.</p>
+<h2>Related articles</h2>
+<ul><li><a href="/ru/blog/chasy-s-logotipom-korporativnye-podarki-tashkent">Часы с юбилейной гравировкой</a></li><li><a href="/ru/blog/podarki-sotrudnikam-hr-gayd">Подарки сотрудникам</a></li><li><a href="/ru/blog/welcome-pack-novym-sotrudnikam">Welcome pack для новичков</a></li><li><a href="/ru/blog/merch-dlya-it-kompaniy-tashkent">Мерч для IT-компаний</a></li><li><a href="/ru/blog/podarki-dlya-bankov-i-finteha-tashkent">Подарки для банков и финтеха</a></li><li><a href="/ru/blog/podarki-dlya-horeca-i-restoranov-tashkent">Решения для HoReCa</a></li></ul>`},
+    {
+      slug: "podarki-dlya-horeca-i-restoranov-tashkent",
+      title: "Подарки и мерч для HoReCa в Ташкенте: брендирование ресторанов",
+      description: "Брендирование и мерч для HoReCa в Ташкенте: меню, таблички, униформа и аксессуары с логотипом для ресторанов, отелей и кафе. Лазерная гравировка.",
+      date: "2026-02-14",
+      keywords: ["подарки для HoReCa", "мерч для ресторанов", "брендирование отелей", "лазерная гравировка", "Ташкент"],
+      category: "Pillar",
+      relatedPosts: ['lazernaya-gravirovka-podarkov', 'kak-podgotovit-maket-logotipa', 'merch-dlya-it-kompaniy-tashkent', 'podarki-dlya-bankov-i-finteha-tashkent', 'chasy-s-logotipom-korporativnye-podarki-tashkent', 'podarki-na-korporativnye-sobytiya-tashkent'],
+      contentHtml: `<p>Для HoReCa важны детали, которые формируют впечатление гостей: меню, номерки, таблички и фирменные аксессуары. Брендирование таких элементов усиливает узнаваемость заведения.</p>
+<h2>Что чаще брендируют в HoReCa</h2>
+<ul><li>Папки меню, таблички и номерки</li><li>Униформа и аксессуары персонала</li><li>Сувениры для гостей и партнёров</li></ul>
+<h2>Как обеспечить стабильное качество</h2>
+<ol><li>Утвердить единый макет под все носители</li><li>Подобрать долговечные материалы</li><li>Провести контрольную проверку перед тиражом</li></ol>
+<p><strong>Нужен каталог решений для вашего заведения?</strong> Подготовим варианты брендирования под ваш формат и бюджет.</p>
+<h2>Related articles</h2>
+<ul><li><a href="/ru/blog/lazernaya-gravirovka-podarkov">Лазерная гравировка подарков</a></li><li><a href="/ru/blog/kak-podgotovit-maket-logotipa">Подготовка макета логотипа</a></li><li><a href="/ru/blog/merch-dlya-it-kompaniy-tashkent">Мерч для IT-компаний</a></li><li><a href="/ru/blog/podarki-dlya-bankov-i-finteha-tashkent">Подарки для банков и финтеха</a></li><li><a href="/ru/blog/chasy-s-logotipom-korporativnye-podarki-tashkent">Премиальные часы с логотипом</a></li><li><a href="/ru/blog/podarki-na-korporativnye-sobytiya-tashkent">Подарки на корпоративные события</a></li></ul>`}
   ],
   uz: [
     {
@@ -769,6 +850,87 @@ export const blogPosts = {
 <p><strong>Tanlash va ishga tushirishda yordam kerakmi?</strong> Kontaktlar bo‘limi orqali murojaat qiling — jamoa tirajingizga mos ish rejasini tayyorlaydi.</p>
 <h2>Bog‘liq maqolalar</h2>
 <ul><li><a href="/uz/blog/xodimlar-uchun-sovgalar-hr-qollanma">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/welcome-pack-yangi-xodimlar">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgani-qanday-tanlash">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/suvenir-brendlash">Shuningdek qarang: bog‘liq maqola</a></li></ul>`}
+    ,
+    {
+      slug: "merch-dlya-it-kompaniy-tashkent",
+      title: "Toshkentdagi IT-kompaniyalar uchun merch: Qanday qilib ajralib turish va HR-brendni kuchaytirish",
+      description: "Toshkentdagi IT-kompaniyalar uchun premium merch: xudi, powerbank, welcome pack va lazerli gravyura. Ishlab chiqarishdan oldin maket.",
+      date: "2026-02-14",
+      keywords: ["IT kompaniyalar uchun merch", "korporativ merch", "HR brend", "welcome pack", "Toshkent"],
+      category: "Pillar",
+      relatedPosts: ['podarki-dlya-bankov-i-finteha-tashkent', 'podarki-na-korporativnye-sobytiya-tashkent', 'yangi-xodimlar-uchun-welcome-pack', 'chasy-s-logotipom-korporativnye-podarki-tashkent', 'podarki-dlya-horeca-i-restoranov-tashkent', 'lazer-gravirovka-sovgalar'],
+      contentHtml: `<p>IT kompaniyalarda merch nafaqat suvenir, balki ish beruvchi brendining bir qismidir. To‘g‘ri tanlangan to‘plam jamoa sadoqatini oshiradi va kompaniya uslubini kuchaytiradi.</p>
+<h2>To‘plamga nimalar kiritish kerak</h2>
+<ul><li>Amaliy mahsulotlar: xudi, termokrujka, powerbank, bloknot</li><li>Yagona vizual uslub va brandbook mosligi</li><li>Kalit xodimlar uchun shaxsiylashtirish</li></ul>
+<h2>Jarayonni qanday tashkil qilish</h2>
+<ol><li>Maqsad va byudjetni kelishish</li><li>Maket va test namunani tasdiqlash</li><li>Tiraj, qadoqlash va topshirishni rejalash</li></ol>
+<p><strong>Byudjetga mos merch g‘oyalari kerakmi?</strong> Jamoamiz siz uchun mos katalogni tayyorlab beradi.</p>
+<h2>Bog‘liq maqolalar</h2>
+<ul><li><a href="/uz/blog/podarki-dlya-bankov-i-finteha-tashkent">Banklar va fintex uchun sovg‘alar</a></li><li><a href="/uz/blog/podarki-na-korporativnye-sobytiya-tashkent">Korporativ tadbirlar uchun sovg‘alar</a></li><li><a href="/uz/blog/yangi-xodimlar-uchun-welcome-pack">Yangi xodimlar uchun welcome pack</a></li><li><a href="/uz/blog/chasy-s-logotipom-korporativnye-podarki-tashkent">Logotipli soatlar</a></li><li><a href="/uz/blog/podarki-dlya-horeca-i-restoranov-tashkent">HoReCa uchun sovg‘a va merch</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Lazerli gravirovka</a></li></ul>`},
+    {
+      slug: "podarki-dlya-bankov-i-finteha-tashkent",
+      title: "Toshkentdagi banklar va fintex uchun korporativ sovg'alar: VIP, maqom",
+      description: "Banklar, sug'urta va fintex uchun premium korporativ sovg'alar: VIP to'plamlar, Parker ruchkalari, gravyurali charm buyumlar. Maket oldindan tasdiqlanadi.",
+      date: "2026-02-14",
+      keywords: ["banklar uchun sovg'alar", "fintex sovg'alari", "VIP sovg'alar", "korporativ sovg'alar", "Toshkent"],
+      category: "Pillar",
+      relatedPosts: ['mijoz-hamkorlar-uchun-sovgalar-vip', 'logotip-maketi-tayyorlash', 'merch-dlya-it-kompaniy-tashkent', 'chasy-s-logotipom-korporativnye-podarki-tashkent', 'podarki-na-korporativnye-sobytiya-tashkent', 'podarki-dlya-horeca-i-restoranov-tashkent'],
+      contentHtml: `<p>Bank va fintex segmentida sovg‘a ishonchni mustahkamlash vositasi hisoblanadi. Shu sababli maqom, sifat va aniq shaxsiylashtirish birinchi o‘rinda turadi.</p>
+<h2>Eng samarali formatlar</h2>
+<ul><li>VIP to‘plamlar: ruchka, kundalik, charm aksessuarlar</li><li>Qabul qiluvchiga mos shaxsiylashtirish</li><li>Premium qadoqlash va aniq yetkazib berish</li></ul>
+<h2>Tanlash mezonlari</h2>
+<ol><li>Brandbook va kompaniya kommunikatsiyasiga moslik</li><li>Mustahkam material va sifatli gravirovka</li><li>Asosiy tirajdan oldin test nazorati</li></ol>
+<p><strong>Moliya sektori uchun yopiq katalog kerakmi?</strong> Talabingizga mos variantlarni tayyorlab beramiz.</p>
+<h2>Bog‘liq maqolalar</h2>
+<ul><li><a href="/uz/blog/mijoz-hamkorlar-uchun-sovgalar-vip">Mijozlar va hamkorlar uchun VIP sovg‘alar</a></li><li><a href="/uz/blog/logotip-maketi-tayyorlash">Logotip maketini tayyorlash</a></li><li><a href="/uz/blog/merch-dlya-it-kompaniy-tashkent">IT kompaniyalar uchun merch</a></li><li><a href="/uz/blog/chasy-s-logotipom-korporativnye-podarki-tashkent">Logotipli soatlar</a></li><li><a href="/uz/blog/podarki-na-korporativnye-sobytiya-tashkent">Korporativ tadbir sovg‘alari</a></li><li><a href="/uz/blog/podarki-dlya-horeca-i-restoranov-tashkent">HoReCa yechimlari</a></li></ul>`},
+    {
+      slug: "chasy-s-logotipom-korporativnye-podarki-tashkent",
+      title: "Toshkentda buyurtma asosida logotipli soatlar: premium sovg'a",
+      description: "Kompaniya logotipi tushirilgan soatlar: xodimlar va hamkorlar uchun premium korporativ sovg'a. Siferblat va qopqoqqa lazerli gravyura.",
+      date: "2026-02-14",
+      keywords: ["logotipli soatlar", "premium sovg'a", "soat gravyurasi", "korporativ sovg'alar", "Toshkent"],
+      category: "Pillar",
+      relatedPosts: ['mijoz-hamkorlar-uchun-sovgalar-vip', 'xodimlar-uchun-sovgalar-hr-qollanma', 'merch-dlya-it-kompaniy-tashkent', 'podarki-dlya-bankov-i-finteha-tashkent', 'podarki-na-korporativnye-sobytiya-tashkent', 'podarki-dlya-horeca-i-restoranov-tashkent'],
+      contentHtml: `<p>Logotipli soatlar rahbarlar, hamkorlar va eng yaxshi xodimlar uchun maqomli sovg‘a formatidir. U ham minnatdorchilik, ham uzoq muddatli hamkorlik qiymatini ko‘rsatadi.</p>
+<h2>Qaysi holatlarda mos keladi</h2>
+<ul><li>Kompaniya yubileyi va mukofotlash marosimlari</li><li>VIP-mijozlar va asosiy hamkorlar uchun sovg‘alar</li><li>Yopiq tadbirlar va rasmiy uchrashuvlar</li></ul>
+<h2>Ishlab chiqarishda muhim bosqichlar</h2>
+<ol><li>Aniq maket va oldindan vizual ko‘rinish</li><li>Maqsadli auditoriyaga mos model tanlash</li><li>Gravyura va qadoq sifatini yakuniy tekshiruv</li></ol>
+<p><strong>Soat modellari katalogi kerakmi?</strong> Sizga mos personalizatsiya variantlarini tayyorlaymiz.</p>
+<h2>Bog‘liq maqolalar</h2>
+<ul><li><a href="/uz/blog/mijoz-hamkorlar-uchun-sovgalar-vip">Mijoz va hamkorlar uchun VIP sovg‘alar</a></li><li><a href="/uz/blog/xodimlar-uchun-sovgalar-hr-qollanma">Xodimlarni mukofotlash sovg‘alari</a></li><li><a href="/uz/blog/merch-dlya-it-kompaniy-tashkent">IT kompaniyalar uchun merch</a></li><li><a href="/uz/blog/podarki-dlya-bankov-i-finteha-tashkent">Banklar va fintex uchun sovg‘alar</a></li><li><a href="/uz/blog/podarki-na-korporativnye-sobytiya-tashkent">Korporativ tadbirlar sovg‘alari</a></li><li><a href="/uz/blog/podarki-dlya-horeca-i-restoranov-tashkent">HoReCa sovg‘a yechimlari</a></li></ul>`},
+    {
+      slug: "podarki-na-korporativnye-sobytiya-tashkent",
+      title: "Toshkentda korporativ tadbirlar uchun sovg'alar: g'oyalar, brendlash",
+      description: "Ofis ochilishi, kompaniya yubileyi va timbilding uchun brendlangan sovg'a g'oyalari. Toshkentda logotipli korporativ sovg'alar buyurtmasi.",
+      date: "2026-02-14",
+      keywords: ["korporativ tadbir sovg'alari", "timbilding", "kompaniya yubileyi", "brendlangan suvenir", "Toshkent"],
+      category: "Pillar",
+      relatedPosts: ['chasy-s-logotipom-korporativnye-podarki-tashkent', 'xodimlar-uchun-sovgalar-hr-qollanma', 'yangi-xodimlar-uchun-welcome-pack', 'merch-dlya-it-kompaniy-tashkent', 'podarki-dlya-bankov-i-finteha-tashkent', 'podarki-dlya-horeca-i-restoranov-tashkent'],
+      contentHtml: `<p>Korporativ tadbirlar uchun to‘g‘ri tanlangan sovg‘a voqea taassurotini kuchaytiradi. Har bir format uchun auditoriya va maqsadga mos yechim tanlash muhim.</p>
+<h2>Tanlovning tezkor sxemasi</h2>
+<ul><li>Auditoriyani aniqlang: xodim, hamkor yoki mehmon</li><li>Byudjet va muddatni oldindan kelishing</li><li>Nosiya va personalizatsiya usulini tasdiqlang</li></ul>
+<h2>Eng ko‘p buyurtma qilinadigan yechimlar</h2>
+<ol><li>Ommaviy tadbirlar uchun amaliy to‘plamlar</li><li>Yubiley va mukofotlash uchun premium pozitsiyalar</li><li>Onboarding uchun welcome formatlar</li></ol>
+<p><strong>Tadbiringiz uchun chek-list kerakmi?</strong> Maqsad va byudjetga mos variantlarni tayyorlaymiz.</p>
+<h2>Bog‘liq maqolalar</h2>
+<ul><li><a href="/uz/blog/chasy-s-logotipom-korporativnye-podarki-tashkent">Yubiley uchun logotipli soatlar</a></li><li><a href="/uz/blog/xodimlar-uchun-sovgalar-hr-qollanma">Xodimlar uchun sovg‘alar</a></li><li><a href="/uz/blog/yangi-xodimlar-uchun-welcome-pack">Yangi xodimlar uchun welcome pack</a></li><li><a href="/uz/blog/merch-dlya-it-kompaniy-tashkent">IT kompaniyalar merchi</a></li><li><a href="/uz/blog/podarki-dlya-bankov-i-finteha-tashkent">Banklar va fintex sovg‘alari</a></li><li><a href="/uz/blog/podarki-dlya-horeca-i-restoranov-tashkent">HoReCa uchun sovg‘alar</a></li></ul>`},
+    {
+      slug: "podarki-dlya-horeca-i-restoranov-tashkent",
+      title: "Toshkentda HoReCa uchun sovg'alar va merch: restoranlarni brendlash",
+      description: "HoReCa uchun brendlash va merch: menyu papkalari, tablichkalar, forma va logotipli aksessuarlar. Restoran va mehmonxonalar uchun lazerli gravyura.",
+      date: "2026-02-14",
+      keywords: ["HoReCa uchun sovg'alar", "restoran merchi", "mehmonxona brendlash", "lazerli gravyura", "Toshkent"],
+      category: "Pillar",
+      relatedPosts: ['lazer-gravirovka-sovgalar', 'logotip-maketi-tayyorlash', 'merch-dlya-it-kompaniy-tashkent', 'podarki-dlya-bankov-i-finteha-tashkent', 'chasy-s-logotipom-korporativnye-podarki-tashkent', 'podarki-na-korporativnye-sobytiya-tashkent'],
+      contentHtml: `<p>HoReCa segmentida mehmon taassuroti mayda detallar orqali shakllanadi. Menyu papkalari, tablichkalar va forma elementlarini brendlash muassasa imidjini kuchaytiradi.</p>
+<h2>Ko‘p ishlatiladigan yechimlar</h2>
+<ul><li>Menyu papkalari, tablichkalar va raqamlar</li><li>Xodimlar formasi va aksessuarlari</li><li>Mehmonlar hamda hamkorlar uchun suvenirlar</li></ul>
+<h2>Barqaror sifat uchun</h2>
+<ol><li>Barcha mahsulotlar uchun yagona maket tasdiqlash</li><li>Mustahkam material va mos texnologiya tanlash</li><li>Tirajdan oldin yakuniy nazorat namunasi</li></ol>
+<p><strong>Muassasangiz uchun yechimlar katalogi kerakmi?</strong> Format va byudjetga mos variantlarni taqdim etamiz.</p>
+<h2>Bog‘liq maqolalar</h2>
+<ul><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Lazerli gravirovka</a></li><li><a href="/uz/blog/logotip-maketi-tayyorlash">Logotip maketi tayyorlash</a></li><li><a href="/uz/blog/merch-dlya-it-kompaniy-tashkent">IT kompaniyalar uchun merch</a></li><li><a href="/uz/blog/podarki-dlya-bankov-i-finteha-tashkent">Banklar va fintex uchun sovg‘alar</a></li><li><a href="/uz/blog/chasy-s-logotipom-korporativnye-podarki-tashkent">Logotipli premium soatlar</a></li><li><a href="/uz/blog/podarki-na-korporativnye-sobytiya-tashkent">Korporativ tadbir sovg‘alari</a></li></ul>`}
   ]
 };
 
