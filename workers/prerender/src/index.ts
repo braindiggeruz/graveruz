@@ -70,7 +70,7 @@ function makeCacheKey(publicUrl: URL): Request {
 function makeBreakerKey(publicUrl: URL): Request {
   const breakerUrl = new URL(publicUrl.toString());
   breakerUrl.pathname = '/__prerender_breaker__';
-  breakerUrl.search = '';
+  breakerUrl.search = 'key=prerender:breaker:rate_limit';
   breakerUrl.hash = '';
   return new Request(breakerUrl.toString(), { method: 'GET' });
 }
