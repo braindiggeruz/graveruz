@@ -7,6 +7,7 @@ compatibility_flags = ["nodejs_compat"]
 binding = "BROWSER"
 
 [vars]
+PRERENDER_ENABLED = "1"
 PRERENDER_PROVIDER = "cloudflare"
 RENDER_ORIGIN_PRIMARY = "https://graveruz.pages.dev"
 RENDER_ORIGIN_FALLBACK = "https://www.graver-studio.uz"

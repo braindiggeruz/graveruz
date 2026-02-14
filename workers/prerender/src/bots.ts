@@ -1,17 +1,7 @@
 const BOT_ALLOWLIST = [
   'googlebot',
   'bingbot',
-  'yandex',
-  'duckduckbot',
-  'baiduspider',
-  'facebookexternalhit',
-  'twitterbot',
-  'linkedinbot',
-  'telegrambot',
-  'whatsapp',
-  'slackbot',
-  'discordbot',
-  'skypeuripreview'
+  'yandexbot'
 ] as const;
 
 export function isBotUserAgent(userAgent: string | null): boolean {
