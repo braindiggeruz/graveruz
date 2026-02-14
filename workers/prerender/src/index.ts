@@ -168,26 +168,48 @@ async function tryRenderHtml(publicUrl: URL, env: Env): Promise<string> {
 
   const candidates = buildRenderCandidates(publicUrl, env);
   let lastError: unknown;
+  let lastCandidate: string | undefined;
 
   for (const candidate of candidates) {
     try {
       return await renderWithCloudflareBrowser(candidate, env, timeoutMs);
     } catch (error) {
       lastError = error;
+      lastCandidate = candidate.toString();
     }
   }
 
-  throw lastError instanceof Error ? lastError : new Error('prerender failed');
+  const wrapped = lastError instanceof Error ? lastError : new Error('prerender failed');
+  (wrapped as Error & { candidate?: string }).candidate = lastCandidate;
+  throw wrapped;
 }
 
-async function fetchOrigin(request: Request, withErrorFlag = false): Promise<Response> {
+function classifyPrerenderReason(error: unknown): 'timeout' | 'binding' | 'nav' | 'content' | 'unknown' {
+  const message = error instanceof Error ? error.message : String(error);
+  const text = (message || '').toLowerCase();
+  if (text.includes('timeout')) return 'timeout';
+  if (text.includes('binding') || text.includes('browser')) return 'binding';
+  if (text.includes('navigation') || text.includes('nav')) return 'nav';
+  if (text.includes('content')) return 'content';
+  return 'unknown';
+}
+
+async function fetchOrigin(
+  request: Request,
+  withErrorFlag = false,
+  reasonCode?: 'timeout' | 'binding' | 'nav' | 'content' | 'unknown',
+): Promise<Response> {
   const originResponse = await fetch(request);
   if (!withErrorFlag) {
     return originResponse;
   }
-  const headers = copyHeadersWith(originResponse.headers, {
+  const extraHeaders: Record<string, string> = {
     'x-prerender-error': '1',
-  });
+  };
+  if (reasonCode) {
+    extraHeaders['x-prerender-error-reason'] = reasonCode;
+  }
+  const headers = copyHeadersWith(originResponse.headers, extraHeaders);
   return new Response(originResponse.body, {
     status: originResponse.status,
     statusText: originResponse.statusText,
@@ -262,8 +284,17 @@ export default {
         ctx.waitUntil(cache.put(cacheKey, prerendered.clone()));
       }
       return prerendered;
-    } catch {
-      return fetchOrigin(request, true);
+    } catch (error) {
+      const reasonCode = classifyPrerenderReason(error);
+      const errorObj = error as Error & { candidate?: string };
+      const candidate = errorObj?.candidate;
+      console.error('prerender_failed', {
+        url: request.url,
+        candidate,
+        err: errorObj?.message ?? String(error),
+        stack: errorObj?.stack,
+      });
+      return fetchOrigin(request, true, reasonCode);
     }
   },
 };
