@@ -98,6 +98,14 @@ npx wrangler deployments list
     - secret `PRERENDER_TOKEN`
   - fallback is documented only; do not enable unless needed.
 
+## Cloudflare Security recommendation
+
+- Enable Bot Fight Mode and/or WAF managed challenge for:
+  - `graver-studio.uz/ru/blog*`
+  - `graver-studio.uz/uz/blog*`
+- Do not block verified search crawlers (`Googlebot`, `Bingbot`, `YandexBot`).
+- Prefer challenge/rate controls for non-verified automation to protect Browser Rendering budget.
+
 ## Routes (few clicks)
 
 Dashboard path:
