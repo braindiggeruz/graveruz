@@ -4,7 +4,8 @@
  * NEVER define BASE_URL locally in components.
  */
 
-export const BASE_URL = process.env.REACT_APP_BASE_URL || 'https://www.graver-studio.uz';
+const RAW_BASE_URL = process.env.REACT_APP_BASE_URL || 'https://graver-studio.uz';
+export const BASE_URL = RAW_BASE_URL.replace(/\/+$/, '');
 
 // Route mapping for B2C pages with different slugs per locale
 export const ROUTE_MAP = {
@@ -21,8 +22,8 @@ export const ROUTE_MAP_REVERSE = Object.fromEntries(
 
 // Hreflang codes
 export const HREFLANG_MAP = {
-  ru: 'ru',
-  uz: 'uz-Latn'
+  ru: 'ru-RU',
+  uz: 'uz-UZ'
 };
 
 /**

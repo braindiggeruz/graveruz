@@ -7,7 +7,7 @@ export function initSWHardBlock() {
   window.__SW_HARD_BLOCK__ = runtimeMarker;
 
   var host = window.location.hostname;
-  var isProdHost = host === 'graver-studio.uz' || host === 'www.graver-studio.uz';
+  var isProdHost = host === 'graver-studio.uz';
   var forceKill = window.location.search.indexOf('sw-kill=1') !== -1;
 
   if (!isProdHost && !forceKill) {

@@ -1,0 +1,7 @@
+https://www.graver-studio.uz/*  https://graver-studio.uz/:splat 301
+/__build_id.txt  /__build_id.txt 200
+/sw.js           /sw.js 200
+/static/*        /static/:splat 200
+/ru/*           /200.html 200
+/uz/*           /200.html 200
+/               /index.html 200

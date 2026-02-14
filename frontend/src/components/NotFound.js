@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Home, AlertTriangle } from 'lucide-react';
+import SeoMeta from './SeoMeta';
 
 export default function NotFound() {
   const location = useLocation();
@@ -37,11 +38,14 @@ export default function NotFound() {
 
   return (
     <>
+      <SeoMeta
+        title={`404 — ${copy.title} | Graver.uz`}
+        description={copy.description}
+        locale={isUz ? 'uz' : 'ru'}
+        noindex
+      />
       <Helmet>
-        <title>{`404 — ${copy.title} | Graver.uz`}</title>
-        <meta name="robots" content="noindex, nofollow" />
         <meta name="prerender-status-code" content="404" />
-        <meta name="description" content={copy.description} />
       </Helmet>
       
       <div className="min-h-screen bg-black flex items-center justify-center px-4" data-testid="not-found-page">

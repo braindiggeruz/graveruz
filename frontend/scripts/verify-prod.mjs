@@ -1,4 +1,4 @@
-const BASE_URL = 'https://www.graver-studio.uz';
+const BASE_URL = 'https://graver-studio.uz'.replace(/\/+$/, '');
 const urls = [
   `${BASE_URL}/ru/?v=${Date.now()}`,
   `${BASE_URL}/uz/?v=${Date.now()}`,
@@ -64,8 +64,8 @@ for (const url of urls) {
     console.log(`${canonicalOk ? 'PASS' : 'FAIL'} - single canonical (${canonicalCount})`);
     if (!canonicalOk) hasFailure = true;
 
-    const hreflangRu = countMatches(html, /hreflang="ru"/gi);
-    const hreflangUz = countMatches(html, /hreflang="uz-Latn"/gi);
+    const hreflangRu = countMatches(html, /hreflang="ru-RU"/gi);
+    const hreflangUz = countMatches(html, /hreflang="uz-UZ"/gi);
     const hreflangDefault = countMatches(html, /hreflang="x-default"/gi);
     const hreflangOk = hreflangRu === 1 && hreflangUz === 1 && hreflangDefault === 1;
     console.log(`${hreflangOk ? 'PASS' : 'FAIL'} - hreflang (ru/uz/x-default = ${hreflangRu}/${hreflangUz}/${hreflangDefault})`);

@@ -3,8 +3,53 @@ import { Link, useParams, Navigate } from 'react-router-dom';
 import SeoMeta from '../components/SeoMeta';
 import { ArrowLeft, Calendar, Tag, Lightbulb, BookOpen, HelpCircle } from 'lucide-react';
 import { BASE_URL } from '../config/seo';
-import { getPostBySlug, getAlternateSlug, blogPosts } from '../data/blogPosts';
+import { getPostBySlug, getPostsByLocale } from '../data/blogPosts';
 import { getSeoOverride, getFaqData } from '../data/blogSeoOverrides';
+import { getMappedAlternateSlug } from '../config/blogSlugMap';
+
+function normalizeBlogHref(href, locale) {
+  if (!href || typeof href !== 'string') return href;
+  if (href.indexOf('/blog/') === 0) return '/' + locale + href;
+  if (href.indexOf('https://graver-studio.uz/blog/') === 0) {
+    return href.replace('https://graver-studio.uz/blog/', '/' + locale + '/blog/');
+  }
+  if (href.indexOf('http://graver-studio.uz/blog/') === 0) {
+    return href.replace('http://graver-studio.uz/blog/', '/' + locale + '/blog/');
+  }
+  return href;
+}
+
+function normalizeInlineText(text, locale) {
+  if (!text) return '';
+  return text
+    .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, function(_, label, href) {
+      return '<a href="' + normalizeBlogHref(href, locale) + '">' + label + '</a>';
+    });
+}
+
+function normalizeHtmlContent(html, locale) {
+  if (!html) return html;
+
+  return normalizeInlineText(
+    html
+      .replace(/href=(['"])\/blog\/([^'"]+)\1/g, function(_, quote, path) {
+        return 'href=' + quote + '/' + locale + '/blog/' + path + quote;
+      })
+      .replace(/href=(['"])https?:\/\/graver-studio\.uz\/blog\/([^'"]+)\1/g, function(_, quote, path) {
+        return 'href=' + quote + '/' + locale + '/blog/' + path + quote;
+      }),
+    locale,
+  );
+}
+
+function isValidFaqItem(item) {
+  if (!item || typeof item.q !== 'string' || typeof item.a !== 'string') return false;
+  var q = item.q.trim();
+  var a = item.a.trim();
+  if (!q || !a) return false;
+  return !/sample\s*q\d*/i.test(q + ' ' + a);
+}
 
 function BlogPostPage() {
   const params = useParams();
@@ -16,17 +61,18 @@ function BlogPostPage() {
   // Get SEO override for this post
   const seoOverride = getSeoOverride(locale, slug);
   // Get FAQ data for FAQPage Schema
-  const faqData = getFaqData(slug);
+  const faqData = (getFaqData(slug) || []).filter(isValidFaqItem);
 
   const canonicalUrl = post ? BASE_URL + '/' + locale + '/blog/' + slug : '';
-  const altSlug = slug ? getAlternateSlug(slug) : null;
+  const altSlug = slug ? getMappedAlternateSlug(locale, slug) : null;
   const altLocale = isRu ? 'uz' : 'ru';
   const altUrl = altSlug ? BASE_URL + '/' + altLocale + '/blog/' + altSlug : null;
   const ruUrl = isRu ? canonicalUrl : altUrl;
   const uzUrl = isRu ? altUrl : canonicalUrl;
 
   // Determine title: use override if exists, otherwise default
-  const pageTitle = (seoOverride && seoOverride.titleTag) || (post ? post.title + ' — Graver.uz' : 'Graver.uz');
+  const pageTitle = (seoOverride && (seoOverride.title || seoOverride.titleTag)) || (post ? post.title + ' — Graver.uz' : 'Graver.uz');
+  const pageDescription = (seoOverride && (seoOverride.description || seoOverride.ogDescription)) || (post ? post.description : '');
 
   useEffect(function addSeoTags() {
     if (!post) return;
@@ -40,14 +86,13 @@ function BlogPostPage() {
     articleLd.textContent = JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Article",
-      headline: post.title,
-      description: post.description,
-      image: BASE_URL + '/og-blog.png',
-      datePublished: post.date,
-      dateModified: post.date,
+      headline: (seoOverride && (seoOverride.ogTitle || seoOverride.title || seoOverride.titleTag)) || post.title,
+      description: (seoOverride && (seoOverride.ogDescription || seoOverride.description)) || post.description,
       url: canonicalUrl,
       mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
-      inLanguage: locale === 'ru' ? "ru" : "uz"
+      inLanguage: locale === 'ru' ? "ru" : "uz",
+      author: { "@type": "Organization", name: "Graver.uz" },
+      publisher: { "@type": "Organization", name: "Graver.uz", url: BASE_URL }
     });
     document.head.appendChild(articleLd);
 
@@ -68,15 +113,14 @@ function BlogPostPage() {
     document.head.appendChild(breadcrumbLd);
 
     // Inject FAQPage JSON-LD (P1.2)
-    var faq = getFaqData(slug);
-    if (faq && faq.length > 0) {
+    if (faqData.length >= 2) {
       var faqLd = document.createElement('script');
       faqLd.type = 'application/ld+json';
       faqLd.setAttribute('data-seo-blog', 'true');
       faqLd.textContent = JSON.stringify({
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        mainEntity: faq.map(function(item) {
+        mainEntity: faqData.map(function(item) {
           return {
             "@type": "Question",
             name: item.q,
@@ -93,7 +137,7 @@ function BlogPostPage() {
     return function cleanup() {
       document.querySelectorAll('[data-seo-blog]').forEach(function(el) { el.remove(); });
     };
-  }, [post, canonicalUrl, locale, slug]);
+  }, [post, canonicalUrl, locale, seoOverride, faqData]);
 
   if (!post) {
     return React.createElement(Navigate, { to: '/' + locale + '/blog', replace: true });
@@ -121,31 +165,93 @@ function BlogPostPage() {
     .map(function(s) { return getPostBySlug(locale, s); })
     .filter(Boolean);
 
+  var allPosts = getPostsByLocale(locale)
+    .filter(function(p) { return p.slug !== slug; });
+
+  var recommendedPosts = relatedPosts.slice(0);
+  if (recommendedPosts.length < 3) {
+    allPosts.forEach(function(p) {
+      if (recommendedPosts.length >= 5) return;
+      if (!recommendedPosts.some(function(rp) { return rp.slug === p.slug; })) {
+        recommendedPosts.push(p);
+      }
+    });
+  } else {
+    recommendedPosts = recommendedPosts.slice(0, 5);
+  }
+
+  var moneyLinks = isRu ? [
+    { href: '/' + locale + '/catalog-products', label: 'Каталог продукции' },
+    { href: '/' + locale + '/engraved-gifts', label: 'Подарки с гравировкой' },
+    { href: '/' + locale + '/products/lighters', label: 'Зажигалки с гравировкой' }
+  ] : [
+    { href: '/' + locale + '/mahsulotlar-katalogi', label: 'Mahsulotlar katalogi' },
+    { href: '/' + locale + '/gravirovkali-sovgalar', label: "Gravirovkali sovg'alar" },
+    { href: '/' + locale + '/products/lighters', label: 'Zajigalkalar' }
+  ];
+
+  var utilityLinks = [
+    { href: '/' + locale + '/process', label: isRu ? 'Процесс' : 'Jarayon' },
+    { href: '/' + locale + '/guarantees', label: isRu ? 'Гарантии' : 'Kafolatlar' },
+    { href: '/' + locale + '/contacts', label: isRu ? 'Контакты' : 'Kontaktlar' }
+  ];
+
+  var hubLink = {
+    href: '/' + locale + '/blog',
+    label: isRu ? 'Все статьи блога' : 'Blogdagi barcha maqolalar'
+  };
+
   var contentBody = null;
   if (post && post.contentHtml) {
-    contentBody = React.createElement('div', { dangerouslySetInnerHTML: { __html: post.contentHtml } });
+    contentBody = React.createElement('div', { dangerouslySetInnerHTML: { __html: normalizeHtmlContent(post.contentHtml, locale) } });
   } else if (post && post.content) {
     var contentParts = [];
     var lines = post.content.split('\n');
+    var listItems = [];
+    var listGroup = 0;
+
+    var flushList = function() {
+      if (!listItems.length) return;
+      contentParts.push(
+        React.createElement('ul', { key: 'ul-' + listGroup, className: 'list-disc ml-6 my-3 space-y-1' },
+          listItems.map(function(item, idx) {
+            return React.createElement('li', {
+              key: 'li-' + listGroup + '-' + idx,
+              className: 'text-gray-300',
+              dangerouslySetInnerHTML: { __html: normalizeInlineText(item, locale) }
+            });
+          })
+        )
+      );
+      listItems = [];
+      listGroup += 1;
+    };
+
     for (var i = 0; i < lines.length; i++) {
       var ln = lines[i];
       if (ln.indexOf('# ') === 0) {
-        contentParts.push(React.createElement('h2', { key: 'h-' + i, className: 'text-2xl font-bold text-white mt-6 mb-3' }, ln.substring(2)));
+        flushList();
+        contentParts.push(React.createElement('h2', { key: 'h-' + i, className: 'text-2xl font-bold text-white mt-6 mb-3', dangerouslySetInnerHTML: { __html: normalizeInlineText(ln.substring(2), locale) } }));
       } else if (ln.indexOf('## ') === 0) {
-        contentParts.push(React.createElement('h3', { key: 'hh-' + i, className: 'text-xl font-bold text-white mt-4 mb-2' }, ln.substring(3)));
+        flushList();
+        contentParts.push(React.createElement('h3', { key: 'hh-' + i, className: 'text-xl font-bold text-white mt-4 mb-2', dangerouslySetInnerHTML: { __html: normalizeInlineText(ln.substring(3), locale) } }));
       } else if (ln.indexOf('- ') === 0) {
-        contentParts.push(React.createElement('li', { key: 'li-' + i, className: 'text-gray-300 ml-4 my-1' }, ln.substring(2)));
+        listItems.push(ln.substring(2));
       } else if (ln.trim()) {
-        contentParts.push(React.createElement('p', { key: 'p-' + i, className: 'text-gray-300 leading-relaxed my-3' }, ln));
+        flushList();
+        contentParts.push(React.createElement('p', { key: 'p-' + i, className: 'text-gray-300 leading-relaxed my-3', dangerouslySetInnerHTML: { __html: normalizeInlineText(ln, locale) } }));
+      } else {
+        flushList();
       }
     }
+    flushList();
     contentBody = contentParts;
   }
 
   return React.createElement('div', { className: 'min-h-screen bg-black text-white' },
     React.createElement(SeoMeta, {
       title: pageTitle,
-      description: post.description,
+      description: pageDescription,
       canonicalUrl: canonicalUrl,
       ruUrl: ruUrl,
       uzUrl: uzUrl,
@@ -215,7 +321,7 @@ function BlogPostPage() {
         ),
         React.createElement('div', { className: 'prose prose-invert max-w-none' }, contentBody),
         // Related Articles Section (if exists)
-        relatedPosts.length > 0 && React.createElement('div', { 
+        recommendedPosts.length > 0 && React.createElement('div', { 
           className: 'mt-12 p-6 bg-gray-900/50 border border-gray-800 rounded-xl',
           'data-testid': 'related-articles-section'
         },
@@ -224,13 +330,48 @@ function BlogPostPage() {
             isRu ? 'Рекомендуем прочитать' : "Tavsiya etamiz"
           ),
           React.createElement('div', { className: 'space-y-3' },
-            relatedPosts.map(function(rp, idx) {
+            recommendedPosts.map(function(rp, idx) {
               return React.createElement(Link, { 
                 key: idx, 
                 to: '/' + locale + '/blog/' + rp.slug, 
                 className: 'block text-teal-400 hover:text-teal-300 transition hover:underline'
               }, '→ ' + rp.title);
             })
+          )
+        ),
+        React.createElement('div', {
+          className: 'mt-6 p-6 bg-gray-900 border border-gray-800 rounded-xl',
+          'data-testid': 'internal-links-section'
+        },
+          React.createElement('h3', { className: 'text-lg font-bold text-white mb-4' }, isRu ? 'Полезные ссылки' : 'Foydali havolalar'),
+          React.createElement('div', { className: 'grid grid-cols-1 md:grid-cols-3 gap-4' },
+            React.createElement('div', null,
+              React.createElement('p', { className: 'text-xs text-gray-500 mb-2' }, isRu ? 'Каталог и услуги' : 'Katalog va xizmatlar'),
+              moneyLinks.map(function(link, idx) {
+                return React.createElement(Link, {
+                  key: 'money-' + idx,
+                  to: link.href,
+                  className: 'block text-teal-400 hover:text-teal-300 transition hover:underline text-sm'
+                }, '→ ' + link.label);
+              })
+            ),
+            React.createElement('div', null,
+              React.createElement('p', { className: 'text-xs text-gray-500 mb-2' }, isRu ? 'Процесс и контакты' : "Jarayon va kontaktlar"),
+              utilityLinks.map(function(link, idx) {
+                return React.createElement(Link, {
+                  key: 'util-' + idx,
+                  to: link.href,
+                  className: 'block text-teal-400 hover:text-teal-300 transition hover:underline text-sm'
+                }, '→ ' + link.label);
+              })
+            ),
+            React.createElement('div', null,
+              React.createElement('p', { className: 'text-xs text-gray-500 mb-2' }, isRu ? 'Хаб' : 'Xab'),
+              React.createElement(Link, {
+                to: hubLink.href,
+                className: 'block text-teal-400 hover:text-teal-300 transition hover:underline text-sm'
+              }, '→ ' + hubLink.label)
+            )
           )
         ),
         // FAQ Section (P1.2 - Visual display for users)

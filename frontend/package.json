@@ -59,9 +59,11 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "postbuild": "react-snap && node scripts/postbuild-root-noindex.js && node scripts/postbuild-build-stamp.js",
+    "postbuild": "node scripts/postbuild-react-snap.js && node scripts/postbuild-root-noindex.js && node scripts/postbuild-build-stamp.js && node scripts/postbuild-sitemap.js",
     "test": "craco test",
-    "verify:prod": "node scripts/verify-prod.mjs"
+    "verify:prod": "node scripts/verify-prod.mjs",
+    "verify:slugmap": "node scripts/verify-blog-slug-map.mjs",
+    "verify:hydrated-seo": "node scripts/verify-hydrated-seo.mjs"
   },
   "reactSnap": {
     "crawl": false,
@@ -157,8 +159,12 @@
     "eslint-plugin-react-hooks": "5.2.0",
     "globals": "15.15.0",
     "postcss": "^8.4.49",
+    "puppeteer-core": "^24.3.1",
     "tailwindcss": "^3.4.17",
     "react-snap": "^1.23.0"
   },
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
+  "engines": {
+    "node": ">=20 <23"
+  }
 }

@@ -1,0 +1,23 @@
+name = "graveruz-prerender"
+main = "src/index.ts"
+compatibility_date = "2026-02-14"
+compatibility_flags = ["nodejs_compat"]
+
+[browser]
+binding = "BROWSER"
+
+[vars]
+PRERENDER_PROVIDER = "cloudflare"
+RENDER_ORIGIN_PRIMARY = "https://graveruz.pages.dev"
+RENDER_ORIGIN_FALLBACK = "https://www.graver-studio.uz"
+CACHE_TTL_SECONDS = "3600"
+RENDER_TIMEOUT_MS = "12000"
+BOT_RATE_LIMIT_PER_MIN = "30"
+
+[[routes]]
+pattern = "graver-studio.uz/ru/blog*"
+zone_name = "graver-studio.uz"
+
+[[routes]]
+pattern = "graver-studio.uz/uz/blog*"
+zone_name = "graver-studio.uz"
