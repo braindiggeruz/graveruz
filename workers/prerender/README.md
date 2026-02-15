@@ -27,9 +27,12 @@ Cloudflare Worker for bot-only prerendering of React SPA blog pages.
 
 ## Behavior
 
+- `PRERENDER_ENABLED="0"`: full passthrough mode (routes stay attached, no prerender attempts).
 - `HEAD` requests: passthrough to origin (no prerender).
 - Non-bot `GET`: passthrough to origin.
 - Bot `GET` on blog paths:
+  - Requires `Accept` to include `text/html`.
+  - Skips prerender when `Cookie` or `Authorization` header is present.
   - Uses `caches.default` with normalized bot-only cache key.
   - Renders via Browser Rendering binding.
   - Anti-loop rendering target order:
@@ -54,6 +57,18 @@ Cloudflare Worker for bot-only prerendering of React SPA blog pages.
 - Render timeout (`RENDER_TIMEOUT_MS`).
 - Blocks heavy resources (`image`, `font`, `media`) during prerender.
 - Minimal bot rate limit per IP+UA (`BOT_RATE_LIMIT_PER_MIN`).
+- Circuit breaker on Browser Rendering 429: sets cache breaker key for 10 minutes and bypasses prerender attempts while active.
+
+## Error reason → action
+
+| `x-prerender-error-reason` | Meaning | What to do |
+|---|---|---|
+| `rate_limit` | Browser Rendering quota/rate exceeded | Wait for breaker TTL (~10m), reduce bot traffic, keep `Retry-After` respected |
+| `timeout` | Render timed out | Increase `RENDER_TIMEOUT_MS` carefully or reduce page weight |
+| `binding` | Browser binding/config issue | Verify `[browser] binding = "BROWSER"` and account Browser Rendering entitlement |
+| `nav` | Navigation failure | Check render candidate availability (`pages.dev` / `www`) |
+| `content` | Content extraction issue | Validate rendered page can reach canonical selector |
+| `unknown` | Unclassified error | Check Worker logs (`wrangler tail`) |
 
 ## Deploy via Wrangler
 
@@ -83,6 +98,14 @@ npx wrangler deployments list
     - secret `PRERENDER_TOKEN`
   - fallback is documented only; do not enable unless needed.
 
+## Cloudflare Security recommendation
+
+- Enable Bot Fight Mode and/or WAF managed challenge for:
+  - `graver-studio.uz/ru/blog*`
+  - `graver-studio.uz/uz/blog*`
+- Do not block verified search crawlers (`Googlebot`, `Bingbot`, `YandexBot`).
+- Prefer challenge/rate controls for non-verified automation to protect Browser Rendering budget.
+
 ## Routes (few clicks)
 
 Dashboard path:
@@ -103,6 +126,11 @@ Do NOT attach:
 
 - Workers & Pages → Workers → `graveruz-prerender` → Triggers → Routes → delete both blog routes.
 - Traffic immediately falls back to existing SPA behavior.
+
+## Fast disable without route changes
+
+- Set env var `PRERENDER_ENABLED=0` for this Worker and redeploy.
+- Routes remain attached, but Worker will always passthrough to origin.
 
 ## Setup (Cloudflare Dashboard)
 

@@ -5,6 +5,7 @@ type Provider = 'cloudflare' | 'prerenderio';
 
 type Env = {
   BROWSER: Fetcher;
+  PRERENDER_ENABLED?: string;
   PRERENDER_PROVIDER?: Provider;
   PRERENDER_TOKEN?: string;
   RENDER_ORIGIN_PRIMARY?: string;
@@ -31,6 +32,20 @@ function isHeadRequest(request: Request): boolean {
   return request.method.toUpperCase() === 'HEAD';
 }
 
+function isPrerenderEnabled(env: Env): boolean {
+  return (env.PRERENDER_ENABLED || '1') !== '0';
+}
+
+function acceptsHtml(request: Request): boolean {
+  const accept = request.headers.get('accept');
+  if (!accept) return false;
+  return accept.toLowerCase().includes('text/html');
+}
+
+function hasSensitiveHeaders(request: Request): boolean {
+  return Boolean(request.headers.get('cookie') || request.headers.get('authorization'));
+}
+
 function toInt(input: string | undefined, fallback: number): number {
   const value = Number.parseInt(input || '', 10);
   return Number.isFinite(value) && value > 0 ? value : fallback;
@@ -50,6 +65,14 @@ function makeCacheKey(publicUrl: URL): Request {
   const cacheUrl = new URL(publicUrl.toString());
   cacheUrl.searchParams.set('__bot', '1');
   return new Request(cacheUrl.toString(), { method: 'GET' });
+}
+
+function makeBreakerKey(publicUrl: URL): Request {
+  const breakerUrl = new URL(publicUrl.toString());
+  breakerUrl.pathname = '/__prerender_breaker__';
+  breakerUrl.search = 'key=prerender:breaker:rate_limit';
+  breakerUrl.hash = '';
+  return new Request(breakerUrl.toString(), { method: 'GET' });
 }
 
 function buildRenderCandidates(publicUrl: URL, env: Env): URL[] {
@@ -245,6 +268,10 @@ export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const incomingUrl = new URL(request.url);
 
+    if (!isPrerenderEnabled(env)) {
+      return fetchOrigin(request);
+    }
+
     if (isHeadRequest(request)) {
       return fetchOrigin(request);
     }
@@ -258,6 +285,10 @@ export default {
       return fetchOrigin(request);
     }
 
+    if (!acceptsHtml(request) || hasSensitiveHeaders(request)) {
+      return fetchOrigin(request);
+    }
+
     if (!allowBotRateLimit(request, env)) {
       return fetchOrigin(request, true);
     }
@@ -265,7 +296,13 @@ export default {
     const publicUrl = normalizePublicUrl(incomingUrl);
     const cache = (caches as unknown as { default: Cache }).default;
     const cacheKey = makeCacheKey(publicUrl);
+    const breakerKey = makeBreakerKey(publicUrl);
     const inflightKey = cacheKey.url;
+
+    const breakerActive = await cache.match(breakerKey);
+    if (breakerActive) {
+      return fetchOrigin(request, true, 'rate_limit');
+    }
 
     const cached = await cache.match(cacheKey);
     if (cached) {
@@ -309,6 +346,13 @@ export default {
         });
 
         if (reasonCode === 'rate_limit') {
+          const breakerResponse = new Response('1', {
+            headers: {
+              'cache-control': 'max-age=600',
+            },
+          });
+          ctx.waitUntil(cache.put(breakerKey, breakerResponse));
+
           const fallbackCached = await cache.match(cacheKey);
           if (fallbackCached) {
             return withPrerenderHeaders(fallbackCached, 'HIT');
