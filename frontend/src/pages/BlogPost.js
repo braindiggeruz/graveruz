@@ -6,6 +6,7 @@ import { BASE_URL } from '../config/seo';
 import { getPostBySlug, getPostsByLocale } from '../data/blogPosts';
 import { getSeoOverride, getFaqData } from '../data/blogSeoOverrides';
 import { getMappedAlternateSlug } from '../config/blogSlugMap';
+import '../styles/blog-post.css';
 
 function normalizeBlogHref(href, locale) {
   if (!href || typeof href !== 'string') return href;
@@ -38,6 +39,33 @@ function normalizeHtmlContent(html, locale) {
       })
       .replace(/href=(['"])https?:\/\/graver-studio\.uz\/blog\/([^'"]+)\1/g, function(_, quote, path) {
         return 'href=' + quote + '/' + locale + '/blog/' + path + quote;
+      })
+      .replace(/<table(\s[^>]*)?>/gi, function(_, attrs) {
+        var value = attrs || '';
+        if (/class\s*=/.test(value)) {
+          return '<table' + value.replace(/class\s*=\s*(["'])([^"']*)\1/i, function(__, q, classes) {
+            return ' class=' + q + (classes + ' comparison-table').trim() + q;
+          }) + '>';
+        }
+        return '<table class="comparison-table"' + value + '>';
+      })
+      .replace(/<details(\s[^>]*)?>/gi, function(_, attrs) {
+        var value = attrs || '';
+        if (/class\s*=/.test(value)) {
+          return '<details' + value.replace(/class\s*=\s*(["'])([^"']*)\1/i, function(__, q, classes) {
+            return ' class=' + q + (classes + ' faq-section').trim() + q;
+          }) + '>';
+        }
+        return '<details class="faq-section"' + value + '>';
+      })
+      .replace(/<blockquote(\s[^>]*)?>/gi, function(_, attrs) {
+        var value = attrs || '';
+        if (/class\s*=/.test(value)) {
+          return '<blockquote' + value.replace(/class\s*=\s*(["'])([^"']*)\1/i, function(__, q, classes) {
+            return ' class=' + q + (classes + ' highlight-box').trim() + q;
+          }) + '>';
+        }
+        return '<blockquote class="highlight-box"' + value + '>';
       }),
     locale,
   );
@@ -319,7 +347,7 @@ function BlogPostPage() {
             )
           )
         ),
-        React.createElement('div', { className: 'prose prose-invert max-w-none' }, contentBody),
+        React.createElement('div', { className: 'prose prose-invert max-w-none blog-post-content content-html' }, contentBody),
         // Related Articles Section (if exists)
         recommendedPosts.length > 0 && React.createElement('div', { 
           className: 'mt-12 p-6 bg-gray-900/50 border border-gray-800 rounded-xl',
