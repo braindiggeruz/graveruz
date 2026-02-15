@@ -289,6 +289,27 @@ export default function EngravedGiftsPage() {
         </div>
       </section>
 
+      <section className="py-10">
+        <div className="max-w-4xl mx-auto px-4">
+          <div className="p-8 bg-gradient-to-r from-teal-600 to-cyan-600 rounded-xl text-center">
+            <h3 className="text-2xl font-bold text-white mb-4">
+              {locale === 'ru' ? 'Подобрать подарки с гравировкой?' : 'Gravirovkali sovgalarni tanlaymizmi?'}
+            </h3>
+            <p className="text-white mb-6">
+              {locale === 'ru'
+                ? 'Получите подборку моделей и точный расчёт под ваш бюджет за 5 минут'
+                : 'Byudjetingizga mos modellar va aniq hisob-kitobni 5 daqiqada oling'}
+            </p>
+            <button
+              onClick={scrollToForm}
+              className="px-8 py-3 bg-white text-teal-600 font-bold rounded-lg hover:bg-gray-100 transition"
+            >
+              {locale === 'ru' ? 'Оставить заявку' : "So'rov qoldirish"}
+            </button>
+          </div>
+        </div>
+      </section>
+
       <footer className="bg-black border-t border-gray-800 py-6">
         <div className="max-w-7xl mx-auto px-4 text-center text-gray-500 text-sm">© 2025 Graver.uz</div>
       </footer>
