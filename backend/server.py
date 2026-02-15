@@ -11,6 +11,7 @@ import uuid
 from datetime import datetime, timezone
 import httpx
 import re
+from indexing_service import submit_all_posts_to_search_engines, check_indexing_status
 
 
 ROOT_DIR = Path(__file__).parent
@@ -216,6 +217,24 @@ async def get_status_checks():
             check['timestamp'] = datetime.fromisoformat(check['timestamp'])
     
     return status_checks
+
+
+@api_router.get("/indexing/submit-all")
+async def submit_all_indexing(limit: Optional[int] = 10000):
+    try:
+        return await submit_all_posts_to_search_engines(limit=limit)
+    except Exception as e:
+        logger.error(f"❌ Error in submit-all indexing: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@api_router.get("/indexing/status")
+async def get_indexing_status(url: str):
+    try:
+        return await check_indexing_status(url=url)
+    except Exception as e:
+        logger.error(f"❌ Error checking indexing status: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
 
 # Include the router in the main app
 app.include_router(api_router)
