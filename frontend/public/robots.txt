@@ -1,13 +1,18 @@
-# Cloudflare Managed Content
+# Graver.uz robots.txt
 User-agent: *
-Content-Signal: search=yes, ai-train=yes
 Allow: /
+Disallow: /thanks
+Disallow: /ru/thanks
+Disallow: /uz/thanks
+Disallow: /api/
+Disallow: /admin
+Disallow: /private
 
-# Allow Google AI (Gemini, SGE, Search Generative Experience)
+# Allow Google-Extended
 User-agent: Google-Extended
 Allow: /
 
-# Block other AI crawlers (optional - adjust based on your preference)
+# Block selected AI crawlers
 User-agent: Amazonbot
 Disallow: /
 
@@ -29,15 +34,4 @@ Disallow: /
 User-agent: meta-externalagent
 Disallow: /
 
-# Graver.uz robots.txt - SEO optimized
-User-agent: *
-Allow: /
-Disallow: /thanks
-Disallow: /ru/thanks
-Disallow: /uz/thanks
-Disallow: /api/
-Disallow: /admin
-Disallow: /private
-
-# Sitemap
 Sitemap: https://graver-studio.uz/sitemap.xml

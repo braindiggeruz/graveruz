@@ -2,6 +2,8 @@
 .content-html {
   color: #d1d5db;
   line-height: 1.8;
+  width: 100%;
+  max-width: 100%;
 }
 
 .blog-post-content h2,
@@ -125,4 +127,47 @@
   border: 1px solid rgba(45, 212, 191, 0.4);
   padding: 1rem;
   margin: 1rem 0;
+}
+
+.blog-post-content img,
+.content-html img,
+.blog-post-content video,
+.content-html video,
+.blog-post-content iframe,
+.content-html iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+.blog-post-content table,
+.content-html table {
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 768px) {
+  .blog-post-content,
+  .content-html {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .blog-post-content h2,
+  .content-html h2 {
+    font-size: 1.375rem;
+    padding-left: 0.625rem;
+  }
+
+  .blog-post-content h3,
+  .content-html h3 {
+    font-size: 1.2rem;
+  }
+
+  .blog-post-content th,
+  .blog-post-content td,
+  .content-html th,
+  .content-html td {
+    min-width: 160px;
+  }
 }

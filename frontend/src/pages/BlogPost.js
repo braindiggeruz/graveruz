@@ -322,7 +322,7 @@ function BlogPostPage() {
       )
     ),
     React.createElement('main', { className: 'pt-24 pb-20' },
-      React.createElement('article', { className: 'max-w-3xl mx-auto px-4 sm:px-6 lg:px-8', 'data-testid': 'blog-post-content' },
+      React.createElement('article', { className: 'w-full max-w-none mx-auto px-3 sm:px-6 lg:px-8 lg:max-w-3xl', 'data-testid': 'blog-post-content' },
         // Breadcrumb navigation
         React.createElement('nav', { className: 'text-sm text-gray-500 mb-6', 'aria-label': 'Breadcrumb' },
           React.createElement('ol', { className: 'flex items-center space-x-2' },
