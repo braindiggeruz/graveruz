@@ -2,6 +2,17 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar, ChevronRight, Clock } from 'lucide-react';
 
+function toWebpVariant(src, size) {
+  if (!src || typeof src !== 'string') return '';
+  const normalized = src.replace(/^\/+/, '');
+  if (!normalized.startsWith('images/blog/')) return '';
+  const fileName = normalized.slice('images/blog/'.length);
+  const dotIndex = fileName.lastIndexOf('.');
+  if (dotIndex === -1) return '';
+  const baseName = fileName.slice(0, dotIndex);
+  return `/images/blog-webp/${baseName}-${size}.webp`;
+}
+
 /**
  * BlogCard - Улучшенная карточка статьи с изображением
  * 
@@ -17,6 +28,10 @@ import { Calendar, ChevronRight, Clock } from 'lucide-react';
  * @param {boolean} isRu - Флаг русского языка
  */
 export default function BlogCard({ post, locale, isRu }) {
+  const webpSmall = toWebpVariant(post.image, 'small');
+  const webpMedium = toWebpVariant(post.image, 'medium');
+  const webpLarge = toWebpVariant(post.image, 'large');
+
   return (
     <Link
       to={`/${locale}/blog/${post.slug}`}
@@ -26,12 +41,21 @@ export default function BlogCard({ post, locale, isRu }) {
         {/* Image Container */}
         <div className="relative h-48 overflow-hidden bg-gray-800">
           {post.image ? (
-            <img
-              src={post.image}
-              alt={post.title}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-              loading="lazy"
-            />
+            <picture>
+              <source
+                type="image/webp"
+                srcSet={`${webpSmall} 640w, ${webpMedium} 1280w, ${webpLarge} 1920w`}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
+              <img
+                src={post.image}
+                alt={post.title}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+                decoding="async"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
+            </picture>
           ) : (
             <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-teal-900/20 to-cyan-900/20">
               <span className="text-6xl text-teal-500/20">G</span>
