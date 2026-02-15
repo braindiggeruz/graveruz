@@ -4,6 +4,17 @@ Use Node 20 LTS; npm install --legacy-peer-deps
 
 ## Blog publish auto-submit (Indexing)
 
+One-command flow from project root:
+
+- `npm run publish:blog`
+
+Pipeline:
+
+- Parse markdown posts from `blog/src/content/{ru,uz}/posts`
+- Validate generated `frontend/src/data/blogPosts.generated.json`
+- Update `frontend/src/data/blogPosts.js`
+- Auto-submit to Bing/Google Indexing API
+
 After updating blog data via `node scripts/updateBlogPosts.js`, the script now auto-calls:
 
 - `GET /api/indexing/submit-all?limit=<N>`

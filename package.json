@@ -1,0 +1,10 @@
+{
+  "name": "graveruz",
+  "private": true,
+  "scripts": {
+    "parse:blog": "node scripts/parseArticles.js",
+    "validate:blog": "node scripts/validateBlogPosts.js",
+    "update:blog": "node scripts/updateBlogPosts.js",
+    "publish:blog": "node scripts/publishBlog.js"
+  }
+}
