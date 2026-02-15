@@ -30,8 +30,13 @@ next-env.d.ts
 dist/
 dist
 
-# Environment files (comprehensive coverage)
+# Environment files
+*.env
+*.env.*
+!**/.env.example
 
+# Sensitive auth/config files
+backend/config/google-service-account.json
 *token.json*
 *credentials.json*
 
@@ -80,35 +85,3 @@ agenthub/agents/youtube/db
 
 # Mobile development
 android-sdk/
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
