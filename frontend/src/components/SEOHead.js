@@ -89,6 +89,32 @@ export default function SEOHead({
       }
     }))
   } : null;
+
+  const localBusinessSchema = page === 'home' ? {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": `${BASE_URL}/ru#organization`,
+    "name": "Graver.uz",
+    "description": locale === 'ru'
+      ? 'Премиальная лазерная гравировка и брендирование для бизнеса в Ташкенте'
+      : 'Toshkentda biznes uchun premium lazer gravirovka va brendlash',
+    "url": BASE_URL,
+    "telephone": "+998 77 080 22 88",
+    "email": "info@graver-studio.uz",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": locale === 'ru' ? 'Ташкент, Узбекистан' : 'Toshkent, O\'zbekiston',
+      "addressCountry": "UZ"
+    },
+    "areaServed": ["UZ"],
+    "priceRange": "$$",
+    "image": `${BASE_URL}/og-blog.png`,
+    "logo": `${BASE_URL}/og-blog.png`,
+    "sameAs": [
+      "https://www.instagram.com/graver.uz",
+      "https://t.me/graveruz"
+    ]
+  } : null;
   
   return (
     <>
@@ -110,6 +136,11 @@ export default function SEOHead({
         {faqSchema && (
           <script type="application/ld+json" data-seo-faq-home="true">
             {JSON.stringify(faqSchema)}
+          </script>
+        )}
+        {localBusinessSchema && (
+          <script type="application/ld+json" data-seo-localbusiness="true">
+            {JSON.stringify(localBusinessSchema)}
           </script>
         )}
       </Helmet>
