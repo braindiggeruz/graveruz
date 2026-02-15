@@ -150,6 +150,7 @@ function LightersPage() {
     const breadcrumbSchema = document.createElement('script');
     breadcrumbSchema.type = 'application/ld+json';
     breadcrumbSchema.setAttribute('data-seo-lighters', 'true');
+    breadcrumbSchema.setAttribute('data-seo-breadcrumb', 'true');
     breadcrumbSchema.textContent = JSON.stringify({
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
@@ -160,6 +161,42 @@ function LightersPage() {
       ]
     });
     document.head.appendChild(breadcrumbSchema);
+
+    const faqSchema = document.createElement('script');
+    faqSchema.type = 'application/ld+json';
+    faqSchema.setAttribute('data-seo-lighters', 'true');
+    faqSchema.setAttribute('data-seo-faq', 'true');
+    faqSchema.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": isRu ? "Какой минимальный тираж для гравировки зажигалок?" : "Zajigalka gravyurkasi uchun minimal tiraj qancha?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": isRu ? "От 1 изделия. Для партий от 10 штук действуют специальные условия." : "1 donadan boshlanadi. 10 donadan yuqori buyurtmalar uchun maxsus shartlar mavjud."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": isRu ? "Сколько занимает производство?" : "Ishlab chiqarish qancha vaqt oladi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": isRu ? "Обычно 1–3 рабочих дня после согласования макета." : "Odatda maket tasdiqlangandan so'ng 1–3 ish kuni."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": isRu ? "Можно ли сделать гравировку с двух сторон?" : "Ikki tomonga gravyurka qilish mumkinmi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": isRu ? "Да, доступны варианты нанесения на одну или две стороны в зависимости от модели." : "Ha, modelga qarab bir yoki ikki tomonga gravirovka qilish mumkin."
+          }
+        }
+      ]
+    });
+    document.head.appendChild(faqSchema);
 
     return () => {
       document.querySelectorAll('[data-seo-lighters]').forEach(el => el.remove());
