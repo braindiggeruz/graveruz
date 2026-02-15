@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState, lazy, Suspense } from 'react';
 import { Link, useParams, Navigate } from 'react-router-dom';
 import SeoMeta from '../components/SeoMeta';
 import { ArrowLeft, Calendar, Tag, Lightbulb, HelpCircle } from 'lucide-react';
@@ -6,8 +6,11 @@ import { BASE_URL } from '../config/seo';
 import { getPostBySlug, getPostsByLocale } from '../data/blogPosts';
 import { getSeoOverride, getFaqData } from '../data/blogSeoOverrides';
 import { getMappedAlternateSlug } from '../config/blogSlugMap';
-import RelatedArticles from '../components/RelatedArticles';
 import '../styles/blog-post.css';
+
+const RelatedArticles = lazy(function() {
+  return import('../components/RelatedArticles');
+});
 
 function normalizeBlogHref(href, locale) {
   if (!href || typeof href !== 'string') return href;
@@ -90,6 +93,31 @@ function BlogPostPage() {
   const locale = params.locale || 'ru';
   const slug = params.slug || '';
   const isRu = locale === 'ru';
+  const [showDeferredSections, setShowDeferredSections] = useState(false);
+
+  useEffect(function deferNonCriticalSections() {
+    var idleId = null;
+    var timeoutId = null;
+
+    var enableDeferredSections = function() {
+      setShowDeferredSections(true);
+    };
+
+    if (typeof window !== 'undefined' && typeof window.requestIdleCallback === 'function') {
+      idleId = window.requestIdleCallback(enableDeferredSections, { timeout: 1200 });
+    } else {
+      timeoutId = window.setTimeout(enableDeferredSections, 300);
+    }
+
+    return function cleanupDeferredSections() {
+      if (idleId && typeof window !== 'undefined' && typeof window.cancelIdleCallback === 'function') {
+        window.cancelIdleCallback(idleId);
+      }
+      if (timeoutId) {
+        window.clearTimeout(timeoutId);
+      }
+    };
+  }, []);
   
   // Get SEO override for this post
   const seoOverride = getSeoOverride(locale, slug);
@@ -123,6 +151,8 @@ function BlogPostPage() {
 
   useEffect(function addSeoTags() {
     if (!post) return;
+    var faqIdleId = null;
+    var faqTimeoutId = null;
     var oldTags = document.querySelectorAll('[data-seo-blog]');
     oldTags.forEach(function(el) { el.remove(); });
 
@@ -159,29 +189,43 @@ function BlogPostPage() {
     });
     document.head.appendChild(breadcrumbLd);
 
-    // Inject FAQPage JSON-LD (P1.2)
+    // Inject FAQPage JSON-LD (deferred as non-critical)
     if (faqData.length >= 2) {
-      var faqLd = document.createElement('script');
-      faqLd.type = 'application/ld+json';
-      faqLd.setAttribute('data-seo-blog', 'true');
-      faqLd.textContent = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        mainEntity: faqData.map(function(item) {
-          return {
-            "@type": "Question",
-            name: item.q,
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: item.a
-            }
-          };
-        })
-      });
-      document.head.appendChild(faqLd);
+      var faqAppend = function() {
+        var faqLd = document.createElement('script');
+        faqLd.type = 'application/ld+json';
+        faqLd.setAttribute('data-seo-blog', 'true');
+        faqLd.textContent = JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqData.map(function(item) {
+            return {
+              "@type": "Question",
+              name: item.q,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: item.a
+              }
+            };
+          })
+        });
+        document.head.appendChild(faqLd);
+      };
+
+      if (typeof window !== 'undefined' && typeof window.requestIdleCallback === 'function') {
+        faqIdleId = window.requestIdleCallback(faqAppend, { timeout: 1500 });
+      } else {
+        faqTimeoutId = window.setTimeout(faqAppend, 250);
+      }
     }
     
     return function cleanup() {
+      if (faqIdleId && typeof window !== 'undefined' && typeof window.cancelIdleCallback === 'function') {
+        window.cancelIdleCallback(faqIdleId);
+      }
+      if (faqTimeoutId) {
+        window.clearTimeout(faqTimeoutId);
+      }
       document.querySelectorAll('[data-seo-blog]').forEach(function(el) { el.remove(); });
     };
   }, [post, canonicalUrl, locale, seoOverride, faqData]);
@@ -205,27 +249,6 @@ function BlogPostPage() {
   ];
 
   var dateStr = new Date(post.date).toLocaleDateString(isRu ? 'ru-RU' : 'uz-UZ', { year: 'numeric', month: 'long', day: 'numeric' });
-
-  // Get related posts from override or fallback to post.relatedPosts
-  var relatedSlugs = (seoOverride && seoOverride.relatedSlugs) || post.relatedPosts || [];
-  var relatedPosts = relatedSlugs
-    .map(function(s) { return getPostBySlug(locale, s); })
-    .filter(Boolean);
-
-  var allPosts = getPostsByLocale(locale)
-    .filter(function(p) { return p.slug !== slug; });
-
-  var recommendedPosts = relatedPosts.slice(0);
-  if (recommendedPosts.length < 3) {
-    allPosts.forEach(function(p) {
-      if (recommendedPosts.length >= 5) return;
-      if (!recommendedPosts.some(function(rp) { return rp.slug === p.slug; })) {
-        recommendedPosts.push(p);
-      }
-    });
-  } else {
-    recommendedPosts = recommendedPosts.slice(0, 5);
-  }
 
   var moneyLinks = isRu ? [
     { href: '/' + locale + '/catalog-products', label: 'Каталог продукции' },
@@ -367,14 +390,16 @@ function BlogPostPage() {
           )
         ),
         React.createElement('div', { className: 'prose prose-invert max-w-none blog-post-content content-html' }, contentBody),
-        React.createElement(RelatedArticles, {
-          locale: locale,
-          currentSlug: slug,
-          currentArticle: post,
-          articles: getPostsByLocale(locale),
-          limit: 3
-        }),
-        React.createElement('div', {
+        showDeferredSections && React.createElement(Suspense, { fallback: null },
+          React.createElement(RelatedArticles, {
+            locale: locale,
+            currentSlug: slug,
+            currentArticle: post,
+            articles: getPostsByLocale(locale),
+            limit: 3
+          })
+        ),
+        showDeferredSections && React.createElement('div', {
           className: 'mt-6 p-6 bg-gray-900 border border-gray-800 rounded-xl',
           'data-testid': 'internal-links-section'
         },
@@ -410,7 +435,7 @@ function BlogPostPage() {
           )
         ),
         // FAQ Section (P1.2 - Visual display for users)
-        faqData && faqData.length > 0 && React.createElement('div', { 
+        showDeferredSections && faqData && faqData.length > 0 && React.createElement('div', { 
           className: 'mt-6 p-6 bg-gradient-to-r from-gray-900 to-gray-800 border border-gray-700 rounded-xl',
           'data-testid': 'faq-section'
         },
@@ -428,7 +453,7 @@ function BlogPostPage() {
           )
         ),
         // Related Services Section
-        React.createElement('div', { 
+        showDeferredSections && React.createElement('div', { 
           className: 'mt-6 p-6 bg-gray-900 border border-gray-800 rounded-xl',
           'data-testid': 'related-services-section'
         },
