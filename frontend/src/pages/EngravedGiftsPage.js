@@ -50,6 +50,17 @@ const uzFaq = [
   { q: 'Qancha vaqt?', a: '3-5 ish kuni.' }
 ];
 
+const relatedBlogPosts = {
+  ru: [
+    { slug: 'lazernaya-gravirovka-podarkov', title: 'Лазерная гравировка подарков' },
+    { slug: 'podarochnye-nabory-s-logotipom', title: 'Подарочные наборы с логотипом' }
+  ],
+  uz: [
+    { slug: 'lazer-gravirovka-sovgalar', title: 'Lazer gravirovka sovgalar' },
+    { slug: 'logotipli-sovga-toplami', title: 'Logotipli sovga to\'plami' }
+  ]
+};
+
 export default function EngravedGiftsPage() {
   const { locale = 'ru' } = useParams();
   const t = locale === 'uz' ? uzContent : ruContent;
@@ -110,6 +121,42 @@ export default function EngravedGiftsPage() {
       }
     };
   }, [locale, t, canonicalUrl, catalogSlug, faq]);
+
+  useEffect(() => {
+    document.querySelectorAll('[data-seo-product-gifts]').forEach(el => el.remove());
+
+    const giftsSchema = document.createElement('script');
+    giftsSchema.type = 'application/ld+json';
+    giftsSchema.setAttribute('data-seo-product-gifts', 'true');
+    giftsSchema.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Product',
+      name: locale === 'ru' ? 'Гравированные подарки и сувениры' : 'Gravirovkali sovgalar va suvenirlar',
+      description: locale === 'ru'
+        ? 'Широкий выбор гравированных подарков: ручки, ежедневники, повербанки. Лазерная гравировка логотипа компании.'
+        : 'Keng tanlov gravirovkali sovgalar: ruchka, kundaliklar, powerbank. Kompaniya logotipining lazer gravirovkasi.',
+      image: `${BASE_URL}/catalog/pen.png`,
+      brand: { '@type': 'Brand', name: 'Graver.uz' },
+      offers: {
+        '@type': 'AggregateOffer',
+        priceCurrency: 'UZS',
+        lowPrice: '25000',
+        highPrice: '600000',
+        availability: 'https://schema.org/InStock',
+        url: canonicalUrl
+      },
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '4.8',
+        reviewCount: '110'
+      }
+    });
+    document.head.appendChild(giftsSchema);
+
+    return () => {
+      document.querySelectorAll('[data-seo-product-gifts]').forEach(el => el.remove());
+    };
+  }, [locale, canonicalUrl]);
 
   const scrollToForm = () => {
     var formEl = document.getElementById('b2c-form');
@@ -214,6 +261,28 @@ export default function EngravedGiftsPage() {
                 <div className="px-5 pb-3 text-gray-400 text-sm">{item.a}</div>
               </details>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-8">
+        <div className="max-w-4xl mx-auto px-4">
+          <div className="p-8 bg-gray-900 border border-gray-800 rounded-xl">
+            <h3 className="text-2xl font-bold text-white mb-6">
+              {locale === 'ru' ? 'Полезные статьи' : 'Foydali maqolalar'}
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {(relatedBlogPosts[locale] || []).map((post, idx) => (
+                <Link
+                  key={idx}
+                  to={`/${locale}/blog/${post.slug}`}
+                  className="p-4 bg-gray-800 hover:bg-gray-700 rounded-lg transition border border-gray-700 hover:border-teal-500"
+                >
+                  <p className="text-teal-400 font-semibold">{post.title}</p>
+                  <p className="text-gray-400 text-sm mt-2">→ {locale === 'ru' ? 'Читать' : "O'qish"}</p>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>
