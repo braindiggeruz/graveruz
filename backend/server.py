@@ -294,9 +294,9 @@ async def get_status_checks():
     return status_checks
 
 @api_router.get("/indexing/submit-all")
-async def submit_all_indexing():
+async def submit_all_indexing(limit: Optional[int] = None):
     try:
-        result = await submit_all_posts_to_search_engines()
+        result = await submit_all_posts_to_search_engines(limit=limit)
         return result
     except Exception as e:
         logger.error(f"❌ Error in submit-all indexing: {str(e)}")

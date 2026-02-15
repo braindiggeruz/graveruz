@@ -1,6 +1,7 @@
 import asyncio
 import json
 import os
+import logging
 from pathlib import Path
 from typing import Dict, List, Optional
 
@@ -15,10 +16,15 @@ FRONTEND_DATA_PATH = PROJECT_ROOT / "frontend" / "src" / "data" / "blogPosts.gen
 
 BASE_URL = os.environ.get("BASE_URL", "https://graver-studio.uz").rstrip("/")
 INDEXNOW_ENDPOINT = "https://www.bing.com/indexnow"
+logger = logging.getLogger(__name__)
 
 
 def _resolve_google_service_account_path() -> Path:
-    raw_path = os.environ.get("GOOGLE_SERVICE_ACCOUNT_PATH", "./config/google-service-account.json")
+    raw_path = (
+        os.environ.get("GOOGLE_SERVICE_ACCOUNT_JSON_PATH")
+        or os.environ.get("GOOGLE_SERVICE_ACCOUNT_PATH")
+        or "./config/google-service-account.json"
+    )
     path = Path(raw_path)
     if path.is_absolute():
         return path
@@ -44,7 +50,7 @@ def _normalize_post_url(post: dict) -> Optional[str]:
     return f"{BASE_URL}/{language}/blog/{slug}"
 
 
-def _collect_post_urls() -> List[str]:
+def _collect_post_urls(limit: Optional[int] = None) -> List[str]:
     posts = _load_posts()
     unique_urls = []
     seen = set()
@@ -54,6 +60,8 @@ def _collect_post_urls() -> List[str]:
             continue
         seen.add(url)
         unique_urls.append(url)
+    if isinstance(limit, int) and limit > 0:
+        return unique_urls[:limit]
     return unique_urls
 
 
@@ -81,6 +89,7 @@ def _submit_to_google_sync(urls: List[str]) -> Dict[str, int]:
         try:
             service.urlNotifications().publish(body={"url": url, "type": "URL_UPDATED"}).execute()
             success += 1
+            logger.info(f"✅ Отправлено в Google Indexing API: {url}")
         except Exception:
             failed += 1
         finally:
@@ -109,8 +118,12 @@ async def _submit_to_bing(urls: List[str]) -> Dict[str, object]:
     try:
         async with httpx.AsyncClient(timeout=30.0) as client:
             response = await client.post(INDEXNOW_ENDPOINT, json=payload)
+        is_success = 200 <= response.status_code < 300
+        if is_success:
+            for url in payload["urlList"]:
+                logger.info(f"✅ URL отправлен в Bing IndexNow: {url}")
         return {
-            "success": 200 <= response.status_code < 300,
+            "success": is_success,
             "urlCount": len(payload["urlList"]),
             "statusCode": response.status_code,
         }
@@ -122,8 +135,8 @@ async def _submit_to_bing(urls: List[str]) -> Dict[str, object]:
         }
 
 
-async def submit_all_posts_to_search_engines() -> Dict[str, object]:
-    urls = _collect_post_urls()
+async def submit_all_posts_to_search_engines(limit: Optional[int] = None) -> Dict[str, object]:
+    urls = _collect_post_urls(limit=limit)
 
     bing_result = await _submit_to_bing(urls)
     google_result = await asyncio.to_thread(_submit_to_google_sync, urls)
