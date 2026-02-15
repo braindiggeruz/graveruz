@@ -235,7 +235,9 @@ export default function CatalogPage() {
                 <div className="w-full h-32 mb-4 rounded-lg overflow-hidden">
                   <img 
                     src={cat.img} 
-                    alt={cat.name} 
+                    alt={locale === 'ru'
+                      ? `${cat.name} с лазерной гравировкой в Ташкенте — корпоративные подарки Graver.uz`
+                      : `${cat.name} lazer gravirovka bilan Toshkentda — Graver.uz korporativ sovg'alari`}
                     className="w-full h-full object-cover" 
                     loading={index === 0 ? "eager" : "lazy"}
                     fetchpriority={index === 0 ? "high" : undefined}
