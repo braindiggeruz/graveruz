@@ -6,6 +6,7 @@ import { BASE_URL } from '../config/seo';
 import { getPostBySlug, getPostsByLocale } from '../data/blogPosts';
 import { getSeoOverride, getFaqData } from '../data/blogSeoOverrides';
 import { getMappedAlternateSlug } from '../config/blogSlugMap';
+import ConsultationModal from '../components/ConsultationModal';
 import '../styles/blog-post.css';
 
 const RelatedArticles = lazy(function() {
@@ -94,6 +95,7 @@ function BlogPostPage() {
   const slug = params.slug || '';
   const isRu = locale === 'ru';
   const [showDeferredSections, setShowDeferredSections] = useState(false);
+  const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false);
 
   useEffect(function deferNonCriticalSections() {
     var idleId = null;
@@ -390,6 +392,31 @@ function BlogPostPage() {
           )
         ),
         React.createElement('div', { className: 'prose prose-invert max-w-none blog-post-content content-html' }, contentBody),
+        React.createElement('div', {
+          className: 'mt-6 p-6 bg-gradient-to-r from-teal-900/20 to-cyan-900/20 border border-teal-700/30 rounded-xl',
+          'data-testid': 'consultation-cta-section'
+        },
+          React.createElement('div', { className: 'flex items-start gap-4' },
+            React.createElement('div', { className: 'flex-1' },
+              React.createElement('h3', { className: 'text-lg font-bold text-white mb-2 flex items-center gap-2' },
+                React.createElement(HelpCircle, { size: 18, className: 'text-teal-400' }),
+                isRu ? '💡 Нужна помощь?' : '💡 Yordam kerakmi?'
+              ),
+              React.createElement('p', { className: 'text-gray-300 mb-4' },
+                isRu
+                  ? 'Подскажем оптимальный вариант под ваш бюджет и задачу'
+                  : 'Sizning byudjet va vazifangiz uchun optimal variantni tavsiya qilamiz'
+              ),
+              React.createElement('button', {
+                onClick: function() { setIsConsultationModalOpen(true); },
+                className: 'inline-flex items-center gap-2 px-4 py-2 bg-teal-500 hover:bg-teal-600 text-white font-semibold rounded-lg transition'
+              },
+                React.createElement('span', null, isRu ? 'Получить консультацию' : 'Konsultatsiya olish'),
+                React.createElement('span', null, '→')
+              )
+            )
+          )
+        ),
         showDeferredSections && React.createElement(Suspense, { fallback: null },
           React.createElement(RelatedArticles, {
             locale: locale,
@@ -483,7 +510,12 @@ function BlogPostPage() {
       React.createElement('div', { className: 'max-w-7xl mx-auto px-4 text-center text-gray-500 text-sm' },
         React.createElement('p', null, '© 2025 Graver.uz — ' + (isRu ? 'Премиальная лазерная гравировка в Ташкенте' : 'Toshkentda premium lazer gravyurasi'))
       )
-    )
+    ),
+    React.createElement(ConsultationModal, {
+      isOpen: isConsultationModalOpen,
+      onClose: function() { setIsConsultationModalOpen(false); },
+      locale: locale
+    })
   );
 }
 

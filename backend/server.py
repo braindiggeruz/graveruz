@@ -82,6 +82,35 @@ class LeadCreate(BaseModel):
             raise ValueError('Описание должно содержать минимум 10 символов')
         return v.strip()
 
+class ConsultationCreate(BaseModel):
+    name: str
+    phone: str
+    message: str
+    locale: Optional[str] = 'ru'
+    timestamp: Optional[str] = None
+
+    @validator('name')
+    def validate_consultation_name(cls, v):
+        if len(v.strip()) < 2:
+            raise ValueError('Имя должно содержать минимум 2 символа')
+        return v.strip()
+
+    @validator('phone')
+    def validate_consultation_phone(cls, v):
+        cleaned = re.sub(r'\s+', '', v)
+        if len(cleaned) < 10:
+            raise ValueError('Телефон должен содержать минимум 10 символов')
+        return v.strip()
+
+    @validator('message')
+    def validate_consultation_message(cls, v):
+        text = v.strip()
+        if len(text) < 3:
+            raise ValueError('Сообщение должно содержать минимум 3 символа')
+        if len(text) > 1000:
+            raise ValueError('Сообщение не должно превышать 1000 символов')
+        return text
+
 # Telegram Bot Functions
 async def send_telegram_message(message: str):
     """Send message to Telegram bot"""
@@ -144,6 +173,30 @@ def format_lead_message(lead: Lead) -> str:
 """
     return message
 
+def format_consultation_message(input: ConsultationCreate) -> str:
+    locale = 'UZ' if input.locale == 'uz' else 'RU'
+    now_dt = datetime.now(timezone.utc)
+    if input.timestamp:
+        try:
+            now_dt = datetime.fromisoformat(input.timestamp.replace('Z', '+00:00'))
+        except Exception:
+            pass
+
+    if input.locale == 'uz':
+        display_time = now_dt.astimezone().strftime('%d.%m.%Y %H:%M')
+    else:
+        display_time = now_dt.astimezone().strftime('%d.%m.%Y %H:%M')
+
+    return (
+        f"🔔 <b>НОВАЯ ЗАЯВКА НА КОНСУЛЬТАЦИЮ [{locale}]</b>\n\n"
+        f"👤 <b>Имя:</b> {input.name}\n"
+        f"📱 <b>Телефон:</b> {input.phone}\n"
+        f"💬 <b>Сообщение:</b>\n{input.message}\n\n"
+        f"🕐 <b>Время:</b> {display_time}\n"
+        f"🌐 <b>Язык:</b> {'Uzbek' if input.locale == 'uz' else 'Russian'}\n\n"
+        f"<i>Заявка получена с сайта graver-studio.uz</i>"
+    )
+
 
 # Add your routes to the router instead of directly to app
 @api_router.get("/")
@@ -179,6 +232,28 @@ async def create_lead(input: LeadCreate):
         
     except Exception as e:
         logger.error(f"❌ Error creating lead: {str(e)}")
+        raise HTTPException(status_code=500, detail="Ошибка при создании заявки")
+
+@api_router.post("/consultation")
+async def create_consultation(input: ConsultationCreate):
+    try:
+        logger.info(f"📥 Consultation request received: {input.name} | {input.phone[:8]}***")
+
+        message = format_consultation_message(input)
+        telegram_sent = await send_telegram_message(message)
+
+        if not telegram_sent:
+            logger.error("❌ Telegram notification failed for consultation")
+            raise HTTPException(status_code=500, detail="Ошибка отправки заявки")
+
+        return {
+            "success": True,
+            "message": "Ariza muvaffaqiyatli yuborildi" if input.locale == 'uz' else "Заявка успешно отправлена"
+        }
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"❌ Error creating consultation: {str(e)}")
         raise HTTPException(status_code=500, detail="Ошибка при создании заявки")
 
 @api_router.get("/leads", response_model=List[Lead])
