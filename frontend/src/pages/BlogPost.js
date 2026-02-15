@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
 import { Link, useParams, Navigate } from 'react-router-dom';
 import SeoMeta from '../components/SeoMeta';
-import { ArrowLeft, Calendar, Tag, Lightbulb, BookOpen, HelpCircle } from 'lucide-react';
+import { ArrowLeft, Calendar, Tag, Lightbulb, HelpCircle } from 'lucide-react';
 import { BASE_URL } from '../config/seo';
 import { getPostBySlug, getPostsByLocale } from '../data/blogPosts';
 import { getSeoOverride, getFaqData } from '../data/blogSeoOverrides';
 import { getMappedAlternateSlug } from '../config/blogSlugMap';
+import RelatedArticles from '../components/RelatedArticles';
 import '../styles/blog-post.css';
 
 function normalizeBlogHref(href, locale) {
@@ -366,25 +367,12 @@ function BlogPostPage() {
           )
         ),
         React.createElement('div', { className: 'prose prose-invert max-w-none blog-post-content content-html' }, contentBody),
-        // Related Articles Section (if exists)
-        recommendedPosts.length > 0 && React.createElement('div', { 
-          className: 'mt-12 p-6 bg-gray-900/50 border border-gray-800 rounded-xl',
-          'data-testid': 'related-articles-section'
-        },
-          React.createElement('h3', { className: 'text-lg font-bold text-white mb-4 flex items-center gap-2' },
-            React.createElement(BookOpen, { size: 18, className: 'text-teal-500' }),
-            isRu ? 'Рекомендуем прочитать' : "Tavsiya etamiz"
-          ),
-          React.createElement('div', { className: 'space-y-3' },
-            recommendedPosts.map(function(rp, idx) {
-              return React.createElement(Link, { 
-                key: idx, 
-                to: '/' + locale + '/blog/' + rp.slug, 
-                className: 'block text-teal-400 hover:text-teal-300 transition hover:underline'
-              }, '→ ' + rp.title);
-            })
-          )
-        ),
+        React.createElement(RelatedArticles, {
+          locale: locale,
+          currentSlug: slug,
+          articles: recommendedPosts,
+          limit: 3
+        }),
         React.createElement('div', {
           className: 'mt-6 p-6 bg-gray-900 border border-gray-800 rounded-xl',
           'data-testid': 'internal-links-section'

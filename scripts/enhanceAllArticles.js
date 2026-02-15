@@ -27,31 +27,72 @@ function hasClassInHtml(html, className) {
   return new RegExp(`class=["'][^"']*\\b${className}\\b`).test(html);
 }
 
+function getUniqueId(baseId, usedIds) {
+  const cleanBase = baseId || 'section';
+  if (!usedIds.has(cleanBase)) {
+    usedIds.add(cleanBase);
+    return cleanBase;
+  }
+
+  let counter = 1;
+  let nextId = `${cleanBase}-${counter}`;
+  while (usedIds.has(nextId)) {
+    counter += 1;
+    nextId = `${cleanBase}-${counter}`;
+  }
+  usedIds.add(nextId);
+  return nextId;
+}
+
 function addAnchors($) {
+  const usedIds = new Set();
+
   $('h2, h3').each((_, el) => {
     const node = $(el);
-    if (node.attr('id')) return;
-    const id = slugify(node.text());
-    if (!id) return;
-    node.attr('id', id);
+    const currentId = (node.attr('id') || '').trim();
+    if (currentId) {
+      const uniqueExisting = getUniqueId(currentId, usedIds);
+      if (uniqueExisting !== currentId) {
+        node.attr('id', uniqueExisting);
+      }
+      return;
+    }
+
+    const baseId = slugify(node.text());
+    if (!baseId) return;
+    node.attr('id', getUniqueId(baseId, usedIds));
   });
 }
 
 function addToc($) {
-  if ($('.table-of-contents').length) return;
+  $('.table-of-contents').remove();
+
   const h2 = $('h2');
   if (h2.length < 2) return;
 
   const toc = $('<div class="table-of-contents"><h3>📋 Содержание</h3><ul></ul></div>');
   const list = toc.find('ul');
+  const usedIds = new Set($('[id]').map((_, el) => ($(el).attr('id') || '').trim()).get().filter(Boolean));
+  const usedTitles = new Set();
 
   h2.each((_, el) => {
     const node = $(el);
-    const id = node.attr('id') || slugify(node.text());
+    const title = node.text().trim();
+    const titleKey = title.toLowerCase();
+    if (!title || usedTitles.has(titleKey)) return;
+
+    let id = (node.attr('id') || '').trim();
+    if (!id) {
+      id = getUniqueId(slugify(title), usedIds);
+      node.attr('id', id);
+    }
     if (!id) return;
-    if (!node.attr('id')) node.attr('id', id);
-    list.append(`<li><a href="#${id}">${node.text().trim()}</a></li>`);
+
+    usedTitles.add(titleKey);
+    list.append(`<li><a href="#${id}">${title}</a></li>`);
   });
+
+  if (!list.children().length) return;
 
   const firstParagraph = $('p').first();
   if (firstParagraph.length) {
@@ -238,7 +279,7 @@ function addInternalLinks($, relatedSlugs) {
 }
 
 function enhanceHtmlContent(html, relatedSlugs) {
-  if (!html || hasClassInHtml(html, 'table-of-contents')) {
+  if (!html) {
     return html;
   }
 
