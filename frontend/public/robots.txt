@@ -1,18 +1,31 @@
-# Graver.uz robots.txt
+# Graver.uz robots.txt - SEO optimized
+# Last updated: 2026-02-15
+
+# Default rules for all crawlers
 User-agent: *
 Allow: /
+Content-Signal: search=yes, ai-train=yes
+
+# Disallow private/admin pages
 Disallow: /thanks
 Disallow: /ru/thanks
 Disallow: /uz/thanks
 Disallow: /api/
 Disallow: /admin
 Disallow: /private
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /node_modules/
 
-# Allow Google-Extended
+# Allow Google AI (Gemini, SGE, Search Generative Experience)
 User-agent: Google-Extended
 Allow: /
 
-# Block selected AI crawlers
+# Allow Bing AI
+User-agent: Bingbot
+Allow: /
+
+# Block other AI crawlers to prevent unauthorized training
 User-agent: Amazonbot
 Disallow: /
 
@@ -34,4 +47,17 @@ Disallow: /
 User-agent: meta-externalagent
 Disallow: /
 
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+# Crawl-delay for respectful crawling
+User-agent: *
+Crawl-delay: 1
+
+# Sitemap location
 Sitemap: https://graver-studio.uz/sitemap.xml
+Sitemap: https://graver-studio.uz/ru/sitemap.xml
+Sitemap: https://graver-studio.uz/uz/sitemap.xml
