@@ -44,7 +44,7 @@ export default function ConsultationModal({ isOpen, onClose, locale = 'ru' }) {
   const t = texts[isRu ? 'ru' : 'uz'];
 
   const isValidPhone = function(phone) {
-    const phoneRegex = /^[\d\s\-\+\(\)]{10,}$/;
+    const phoneRegex = /^[\d\s()+-]{10,}$/;
     return phoneRegex.test(phone.replace(/\s/g, ''));
   };
 

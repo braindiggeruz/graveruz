@@ -44,3 +44,25 @@ Disable auto-submit for local content-only work:
 Alternative dry-run env flag:
 
 - `PUBLISH_BLOG_DRY_RUN=1 npm run publish:blog`
+
+## Indexing secrets setup (required)
+
+Before calling `GET /api/indexing/submit-all`, create runtime secrets for backend:
+
+1. Copy `backend/.env.example` to `backend/.env`.
+2. Set `BING_INDEXNOW_API_KEY` in `backend/.env`.
+3. Put real Google service account JSON into `backend/config/google-service-account.json`
+	using `backend/config/google-service-account.json.example` as template only.
+4. Keep `GOOGLE_SERVICE_ACCOUNT_PATH=./config/google-service-account.json` in `backend/.env`.
+
+Minimal runtime check from project root:
+
+- `curl.exe -sS "http://127.0.0.1:3000/api/indexing/submit-all?limit=10000"`
+
+If backend is deployed on a separate API host, call that API base URL instead.
+Do not use the frontend domain unless `/api/*` is explicitly proxied there.
+
+Expected behavior:
+
+- `bing.success` should be `true`
+- `google.error` should be empty
