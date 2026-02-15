@@ -120,7 +120,14 @@ function LightersPage() {
         "@type": "Brand",
         "name": "Graver.uz"
       },
-      "offers": undefined
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "UZS",
+        "lowPrice": "140000",
+        "highPrice": "170000",
+        "availability": "https://schema.org/InStock",
+        "url": canonicalUrl
+      }
     });
     document.head.appendChild(mainProductSchema);
 
