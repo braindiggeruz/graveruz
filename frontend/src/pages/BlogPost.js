@@ -79,15 +79,33 @@ function isValidFaqItem(item) {
   return !/sample\s*q\d*/i.test(q + ' ' + a);
 }
 
+function stripBrandSuffix(value) {
+  if (!value || typeof value !== 'string') return '';
+  return value.replace(/\s+—\s*Graver\.uz\s*$/i, '').trim();
+}
+
 function BlogPostPage() {
   const params = useParams();
   const locale = params.locale || 'ru';
   const slug = params.slug || '';
-  const post = getPostBySlug(locale, slug);
   const isRu = locale === 'ru';
   
   // Get SEO override for this post
   const seoOverride = getSeoOverride(locale, slug);
+  const postFromData = getPostBySlug(locale, slug);
+  const fallbackPost = seoOverride
+    ? {
+        slug: slug,
+        title: stripBrandSuffix(seoOverride.title || seoOverride.titleTag || seoOverride.ogTitle || slug),
+        description: seoOverride.description || seoOverride.ogDescription || '',
+        date: new Date().toISOString(),
+        keywords: [],
+        relatedPosts: [],
+        contentHtml: '',
+        content: ''
+      }
+    : null;
+  const post = postFromData || fallbackPost;
   // Get FAQ data for FAQPage Schema
   const faqData = (getFaqData(slug) || []).filter(isValidFaqItem);
 
