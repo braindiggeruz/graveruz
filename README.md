@@ -14,7 +14,7 @@ Pipeline:
 - Parse markdown posts from `blog/src/content/{ru,uz}/posts`
 - Validate generated `frontend/src/data/blogPosts.generated.json`
 - Update `frontend/src/data/blogPosts.js`
-- Auto-submit to Bing/Google Indexing API
+- Auto-submit to Bing/Google Indexing API (all posts by default)
 
 Dry-run behavior (`publish:blog:dry`):
 
@@ -26,6 +26,9 @@ After updating blog data via `node scripts/updateBlogPosts.js`, the script now a
 - `GET /api/indexing/submit-all?limit=<N>`
 
 Default target is `http://localhost:3000` and default limit is `3`.
+
+For `npm run publish:blog`, limit is forced to all posts by default (`AUTO_SUBMIT_INDEXING_LIMIT=10000`).
+You can still override manually via env if needed.
 
 Environment variables:
 

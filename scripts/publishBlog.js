@@ -30,7 +30,9 @@ function main() {
   const isDryRun = resolveDryRunMode();
   const updateEnv = isDryRun
     ? { AUTO_SUBMIT_INDEXING_ON_PUBLISH: '0' }
-    : {};
+    : {
+      AUTO_SUBMIT_INDEXING_LIMIT: process.env.AUTO_SUBMIT_INDEXING_LIMIT || '10000'
+    };
 
   if (isDryRun) {
     console.log('[publish:blog] DRY-RUN mode enabled: indexing submit is disabled for this run');
