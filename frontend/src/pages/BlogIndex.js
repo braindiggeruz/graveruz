@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Calendar, ChevronRight, Star, TrendingUp, Clock, FolderOpen } from 'lucide-react';
@@ -45,6 +45,8 @@ export default function BlogIndex() {
   const { locale } = useParams();
   const { t } = useI18n();
   const posts = getPostsByLocale(locale);
+  const [currentPage, setCurrentPage] = useState(1);
+  const POSTS_PER_PAGE = 12;
 
   const isRu = locale === 'ru';
   const pageTitle = isRu ? 'Блог — Graver.uz' : 'Blog — Graver.uz';
@@ -58,11 +60,44 @@ export default function BlogIndex() {
     .map(slug => getPostBySlug(locale, slug))
     .filter(Boolean);
 
+  const classifyCategory = (post) => {
+    const text = `${post?.title || ''} ${post?.description || ''}`.toLowerCase();
+    const guideRegex = /(гайд|руковод|guide|qo'llanma|qollanma|yo'riqnoma|yoriqnoma)/;
+    const brandingRegex = /(бренд|логотип|brend|logotip|брендир|branding)/;
+    const holidaysRegex = /(новый год|8 марта|23 февраля|navruz|yangi yil|bayram|праздник|holiday)/;
+
+    if (guideRegex.test(text)) return 'guides';
+    if (brandingRegex.test(text)) return 'branding';
+    if (holidaysRegex.test(text)) return 'holidays';
+    return 'business';
+  };
+
+  const categoryCounts = useMemo(() => {
+    return posts.reduce((acc, post) => {
+      const key = classifyCategory(post);
+      acc[key] = (acc[key] || 0) + 1;
+      return acc;
+    }, { guides: 0, branding: 0, holidays: 0, business: 0 });
+  }, [posts]);
+
   // Get categories for hub structure (P1.1)
-  const categories = isRu ? categoriesRu : categoriesUz;
+  const categories = (isRu ? categoriesRu : categoriesUz).map((category) => ({
+    ...category,
+    count: categoryCounts[category.slug] || 0,
+  }));
   
   // Get latest 3 posts (sorted by date)
   const latestPosts = [...posts].sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 3);
+
+  const totalPages = Math.max(1, Math.ceil(posts.length / POSTS_PER_PAGE));
+  const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
+  const paginatedPosts = posts.slice(startIndex, startIndex + POSTS_PER_PAGE);
+
+  const goToPage = (page) => {
+    const nextPage = Math.min(totalPages, Math.max(1, page));
+    setCurrentPage(nextPage);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const canonicalUrl = `${BASE_URL}/${locale}/blog`;
   const ruUrl = `${BASE_URL}/ru/blog`;
@@ -232,12 +267,12 @@ export default function BlogIndex() {
             </div>
           ) : (
             <div className="space-y-6" data-testid="blog-posts-list">
-              {posts.map((post, index) => (
+              {paginatedPosts.map((post, index) => (
                 <Link
                   key={post.slug}
                   to={`/${locale}/blog/${post.slug}`}
                   className="block bg-gray-900 border border-gray-800 rounded-xl p-6 hover:border-teal-500/50 transition group"
-                  data-testid={`blog-post-card-${index + 1}`}
+                  data-testid={`blog-post-card-${startIndex + index + 1}`}
                 >
                   <div className="flex items-center text-sm text-gray-500 mb-3">
                     <Calendar size={14} className="mr-2" />
@@ -257,6 +292,37 @@ export default function BlogIndex() {
                   </span>
                 </Link>
               ))}
+
+              {posts.length > POSTS_PER_PAGE && (
+                <div className="pt-6 flex flex-col items-center gap-4" data-testid="blog-pagination">
+                  <p className="text-sm text-gray-500">
+                    {isRu
+                      ? `Показано ${startIndex + 1}–${Math.min(startIndex + POSTS_PER_PAGE, posts.length)} из ${posts.length}`
+                      : `${startIndex + 1}–${Math.min(startIndex + POSTS_PER_PAGE, posts.length)} / ${posts.length} ko'rsatilmoqda`}
+                  </p>
+                  <div className="flex items-center gap-2">
+                    <button
+                      type="button"
+                      onClick={() => goToPage(currentPage - 1)}
+                      disabled={currentPage === 1}
+                      className="px-3 py-2 rounded-md border border-gray-700 text-sm text-gray-300 disabled:opacity-40 disabled:cursor-not-allowed hover:border-teal-500/50"
+                    >
+                      {isRu ? 'Назад' : 'Orqaga'}
+                    </button>
+                    <span className="text-sm text-gray-400 px-2">
+                      {currentPage} / {totalPages}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => goToPage(currentPage + 1)}
+                      disabled={currentPage === totalPages}
+                      className="px-3 py-2 rounded-md border border-gray-700 text-sm text-gray-300 disabled:opacity-40 disabled:cursor-not-allowed hover:border-teal-500/50"
+                    >
+                      {isRu ? 'Вперёд' : 'Oldinga'}
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
           )}
         </div>
