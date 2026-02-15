@@ -46,6 +46,17 @@ const uzFaq = [
   { q: 'Gravirovka qayerda?', a: 'Orqa qopqoqda yoki tsiferblatda.' }
 ];
 
+const relatedBlogPosts = {
+  ru: [
+    { slug: 'brendirovannye-zazhigalki-i-chasy-s-logotipom', title: 'Брендированные часы и зажигалки' },
+    { slug: 'kak-podgotovit-maket-logotipa', title: 'Как подготовить макет логотипа' }
+  ],
+  uz: [
+    { slug: 'logotipli-zajigalka-va-soat', title: 'Logotipli zajigalka va soat' },
+    { slug: 'logotip-maketi-tayyorlash', title: 'Logotip maketini tayyorlash' }
+  ]
+};
+
 export default function WatchesPage() {
   const { locale = 'ru' } = useParams();
   const t = locale === 'uz' ? uzContent : ruContent;
@@ -106,6 +117,42 @@ export default function WatchesPage() {
       }
     };
   }, [locale, t, canonicalUrl, catalogSlug, faq]);
+
+  useEffect(() => {
+    document.querySelectorAll('[data-seo-product-watches]').forEach(el => el.remove());
+
+    const watchesSchema = document.createElement('script');
+    watchesSchema.type = 'application/ld+json';
+    watchesSchema.setAttribute('data-seo-product-watches', 'true');
+    watchesSchema.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Product',
+      name: locale === 'ru' ? 'Часы с логотипом компании' : 'Logotipli soat',
+      description: locale === 'ru'
+        ? 'Премиальные часы с лазерной гравировкой логотипа. Минимальный тираж от 1 шт.'
+        : 'Premium soat lazer gravirovka bilan. Minimal tartibi 1 dona.',
+      image: `${BASE_URL}/catalog/watches.png`,
+      brand: { '@type': 'Brand', name: 'Graver.uz' },
+      offers: {
+        '@type': 'AggregateOffer',
+        priceCurrency: 'UZS',
+        lowPrice: '450000',
+        highPrice: '2000000',
+        availability: 'https://schema.org/InStock',
+        url: canonicalUrl
+      },
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '4.9',
+        reviewCount: '85'
+      }
+    });
+    document.head.appendChild(watchesSchema);
+
+    return () => {
+      document.querySelectorAll('[data-seo-product-watches]').forEach(el => el.remove());
+    };
+  }, [locale, canonicalUrl]);
 
   return (
     <div className="min-h-screen bg-black">
@@ -218,6 +265,28 @@ export default function WatchesPage() {
                 <div className="px-5 pb-3 text-gray-400 text-sm">{item.a}</div>
               </details>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-8">
+        <div className="max-w-4xl mx-auto px-4">
+          <div className="p-8 bg-gray-900 border border-gray-800 rounded-xl">
+            <h3 className="text-2xl font-bold text-white mb-6">
+              {locale === 'ru' ? 'Полезные статьи' : 'Foydali maqolalar'}
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {(relatedBlogPosts[locale] || []).map((post, idx) => (
+                <Link
+                  key={idx}
+                  to={`/${locale}/blog/${post.slug}`}
+                  className="p-4 bg-gray-800 hover:bg-gray-700 rounded-lg transition border border-gray-700 hover:border-teal-500"
+                >
+                  <p className="text-teal-400 font-semibold">{post.title}</p>
+                  <p className="text-gray-400 text-sm mt-2">→ {locale === 'ru' ? 'Читать' : "O'qish"}</p>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>
