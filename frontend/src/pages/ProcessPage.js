@@ -67,6 +67,56 @@ export default function ProcessPage() {
     };
   }, [locale, home, title, canonicalUrl]);
 
+  useEffect(() => {
+    var oldHowTo = document.querySelector('[data-seo-howto]');
+    if (oldHowTo) {
+      oldHowTo.remove();
+    }
+
+    var howToSchema = document.createElement('script');
+    howToSchema.type = 'application/ld+json';
+    howToSchema.setAttribute('data-seo-howto', 'true');
+    howToSchema.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": locale === 'ru' ? 'Как заказать гравировку' : 'Gravirovkani qanday buyurtma qilish',
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": locale === 'ru' ? 'Отправить макет' : 'Maketni yuborish',
+          "text": locale === 'ru' ? 'Загрузите макет логотипа' : 'Logotip maketini yuklang'
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": locale === 'ru' ? 'Согласовать детали' : 'Detallarni kelishib olish',
+          "text": locale === 'ru' ? 'Обсудим материал и тираж' : 'Material va tirajni muhokama qilamiz'
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": locale === 'ru' ? 'Оплатить заказ' : "Buyurtmani to'lash",
+          "text": locale === 'ru' ? 'Произведём расчёт и выставим счёт' : "Hisob-kitob qilamiz va hisob-faktura taqdim etamiz"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": locale === 'ru' ? 'Получить готовый заказ' : 'Tayyor buyurtmani olish',
+          "text": locale === 'ru' ? 'Доставка или самовывоз в Ташкенте' : "Toshkentda yetkazib berish yoki olib ketish"
+        }
+      ]
+    });
+    document.head.appendChild(howToSchema);
+
+    return () => {
+      var schemaEl = document.querySelector('[data-seo-howto]');
+      if (schemaEl) {
+        schemaEl.remove();
+      }
+    };
+  }, [locale]);
+
   return (
     <div className="min-h-screen bg-black">
       <SEOHead page="process" />
