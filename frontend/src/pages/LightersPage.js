@@ -207,6 +207,36 @@ function LightersPage() {
     return new Intl.NumberFormat(isRu ? 'ru-RU' : 'uz-UZ').format(price);
   };
 
+  const faqItems = isRu
+    ? [
+        {
+          q: 'Какой минимальный тираж для гравировки зажигалок?',
+          a: 'От 1 изделия. Для партий от 10 штук действуют специальные условия.'
+        },
+        {
+          q: 'Сколько занимает производство?',
+          a: 'Обычно 1–3 рабочих дня после согласования макета.'
+        },
+        {
+          q: 'Можно ли сделать гравировку с двух сторон?',
+          a: 'Да, доступны варианты нанесения на одну или две стороны в зависимости от модели.'
+        }
+      ]
+    : [
+        {
+          q: 'Zajigalka gravyurkasi uchun minimal tiraj qancha?',
+          a: '1 donadan boshlanadi. 10 donadan yuqori buyurtmalar uchun maxsus shartlar mavjud.'
+        },
+        {
+          q: 'Ishlab chiqarish qancha vaqt oladi?',
+          a: 'Odatda maket tasdiqlangandan so‘ng 1–3 ish kuni.'
+        },
+        {
+          q: 'Ikki tomonga gravyurka qilish mumkinmi?',
+          a: 'Ha, modelga qarab bir yoki ikki tomonga gravirovka qilish mumkin.'
+        }
+      ];
+
   return (
     <div className="min-h-screen bg-black text-white">
       <SeoMeta
@@ -592,6 +622,25 @@ function LightersPage() {
             >
               {isRu ? '📦 Весь каталог' : "📦 Barcha katalog"}
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-10 bg-gray-900/40" data-testid="lighters-faq-visual">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-white mb-6 text-center">
+            {isRu ? 'Часто задаваемые вопросы' : "Tez-tez so'raladigan savollar"}
+          </h2>
+          <div className="space-y-3">
+            {faqItems.map((item, idx) => (
+              <details key={idx} className="group bg-gray-900 border border-gray-800 rounded-xl">
+                <summary className="px-5 py-3 cursor-pointer list-none flex justify-between text-white text-sm font-medium">
+                  {item.q}
+                  <span className="text-teal-500 group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <div className="px-5 pb-3 text-gray-400 text-sm">{item.a}</div>
+              </details>
+            ))}
           </div>
         </div>
       </section>
