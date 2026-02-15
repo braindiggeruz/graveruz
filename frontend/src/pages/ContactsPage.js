@@ -47,6 +47,7 @@ export default function ContactsPage() {
     const script = document.createElement('script');
     script.type = 'application/ld+json';
     script.id = 'breadcrumb-schema';
+    script.setAttribute('data-seo-breadcrumb', 'true');
     script.textContent = JSON.stringify(breadcrumbSchema);
     document.head.appendChild(script);
     

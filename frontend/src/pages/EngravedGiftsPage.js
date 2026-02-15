@@ -91,6 +91,7 @@ export default function EngravedGiftsPage() {
     const script = document.createElement('script');
     script.type = 'application/ld+json';
     script.id = 'breadcrumb-schema';
+    script.setAttribute('data-seo-breadcrumb', 'true');
     script.textContent = JSON.stringify(schema);
     document.head.appendChild(script);
 
@@ -107,6 +108,7 @@ export default function EngravedGiftsPage() {
     const faqScript = document.createElement('script');
     faqScript.type = 'application/ld+json';
     faqScript.id = 'faq-schema';
+    faqScript.setAttribute('data-seo-faq', 'true');
     faqScript.textContent = JSON.stringify(faqSchema);
     document.head.appendChild(faqScript);
 
