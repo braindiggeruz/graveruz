@@ -63,9 +63,10 @@
     "postbuild": "node scripts/postbuild-react-snap.js && node scripts/postbuild-root-noindex.js && node scripts/postbuild-build-stamp.js && node scripts/postbuild-sitemap.js",
     "images:optimize": "node scripts/optimize-images-webp.mjs",
     "images:audit": "node scripts/audit-images.mjs",
+    "verify:images": "node scripts/verify-image-variants.mjs",
     "test": "craco test",
     "validate:articles": "node scripts/validate-articles.mjs",
-    "verify:prod": "node scripts/verify-prod.mjs",
+    "verify:prod": "npm run verify:images && node scripts/verify-prod.mjs",
     "verify:slugmap": "node scripts/verify-blog-slug-map.mjs",
     "verify:hydrated-seo": "node scripts/verify-hydrated-seo.mjs"
   },
