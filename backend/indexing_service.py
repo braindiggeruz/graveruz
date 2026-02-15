@@ -1,4 +1,5 @@
 import asyncio
+import json
 import logging
 import os
 import re
@@ -13,6 +14,7 @@ from googleapiclient.discovery import build
 ROOT_DIR = Path(__file__).parent
 PROJECT_ROOT = ROOT_DIR.parent
 SITEMAP_PATH = PROJECT_ROOT / "frontend" / "public" / "sitemap.xml"
+STATE_PATH = ROOT_DIR / ".indexing_state.json"
 
 BASE_URL = os.environ.get("BASE_URL", "https://graver-studio.uz").rstrip("/")
 INDEXNOW_ENDPOINT = "https://www.bing.com/indexnow"
@@ -73,6 +75,25 @@ def _collect_urls_from_sitemap(limit: Optional[int] = None) -> List[str]:
     if isinstance(limit, int) and limit > 0:
         return unique_urls[:limit]
     return unique_urls
+
+
+def _load_indexing_state() -> Dict[str, int]:
+    if not STATE_PATH.exists():
+        return {"cursor": 0, "cycles": 0}
+    try:
+        data = json.loads(STATE_PATH.read_text(encoding="utf-8"))
+        cursor = int(data.get("cursor", 0)) if str(data.get("cursor", "0")).isdigit() else 0
+        cycles = int(data.get("cycles", 0)) if str(data.get("cycles", "0")).isdigit() else 0
+        return {"cursor": max(0, cursor), "cycles": max(0, cycles)}
+    except Exception:
+        return {"cursor": 0, "cycles": 0}
+
+
+def _save_indexing_state(cursor: int, cycles: int) -> None:
+    STATE_PATH.write_text(
+        json.dumps({"cursor": max(0, cursor), "cycles": max(0, cycles)}, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
 
 
 def _build_google_indexing_client():
@@ -201,6 +222,60 @@ async def submit_all_posts_to_search_engines(limit: Optional[int] = None) -> Dic
     return {
         "success": True,
         "totalPosts": len(urls),
+        "bing": bing_result,
+        "google": google_result,
+    }
+
+
+async def submit_next_batch_to_search_engines(batch_size: Optional[int] = None) -> Dict[str, object]:
+    urls = _collect_urls_from_sitemap(limit=None)
+    total_urls = len(urls)
+    if total_urls == 0:
+        return {
+            "success": True,
+            "totalPosts": 0,
+            "batchSize": 0,
+            "processedUrls": [],
+            "cursorStart": 0,
+            "cursorEnd": 0,
+            "cycles": 0,
+            "bing": {"success": False, "urlCount": 0, "error": "No URLs in sitemap"},
+            "google": {"success": 0, "failed": 0},
+        }
+
+    default_batch_size = _env_int("GOOGLE_INDEXING_NEXT_BATCH_SIZE", 10)
+    effective_batch_size = batch_size if isinstance(batch_size, int) and batch_size > 0 else default_batch_size
+    effective_batch_size = max(1, effective_batch_size)
+
+    state = _load_indexing_state()
+    cursor_start = state.get("cursor", 0)
+    cycles = state.get("cycles", 0)
+
+    if cursor_start >= total_urls:
+        cursor_start = 0
+
+    cursor_end = min(cursor_start + effective_batch_size, total_urls)
+    batch_urls = urls[cursor_start:cursor_end]
+
+    bing_result = await _submit_to_bing(batch_urls)
+    google_result = await asyncio.to_thread(_submit_to_google_sync, batch_urls)
+
+    cycle_completed = cursor_end >= total_urls
+    next_cursor = 0 if cycle_completed else cursor_end
+    next_cycles = cycles + 1 if cycle_completed else cycles
+    _save_indexing_state(next_cursor, next_cycles)
+
+    return {
+        "success": True,
+        "totalPosts": total_urls,
+        "batchSize": len(batch_urls),
+        "requestedBatchSize": effective_batch_size,
+        "processedUrls": batch_urls,
+        "cursorStart": cursor_start,
+        "cursorEnd": next_cursor,
+        "cycleCompleted": cycle_completed,
+        "cycles": next_cycles,
+        "remainingAfterBatch": total_urls - next_cursor,
         "bing": bing_result,
         "google": google_result,
     }

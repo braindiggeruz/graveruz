@@ -80,3 +80,16 @@ Practical flow:
 - Run `submit-all` hourly (10-20 URLs per run)
 - If 429 occurs, backend retries with exponential backoff
 - Continue remaining URLs in the next runs (see `google.remaining` in response)
+
+## Next batch endpoint (no manual limit)
+
+Backend provides cursor-based batching endpoint:
+
+- `GET /api/indexing/submit-next-batch`
+- Optional: `GET /api/indexing/submit-next-batch?batch_size=10`
+
+Behavior:
+
+- Picks the next portion of URLs from sitemap automatically
+- Saves progress cursor in backend state (`backend/.indexing_state.json`)
+- After the last URL, cursor resets to `0` and `cycles` increments

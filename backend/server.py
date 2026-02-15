@@ -11,7 +11,11 @@ import uuid
 from datetime import datetime, timezone
 import httpx
 import re
-from indexing_service import submit_all_posts_to_search_engines, check_indexing_status
+from indexing_service import (
+    submit_all_posts_to_search_engines,
+    check_indexing_status,
+    submit_next_batch_to_search_engines,
+)
 
 
 ROOT_DIR = Path(__file__).parent
@@ -225,6 +229,15 @@ async def submit_all_indexing(limit: Optional[int] = 10000):
         return await submit_all_posts_to_search_engines(limit=limit)
     except Exception as e:
         logger.error(f"❌ Error in submit-all indexing: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@api_router.get("/indexing/submit-next-batch")
+async def submit_next_batch_indexing(batch_size: Optional[int] = None):
+    try:
+        return await submit_next_batch_to_search_engines(batch_size=batch_size)
+    except Exception as e:
+        logger.error(f"❌ Error in submit-next-batch indexing: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
 
 
