@@ -55,6 +55,10 @@ body {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
+.to-cyan-400 {
+  --tw-gradient-to: #22d3ee;
+}
+
 .to-cyan-600 {
   --tw-gradient-to: #0891b2;
 }
