@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { BASE_URL, HREFLANG_MAP } from '../config/seo';
 
 const DEFAULT_OG_IMAGE = `${BASE_URL}/og-blog.png`;
-const DEFAULT_DESCRIPTION = 'Премиальная лазерная гравировка для бизнеса в Ташкенте. Сначала макет — потом производство.';
+const DEFAULT_DESCRIPTION = 'Лазерная гравировка корпоративных подарков в Ташкенте: макет до производства, тираж от 1 шт, быстрый расчёт. Закажите консультацию в Graver.uz.';
 
 export default function SeoMeta({
   title,
