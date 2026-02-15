@@ -959,6 +959,40 @@ function App() {
         </div>
       </section>
 
+      <section className="py-12 px-4 bg-gray-900 border-y border-gray-800" data-testid="home-services-links">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-white mb-8 text-center">
+            {locale === 'ru' ? 'Наши услуги' : 'Bizning xizmatlar'}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div>
+              <h3 className="text-xl font-semibold text-teal-400 mb-4">{locale === 'ru' ? 'Подарки' : 'Sovgalar'}</h3>
+              <ul className="space-y-2">
+                <li><Link to={`/${locale}/${locale === 'ru' ? 'catalog-products' : 'mahsulotlar-katalogi'}`} className="text-gray-300 hover:text-teal-400">{locale === 'ru' ? '→ Каталог подарков' : '→ Sovga katalogi'}</Link></li>
+                <li><Link to={`/${locale}/${locale === 'ru' ? 'engraved-gifts' : 'gravirovkali-sovgalar'}`} className="text-gray-300 hover:text-teal-400">{locale === 'ru' ? '→ Гравированные подарки' : '→ Gravirovkali sovgalar'}</Link></li>
+                <li><Link to={`/${locale}/blog/${locale === 'ru' ? 'kak-vybrat-korporativnyj-podarok' : 'korporativ-sovgani-qanday-tanlash'}`} className="text-gray-300 hover:text-teal-400">{locale === 'ru' ? '→ Как выбрать подарок' : '→ Sovgani qanday tanlash'}</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold text-teal-400 mb-4">{locale === 'ru' ? 'Брендирование' : 'Brendlash'}</h3>
+              <ul className="space-y-2">
+                <li><Link to={`/${locale}/${locale === 'ru' ? 'watches-with-logo' : 'logotipli-soat'}`} className="text-gray-300 hover:text-teal-400">{locale === 'ru' ? '→ Часы с логотипом' : '→ Logotipli soat'}</Link></li>
+                <li><Link to={`/${locale}/products/lighters`} className="text-gray-300 hover:text-teal-400">{locale === 'ru' ? '→ Зажигалки с гравировкой' : '→ Gravirovkali zajigalkalar'}</Link></li>
+                <li><Link to={`/${locale}/blog/${locale === 'ru' ? 'brendirovannye-zazhigalki-i-chasy-s-logotipom' : 'logotipli-zajigalka-va-soat'}`} className="text-gray-300 hover:text-teal-400">{locale === 'ru' ? '→ Кейсы брендирования' : '→ Brendlash keyslari'}</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold text-teal-400 mb-4">{locale === 'ru' ? 'Полезное' : 'Foydali'}</h3>
+              <ul className="space-y-2">
+                <li><Link to={`/${locale}/process`} className="text-gray-300 hover:text-teal-400">{locale === 'ru' ? '→ Как мы работаем' : '→ Jarayon qanday ishlaydi'}</Link></li>
+                <li><Link to={`/${locale}/contacts`} className="text-gray-300 hover:text-teal-400">{locale === 'ru' ? '→ Контакты' : '→ Kontaktlar'}</Link></li>
+                <li><Link to={`/${locale}/blog`} className="text-gray-300 hover:text-teal-400">{locale === 'ru' ? '→ Блог и гайды' : '→ Blog va qo\'llanmalar'}</Link></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Form Section */}
       <section className="py-20 bg-gray-900" id="contact" data-testid="contact-section">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
