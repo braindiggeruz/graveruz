@@ -58,6 +58,8 @@
     "zod": "^3.24.4"
   },
   "scripts": {
+    "prepare": "husky install ../.husky",
+    "hooks:install": "husky install ../.husky",
     "start": "craco start",
     "build": "craco build",
     "postbuild": "node scripts/postbuild-react-snap.js && node scripts/postbuild-root-noindex.js && node scripts/postbuild-build-stamp.js && node scripts/postbuild-sitemap.js",
@@ -163,6 +165,7 @@
     "eslint-plugin-react": "7.37.4",
     "eslint-plugin-react-hooks": "5.2.0",
     "globals": "15.15.0",
+    "husky": "^9.1.7",
     "postcss": "^8.4.49",
     "sharp": "^0.34.2",
     "puppeteer-core": "^24.3.1",
