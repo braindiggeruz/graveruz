@@ -31,6 +31,11 @@ dist/
 dist
 
 # Environment files (comprehensive coverage)
+*.env
+*.env.*
+!**/.env.example
+
+backend/config/google-service-account.json
 
 *token.json*
 *credentials.json*
