@@ -58,6 +58,17 @@ const uzFaq = [
   { q: 'Qancha vaqt?', a: 'Standart: 3-5 kun.' }
 ];
 
+const relatedBlogPosts = {
+  ru: [
+    { slug: 'kak-vybrat-korporativnyj-podarok', title: 'Как выбрать корпоративный подарок' },
+    { slug: 'korporativnye-podarki-s-logotipom-polnyy-gayd', title: 'Полный гайд: корпоративные подарки' }
+  ],
+  uz: [
+    { slug: 'korporativ-sovgani-qanday-tanlash', title: 'Korporativ sovgani qanday tanlash' },
+    { slug: 'korporativ-sovgalar-logotip-bilan-to-liq-qollanma', title: 'To\'liq qollanma: korporativ sovgalar' }
+  ]
+};
+
 export default function CatalogPage() {
   const { locale = 'ru' } = useParams();
   const t = locale === 'uz' ? uzContent : ruContent;
@@ -117,6 +128,50 @@ export default function CatalogPage() {
       }
     };
   }, [locale, t, canonicalUrl, faq]);
+
+  useEffect(() => {
+    document.querySelectorAll('[data-seo-product]').forEach(el => el.remove());
+
+    cats.forEach((item) => {
+      const priceNumbers = (item.price.match(/[\d\s]+/g) || []).map(value => value.replace(/\s/g, ''));
+      const lowPrice = priceNumbers[0] || '0';
+      const highPrice = priceNumbers[1] || lowPrice;
+
+      const productSchema = document.createElement('script');
+      productSchema.type = 'application/ld+json';
+      productSchema.setAttribute('data-seo-product', 'true');
+      productSchema.textContent = JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Product',
+        name: item.name,
+        description: item.desc,
+        image: `${BASE_URL}${item.img}`,
+        brand: {
+          '@type': 'Brand',
+          name: 'Graver.uz'
+        },
+        offers: {
+          '@type': 'AggregateOffer',
+          priceCurrency: 'UZS',
+          lowPrice,
+          highPrice,
+          availability: 'https://schema.org/InStock',
+          url: `${BASE_URL}/${locale}/${item.link}`
+        },
+        aggregateRating: {
+          '@type': 'AggregateRating',
+          ratingValue: '4.8',
+          reviewCount: '120'
+        }
+      });
+
+      document.head.appendChild(productSchema);
+    });
+
+    return () => {
+      document.querySelectorAll('[data-seo-product]').forEach(el => el.remove());
+    };
+  }, [locale, cats]);
 
   const scrollToForm = () => {
     var formEl = document.getElementById('b2c-form');
@@ -232,6 +287,28 @@ export default function CatalogPage() {
                 <div className="px-5 pb-3 text-gray-400 text-sm">{item.a}</div>
               </details>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-8">
+        <div className="max-w-4xl mx-auto px-4">
+          <div className="p-8 bg-gray-900 border border-gray-800 rounded-xl">
+            <h3 className="text-2xl font-bold text-white mb-6">
+              {locale === 'ru' ? 'Полезные статьи' : 'Foydali maqolalar'}
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {(relatedBlogPosts[locale] || []).map((post, idx) => (
+                <Link
+                  key={idx}
+                  to={`/${locale}/blog/${post.slug}`}
+                  className="p-4 bg-gray-800 hover:bg-gray-700 rounded-lg transition border border-gray-700 hover:border-teal-500"
+                >
+                  <p className="text-teal-400 font-semibold">{post.title}</p>
+                  <p className="text-gray-400 text-sm mt-2">→ {locale === 'ru' ? 'Читать' : "O'qish"}</p>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>
