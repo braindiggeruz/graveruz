@@ -5,6 +5,7 @@
     "parse:blog": "node scripts/parseArticles.js",
     "validate:blog": "node scripts/validateBlogPosts.js",
     "update:blog": "node scripts/updateBlogPosts.js",
-    "publish:blog": "node scripts/publishBlog.js"
+    "publish:blog": "node scripts/publishBlog.js",
+    "publish:blog:dry": "node scripts/publishBlog.js --dry-run"
   }
 }

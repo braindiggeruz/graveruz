@@ -7,6 +7,7 @@ Use Node 20 LTS; npm install --legacy-peer-deps
 One-command flow from project root:
 
 - `npm run publish:blog`
+- `npm run publish:blog:dry`
 
 Pipeline:
 
@@ -14,6 +15,11 @@ Pipeline:
 - Validate generated `frontend/src/data/blogPosts.generated.json`
 - Update `frontend/src/data/blogPosts.js`
 - Auto-submit to Bing/Google Indexing API
+
+Dry-run behavior (`publish:blog:dry`):
+
+- Parse + Validate + Update still run
+- External submit to Bing/Google is skipped for this execution
 
 After updating blog data via `node scripts/updateBlogPosts.js`, the script now auto-calls:
 
@@ -31,3 +37,7 @@ Environment variables:
 Disable auto-submit for local content-only work:
 
 - `AUTO_SUBMIT_INDEXING_ON_PUBLISH=0`
+
+Alternative dry-run env flag:
+
+- `PUBLISH_BLOG_DRY_RUN=1 npm run publish:blog`
