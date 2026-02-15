@@ -66,3 +66,17 @@ Expected behavior:
 
 - `bing.success` should be `true`
 - `google.error` should be empty
+
+## Google quota protection (429)
+
+To avoid exhausting Google daily quota in one run, backend applies per-run limits:
+
+- `GOOGLE_INDEXING_MAX_URLS_PER_RUN=20` (default)
+- `GOOGLE_INDEXING_RETRY_429_MAX=3`
+- `GOOGLE_INDEXING_RETRY_429_BASE_DELAY_SECONDS=30`
+
+Practical flow:
+
+- Run `submit-all` hourly (10-20 URLs per run)
+- If 429 occurs, backend retries with exponential backoff
+- Continue remaining URLs in the next runs (see `google.remaining` in response)

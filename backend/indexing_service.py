@@ -19,6 +19,38 @@ INDEXNOW_ENDPOINT = "https://www.bing.com/indexnow"
 logger = logging.getLogger(__name__)
 
 
+def _env_int(name: str, default: int) -> int:
+    value = os.environ.get(name)
+    if value is None:
+        return default
+    try:
+        parsed = int(value)
+        return parsed if parsed >= 0 else default
+    except ValueError:
+        return default
+
+
+def _env_float(name: str, default: float) -> float:
+    value = os.environ.get(name)
+    if value is None:
+        return default
+    try:
+        parsed = float(value)
+        return parsed if parsed >= 0 else default
+    except ValueError:
+        return default
+
+
+def _is_google_quota_error(error_text: str) -> bool:
+    normalized = (error_text or "").lower()
+    return (
+        " 429 " in f" {normalized} "
+        or "rate_limit_exceeded" in normalized
+        or "quota exceeded" in normalized
+        or "too many requests" in normalized
+    )
+
+
 def _resolve_google_service_account_path() -> Path:
     raw_path = (
         os.environ.get("GOOGLE_SERVICE_ACCOUNT_JSON_PATH")
@@ -61,20 +93,68 @@ def _submit_to_google_sync(urls: List[str]) -> Dict[str, object]:
     if error:
         return {"success": 0, "failed": len(urls), "error": error}
 
+    max_urls_per_run = _env_int("GOOGLE_INDEXING_MAX_URLS_PER_RUN", 20)
+    retry_max = _env_int("GOOGLE_INDEXING_RETRY_429_MAX", 3)
+    retry_base_delay = _env_float("GOOGLE_INDEXING_RETRY_429_BASE_DELAY_SECONDS", 30.0)
+
+    target_urls = urls[:max_urls_per_run] if max_urls_per_run > 0 else []
+    remaining_urls = max(0, len(urls) - len(target_urls))
+
     success = 0
     failed = 0
     last_error = None
-    for url in urls:
-        try:
-            service.urlNotifications().publish(body={"url": url, "type": "URL_UPDATED"}).execute()
-            success += 1
-            logger.info(f"✅ Отправлено в Google Indexing API: {url}")
-        except Exception as error:
-            failed += 1
-            last_error = str(error)
-    result = {"success": success, "failed": failed}
+    stopped_on_quota = False
+
+    for url in target_urls:
+        attempt = 0
+        while True:
+            try:
+                service.urlNotifications().publish(body={"url": url, "type": "URL_UPDATED"}).execute()
+                success += 1
+                logger.info(f"✅ Отправлено в Google Indexing API: {url}")
+                break
+            except Exception as error:
+                error_text = str(error)
+                last_error = error_text
+                attempt += 1
+
+                if _is_google_quota_error(error_text):
+                    if attempt <= retry_max:
+                        backoff = retry_base_delay * (2 ** (attempt - 1))
+                        logger.warning(
+                            f"⚠️ Google quota/rate limit for {url}. Retry {attempt}/{retry_max} in {backoff:.1f}s"
+                        )
+                        import time
+                        time.sleep(backoff)
+                        continue
+                    stopped_on_quota = True
+                    failed += 1
+                    logger.error("❌ Google quota still exceeded after retries; stopping current run")
+                    break
+
+                failed += 1
+                logger.error(f"❌ Ошибка отправки в Google Indexing API: {url} | {error_text}")
+                break
+
+        if stopped_on_quota:
+            break
+
+    result = {
+        "success": success,
+        "failed": failed,
+        "processed": len(target_urls),
+        "remaining": remaining_urls,
+        "maxPerRun": max_urls_per_run,
+    }
     if last_error:
         result["error"] = last_error
+    if remaining_urls > 0:
+        result["note"] = (
+            f"Google submit is rate-limited by run: processed {len(target_urls)} of {len(urls)} URLs. "
+            "Run submit-all again later to continue."
+        )
+    if stopped_on_quota:
+        result["quotaExceeded"] = True
     return result
 
 
