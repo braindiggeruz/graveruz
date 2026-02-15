@@ -104,11 +104,11 @@ export default function SEOHead({
         ogImage={ogImage}
       />
       <Helmet>
-        <script type="application/ld+json">
+        <script type="application/ld+json" data-seo-website="true">
           {JSON.stringify(websiteSchema)}
         </script>
         {faqSchema && (
-          <script type="application/ld+json">
+          <script type="application/ld+json" data-seo-faq-home="true">
             {JSON.stringify(faqSchema)}
           </script>
         )}
