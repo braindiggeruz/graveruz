@@ -281,6 +281,59 @@ async def submit_next_batch_to_search_engines(batch_size: Optional[int] = None) 
     }
 
 
+def reset_batch_state() -> Dict[str, object]:
+    _save_indexing_state(0, 0)
+    return {
+        "cursor": 0,
+        "cycles": 0,
+        "message": "Batch state reset",
+    }
+
+
+def get_batch_status(batch_size: Optional[int] = None) -> Dict[str, object]:
+    urls = _collect_urls_from_sitemap(limit=None)
+    total_urls = len(urls)
+
+    default_batch_size = _env_int("GOOGLE_INDEXING_NEXT_BATCH_SIZE", 10)
+    effective_batch_size = batch_size if isinstance(batch_size, int) and batch_size > 0 else default_batch_size
+    effective_batch_size = max(1, effective_batch_size)
+
+    state = _load_indexing_state()
+    cursor = state.get("cursor", 0)
+    cycles = state.get("cycles", 0)
+
+    if total_urls == 0:
+        return {
+            "cursor": 0,
+            "cycles": cycles,
+            "totalPosts": 0,
+            "progress": "0/0 (0%)",
+            "nextBatchStart": 0,
+            "nextBatchEnd": 0,
+            "batchSize": effective_batch_size,
+            "remaining": 0,
+            "cycleCompleted": False,
+        }
+
+    if cursor >= total_urls:
+        cursor = 0
+
+    next_batch_end = min(cursor + effective_batch_size, total_urls)
+    progress_percent = int((cursor / total_urls) * 100)
+
+    return {
+        "cursor": cursor,
+        "cycles": cycles,
+        "totalPosts": total_urls,
+        "progress": f"{cursor}/{total_urls} ({progress_percent}%)",
+        "nextBatchStart": cursor,
+        "nextBatchEnd": next_batch_end,
+        "batchSize": effective_batch_size,
+        "remaining": total_urls - cursor,
+        "cycleCompleted": cursor == 0 and cycles > 0,
+    }
+
+
 async def check_indexing_status(url: str) -> Dict[str, object]:
     metadata = None
     metadata_error = None

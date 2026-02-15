@@ -15,6 +15,8 @@ from indexing_service import (
     submit_all_posts_to_search_engines,
     check_indexing_status,
     submit_next_batch_to_search_engines,
+    reset_batch_state,
+    get_batch_status,
 )
 
 
@@ -238,6 +240,24 @@ async def submit_next_batch_indexing(batch_size: Optional[int] = None):
         return await submit_next_batch_to_search_engines(batch_size=batch_size)
     except Exception as e:
         logger.error(f"❌ Error in submit-next-batch indexing: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@api_router.get("/indexing/reset-batch-state")
+async def reset_batch_state_indexing():
+    try:
+        return reset_batch_state()
+    except Exception as e:
+        logger.error(f"❌ Error in reset-batch-state indexing: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@api_router.get("/indexing/batch-status")
+async def batch_status_indexing(batch_size: Optional[int] = None):
+    try:
+        return get_batch_status(batch_size=batch_size)
+    except Exception as e:
+        logger.error(f"❌ Error in batch-status indexing: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
 
 

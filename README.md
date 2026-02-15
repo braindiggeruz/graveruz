@@ -93,3 +93,14 @@ Behavior:
 - Picks the next portion of URLs from sitemap automatically
 - Saves progress cursor in backend state (`backend/.indexing_state.json`)
 - After the last URL, cursor resets to `0` and `cycles` increments
+
+Additional helper endpoints:
+
+- `GET /api/indexing/reset-batch-state`
+- `GET /api/indexing/batch-status`
+- Optional: `GET /api/indexing/batch-status?batch_size=20`
+
+Examples:
+
+- Reset response: `{"cursor":0,"cycles":0,"message":"Batch state reset"}`
+- Status response: `{"cursor":20,"cycles":1,"totalPosts":58,"progress":"20/58 (34%)","nextBatchStart":20,"nextBatchEnd":40}`
