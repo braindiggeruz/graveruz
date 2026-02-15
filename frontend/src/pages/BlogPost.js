@@ -370,7 +370,8 @@ function BlogPostPage() {
         React.createElement(RelatedArticles, {
           locale: locale,
           currentSlug: slug,
-          articles: recommendedPosts,
+          currentArticle: post,
+          articles: getPostsByLocale(locale),
           limit: 3
         }),
         React.createElement('div', {
