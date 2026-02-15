@@ -65,7 +65,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/corporate-gift-article.png",
+      "readTime": 8
     },
     {
       "slug": "laser-engraving-gifts-draft",
@@ -136,7 +138,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/laser-engraving-gifts-draft.png",
+      "readTime": 10
     },
     {
       "slug": "article-2",
@@ -207,7 +211,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/article-2.png",
+      "readTime": 7
     },
     {
       "slug": "souvenir-branding-ru",
@@ -278,7 +284,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/souvenir-branding-ru.png",
+      "readTime": 9
     },
     {
       "slug": "article-4",
@@ -349,7 +357,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/article-4.png",
+      "readTime": 6
     },
     {
       "slug": "corporate-gifts-hr-guide",
@@ -408,7 +418,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/corporate-gifts-hr-guide.png",
+      "readTime": 12
     },
     {
       "slug": "article-6",
@@ -479,7 +491,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/article-6.png",
+      "readTime": 8
     },
     {
       "slug": "article-7",
@@ -544,7 +558,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/article-7.png",
+      "readTime": 5
     },
     {
       "slug": "corporate-souvenirs-economy",
@@ -615,7 +631,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/corporate-souvenirs-economy.png",
+      "readTime": 10
     },
     {
       "slug": "logo-layout-article",
@@ -680,7 +698,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/logo-layout-article.png",
+      "readTime": 15
     },
     {
       "slug": "corporate-gifts-article",
@@ -751,7 +771,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/corporate-gifts-article.png",
+      "readTime": 11
     },
     {
       "slug": "article-11",
@@ -822,7 +844,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/article-11.png",
+      "readTime": 7
     },
     {
       "slug": "corporate-gifts-23-february",
@@ -890,7 +914,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/corporate-gifts-23-february.png",
+      "readTime": 6
     },
     {
       "slug": "personalized-gifts",
@@ -952,7 +978,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/personalized-gifts.png",
+      "readTime": 8
     },
     {
       "slug": "article-14",
@@ -1023,7 +1051,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/article-14.png",
+      "readTime": 12
     },
     {
       "slug": "corporate-gifts-supplier-selection",
@@ -1091,7 +1121,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/corporate-gifts-supplier-selection.png",
+      "readTime": 14
     },
     {
       "slug": "article-16",
@@ -1162,7 +1194,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/article-16.png",
+      "readTime": 9
     },
     {
       "slug": "eco-corporate-gifts",
@@ -1233,7 +1267,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/eco-corporate-gifts.png",
+      "readTime": 10
     },
     {
       "slug": "vip-gifts-article",
@@ -1304,7 +1340,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/vip-gifts-article.png",
+      "readTime": 11
     },
     {
       "slug": "corporate-merch-article",
@@ -1366,7 +1404,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/corporate-merch-article.png",
+      "readTime": 13
     },
     {
       "slug": "article-20",
@@ -1437,7 +1477,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/article-20.png",
+      "readTime": 10
     },
     {
       "slug": "corporate-gifts-roi-article",
@@ -1508,7 +1550,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/corporate-gifts-roi-article.png",
+      "readTime": 16
     },
     {
       "slug": "article-22",
@@ -1579,7 +1623,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/article-22.png",
+      "readTime": 9
     },
     {
       "slug": "gift-packaging-article",
@@ -1650,7 +1696,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/gift-packaging-article.png",
+      "readTime": 8
     },
     {
       "slug": "gravirovka-guide",
@@ -1709,7 +1757,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/gravirovka-guide.png",
+      "readTime": 18
     },
     {
       "slug": "corporate-gifts-legal-aspects",
@@ -1777,7 +1827,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/corporate-gifts-legal-aspects.png",
+      "readTime": 20
     }
   ],
   "uz": [
@@ -1850,7 +1902,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/korporativ-sovg-ani-qanday-tanlash-kerak.png",
+      "readTime": 8
     },
     {
       "slug": "article-27",
@@ -1921,7 +1975,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/article-27.png",
+      "readTime": 8
     },
     {
       "slug": "article-28",
@@ -1989,7 +2045,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/article-28.png",
+      "readTime": 8
     },
     {
       "slug": "suvenirlarni-brendlash",
@@ -2060,7 +2118,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/suvenirlarni-brendlash.png",
+      "readTime": 8
     },
     {
       "slug": "welcome-pack-uz",
@@ -2131,7 +2191,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/welcome-pack-uz.png",
+      "readTime": 8
     },
     {
       "slug": "xodimlarga-sovg-alar-hr-qollanma-uz",
@@ -2193,7 +2255,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/xodimlarga-sovg-alar-hr-qollanma-uz.png",
+      "readTime": 8
     },
     {
       "slug": "corporate-gifts-uz",
@@ -2264,7 +2328,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/corporate-gifts-uz.png",
+      "readTime": 8
     },
     {
       "slug": "article-content",
@@ -2326,7 +2392,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/article-content.png",
+      "readTime": 8
     },
     {
       "slug": "korporativ-suvenirlarni-tejash",
@@ -2394,7 +2462,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/korporativ-suvenirlarni-tejash.png",
+      "readTime": 8
     },
     {
       "slug": "logotip-maketini-qanday-tayyorlash-kerak",
@@ -2465,7 +2535,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/logotip-maketini-qanday-tayyorlash-kerak.png",
+      "readTime": 8
     },
     {
       "slug": "new-year-corporate-gifts-uz",
@@ -2536,7 +2608,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/new-year-corporate-gifts-uz.png",
+      "readTime": 8
     },
     {
       "slug": "23-fevralga-nima-sovg-a-qilish-kerak-korporativ-goyalar",
@@ -2607,7 +2681,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/23-fevralga-nima-sovg-a-qilish-kerak-korporativ-goyalar.png",
+      "readTime": 8
     },
     {
       "slug": "personalized-gifts-uz",
@@ -2675,7 +2751,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/personalized-gifts-uz.png",
+      "readTime": 8
     },
     {
       "slug": "logo-application-technologies",
@@ -2746,7 +2824,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/logo-application-technologies.png",
+      "readTime": 8
     },
     {
       "slug": "korporativ-sovg-alar-yetkazib-beruvchini-qanday-tanlash",
@@ -2817,7 +2897,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/korporativ-sovg-alar-yetkazib-beruvchini-qanday-tanlash.png",
+      "readTime": 8
     },
     {
       "slug": "corporate-gifting-trends-2026-uz",
@@ -2888,7 +2970,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/corporate-gifting-trends-2026-uz.png",
+      "readTime": 8
     },
     {
       "slug": "eco-corporate-gifts-43",
@@ -2959,7 +3043,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/eco-corporate-gifts-43.png",
+      "readTime": 8
     },
     {
       "slug": "vip-gifts-article-44",
@@ -3030,7 +3116,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/vip-gifts-article-44.png",
+      "readTime": 8
     },
     {
       "slug": "corporate-merch-article-45",
@@ -3095,7 +3183,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/corporate-merch-article-45.png",
+      "readTime": 8
     },
     {
       "slug": "corporate-gifts-mistakes-uz",
@@ -3166,7 +3256,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/corporate-gifts-mistakes-uz.png",
+      "readTime": 8
     },
     {
       "slug": "corporate-gifting-roi-uz",
@@ -3234,7 +3326,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/corporate-gifting-roi-uz.png",
+      "readTime": 8
     },
     {
       "slug": "uzbek-article",
@@ -3305,7 +3399,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/uzbek-article.png",
+      "readTime": 8
     },
     {
       "slug": "creative-gift-packaging-ideas",
@@ -3373,7 +3469,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/creative-gift-packaging-ideas.png",
+      "readTime": 8
     },
     {
       "slug": "oymakorlik-materiallari",
@@ -3438,7 +3536,9 @@ export const blogPosts = {
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "image": "/images/blog/oymakorlik-materiallari.png",
+      "readTime": 8
     }
   ]
 };

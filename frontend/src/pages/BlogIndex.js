@@ -1,138 +1,129 @@
-import React, { useMemo, useState } from 'react';
+import React, { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { ArrowLeft, Calendar, ChevronRight, Star, TrendingUp, Clock, FolderOpen } from 'lucide-react';
+import { ArrowLeft, Calendar, ChevronRight, Star, TrendingUp, Clock, FolderOpen, Search, ChevronLeft } from 'lucide-react';
 import { useI18n } from '../i18n';
 import { BASE_URL } from '../config/seo';
 import { getPostsByLocale, getPostBySlug } from '../data/blogPosts';
 import SeoMeta from '../components/SeoMeta';
+import BlogCard from '../components/BlogCard';
 
 // Featured/foundational article slugs for "Popular" section
 const featuredSlugsRu = [
-  'kak-vybrat-korporativnyj-podarok',
-  'lazernaya-gravirovka-podarkov',
-  'podarochnye-nabory-s-logotipom',
-  'brendirovanie-suvenirov',
-  'chek-list-zakupshchika-podarkov',
-  'top-idei-podarkov-na-novyj-god'
+  'corporate-gift-article',
+  'laser-engraving-gifts-draft',
+  'article-2',
+  'souvenir-branding-ru',
+  'article-4',
+  'corporate-gifts-hr-guide'
 ];
 
 const featuredSlugsUz = [
-  'korporativ-sovgani-qanday-tanlash',
-  'lazer-gravirovka-sovgalar',
-  'logotipli-sovga-toplami',
-  'suvenir-brendlash',
-  'xaridor-chek-listi-b2b',
-  'yangi-yil-sovga-goyalari'
+  'korporativ-sovg-ani-qanday-tanlash-kerak',
+  'article-27',
+  'article-28',
+  'suvenirlarni-brendlash',
+  'welcome-pack-uz',
+  'xodimlarga-sovg-alar-hr-qollanma-uz'
 ];
 
-// Categories for blog hub structure (P1.1)
+// Categories for blog hub structure
 const categoriesRu = [
-  { name: 'Гайды', slug: 'guides', count: 4 },
-  { name: 'Брендирование', slug: 'branding', count: 3 },
-  { name: 'Праздники', slug: 'holidays', count: 2 },
-  { name: 'Бизнес', slug: 'business', count: 1 }
+  { name: 'Гайды', slug: 'guides', count: 15 },
+  { name: 'Брендирование', slug: 'branding', count: 8 },
+  { name: 'Праздники', slug: 'holidays', count: 5 },
+  { name: 'Бизнес', slug: 'business', count: 8 }
 ];
 
 const categoriesUz = [
-  { name: "Qo'llanmalar", slug: 'guides', count: 4 },
-  { name: 'Brendlash', slug: 'branding', count: 3 },
-  { name: 'Bayramlar', slug: 'holidays', count: 2 },
-  { name: 'Biznes', slug: 'business', count: 1 }
+  { name: "Qo'llanmalar", slug: 'guides', count: 14 },
+  { name: 'Brendlash', slug: 'branding', count: 7 },
+  { name: 'Bayramlar', slug: 'holidays', count: 4 },
+  { name: 'Biznes', slug: 'business', count: 7 }
 ];
+
+const POSTS_PER_PAGE = 12;
 
 export default function BlogIndex() {
   const { locale } = useParams();
   const { t } = useI18n();
   const posts = getPostsByLocale(locale);
+  
   const [currentPage, setCurrentPage] = useState(1);
-  const POSTS_PER_PAGE = 12;
+  const [searchQuery, setSearchQuery] = useState('');
 
   const isRu = locale === 'ru';
   const pageTitle = isRu ? 'Блог — Graver.uz' : 'Blog — Graver.uz';
   const pageDescription = isRu 
-    ? 'Статьи о корпоративных подарках, лазерной гравировке и брендировании в Ташкенте.'
-    : "Toshkentda korporativ sovg'alar, lazer gravyurasi va brendlash haqida maqolalar.";
+    ? 'Статьи о корпоративных подарках, брендировании и лазерной гравировке. Экспертные советы и идеи для вашего бизнеса.'
+    : "Korporativ sovg'alar, brendlash va lazer gravyurasi haqida maqolalar. Biznesingiz uchun ekspert maslahatlari va g'oyalar.";
 
-  // Get featured posts for "Popular" section
   const featuredSlugs = isRu ? featuredSlugsRu : featuredSlugsUz;
+  const categories = isRu ? categoriesRu : categoriesUz;
+
+  // Get featured posts
   const featuredPosts = featuredSlugs
     .map(slug => getPostBySlug(locale, slug))
     .filter(Boolean);
 
-  const classifyCategory = (post) => {
-    const text = `${post?.title || ''} ${post?.description || ''}`.toLowerCase();
-    const guideRegex = /(гайд|руковод|guide|qo'llanma|qollanma|yo'riqnoma|yoriqnoma)/;
-    const brandingRegex = /(бренд|логотип|brend|logotip|брендир|branding)/;
-    const holidaysRegex = /(новый год|8 марта|23 февраля|navruz|yangi yil|bayram|праздник|holiday)/;
+  // Get latest posts (top 5)
+  const latestPosts = [...posts]
+    .sort((a, b) => new Date(b.date) - new Date(a.date))
+    .slice(0, 5);
 
-    if (guideRegex.test(text)) return 'guides';
-    if (brandingRegex.test(text)) return 'branding';
-    if (holidaysRegex.test(text)) return 'holidays';
-    return 'business';
-  };
+  // Filter posts by search query
+  const filteredPosts = posts.filter(post => {
+    if (!searchQuery) return true;
+    const query = searchQuery.toLowerCase();
+    return (
+      post.title.toLowerCase().includes(query) ||
+      post.description.toLowerCase().includes(query)
+    );
+  });
 
-  const categoryCounts = useMemo(() => {
-    return posts.reduce((acc, post) => {
-      const key = classifyCategory(post);
-      acc[key] = (acc[key] || 0) + 1;
-      return acc;
-    }, { guides: 0, branding: 0, holidays: 0, business: 0 });
-  }, [posts]);
-
-  // Get categories for hub structure (P1.1)
-  const categories = (isRu ? categoriesRu : categoriesUz).map((category) => ({
-    ...category,
-    count: categoryCounts[category.slug] || 0,
-  }));
-  
-  // Get latest 3 posts (sorted by date)
-  const latestPosts = [...posts].sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 3);
-
-  const totalPages = Math.max(1, Math.ceil(posts.length / POSTS_PER_PAGE));
+  // Pagination
+  const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
   const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
-  const paginatedPosts = posts.slice(startIndex, startIndex + POSTS_PER_PAGE);
+  const endIndex = startIndex + POSTS_PER_PAGE;
+  const currentPosts = filteredPosts.slice(startIndex, endIndex);
 
-  const goToPage = (page) => {
-    const nextPage = Math.min(totalPages, Math.max(1, page));
-    setCurrentPage(nextPage);
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const canonicalUrl = `${BASE_URL}/${locale}/blog`;
-  const ruUrl = `${BASE_URL}/ru/blog`;
-  const uzUrl = `${BASE_URL}/uz/blog`;
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": isRu ? 'Главная' : 'Bosh sahifa', "item": `${BASE_URL}/${locale}` },
-      { "@type": "ListItem", "position": 2, "name": isRu ? 'Блог' : 'Blog', "item": canonicalUrl }
-    ]
+  const handleSearch = (e) => {
+    setSearchQuery(e.target.value);
+    setCurrentPage(1); // Reset to first page on search
   };
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black">
       <SeoMeta
         title={pageTitle}
         description={pageDescription}
-        canonicalUrl={canonicalUrl}
-        ruUrl={ruUrl}
-        uzUrl={uzUrl}
+        canonicalUrl={`${BASE_URL}/${locale}/blog`}
+        ruUrl={`${BASE_URL}/ru/blog`}
+        uzUrl={`${BASE_URL}/uz/blog`}
         locale={locale}
         ogType="website"
       />
+
       <Helmet>
-        <script type="application/ld+json">
-          {JSON.stringify(breadcrumbSchema)}
-        </script>
+        <link rel="canonical" href={`${BASE_URL}/${locale}/blog`} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
+        <meta property="og:url" content={`${BASE_URL}/${locale}/blog`} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription} />
       </Helmet>
 
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 bg-black/95 backdrop-blur-sm z-50 border-b border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="flex items-center justify-between">
             <Link to={`/${locale}`} className="flex items-center space-x-2">
               <div className="w-10 h-10 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-xl">G</span>
@@ -152,7 +143,8 @@ export default function BlogIndex() {
 
       {/* Main Content */}
       <main className="pt-24 pb-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Breadcrumb */}
           <nav className="text-sm text-gray-500 mb-6" aria-label="Breadcrumb">
             <ol className="flex items-center space-x-2">
               <li>
@@ -164,25 +156,39 @@ export default function BlogIndex() {
               <li className="text-gray-400">{isRu ? 'Блог' : 'Blog'}</li>
             </ol>
           </nav>
+
+          {/* Hero Section */}
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
               {isRu ? 'Блог' : 'Blog'} <span className="text-teal-500">Graver.uz</span>
             </h1>
-            <p className="text-xl text-gray-400">
+            <p className="text-xl text-gray-400 mb-8">
               {isRu 
                 ? 'Статьи о корпоративных подарках и брендировании'
                 : "Korporativ sovg'alar va brendlash haqida maqolalar"}
             </p>
+
+            {/* Search Bar */}
+            <div className="max-w-2xl mx-auto relative">
+              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+              <input
+                type="text"
+                placeholder={isRu ? 'Поиск статей...' : "Maqolalarni qidirish..."}
+                value={searchQuery}
+                onChange={handleSearch}
+                className="w-full pl-12 pr-4 py-3 bg-gray-900 border border-gray-800 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-teal-500 transition"
+              />
+            </div>
           </div>
 
           {/* Featured/Recommended Articles Section */}
           {featuredPosts.length > 0 && (
-            <div className="mb-12 p-6 bg-gradient-to-r from-teal-900/20 to-cyan-900/20 border border-teal-700/30 rounded-xl" data-testid="featured-articles-section">
+            <div className="mb-12 p-6 bg-gradient-to-r from-teal-900/20 to-cyan-900/20 border border-teal-700/30 rounded-xl">
               <h2 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
                 <Star size={18} className="text-teal-400" />
                 {isRu ? 'Рекомендуемые статьи' : 'Tavsiya etilgan maqolalar'}
               </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                 {featuredPosts.map((fp, idx) => (
                   <Link
                     key={idx}
@@ -196,10 +202,10 @@ export default function BlogIndex() {
             </div>
           )}
 
-          {/* Blog Hub Structure (P1.1) - Categories & Latest */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          {/* Blog Hub Structure - Categories & Latest */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
             {/* Popular Section */}
-            <div className="md:col-span-2 p-6 bg-gray-900/50 border border-gray-800 rounded-xl" data-testid="blog-popular-section">
+            <div className="lg:col-span-2 p-6 bg-gray-900/50 border border-gray-800 rounded-xl">
               <h2 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
                 <TrendingUp size={18} className="text-teal-500" />
                 {isRu ? 'Популярное' : 'Mashhur'}
@@ -218,7 +224,7 @@ export default function BlogIndex() {
             </div>
 
             {/* Categories Section */}
-            <div className="p-6 bg-gray-900/50 border border-gray-800 rounded-xl" data-testid="blog-categories-section">
+            <div className="p-6 bg-gray-900/50 border border-gray-800 rounded-xl">
               <h2 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
                 <FolderOpen size={18} className="text-teal-500" />
                 {isRu ? 'Категории' : 'Kategoriyalar'}
@@ -235,7 +241,7 @@ export default function BlogIndex() {
           </div>
 
           {/* Latest Posts Section */}
-          <div className="mb-12 p-6 bg-gradient-to-r from-gray-900 to-gray-800 border border-gray-700 rounded-xl" data-testid="blog-latest-section">
+          <div className="mb-12 p-6 bg-gradient-to-r from-gray-900 to-gray-800 border border-gray-700 rounded-xl">
             <h2 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
               <Clock size={18} className="text-teal-500" />
               {isRu ? 'Последние статьи' : "So'nggi maqolalar"}
@@ -257,73 +263,72 @@ export default function BlogIndex() {
           </div>
 
           {/* All Posts Section */}
-          <h2 className="text-2xl font-bold text-white mb-6">{isRu ? 'Все статьи' : 'Barcha maqolalar'}</h2>
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold text-white mb-2">
+              {isRu ? 'Все статьи' : 'Barcha maqolalar'}
+            </h2>
+            <p className="text-gray-400">
+              {isRu 
+                ? `Найдено статей: ${filteredPosts.length}` 
+                : `Topilgan maqolalar: ${filteredPosts.length}`}
+            </p>
+          </div>
 
-          {posts.length === 0 ? (
+          {currentPosts.length === 0 ? (
             <div className="text-center py-12">
               <p className="text-gray-400">
-                {isRu ? 'Статьи скоро появятся' : "Maqolalar tez orada paydo bo'ladi"}
+                {isRu ? 'Статьи не найдены' : "Maqolalar topilmadi"}
               </p>
             </div>
           ) : (
-            <div className="space-y-6" data-testid="blog-posts-list">
-              {paginatedPosts.map((post, index) => (
-                <Link
-                  key={post.slug}
-                  to={`/${locale}/blog/${post.slug}`}
-                  className="block bg-gray-900 border border-gray-800 rounded-xl p-6 hover:border-teal-500/50 transition group"
-                  data-testid={`blog-post-card-${startIndex + index + 1}`}
-                >
-                  <div className="flex items-center text-sm text-gray-500 mb-3">
-                    <Calendar size={14} className="mr-2" />
-                    {new Date(post.date).toLocaleDateString(locale === 'ru' ? 'ru-RU' : 'uz-UZ', {
-                      year: 'numeric',
-                      month: 'long',
-                      day: 'numeric'
-                    })}
-                  </div>
-                  <h2 className="text-xl font-bold text-white group-hover:text-teal-500 transition mb-2">
-                    {post.title}
-                  </h2>
-                  <p className="text-gray-400 mb-4">{post.description}</p>
-                  <span className="text-teal-500 font-semibold inline-flex items-center group-hover:translate-x-1 transition-transform">
-                    {isRu ? 'Читать' : "O'qish"}
-                    <ChevronRight size={16} className="ml-1" />
-                  </span>
-                </Link>
-              ))}
+            <>
+              {/* Posts Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                {currentPosts.map((post) => (
+                  <BlogCard
+                    key={post.slug}
+                    post={post}
+                    locale={locale}
+                    isRu={isRu}
+                  />
+                ))}
+              </div>
 
-              {posts.length > POSTS_PER_PAGE && (
-                <div className="pt-6 flex flex-col items-center gap-4" data-testid="blog-pagination">
-                  <p className="text-sm text-gray-500">
-                    {isRu
-                      ? `Показано ${startIndex + 1}–${Math.min(startIndex + POSTS_PER_PAGE, posts.length)} из ${posts.length}`
-                      : `${startIndex + 1}–${Math.min(startIndex + POSTS_PER_PAGE, posts.length)} / ${posts.length} ko'rsatilmoqda`}
-                  </p>
-                  <div className="flex items-center gap-2">
+              {/* Pagination */}
+              {totalPages > 1 && (
+                <div className="flex justify-center items-center gap-2">
+                  <button
+                    onClick={() => handlePageChange(currentPage - 1)}
+                    disabled={currentPage === 1}
+                    className="p-2 bg-gray-900 border border-gray-800 rounded-lg hover:border-teal-500 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    <ChevronLeft size={20} className="text-white" />
+                  </button>
+
+                  {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
                     <button
-                      type="button"
-                      onClick={() => goToPage(currentPage - 1)}
-                      disabled={currentPage === 1}
-                      className="px-3 py-2 rounded-md border border-gray-700 text-sm text-gray-300 disabled:opacity-40 disabled:cursor-not-allowed hover:border-teal-500/50"
+                      key={page}
+                      onClick={() => handlePageChange(page)}
+                      className={`px-4 py-2 rounded-lg transition ${
+                        currentPage === page
+                          ? 'bg-teal-500 text-white'
+                          : 'bg-gray-900 border border-gray-800 text-gray-400 hover:border-teal-500'
+                      }`}
                     >
-                      {isRu ? 'Назад' : 'Orqaga'}
+                      {page}
                     </button>
-                    <span className="text-sm text-gray-400 px-2">
-                      {currentPage} / {totalPages}
-                    </span>
-                    <button
-                      type="button"
-                      onClick={() => goToPage(currentPage + 1)}
-                      disabled={currentPage === totalPages}
-                      className="px-3 py-2 rounded-md border border-gray-700 text-sm text-gray-300 disabled:opacity-40 disabled:cursor-not-allowed hover:border-teal-500/50"
-                    >
-                      {isRu ? 'Вперёд' : 'Oldinga'}
-                    </button>
-                  </div>
+                  ))}
+
+                  <button
+                    onClick={() => handlePageChange(currentPage + 1)}
+                    disabled={currentPage === totalPages}
+                    className="p-2 bg-gray-900 border border-gray-800 rounded-lg hover:border-teal-500 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    <ChevronRight size={20} className="text-white" />
+                  </button>
                 </div>
               )}
-            </div>
+            </>
           )}
         </div>
       </main>
