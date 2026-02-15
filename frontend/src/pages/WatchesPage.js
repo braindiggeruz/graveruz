@@ -237,7 +237,9 @@ export default function WatchesPage() {
               <div key={i} className="aspect-square bg-gray-800 rounded-xl overflow-hidden">
                 <img 
                   src="/portfolio/10.webp" 
-                  alt="Часы" 
+                  alt={locale === 'ru'
+                    ? 'Часы с логотипом компании — лазерная гравировка в Ташкенте'
+                    : 'Logotipli soat — Toshkentda lazer gravirovka'}
                   className="w-full h-full object-cover" 
                   loading={index === 0 ? "eager" : "lazy"}
                   fetchpriority={index === 0 ? "high" : undefined}
