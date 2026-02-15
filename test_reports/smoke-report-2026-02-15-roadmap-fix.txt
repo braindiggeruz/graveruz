@@ -1,0 +1,18 @@
+﻿=== SMOKE ROADMAP FIX REPORT ===
+
+Date:
+2026-02-15 15:15:51
+
+Key files:
+src/styles/related-articles.css=True
+src/data/blogPostsWithSeo.js=True
+
+Build:
+PASS (npm run build)
+
+Hydrated SEO verify:
+PASS (npm run verify:hydrated-seo)
+
+Notes:
+- Existing build task in tasks.json has quoting issue for NODE_OPTIONS in PowerShell.
+- Runtime checks are green after compatibility files were added.
