@@ -54,7 +54,15 @@ function ensureChromium() {
 }
 
 const shouldSkip = String(process.env.SKIP_REACT_SNAP || '').toLowerCase();
+const pagesEnv = String(process.env.CF_PAGES_ENVIRONMENT || '').toLowerCase();
+const pagesBranch = String(process.env.CF_PAGES_BRANCH || '').toLowerCase();
+const isProduction = pagesEnv === 'production' || pagesBranch === 'main';
+
 if (shouldSkip === '1' || shouldSkip === 'true') {
+  if (isProduction) {
+    console.error('[postbuild] SKIP_REACT_SNAP is set for production. Refusing to build without prerendered HTML.');
+    process.exit(1);
+  }
   console.log('[postbuild] SKIP_REACT_SNAP=1, skipping react-snap.');
   process.exit(0);
 }
