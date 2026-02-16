@@ -53,6 +53,20 @@ export default function BlogIndex() {
   // Get latest 3 posts (sorted by date)
   const latestPosts = [...posts].sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 3);
 
+  const moneyHubLinks = isRu
+    ? [
+      { href: `/${locale}/catalog-products`, label: 'Корпоративные подарки с логотипом' },
+      { href: `/${locale}/engraved-gifts`, label: 'Подарки с гравировкой на заказ' },
+      { href: `/${locale}/watches-with-logo`, label: 'Часы с логотипом компании' },
+      { href: `/${locale}/products/lighters`, label: 'Зажигалки с логотипом и гравировкой' }
+    ]
+    : [
+      { href: `/${locale}/mahsulotlar-katalogi`, label: "Logotipli korporativ sovg'alar" },
+      { href: `/${locale}/gravirovkali-sovgalar`, label: "Buyurtma asosida gravirovkali sovg'alar" },
+      { href: `/${locale}/logotipli-soat`, label: 'Kompaniya logotipi bilan soatlar' },
+      { href: `/${locale}/products/lighters`, label: 'Logotip va gravyurali zajigalkalar' }
+    ];
+
   const canonicalUrl = `${BASE_URL}/${locale}/blog`;
   const ruUrl = `${BASE_URL}/ru/blog`;
   const uzUrl = `${BASE_URL}/uz/blog`;
@@ -99,6 +113,64 @@ export default function BlogIndex() {
       });
     }
   }, [locale]);
+
+  useEffect(() => {
+    const oldTags = document.querySelectorAll('[data-seo-blog-index-meta]');
+    oldTags.forEach((el) => el.remove());
+
+    const appendMeta = (attr, key, value) => {
+      if (!value) return;
+      const existing = document.head.querySelector(`meta[${attr}="${key}"]`);
+      if (existing) return;
+      const tag = document.createElement('meta');
+      tag.setAttribute(attr, key);
+      tag.setAttribute('content', value);
+      tag.setAttribute('data-seo-blog-index-meta', 'true');
+      document.head.appendChild(tag);
+    };
+
+    const appendLink = (rel, href, extraAttrs) => {
+      if (!href) return;
+      let existing = null;
+      if (extraAttrs && extraAttrs.hreflang) {
+        existing = document.head.querySelector(`link[rel="${rel}"][hreflang="${extraAttrs.hreflang}"]`);
+      } else {
+        existing = document.head.querySelector(`link[rel="${rel}"]`);
+      }
+      if (existing) return;
+      const tag = document.createElement('link');
+      tag.setAttribute('rel', rel);
+      tag.setAttribute('href', href);
+      tag.setAttribute('data-seo-blog-index-meta', 'true');
+      if (extraAttrs) {
+        Object.keys(extraAttrs).forEach((key) => {
+          if (extraAttrs[key]) {
+            tag.setAttribute(key, extraAttrs[key]);
+          }
+        });
+      }
+      document.head.appendChild(tag);
+    };
+
+    document.title = pageTitle;
+    appendMeta('name', 'description', pageDescription);
+    appendMeta('name', 'robots', 'index, follow');
+    appendLink('canonical', canonicalUrl);
+    appendLink('alternate', ruUrl, { hreflang: 'ru-RU' });
+    appendLink('alternate', uzUrl, { hreflang: 'uz-UZ' });
+    appendLink('alternate', ruUrl || canonicalUrl, { hreflang: 'x-default' });
+    appendMeta('property', 'og:title', pageTitle);
+    appendMeta('property', 'og:description', pageDescription);
+    appendMeta('property', 'og:type', 'website');
+    appendMeta('property', 'og:url', canonicalUrl);
+    appendMeta('property', 'og:image', `${BASE_URL}/og-blog.png`);
+    appendMeta('property', 'og:site_name', 'Graver.uz');
+    appendMeta('property', 'og:locale', isRu ? 'ru_RU' : 'uz_UZ');
+    appendMeta('name', 'twitter:card', 'summary_large_image');
+    appendMeta('name', 'twitter:title', pageTitle);
+    appendMeta('name', 'twitter:description', pageDescription);
+    appendMeta('name', 'twitter:image', `${BASE_URL}/og-blog.png`);
+  }, [isRu, pageTitle, pageDescription, canonicalUrl, ruUrl, uzUrl]);
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -286,6 +358,23 @@ export default function BlogIndex() {
                   <time className="text-gray-500 text-xs">
                     {new Date(post.date).toLocaleDateString(locale === 'ru' ? 'ru-RU' : 'uz-UZ', { month: 'short', day: 'numeric' })}
                   </time>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="mb-12 p-6 bg-gray-900/50 border border-gray-800 rounded-xl" data-testid="blog-money-links-section">
+            <h2 className="text-lg font-bold text-white mb-4">
+              {isRu ? 'Быстрый переход к услугам' : 'Xizmatlarga tezkor o\'tish'}
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {moneyHubLinks.map((link, idx) => (
+                <Link
+                  key={idx}
+                  to={link.href}
+                  className="text-teal-400 hover:text-teal-300 transition hover:underline text-sm"
+                >
+                  → {link.label}
                 </Link>
               ))}
             </div>

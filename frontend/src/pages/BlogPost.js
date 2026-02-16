@@ -52,6 +52,78 @@ function isValidFaqItem(item) {
   return !/sample\s*q\d*/i.test(q + ' ' + a);
 }
 
+function buildMoneyLinks(locale, slug, isRu) {
+  var isWatchTopic = /(chasy|watch|soat)/i.test(slug);
+  var isLighterTopic = /(zazhig|lighter|zajig)/i.test(slug);
+  var isGiftTopic = /(podar|gift|sovg|welcome|hr|vip)/i.test(slug);
+
+  if (isRu) {
+    var ruLinks = [
+      { href: '/' + locale + '/catalog-products', label: 'Каталог корпоративных подарков с логотипом' },
+      { href: '/' + locale + '/engraved-gifts', label: 'Подарки с гравировкой на заказ' },
+      { href: '/' + locale + '/watches-with-logo', label: 'Часы с логотипом компании' },
+      { href: '/' + locale + '/products/lighters', label: 'Зажигалки с гравировкой и логотипом' }
+    ];
+
+    var preferred = '/'+ locale +'/catalog-products';
+    if (isWatchTopic) preferred = '/' + locale + '/watches-with-logo';
+    if (isLighterTopic) preferred = '/' + locale + '/products/lighters';
+    if (isGiftTopic) preferred = '/' + locale + '/engraved-gifts';
+
+    var preferredLabelRu = 'Корпоративные подарки с логотипом в Ташкенте';
+    if (isWatchTopic) preferredLabelRu = 'Часы с логотипом на заказ в Ташкенте';
+    if (isLighterTopic) preferredLabelRu = 'Зажигалки с логотипом и гравировкой на заказ';
+    if (isGiftTopic) preferredLabelRu = 'Подарки с гравировкой и логотипом для бизнеса';
+
+    return ruLinks.slice().sort(function(a, b) {
+      if (a.href === preferred && b.href !== preferred) return -1;
+      if (b.href === preferred && a.href !== preferred) return 1;
+      return 0;
+    }).map(function(link) {
+      if (link.href === preferred) {
+        return {
+          href: link.href,
+          label: preferredLabelRu
+        };
+      }
+
+      return link;
+    });
+  }
+
+  var uzLinks = [
+    { href: '/' + locale + '/mahsulotlar-katalogi', label: 'Logotipli korporativ sovg\'alar katalogi' },
+    { href: '/' + locale + '/gravirovkali-sovgalar', label: 'Buyurtma asosida gravirovkali sovg\'alar' },
+    { href: '/' + locale + '/logotipli-soat', label: 'Kompaniya logotipi bilan soatlar' },
+    { href: '/' + locale + '/products/lighters', label: 'Logotip va gravirovkali zajigalkalar' }
+  ];
+
+  var preferredUz = '/' + locale + '/mahsulotlar-katalogi';
+  if (isWatchTopic) preferredUz = '/' + locale + '/logotipli-soat';
+  if (isLighterTopic) preferredUz = '/' + locale + '/products/lighters';
+  if (isGiftTopic) preferredUz = '/' + locale + '/gravirovkali-sovgalar';
+
+  var preferredLabelUz = 'Toshkentda logotipli korporativ sovg\'alar buyurtmasi';
+  if (isWatchTopic) preferredLabelUz = 'Toshkentda logotipli soatlar buyurtmasi';
+  if (isLighterTopic) preferredLabelUz = 'Logotip va gravyurali zajigalkalarni buyurtma qilish';
+  if (isGiftTopic) preferredLabelUz = 'Biznes uchun gravirovkali va logotipli sovg\'alar';
+
+  return uzLinks.slice().sort(function(a, b) {
+    if (a.href === preferredUz && b.href !== preferredUz) return -1;
+    if (b.href === preferredUz && a.href !== preferredUz) return 1;
+    return 0;
+  }).map(function(link) {
+    if (link.href === preferredUz) {
+      return {
+        href: link.href,
+        label: preferredLabelUz
+      };
+    }
+
+    return link;
+  });
+}
+
 function BlogPostPage() {
   const params = useParams();
   const locale = params.locale || 'ru';
@@ -120,23 +192,39 @@ function BlogPostPage() {
     };
 
     document.title = pageTitle;
-    appendMeta('name', 'description', pageDescription);
-    appendMeta('name', 'robots', 'index, follow');
-    appendLink('canonical', canonicalUrl);
-    appendLink('alternate', ruUrl, { hreflang: 'ru-RU' });
-    appendLink('alternate', uzUrl, { hreflang: 'uz-UZ' });
-    appendLink('alternate', ruUrl || canonicalUrl, { hreflang: 'x-default' });
-    appendMeta('property', 'og:title', (seoOverride && (seoOverride.ogTitle || seoOverride.title || seoOverride.titleTag)) || post.title);
-    appendMeta('property', 'og:description', (seoOverride && (seoOverride.ogDescription || seoOverride.description)) || post.description);
-    appendMeta('property', 'og:type', 'article');
-    appendMeta('property', 'og:url', canonicalUrl);
-    appendMeta('property', 'og:image', pageOgImage);
-    appendMeta('property', 'og:site_name', 'Graver.uz');
-    appendMeta('property', 'og:locale', isRuLang ? 'ru_RU' : 'uz_UZ');
-    appendMeta('name', 'twitter:card', 'summary_large_image');
-    appendMeta('name', 'twitter:title', (seoOverride && (seoOverride.ogTitle || seoOverride.title || seoOverride.titleTag)) || post.title);
-    appendMeta('name', 'twitter:description', (seoOverride && (seoOverride.ogDescription || seoOverride.description)) || post.description);
-    appendMeta('name', 'twitter:image', pageOgImage);
+
+    var ensureFallbackHead = function() {
+      var hasHelmetCanonical = document.head.querySelector('link[rel="canonical"][data-rh="true"]');
+      var hasHelmetHreflangRu = document.head.querySelector('link[rel="alternate"][hreflang="ru-RU"][data-rh="true"]');
+      var hasHelmetHreflangUz = document.head.querySelector('link[rel="alternate"][hreflang="uz-UZ"][data-rh="true"]');
+      var hasHelmetXDefault = document.head.querySelector('link[rel="alternate"][hreflang="x-default"][data-rh="true"]');
+      var hasHelmetRobots = document.head.querySelector('meta[name="robots"][data-rh="true"]');
+      var hasHelmetDescription = document.head.querySelector('meta[name="description"][data-rh="true"]');
+
+      if (hasHelmetCanonical && hasHelmetHreflangRu && hasHelmetHreflangUz && hasHelmetXDefault && hasHelmetRobots && hasHelmetDescription) {
+        return;
+      }
+
+      appendMeta('name', 'description', pageDescription);
+      appendMeta('name', 'robots', 'index, follow');
+      appendLink('canonical', canonicalUrl);
+      appendLink('alternate', ruUrl, { hreflang: 'ru-RU' });
+      appendLink('alternate', uzUrl, { hreflang: 'uz-UZ' });
+      appendLink('alternate', ruUrl || canonicalUrl, { hreflang: 'x-default' });
+      appendMeta('property', 'og:title', (seoOverride && (seoOverride.ogTitle || seoOverride.title || seoOverride.titleTag)) || post.title);
+      appendMeta('property', 'og:description', (seoOverride && (seoOverride.ogDescription || seoOverride.description)) || post.description);
+      appendMeta('property', 'og:type', 'article');
+      appendMeta('property', 'og:url', canonicalUrl);
+      appendMeta('property', 'og:image', pageOgImage);
+      appendMeta('property', 'og:site_name', 'Graver.uz');
+      appendMeta('property', 'og:locale', isRuLang ? 'ru_RU' : 'uz_UZ');
+      appendMeta('name', 'twitter:card', 'summary_large_image');
+      appendMeta('name', 'twitter:title', (seoOverride && (seoOverride.ogTitle || seoOverride.title || seoOverride.titleTag)) || post.title);
+      appendMeta('name', 'twitter:description', (seoOverride && (seoOverride.ogDescription || seoOverride.description)) || post.description);
+      appendMeta('name', 'twitter:image', pageOgImage);
+    };
+
+    var fallbackHeadTimer = setTimeout(ensureFallbackHead, 120);
 
     // Inject BlogPosting JSON-LD
     var articleLd = document.createElement('script');
@@ -214,7 +302,8 @@ function BlogPostPage() {
     }
     
     return function cleanup() {
-      document.querySelectorAll('[data-seo-blog]').forEach(function(el) { el.remove(); });
+      clearTimeout(fallbackHeadTimer);
+      document.querySelectorAll('[data-seo-blog], [data-seo-blog-meta]').forEach(function(el) { el.remove(); });
     };
   }, [post, pageTitle, pageDescription, canonicalUrl, ruUrl, uzUrl, locale, seoOverride, faqData, pageOgImage]);
 
@@ -244,39 +333,7 @@ function BlogPostPage() {
     : [];
   var recommendedPosts = getRelatedPostsWeighted(locale, slug, 5, overrideRelatedSlugs);
 
-  var moneyLinksBase = isRu ? [
-    { href: '/' + locale + '/catalog-products', label: 'Каталог продукции' },
-    { href: '/' + locale + '/engraved-gifts', label: 'Подарки с гравировкой' },
-    { href: '/' + locale + '/watches-with-logo', label: 'Часы с логотипом' },
-    { href: '/' + locale + '/products/lighters', label: 'Зажигалки с гравировкой' }
-  ] : [
-    { href: '/' + locale + '/mahsulotlar-katalogi', label: 'Mahsulotlar katalogi' },
-    { href: '/' + locale + '/gravirovkali-sovgalar', label: "Gravirovkali sovg'alar" },
-    { href: '/' + locale + '/logotipli-soat', label: 'Logotipli soat' },
-    { href: '/' + locale + '/products/lighters', label: 'Zajigalkalar' }
-  ];
-
-  var preferredMoneyHref = (function resolvePreferredMoneyHref() {
-    if (isRu) {
-      if (/(chasy|watch|soat)/i.test(slug)) return '/' + locale + '/watches-with-logo';
-      if (/(zazhig|lighter|zajig)/i.test(slug)) return '/' + locale + '/products/lighters';
-      if (/(podar|gift|sovg|welcome|hr|vip)/i.test(slug)) return '/' + locale + '/engraved-gifts';
-      return '/' + locale + '/catalog-products';
-    }
-
-    if (/(soat|watch|chasy)/i.test(slug)) return '/' + locale + '/logotipli-soat';
-    if (/(zajig|lighter|zazhig)/i.test(slug)) return '/' + locale + '/products/lighters';
-    if (/(sovg|gift|welcome|hr|vip)/i.test(slug)) return '/' + locale + '/gravirovkali-sovgalar';
-    return '/' + locale + '/mahsulotlar-katalogi';
-  })();
-
-  var moneyLinks = moneyLinksBase
-    .slice()
-    .sort(function(a, b) {
-      if (a.href === preferredMoneyHref && b.href !== preferredMoneyHref) return -1;
-      if (b.href === preferredMoneyHref && a.href !== preferredMoneyHref) return 1;
-      return 0;
-    });
+  var moneyLinks = buildMoneyLinks(locale, slug, isRu);
 
   var utilityLinks = [
     { href: '/' + locale + '/process', label: isRu ? 'Процесс' : 'Jarayon' },
