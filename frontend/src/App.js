@@ -766,12 +766,11 @@ function App() {
         </Suspense>
       </DeferredSection>
 
+      <DeferredSection id="process" placeholderClassName="py-20 bg-black" rootMargin="460px">
       {/* Process Section */}
       <section
         className="py-20 bg-black"
-        id="process"
         data-testid="process-section"
-        style={{ contentVisibility: 'auto', containIntrinsicSize: '900px' }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -845,6 +844,7 @@ function App() {
           </div>
         </div>
       </section>
+      </DeferredSection>
 
       <DeferredSection placeholderClassName="py-16 bg-gray-900/50" rootMargin="480px">
         <Suspense fallback={<div className="h-32" aria-busy="true" />}>
@@ -852,12 +852,11 @@ function App() {
         </Suspense>
       </DeferredSection>
 
+      <DeferredSection id="contact" placeholderClassName="py-20 bg-gray-900" rootMargin="560px">
       {/* Contact Form Section */}
       <section
         className="py-20 bg-gray-900"
-        id="contact"
         data-testid="contact-section"
-        style={{ contentVisibility: 'auto', containIntrinsicSize: '1100px' }}
       >
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -1078,13 +1077,13 @@ function App() {
           </form>
         </div>
       </section>
+      </DeferredSection>
 
+      <DeferredSection id="blog" placeholderClassName="py-20 bg-black" rootMargin="520px">
       {/* Blog Posts Section */}
       <section
         className="py-20 bg-black"
-        id="blog"
         data-testid="blog-section"
-        style={{ contentVisibility: 'auto', containIntrinsicSize: '700px' }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -1137,6 +1136,7 @@ function App() {
           </div>
         </div>
       </section>
+      </DeferredSection>
 
       {/* FAQ Section */}
       <section
