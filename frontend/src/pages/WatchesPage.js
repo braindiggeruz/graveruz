@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { Send, AlertTriangle, Check } from 'lucide-react';
 import B2CForm from '../components/B2CForm';
 import B2CSeo from '../components/B2CSeo';
 import LanguageSwitcher from '../components/LanguageSwitcher';
-import { BASE_URL, buildCanonical, buildAlternate, HREFLANG_MAP } from '../config/seo';
+import { BASE_URL, buildCanonical, buildAlternate } from '../config/seo';
 
 const ruContent = {
   slug: 'watches-with-logo',
@@ -61,51 +62,72 @@ export default function WatchesPage() {
   useEffect(() => {
     document.documentElement.lang = locale === 'uz' ? 'uz-Latn' : 'ru';
     window.scrollTo(0, 0);
+  }, [locale]);
 
-    const schema = {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": t.home, "item": `${BASE_URL}/${locale}` },
-        { "@type": "ListItem", "position": 2, "name": t.catalog, "item": `${BASE_URL}/${locale}/${catalogSlug}` },
-        { "@type": "ListItem", "position": 3, "name": t.title, "item": canonicalUrl }
-      ]
-    };
-    const oldSchema = document.getElementById('breadcrumb-schema');
-    if (oldSchema) oldSchema.remove();
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.id = 'breadcrumb-schema';
-    script.textContent = JSON.stringify(schema);
-    document.head.appendChild(script);
-
-    const faqSchema = {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": faq.map(item => ({
-        "@type": "Question", "name": item.q,
-        "acceptedAnswer": { "@type": "Answer", "text": item.a }
-      }))
-    };
-    const oldFaq = document.getElementById('faq-schema');
-    if (oldFaq) oldFaq.remove();
-    const faqScript = document.createElement('script');
-    faqScript.type = 'application/ld+json';
-    faqScript.id = 'faq-schema';
-    faqScript.textContent = JSON.stringify(faqSchema);
-    document.head.appendChild(faqScript);
-
-    return () => {
-      var breadcrumbSchema = document.getElementById('breadcrumb-schema');
-      if (breadcrumbSchema) {
-        breadcrumbSchema.remove();
+  const watchesGraphSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": `${BASE_URL}/#organization`,
+        "name": "Graver.uz",
+        "url": BASE_URL,
+        "logo": `${BASE_URL}/logo192.png`
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${BASE_URL}/#website`,
+        "url": BASE_URL,
+        "name": "Graver.uz",
+        "publisher": { "@id": `${BASE_URL}/#organization` }
+      },
+      {
+        "@type": "WebPage",
+        "@id": `${canonicalUrl}#webpage`,
+        "url": canonicalUrl,
+        "name": t.title,
+        "description": t.meta,
+        "isPartOf": { "@id": `${BASE_URL}/#website` },
+        "inLanguage": locale === 'uz' ? 'uz' : 'ru'
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${canonicalUrl}#breadcrumb`,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": t.home, "item": `${BASE_URL}/${locale}` },
+          { "@type": "ListItem", "position": 2, "name": t.catalog, "item": `${BASE_URL}/${locale}/${catalogSlug}` },
+          { "@type": "ListItem", "position": 3, "name": t.title, "item": canonicalUrl }
+        ]
+      },
+      {
+        "@type": "Product",
+        "@id": `${canonicalUrl}#product`,
+        "name": t.title,
+        "description": t.meta,
+        "brand": { "@id": `${BASE_URL}/#organization` },
+        "offers": {
+          "@type": "AggregateOffer",
+          "priceCurrency": "UZS",
+          "lowPrice": "450000",
+          "highPrice": "2000000",
+          "offerCount": "2",
+          "url": canonicalUrl
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${canonicalUrl}#faq`,
+        "mainEntity": faq.map(item => ({
+          "@type": "Question",
+          "name": item.q,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": item.a
+          }
+        }))
       }
-      var faqSchemaEl = document.getElementById('faq-schema');
-      if (faqSchemaEl) {
-        faqSchemaEl.remove();
-      }
-    };
-  }, [locale, t, canonicalUrl, catalogSlug, faq]);
+    ]
+  };
 
   return (
     <div className="min-h-screen bg-black">
@@ -117,6 +139,11 @@ export default function WatchesPage() {
         uzUrl={uzUrl}
         locale={locale}
       />
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(watchesGraphSchema)}
+        </script>
+      </Helmet>
 
       <header className="bg-black/95 border-b border-gray-800 py-4">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">

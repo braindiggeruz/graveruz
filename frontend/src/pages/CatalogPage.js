@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { Send, ArrowRight, AlertTriangle } from 'lucide-react';
 import B2CForm from '../components/B2CForm';
 import B2CSeo from '../components/B2CSeo';
 import LanguageSwitcher from '../components/LanguageSwitcher';
-import { BASE_URL, buildCanonical, buildAlternate, HREFLANG_MAP } from '../config/seo';
+import { BASE_URL, buildCanonical, buildAlternate } from '../config/seo';
 
 const ruContent = {
   slug: 'catalog-products',
@@ -72,51 +73,67 @@ export default function CatalogPage() {
   useEffect(() => {
     document.documentElement.lang = locale === 'uz' ? 'uz-Latn' : 'ru';
     window.scrollTo(0, 0);
+  }, [locale]);
 
-    const schema = {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": t.home, "item": `${BASE_URL}/${locale}` },
-        { "@type": "ListItem", "position": 2, "name": t.title, "item": canonicalUrl }
-      ]
-    };
-    const oldSchema = document.getElementById('breadcrumb-schema');
-    if (oldSchema) oldSchema.remove();
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.id = 'breadcrumb-schema';
-    script.textContent = JSON.stringify(schema);
-    document.head.appendChild(script);
-
-    const faqSchema = {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": faq.map(item => ({
-        "@type": "Question",
-        "name": item.q,
-        "acceptedAnswer": { "@type": "Answer", "text": item.a }
-      }))
-    };
-    const oldFaq = document.getElementById('faq-schema');
-    if (oldFaq) oldFaq.remove();
-    const faqScript = document.createElement('script');
-    faqScript.type = 'application/ld+json';
-    faqScript.id = 'faq-schema';
-    faqScript.textContent = JSON.stringify(faqSchema);
-    document.head.appendChild(faqScript);
-
-    return () => {
-      var breadcrumbSchemaEl = document.getElementById('breadcrumb-schema');
-      if (breadcrumbSchemaEl) {
-        breadcrumbSchemaEl.remove();
+  const catalogGraphSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": `${BASE_URL}/#organization`,
+        "name": "Graver.uz",
+        "url": BASE_URL,
+        "logo": `${BASE_URL}/logo192.png`
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${BASE_URL}/#website`,
+        "url": BASE_URL,
+        "name": "Graver.uz",
+        "publisher": { "@id": `${BASE_URL}/#organization` }
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": `${canonicalUrl}#webpage`,
+        "url": canonicalUrl,
+        "name": t.title,
+        "description": t.meta,
+        "isPartOf": { "@id": `${BASE_URL}/#website` },
+        "inLanguage": locale === 'uz' ? 'uz' : 'ru'
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${canonicalUrl}#breadcrumb`,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": t.home, "item": `${BASE_URL}/${locale}` },
+          { "@type": "ListItem", "position": 2, "name": t.title, "item": canonicalUrl }
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "@id": `${canonicalUrl}#itemlist`,
+        "name": t.title,
+        "itemListElement": cats.map((cat, index) => ({
+          "@type": "ListItem",
+          "position": index + 1,
+          "name": cat.name,
+          "url": `${BASE_URL}/${locale}/${cat.link}`
+        }))
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${canonicalUrl}#faq`,
+        "mainEntity": faq.map(item => ({
+          "@type": "Question",
+          "name": item.q,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": item.a
+          }
+        }))
       }
-      var faqSchemaEl = document.getElementById('faq-schema');
-      if (faqSchemaEl) {
-        faqSchemaEl.remove();
-      }
-    };
-  }, [locale, t, canonicalUrl, faq]);
+    ]
+  };
 
   const scrollToForm = () => {
     var formEl = document.getElementById('b2c-form');
@@ -135,6 +152,11 @@ export default function CatalogPage() {
         uzUrl={uzUrl}
         locale={locale}
       />
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(catalogGraphSchema)}
+        </script>
+      </Helmet>
 
       <header className="bg-black/95 border-b border-gray-800 py-4">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">

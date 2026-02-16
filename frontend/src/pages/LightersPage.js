@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import SeoMeta from '../components/SeoMeta';
 import { ArrowLeft, Download, Phone, Send, Flame, Shield, Ruler, Scale, ChevronRight } from 'lucide-react';
 import { BASE_URL } from '../config/seo';
@@ -99,65 +100,70 @@ function LightersPage() {
     ? 'Закажите зажигалки с лазерной гравировкой в Ташкенте. Гравировка логотипов, имен и фото на зажигалках Zippo-типа.'
     : "Toshkentda lazer gravyurasi bilan zajigalkalarga buyurtma bering. Zippo turidagi zajigalkalarga logotiplar, ismlar va fotosuratlar gravyurasi.";
 
-  // Inject JSON-LD schemas via useEffect
-  useEffect(() => {
-    const oldSchemas = document.querySelectorAll('[data-seo-lighters]');
-    oldSchemas.forEach(el => el.remove());
-
-    // PATCH: AggregateOffer Product schema (per audit recommendation)
-    const mainProductSchema = document.createElement('script');
-    mainProductSchema.type = 'application/ld+json';
-    mainProductSchema.setAttribute('data-seo-lighters', 'true');
-    mainProductSchema.textContent = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Product",
-      "name": isRu ? "Зажигалки с персональной гравировкой" : "Shaxsiy gravyurali zajigalkalar",
-      "image": `${BASE_URL}/og-blog.png`,
-      "description": isRu 
-        ? "Эксклюзивные зажигалки с лазерной гравировкой логотипа, имени или фото"
-        : "Logotip, ism yoki surat bilan lazer gravyurali eksklyuziv zajigalkalar",
-      "brand": {
-        "@type": "Brand",
-        "name": "Graver.uz"
+  const lightersGraphSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": `${BASE_URL}/#organization`,
+        "name": "Graver.uz",
+        "url": BASE_URL,
+        "logo": `${BASE_URL}/logo192.png`
       },
-      "offers": undefined
-    });
-    document.head.appendChild(mainProductSchema);
-
-    // Individual product schemas
-    products.forEach((product) => {
-      const productSchema = document.createElement('script');
-      productSchema.type = 'application/ld+json';
-      productSchema.setAttribute('data-seo-lighters', 'true');
-      productSchema.textContent = JSON.stringify({
-        "@context": "https://schema.org/",
+      {
+        "@type": "WebSite",
+        "@id": `${BASE_URL}/#website`,
+        "url": BASE_URL,
+        "name": "Graver.uz",
+        "publisher": { "@id": `${BASE_URL}/#organization` }
+      },
+      {
+        "@type": "WebPage",
+        "@id": `${canonicalUrl}#webpage`,
+        "url": canonicalUrl,
+        "name": pageTitle,
+        "description": pageDescription,
+        "isPartOf": { "@id": `${BASE_URL}/#website` },
+        "inLanguage": isRu ? "ru" : "uz"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${canonicalUrl}#breadcrumb`,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": isRu ? "Главная" : "Bosh sahifa", "item": `${BASE_URL}/${locale}` },
+          { "@type": "ListItem", "position": 2, "name": isRu ? "Продукция" : "Mahsulotlar", "item": `${BASE_URL}/${locale}/products` },
+          { "@type": "ListItem", "position": 3, "name": isRu ? "Зажигалки" : "Zajigalkalar", "item": canonicalUrl }
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "@id": `${canonicalUrl}#itemlist`,
+        "name": isRu ? "Модели зажигалок" : "Zajigalka modellari",
+        "itemListElement": products.map((product, index) => ({
+          "@type": "ListItem",
+          "position": index + 1,
+          "name": isRu ? product.nameRu : product.nameUz,
+          "url": `${canonicalUrl}#${product.id}`
+        }))
+      },
+      ...products.map((product) => ({
         "@type": "Product",
+        "@id": `${canonicalUrl}#${product.id}`,
         "name": isRu ? `Зажигалка ${product.nameRu} с гравировкой` : `${product.nameUz} gravyurali zajigalka`,
         "description": isRu ? product.descRu : product.descUz,
-        "brand": { "@type": "Brand", "name": "Graver.uz" }
-      });
-      document.head.appendChild(productSchema);
-    });
-
-    // BreadcrumbList schema (per audit spec)
-    const breadcrumbSchema = document.createElement('script');
-    breadcrumbSchema.type = 'application/ld+json';
-    breadcrumbSchema.setAttribute('data-seo-lighters', 'true');
-    breadcrumbSchema.textContent = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": isRu ? "Главная" : "Bosh sahifa", "item": `${BASE_URL}/${locale}` },
-        { "@type": "ListItem", "position": 2, "name": isRu ? "Продукция" : "Mahsulotlar", "item": `${BASE_URL}/${locale}/products` },
-        { "@type": "ListItem", "position": 3, "name": isRu ? "Зажигалки" : "Zajigalkalar", "item": canonicalUrl }
-      ]
-    });
-    document.head.appendChild(breadcrumbSchema);
-
-    return () => {
-      document.querySelectorAll('[data-seo-lighters]').forEach(el => el.remove());
-    };
-  }, [locale, isRu, canonicalUrl]);
+        "image": product.image,
+        "sku": product.sku,
+        "brand": { "@id": `${BASE_URL}/#organization` },
+        "offers": {
+          "@type": "Offer",
+          "price": String(product.price),
+          "priceCurrency": "UZS",
+          "availability": "https://schema.org/InStock",
+          "url": canonicalUrl
+        }
+      }))
+    ]
+  };
 
   const formatPrice = (price) => {
     return new Intl.NumberFormat(isRu ? 'ru-RU' : 'uz-UZ').format(price);
@@ -174,6 +180,11 @@ function LightersPage() {
         locale={locale}
         ogType="website"
       />
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(lightersGraphSchema)}
+        </script>
+      </Helmet>
 
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 bg-black/95 backdrop-blur-sm z-50 border-b border-gray-800">
