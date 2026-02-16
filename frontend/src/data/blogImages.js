@@ -1,19 +1,52 @@
-const blogCardImages = [
-  '/portfolio/10.webp',
-  '/portfolio/6.webp',
-  '/portfolio/5.webp',
-  '/portfolio/4.webp',
-  '/portfolio/3.webp',
-  '/portfolio/1.webp'
-];
-
 const blogCardImageBySlug = {
-  'merch-dlya-it-kompaniy-tashkent': '/portfolio/10.webp',
-  'podarki-dlya-bankov-i-finteha-tashkent': '/portfolio/6.webp',
-  'chasy-s-logotipom-korporativnye-podarki-tashkent': '/portfolio/5.webp',
-  'podarki-na-korporativnye-sobytiya-tashkent': '/portfolio/4.webp',
-  'podarki-dlya-horeca-i-restoranov-tashkent': '/portfolio/3.webp'
+  'brendirovanie-suvenirov': '/images/blog/souvenir-branding-ru.png',
+  'brendirovannye-zazhigalki-i-chasy-s-logotipom': '/images/blog/article-16.png',
+  'chasy-s-logotipom-korporativnye-podarki-tashkent': '/images/blog/corporate-gifts-roi-article.png',
+  'chek-list-zakupshchika-podarkov': '/images/blog/article-14.png',
+  'ekonomiya-na-korporativnyh-suvenirax': '/images/blog/corporate-souvenirs-economy.png',
+  'kak-podgotovit-maket-logotipa': '/images/blog/logo-layout-article.png',
+  'kak-vybrat-korporativnyj-podarok': '/images/blog/corporate-gift-article.png',
+  'kompaniya-merchi-brendlash': '/images/blog/corporate-gifting-trends-2026-uz.png',
+  'korporativnye-podarki-na-navruz': '/images/blog/corporate-gifts-23-february.png',
+  'korporativnye-podarki-s-gravirovkoy-metody': '/images/blog/gravirovka-guide.png',
+  'korporativnye-podarki-s-logotipom-polnyy-gayd': '/images/blog/corporate-gifts-article.png',
+  'korporativnye-podarochnye-nabory': '/images/blog/gift-packaging-article.png',
+  'korporativ-sovgalar-gravyurasi-usullari': '/images/blog/article-22.png',
+  'korporativ-sovgalar-logotip-bilan-to-liq-qollanma': '/images/blog/corporate-gifts-uz.png',
+  'korporativ-sovgani-qanday-tanlash': '/images/blog/korporativ-sovg-ani-qanday-tanlash-kerak.png',
+  'korporativ-sovga-toplamlari': '/images/blog/article-content.png',
+  'lazer-gravirovka-sovgalar': '/images/blog/article-27.png',
+  'lazer-gravyurasi-texnologiyasi': '/images/blog/oymakorlik-materiallari.png',
+  'lazernaya-gravirovka-podarkov': '/images/blog/laser-engraving-gifts-draft.png',
+  'lazernaya-gravirovka-podarkov-tehnologiya': '/images/blog/logo-application-technologies.png',
+  'logotipli-sovga-toplami': '/images/blog/article-28.png',
+  'logotipli-zajigalka-va-soat': '/images/blog/personalized-gifts.png',
+  'logotip-maketi-tayyorlash': '/images/blog/logotip-maketini-qanday-tayyorlash-kerak.png',
+  'merch-dlya-it-kompaniy-tashkent': '/images/blog/corporate-merch-article-45.png',
+  'merch-dlya-kompanii-brendirovanie': '/images/blog/corporate-merch-article.png',
+  'mijoz-hamkorlar-uchun-sovgalar-vip': '/images/blog/vip-gifts-article-44.png',
+  'navruz-sovgalari': '/images/blog/uzbek-article.png',
+  'navruz-uchun-korporativ-sovgalar': '/images/blog/23-fevralga-nima-sovg-a-qilish-kerak-korporativ-goyalar.png',
+  'podarki-dlya-bankov-i-finteha-tashkent': '/images/blog/corporate-gifts-legal-aspects.png',
+  'podarki-dlya-horeca-i-restoranov-tashkent': '/images/blog/eco-corporate-gifts.png',
+  'podarki-klientam-partneram-vip': '/images/blog/vip-gifts-article.png',
+  'podarki-na-korporativnye-sobytiya-tashkent': '/images/blog/creative-gift-packaging-ideas.png',
+  'podarki-na-navruz': '/images/blog/article-11.png',
+  'podarki-sotrudnikam-hr-gayd': '/images/blog/corporate-gifts-hr-guide.png',
+  'podarochnye-nabory-s-logotipom': '/images/blog/article-2.png',
+  'suvenir-brendlash': '/images/blog/suvenirlarni-brendlash.png',
+  'suvenir-byudjetini-tejash': '/images/blog/korporativ-suvenirlarni-tejash.png',
+  'top-idei-podarkov-na-novyj-god': '/images/blog/article-7.png',
+  'welcome-pack-dlya-sotrudnikov': '/images/blog/article-4.png',
+  'welcome-pack-novym-sotrudnikam': '/images/blog/article-6.png',
+  'welcome-pack-yangi-xodimlar': '/images/blog/welcome-pack-uz.png',
+  'xaridor-chek-listi-b2b': '/images/blog/article-20.png',
+  'xodimlar-uchun-sovgalar-hr-qollanma': '/images/blog/xodimlarga-sovg-alar-hr-qollanma-uz.png',
+  'yangi-xodimlar-uchun-welcome-pack': '/images/blog/personalized-gifts-uz.png',
+  'yangi-yil-sovga-goyalari': '/images/blog/new-year-corporate-gifts-uz.png'
 };
+
+const blogCardImages = Array.from(new Set(Object.values(blogCardImageBySlug)));
 
 function getStableIndexFromSlug(slug) {
   var hash = 0;
@@ -24,7 +57,7 @@ function getStableIndexFromSlug(slug) {
 }
 
 export function getBlogImageForSlug(slug) {
-  if (!slug) {
+  if (!slug || !blogCardImages.length) {
     return blogCardImages[0];
   }
   if (blogCardImageBySlug[slug]) {

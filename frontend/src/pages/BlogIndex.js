@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useMemo, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { ArrowLeft, Calendar, ChevronRight, Star, TrendingUp, Clock, FolderOpen } from 'lucide-react';
+import { ArrowLeft, Calendar, ChevronRight, Star, TrendingUp, Clock, FolderOpen, Search, ChevronLeft } from 'lucide-react';
 import { useI18n } from '../i18n';
 import { BASE_URL } from '../config/seo';
 import { getPostsByLocale, getPostBySlug } from '../data/blogPosts';
@@ -45,7 +45,10 @@ const categoriesUz = [
 export default function BlogIndex() {
   const { locale } = useParams();
   const { t } = useI18n();
+  const [searchQuery, setSearchQuery] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
   const posts = getPostsByLocale(locale);
+  const POSTS_PER_PAGE = 12;
 
   const isRu = locale === 'ru';
   const pageTitle = isRu ? 'Блог — Graver.uz' : 'Blog — Graver.uz';
@@ -69,6 +72,22 @@ export default function BlogIndex() {
   const ruUrl = `${BASE_URL}/ru/blog`;
   const uzUrl = `${BASE_URL}/uz/blog`;
   const sortedPosts = [...posts].sort((a, b) => new Date(b.date) - new Date(a.date));
+  const filteredPosts = useMemo(() => {
+    const query = searchQuery.trim().toLowerCase();
+    if (!query) {
+      return sortedPosts;
+    }
+
+    return sortedPosts.filter((post) => {
+      const title = (post.title || '').toLowerCase();
+      const description = (post.description || '').toLowerCase();
+      return title.includes(query) || description.includes(query);
+    });
+  }, [searchQuery, sortedPosts]);
+  const totalPages = Math.max(1, Math.ceil(filteredPosts.length / POSTS_PER_PAGE));
+  const safePage = Math.min(currentPage, totalPages);
+  const startIndex = (safePage - 1) * POSTS_PER_PAGE;
+  const paginatedPosts = filteredPosts.slice(startIndex, startIndex + POSTS_PER_PAGE);
 
   const getBlogCardImage = (post) => getBlogImageForSlug(post.slug);
 
@@ -266,20 +285,35 @@ export default function BlogIndex() {
           {/* All Posts Section */}
           <h2 className="text-2xl font-bold text-white mb-6">{isRu ? 'Все статьи' : 'Barcha maqolalar'}</h2>
 
-          {posts.length === 0 ? (
+          <div className="relative mb-6">
+            <Search size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" />
+            <input
+              type="search"
+              value={searchQuery}
+              onChange={(event) => {
+                setSearchQuery(event.target.value);
+                setCurrentPage(1);
+              }}
+              placeholder={isRu ? 'Поиск по заголовку или описанию…' : 'Sarlavha yoki tavsif bo‘yicha qidirish…'}
+              className="w-full bg-gray-900 border border-gray-800 rounded-xl pl-11 pr-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-teal-500 transition"
+              aria-label={isRu ? 'Поиск статей' : 'Maqolalarni qidirish'}
+            />
+          </div>
+
+          {paginatedPosts.length === 0 ? (
             <div className="text-center py-12">
               <p className="text-gray-400">
-                {isRu ? 'Статьи скоро появятся' : "Maqolalar tez orada paydo bo'ladi"}
+                {isRu ? 'По вашему запросу ничего не найдено' : "So‘rovingiz bo‘yicha maqolalar topilmadi"}
               </p>
             </div>
           ) : (
             <div className="space-y-6" data-testid="blog-posts-list">
-              {posts.map((post, index) => (
+              {paginatedPosts.map((post, index) => (
                 <Link
                   key={post.slug}
                   to={`/${locale}/blog/${post.slug}`}
                   className="block bg-gray-900 border border-gray-800 rounded-xl overflow-hidden hover:border-teal-500/50 transition group"
-                  data-testid={`blog-post-card-${index + 1}`}
+                  data-testid={`blog-post-card-${startIndex + index + 1}`}
                 >
                   <div className="relative aspect-[16/6] bg-gray-800 overflow-hidden">
                     <img
@@ -310,6 +344,36 @@ export default function BlogIndex() {
                   </div>
                 </Link>
               ))}
+            </div>
+          )}
+
+          {filteredPosts.length > POSTS_PER_PAGE && (
+            <div className="mt-8 flex items-center justify-center gap-2" data-testid="blog-pagination">
+              <button
+                type="button"
+                onClick={() => setCurrentPage((prev) => Math.max(1, prev - 1))}
+                disabled={safePage === 1}
+                className="inline-flex items-center px-3 py-2 rounded-lg border border-gray-700 text-gray-300 disabled:opacity-40 disabled:cursor-not-allowed hover:border-teal-500 hover:text-teal-400 transition"
+                aria-label={isRu ? 'Предыдущая страница' : 'Oldingi sahifa'}
+              >
+                <ChevronLeft size={16} className="mr-1" />
+                {isRu ? 'Назад' : 'Orqaga'}
+              </button>
+
+              <span className="text-sm text-gray-400 px-2">
+                {isRu ? `Страница ${safePage} из ${totalPages}` : `Sahifa ${safePage} / ${totalPages}`}
+              </span>
+
+              <button
+                type="button"
+                onClick={() => setCurrentPage((prev) => Math.min(totalPages, prev + 1))}
+                disabled={safePage === totalPages}
+                className="inline-flex items-center px-3 py-2 rounded-lg border border-gray-700 text-gray-300 disabled:opacity-40 disabled:cursor-not-allowed hover:border-teal-500 hover:text-teal-400 transition"
+                aria-label={isRu ? 'Следующая страница' : 'Keyingi sahifa'}
+              >
+                {isRu ? 'Вперёд' : 'Oldinga'}
+                <ChevronRight size={16} className="ml-1" />
+              </button>
             </div>
           )}
         </div>
