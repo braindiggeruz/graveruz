@@ -19,10 +19,7 @@
       return;
     }
 
-    gtag('event', 'page_view', ga4Data);
-    if (window.fbq) {
-      fbq('track', 'PageView');
-    }
+    window.gtag('event', 'page_view', ga4Data);
   }
 
   setTimeout(function () {
@@ -57,7 +54,9 @@
     if (value) utm[key] = value;
   });
   if (Object.keys(utm).length) {
-    localStorage.setItem('utm', JSON.stringify(utm));
+    try {
+      localStorage.setItem('utm', JSON.stringify(utm));
+    } catch (e) {}
   }
 
   function fillHidden(form) {
@@ -78,25 +77,19 @@
 
     var eventName = trackType === 'tel' ? 'click_tel' : 'click_telegram';
     if (window.gtag) {
-      gtag('event', eventName, {
+      window.gtag('event', eventName, {
         link_url: link.href,
         transport_type: 'beacon'
       });
-    }
-    if (window.fbq) {
-      fbq('trackCustom', trackType === 'tel' ? 'ClickTel' : 'ClickTelegram');
     }
   });
 
   window.__trackLeadSuccess = function () {
     if (window.gtag) {
-      gtag('event', 'form_submit', {
+      window.gtag('event', 'form_submit', {
         form_id: 'leadForm',
         transport_type: 'beacon'
       });
-    }
-    if (window.fbq) {
-      fbq('track', 'Lead');
     }
   };
 

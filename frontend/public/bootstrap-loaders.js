@@ -27,12 +27,14 @@
   }
 
   if ('requestIdleCallback' in window) {
-    requestIdleCallback(loadAnalyticsBootstrap, { timeout: 1500 });
     requestIdleCallback(loadTrackingBootstrap, { timeout: 2500 });
   } else {
-    window.addEventListener('load', loadAnalyticsBootstrap, { once: true });
     window.addEventListener('load', loadTrackingBootstrap, { once: true });
   }
+
+  ['click', 'scroll', 'touchstart', 'keydown'].forEach(function (eventName) {
+    window.addEventListener(eventName, loadAnalyticsBootstrap, { once: true, passive: true });
+  });
 
   if (window.self !== window.top) {
     window.addEventListener('load', function () {
