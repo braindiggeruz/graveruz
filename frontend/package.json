@@ -58,6 +58,7 @@
   },
   "scripts": {
     "start": "craco start",
+    "prebuild": "npm run blog:validate",
     "build": "craco build",
     "postbuild": "node scripts/postbuild-react-snap.js && node scripts/postbuild-root-noindex.js && node scripts/postbuild-build-stamp.js && node scripts/postbuild-sitemap.js",
     "images:optimize": "node scripts/optimize-images-webp.mjs",
@@ -69,7 +70,8 @@
     "validate:articles": "node scripts/validate-articles.mjs",
     "verify:prod": "npm run verify:images && node scripts/verify-prod.mjs",
     "verify:slugmap": "node scripts/verify-blog-slug-map.mjs",
-    "verify:hydrated-seo": "node scripts/verify-hydrated-seo.mjs"
+    "verify:hydrated-seo": "node scripts/verify-hydrated-seo.mjs",
+    "blog:validate": "node scripts/validate-blog-data.mjs"
   },
   "reactSnap": {
     "crawl": false,
