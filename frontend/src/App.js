@@ -252,7 +252,7 @@ function App() {
                 <Phone size={16} className="mr-2" />
                 +998 77 080 22 88
               </a>
-              <a href="tel:+998974802288" className="text-gray-400 text-sm hover:text-teal-500 transition flex items-center" data-testid="phone-number-2" data-track="tel">
+              <a href="tel:+998974802288" className="text-gray-300 text-sm hover:text-teal-500 transition flex items-center" data-testid="phone-number-2" data-track="tel">
                 <Phone size={14} className="mr-2" />
                 +998 97 480 22 88
               </a>
@@ -262,6 +262,9 @@ function App() {
             <button 
               className="lg:hidden text-white"
               onClick={() => setShowMobileMenu(!showMobileMenu)}
+              aria-label={showMobileMenu ? 'Закрыть меню' : 'Открыть меню'}
+              aria-expanded={showMobileMenu}
+              aria-controls="mobile-navigation"
               data-testid="mobile-menu-button"
             >
               <ChevronDown className={`transform transition-transform ${showMobileMenu ? 'rotate-180' : ''}`} />
@@ -270,7 +273,7 @@ function App() {
 
           {/* Mobile Menu */}
           {showMobileMenu && (
-            <div className="lg:hidden pb-4 border-t border-gray-800 mt-4 pt-4">
+            <div id="mobile-navigation" className="lg:hidden pb-4 border-t border-gray-800 mt-4 pt-4">
               <nav className="flex flex-col space-y-3">
                 <button onClick={() => scrollToSection('services')} className="text-gray-300 hover:text-teal-500 transition text-left">{t('nav.services')}</button>
                 <Link to={`/${locale}/products/lighters`} className="text-gray-300 hover:text-teal-500 transition text-left">{t('nav.catalog')}</Link>
@@ -287,7 +290,7 @@ function App() {
                     <Phone size={16} className="mr-2" />
                     +998 77 080 22 88
                   </a>
-                  <a href="tel:+998974802288" className="text-gray-400 hover:text-teal-500 transition flex items-center" data-track="tel">
+                  <a href="tel:+998974802288" className="text-gray-300 hover:text-teal-500 transition flex items-center" data-track="tel">
                     <Phone size={14} className="mr-2" />
                     +998 97 480 22 88
                   </a>
@@ -346,19 +349,19 @@ function App() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-12 max-w-4xl mx-auto">
               <div className="text-center space-y-2">
                 <div className="text-3xl font-bold text-teal-500">100%</div>
-                <div className="text-sm text-gray-400">{t('hero.stats.approval')}</div>
+                <div className="text-sm text-gray-300">{t('hero.stats.approval')}</div>
               </div>
               <div className="text-center space-y-2">
                 <div className="text-3xl font-bold text-teal-500">1-3</div>
-                <div className="text-sm text-gray-400">{t('hero.stats.days')}</div>
+                <div className="text-sm text-gray-300">{t('hero.stats.days')}</div>
               </div>
               <div className="text-center space-y-2">
                 <div className="text-3xl font-bold text-teal-500">∞</div>
-                <div className="text-sm text-gray-400">{t('hero.stats.volume')}</div>
+                <div className="text-sm text-gray-300">{t('hero.stats.volume')}</div>
               </div>
               <div className="text-center space-y-2">
                 <div className="text-3xl font-bold text-teal-500">✓</div>
-                <div className="text-sm text-gray-400">{t('hero.stats.guarantee')}</div>
+                <div className="text-sm text-gray-300">{t('hero.stats.guarantee')}</div>
               </div>
             </div>
           </div>
@@ -814,8 +817,9 @@ function App() {
             {formStep === 1 && (
               <div className="space-y-6" data-testid="form-step-1">
                 <div>
-                  <label className="block text-gray-300 font-semibold mb-2">Компания *</label>
+                  <label htmlFor="company" className="block text-gray-300 font-semibold mb-2">Компания *</label>
                   <input
+                    id="company"
                     type="text"
                     required
                     value={formData.company}
@@ -827,8 +831,9 @@ function App() {
                 </div>
                 
                 <div>
-                  <label className="block text-gray-300 font-semibold mb-2">Тип заказа *</label>
+                  <label htmlFor="orderType" className="block text-gray-300 font-semibold mb-2">Тип заказа *</label>
                   <select
+                    id="orderType"
                     required
                     value={formData.orderType}
                     onChange={(e) => setFormData({...formData, orderType: e.target.value})}
@@ -845,8 +850,9 @@ function App() {
                 </div>
                 
                 <div>
-                  <label className="block text-gray-300 font-semibold mb-2">Примерный тираж *</label>
+                  <label htmlFor="quantity" className="block text-gray-300 font-semibold mb-2">Примерный тираж *</label>
                   <select
+                    id="quantity"
                     required
                     value={formData.quantity}
                     onChange={(e) => setFormData({...formData, quantity: e.target.value})}
@@ -886,8 +892,9 @@ function App() {
             {formStep === 2 && (
               <div className="space-y-6" data-testid="form-step-2">
                 <div>
-                  <label className="block text-gray-300 font-semibold mb-2">Ваше имя *</label>
+                  <label htmlFor="name" className="block text-gray-300 font-semibold mb-2">Ваше имя *</label>
                   <input
+                    id="name"
                     type="text"
                     required
                     value={formData.name}
@@ -899,8 +906,9 @@ function App() {
                 </div>
                 
                 <div>
-                  <label className="block text-gray-300 font-semibold mb-2">Телефон *</label>
+                  <label htmlFor="phone" className="block text-gray-300 font-semibold mb-2">Телефон *</label>
                   <input
+                    id="phone"
                     type="tel"
                     required
                     value={formData.phone}
@@ -914,8 +922,9 @@ function App() {
                 </div>
                 
                 <div>
-                  <label className="block text-gray-300 font-semibold mb-2">Email <span className="text-gray-500 font-normal">(опционально)</span></label>
+                  <label htmlFor="email" className="block text-gray-300 font-semibold mb-2">Email <span className="text-gray-400 font-normal">(опционально)</span></label>
                   <input
+                    id="email"
                     type="email"
                     value={formData.email}
                     onChange={(e) => setFormData({...formData, email: e.target.value})}
@@ -926,8 +935,9 @@ function App() {
                 </div>
                 
                 <div>
-                  <label className="block text-gray-300 font-semibold mb-2">Комментарий <span className="text-gray-500 font-normal">(опционально)</span></label>
+                  <label htmlFor="comment" className="block text-gray-300 font-semibold mb-2">Комментарий <span className="text-gray-400 font-normal">(опционально)</span></label>
                   <textarea
+                    id="comment"
                     value={formData.comment}
                     onChange={(e) => setFormData({...formData, comment: e.target.value})}
                     rows={3}
@@ -969,7 +979,7 @@ function App() {
               </div>
             )}
 
-            <p className="text-gray-500 text-sm mt-6 text-center">
+            <p className="text-gray-300 text-sm mt-6 text-center">
               Нажимая кнопку, вы соглашаетесь на обработку персональных данных
             </p>
             
@@ -1135,7 +1145,7 @@ function App() {
 
             <div>
               <h3 className="text-white font-bold mb-4">{t('footer.contacts')}</h3>
-              <div className="space-y-3 text-gray-400 text-sm">
+              <div className="space-y-3 text-gray-300 text-sm">
                 <a href="tel:+998770802288" className="flex items-center hover:text-teal-500 transition" data-testid="footer-phone-1" data-track="tel">
                   <Phone size={16} className="mr-2" />
                   +998 77 080 22 88
@@ -1157,7 +1167,7 @@ function App() {
 
             <div>
               <h3 className="text-white font-bold mb-4">{t('nav.blog')}</h3>
-              <div className="space-y-2 text-gray-400 text-sm">
+              <div className="space-y-2 text-gray-300 text-sm">
                 {t('blog.posts').slice(0, 3).map((post, index) => (
                   <a 
                     key={index}
@@ -1178,14 +1188,14 @@ function App() {
 
             <div>
               <h3 className="text-white font-bold mb-4">{t('footer.workingHours')}</h3>
-              <div className="space-y-2 text-gray-400 text-sm">
+              <div className="space-y-2 text-gray-300 text-sm">
                 <p><Clock size={16} className="inline mr-2" />{t('footer.schedule')}</p>
                 <p className="text-teal-500 font-semibold">{t('footer.requests24')}</p>
               </div>
               
               {/* Quick Links for Internal Linking (P1.3) */}
               <h3 className="text-white font-bold mt-6 mb-3">{locale === 'uz' ? 'Tez havolalar' : 'Быстрые ссылки'}</h3>
-              <div className="space-y-2 text-gray-400 text-sm">
+              <div className="space-y-2 text-gray-300 text-sm">
                 <Link to={`/${locale}/blog`} className="block hover:text-teal-500 transition">
                   {locale === 'uz' ? 'Blog' : 'Блог'}
                 </Link>
@@ -1222,6 +1232,7 @@ function App() {
             href="https://t.me/GraverAdm" data-track="tg"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Написать в Telegram"
             className="bg-gray-800 text-white px-4 py-3 rounded-lg font-semibold text-center hover:bg-gray-700 transition flex items-center justify-center border border-gray-700 min-h-[48px]"
             data-testid="sticky-telegram-button"
           >

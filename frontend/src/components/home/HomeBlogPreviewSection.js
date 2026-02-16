@@ -49,7 +49,7 @@ export default function HomeBlogPreviewSection({ locale }) {
                 <h3 className="text-sm font-semibold text-white group-hover:text-teal-400 transition line-clamp-2 mb-2">
                   {post.title}
                 </h3>
-                <p className="text-xs text-gray-500 line-clamp-2">{post.description}</p>
+                <p className="text-xs text-gray-300 line-clamp-2">{post.description}</p>
               </Link>
             );
           })}
