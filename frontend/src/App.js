@@ -418,7 +418,12 @@ function App() {
       </section>
 
       {/* B2B Benefits Section */}
-      <section className="py-20 bg-gray-900" id="benefits" data-testid="benefits-section">
+      <section
+        className="py-20 bg-gray-900"
+        id="benefits"
+        data-testid="benefits-section"
+        style={{ contentVisibility: 'auto', containIntrinsicSize: '900px' }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -494,7 +499,12 @@ function App() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-black" id="services" data-testid="services-section">
+      <section
+        className="py-20 bg-black"
+        id="services"
+        data-testid="services-section"
+        style={{ contentVisibility: 'auto', containIntrinsicSize: '900px' }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -674,7 +684,12 @@ function App() {
       </div>
 
       {/* Products Section - Lighters Catalog Promo */}
-      <section className="py-20 bg-gradient-to-b from-black to-gray-900" id="products" data-testid="products-section">
+      <section
+        className="py-20 bg-gradient-to-b from-black to-gray-900"
+        id="products"
+        data-testid="products-section"
+        style={{ contentVisibility: 'auto', containIntrinsicSize: '900px' }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -752,7 +767,12 @@ function App() {
       </DeferredSection>
 
       {/* Process Section */}
-      <section className="py-20 bg-black" id="process" data-testid="process-section">
+      <section
+        className="py-20 bg-black"
+        id="process"
+        data-testid="process-section"
+        style={{ contentVisibility: 'auto', containIntrinsicSize: '900px' }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -833,7 +853,12 @@ function App() {
       </DeferredSection>
 
       {/* Contact Form Section */}
-      <section className="py-20 bg-gray-900" id="contact" data-testid="contact-section">
+      <section
+        className="py-20 bg-gray-900"
+        id="contact"
+        data-testid="contact-section"
+        style={{ contentVisibility: 'auto', containIntrinsicSize: '1100px' }}
+      >
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -1055,7 +1080,12 @@ function App() {
       </section>
 
       {/* Blog Posts Section */}
-      <section className="py-20 bg-black" id="blog" data-testid="blog-section">
+      <section
+        className="py-20 bg-black"
+        id="blog"
+        data-testid="blog-section"
+        style={{ contentVisibility: 'auto', containIntrinsicSize: '700px' }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -1109,7 +1139,12 @@ function App() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-black" id="faq" data-testid="faq-section">
+      <section
+        className="py-20 bg-black"
+        id="faq"
+        data-testid="faq-section"
+        style={{ contentVisibility: 'auto', containIntrinsicSize: '900px' }}
+      >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">

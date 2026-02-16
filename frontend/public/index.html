@@ -184,148 +184,31 @@
             }
         </script>
         
-        <!-- SPA PageView + UTM + Event Tracking (with guard for deferred analytics) -->
+        <!-- Deferred SPA tracking bootstrap (moved out of head to reduce main-thread work) -->
         <script>
         (function () {
-          var initialPageTracked = false;
-          
-          // SPA PageView tracking for React Router
-          function trackPage(){
-            var path = window.location.pathname;
-            var fullUrl = window.location.href;
-            var title = document.title;
-            
-            var ga4Data = {
-              page_path: path, 
-              page_location: fullUrl, 
-              page_title: title,
-              send_to: 'G-Z7V0FSGE4Y'
-            };
-            
-            // Guard: if gtag not ready, queue for later
-            if (!window.gtag) {
-              console.log('📊 gtag not ready, queuing page_view:', path);
-              window.__pendingPageViews = window.__pendingPageViews || [];
-              window.__pendingPageViews.push({ path: path, ga4: ga4Data });
+          var userAgent = (typeof navigator !== 'undefined' && navigator.userAgent) ? navigator.userAgent : '';
+          var isReactSnap = !!window.__REACT_SNAP__ || /ReactSnap/i.test(userAgent) || (window.location && window.location.hostname === 'localhost' && window.location.port === '45678');
+          if (isReactSnap) {
+            return;
+          }
+
+          function loadTrackingBootstrap() {
+            if (document.querySelector('script[data-tracking-bootstrap="true"]')) {
               return;
             }
-            
-            gtag('event','page_view', ga4Data);
-            
-            if (window.fbq) {
-              fbq('track','PageView');
-            }
-            console.log('📊 PageView tracked:', path);
+            var script = document.createElement('script');
+            script.src = '/tracking-bootstrap.js';
+            script.defer = true;
+            script.setAttribute('data-tracking-bootstrap', 'true');
+            (document.head || document.documentElement).appendChild(script);
           }
 
-          // Initial page view - delayed to ensure analytics has a chance to load
-          setTimeout(function() {
-            if (!initialPageTracked) {
-              initialPageTracked = true;
-              trackPage();
-            }
-          }, 150);
-
-          // Patch history for SPA navigation
-          var pushState = history.pushState;
-          var replaceState = history.replaceState;
-          
-          history.pushState = function(){
-            pushState.apply(history, arguments);
-            setTimeout(trackPage, 0);
-          };
-          
-          history.replaceState = function(){
-            replaceState.apply(history, arguments);
-            setTimeout(trackPage, 0);
-          };
-          
-          window.addEventListener('popstate', function(){ 
-            setTimeout(trackPage, 0); 
-          });
-
-          // UTM capture + persist
-          var params = new URLSearchParams(window.location.search);
-          var keys = ["utm_source","utm_medium","utm_campaign","utm_term","utm_content"];
-          var utm = {};
-          keys.forEach(function(k){ 
-            var v=params.get(k); 
-            if(v) utm[k]=v; 
-          });
-          if (Object.keys(utm).length) {
-            localStorage.setItem("utm", JSON.stringify(utm));
-            console.log('✅ UTM saved:', utm);
+          if ('requestIdleCallback' in window) {
+            requestIdleCallback(loadTrackingBootstrap, { timeout: 2500 });
+          } else {
+            window.addEventListener('load', loadTrackingBootstrap, { once: true });
           }
-
-          function fillHidden(form){
-            try {
-              var saved = JSON.parse(localStorage.getItem("utm") || "{}");
-              Object.keys(saved).forEach(function(k){
-                var input = form.querySelector('input[name="'+k+'"]');
-                if (input && !input.value) input.value = saved[k];
-              });
-              console.log('✅ UTM filled in form');
-            } catch(e){}
-          }
-
-          // Click tracking (tel / telegram)
-          document.addEventListener("click", function(e){
-            var a = e.target.closest("a");
-            if(!a) return;
-            var t = a.getAttribute("data-track");
-            if(!t) return;
-
-            var eventName = t === "tel" ? "click_tel" : "click_telegram";
-            
-            if (window.gtag) {
-              gtag("event", eventName, {
-                link_url: a.href,
-                transport_type: "beacon"
-              });
-            }
-            if (window.fbq) {
-              fbq("trackCustom", t === "tel" ? "ClickTel" : "ClickTelegram");
-            }
-            
-            console.log('🎯 Click tracked:', eventName, a.href);
-          });
-
-          // Lead tracking function (to be called on success)
-          window.__trackLeadSuccess = function(){
-            if (window.gtag) {
-              gtag("event","form_submit",{
-                form_id:"leadForm", 
-                transport_type:"beacon"
-              });
-            }
-            if (window.fbq) {
-              fbq("track","Lead");
-            }
-            console.log('🎉 Lead tracked!');
-          };
-
-          // Auto-fill UTM on form load
-          window.addEventListener('DOMContentLoaded', function(){
-            var form = document.getElementById("leadForm");
-            if(form){
-              fillHidden(form);
-            }
-          });
-          
-          // Also check shortly after startup for SPA forms that load later (bounded retries)
-          var fillAttempts = 0;
-          var maxFillAttempts = 20;
-          var fillIntervalId = setInterval(function(){
-            var form = document.getElementById("leadForm");
-            if(form && !form.dataset.utmFilled){
-              fillHidden(form);
-              form.dataset.utmFilled = "true";
-            }
-            fillAttempts += 1;
-            if ((form && form.dataset.utmFilled === "true") || fillAttempts >= maxFillAttempts) {
-              clearInterval(fillIntervalId);
-            }
-          }, 1500);
         })();
         </script>
     </head>
