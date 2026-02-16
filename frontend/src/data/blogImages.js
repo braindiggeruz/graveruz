@@ -47,6 +47,25 @@ const blogCardImageBySlug = {
 };
 
 const blogCardImages = Array.from(new Set(Object.values(blogCardImageBySlug)));
+const responsiveWidths = [480, 768, 1200];
+
+function toVariantPath(basePath, width, format) {
+  if (typeof basePath !== 'string' || !basePath) {
+    return basePath;
+  }
+
+  return basePath.replace(/\.png$/i, '-' + width + '.' + format);
+}
+
+function toSrcSet(basePath, format) {
+  if (typeof basePath !== 'string' || !basePath || !/\.png$/i.test(basePath)) {
+    return '';
+  }
+
+  return responsiveWidths
+    .map((width) => toVariantPath(basePath, width, format) + ' ' + width + 'w')
+    .join(', ');
+}
 
 function getStableIndexFromSlug(slug) {
   var hash = 0;
@@ -64,6 +83,17 @@ export function getBlogImageForSlug(slug) {
     return blogCardImageBySlug[slug];
   }
   return blogCardImages[getStableIndexFromSlug(slug)];
+}
+
+export function getResponsiveBlogImageForSlug(slug) {
+  const fallbackSrc = getBlogImageForSlug(slug);
+
+  return {
+    fallbackSrc,
+    avifSrcSet: toSrcSet(fallbackSrc, 'avif'),
+    webpSrcSet: toSrcSet(fallbackSrc, 'webp'),
+    sizes: '(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 960px',
+  };
 }
 
 export function hasMappedBlogImage(slug) {

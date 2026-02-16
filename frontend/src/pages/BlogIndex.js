@@ -5,7 +5,7 @@ import { ArrowLeft, Calendar, ChevronRight, Star, TrendingUp, Clock, FolderOpen,
 import { useI18n } from '../i18n';
 import { BASE_URL } from '../config/seo';
 import { getPostsByLocale, getPostBySlug, getPostReadTimeMinutes, getCategorySummary, validateBlogData } from '../data/blogPosts';
-import { getBlogImageForSlug, getBlogImageMappingCoverage } from '../data/blogImages';
+import { getBlogImageForSlug, getBlogImageMappingCoverage, getResponsiveBlogImageForSlug } from '../data/blogImages';
 import SeoMeta from '../components/SeoMeta';
 
 // Featured/foundational article slugs for "Popular" section
@@ -74,7 +74,7 @@ export default function BlogIndex() {
   const startIndex = (safePage - 1) * POSTS_PER_PAGE;
   const paginatedPosts = filteredPosts.slice(startIndex, startIndex + POSTS_PER_PAGE);
 
-  const getBlogCardImage = (post) => getBlogImageForSlug(post.slug);
+  const getBlogCardImage = (post) => getResponsiveBlogImageForSlug(post.slug);
 
   useEffect(() => {
     if (process.env.NODE_ENV === 'production') {
@@ -317,20 +317,49 @@ export default function BlogIndex() {
             </div>
           ) : (
             <div className="space-y-6" data-testid="blog-posts-list">
-              {paginatedPosts.map((post, index) => (
+              {paginatedPosts.map((post, index) => {
+                const image = getBlogCardImage(post);
+
+                return (
                 <Link
                   key={post.slug}
                   to={`/${locale}/blog/${post.slug}`}
                   className="block bg-gray-900 border border-gray-800 rounded-xl overflow-hidden hover:border-teal-500/50 transition group"
                   data-testid={`blog-post-card-${startIndex + index + 1}`}
                 >
-                  <div className="relative aspect-[16/6] bg-gray-800 overflow-hidden">
-                    <img
-                      src={getBlogCardImage(post)}
-                      alt={post.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      loading={index < 2 ? 'eager' : 'lazy'}
-                    />
+                  <div className="relative aspect-[16/9] sm:aspect-[16/6] bg-gray-800 overflow-hidden">
+                    <picture>
+                      {image.avifSrcSet ? (
+                        <source
+                          type="image/avif"
+                          srcSet={image.avifSrcSet}
+                          sizes={image.sizes}
+                        />
+                      ) : null}
+                      {image.webpSrcSet ? (
+                        <source
+                          type="image/webp"
+                          srcSet={image.webpSrcSet}
+                          sizes={image.sizes}
+                        />
+                      ) : null}
+                      <img
+                        src={image.fallbackSrc || getBlogImageForSlug(post.slug)}
+                        alt={post.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        loading={index < 2 ? 'eager' : 'lazy'}
+                        decoding="async"
+                        fetchPriority={index === 0 ? 'high' : 'auto'}
+                        onError={(event) => {
+                          const target = event.currentTarget;
+                          const fallback = getBlogImageForSlug(post.slug);
+                          if (target.src.endsWith(fallback)) {
+                            return;
+                          }
+                          target.src = fallback;
+                        }}
+                      />
+                    </picture>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                   </div>
                   <div className="p-6">
@@ -355,7 +384,8 @@ export default function BlogIndex() {
                     </span>
                   </div>
                 </Link>
-              ))}
+                );
+              })}
             </div>
           )}
 
