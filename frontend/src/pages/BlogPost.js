@@ -5,7 +5,7 @@ import { ArrowLeft, Calendar, Tag, Lightbulb, BookOpen, HelpCircle, Clock } from
 import { BASE_URL } from '../config/seo';
 import { getPostBySlug, getPostReadTimeMinutes, getRelatedPostsWeighted } from '../data/blogPosts';
 import { getSeoOverride, getFaqData } from '../data/blogSeoOverrides';
-import { getBlogImageForSlug } from '../data/blogImages';
+import { getBlogImageForSlug, getResponsiveBlogImageForSlug } from '../data/blogImages';
 import { getMappedAlternateSlug } from '../config/blogSlugMap';
 
 function normalizeBlogHref(href, locale) {
@@ -75,6 +75,7 @@ function BlogPostPage() {
   const pageTitle = (seoOverride && (seoOverride.title || seoOverride.titleTag)) || (post ? post.title + ' — Graver.uz' : 'Graver.uz');
   const pageDescription = (seoOverride && (seoOverride.description || seoOverride.ogDescription)) || (post ? post.description : '');
   const pageOgImage = post ? BASE_URL + getBlogImageForSlug(slug) : BASE_URL + '/og-blog.png';
+  const heroImage = getResponsiveBlogImageForSlug(slug);
 
   useEffect(function addSeoTags() {
     if (!post) return;
@@ -99,7 +100,14 @@ function BlogPostPage() {
       datePublished: publishedDate,
       dateModified: publishedDate,
       articleSection: post.category || (isRuLang ? 'Блог' : 'Blog'),
-      image: [pageOgImage],
+      image: [
+        {
+          "@type": "ImageObject",
+          url: pageOgImage,
+          width: 1200,
+          height: 675
+        }
+      ],
       timeRequired: 'PT' + readTimeMinutes + 'M',
       keywords: Array.isArray(post.keywords) ? post.keywords.join(', ') : undefined,
       author: { "@type": "Organization", name: "Graver.uz", url: BASE_URL },
@@ -310,6 +318,34 @@ function BlogPostPage() {
                 React.createElement(Tag, { size: 10, className: 'mr-1' }),
                 kw
               );
+            })
+          )
+        ),
+        React.createElement('div', { className: 'mb-8 overflow-hidden rounded-xl border border-gray-800 bg-gray-900' },
+          React.createElement('picture', null,
+            heroImage.avifSrcSet ? React.createElement('source', {
+              type: 'image/avif',
+              srcSet: heroImage.avifSrcSet,
+              sizes: '(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1024px'
+            }) : null,
+            heroImage.webpSrcSet ? React.createElement('source', {
+              type: 'image/webp',
+              srcSet: heroImage.webpSrcSet,
+              sizes: '(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1024px'
+            }) : null,
+            React.createElement('img', {
+              src: heroImage.fallbackSrc,
+              alt: post.title,
+              className: 'w-full aspect-[16/9] object-cover',
+              loading: 'eager',
+              decoding: 'async',
+              fetchPriority: 'high',
+              onError: function(event) {
+                const target = event.currentTarget;
+                const fallback = getBlogImageForSlug(slug);
+                if (target.src.endsWith(fallback)) return;
+                target.src = fallback;
+              }
             })
           )
         ),
