@@ -1,25 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { useNavigate, useParams, Link } from 'react-router-dom';
 import './App.css';
-import { Phone, Send, Check, Zap, Users, Award, Package, Clock, MessageCircle, Mail, MapPin, ChevronDown, BookOpen, Flame, Download, ChevronRight } from 'lucide-react';
+import { Phone, Send, Check, Zap, Users, Award, Package, Clock, MessageCircle, Mail, MapPin, ChevronDown, Flame, Download, ChevronRight } from 'lucide-react';
 import { useI18n, SUPPORTED_LOCALES } from './i18n';
 import SEOHead from './components/SEOHead';
 import LanguageSwitcher from './components/LanguageSwitcher';
-import { getPostBySlug } from './data/blogPosts';
 
-// Featured blog articles for homepage "From Blog" section
-const homepageBlogSlugsRu = [
-  'kak-vybrat-korporativnyj-podarok',
-  'lazernaya-gravirovka-podarkov',
-  'podarochnye-nabory-s-logotipom',
-  'brendirovanie-suvenirov'
-];
-const homepageBlogSlugsUz = [
-  'korporativ-sovgani-qanday-tanlash',
-  'lazer-gravirovka-sovgalar',
-  'logotipli-sovga-toplami',
-  'suvenir-brendlash'
-];
+const HomePortfolioSection = lazy(() => import('./components/home/HomePortfolioSection'));
+const HomeBlogPreviewSection = lazy(() => import('./components/home/HomeBlogPreviewSection'));
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || window.location.origin;
 
@@ -51,87 +39,6 @@ function App() {
   const [phoneError, setPhoneError] = useState('');
   const [lastSubmitTime, setLastSubmitTime] = useState(0);
   const faqItems = Array.isArray(t('faq.items')) ? t('faq.items') : [];
-
-  const portfolioItems = [
-    {
-      id: 1,
-      title: 'Корпоративные награды',
-      category: 'Награды и признание',
-      description: 'Премиальные награды с гравировкой для сотрудников и партнёров',
-      image: '/portfolio/1.webp',
-      imageFallback: '/portfolio/1.png',
-      alt: 'Премиальная корпоративная награда с лазерной гравировкой для партнёров',
-      material: 'Металл, дерево',
-      application: 'Награждение персонала',
-      width: 1376,
-      height: 768
-    },
-    {
-      id: 2,
-      title: 'Часы с персональной гравировкой',
-      category: 'Премиальные подарки',
-      description: 'Элитные часы с индивидуальной гравировкой для топ-менеджмента',
-      image: '/portfolio/10.webp',
-      imageFallback: '/portfolio/10.png',
-      alt: 'Премиальные часы с персональной гравировкой для руководителей',
-      material: 'Металл, стекло',
-      application: 'Подарки руководителям',
-      width: 1408,
-      height: 768
-    },
-    {
-      id: 3,
-      title: 'Брендированные термосы',
-      category: 'Корпоративная продукция',
-      description: 'Качественные термосы с логотипом компании для команды',
-      image: '/portfolio/3.webp',
-      imageFallback: '/portfolio/3.png',
-      alt: 'Брендированные термосы с логотипом компании для сотрудников',
-      material: 'Анодированный алюминий',
-      application: 'Подарки сотрудникам',
-      width: 1376,
-      height: 768
-    },
-    {
-      id: 4,
-      title: 'Премиальный подарочный набор',
-      category: 'Корпоративные подарки',
-      description: 'Эксклюзивный набор с брендированием для VIP-клиентов',
-      image: '/portfolio/4.webp',
-      imageFallback: '/portfolio/4.png',
-      alt: 'Эксклюзивный подарочный набор с брендированием для VIP-клиентов',
-      material: 'Комбинированные материалы',
-      application: 'Подарки клиентам',
-      width: 1408,
-      height: 768
-    },
-    {
-      id: 5,
-      title: 'Корпоративная упаковка',
-      category: 'Брендированная упаковка',
-      description: 'Элегантная упаковка с логотипом для корпоративных мероприятий',
-      image: '/portfolio/5.webp',
-      imageFallback: '/portfolio/5.png',
-      alt: 'Премиальная корпоративная упаковка с логотипом для мероприятий',
-      material: 'Картон, металл',
-      application: 'Корпоративные события',
-      width: 1200,
-      height: 896
-    },
-    {
-      id: 6,
-      title: 'Премиальная награда',
-      category: 'Награды премиум-класса',
-      description: 'Эксклюзивная награда из стекла и металла с подсветкой',
-      image: '/portfolio/6.webp',
-      imageFallback: '/portfolio/6.png',
-      alt: 'Эксклюзивная премиальная награда из стекла и металла',
-      material: 'Стекло, металл',
-      application: 'Престижные премии',
-      width: 1200,
-      height: 896
-    }
-  ];
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -786,66 +693,9 @@ function App() {
         </div>
       </section>
 
-      {/* Portfolio Section */}
-      <section className="py-20 bg-gray-900" id="portfolio" data-testid="portfolio-section">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              {t('portfolio.title')} <span className="text-teal-500">{t('portfolio.titleAccent')}</span>
-            </h2>
-            <p className="text-xl text-gray-400">
-              {t('portfolio.subtitle')}
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {portfolioItems.map((item, index) => (
-              <div key={item.id} className="group relative bg-black/50 border border-gray-800 rounded-2xl overflow-hidden hover:border-teal-500/50 transition" data-testid={`portfolio-item-${index + 1}`}>
-                <div className="aspect-square overflow-hidden bg-gray-800">
-                  <picture>
-                    <source srcSet={item.image} type="image/webp" />
-                    <img
-                      src={item.imageFallback}
-                      alt={item.alt || item.title}
-                      loading="lazy"
-                      width={item.width}
-                      height={item.height}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      onError={(e) => {
-                        e.target.style.display = 'none';
-                        e.target.parentElement.innerHTML = `<div class="flex items-center justify-center h-full text-gray-500">
-                          <div class="text-center">
-                            <Package size={48} class="mx-auto mb-2 opacity-50" />
-                            <p class="text-sm">Изображение загружается...</p>
-                            <p class="text-xs text-gray-400 mt-2">${item.image}</p>
-                          </div>
-                        </div>`;
-                      }}
-                    />
-                  </picture>
-                </div>
-                <div className="p-6">
-                  <span className="text-teal-500 text-sm font-semibold">{t(`portfolio.items.${item.id}.category`)}</span>
-                  <h3 className="text-xl font-bold text-white mt-2 mb-3">{t(`portfolio.items.${item.id}.title`)}</h3>
-                  <p className="text-gray-400 text-sm mb-4">{t(`portfolio.items.${item.id}.description`)}</p>
-                  <div className="space-y-2 text-xs text-gray-400">
-                    <div><span className="text-gray-500">{t('portfolio.material')}:</span> {t(`portfolio.items.${item.id}.material`)}</div>
-                    <div><span className="text-gray-500">{t('portfolio.application')}:</span> {t(`portfolio.items.${item.id}.application`)}</div>
-                  </div>
-                  <button
-                    onClick={() => scrollToSection('contact')}
-                    className="inline-flex items-center mt-4 text-teal-500 hover:text-teal-400 font-semibold text-sm group/link"
-                    data-testid={`portfolio-cta-${index + 1}`}
-                  >
-                    {t('portfolio.cta')}
-                    <ChevronDown className="ml-2 rotate-[-90deg] group-hover/link:translate-x-1 transition-transform" size={14} />
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Suspense fallback={<section className="py-20 bg-gray-900" id="portfolio" aria-busy="true" />}>
+        <HomePortfolioSection t={t} scrollToSection={scrollToSection} />
+      </Suspense>
 
       {/* Process Section */}
       <section className="py-20 bg-black" id="process" data-testid="process-section">
@@ -922,42 +772,9 @@ function App() {
         </div>
       </section>
 
-      {/* Blog Preview Section */}
-      <section className="py-16 bg-gray-900/50" data-testid="blog-preview-section">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="text-2xl md:text-3xl font-bold text-white flex items-center gap-3">
-              <BookOpen size={24} className="text-teal-500" />
-              {locale === 'uz' ? 'Blogdan' : 'Из блога'}
-            </h2>
-            <Link 
-              to={`/${locale || 'ru'}/blog`} 
-              className="text-teal-500 hover:text-teal-400 font-semibold text-sm transition"
-            >
-              {locale === 'uz' ? "Barcha maqolalar →" : 'Все статьи →'}
-            </Link>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {(locale === 'uz' ? homepageBlogSlugsUz : homepageBlogSlugsRu).map((slug, idx) => {
-              const post = getPostBySlug(locale || 'ru', slug);
-              if (!post) return null;
-              return (
-                <Link
-                  key={idx}
-                  to={`/${locale || 'ru'}/blog/${slug}`}
-                  className="block bg-black/50 border border-gray-800 rounded-xl p-4 hover:border-teal-500/50 transition group"
-                  data-testid={`homepage-blog-link-${idx + 1}`}
-                >
-                  <h3 className="text-sm font-semibold text-white group-hover:text-teal-400 transition line-clamp-2 mb-2">
-                    {post.title}
-                  </h3>
-                  <p className="text-xs text-gray-500 line-clamp-2">{post.description}</p>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      <Suspense fallback={<section className="py-16 bg-gray-900/50" aria-busy="true" />}>
+        <HomeBlogPreviewSection locale={locale} />
+      </Suspense>
 
       {/* Contact Form Section */}
       <section className="py-20 bg-gray-900" id="contact" data-testid="contact-section">

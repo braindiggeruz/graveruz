@@ -33,9 +33,9 @@
         <!-- Optimized Google Fonts: preconnect + preload + non-blocking load -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
-        <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" /></noscript>
+        <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" /></noscript>
 
         <title>Graver.uz — Корпоративные подарки с лазерной гравировкой | Ташкент</title>
         <script type="application/ld+json">
@@ -126,10 +126,12 @@
           var emergentUserAgent = (typeof navigator !== 'undefined' && navigator.userAgent) ? navigator.userAgent : '';
           var isReactSnap = !!window.__REACT_SNAP__ || /ReactSnap/i.test(emergentUserAgent) || (window.location && window.location.hostname === 'localhost' && window.location.port === '45678');
           if (!isReactSnap) {
-            var emergentScript = document.createElement('script');
-            emergentScript.defer = true;
-            emergentScript.src = 'https://assets.emergent.sh/scripts/emergent-main.js';
-            document.head.appendChild(emergentScript);
+            window.addEventListener('load', function () {
+              var emergentScript = document.createElement('script');
+              emergentScript.defer = true;
+              emergentScript.src = 'https://assets.emergent.sh/scripts/emergent-main.js';
+              document.head.appendChild(emergentScript);
+            }, { once: true });
           }
         </script>
         <!--
@@ -284,14 +286,20 @@
             }
           });
           
-          // Also check periodically (for SPA forms that load later)
-          setInterval(function(){
+          // Also check shortly after startup for SPA forms that load later (bounded retries)
+          var fillAttempts = 0;
+          var maxFillAttempts = 20;
+          var fillIntervalId = setInterval(function(){
             var form = document.getElementById("leadForm");
             if(form && !form.dataset.utmFilled){
               fillHidden(form);
               form.dataset.utmFilled = "true";
             }
-          }, 1000);
+            fillAttempts += 1;
+            if ((form && form.dataset.utmFilled === "true") || fillAttempts >= maxFillAttempts) {
+              clearInterval(fillIntervalId);
+            }
+          }, 1500);
         })();
         </script>
     </head>

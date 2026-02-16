@@ -8,13 +8,25 @@
 
 /__build_id.txt
   Cache-Control: no-store, no-cache, must-revalidate, max-age=0
+/
+  Cache-Control: public, max-age=300, must-revalidate, stale-while-revalidate=86400
+/index.html
+  Cache-Control: public, max-age=300, must-revalidate, stale-while-revalidate=86400
 /ru
-  Cache-Control: no-store
+  Cache-Control: public, max-age=300, must-revalidate, stale-while-revalidate=86400
 /uz
-  Cache-Control: no-store
+  Cache-Control: public, max-age=300, must-revalidate, stale-while-revalidate=86400
 /ru/*
-  Cache-Control: no-store
+  Cache-Control: public, max-age=300, must-revalidate, stale-while-revalidate=86400
 /uz/*
-  Cache-Control: no-store
+  Cache-Control: public, max-age=300, must-revalidate, stale-while-revalidate=86400
 /static/*
   Cache-Control: public, max-age=31536000, immutable
+/portfolio/*
+  Cache-Control: public, max-age=31536000, immutable
+/manifest.json
+  Cache-Control: public, max-age=3600, must-revalidate
+/robots.txt
+  Cache-Control: public, max-age=86400
+/sitemap.xml
+  Cache-Control: public, max-age=86400
