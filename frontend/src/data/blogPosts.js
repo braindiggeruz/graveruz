@@ -934,12 +934,50 @@ export const blogPosts = {
   ]
 };
 
+const WORDS_PER_MINUTE = 200;
+
+function toPlainText(value) {
+  return String(value || '')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function estimateReadTimeMinutes(text) {
+  const plain = toPlainText(text);
+  if (!plain) return 1;
+  const words = plain.split(' ').length;
+  return Math.max(1, Math.ceil(words / WORDS_PER_MINUTE));
+}
+
+export function getPostReadTimeMinutes(post) {
+  if (!post) return 1;
+
+  if (Number.isFinite(post.readTime) && post.readTime > 0) {
+    return post.readTime;
+  }
+
+  const source = post.contentHtml || post.content || post.description || '';
+  return estimateReadTimeMinutes(source);
+}
+
+function withReadTime(post) {
+  if (!post) return post;
+  const readTime = getPostReadTimeMinutes(post);
+  if (post.readTime === readTime) {
+    return post;
+  }
+  return { ...post, readTime };
+}
+
 /**
  * Get all posts for a locale, sorted by date (newest first)
  */
 export function getPostsByLocale(locale) {
   const posts = blogPosts[locale] || blogPosts.ru;
-  return [...posts].sort((a, b) => new Date(b.date) - new Date(a.date));
+  return [...posts]
+    .sort((a, b) => new Date(b.date) - new Date(a.date))
+    .map(withReadTime);
 }
 
 /**
@@ -947,7 +985,8 @@ export function getPostsByLocale(locale) {
  */
 export function getPostBySlug(locale, slug) {
   const posts = blogPosts[locale] || blogPosts.ru;
-  return posts.find(p => p.slug === slug) || null;
+  const post = posts.find(p => p.slug === slug) || null;
+  return withReadTime(post);
 }
 
 export function getAlternateSlug(slug) {

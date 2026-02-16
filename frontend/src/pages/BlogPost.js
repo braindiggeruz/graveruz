@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { Link, useParams, Navigate } from 'react-router-dom';
 import SeoMeta from '../components/SeoMeta';
-import { ArrowLeft, Calendar, Tag, Lightbulb, BookOpen, HelpCircle } from 'lucide-react';
+import { ArrowLeft, Calendar, Tag, Lightbulb, BookOpen, HelpCircle, Clock } from 'lucide-react';
 import { BASE_URL } from '../config/seo';
-import { getPostBySlug, getPostsByLocale } from '../data/blogPosts';
+import { getPostBySlug, getPostsByLocale, getPostReadTimeMinutes } from '../data/blogPosts';
 import { getSeoOverride, getFaqData } from '../data/blogSeoOverrides';
 import { getBlogImageForSlug } from '../data/blogImages';
 import { getMappedAlternateSlug } from '../config/blogSlugMap';
@@ -81,6 +81,7 @@ function BlogPostPage() {
     var oldTags = document.querySelectorAll('[data-seo-blog]');
     oldTags.forEach(function(el) { el.remove(); });
     var publishedDate = post.date ? new Date(post.date).toISOString() : undefined;
+    var readTimeMinutes = getPostReadTimeMinutes(post);
     var isRuLang = locale === 'ru';
 
     // Inject BlogPosting JSON-LD
@@ -99,6 +100,7 @@ function BlogPostPage() {
       dateModified: publishedDate,
       articleSection: post.category || (isRuLang ? 'Блог' : 'Blog'),
       image: [pageOgImage],
+      timeRequired: 'PT' + readTimeMinutes + 'M',
       keywords: Array.isArray(post.keywords) ? post.keywords.join(', ') : undefined,
       author: { "@type": "Organization", name: "Graver.uz", url: BASE_URL },
       publisher: {
@@ -174,6 +176,7 @@ function BlogPostPage() {
   ];
 
   var dateStr = new Date(post.date).toLocaleDateString(isRu ? 'ru-RU' : 'uz-UZ', { year: 'numeric', month: 'long', day: 'numeric' });
+  var readTime = getPostReadTimeMinutes(post);
 
   // Get related posts from override or fallback to post.relatedPosts
   var relatedSlugs = (seoOverride && seoOverride.relatedSlugs) || post.relatedPosts || [];
@@ -310,7 +313,10 @@ function BlogPostPage() {
         React.createElement('header', { className: 'mb-8' },
           React.createElement('div', { className: 'flex items-center text-sm text-gray-500 mb-4' },
             React.createElement(Calendar, { size: 14, className: 'mr-2' }),
-            dateStr
+            dateStr,
+            React.createElement('span', { className: 'mx-2' }, '•'),
+            React.createElement(Clock, { size: 14, className: 'mr-1' }),
+            readTime + ' ' + (isRu ? 'мин чтения' : 'daq o\'qish')
           ),
           React.createElement('h1', { className: 'text-3xl md:text-4xl font-bold text-white mb-4' }, post.title),
           React.createElement('p', { className: 'text-xl text-gray-400' }, post.description),
