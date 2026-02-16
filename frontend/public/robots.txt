@@ -7,4 +7,3 @@ Disallow: /ru/thanks
 Disallow: /uz/thanks
 
 Sitemap: https://graver-studio.uz/sitemap.xml
-Host: graver-studio.uz

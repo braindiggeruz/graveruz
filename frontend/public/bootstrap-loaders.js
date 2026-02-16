@@ -26,10 +26,6 @@
     appendScript('/tracking-bootstrap.js', 'data-tracking-bootstrap');
   }
 
-  function loadEmergentBadge() {
-    appendScript('https://assets.emergent.sh/scripts/emergent-main.js');
-  }
-
   if ('requestIdleCallback' in window) {
     requestIdleCallback(loadAnalyticsBootstrap, { timeout: 1500 });
     requestIdleCallback(loadTrackingBootstrap, { timeout: 2500 });
@@ -38,5 +34,9 @@
     window.addEventListener('load', loadTrackingBootstrap, { once: true });
   }
 
-  window.addEventListener('load', loadEmergentBadge, { once: true });
+  if (window.self !== window.top) {
+    window.addEventListener('load', function () {
+      appendScript('https://assets.emergent.sh/scripts/emergent-main.js');
+    }, { once: true });
+  }
 })();

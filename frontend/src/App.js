@@ -1138,12 +1138,11 @@ function App() {
       </section>
       </DeferredSection>
 
+      <DeferredSection id="faq" placeholderClassName="py-20 bg-black" rootMargin="640px">
       {/* FAQ Section */}
       <section
         className="py-20 bg-black"
-        id="faq"
         data-testid="faq-section"
-        style={{ contentVisibility: 'auto', containIntrinsicSize: '900px' }}
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -1214,6 +1213,7 @@ function App() {
           </div>
         </div>
       </section>
+      </DeferredSection>
 
       {/* Footer */}
       <footer className="bg-black border-t border-gray-800 py-12" data-testid="footer">
