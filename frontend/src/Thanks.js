@@ -298,7 +298,7 @@ function Thanks() {
       {/* Footer */}
       <footer className="bg-black border-t border-gray-800 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center text-gray-500 text-sm">
+          <div className="text-center text-gray-300 text-sm">
             <p>{t.copyright}</p>
           </div>
         </div>

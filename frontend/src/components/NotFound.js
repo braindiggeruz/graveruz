@@ -67,7 +67,7 @@ export default function NotFound() {
           
           {/* Path display */}
           <div className="bg-gray-900 border border-gray-800 rounded-lg p-4 mb-8">
-            <p className="text-gray-500 text-sm mb-1">{copy.requestedUrl}</p>
+            <p className="text-gray-300 text-sm mb-1">{copy.requestedUrl}</p>
             <code className="text-teal-400 text-sm break-all">{location.pathname}</code>
           </div>
           

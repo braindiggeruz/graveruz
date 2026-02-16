@@ -1212,7 +1212,7 @@ function App() {
             </div>
           </div>
 
-          <div className="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+          <div className="border-t border-gray-800 pt-8 text-center text-gray-300 text-sm">
             <p>{t('footer.copyright')}</p>
           </div>
         </div>

@@ -224,8 +224,9 @@ export default function B2CForm({ locale = 'ru', defaultCategory = '', pageUrl =
       <form onSubmit={handleSubmit} className="space-y-5">
         {/* Category */}
         <div>
-          <label className="block text-gray-300 font-medium mb-2">{t.category} *</label>
+          <label htmlFor="b2c-category" className="block text-gray-300 font-medium mb-2">{t.category} *</label>
           <select
+            id="b2c-category"
             value={formData.category}
             onChange={(e) => setFormData({ ...formData, category: e.target.value })}
             className={`w-full bg-gray-900/50 border ${errors.category ? 'border-red-500' : 'border-gray-700'} rounded-lg px-4 py-3 text-white`}
@@ -242,8 +243,9 @@ export default function B2CForm({ locale = 'ru', defaultCategory = '', pageUrl =
         {formData.category === 'lighters' && (
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-gray-300 font-medium mb-2">{t.sides} *</label>
+              <label htmlFor="b2c-sides" className="block text-gray-300 font-medium mb-2">{t.sides} *</label>
               <select
+                id="b2c-sides"
                 value={formData.sides}
                 onChange={(e) => setFormData({ ...formData, sides: e.target.value })}
                 className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-3 text-white"
@@ -254,8 +256,9 @@ export default function B2CForm({ locale = 'ru', defaultCategory = '', pageUrl =
               </select>
             </div>
             <div>
-              <label className="block text-gray-300 font-medium mb-2">{t.fuel}</label>
+              <label htmlFor="b2c-fuel" className="block text-gray-300 font-medium mb-2">{t.fuel}</label>
               <select
+                id="b2c-fuel"
                 value={formData.fuel}
                 onChange={(e) => setFormData({ ...formData, fuel: e.target.value })}
                 className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-3 text-white"
@@ -271,8 +274,9 @@ export default function B2CForm({ locale = 'ru', defaultCategory = '', pageUrl =
         {/* Conditional: Watches */}
         {formData.category === 'watches' && (
           <div>
-            <label className="block text-gray-300 font-medium mb-2">{t.watchColor}</label>
+            <label htmlFor="b2c-watch-color" className="block text-gray-300 font-medium mb-2">{t.watchColor}</label>
             <select
+              id="b2c-watch-color"
               value={formData.watchColor}
               onChange={(e) => setFormData({ ...formData, watchColor: e.target.value })}
               className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-3 text-white"
@@ -287,8 +291,9 @@ export default function B2CForm({ locale = 'ru', defaultCategory = '', pageUrl =
         {/* Conditional: Diary */}
         {formData.category === 'diary' && (
           <div>
-            <label className="block text-gray-300 font-medium mb-2">{t.diaryMethod}</label>
+            <label htmlFor="b2c-diary-method" className="block text-gray-300 font-medium mb-2">{t.diaryMethod}</label>
             <select
+              id="b2c-diary-method"
               value={formData.diaryMethod}
               onChange={(e) => setFormData({ ...formData, diaryMethod: e.target.value })}
               className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-3 text-white"
@@ -302,8 +307,9 @@ export default function B2CForm({ locale = 'ru', defaultCategory = '', pageUrl =
 
         {/* Quantity */}
         <div>
-          <label className="block text-gray-300 font-medium mb-2">{t.qty} *</label>
+          <label htmlFor="b2c-qty" className="block text-gray-300 font-medium mb-2">{t.qty} *</label>
           <select
+            id="b2c-qty"
             value={formData.qty}
             onChange={(e) => setFormData({ ...formData, qty: e.target.value })}
             className={`w-full bg-gray-900/50 border ${errors.qty ? 'border-red-500' : 'border-gray-700'} rounded-lg px-4 py-3 text-white`}
@@ -336,16 +342,25 @@ export default function B2CForm({ locale = 'ru', defaultCategory = '', pageUrl =
 
         {/* File Upload */}
         <div>
-          <label className="block text-gray-300 font-medium mb-2">{t.file} *</label>
-          <div
+          <label htmlFor="b2c-file" className="block text-gray-300 font-medium mb-2">{t.file} *</label>
+          <button
+            type="button"
             onClick={() => {
               if (fileInputRef.current) {
                 fileInputRef.current.click();
               }
             }}
+            onKeyDown={(e) => {
+              if ((e.key === 'Enter' || e.key === ' ') && fileInputRef.current) {
+                e.preventDefault();
+                fileInputRef.current.click();
+              }
+            }}
+            aria-label={t.file}
             className={`border-2 border-dashed ${errors.file ? 'border-red-500' : 'border-gray-700'} rounded-lg p-4 text-center cursor-pointer hover:border-teal-500/50 transition`}
           >
             <input
+              id="b2c-file"
               ref={fileInputRef}
               type="file"
               accept=".jpg,.jpeg,.png,.pdf,.ai,.svg"
@@ -359,12 +374,12 @@ export default function B2CForm({ locale = 'ru', defaultCategory = '', pageUrl =
                 <span>{file.name}</span>
               </div>
             ) : (
-              <div className="text-gray-500">
+              <div className="text-gray-300">
                 <Upload size={24} className="mx-auto mb-2" />
                 <p className="text-sm">{t.fileHint}</p>
               </div>
             )}
-          </div>
+          </button>
           {errors.file && <p className="text-red-500 text-sm mt-1">{errors.file}</p>}
         </div>
 
@@ -386,8 +401,9 @@ export default function B2CForm({ locale = 'ru', defaultCategory = '', pageUrl =
         {/* Phone + City */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-gray-300 font-medium mb-2">{t.phone} *</label>
+            <label htmlFor="b2c-phone" className="block text-gray-300 font-medium mb-2">{t.phone} *</label>
             <input
+              id="b2c-phone"
               type="tel"
               value={formData.phone}
               onChange={handlePhoneChange}
@@ -397,8 +413,9 @@ export default function B2CForm({ locale = 'ru', defaultCategory = '', pageUrl =
             />
           </div>
           <div>
-            <label className="block text-gray-300 font-medium mb-2">{t.city} *</label>
+            <label htmlFor="b2c-city" className="block text-gray-300 font-medium mb-2">{t.city} *</label>
             <select
+              id="b2c-city"
               value={formData.city}
               onChange={(e) => setFormData({ ...formData, city: e.target.value })}
               className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-3 text-white"
@@ -412,8 +429,9 @@ export default function B2CForm({ locale = 'ru', defaultCategory = '', pageUrl =
 
         {/* Deadline */}
         <div>
-          <label className="block text-gray-300 font-medium mb-2">{t.deadline}</label>
+          <label htmlFor="b2c-deadline" className="block text-gray-300 font-medium mb-2">{t.deadline}</label>
           <select
+            id="b2c-deadline"
             value={formData.deadline}
             onChange={(e) => setFormData({ ...formData, deadline: e.target.value })}
             className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-3 text-white"
@@ -426,8 +444,9 @@ export default function B2CForm({ locale = 'ru', defaultCategory = '', pageUrl =
 
         {/* Comment */}
         <div>
-          <label className="block text-gray-300 font-medium mb-2">{t.comment}</label>
+          <label htmlFor="b2c-comment" className="block text-gray-300 font-medium mb-2">{t.comment}</label>
           <textarea
+            id="b2c-comment"
             value={formData.comment}
             onChange={(e) => setFormData({ ...formData, comment: e.target.value })}
             rows={2}

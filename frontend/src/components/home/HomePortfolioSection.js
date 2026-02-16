@@ -89,9 +89,9 @@ export default function HomePortfolioSection({ t, scrollToSection }) {
                 <span className="text-teal-500 text-sm font-semibold">{t(`portfolio.items.${item.id}.category`)}</span>
                 <h3 className="text-xl font-bold text-white mt-2 mb-3">{t(`portfolio.items.${item.id}.title`)}</h3>
                 <p className="text-gray-400 text-sm mb-4">{t(`portfolio.items.${item.id}.description`)}</p>
-                <div className="space-y-2 text-xs text-gray-400">
-                  <div><span className="text-gray-500">{t('portfolio.material')}:</span> {t(`portfolio.items.${item.id}.material`)}</div>
-                  <div><span className="text-gray-500">{t('portfolio.application')}:</span> {t(`portfolio.items.${item.id}.application`)}</div>
+                  <div className="space-y-2 text-xs text-gray-300">
+                    <div><span className="text-gray-300">{t('portfolio.material')}:</span> {t(`portfolio.items.${item.id}.material`)}</div>
+                    <div><span className="text-gray-300">{t('portfolio.application')}:</span> {t(`portfolio.items.${item.id}.application`)}</div>
                 </div>
                 <button
                   onClick={() => scrollToSection('contact')}
