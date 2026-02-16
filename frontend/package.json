@@ -64,11 +64,12 @@
     "images:optimize": "node scripts/optimize-images-webp.mjs",
     "images:audit": "node scripts/audit-images.mjs",
     "verify:images": "node scripts/verify-image-variants.mjs",
+    "verify:indexability": "node scripts/verify-indexability.mjs",
     "lint": "eslint \"src/**/*.{js,jsx}\"",
     "test": "craco test",
     "test:ci": "craco test --watchAll=false --passWithNoTests",
     "validate:articles": "node scripts/validate-articles.mjs",
-    "verify:prod": "npm run verify:images && node scripts/verify-prod.mjs",
+    "verify:prod": "npm run verify:images && npm run verify:indexability && node scripts/verify-prod.mjs",
     "verify:slugmap": "node scripts/verify-blog-slug-map.mjs",
     "verify:hydrated-seo": "node scripts/verify-hydrated-seo.mjs",
     "blog:validate": "node scripts/validate-blog-data.mjs"

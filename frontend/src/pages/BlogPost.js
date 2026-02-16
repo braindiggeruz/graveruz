@@ -191,15 +191,39 @@ function BlogPostPage() {
     : [];
   var recommendedPosts = getRelatedPostsWeighted(locale, slug, 5, overrideRelatedSlugs);
 
-  var moneyLinks = isRu ? [
+  var moneyLinksBase = isRu ? [
     { href: '/' + locale + '/catalog-products', label: 'Каталог продукции' },
     { href: '/' + locale + '/engraved-gifts', label: 'Подарки с гравировкой' },
+    { href: '/' + locale + '/watches-with-logo', label: 'Часы с логотипом' },
     { href: '/' + locale + '/products/lighters', label: 'Зажигалки с гравировкой' }
   ] : [
     { href: '/' + locale + '/mahsulotlar-katalogi', label: 'Mahsulotlar katalogi' },
     { href: '/' + locale + '/gravirovkali-sovgalar', label: "Gravirovkali sovg'alar" },
+    { href: '/' + locale + '/logotipli-soat', label: 'Logotipli soat' },
     { href: '/' + locale + '/products/lighters', label: 'Zajigalkalar' }
   ];
+
+  var preferredMoneyHref = (function resolvePreferredMoneyHref() {
+    if (isRu) {
+      if (/(chasy|watch|soat)/i.test(slug)) return '/' + locale + '/watches-with-logo';
+      if (/(zazhig|lighter|zajig)/i.test(slug)) return '/' + locale + '/products/lighters';
+      if (/(podar|gift|sovg|welcome|hr|vip)/i.test(slug)) return '/' + locale + '/engraved-gifts';
+      return '/' + locale + '/catalog-products';
+    }
+
+    if (/(soat|watch|chasy)/i.test(slug)) return '/' + locale + '/logotipli-soat';
+    if (/(zajig|lighter|zazhig)/i.test(slug)) return '/' + locale + '/products/lighters';
+    if (/(sovg|gift|welcome|hr|vip)/i.test(slug)) return '/' + locale + '/gravirovkali-sovgalar';
+    return '/' + locale + '/mahsulotlar-katalogi';
+  })();
+
+  var moneyLinks = moneyLinksBase
+    .slice()
+    .sort(function(a, b) {
+      if (a.href === preferredMoneyHref && b.href !== preferredMoneyHref) return -1;
+      if (b.href === preferredMoneyHref && a.href !== preferredMoneyHref) return 1;
+      return 0;
+    });
 
   var utilityLinks = [
     { href: '/' + locale + '/process', label: isRu ? 'Процесс' : 'Jarayon' },
