@@ -5,6 +5,7 @@ import { ArrowLeft, Calendar, Tag, Lightbulb, BookOpen, HelpCircle } from 'lucid
 import { BASE_URL } from '../config/seo';
 import { getPostBySlug, getPostsByLocale } from '../data/blogPosts';
 import { getSeoOverride, getFaqData } from '../data/blogSeoOverrides';
+import { getBlogImageForSlug } from '../data/blogImages';
 import { getMappedAlternateSlug } from '../config/blogSlugMap';
 
 function normalizeBlogHref(href, locale) {
@@ -73,6 +74,7 @@ function BlogPostPage() {
   // Determine title: use override if exists, otherwise default
   const pageTitle = (seoOverride && (seoOverride.title || seoOverride.titleTag)) || (post ? post.title + ' — Graver.uz' : 'Graver.uz');
   const pageDescription = (seoOverride && (seoOverride.description || seoOverride.ogDescription)) || (post ? post.description : '');
+  const pageOgImage = post ? BASE_URL + getBlogImageForSlug(slug) : BASE_URL + '/og-blog.png';
 
   useEffect(function addSeoTags() {
     if (!post) return;
@@ -96,7 +98,7 @@ function BlogPostPage() {
       datePublished: publishedDate,
       dateModified: publishedDate,
       articleSection: post.category || (isRuLang ? 'Блог' : 'Blog'),
-      image: [BASE_URL + '/og-blog.png'],
+      image: [pageOgImage],
       keywords: Array.isArray(post.keywords) ? post.keywords.join(', ') : undefined,
       author: { "@type": "Organization", name: "Graver.uz", url: BASE_URL },
       publisher: {
@@ -151,7 +153,7 @@ function BlogPostPage() {
     return function cleanup() {
       document.querySelectorAll('[data-seo-blog]').forEach(function(el) { el.remove(); });
     };
-  }, [post, canonicalUrl, locale, seoOverride, faqData]);
+  }, [post, canonicalUrl, locale, seoOverride, faqData, pageOgImage]);
 
   if (!post) {
     return React.createElement(Navigate, { to: '/' + locale + '/blog', replace: true });
@@ -270,6 +272,7 @@ function BlogPostPage() {
       ruUrl: ruUrl,
       uzUrl: uzUrl,
       locale: locale,
+      ogImage: pageOgImage,
       ogType: 'article'
     }),
     React.createElement('header', { className: 'fixed top-0 left-0 right-0 bg-black/95 backdrop-blur-sm z-50 border-b border-gray-800' },

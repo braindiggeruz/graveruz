@@ -5,6 +5,7 @@ import { ArrowLeft, Calendar, ChevronRight, Star, TrendingUp, Clock, FolderOpen 
 import { useI18n } from '../i18n';
 import { BASE_URL } from '../config/seo';
 import { getPostsByLocale, getPostBySlug } from '../data/blogPosts';
+import { getBlogImageForSlug } from '../data/blogImages';
 import SeoMeta from '../components/SeoMeta';
 
 // Featured/foundational article slugs for "Popular" section
@@ -41,23 +42,6 @@ const categoriesUz = [
   { name: 'Biznes', slug: 'business', count: 1 }
 ];
 
-const blogCardImages = [
-  '/portfolio/10.webp',
-  '/portfolio/6.webp',
-  '/portfolio/5.webp',
-  '/portfolio/4.webp',
-  '/portfolio/3.webp',
-  '/portfolio/1.webp'
-];
-
-const blogCardImageBySlug = {
-  'merch-dlya-it-kompaniy-tashkent': '/portfolio/10.webp',
-  'podarki-dlya-bankov-i-finteha-tashkent': '/portfolio/6.webp',
-  'chasy-s-logotipom-korporativnye-podarki-tashkent': '/portfolio/5.webp',
-  'podarki-na-korporativnye-sobytiya-tashkent': '/portfolio/4.webp',
-  'podarki-dlya-horeca-i-restoranov-tashkent': '/portfolio/3.webp'
-};
-
 export default function BlogIndex() {
   const { locale } = useParams();
   const { t } = useI18n();
@@ -86,22 +70,7 @@ export default function BlogIndex() {
   const uzUrl = `${BASE_URL}/uz/blog`;
   const sortedPosts = [...posts].sort((a, b) => new Date(b.date) - new Date(a.date));
 
-  const getStableIndexFromSlug = (slug) => {
-    let hash = 0;
-    for (let index = 0; index < slug.length; index += 1) {
-      hash = (hash * 31 + slug.charCodeAt(index)) >>> 0;
-    }
-    return hash % blogCardImages.length;
-  };
-
-  const getBlogCardImage = (post) => {
-    const explicitImage = blogCardImageBySlug[post.slug];
-    if (explicitImage) {
-      return explicitImage;
-    }
-
-    return blogCardImages[getStableIndexFromSlug(post.slug)];
-  };
+  const getBlogCardImage = (post) => getBlogImageForSlug(post.slug);
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",

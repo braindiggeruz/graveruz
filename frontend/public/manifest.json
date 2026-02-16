@@ -1,0 +1,17 @@
+{
+  "short_name": "Graver",
+  "name": "Graver.uz — Лазерная гравировка",
+  "start_url": "/ru",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#14b8a6",
+  "icons": [
+    {
+      "src": "/og-blog.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
