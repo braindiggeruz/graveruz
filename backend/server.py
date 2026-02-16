@@ -17,6 +17,7 @@ from indexing_service import (
     submit_next_batch_to_search_engines,
     reset_batch_state,
     get_batch_status,
+    get_indexing_health,
 )
 
 
@@ -267,6 +268,15 @@ async def get_indexing_status(url: str):
         return await check_indexing_status(url=url)
     except Exception as e:
         logger.error(f"❌ Error checking indexing status: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@api_router.get("/indexing/health")
+async def indexing_health():
+    try:
+        return await get_indexing_health()
+    except Exception as e:
+        logger.error(f"❌ Error checking indexing health: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
 
 # Include the router in the main app

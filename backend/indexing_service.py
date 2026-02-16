@@ -5,6 +5,7 @@ import os
 import re
 from pathlib import Path
 from typing import Dict, List, Optional
+from datetime import datetime, timezone
 
 import httpx
 from google.oauth2 import service_account
@@ -63,6 +64,14 @@ def _resolve_google_service_account_path() -> Path:
     if path.is_absolute():
         return path
     return ROOT_DIR / path
+
+
+def _mask_secret(value: Optional[str]) -> Optional[str]:
+    if not value:
+        return None
+    if len(value) <= 8:
+        return "*" * len(value)
+    return f"{value[:4]}...{value[-4:]}"
 
 
 def _collect_urls_from_sitemap(limit: Optional[int] = None) -> List[str]:
@@ -356,4 +365,88 @@ async def check_indexing_status(url: str) -> Dict[str, object]:
             "https://search.google.com/search-console/inspect"
             f"?resource_id={BASE_URL}/&url={url}"
         ),
+    }
+
+
+async def _check_indexnow_key_file(expected_key: Optional[str]) -> Dict[str, object]:
+    key_url = f"{BASE_URL}/indexnow-key.txt"
+    result = {
+        "url": key_url,
+        "reachable": False,
+        "statusCode": None,
+        "matchesApiKey": None,
+        "error": None,
+    }
+
+    try:
+        async with httpx.AsyncClient(timeout=15.0, follow_redirects=True) as client:
+            response = await client.get(key_url)
+
+        result["statusCode"] = response.status_code
+        if 200 <= response.status_code < 300:
+            result["reachable"] = True
+            body = (response.text or "").strip()
+            if expected_key:
+                result["matchesApiKey"] = body == expected_key.strip()
+    except Exception as error:
+        result["error"] = str(error)
+
+    return result
+
+
+async def get_indexing_health() -> Dict[str, object]:
+    google_account_path = _resolve_google_service_account_path()
+    google_service, google_error = await asyncio.to_thread(_build_google_indexing_client)
+
+    sitemap_exists = SITEMAP_PATH.exists()
+    sitemap_urls = 0
+    sitemap_error = None
+    if sitemap_exists:
+        try:
+            sitemap_urls = len(_collect_urls_from_sitemap(limit=None))
+        except Exception as error:
+            sitemap_error = str(error)
+
+    bing_key = os.environ.get("BING_INDEXNOW_API_KEY")
+    key_file_check = await _check_indexnow_key_file(bing_key)
+
+    warnings: List[str] = []
+    if not sitemap_exists:
+        warnings.append("Sitemap file is missing.")
+    if sitemap_exists and sitemap_urls == 0:
+        warnings.append("Sitemap is present but contains zero URLs.")
+    if google_error:
+        warnings.append("Google Indexing API client is not ready.")
+    if not bing_key:
+        warnings.append("BING_INDEXNOW_API_KEY is not configured.")
+    if key_file_check.get("statusCode") and key_file_check["statusCode"] != 200:
+        warnings.append("IndexNow key file is not publicly reachable with HTTP 200.")
+    if key_file_check.get("matchesApiKey") is False:
+        warnings.append("IndexNow key file content does not match BING_INDEXNOW_API_KEY.")
+
+    return {
+        "ok": len(warnings) == 0,
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "baseUrl": BASE_URL,
+        "sitemap": {
+            "path": str(SITEMAP_PATH),
+            "exists": sitemap_exists,
+            "urlCount": sitemap_urls,
+            "error": sitemap_error,
+        },
+        "google": {
+            "serviceAccountPath": str(google_account_path),
+            "serviceAccountExists": google_account_path.exists(),
+            "clientReady": google_service is not None and google_error is None,
+            "error": google_error,
+            "maxUrlsPerRun": _env_int("GOOGLE_INDEXING_MAX_URLS_PER_RUN", 20),
+            "nextBatchSize": _env_int("GOOGLE_INDEXING_NEXT_BATCH_SIZE", 10),
+        },
+        "bing": {
+            "apiKeyConfigured": bool(bing_key),
+            "apiKeyMasked": _mask_secret(bing_key),
+            "indexNowEndpoint": INDEXNOW_ENDPOINT,
+            "keyFile": key_file_check,
+        },
+        "warnings": warnings,
     }
