@@ -1,4 +1,4 @@
-import React, { useState, useEffect, lazy, Suspense } from 'react';
+import React, { useState, useEffect, useRef, lazy, Suspense } from 'react';
 import { useNavigate, useParams, Link } from 'react-router-dom';
 import './App.css';
 import { Phone, Send, Check, Zap, Users, Award, Package, Clock, MessageCircle, Mail, MapPin, ChevronDown, Flame, Download, ChevronRight } from 'lucide-react';
@@ -8,6 +8,55 @@ import LanguageSwitcher from './components/LanguageSwitcher';
 
 const HomePortfolioSection = lazy(() => import('./components/home/HomePortfolioSection'));
 const HomeBlogPreviewSection = lazy(() => import('./components/home/HomeBlogPreviewSection'));
+
+function DeferredSection({ id, placeholderClassName, rootMargin = '320px', children }) {
+  const containerRef = useRef(null);
+  const [shouldRender, setShouldRender] = useState(false);
+
+  useEffect(() => {
+    if (shouldRender) {
+      return;
+    }
+
+    const triggerRender = () => setShouldRender(true);
+    if (typeof window === 'undefined') {
+      triggerRender();
+      return;
+    }
+
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(triggerRender, { timeout: 1200 });
+    } else {
+      setTimeout(triggerRender, 1200);
+    }
+
+    const target = containerRef.current;
+    if (!target || !('IntersectionObserver' in window)) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            triggerRender();
+            observer.disconnect();
+          }
+        });
+      },
+      { rootMargin },
+    );
+
+    observer.observe(target);
+    return () => observer.disconnect();
+  }, [rootMargin, shouldRender]);
+
+  return (
+    <section id={id} ref={containerRef} className={placeholderClassName} style={{ contentVisibility: 'auto', containIntrinsicSize: '1000px' }}>
+      {shouldRender ? children : null}
+    </section>
+  );
+}
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || window.location.origin;
 
@@ -696,9 +745,11 @@ function App() {
         </div>
       </section>
 
-      <Suspense fallback={<section className="py-20 bg-gray-900" id="portfolio" aria-busy="true" />}>
-        <HomePortfolioSection t={t} scrollToSection={scrollToSection} />
-      </Suspense>
+      <DeferredSection id="portfolio" placeholderClassName="py-20 bg-gray-900" rootMargin="400px">
+        <Suspense fallback={<div className="h-40" aria-busy="true" />}>
+          <HomePortfolioSection t={t} scrollToSection={scrollToSection} />
+        </Suspense>
+      </DeferredSection>
 
       {/* Process Section */}
       <section className="py-20 bg-black" id="process" data-testid="process-section">
@@ -775,9 +826,11 @@ function App() {
         </div>
       </section>
 
-      <Suspense fallback={<section className="py-16 bg-gray-900/50" aria-busy="true" />}>
-        <HomeBlogPreviewSection locale={locale} />
-      </Suspense>
+      <DeferredSection placeholderClassName="py-16 bg-gray-900/50" rootMargin="480px">
+        <Suspense fallback={<div className="h-32" aria-busy="true" />}>
+          <HomeBlogPreviewSection locale={locale} />
+        </Suspense>
+      </DeferredSection>
 
       {/* Contact Form Section */}
       <section className="py-20 bg-gray-900" id="contact" data-testid="contact-section">
