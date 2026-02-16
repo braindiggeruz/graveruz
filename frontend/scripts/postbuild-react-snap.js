@@ -65,6 +65,23 @@ function ensureChromium() {
   throw new Error('[postbuild] Chromium executable not found after install. Set PUPPETEER_EXECUTABLE_PATH manually.');
 }
 
+function ensureReactSnapNodeOptions() {
+  const minHeapMb = 6144;
+  const current = String(process.env.NODE_OPTIONS || '').trim();
+  const match = current.match(/--max-old-space-size=(\d+)/i);
+
+  if (match && Number(match[1]) >= minHeapMb) {
+    return current;
+  }
+
+  const withoutHeap = current
+    .replace(/--max-old-space-size=\d+/gi, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  return `${withoutHeap} --max-old-space-size=${minHeapMb}`.trim();
+}
+
 const shouldSkip = String(process.env.SKIP_REACT_SNAP || '').toLowerCase();
 const pagesEnv = String(process.env.CF_PAGES_ENVIRONMENT || '').toLowerCase();
 const pagesBranch = String(process.env.CF_PAGES_BRANCH || '').toLowerCase();
@@ -82,6 +99,8 @@ if (shouldSkip === '1' || shouldSkip === 'true') {
 const chromiumPath = ensureChromium();
 process.env.PUPPETEER_EXECUTABLE_PATH = chromiumPath;
 process.env.CHROME_BIN = chromiumPath;
+process.env.NODE_OPTIONS = ensureReactSnapNodeOptions();
 console.log('[postbuild] Using Chromium:', chromiumPath);
+console.log('[postbuild] NODE_OPTIONS for react-snap:', process.env.NODE_OPTIONS);
 
 execSync('react-snap', { stdio: 'inherit' });
