@@ -970,6 +970,83 @@ function withReadTime(post) {
   return { ...post, readTime };
 }
 
+function hasValue(value) {
+  return typeof value === 'string' ? value.trim().length > 0 : !!value;
+}
+
+function normalizeString(value) {
+  return String(value || '').trim();
+}
+
+export function validateBlogData(locale) {
+  const posts = blogPosts[locale] || [];
+  const slugCounts = posts.reduce((acc, post) => {
+    const slug = normalizeString(post && post.slug);
+    if (slug) {
+      acc[slug] = (acc[slug] || 0) + 1;
+    }
+    return acc;
+  }, {});
+
+  const duplicateSlugs = Object.keys(slugCounts).filter((slug) => slugCounts[slug] > 1);
+  const slugSet = new Set(Object.keys(slugCounts));
+
+  const errors = [];
+  const missingRelatedRefs = [];
+
+  posts.forEach((post, index) => {
+    const postSlug = normalizeString(post && post.slug);
+    const postErrors = [];
+
+    if (!hasValue(postSlug)) postErrors.push('missing_slug');
+    if (!hasValue(post && post.title)) postErrors.push('missing_title');
+    if (!hasValue(post && post.description)) postErrors.push('missing_description');
+    if (!hasValue(post && post.date)) postErrors.push('missing_date');
+    if (!hasValue(post && post.category)) postErrors.push('missing_category');
+    if (!Array.isArray(post && post.keywords)) postErrors.push('keywords_not_array');
+
+    if (post && Array.isArray(post.relatedPosts)) {
+      const brokenRelated = post.relatedPosts
+        .map((slug) => normalizeString(slug))
+        .filter((slug) => slug && !slugSet.has(slug));
+      if (brokenRelated.length > 0) {
+        missingRelatedRefs.push({ slug: postSlug || '(unknown)', refs: brokenRelated });
+      }
+    } else {
+      postErrors.push('relatedPosts_not_array');
+    }
+
+    if (postErrors.length > 0) {
+      errors.push({ index, slug: postSlug || '(unknown)', errors: postErrors });
+    }
+  });
+
+  return {
+    locale,
+    total: posts.length,
+    invalid: errors.length,
+    valid: posts.length - errors.length,
+    duplicateSlugs,
+    missingRelatedRefs,
+    errors,
+    isValid: errors.length === 0 && duplicateSlugs.length === 0 && missingRelatedRefs.length === 0,
+  };
+}
+
+export function validateAllBlogData() {
+  const locales = Object.keys(blogPosts);
+  const results = locales.map((locale) => validateBlogData(locale));
+  const invalidLocales = results.filter((item) => !item.isValid);
+
+  return {
+    totalLocales: results.length,
+    validLocales: results.length - invalidLocales.length,
+    invalidLocales,
+    results,
+    isValid: invalidLocales.length === 0,
+  };
+}
+
 const CATEGORY_LABELS = {
   ru: {
     guides: 'Гайды',

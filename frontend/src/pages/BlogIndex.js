@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Calendar, ChevronRight, Star, TrendingUp, Clock, FolderOpen, Search, ChevronLeft } from 'lucide-react';
 import { useI18n } from '../i18n';
 import { BASE_URL } from '../config/seo';
-import { getPostsByLocale, getPostBySlug, getPostReadTimeMinutes, getCategorySummary } from '../data/blogPosts';
+import { getPostsByLocale, getPostBySlug, getPostReadTimeMinutes, getCategorySummary, validateBlogData } from '../data/blogPosts';
 import { getBlogImageForSlug, getBlogImageMappingCoverage } from '../data/blogImages';
 import SeoMeta from '../components/SeoMeta';
 
@@ -81,11 +81,24 @@ export default function BlogIndex() {
       return;
     }
 
-    const coverage = getBlogImageMappingCoverage(posts.map((post) => post.slug));
+    const currentPosts = getPostsByLocale(locale);
+    const coverage = getBlogImageMappingCoverage(currentPosts.map((post) => post.slug));
+    const validation = validateBlogData(locale);
+
     if (coverage.missing.length > 0) {
       console.warn('[BlogIndex] Missing mapped images for slugs:', coverage.missing);
     }
-  }, [posts]);
+
+    if (!validation.isValid) {
+      console.warn('[BlogIndex] Blog data validation issues:', {
+        locale: validation.locale,
+        duplicateSlugs: validation.duplicateSlugs,
+        invalidPosts: validation.invalid,
+        missingRelatedRefs: validation.missingRelatedRefs,
+        sampleErrors: validation.errors.slice(0, 5),
+      });
+    }
+  }, [locale]);
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
