@@ -1,12 +1,14 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Calendar, ChevronRight, Star, TrendingUp, Clock, FolderOpen, Search, ChevronLeft } from 'lucide-react';
 import { useI18n } from '../i18n';
 import { BASE_URL } from '../config/seo';
 import { getPostsByLocale, getPostBySlug } from '../data/blogPosts';
-import { getBlogImageForSlug } from '../data/blogImages';
+import { getBlogImageForSlug, getBlogImageMappingCoverage } from '../data/blogImages';
 import SeoMeta from '../components/SeoMeta';
+
+const WORDS_PER_MINUTE = 200;
 
 // Featured/foundational article slugs for "Popular" section
 const featuredSlugsRu = [
@@ -90,6 +92,31 @@ export default function BlogIndex() {
   const paginatedPosts = filteredPosts.slice(startIndex, startIndex + POSTS_PER_PAGE);
 
   const getBlogCardImage = (post) => getBlogImageForSlug(post.slug);
+
+  const getPostReadTime = (post) => {
+    if (post && Number.isFinite(post.readTime) && post.readTime > 0) {
+      return post.readTime;
+    }
+
+    const source = (post && (post.content || post.contentHtml || post.description || '')) || '';
+    const plainText = source
+      .replace(/<[^>]+>/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+    const words = plainText ? plainText.split(' ').length : 0;
+    return Math.max(1, Math.ceil(words / WORDS_PER_MINUTE));
+  };
+
+  useEffect(() => {
+    if (process.env.NODE_ENV === 'production') {
+      return;
+    }
+
+    const coverage = getBlogImageMappingCoverage(posts.map((post) => post.slug));
+    if (coverage.missing.length > 0) {
+      console.warn('[BlogIndex] Missing mapped images for slugs:', coverage.missing);
+    }
+  }, [posts]);
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -332,6 +359,9 @@ export default function BlogIndex() {
                         month: 'long',
                         day: 'numeric'
                       })}
+                      <span className="mx-2">•</span>
+                      <Clock size={14} className="mr-1" />
+                      {getPostReadTime(post)} {isRu ? 'мин чтения' : 'daq o‘qish'}
                     </div>
                     <h2 className="text-xl font-bold text-white group-hover:text-teal-500 transition mb-2">
                       {post.title}

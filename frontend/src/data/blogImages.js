@@ -65,3 +65,23 @@ export function getBlogImageForSlug(slug) {
   }
   return blogCardImages[getStableIndexFromSlug(slug)];
 }
+
+export function hasMappedBlogImage(slug) {
+  return !!(slug && blogCardImageBySlug[slug]);
+}
+
+export function getBlogImageMappingCoverage(slugs) {
+  const uniqueSlugs = Array.isArray(slugs)
+    ? Array.from(new Set(slugs.filter(Boolean)))
+    : [];
+
+  const missing = uniqueSlugs.filter((slug) => !blogCardImageBySlug[slug]);
+  const mapped = uniqueSlugs.length - missing.length;
+
+  return {
+    total: uniqueSlugs.length,
+    mapped,
+    missing,
+    coverage: uniqueSlugs.length ? mapped / uniqueSlugs.length : 1,
+  };
+}
