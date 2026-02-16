@@ -50,6 +50,14 @@ const blogCardImages = [
   '/portfolio/1.webp'
 ];
 
+const blogCardImageBySlug = {
+  'merch-dlya-it-kompaniy-tashkent': '/portfolio/10.webp',
+  'podarki-dlya-bankov-i-finteha-tashkent': '/portfolio/6.webp',
+  'chasy-s-logotipom-korporativnye-podarki-tashkent': '/portfolio/5.webp',
+  'podarki-na-korporativnye-sobytiya-tashkent': '/portfolio/4.webp',
+  'podarki-dlya-horeca-i-restoranov-tashkent': '/portfolio/3.webp'
+};
+
 export default function BlogIndex() {
   const { locale } = useParams();
   const { t } = useI18n();
@@ -78,8 +86,21 @@ export default function BlogIndex() {
   const uzUrl = `${BASE_URL}/uz/blog`;
   const sortedPosts = [...posts].sort((a, b) => new Date(b.date) - new Date(a.date));
 
-  const getBlogCardImage = (index) => {
-    return blogCardImages[index % blogCardImages.length];
+  const getStableIndexFromSlug = (slug) => {
+    let hash = 0;
+    for (let index = 0; index < slug.length; index += 1) {
+      hash = (hash * 31 + slug.charCodeAt(index)) >>> 0;
+    }
+    return hash % blogCardImages.length;
+  };
+
+  const getBlogCardImage = (post) => {
+    const explicitImage = blogCardImageBySlug[post.slug];
+    if (explicitImage) {
+      return explicitImage;
+    }
+
+    return blogCardImages[getStableIndexFromSlug(post.slug)];
   };
 
   const breadcrumbSchema = {
@@ -293,7 +314,7 @@ export default function BlogIndex() {
                 >
                   <div className="relative aspect-[16/6] bg-gray-800 overflow-hidden">
                     <img
-                      src={getBlogCardImage(index)}
+                      src={getBlogCardImage(post)}
                       alt={post.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       loading={index < 2 ? 'eager' : 'lazy'}
