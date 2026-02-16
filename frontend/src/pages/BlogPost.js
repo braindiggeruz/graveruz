@@ -78,26 +78,40 @@ function BlogPostPage() {
     if (!post) return;
     var oldTags = document.querySelectorAll('[data-seo-blog]');
     oldTags.forEach(function(el) { el.remove(); });
+    var publishedDate = post.date ? new Date(post.date).toISOString() : undefined;
+    var isRuLang = locale === 'ru';
 
-    // Inject Article JSON-LD
+    // Inject BlogPosting JSON-LD
     var articleLd = document.createElement('script');
     articleLd.type = 'application/ld+json';
     articleLd.setAttribute('data-seo-blog', 'true');
     articleLd.textContent = JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "Article",
+      "@type": "BlogPosting",
       headline: (seoOverride && (seoOverride.ogTitle || seoOverride.title || seoOverride.titleTag)) || post.title,
       description: (seoOverride && (seoOverride.ogDescription || seoOverride.description)) || post.description,
       url: canonicalUrl,
       mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
       inLanguage: locale === 'ru' ? "ru" : "uz",
-      author: { "@type": "Organization", name: "Graver.uz" },
-      publisher: { "@type": "Organization", name: "Graver.uz", url: BASE_URL }
+      datePublished: publishedDate,
+      dateModified: publishedDate,
+      articleSection: post.category || (isRuLang ? 'Блог' : 'Blog'),
+      image: [BASE_URL + '/og-blog.png'],
+      keywords: Array.isArray(post.keywords) ? post.keywords.join(', ') : undefined,
+      author: { "@type": "Organization", name: "Graver.uz", url: BASE_URL },
+      publisher: {
+        "@type": "Organization",
+        name: "Graver.uz",
+        url: BASE_URL,
+        logo: {
+          "@type": "ImageObject",
+          url: BASE_URL + '/og-blog.png'
+        }
+      }
     });
     document.head.appendChild(articleLd);
 
     // Inject BreadcrumbList JSON-LD
-    var isRuLang = locale === 'ru';
     var breadcrumbLd = document.createElement('script');
     breadcrumbLd.type = 'application/ld+json';
     breadcrumbLd.setAttribute('data-seo-blog', 'true');

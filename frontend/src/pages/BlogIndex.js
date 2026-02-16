@@ -67,6 +67,7 @@ export default function BlogIndex() {
   const canonicalUrl = `${BASE_URL}/${locale}/blog`;
   const ruUrl = `${BASE_URL}/ru/blog`;
   const uzUrl = `${BASE_URL}/uz/blog`;
+  const sortedPosts = [...posts].sort((a, b) => new Date(b.date) - new Date(a.date));
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -75,6 +76,38 @@ export default function BlogIndex() {
       { "@type": "ListItem", "position": 1, "name": isRu ? 'Главная' : 'Bosh sahifa', "item": `${BASE_URL}/${locale}` },
       { "@type": "ListItem", "position": 2, "name": isRu ? 'Блог' : 'Blog', "item": canonicalUrl }
     ]
+  };
+
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": isRu ? 'Список статей блога Graver.uz' : 'Graver.uz blog maqolalari ro‘yxati',
+    "itemListOrder": "https://schema.org/ItemListOrderDescending",
+    "numberOfItems": sortedPosts.length,
+    "itemListElement": sortedPosts.map((post, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "url": `${BASE_URL}/${locale}/blog/${post.slug}`,
+      "name": post.title
+    }))
+  };
+
+  const collectionPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": pageTitle,
+    "description": pageDescription,
+    "url": canonicalUrl,
+    "inLanguage": isRu ? 'ru' : 'uz',
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": sortedPosts.map((post, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "url": `${BASE_URL}/${locale}/blog/${post.slug}`,
+        "name": post.title
+      }))
+    }
   };
 
   return (
@@ -91,6 +124,12 @@ export default function BlogIndex() {
       <Helmet>
         <script type="application/ld+json">
           {JSON.stringify(breadcrumbSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(collectionPageSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(itemListSchema)}
         </script>
       </Helmet>
 
