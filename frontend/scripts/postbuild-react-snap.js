@@ -60,11 +60,11 @@ const isProduction = pagesEnv === 'production' || pagesBranch === 'main';
 
 if (shouldSkip === '1' || shouldSkip === 'true') {
   if (isProduction) {
-    console.error('[postbuild] SKIP_REACT_SNAP is set for production. Refusing to build without prerendered HTML.');
-    process.exit(1);
+    console.warn('[postbuild] SKIP_REACT_SNAP is set for production. Ignoring and continuing with react-snap.');
+  } else {
+    console.log('[postbuild] SKIP_REACT_SNAP=1, skipping react-snap.');
+    process.exit(0);
   }
-  console.log('[postbuild] SKIP_REACT_SNAP=1, skipping react-snap.');
-  process.exit(0);
 }
 
 const chromiumPath = ensureChromium();
