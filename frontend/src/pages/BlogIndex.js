@@ -41,6 +41,15 @@ const categoriesUz = [
   { name: 'Biznes', slug: 'business', count: 1 }
 ];
 
+const blogCardImages = [
+  '/portfolio/10.webp',
+  '/portfolio/6.webp',
+  '/portfolio/5.webp',
+  '/portfolio/4.webp',
+  '/portfolio/3.webp',
+  '/portfolio/1.webp'
+];
+
 export default function BlogIndex() {
   const { locale } = useParams();
   const { t } = useI18n();
@@ -68,6 +77,10 @@ export default function BlogIndex() {
   const ruUrl = `${BASE_URL}/ru/blog`;
   const uzUrl = `${BASE_URL}/uz/blog`;
   const sortedPosts = [...posts].sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  const getBlogCardImage = (index) => {
+    return blogCardImages[index % blogCardImages.length];
+  };
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -275,25 +288,36 @@ export default function BlogIndex() {
                 <Link
                   key={post.slug}
                   to={`/${locale}/blog/${post.slug}`}
-                  className="block bg-gray-900 border border-gray-800 rounded-xl p-6 hover:border-teal-500/50 transition group"
+                  className="block bg-gray-900 border border-gray-800 rounded-xl overflow-hidden hover:border-teal-500/50 transition group"
                   data-testid={`blog-post-card-${index + 1}`}
                 >
-                  <div className="flex items-center text-sm text-gray-500 mb-3">
-                    <Calendar size={14} className="mr-2" />
-                    {new Date(post.date).toLocaleDateString(locale === 'ru' ? 'ru-RU' : 'uz-UZ', {
-                      year: 'numeric',
-                      month: 'long',
-                      day: 'numeric'
-                    })}
+                  <div className="relative aspect-[16/6] bg-gray-800 overflow-hidden">
+                    <img
+                      src={getBlogCardImage(index)}
+                      alt={post.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      loading={index < 2 ? 'eager' : 'lazy'}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                   </div>
-                  <h2 className="text-xl font-bold text-white group-hover:text-teal-500 transition mb-2">
-                    {post.title}
-                  </h2>
-                  <p className="text-gray-400 mb-4">{post.description}</p>
-                  <span className="text-teal-500 font-semibold inline-flex items-center group-hover:translate-x-1 transition-transform">
-                    {isRu ? 'Читать' : "O'qish"}
-                    <ChevronRight size={16} className="ml-1" />
-                  </span>
+                  <div className="p-6">
+                    <div className="flex items-center text-sm text-gray-500 mb-3">
+                      <Calendar size={14} className="mr-2" />
+                      {new Date(post.date).toLocaleDateString(locale === 'ru' ? 'ru-RU' : 'uz-UZ', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                      })}
+                    </div>
+                    <h2 className="text-xl font-bold text-white group-hover:text-teal-500 transition mb-2">
+                      {post.title}
+                    </h2>
+                    <p className="text-gray-400 mb-4">{post.description}</p>
+                    <span className="text-teal-500 font-semibold inline-flex items-center group-hover:translate-x-1 transition-transform">
+                      {isRu ? 'Читать' : "O'qish"}
+                      <ChevronRight size={16} className="ml-1" />
+                    </span>
+                  </div>
                 </Link>
               ))}
             </div>
