@@ -67,6 +67,14 @@ function toSrcSet(basePath, format) {
     .join(', ');
 }
 
+function toOgPath(basePath) {
+  if (typeof basePath !== 'string' || !basePath || !/\.png$/i.test(basePath)) {
+    return basePath;
+  }
+
+  return basePath.replace(/\.png$/i, '-og.jpg');
+}
+
 function getStableIndexFromSlug(slug) {
   var hash = 0;
   for (var index = 0; index < slug.length; index += 1) {
@@ -94,6 +102,10 @@ export function getResponsiveBlogImageForSlug(slug) {
     webpSrcSet: toSrcSet(fallbackSrc, 'webp'),
     sizes: '(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 960px',
   };
+}
+
+export function getBlogOgImageForSlug(slug) {
+  return toOgPath(getBlogImageForSlug(slug));
 }
 
 export function hasMappedBlogImage(slug) {

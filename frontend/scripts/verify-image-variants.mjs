@@ -39,6 +39,12 @@ async function main() {
         }
       }
     }
+
+    const ogVariant = `${baseName}-og.jpg`;
+    const ogOk = await exists(path.join(imageDir, ogVariant));
+    if (!ogOk) {
+      issues.push(ogVariant);
+    }
   }
 
   if (issues.length) {
@@ -47,7 +53,7 @@ async function main() {
     process.exit(1);
   }
 
-  console.log(`[verify:images] OK: ${pngNames.length} PNG sources have AVIF/WebP variants for ${widths.join(', ')}`);
+  console.log(`[verify:images] OK: ${pngNames.length} PNG sources have AVIF/WebP variants for ${widths.join(', ')} and OG JPG`);
 }
 
 main().catch((error) => {

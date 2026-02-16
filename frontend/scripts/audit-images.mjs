@@ -35,11 +35,13 @@ async function main() {
   const png = await sumByPattern(fileNames, /\.png$/i);
   const avif = await sumByPattern(fileNames, /\.(avif)$/i);
   const webp = await sumByPattern(fileNames, /\.(webp)$/i);
+  const ogJpg = await sumByPattern(fileNames, /-og\.jpg$/i);
 
   console.log('[images:audit] Blog image storage footprint');
   console.log(`- PNG:  ${png.count} files / ${toMb(png.total)} MB`);
   console.log(`- AVIF: ${avif.count} files / ${toMb(avif.total)} MB`);
   console.log(`- WebP: ${webp.count} files / ${toMb(webp.total)} MB`);
+  console.log(`- OG JPG: ${ogJpg.count} files / ${toMb(ogJpg.total)} MB`);
 
   if (png.total > 0 && (avif.total + webp.total) > 0) {
     const ratio = ((avif.total + webp.total) / png.total) * 100;

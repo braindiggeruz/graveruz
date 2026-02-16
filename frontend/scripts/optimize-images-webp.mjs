@@ -58,6 +58,20 @@ async function optimizeOne(pngPath) {
     generatedCount += 2;
   }
 
+  const ogPath = getVariantPath(pngPath, 'og', 'jpg');
+  await sharp(pngPath)
+    .resize({
+      width: 1200,
+      height: 630,
+      fit: 'cover',
+      position: 'attention',
+      withoutEnlargement: false,
+    })
+    .jpeg({ quality: 84, mozjpeg: true })
+    .toFile(ogPath);
+
+  generatedCount += 1;
+
   return generatedCount;
 }
 
@@ -85,13 +99,18 @@ async function main() {
   const optimizedTargets = generatedFiles
     .filter((entry) => entry.isFile() && /-(480|768|1200)\.(avif|webp)$/i.test(entry.name))
     .map((entry) => path.join(sourceDir, entry.name));
+  const ogTargets = generatedFiles
+    .filter((entry) => entry.isFile() && /-og\.jpg$/i.test(entry.name))
+    .map((entry) => path.join(sourceDir, entry.name));
 
   const optimizedBytes = (await Promise.all(optimizedTargets.map(fileSize))).reduce((sum, size) => sum + size, 0);
+  const ogBytes = (await Promise.all(ogTargets.map(fileSize))).reduce((sum, size) => sum + size, 0);
 
   console.log(`[images:optimize] Processed PNG files: ${pngFiles.length}`);
   console.log(`[images:optimize] Generated variants: ${generatedTotal}`);
   console.log(`[images:optimize] Source PNG total: ${formatMb(sourceBytes)}`);
   console.log(`[images:optimize] Variant AVIF/WebP total: ${formatMb(optimizedBytes)}`);
+  console.log(`[images:optimize] OG JPG total: ${formatMb(ogBytes)}`);
 }
 
 main().catch((error) => {

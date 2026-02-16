@@ -5,7 +5,7 @@ import { ArrowLeft, Calendar, Tag, Lightbulb, BookOpen, HelpCircle, Clock } from
 import { BASE_URL } from '../config/seo';
 import { getPostBySlug, getPostReadTimeMinutes, getRelatedPostsWeighted } from '../data/blogPosts';
 import { getSeoOverride, getFaqData } from '../data/blogSeoOverrides';
-import { getBlogImageForSlug, getResponsiveBlogImageForSlug } from '../data/blogImages';
+import { getBlogImageForSlug, getBlogOgImageForSlug, getResponsiveBlogImageForSlug } from '../data/blogImages';
 import { getMappedAlternateSlug } from '../config/blogSlugMap';
 
 function normalizeBlogHref(href, locale) {
@@ -74,7 +74,7 @@ function BlogPostPage() {
   // Determine title: use override if exists, otherwise default
   const pageTitle = (seoOverride && (seoOverride.title || seoOverride.titleTag)) || (post ? post.title + ' — Graver.uz' : 'Graver.uz');
   const pageDescription = (seoOverride && (seoOverride.description || seoOverride.ogDescription)) || (post ? post.description : '');
-  const pageOgImage = post ? BASE_URL + getBlogImageForSlug(slug) : BASE_URL + '/og-blog.png';
+  const pageOgImage = post ? BASE_URL + getBlogOgImageForSlug(slug) : BASE_URL + '/og-blog.png';
   const heroImage = getResponsiveBlogImageForSlug(slug);
 
   useEffect(function addSeoTags() {
