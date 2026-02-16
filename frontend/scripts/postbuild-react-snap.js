@@ -1,5 +1,6 @@
 const { execSync } = require('child_process');
 const fs = require('fs');
+const os = require('os');
 const path = require('path');
 
 function firstExisting(paths) {
@@ -15,38 +16,49 @@ function findChromiumExecutable() {
   if (envCandidate && fs.existsSync(envCandidate)) return envCandidate;
 
   const local = process.cwd();
-  const commonCandidates = [
-    path.join(local, 'node_modules', 'puppeteer', '.local-chromium', 'win64-*/chrome-win/chrome.exe'),
-    path.join(local, 'node_modules', 'puppeteer-core', '.local-chromium', 'win64-*/chrome-win/chrome.exe'),
+  const home = os.homedir();
+  const wildcardCandidates = [
+    { base: path.join(local, 'node_modules', 'puppeteer', '.local-chromium', 'win64-*'), suffix: path.join('chrome-win', 'chrome.exe') },
+    { base: path.join(local, 'node_modules', 'puppeteer-core', '.local-chromium', 'win64-*'), suffix: path.join('chrome-win', 'chrome.exe') },
+    { base: path.join(local, 'node_modules', 'puppeteer', '.local-chromium', 'linux-*'), suffix: path.join('chrome-linux', 'chrome') },
+    { base: path.join(local, 'node_modules', 'puppeteer-core', '.local-chromium', 'linux-*'), suffix: path.join('chrome-linux', 'chrome') },
+    { base: path.join(local, 'node_modules', 'puppeteer', '.local-chromium', 'mac-*'), suffix: path.join('chrome-mac', 'Chromium.app', 'Contents', 'MacOS', 'Chromium') },
+    { base: path.join(local, 'node_modules', 'puppeteer-core', '.local-chromium', 'mac-*'), suffix: path.join('chrome-mac', 'Chromium.app', 'Contents', 'MacOS', 'Chromium') },
+    { base: path.join(home, '.cache', 'puppeteer', 'chrome', 'linux-*'), suffix: path.join('chrome-linux64', 'chrome') },
+    { base: path.join(home, '.cache', 'puppeteer', 'chrome', 'win64-*'), suffix: path.join('chrome-win64', 'chrome.exe') },
+    { base: path.join(home, '.cache', 'puppeteer', 'chrome', 'mac-*'), suffix: path.join('chrome-mac-arm64', 'Google Chrome for Testing.app', 'Contents', 'MacOS', 'Google Chrome for Testing') },
+    { base: path.join(home, '.cache', 'puppeteer', 'chrome', 'mac-*'), suffix: path.join('chrome-mac-x64', 'Google Chrome for Testing.app', 'Contents', 'MacOS', 'Google Chrome for Testing') }
+  ];
+
+  const directCandidates = [
     'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
     'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe',
     'C:\\Program Files\\Microsoft\\Edge\\Application\\msedge.exe',
-    'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe'
+    'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe',
+    '/usr/bin/google-chrome',
+    '/usr/bin/chromium',
+    '/usr/bin/chromium-browser'
   ];
 
   const wildcardResolved = [];
-  for (const candidate of commonCandidates) {
-    if (!candidate.includes('*')) {
-      wildcardResolved.push(candidate);
-      continue;
-    }
-    const baseDir = candidate.split('*')[0];
+  for (const candidate of wildcardCandidates) {
+    const baseDir = candidate.base.split('*')[0];
     if (!fs.existsSync(baseDir)) continue;
     const subDirs = fs.readdirSync(baseDir, { withFileTypes: true })
       .filter((entry) => entry.isDirectory())
-      .map((entry) => path.join(baseDir, entry.name, 'chrome-win', 'chrome.exe'));
+      .map((entry) => path.join(baseDir, entry.name, candidate.suffix));
     wildcardResolved.push(...subDirs);
   }
 
-  return firstExisting(wildcardResolved);
+  return firstExisting([...directCandidates, ...wildcardResolved]);
 }
 
 function ensureChromium() {
   let executable = findChromiumExecutable();
   if (executable) return executable;
 
-  console.log('[postbuild] Chromium not found, installing via puppeteer...');
-  execSync('npx puppeteer browsers install chrome', { stdio: 'inherit' });
+  console.log('[postbuild] Chromium not found, installing via @puppeteer/browsers...');
+  execSync('npx @puppeteer/browsers install chrome', { stdio: 'inherit' });
   executable = findChromiumExecutable();
   if (executable) return executable;
 
