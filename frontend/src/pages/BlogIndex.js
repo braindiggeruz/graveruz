@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Calendar, ChevronRight, Star, TrendingUp, Clock, FolderOpen, Search, ChevronLeft } from 'lucide-react';
 import { useI18n } from '../i18n';
 import { BASE_URL } from '../config/seo';
-import { getPostsByLocale, getPostBySlug, getPostReadTimeMinutes } from '../data/blogPosts';
+import { getPostsByLocale, getPostBySlug, getPostReadTimeMinutes, getCategorySummary } from '../data/blogPosts';
 import { getBlogImageForSlug, getBlogImageMappingCoverage } from '../data/blogImages';
 import SeoMeta from '../components/SeoMeta';
 
@@ -27,21 +27,6 @@ const featuredSlugsUz = [
   'yangi-yil-sovga-goyalari'
 ];
 
-// Categories for blog hub structure (P1.1)
-const categoriesRu = [
-  { name: 'Гайды', slug: 'guides', count: 4 },
-  { name: 'Брендирование', slug: 'branding', count: 3 },
-  { name: 'Праздники', slug: 'holidays', count: 2 },
-  { name: 'Бизнес', slug: 'business', count: 1 }
-];
-
-const categoriesUz = [
-  { name: "Qo'llanmalar", slug: 'guides', count: 4 },
-  { name: 'Brendlash', slug: 'branding', count: 3 },
-  { name: 'Bayramlar', slug: 'holidays', count: 2 },
-  { name: 'Biznes', slug: 'business', count: 1 }
-];
-
 export default function BlogIndex() {
   const { locale } = useParams();
   const { t } = useI18n();
@@ -62,8 +47,8 @@ export default function BlogIndex() {
     .map(slug => getPostBySlug(locale, slug))
     .filter(Boolean);
 
-  // Get categories for hub structure (P1.1)
-  const categories = isRu ? categoriesRu : categoriesUz;
+  // Get normalized dynamic categories for hub structure
+  const categories = useMemo(() => getCategorySummary(locale, 4), [locale]);
   
   // Get latest 3 posts (sorted by date)
   const latestPosts = [...posts].sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 3);

@@ -3,7 +3,7 @@ import { Link, useParams, Navigate } from 'react-router-dom';
 import SeoMeta from '../components/SeoMeta';
 import { ArrowLeft, Calendar, Tag, Lightbulb, BookOpen, HelpCircle, Clock } from 'lucide-react';
 import { BASE_URL } from '../config/seo';
-import { getPostBySlug, getPostsByLocale, getPostReadTimeMinutes } from '../data/blogPosts';
+import { getPostBySlug, getPostReadTimeMinutes, getRelatedPostsWeighted } from '../data/blogPosts';
 import { getSeoOverride, getFaqData } from '../data/blogSeoOverrides';
 import { getBlogImageForSlug } from '../data/blogImages';
 import { getMappedAlternateSlug } from '../config/blogSlugMap';
@@ -178,26 +178,10 @@ function BlogPostPage() {
   var dateStr = new Date(post.date).toLocaleDateString(isRu ? 'ru-RU' : 'uz-UZ', { year: 'numeric', month: 'long', day: 'numeric' });
   var readTime = getPostReadTimeMinutes(post);
 
-  // Get related posts from override or fallback to post.relatedPosts
-  var relatedSlugs = (seoOverride && seoOverride.relatedSlugs) || post.relatedPosts || [];
-  var relatedPosts = relatedSlugs
-    .map(function(s) { return getPostBySlug(locale, s); })
-    .filter(Boolean);
-
-  var allPosts = getPostsByLocale(locale)
-    .filter(function(p) { return p.slug !== slug; });
-
-  var recommendedPosts = relatedPosts.slice(0);
-  if (recommendedPosts.length < 3) {
-    allPosts.forEach(function(p) {
-      if (recommendedPosts.length >= 5) return;
-      if (!recommendedPosts.some(function(rp) { return rp.slug === p.slug; })) {
-        recommendedPosts.push(p);
-      }
-    });
-  } else {
-    recommendedPosts = recommendedPosts.slice(0, 5);
-  }
+  var overrideRelatedSlugs = Array.isArray(seoOverride && seoOverride.relatedSlugs)
+    ? seoOverride.relatedSlugs
+    : [];
+  var recommendedPosts = getRelatedPostsWeighted(locale, slug, 5, overrideRelatedSlugs);
 
   var moneyLinks = isRu ? [
     { href: '/' + locale + '/catalog-products', label: 'Каталог продукции' },

@@ -970,6 +970,100 @@ function withReadTime(post) {
   return { ...post, readTime };
 }
 
+const CATEGORY_LABELS = {
+  ru: {
+    guides: 'Гайды',
+    branding: 'Брендирование',
+    holidays: 'Праздники',
+    business: 'Бизнес',
+  },
+  uz: {
+    guides: "Qo'llanmalar",
+    branding: 'Brendlash',
+    holidays: 'Bayramlar',
+    business: 'Biznes',
+  },
+};
+
+function normalizeCategoryBucket(post, locale) {
+  const category = String((post && post.category) || '').toLowerCase();
+  const keywords = Array.isArray(post && post.keywords)
+    ? post.keywords.join(' ').toLowerCase()
+    : '';
+  const bag = category + ' ' + keywords + ' ' + String((post && post.title) || '').toLowerCase();
+
+  if (/guide|гайд|чек|qollanma|qo'llanma|how\s?to/i.test(bag)) return 'guides';
+  if (/navruz|новый\s?год|bayram|сезон|праздник|holiday/i.test(bag)) return 'holidays';
+  if (/brand|бренд|grav|грав|laser|lazer|logo|логотип|cluster|pillar|мерч/i.test(bag)) return 'branding';
+  return 'business';
+}
+
+function tokenize(value) {
+  return String(value || '')
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}\s]/gu, ' ')
+    .split(/\s+/)
+    .filter((token) => token.length > 2);
+}
+
+function sharedCount(listA, listB) {
+  if (!listA.length || !listB.length) return 0;
+  const setB = new Set(listB);
+  return listA.reduce((acc, item) => acc + (setB.has(item) ? 1 : 0), 0);
+}
+
+export function getCategorySummary(locale, limit = 4) {
+  const labels = CATEGORY_LABELS[locale] || CATEGORY_LABELS.ru;
+  const posts = getPostsByLocale(locale);
+  const counts = posts.reduce((acc, post) => {
+    const bucket = normalizeCategoryBucket(post, locale);
+    acc[bucket] = (acc[bucket] || 0) + 1;
+    return acc;
+  }, {});
+
+  return Object.keys(counts)
+    .map((slug) => ({ slug, name: labels[slug] || slug, count: counts[slug] }))
+    .sort((a, b) => b.count - a.count)
+    .slice(0, limit);
+}
+
+export function getRelatedPostsWeighted(locale, currentSlug, limit = 5, seedSlugs = []) {
+  const current = getPostBySlug(locale, currentSlug);
+  if (!current) return [];
+
+  const posts = getPostsByLocale(locale).filter((post) => post.slug !== currentSlug);
+  const currentKeywords = Array.isArray(current.keywords) ? current.keywords.map((keyword) => String(keyword).toLowerCase()) : [];
+  const currentTitleTokens = tokenize(current.title);
+  const currentBucket = normalizeCategoryBucket(current, locale);
+
+  const manualPriority = new Set([
+    ...(Array.isArray(current.relatedPosts) ? current.relatedPosts : []),
+    ...(Array.isArray(seedSlugs) ? seedSlugs : []),
+  ]);
+
+  return posts
+    .map((candidate) => {
+      const candidateKeywords = Array.isArray(candidate.keywords) ? candidate.keywords.map((keyword) => String(keyword).toLowerCase()) : [];
+      const candidateBucket = normalizeCategoryBucket(candidate, locale);
+      const titleOverlap = sharedCount(currentTitleTokens, tokenize(candidate.title));
+      const keywordOverlap = sharedCount(currentKeywords, candidateKeywords);
+
+      let score = 0;
+      if (manualPriority.has(candidate.slug)) score += 100;
+      if (candidateBucket === currentBucket) score += 20;
+      score += keywordOverlap * 8;
+      score += titleOverlap * 2;
+
+      return { candidate, score };
+    })
+    .sort((left, right) => {
+      if (right.score !== left.score) return right.score - left.score;
+      return new Date(right.candidate.date) - new Date(left.candidate.date);
+    })
+    .slice(0, limit)
+    .map((row) => row.candidate);
+}
+
 /**
  * Get all posts for a locale, sorted by date (newest first)
  */
@@ -997,12 +1091,7 @@ export function getAlternateSlug(slug) {
  * Get related posts for a given post
  */
 export function getRelatedPosts(locale, currentSlug) {
-  const post = getPostBySlug(locale, currentSlug);
-  if (!post || !post.relatedPosts) return [];
-  
-  return post.relatedPosts
-    .map(slug => getPostBySlug(locale, slug))
-    .filter(Boolean);
+  return getRelatedPostsWeighted(locale, currentSlug, 5);
 }
 
 /**
