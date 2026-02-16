@@ -79,11 +79,64 @@ function BlogPostPage() {
 
   useEffect(function addSeoTags() {
     if (!post) return;
-    var oldTags = document.querySelectorAll('[data-seo-blog]');
+    var oldTags = document.querySelectorAll('[data-seo-blog], [data-seo-blog-meta]');
     oldTags.forEach(function(el) { el.remove(); });
     var publishedDate = post.date ? new Date(post.date).toISOString() : undefined;
     var readTimeMinutes = getPostReadTimeMinutes(post);
     var isRuLang = locale === 'ru';
+
+    var appendMeta = function(attr, key, value) {
+      if (!value) return;
+      var existingMeta = document.head.querySelector('meta[' + attr + '="' + key + '"]');
+      if (existingMeta) return;
+      var tag = document.createElement('meta');
+      tag.setAttribute(attr, key);
+      tag.setAttribute('content', value);
+      tag.setAttribute('data-seo-blog-meta', 'true');
+      document.head.appendChild(tag);
+    };
+
+    var appendLink = function(rel, href, extraAttrs) {
+      if (!href) return;
+      var existingLink = null;
+      if (extraAttrs && extraAttrs.hreflang) {
+        existingLink = document.head.querySelector('link[rel="' + rel + '"][hreflang="' + extraAttrs.hreflang + '"]');
+      } else {
+        existingLink = document.head.querySelector('link[rel="' + rel + '"]');
+      }
+      if (existingLink) return;
+      var tag = document.createElement('link');
+      tag.setAttribute('rel', rel);
+      tag.setAttribute('href', href);
+      tag.setAttribute('data-seo-blog-meta', 'true');
+      if (extraAttrs) {
+        Object.keys(extraAttrs).forEach(function(key) {
+          if (extraAttrs[key]) {
+            tag.setAttribute(key, extraAttrs[key]);
+          }
+        });
+      }
+      document.head.appendChild(tag);
+    };
+
+    document.title = pageTitle;
+    appendMeta('name', 'description', pageDescription);
+    appendMeta('name', 'robots', 'index, follow');
+    appendLink('canonical', canonicalUrl);
+    appendLink('alternate', ruUrl, { hreflang: 'ru-RU' });
+    appendLink('alternate', uzUrl, { hreflang: 'uz-UZ' });
+    appendLink('alternate', ruUrl || canonicalUrl, { hreflang: 'x-default' });
+    appendMeta('property', 'og:title', (seoOverride && (seoOverride.ogTitle || seoOverride.title || seoOverride.titleTag)) || post.title);
+    appendMeta('property', 'og:description', (seoOverride && (seoOverride.ogDescription || seoOverride.description)) || post.description);
+    appendMeta('property', 'og:type', 'article');
+    appendMeta('property', 'og:url', canonicalUrl);
+    appendMeta('property', 'og:image', pageOgImage);
+    appendMeta('property', 'og:site_name', 'Graver.uz');
+    appendMeta('property', 'og:locale', isRuLang ? 'ru_RU' : 'uz_UZ');
+    appendMeta('name', 'twitter:card', 'summary_large_image');
+    appendMeta('name', 'twitter:title', (seoOverride && (seoOverride.ogTitle || seoOverride.title || seoOverride.titleTag)) || post.title);
+    appendMeta('name', 'twitter:description', (seoOverride && (seoOverride.ogDescription || seoOverride.description)) || post.description);
+    appendMeta('name', 'twitter:image', pageOgImage);
 
     // Inject BlogPosting JSON-LD
     var articleLd = document.createElement('script');
@@ -163,7 +216,7 @@ function BlogPostPage() {
     return function cleanup() {
       document.querySelectorAll('[data-seo-blog]').forEach(function(el) { el.remove(); });
     };
-  }, [post, canonicalUrl, locale, seoOverride, faqData, pageOgImage]);
+  }, [post, pageTitle, pageDescription, canonicalUrl, ruUrl, uzUrl, locale, seoOverride, faqData, pageOgImage]);
 
   if (!post) {
     return React.createElement(Navigate, { to: '/' + locale + '/blog', replace: true });

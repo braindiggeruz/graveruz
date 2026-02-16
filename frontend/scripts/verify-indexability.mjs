@@ -85,7 +85,6 @@ async function main() {
     const route = normalizeRoute(loc.slice(BASE_URL.length) || '/');
     const isIncludedRoute = reactSnapIncludes.has(route);
     if (!isIncludedRoute) {
-      warnings.push(`${route}: not in reactSnap include list, skipped strict checks`);
       continue;
     }
 
