@@ -67,9 +67,9 @@ export default function BlogIndex() {
       { href: `/${locale}/products/lighters`, label: 'Logotip va gravyurali zajigalkalar' }
     ];
 
-  const canonicalUrl = `${BASE_URL}/${locale}/blog`;
-  const ruUrl = `${BASE_URL}/ru/blog`;
-  const uzUrl = `${BASE_URL}/uz/blog`;
+  const canonicalUrl = `${BASE_URL}/${locale}/blog/`;
+  const ruUrl = `${BASE_URL}/ru/blog/`;
+  const uzUrl = `${BASE_URL}/uz/blog/`;
   const sortedPosts = [...posts].sort((a, b) => new Date(b.date) - new Date(a.date));
   const filteredPosts = useMemo(() => {
     const query = searchQuery.trim().toLowerCase();

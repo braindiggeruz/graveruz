@@ -35,6 +35,11 @@ function toDate(value) {
   return parsed.toISOString().split('T')[0];
 }
 
+function ensureTrailingSlash(pathname) {
+  if (!pathname || pathname === '/') return '/';
+  return pathname.endsWith('/') ? pathname : `${pathname}/`;
+}
+
 function buildXml(urls) {
   const items = urls.map(({ loc, lastmod }) => (
     `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${lastmod}</lastmod>\n  </url>`
@@ -93,7 +98,7 @@ async function main() {
   const urlMap = new Map();
 
   const addUrl = (pathname, lastmod) => {
-    const loc = `${baseUrl}${pathname}`;
+    const loc = `${baseUrl}${ensureTrailingSlash(pathname)}`;
     const lm = lastmod || buildDate;
     urlMap.set(loc, lm);
   };
@@ -107,7 +112,7 @@ async function main() {
       return;
     }
 
-    const loc = `${baseUrl}${pathname}`;
+    const loc = `${baseUrl}${ensureTrailingSlash(pathname)}`;
     imageEntryMap.set(loc, {
       loc,
       imageLoc: `${baseUrl}${imagePath}`,

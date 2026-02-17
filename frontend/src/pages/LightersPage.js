@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import SeoMeta from '../components/SeoMeta';
 import { ArrowLeft, Download, Phone, Send, Flame, Shield, Ruler, Scale, ChevronRight } from 'lucide-react';
-import { BASE_URL } from '../config/seo';
+import { BASE_URL, buildCanonical, buildAlternate } from '../config/seo';
 
 // Product data from catalog
 const products = [
@@ -86,10 +86,12 @@ const engravingTypes = [
 function LightersPage() {
   const { locale } = useParams();
   const isRu = locale === 'ru';
-  
-  const canonicalUrl = `${BASE_URL}/${locale}/products/lighters`;
-  const ruUrl = `${BASE_URL}/ru/products/lighters`;
-  const uzUrl = `${BASE_URL}/uz/products/lighters`;
+
+  const pathname = `/${locale}/products/lighters`;
+  const canonicalUrl = buildCanonical(pathname);
+  const ruUrl = buildAlternate(pathname, locale, 'ru');
+  const uzUrl = buildAlternate(pathname, locale, 'uz');
+  const catalogPath = locale === 'ru' ? `/${locale}/catalog-products/` : `/${locale}/mahsulotlar-katalogi/`;
   
   // PATCH 1: SEO-optimized Title & Description from audit
   const pageTitle = isRu 
@@ -131,7 +133,7 @@ function LightersPage() {
         "@id": `${canonicalUrl}#breadcrumb`,
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": isRu ? "Главная" : "Bosh sahifa", "item": `${BASE_URL}/${locale}` },
-          { "@type": "ListItem", "position": 2, "name": isRu ? "Продукция" : "Mahsulotlar", "item": `${BASE_URL}/${locale}/products` },
+          { "@type": "ListItem", "position": 2, "name": isRu ? "Продукция" : "Mahsulotlar", "item": `${BASE_URL}${catalogPath}` },
           { "@type": "ListItem", "position": 3, "name": isRu ? "Зажигалки" : "Zajigalkalar", "item": canonicalUrl }
         ]
       },

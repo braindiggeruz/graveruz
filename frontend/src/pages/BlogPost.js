@@ -136,10 +136,10 @@ function BlogPostPage() {
   // Get FAQ data for FAQPage Schema
   const faqData = (getFaqData(slug) || []).filter(isValidFaqItem);
 
-  const canonicalUrl = post ? BASE_URL + '/' + locale + '/blog/' + slug : '';
+  const canonicalUrl = post ? BASE_URL + '/' + locale + '/blog/' + slug + '/' : '';
   const altSlug = slug ? getMappedAlternateSlug(locale, slug) : null;
   const altLocale = isRu ? 'uz' : 'ru';
-  const altUrl = altSlug ? BASE_URL + '/' + altLocale + '/blog/' + altSlug : null;
+  const altUrl = altSlug ? BASE_URL + '/' + altLocale + '/blog/' + altSlug + '/' : null;
   const ruUrl = isRu ? canonicalUrl : altUrl;
   const uzUrl = isRu ? altUrl : canonicalUrl;
 
@@ -194,14 +194,10 @@ function BlogPostPage() {
     document.title = pageTitle;
 
     var ensureFallbackHead = function() {
-      var hasHelmetCanonical = document.head.querySelector('link[rel="canonical"][data-rh="true"]');
-      var hasHelmetHreflangRu = document.head.querySelector('link[rel="alternate"][hreflang="ru-RU"][data-rh="true"]');
-      var hasHelmetHreflangUz = document.head.querySelector('link[rel="alternate"][hreflang="uz-UZ"][data-rh="true"]');
-      var hasHelmetXDefault = document.head.querySelector('link[rel="alternate"][hreflang="x-default"][data-rh="true"]');
       var hasHelmetRobots = document.head.querySelector('meta[name="robots"][data-rh="true"]');
       var hasHelmetDescription = document.head.querySelector('meta[name="description"][data-rh="true"]');
 
-      if (hasHelmetCanonical && hasHelmetHreflangRu && hasHelmetHreflangUz && hasHelmetXDefault && hasHelmetRobots && hasHelmetDescription) {
+      if (hasHelmetRobots && hasHelmetDescription) {
         return;
       }
 
@@ -224,7 +220,32 @@ function BlogPostPage() {
       appendMeta('name', 'twitter:image', pageOgImage);
     };
 
+    var dedupeFallbackLinks = function() {
+      var linkSelectors = [
+        'link[rel="canonical"]',
+        'link[rel="alternate"][hreflang="ru-RU"]',
+        'link[rel="alternate"][hreflang="uz-UZ"]',
+        'link[rel="alternate"][hreflang="x-default"]'
+      ];
+
+      linkSelectors.forEach(function(selector) {
+        var links = Array.prototype.slice.call(document.head.querySelectorAll(selector));
+        if (!links.length) return;
+        var hasNonFallback = links.some(function(link) {
+          return !link.hasAttribute('data-seo-blog-meta');
+        });
+        if (!hasNonFallback) return;
+        links.forEach(function(link) {
+          if (link.hasAttribute('data-seo-blog-meta')) {
+            link.remove();
+          }
+        });
+      });
+    };
+
     var fallbackHeadTimer = setTimeout(ensureFallbackHead, 120);
+    var dedupeFallbackTimer = setTimeout(dedupeFallbackLinks, 800);
+    var dedupeFallbackInterval = setInterval(dedupeFallbackLinks, 300);
 
     // Inject BlogPosting JSON-LD
     var articleLd = document.createElement('script');
@@ -303,6 +324,8 @@ function BlogPostPage() {
     
     return function cleanup() {
       clearTimeout(fallbackHeadTimer);
+      clearTimeout(dedupeFallbackTimer);
+      clearInterval(dedupeFallbackInterval);
       document.querySelectorAll('[data-seo-blog], [data-seo-blog-meta]').forEach(function(el) { el.remove(); });
     };
   }, [post, pageTitle, pageDescription, canonicalUrl, ruUrl, uzUrl, locale, seoOverride, faqData, pageOgImage]);

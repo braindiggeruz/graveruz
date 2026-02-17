@@ -26,12 +26,19 @@ export const HREFLANG_MAP = {
   uz: 'uz-UZ'
 };
 
+function normalizeSeoPath(pathname) {
+  const cleanPath = pathname.startsWith('/') ? pathname : `/${pathname}`;
+  if (cleanPath === '/') {
+    return '/';
+  }
+  return cleanPath.endsWith('/') ? cleanPath : `${cleanPath}/`;
+}
+
 /**
  * Build canonical URL from pathname (no query, no hash)
  */
 export function buildCanonical(pathname) {
-  // Ensure pathname starts with /
-  const cleanPath = pathname.startsWith('/') ? pathname : `/${pathname}`;
+  const cleanPath = normalizeSeoPath(pathname);
   return `${BASE_URL}${cleanPath}`;
 }
 
@@ -64,7 +71,7 @@ export function getAlternatePath(pathname, fromLocale, toLocale) {
  */
 export function buildAlternate(pathname, fromLocale, toLocale) {
   const altPath = getAlternatePath(pathname, fromLocale, toLocale);
-  return `${BASE_URL}${altPath}`;
+  return `${BASE_URL}${normalizeSeoPath(altPath)}`;
 }
 
 /**
