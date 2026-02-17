@@ -111,15 +111,24 @@ PowerShell helper script:
 
 - `backend/run-next-batch.ps1`
 
-Run manually:
+Run manually (safe defaults):
 
-- `powershell -NoProfile -File backend/run-next-batch.ps1 -BatchSize 10 -ShowStatus`
+- `powershell -NoProfile -File backend/run-next-batch.ps1 -BatchSize 5 -ShowStatus`
 
-Windows Task Scheduler action example:
+Recommended safe mode flags:
+
+- `-TimeoutSec 60` — per-request timeout
+- `-CooldownOnQuotaSec 1800` — pause 30 min when Google returns rate/quota limit
+
+Example:
+
+- `powershell -NoProfile -File backend/run-next-batch.ps1 -BatchSize 5 -TimeoutSec 60 -CooldownOnQuotaSec 1800 -ShowStatus`
+
+Windows Task Scheduler action example (every 15–30 min):
 
 - Program/script: `powershell.exe`
-- Arguments: `-NoProfile -ExecutionPolicy Bypass -File F:\projects\graveruz\backend\run-next-batch.ps1 -BatchSize 10 -ShowStatus`
+- Arguments: `-NoProfile -ExecutionPolicy Bypass -File F:\projects\graveruz\backend\run-next-batch.ps1 -BatchSize 5 -TimeoutSec 60 -CooldownOnQuotaSec 1800 -ShowStatus`
 
 Linux cron example (if backend host is Linux):
 
-- `0 * * * * curl -sS "http://127.0.0.1:3000/api/indexing/submit-next-batch?batch_size=10" >/var/log/graver-indexing.log 2>&1`
+- `*/30 * * * * powershell -NoProfile -File /path/to/backend/run-next-batch.ps1 -ApiBase http://127.0.0.1:3000 -BatchSize 5 -TimeoutSec 60 -CooldownOnQuotaSec 1800 >/var/log/graver-indexing.log 2>&1`
