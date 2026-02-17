@@ -151,101 +151,69 @@ function BlogPostPage() {
 
   useEffect(function addSeoTags() {
     if (!post) return;
-    var oldTags = document.querySelectorAll('[data-seo-blog], [data-seo-blog-meta]');
-    oldTags.forEach(function(el) { el.remove(); });
-    var publishedDate = post.date ? new Date(post.date).toISOString() : undefined;
-    var readTimeMinutes = getPostReadTimeMinutes(post);
-    var isRuLang = locale === 'ru';
+    var oldMetaTags = document.querySelectorAll('[data-seo-blog-post-meta]');
+    oldMetaTags.forEach(function(el) { el.remove(); });
 
-    var appendMeta = function(attr, key, value) {
-      if (!value) return;
-      var existingMeta = document.head.querySelector('meta[' + attr + '="' + key + '"]');
-      if (existingMeta) return;
-      var tag = document.createElement('meta');
-      tag.setAttribute(attr, key);
-      tag.setAttribute('content', value);
-      tag.setAttribute('data-seo-blog-meta', 'true');
-      document.head.appendChild(tag);
-    };
+    var hasHelmetRobots = document.head.querySelector('meta[name="robots"][data-rh="true"]');
+    var hasHelmetDescription = document.head.querySelector('meta[name="description"][data-rh="true"]');
+    var hasHelmetCanonical = document.head.querySelector('link[rel="canonical"][data-rh="true"]');
+    var hasHelmetRuAlt = document.head.querySelector('link[rel="alternate"][hreflang="ru-RU"][data-rh="true"]');
+    var hasHelmetUzAlt = document.head.querySelector('link[rel="alternate"][hreflang="uz-UZ"][data-rh="true"]');
+    var hasHelmetDefaultAlt = document.head.querySelector('link[rel="alternate"][hreflang="x-default"][data-rh="true"]');
 
-    var appendLink = function(rel, href, extraAttrs) {
-      if (!href) return;
-      var existingLink = null;
-      if (extraAttrs && extraAttrs.hreflang) {
-        existingLink = document.head.querySelector('link[rel="' + rel + '"][hreflang="' + extraAttrs.hreflang + '"]');
-      } else {
-        existingLink = document.head.querySelector('link[rel="' + rel + '"]');
-      }
-      if (existingLink) return;
-      var tag = document.createElement('link');
-      tag.setAttribute('rel', rel);
-      tag.setAttribute('href', href);
-      tag.setAttribute('data-seo-blog-meta', 'true');
-      if (extraAttrs) {
-        Object.keys(extraAttrs).forEach(function(key) {
-          if (extraAttrs[key]) {
-            tag.setAttribute(key, extraAttrs[key]);
-          }
-        });
-      }
-      document.head.appendChild(tag);
-    };
+    if (!(hasHelmetRobots && hasHelmetDescription && hasHelmetCanonical && hasHelmetRuAlt && hasHelmetUzAlt && hasHelmetDefaultAlt)) {
+      var appendMeta = function(attr, key, value) {
+        if (!value) return;
+        var existing = document.head.querySelector('meta[' + attr + '="' + key + '"]');
+        if (existing) return;
+        var tag = document.createElement('meta');
+        tag.setAttribute(attr, key);
+        tag.setAttribute('content', value);
+        tag.setAttribute('data-seo-blog-post-meta', 'true');
+        document.head.appendChild(tag);
+      };
 
-    document.title = pageTitle;
+      var appendLink = function(rel, href, hreflang) {
+        if (!href) return;
+        var existing = hreflang
+          ? document.head.querySelector('link[rel="' + rel + '"][hreflang="' + hreflang + '"]')
+          : document.head.querySelector('link[rel="' + rel + '"]');
+        if (existing) return;
+        var tag = document.createElement('link');
+        tag.setAttribute('rel', rel);
+        tag.setAttribute('href', href);
+        tag.setAttribute('data-seo-blog-post-meta', 'true');
+        if (hreflang) {
+          tag.setAttribute('hreflang', hreflang);
+        }
+        document.head.appendChild(tag);
+      };
 
-    var ensureFallbackHead = function() {
-      var hasHelmetRobots = document.head.querySelector('meta[name="robots"][data-rh="true"]');
-      var hasHelmetDescription = document.head.querySelector('meta[name="description"][data-rh="true"]');
-
-      if (hasHelmetRobots && hasHelmetDescription) {
-        return;
-      }
-
+      document.title = pageTitle;
       appendMeta('name', 'description', pageDescription);
       appendMeta('name', 'robots', 'index, follow');
       appendLink('canonical', canonicalUrl);
-      appendLink('alternate', ruUrl, { hreflang: 'ru-RU' });
-      appendLink('alternate', uzUrl, { hreflang: 'uz-UZ' });
-      appendLink('alternate', ruUrl || canonicalUrl, { hreflang: 'x-default' });
-      appendMeta('property', 'og:title', (seoOverride && (seoOverride.ogTitle || seoOverride.title || seoOverride.titleTag)) || post.title);
-      appendMeta('property', 'og:description', (seoOverride && (seoOverride.ogDescription || seoOverride.description)) || post.description);
+      appendLink('alternate', ruUrl, 'ru-RU');
+      appendLink('alternate', uzUrl, 'uz-UZ');
+      appendLink('alternate', ruUrl || canonicalUrl, 'x-default');
+      appendMeta('property', 'og:title', pageTitle);
+      appendMeta('property', 'og:description', pageDescription);
       appendMeta('property', 'og:type', 'article');
       appendMeta('property', 'og:url', canonicalUrl);
       appendMeta('property', 'og:image', pageOgImage);
       appendMeta('property', 'og:site_name', 'Graver.uz');
       appendMeta('property', 'og:locale', isRuLang ? 'ru_RU' : 'uz_UZ');
       appendMeta('name', 'twitter:card', 'summary_large_image');
-      appendMeta('name', 'twitter:title', (seoOverride && (seoOverride.ogTitle || seoOverride.title || seoOverride.titleTag)) || post.title);
-      appendMeta('name', 'twitter:description', (seoOverride && (seoOverride.ogDescription || seoOverride.description)) || post.description);
+      appendMeta('name', 'twitter:title', pageTitle);
+      appendMeta('name', 'twitter:description', pageDescription);
       appendMeta('name', 'twitter:image', pageOgImage);
-    };
+    }
 
-    var dedupeFallbackLinks = function() {
-      var linkSelectors = [
-        'link[rel="canonical"]',
-        'link[rel="alternate"][hreflang="ru-RU"]',
-        'link[rel="alternate"][hreflang="uz-UZ"]',
-        'link[rel="alternate"][hreflang="x-default"]'
-      ];
-
-      linkSelectors.forEach(function(selector) {
-        var links = Array.prototype.slice.call(document.head.querySelectorAll(selector));
-        if (!links.length) return;
-        var hasNonFallback = links.some(function(link) {
-          return !link.hasAttribute('data-seo-blog-meta');
-        });
-        if (!hasNonFallback) return;
-        links.forEach(function(link) {
-          if (link.hasAttribute('data-seo-blog-meta')) {
-            link.remove();
-          }
-        });
-      });
-    };
-
-    var fallbackHeadTimer = setTimeout(ensureFallbackHead, 120);
-    var dedupeFallbackTimer = setTimeout(dedupeFallbackLinks, 800);
-    var dedupeFallbackInterval = setInterval(dedupeFallbackLinks, 300);
+    var oldTags = document.querySelectorAll('[data-seo-blog]');
+    oldTags.forEach(function(el) { el.remove(); });
+    var publishedDate = post.date ? new Date(post.date).toISOString() : undefined;
+    var readTimeMinutes = getPostReadTimeMinutes(post);
+    var isRuLang = locale === 'ru';
 
     // Inject BlogPosting JSON-LD
     var articleLd = document.createElement('script');
@@ -323,12 +291,10 @@ function BlogPostPage() {
     }
     
     return function cleanup() {
-      clearTimeout(fallbackHeadTimer);
-      clearTimeout(dedupeFallbackTimer);
-      clearInterval(dedupeFallbackInterval);
-      document.querySelectorAll('[data-seo-blog], [data-seo-blog-meta]').forEach(function(el) { el.remove(); });
+      document.querySelectorAll('[data-seo-blog-post-meta]').forEach(function(el) { el.remove(); });
+      document.querySelectorAll('[data-seo-blog]').forEach(function(el) { el.remove(); });
     };
-  }, [post, pageTitle, pageDescription, canonicalUrl, ruUrl, uzUrl, locale, seoOverride, faqData, pageOgImage]);
+  }, [post, canonicalUrl, ruUrl, uzUrl, locale, seoOverride, faqData, pageOgImage, pageTitle, pageDescription]);
 
   if (!post) {
     return React.createElement(Navigate, { to: '/' + locale + '/blog', replace: true });

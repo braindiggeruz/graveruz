@@ -118,6 +118,17 @@ export default function BlogIndex() {
     const oldTags = document.querySelectorAll('[data-seo-blog-index-meta]');
     oldTags.forEach((el) => el.remove());
 
+    const hasHelmetRobots = document.head.querySelector('meta[name="robots"][data-rh="true"]');
+    const hasHelmetDescription = document.head.querySelector('meta[name="description"][data-rh="true"]');
+    const hasHelmetCanonical = document.head.querySelector('link[rel="canonical"][data-rh="true"]');
+    const hasHelmetRuAlt = document.head.querySelector('link[rel="alternate"][hreflang="ru-RU"][data-rh="true"]');
+    const hasHelmetUzAlt = document.head.querySelector('link[rel="alternate"][hreflang="uz-UZ"][data-rh="true"]');
+    const hasHelmetDefaultAlt = document.head.querySelector('link[rel="alternate"][hreflang="x-default"][data-rh="true"]');
+
+    if (hasHelmetRobots && hasHelmetDescription && hasHelmetCanonical && hasHelmetRuAlt && hasHelmetUzAlt && hasHelmetDefaultAlt) {
+      return;
+    }
+
     const appendMeta = (attr, key, value) => {
       if (!value) return;
       const existing = document.head.querySelector(`meta[${attr}="${key}"]`);
