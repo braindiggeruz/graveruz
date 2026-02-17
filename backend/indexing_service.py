@@ -1,8 +1,10 @@
 import asyncio
+import concurrent.futures
 import json
 import logging
 import os
 import re
+import time
 from pathlib import Path
 from typing import Dict, List, Optional
 from datetime import datetime, timezone
@@ -118,7 +120,7 @@ def _build_google_indexing_client():
     return service, None
 
 
-def _submit_to_google_sync(urls: List[str]) -> Dict[str, object]:
+def _submit_to_google_sync(urls: List[str], fast_fail_quota: bool = False) -> Dict[str, object]:
     service, error = _build_google_indexing_client()
     if error:
         return {"success": 0, "failed": len(urls), "error": error}
@@ -126,6 +128,8 @@ def _submit_to_google_sync(urls: List[str]) -> Dict[str, object]:
     max_urls_per_run = _env_int("GOOGLE_INDEXING_MAX_URLS_PER_RUN", 20)
     retry_max = _env_int("GOOGLE_INDEXING_RETRY_429_MAX", 3)
     retry_base_delay = _env_float("GOOGLE_INDEXING_RETRY_429_BASE_DELAY_SECONDS", 30.0)
+    publish_timeout_seconds = _env_float("GOOGLE_INDEXING_PUBLISH_TIMEOUT_SECONDS", 20.0)
+    run_deadline_seconds = _env_float("GOOGLE_INDEXING_RUN_DEADLINE_SECONDS", 90.0)
 
     target_urls = urls[:max_urls_per_run] if max_urls_per_run > 0 else []
     remaining_urls = max(0, len(urls) - len(target_urls))
@@ -134,14 +138,54 @@ def _submit_to_google_sync(urls: List[str]) -> Dict[str, object]:
     failed = 0
     last_error = None
     stopped_on_quota = False
+    timed_out = False
+    run_started_at = time.monotonic()
+
+    def _publish_with_timeout(target_url: str) -> None:
+        with concurrent.futures.ThreadPoolExecutor(max_workers=1) as executor:
+            future = executor.submit(
+                lambda: service.urlNotifications().publish(
+                    body={"url": target_url, "type": "URL_UPDATED"}
+                ).execute()
+            )
+            future.result(timeout=max(1.0, publish_timeout_seconds))
 
     for url in target_urls:
+        if run_deadline_seconds > 0 and (time.monotonic() - run_started_at) >= run_deadline_seconds:
+            timed_out = True
+            last_error = (
+                f"Google submit run deadline exceeded ({run_deadline_seconds:.1f}s). "
+                "Stopped current run safely."
+            )
+            logger.warning("⚠️ %s", last_error)
+            break
+
         attempt = 0
         while True:
             try:
-                service.urlNotifications().publish(body={"url": url, "type": "URL_UPDATED"}).execute()
+                _publish_with_timeout(url)
                 success += 1
                 logger.info(f"✅ Отправлено в Google Indexing API: {url}")
+                break
+            except concurrent.futures.TimeoutError:
+                attempt += 1
+                last_error = (
+                    f"Google publish timeout for {url} after {publish_timeout_seconds:.1f}s"
+                )
+                if attempt <= retry_max:
+                    backoff = retry_base_delay * (2 ** (attempt - 1))
+                    logger.warning(
+                        "⚠️ %s. Retry %s/%s in %.1fs",
+                        last_error,
+                        attempt,
+                        retry_max,
+                        backoff,
+                    )
+                    time.sleep(backoff)
+                    continue
+
+                failed += 1
+                logger.error("❌ %s; moving to next URL", last_error)
                 break
             except Exception as error:
                 error_text = str(error)
@@ -149,12 +193,19 @@ def _submit_to_google_sync(urls: List[str]) -> Dict[str, object]:
                 attempt += 1
 
                 if _is_google_quota_error(error_text):
+                    if fast_fail_quota:
+                        failed += 1
+                        logger.warning(
+                            "⚠️ Google quota/rate limit for %s (fast-fail mode for batch).",
+                            url,
+                        )
+                        break
+
                     if attempt <= retry_max:
                         backoff = retry_base_delay * (2 ** (attempt - 1))
                         logger.warning(
                             f"⚠️ Google quota/rate limit for {url}. Retry {attempt}/{retry_max} in {backoff:.1f}s"
                         )
-                        import time
                         time.sleep(backoff)
                         continue
                     stopped_on_quota = True
@@ -185,6 +236,8 @@ def _submit_to_google_sync(urls: List[str]) -> Dict[str, object]:
         )
     if stopped_on_quota:
         result["quotaExceeded"] = True
+    if timed_out:
+        result["timedOut"] = True
     return result
 
 
@@ -267,7 +320,7 @@ async def submit_next_batch_to_search_engines(batch_size: Optional[int] = None) 
     batch_urls = urls[cursor_start:cursor_end]
 
     bing_result = await _submit_to_bing(batch_urls)
-    google_result = await asyncio.to_thread(_submit_to_google_sync, batch_urls)
+    google_result = await asyncio.to_thread(_submit_to_google_sync, batch_urls, True)
 
     cycle_completed = cursor_end >= total_urls
     next_cursor = 0 if cycle_completed else cursor_end
