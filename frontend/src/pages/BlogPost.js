@@ -151,17 +151,31 @@ function BlogPostPage() {
 
   useEffect(function addSeoTags() {
     if (!post) return;
+    var isRuLang = locale === 'ru';
     var oldMetaTags = document.querySelectorAll('[data-seo-blog-post-meta]');
     oldMetaTags.forEach(function(el) { el.remove(); });
 
-    var hasHelmetRobots = document.head.querySelector('meta[name="robots"][data-rh="true"]');
-    var hasHelmetDescription = document.head.querySelector('meta[name="description"][data-rh="true"]');
-    var hasHelmetCanonical = document.head.querySelector('link[rel="canonical"][data-rh="true"]');
-    var hasHelmetRuAlt = document.head.querySelector('link[rel="alternate"][hreflang="ru-RU"][data-rh="true"]');
-    var hasHelmetUzAlt = document.head.querySelector('link[rel="alternate"][hreflang="uz-UZ"][data-rh="true"]');
-    var hasHelmetDefaultAlt = document.head.querySelector('link[rel="alternate"][hreflang="x-default"][data-rh="true"]');
+    var timeoutId = null;
+    var headObserver = null;
+    var hasCompleteHelmetSeo = function() {
+      var hasHelmetRobots = document.head.querySelector('meta[name="robots"][data-rh="true"]');
+      var hasHelmetDescription = document.head.querySelector('meta[name="description"][data-rh="true"]');
+      var hasHelmetCanonical = document.head.querySelector('link[rel="canonical"][data-rh="true"]');
+      var hasHelmetRuAlt = document.head.querySelector('link[rel="alternate"][hreflang="ru-RU"][data-rh="true"]');
+      var hasHelmetUzAlt = document.head.querySelector('link[rel="alternate"][hreflang="uz-UZ"][data-rh="true"]');
+      var hasHelmetDefaultAlt = document.head.querySelector('link[rel="alternate"][hreflang="x-default"][data-rh="true"]');
+      return !!(hasHelmetRobots && hasHelmetDescription && hasHelmetCanonical && hasHelmetRuAlt && hasHelmetUzAlt && hasHelmetDefaultAlt);
+    };
+    var removeFallbackSeo = function() {
+      document.querySelectorAll('[data-seo-blog-post-meta]').forEach(function(el) { el.remove(); });
+    };
 
-    if (!(hasHelmetRobots && hasHelmetDescription && hasHelmetCanonical && hasHelmetRuAlt && hasHelmetUzAlt && hasHelmetDefaultAlt)) {
+    var tryAppendFallback = function() {
+      if (hasCompleteHelmetSeo()) {
+        removeFallbackSeo();
+        return;
+      }
+
       var appendMeta = function(attr, key, value) {
         if (!value) return;
         var existing = document.head.querySelector('meta[' + attr + '="' + key + '"]');
@@ -207,13 +221,28 @@ function BlogPostPage() {
       appendMeta('name', 'twitter:title', pageTitle);
       appendMeta('name', 'twitter:description', pageDescription);
       appendMeta('name', 'twitter:image', pageOgImage);
-    }
+
+      if (headObserver) {
+        headObserver.disconnect();
+      }
+      headObserver = new MutationObserver(function() {
+        if (hasCompleteHelmetSeo()) {
+          removeFallbackSeo();
+          if (headObserver) {
+            headObserver.disconnect();
+            headObserver = null;
+          }
+        }
+      });
+      headObserver.observe(document.head, { childList: true, subtree: true, attributes: true });
+    };
+
+    timeoutId = window.setTimeout(tryAppendFallback, 0);
 
     var oldTags = document.querySelectorAll('[data-seo-blog]');
     oldTags.forEach(function(el) { el.remove(); });
     var publishedDate = post.date ? new Date(post.date).toISOString() : undefined;
     var readTimeMinutes = getPostReadTimeMinutes(post);
-    var isRuLang = locale === 'ru';
 
     // Inject BlogPosting JSON-LD
     var articleLd = document.createElement('script');
@@ -291,6 +320,12 @@ function BlogPostPage() {
     }
     
     return function cleanup() {
+      if (timeoutId !== null) {
+        window.clearTimeout(timeoutId);
+      }
+      if (headObserver) {
+        headObserver.disconnect();
+      }
       document.querySelectorAll('[data-seo-blog-post-meta]').forEach(function(el) { el.remove(); });
       document.querySelectorAll('[data-seo-blog]').forEach(function(el) { el.remove(); });
     };
