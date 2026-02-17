@@ -3,11 +3,15 @@ param(
   [int]$BatchSize = 5,
   [int]$TimeoutSec = 60,
   [int]$CooldownOnQuotaSec = 1800,
-  [string]$StateFile = ".\.batch_runner_state.json",
+  [string]$StateFile = "",
   [switch]$ShowStatus
 )
 
 $ErrorActionPreference = 'Stop'
+
+if ([string]::IsNullOrWhiteSpace($StateFile)) {
+  $StateFile = Join-Path $PSScriptRoot ".batch_runner_state.json"
+}
 
 function Get-State {
   if (-not (Test-Path $StateFile)) {
