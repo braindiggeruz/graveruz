@@ -96,6 +96,11 @@ if (shouldSkip === '1' || shouldSkip === 'true') {
   }
 }
 
+if (process.env.SKIP_REACT_SNAP === "1" || process.env.SKIP_REACT_SNAP === "true") {
+  console.log("[postbuild] SKIP_REACT_SNAP is set — skipping react-snap.");
+  process.exit(0);
+}
+
 const chromiumPath = ensureChromium();
 process.env.PUPPETEER_EXECUTABLE_PATH = chromiumPath;
 process.env.CHROME_BIN = chromiumPath;
