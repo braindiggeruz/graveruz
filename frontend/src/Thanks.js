@@ -79,12 +79,7 @@ function Thanks() {
       });
     }
     
-    // Track Lead event for Meta Pixel
-    if (window.fbq) {
-      window.fbq('track', 'Lead');
-    }
-    
-    // Fallback for legacy tracking
+    // Fallback for legacy tracking (удалён дублирующий Lead)
     if (window.__trackLeadSuccess) {
       window.__trackLeadSuccess();
     }

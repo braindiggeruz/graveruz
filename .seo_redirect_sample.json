@@ -1,0 +1,20 @@
+﻿[
+    {
+        "url":  "https://graver-studio.uz/ru",
+        "code":  308,
+        "location":  "/ru/",
+        "ok":  false
+    },
+    {
+        "url":  "https://graver-studio.uz/ru/blog",
+        "code":  308,
+        "location":  "/ru/blog/",
+        "ok":  false
+    },
+    {
+        "url":  "https://graver-studio.uz/uz/blog/korporativ-sovgalarni-tanlash",
+        "code":  200,
+        "final":  "https://graver-studio.uz/uz/blog/korporativ-sovgalarni-tanlash",
+        "ok":  true
+    }
+]

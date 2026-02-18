@@ -1,0 +1,84 @@
+﻿{
+    "generatedAt":  "2026-02-17T05:47:16+05:00",
+    "baseUrl":  "https://graver-studio.uz",
+    "robots":  {
+                   "url":  "https://graver-studio.uz/robots.txt",
+                   "status":  200,
+                   "hasSitemap":  true
+               },
+    "sitemap":  {
+                    "url":  "https://graver-studio.uz/sitemap.xml",
+                    "status":  200,
+                    "urlCount":  68,
+                    "statusDistribution":  {
+                                               "308":  58,
+                                               "200":  10
+                                           },
+                    "sampleStatuses":  [
+                                           {
+                                               "url":  "https://graver-studio.uz/ru",
+                                               "status":  308
+                                           },
+                                           {
+                                               "url":  "https://graver-studio.uz/ru/process",
+                                               "status":  308
+                                           },
+                                           {
+                                               "url":  "https://graver-studio.uz/ru/guarantees",
+                                               "status":  308
+                                           },
+                                           {
+                                               "url":  "https://graver-studio.uz/ru/contacts",
+                                               "status":  308
+                                           },
+                                           {
+                                               "url":  "https://graver-studio.uz/ru/catalog-products",
+                                               "status":  308
+                                           },
+                                           {
+                                               "url":  "https://graver-studio.uz/ru/watches-with-logo",
+                                               "status":  308
+                                           },
+                                           {
+                                               "url":  "https://graver-studio.uz/ru/products/lighters",
+                                               "status":  308
+                                           },
+                                           {
+                                               "url":  "https://graver-studio.uz/ru/engraved-gifts",
+                                               "status":  308
+                                           },
+                                           {
+                                               "url":  "https://graver-studio.uz/uz",
+                                               "status":  308
+                                           },
+                                           {
+                                               "url":  "https://graver-studio.uz/uz/process",
+                                               "status":  308
+                                           },
+                                           {
+                                               "url":  "https://graver-studio.uz/uz/guarantees",
+                                               "status":  308
+                                           },
+                                           {
+                                               "url":  "https://graver-studio.uz/uz/contacts",
+                                               "status":  308
+                                           }
+                                       ]
+                },
+    "hubs":  [
+                 {
+                     "url":  "https://graver-studio.uz/ru/blog/",
+                     "status":  200,
+                     "canonicalCount":  1,
+                     "hreflangCount":  3,
+                     "robotsCount":  1
+                 },
+                 {
+                     "url":  "https://graver-studio.uz/uz/blog/",
+                     "status":  200,
+                     "canonicalCount":  1,
+                     "hreflangCount":  3,
+                     "robotsCount":  1
+                 }
+             ]
+}

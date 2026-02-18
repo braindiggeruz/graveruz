@@ -1,0 +1,38 @@
+﻿[
+    {
+        "url":  "https://graver-studio.uz/ru/blog/",
+        "status":  "ERR",
+        "canonical":  "",
+        "hreflang_ru":  "",
+        "hreflang_uz":  "",
+        "robots":  "",
+        "error":  "Не удается индексировать в массив NULL."
+    },
+    {
+        "url":  "https://graver-studio.uz/uz/blog/",
+        "status":  "ERR",
+        "canonical":  "",
+        "hreflang_ru":  "",
+        "hreflang_uz":  "",
+        "robots":  "",
+        "error":  "Не удается индексировать в массив NULL."
+    },
+    {
+        "url":  "https://graver-studio.uz/ru/blog/korporativnye-podarki-s-logotipom-polnyy-gayd",
+        "status":  308,
+        "canonical":  "",
+        "hreflang_ru":  "",
+        "hreflang_uz":  "",
+        "robots":  "",
+        "error":  "Удаленный сервер возвратил ошибку: (308) Permanent Redirect."
+    },
+    {
+        "url":  "https://graver-studio.uz/uz/blog/korporativ-sovgalarni-tanlash",
+        "status":  "ERR",
+        "canonical":  "",
+        "hreflang_ru":  "",
+        "hreflang_uz":  "",
+        "robots":  "",
+        "error":  "Не удается индексировать в массив NULL."
+    }
+]

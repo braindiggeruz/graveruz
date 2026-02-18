@@ -1,0 +1,38 @@
+﻿{
+    "success":  true,
+    "totalPosts":  68,
+    "batchSize":  10,
+    "requestedBatchSize":  10,
+    "processedUrls":  [
+                          "https://graver-studio.uz/ru",
+                          "https://graver-studio.uz/ru/process",
+                          "https://graver-studio.uz/ru/guarantees",
+                          "https://graver-studio.uz/ru/contacts",
+                          "https://graver-studio.uz/ru/catalog-products",
+                          "https://graver-studio.uz/ru/watches-with-logo",
+                          "https://graver-studio.uz/ru/products/lighters",
+                          "https://graver-studio.uz/ru/engraved-gifts",
+                          "https://graver-studio.uz/uz",
+                          "https://graver-studio.uz/uz/process"
+                      ],
+    "cursorStart":  0,
+    "cursorEnd":  10,
+    "cycleCompleted":  false,
+    "cycles":  4,
+    "remainingAfterBatch":  58,
+    "bing":  {
+                 "success":  false,
+                 "urlCount":  10,
+                 "statusCode":  403,
+                 "error":  "{\"code\":\"UserForbiddedToAccessSite\",\"message\":\"User is unauthorized to access the site. Please verify the site using the key and try again\"}"
+             },
+    "google":  {
+                   "success":  0,
+                   "failed":  1,
+                   "processed":  10,
+                   "remaining":  0,
+                   "maxPerRun":  20,
+                   "error":  "\u003cHttpError 429 when requesting https://indexing.googleapis.com/v3/urlNotifications:publish?alt=json returned \"Quota exceeded for quota metric \u0027Publish requests\u0027 and limit \u0027Publish requests per day\u0027 of service \u0027indexing.googleapis.com\u0027 for consumer \u0027project_number:472086662399\u0027.\". Details: \"[{\u0027@type\u0027: \u0027type.googleapis.com/google.rpc.ErrorInfo\u0027, \u0027reason\u0027: \u0027RATE_LIMIT_EXCEEDED\u0027, \u0027domain\u0027: \u0027googleapis.com\u0027, \u0027metadata\u0027: {\u0027quota_limit\u0027: \u0027DefaultPublishRequestsPerDayPerProject\u0027, \u0027quota_location\u0027: \u0027global\u0027, \u0027consumer\u0027: \u0027projects/472086662399\u0027, \u0027quota_unit\u0027: \u00271/d/{project}\u0027, \u0027quota_limit_value\u0027: \u0027200\u0027, \u0027service\u0027: \u0027indexing.googleapis.com\u0027, \u0027quota_metric\u0027: \u0027indexing.googleapis.com/v3_publish_requests\u0027}}, {\u0027@type\u0027: \u0027type.googleapis.com/google.rpc.Help\u0027, \u0027links\u0027: [{\u0027description\u0027: \u0027Request a higher quota limit.\u0027, \u0027url\u0027: \u0027https://cloud.google.com/docs/quotas/help/request_increase\u0027}]}]\"\u003e",
+                   "quotaExceeded":  true
+               }
+}
