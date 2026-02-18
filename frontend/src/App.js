@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef, lazy, Suspense } from 'react';
-import { useNavigate, useParams, Link } from 'react-router-dom';
+import { useNavigate, useParams, Link, useLocation } from 'react-router-dom';
 import './App.css';
 import { Phone, Send, Check, Zap, Users, Award, Package, Clock, MessageCircle, Mail, MapPin, ChevronDown, Flame, Download, ChevronRight } from 'lucide-react';
 import { useI18n, SUPPORTED_LOCALES } from './i18n';
 import SEOHead from './components/SEOHead';
 import LanguageSwitcher from './components/LanguageSwitcher';
+import { useMetaPageView } from './analytics/useMetaPageView';
+import { track } from './analytics/metaPixel';
 
 const HomePortfolioSection = lazy(() => import('./components/home/HomePortfolioSection'));
 const HomeBlogPreviewSection = lazy(() => import('./components/home/HomeBlogPreviewSection'));
@@ -62,9 +64,11 @@ const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || window.location.origin;
 
 function App() {
   const navigate = useNavigate();
+  const location = useLocation();
   const { locale } = useParams();
   const { t, setLocale } = useI18n();
-  
+  useMetaPageView();
+
   // Set html lang attribute based on locale
   useEffect(() => {
     const langCode = locale === 'uz' ? 'uz-Latn' : (locale || 'ru');
@@ -188,7 +192,10 @@ function App() {
       
       setLastSubmitTime(now);
       
-      // Track lead success (non-blocking)
+      // Track lead success (Meta Pixel Lead event)
+      try {
+        track('Lead', { content_name: 'Lead Form' });
+      } catch (e) { /* ignore analytics errors */ }
       try {
         if (window.__trackLeadSuccess) {
           window.__trackLeadSuccess();
