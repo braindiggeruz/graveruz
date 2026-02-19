@@ -273,85 +273,10 @@ function BlogPostPage() {
 
     timeoutId = window.setTimeout(tryAppendFallback, 0);
 
+    // JSON-LD is now handled exclusively by SeoMeta.js (no duplicates)
+    // Only cleanup old tags if any remain from previous renders
     var oldTags = document.querySelectorAll('[data-seo-blog]');
     oldTags.forEach(function(el) { el.remove(); });
-    var publishedDate = post.date ? new Date(post.date).toISOString() : undefined;
-    var readTimeMinutes = getPostReadTimeMinutes(post);
-
-    // Inject BlogPosting JSON-LD
-    var articleLd = document.createElement('script');
-    articleLd.type = 'application/ld+json';
-    articleLd.setAttribute('data-seo-blog', 'true');
-    articleLd.textContent = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      headline: (seoOverride && (seoOverride.ogTitle || seoOverride.title || seoOverride.titleTag)) || post.title,
-      description: (seoOverride && (seoOverride.ogDescription || seoOverride.description)) || post.description,
-      url: canonicalUrl,
-      mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
-      inLanguage: locale === 'ru' ? "ru" : "uz",
-      datePublished: publishedDate,
-      dateModified: publishedDate,
-      articleSection: post.category || (isRuLang ? 'Блог' : 'Blog'),
-      image: [
-        {
-          "@type": "ImageObject",
-          url: pageOgImage,
-          width: 1200,
-          height: 675
-        }
-      ],
-      timeRequired: 'PT' + readTimeMinutes + 'M',
-      keywords: Array.isArray(post.keywords) ? post.keywords.join(', ') : undefined,
-      author: { "@type": "Organization", name: "Graver.uz", url: BASE_URL },
-      publisher: {
-        "@type": "Organization",
-        name: "Graver.uz",
-        url: BASE_URL,
-        logo: {
-          "@type": "ImageObject",
-          url: BASE_URL + '/og-blog.png'
-        }
-      }
-    });
-    document.head.appendChild(articleLd);
-
-    // Inject BreadcrumbList JSON-LD
-    var breadcrumbLd = document.createElement('script');
-    breadcrumbLd.type = 'application/ld+json';
-    breadcrumbLd.setAttribute('data-seo-blog', 'true');
-    breadcrumbLd.textContent = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      itemListElement: [
-        { "@type": "ListItem", position: 1, name: isRuLang ? "Главная" : "Bosh sahifa", item: BASE_URL + "/" + locale },
-        { "@type": "ListItem", position: 2, name: isRuLang ? "Блог" : "Blog", item: BASE_URL + "/" + locale + "/blog" },
-        { "@type": "ListItem", position: 3, name: post.title, item: canonicalUrl }
-      ]
-    });
-    document.head.appendChild(breadcrumbLd);
-
-    // Inject FAQPage JSON-LD (P1.2)
-    if (faqData.length >= 2) {
-      var faqLd = document.createElement('script');
-      faqLd.type = 'application/ld+json';
-      faqLd.setAttribute('data-seo-blog', 'true');
-      faqLd.textContent = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        mainEntity: faqData.map(function(item) {
-          return {
-            "@type": "Question",
-            name: item.q,
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: item.a
-            }
-          };
-        })
-      });
-      document.head.appendChild(faqLd);
-    }
     
     return function cleanup() {
       if (timeoutId !== null) {
@@ -464,7 +389,10 @@ function BlogPostPage() {
       ogType: 'article',
       isBlogPost: true,
       faq: post && Array.isArray(post.faq) ? post.faq : [],
-      datePublished: post && post.date ? post.date : undefined
+      datePublished: post && post.date ? post.date : undefined,
+      articleSection: post && post.category ? post.category : (locale === 'ru' ? 'Блог' : 'Blog'),
+      readTime: post ? getPostReadTimeMinutes(post) : undefined,
+      keywords: post && Array.isArray(post.keywords) ? post.keywords.join(', ') : undefined
     }),
     React.createElement('header', { className: 'fixed top-0 left-0 right-0 bg-black/95 backdrop-blur-sm z-50 border-b border-gray-800' },
       React.createElement('div', { className: 'max-w-7xl mx-auto px-4 sm:px-6 lg:px-8' },
