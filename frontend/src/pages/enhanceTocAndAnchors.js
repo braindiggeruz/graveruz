@@ -40,13 +40,40 @@ export default function enhanceTocAndAnchors(html) {
     let raw = tocP.innerHTML.replace(/<strong>Оглавление[:：]?<\/strong>/i, '').trim();
     let items = raw.split(/<br\s*\/?>|\n/).map(s => s.trim()).filter(Boolean);
     // Find headings
-    let headings = Array.from(doc.body.querySelectorAll('h2, h3'));
+    let allHeadings = Array.from(doc.body.querySelectorAll('h2, h3'));
+    // Find headings after TOC block
+    let headingsAfterToc = [];
+    if (tocP) {
+      let tocIndex = -1;
+      let nodes = Array.from(doc.body.childNodes);
+      for (let i = 0; i < nodes.length; i++) {
+        if (nodes[i] === tocP) { tocIndex = i; break; }
+      }
+      if (tocIndex >= 0) {
+        for (let i = tocIndex + 1; i < nodes.length; i++) {
+          if (nodes[i].nodeType === 1 && (nodes[i].tagName === 'H2' || nodes[i].tagName === 'H3')) {
+            headingsAfterToc.push(nodes[i]);
+          }
+        }
+      }
+    }
     let tocUl = doc.createElement('ul');
     tocUl.className = 'toc';
-    items.forEach(item => {
+    let headingPtr = 0;
+    items.forEach((item, idx) => {
       let li = doc.createElement('li');
-      let found = headings.find(h => (h.textContent||'').trim().startsWith(item) || item.startsWith((h.textContent||'').trim()));
-      if (found) {
+      // Fuzzy match (normalize spaces/case)
+      const normalize = s => (s||'').toLowerCase().replace(/\s+/g, ' ').trim();
+      let found = allHeadings.find(h => {
+        const hText = normalize(h.textContent);
+        const iText = normalize(item);
+        return hText.startsWith(iText) || iText.startsWith(hText);
+      });
+      // Fallback: sequentially assign to headingsAfterToc
+      if (!found && headingsAfterToc.length > 0 && headingPtr < headingsAfterToc.length) {
+        found = headingsAfterToc[headingPtr++];
+      }
+      if (found && found.id) {
         let a = doc.createElement('a');
         a.href = '#' + found.id;
         a.textContent = item;
