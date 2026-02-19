@@ -1,5 +1,6 @@
 export const BLOG_SLUG_MAP = {
   ru: {
+      'polniy-gid-po-korporativnym-podarkam': '',
     'kak-vybrat-korporativnyj-podarok': 'korporativ-sovgani-qanday-tanlash',
     'lazernaya-gravirovka-podarkov': 'lazer-gravirovka-sovgalar',
     'podarochnye-nabory-s-logotipom': 'logotipli-sovga-toplami',
