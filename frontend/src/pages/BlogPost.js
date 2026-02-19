@@ -137,6 +137,31 @@ function BlogPostPage() {
   // Get FAQ data for FAQPage Schema
   const faqData = (getFaqData(slug) || []).filter(isValidFaqItem);
 
+  // --- DOM fallback for TOC: if ul.toc is empty, fill from headings ---
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const root =
+      document.querySelector(".blog-post-content") ||
+      document.querySelector(".blog-post-content-inner") ||
+      document;
+    const toc = root.querySelector("ul.toc") || document.querySelector("ul.toc");
+    if (!toc) return;
+    if (toc.querySelector("li")) return;
+    const headings = Array.from(root.querySelectorAll("h2[id], h3[id]"));
+    if (!headings.length) return;
+    toc.innerHTML = "";
+    headings.slice(0, 20).forEach((h) => {
+      const text = (h.textContent || "").trim();
+      if (!text) return;
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.href = `#${h.id}`;
+      a.textContent = text;
+      li.appendChild(a);
+      toc.appendChild(li);
+    });
+  }, [post && post.slug]);
+
   const canonicalUrl = post ? BASE_URL + '/' + locale + '/blog/' + slug + '/' : '';
   const altSlug = slug ? getMappedAlternateSlug(locale, slug) : null;
   const altLocale = isRu ? 'uz' : 'ru';
