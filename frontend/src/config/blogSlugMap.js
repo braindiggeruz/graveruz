@@ -1,6 +1,6 @@
 export const BLOG_SLUG_MAP = {
   ru: {
-      'polniy-gid-po-korporativnym-podarkam': '',
+    'polniy-gid-po-korporativnym-podarkam': 'korporativ-sovgalar-boyicha-toliq-qollanma',
     'kak-vybrat-korporativnyj-podarok': 'korporativ-sovgani-qanday-tanlash',
     'lazernaya-gravirovka-podarkov': 'lazer-gravirovka-sovgalar',
     'podarochnye-nabory-s-logotipom': 'logotipli-sovga-toplami',
@@ -21,13 +21,14 @@ export const BLOG_SLUG_MAP = {
     'welcome-pack-novym-sotrudnikam': 'yangi-xodimlar-uchun-welcome-pack',
     'kak-podgotovit-maket-logotipa': 'logotip-maketi-tayyorlash',
     'welcome-pack-dlya-sotrudnikov': 'welcome-pack-yangi-xodimlar',
-    'merch-dlya-it-kompaniy-tashkent': 'merch-dlya-it-kompaniy-tashkent',
-    'podarki-dlya-bankov-i-finteha-tashkent': 'podarki-dlya-bankov-i-finteha-tashkent',
-    'chasy-s-logotipom-korporativnye-podarki-tashkent': 'chasy-s-logotipom-korporativnye-podarki-tashkent',
-    'podarki-na-korporativnye-sobytiya-tashkent': 'podarki-na-korporativnye-sobytiya-tashkent',
-    'podarki-dlya-horeca-i-restoranov-tashkent': 'podarki-dlya-horeca-i-restoranov-tashkent'
+    'merch-dlya-it-kompaniy-tashkent': 'it-kompaniyalar-uchun-merch-toshkent',
+    'podarki-dlya-bankov-i-finteha-tashkent': 'banklar-va-fintex-uchun-sovgalar-toshkent',
+    'chasy-s-logotipom-korporativnye-podarki-tashkent': 'logotipli-soat-korporativ-sovgalar-toshkent',
+    'podarki-na-korporativnye-sobytiya-tashkent': 'korporativ-tadbirlar-uchun-sovgalar-toshkent',
+    'podarki-dlya-horeca-i-restoranov-tashkent': 'horeca-va-restoranlar-uchun-sovgalar-toshkent'
   },
   uz: {
+    'korporativ-sovgalar-boyicha-toliq-qollanma': 'polniy-gid-po-korporativnym-podarkam',
     'korporativ-sovgani-qanday-tanlash': 'kak-vybrat-korporativnyj-podarok',
     'lazer-gravirovka-sovgalar': 'lazernaya-gravirovka-podarkov',
     'logotipli-sovga-toplami': 'podarochnye-nabory-s-logotipom',
@@ -48,17 +49,17 @@ export const BLOG_SLUG_MAP = {
     'yangi-xodimlar-uchun-welcome-pack': 'welcome-pack-novym-sotrudnikam',
     'logotip-maketi-tayyorlash': 'kak-podgotovit-maket-logotipa',
     'welcome-pack-yangi-xodimlar': 'welcome-pack-dlya-sotrudnikov',
-    'merch-dlya-it-kompaniy-tashkent': 'merch-dlya-it-kompaniy-tashkent',
-    'podarki-dlya-bankov-i-finteha-tashkent': 'podarki-dlya-bankov-i-finteha-tashkent',
-    'chasy-s-logotipom-korporativnye-podarki-tashkent': 'chasy-s-logotipom-korporativnye-podarki-tashkent',
-    'podarki-na-korporativnye-sobytiya-tashkent': 'podarki-na-korporativnye-sobytiya-tashkent',
-    'podarki-dlya-horeca-i-restoranov-tashkent': 'podarki-dlya-horeca-i-restoranov-tashkent'
+    'it-kompaniyalar-uchun-merch-toshkent': 'merch-dlya-it-kompaniy-tashkent',
+    'banklar-va-fintex-uchun-sovgalar-toshkent': 'podarki-dlya-bankov-i-finteha-tashkent',
+    'logotipli-soat-korporativ-sovgalar-toshkent': 'chasy-s-logotipom-korporativnye-podarki-tashkent',
+    'korporativ-tadbirlar-uchun-sovgalar-toshkent': 'podarki-na-korporativnye-sobytiya-tashkent',
+    'horeca-va-restoranlar-uchun-sovgalar-toshkent': 'podarki-dlya-horeca-i-restoranov-tashkent'
   }
 };
 
 export function getMappedAlternateSlug(locale, slug) {
   if (!locale || !slug) return null;
-  const byLocale = BLOG_SLUG_MAP[locale];
+  var byLocale = BLOG_SLUG_MAP[locale];
   if (!byLocale) return null;
   return byLocale[slug] || null;
 }

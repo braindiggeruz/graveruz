@@ -150,6 +150,34 @@ async function main() {
   imageOutputPaths.forEach((outPath) => {
     fs.writeFileSync(outPath, imageSitemapXml, 'utf8');
   });
+
+  // ШАГ 9: Generate sitemap-index.xml
+  const sitemapIndexXml = [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    `  <sitemap>`,
+    `    <loc>${baseUrl}/sitemap.xml</loc>`,
+    `    <lastmod>${buildDate}</lastmod>`,
+    `  </sitemap>`,
+    `  <sitemap>`,
+    `    <loc>${baseUrl}/image-sitemap.xml</loc>`,
+    `    <lastmod>${buildDate}</lastmod>`,
+    `  </sitemap>`,
+    '</sitemapindex>',
+    ''
+  ].join('\n');
+
+  const indexOutputPaths = [path.join(publicDir, 'sitemap-index.xml')];
+  if (fs.existsSync(buildDir)) {
+    indexOutputPaths.push(path.join(buildDir, 'sitemap-index.xml'));
+  }
+  indexOutputPaths.forEach((outPath) => {
+    fs.writeFileSync(outPath, sitemapIndexXml, 'utf8');
+  });
+
+  console.log('[postbuild-sitemap] Generated sitemap.xml with ' + urls.length + ' URLs');
+  console.log('[postbuild-sitemap] Generated image-sitemap.xml with ' + imageEntryMap.size + ' entries');
+  console.log('[postbuild-sitemap] Generated sitemap-index.xml');
 }
 
 main().catch((error) => {
