@@ -138,8 +138,10 @@ function BlogPostPage() {
   const faqData = (getFaqData(slug) || []).filter(isValidFaqItem);
 
   // --- DOM fallback for TOC: if ul.toc is empty, fill from headings ---
+  const postSlug = post?.slug || "";
   useEffect(() => {
     if (typeof window === "undefined") return;
+    if (!postSlug) return;
     const root =
       document.querySelector(".blog-post-content") ||
       document.querySelector(".blog-post-content-inner") ||
@@ -160,7 +162,7 @@ function BlogPostPage() {
       li.appendChild(a);
       toc.appendChild(li);
     });
-  }, [post && post.slug]);
+  }, [postSlug]);
 
   const canonicalUrl = post ? BASE_URL + '/' + locale + '/blog/' + slug + '/' : '';
   const altSlug = slug ? getMappedAlternateSlug(locale, slug) : null;
