@@ -87,6 +87,35 @@ export default function enhanceTocAndAnchors(html) {
     let strong = doc.createElement('p');
     strong.innerHTML = '<strong>Оглавление:</strong>';
     tocP.replaceWith(strong, tocUl);
+
+    // Fallback: if TOC is empty, fill from headings after TOC
+    if (tocUl && tocUl.querySelectorAll('li').length === 0) {
+      // Find headings after TOC block (again, robust)
+      let headingsAfterToc = Array.from(doc.body.querySelectorAll('h2, h3')).filter(h => tocUl.compareDocumentPosition(h) & Node.DOCUMENT_POSITION_FOLLOWING);
+      // Only non-empty headings, up to 20
+      headingsAfterToc = headingsAfterToc.filter(h => (h.textContent||'').trim()).slice(0, 20);
+      tocUl.innerHTML = '';
+      headingsAfterToc.forEach(h => {
+        // Ensure id
+        if (!h.id) {
+          let base = slugify(h.textContent || '');
+          let id = base;
+          let n = 2;
+          while (usedIds.has(id) || !id) {
+            id = base + '-' + n;
+            n++;
+          }
+          h.id = id;
+          usedIds.add(id);
+        }
+        let li = doc.createElement('li');
+        let a = doc.createElement('a');
+        a.href = '#' + h.id;
+        a.textContent = h.textContent.trim();
+        li.appendChild(a);
+        tocUl.appendChild(li);
+      });
+    }
   }
 
   return doc.body.innerHTML;

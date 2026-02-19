@@ -15,20 +15,28 @@ const fs = require('fs');
     { timeout: 20000 }
   ).catch(() => {});
 
+  // Ждём появления ul.toc
+  await page.waitForSelector('ul.toc', { timeout: 20000 }).catch(() => {});
+
+  // Ждём появления хотя бы одного якоря в TOC (до 10s)
+  await page.waitForFunction(() => document.querySelectorAll('ul.toc a[href^="#"]').length > 0, {timeout: 10000}).catch(()=>{});
+
   // Метрики
   const result = await page.evaluate(() => {
     const tocUl = document.querySelector('ul.toc');
     const tocLinks = tocUl ? tocUl.querySelectorAll('a[href^="#"]') : [];
+    const tocLis = tocUl ? tocUl.querySelectorAll('li') : [];
     const headings = Array.from(document.querySelectorAll('h2[id], h3[id]'));
-    const tocPreview = tocUl ? Array.from(tocUl.querySelectorAll('li')).slice(0, 10).map(li => {
-      const a = li.querySelector('a');
-      return a ? { text: a.textContent, href: a.getAttribute('href') } : { text: li.textContent, href: null };
-    }) : [];
+    // tocLiTextPreview: первые 10 li.textContent.trim()
+    const tocLiTextPreview = tocUl ? Array.from(tocLis).slice(0, 10).map(li => li.textContent.trim()) : [];
     return {
       hasTocUl: !!tocUl,
       tocLinksCount: tocLinks.length,
-      headingsWithId: headings.length,
-      tocPreview
+      tocLiCount: tocLis.length,
+      tocHasAnchors: tocLinks.length > 0,
+       tocOuterHTML: tocUl && tocUl.outerHTML ? tocUl.outerHTML.slice(0, 500) : "",
+      tocLiTextPreview,
+      headingsWithId: headings.length
     };
   });
 

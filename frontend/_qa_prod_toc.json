@@ -1,6 +1,9 @@
 {
   "hasTocUl": true,
   "tocLinksCount": 0,
-  "headingsWithId": 9,
-  "tocPreview": []
+  "tocLiCount": 0,
+  "tocHasAnchors": false,
+  "tocOuterHTML": "<ul class=\"toc\"></ul>",
+  "tocLiTextPreview": [],
+  "headingsWithId": 9
 }
