@@ -1,0 +1,156 @@
+SUMMARY
+
+Цель сессии: стабилизировать SEO/индексацию, закрыть P0/P1 риски, довести до чистого build + verify и подготовить контекст для безошибочного продолжения.
+Последний подтверждённый результат по коду: коммит 105ba70bb7fd971d53052785cd501f04ab5da61c (фикс дублирования fallback SEO-тегов после монтирования Helmet), push в origin/main выполнен.
+Текущее фактическое состояние репо (live): tracked-изменений нет, есть только untracked артефакты/отчёты.
+Точка остановки: handoff/операционный план для следующего агента + проверка/доведение release-ветки и deploy source-of-truth.
+Первое действие в новом чате: выполнить preflight state-check + подтвердить, где находится UI-фикс градиента (в какой ветке/коммите), затем точечно доставить его в prod-ветку.
+SOURCE OF TRUTH
+
+Проект: Graveruz (frontend React SPA + backend indexing API + Cloudflare Worker prerender для RU/UZ blog путей).
+Repo (задано пользователем): braindiggeruz/graveruz (NEED_CONFIRMATION: проверить remote URL локально командой git remote -v).
+Local path: graveruz.
+Prod branch (задано пользователем): release/p0-cfpages-20260212-1937 (NEED_CONFIRMATION: актуальна ли как deployment source в Cloudflare Pages).
+Архитектура prerender подтверждена в index.ts и wrangler.toml:
+маршруты: graver-studio.uz/ru/blog*, graver-studio.uz/uz/blog*;
+bot-only логика + cache + singleflight (inflightRenders) + fallback с x-prerender-error.
+Build/pipeline frontend подтверждён в package.json и postbuild-react-snap.js:
+npm run build + postbuild (react-snap, build-stamp, sitemap и т.д.);
+SKIP_REACT_SNAP=1 реально поддержан, но на production Cloudflare env принудительно игнорируется (скрипт продолжает react-snap).
+NODE_VERSION=20: косвенно подтверждено через engines >=20 <23 в package.json, но точное значение переменной Cloudflare NODE_VERSION=20 — NEED_CONFIRMATION (в dashboard Pages settings).
+CHANGES BY FILE
+
+SEO/fallback & indexability:
+BlogIndex.js: fallback SEO-ветки при edge-case отсутствия Helmet (ранее по сессии).
+BlogPost.js: удаление fallback meta после появления Helmet (исключение дубли canonical/hreflang).
+Canonical/sitemap consistency:
+seo.js: нормализация canonical/alternate URL.
+postbuild-sitemap.js: trailing-slash/consistency.
+sitemap.xml: обновлённые URL.
+Page-specific consistency:
+LightersPage.js: canonical/alternate helpers + breadcrumb consistency.
+Indexing reliability:
+indexing_service.py: timeout/deadline/fast-fail для Google publish + fix технического бага.
+run-next-batch.ps1: lock/cooldown/timeout/anti-overlap + стабильный state-path.
+.env.example, README.md: документация по безопасному batch-runner.
+QA gate:
+verify-hydrated-seo.mjs: присутствует и подключён в scripts (verify:hydrated-seo) в package.json.
+Worker prerender:
+index.ts, wrangler.toml: bot gating, route scope, headers, cache flow.
+UI hero gradient fix:
+App.css: статус в текущем working tree НЕ подтверждён как modified (см. CURRENT STATE). Вероятно уже закоммичено в другой момент/ветке либо отсутствует локально — NEED_CONFIRMATION.
+Контент (10 RU+UZ статей + slug map):
+blogPosts.js, blogSlugMap.js — заявлено по истории работ, но в этом live-срезе нет незакоммиченного diff; сверять по git log/prod deploy SHA.
+COMMANDS RUN (with outputs)
+
+Репозиторный state-check:
+Команда: git branch --show-current
+Вывод: main
+Команда: git rev-parse HEAD
+Вывод: 105ba70bb7fd971d53052785cd501f04ab5da61c
+Команда: git status -sb
+Вывод: ## main...origin/main + список ?? untracked, tracked-modified строк нет
+Команда: git diff --name-only
+Вывод: пусто
+Команда: git diff --staged --name-only
+Вывод: пусто
+Значимые untracked (срез):
+.batch_runner_state.json, .seo_*, .tmp_*, BLOG_UPDATE_PACKAGE, batch_run_report.json, build-log-latest.txt,
+image-sitemap.xml,
+P0_AUDIT_REPORT_2026-02-17_FINAL.md, p0_audit_snapshot_2026-02-17.json,
+MEGA_HANDOFF_2026-02-16.md, docx-файлы.
+Последняя подтверждённая операция до handoff (из терминального контекста):
+git add ...; git commit -m "fix(seo): remove fallback blog meta once Helmet tags mount"; git push origin main
+Exit code: 0.
+ISSUES & RESOLUTIONS
+
+Дубли canonical/hreflang в prerender HTML:
+Root cause: одновременно присутствовали fallback meta + Helmet meta.
+Fix: cleanup fallback после детекта полного Helmet-комплекта в BlogPost.js.
+Result: verify:indexability чистый.
+Indexing hangs / долгие ожидания:
+Root cause: quota/backoff + отсутствие жёсткого дедлайна.
+Fix: timeout/deadline/fast-fail в indexing_service.py; safe runner в run-next-batch.ps1.
+Deploy source drift (инцидент “статьи не видны на проде”):
+Root cause: deploy был не с ожидаемого SHA/ветки.
+Признаки: несоответствие build-id и фактического контента/кода.
+Контроль: проверка /__build_id.txt + Pages deployment source.
+Agent commit/push через UI (Select an instance to terminate / No instance running):
+Вероятная причина: ограничения SCM write/terminal instance lifecycle/allowlist mismatch.
+Статус: NEED_CONFIRMATION (требуется точный лог VS Code UI и текущие policy-настройки).
+VS Code auto-approve allowlist/denylist:
+Статус: NEED_CONFIRMATION (нужно сверить фактический settings.json или user settings; в репо может отсутствовать).
+CURRENT BLOCKER
+
+Блокер №1: рассинхрон между ожидаемым сценарием (“должен быть изменён только App.css в release-ветке”) и фактическим live-state (на main tracked diff пустой).
+Блокер №2: не подтверждён текущий deployment source в Cloudflare Pages относительно ветки release/p0-cfpages-20260212-1937.
+Ровно где остановились: подготовка handoff перед операцией доставки UI-фикса градиента в прод-канал.
+Первое действие в новом чате: выполнить preflight ниже и зафиксировать истинный источник деплоя + наличие/отсутствие изменения в App.css.
+NEXT STEPS (A/B)
+
+A) TERMINAL PATH (предпочтительно, безопасно):
+Preflight:
+git branch --show-current
+git status -sb
+git diff --name-only
+git log --oneline -n 20 -- frontend/src/App.css
+Если App.css реально modified:
+git add frontend/src/App.css
+git commit -m "fix(ui): prevent hero gradient text fade (define .to-cyan-400)"
+git push origin release/p0-cfpages-20260212-1937
+Если modified нет:
+найти коммит с .to-cyan-400 и сделать cherry-pick в release-ветку (NEED_CONFIRMATION SHA).
+B) UI PATH (если terminal path недоступен):
+Source Control → stage only App.css → Commit → Sync Changes.
+Проверить, что staged содержит ровно один файл перед commit.
+После push/deploy:
+Cloudflare Pages: дождаться auto-deploy или сделать Redeploy Latest.
+Post-deploy проверки:
+главная: визуально градиент hero;
+/__build_id.txt соответствует ожидаемому SHA;
+/ru/blog и /uz/blog открываются корректно;
+/sitemap.xml и image sitemap валидны.
+QA gates:
+npm run verify:slugmap — NEED_CONFIRMATION (в этой точке не запускался в live-срезе).
+noindex leakage (build/index.html без noindex) — NEED_CONFIRMATION (проверить grep/verify-prod).
+bot/non-bot curl headers по worker (x-prerender, x-prerender-cache, без noindex) — NEED_CONFIRMATION по актуальному прод-окружению.
+ROLLBACK
+
+UI rollback:
+git revert <ui-fix-commit-sha> и push в ту же release-ветку.
+Prerender rollback (мягкий):
+выключить route-привязки worker для blog путей или переключить kill-switch/vars (если внедрён PRERENDER_ENABLED; в текущем index.ts явный env-киллсвитч не подтверждён — NEED_CONFIRMATION).
+Prerender rollback (жёсткий):
+удалить routes в Cloudflare Workers Triggers для graver-studio.uz/ru/blog* и graver-studio.uz/uz/blog*.
+Security/WAF:
+проверить, что Bot Fight Mode/WAF не challenge’ит поисковых ботов на blog routes; при необходимости исключения по verified bots.
+LINKS TO VERIFY
+
+Код/конфиг:
+BlogPost.js
+BlogIndex.js
+App.css
+verify-hydrated-seo.mjs
+postbuild-react-snap.js
+package.json
+index.ts
+wrangler.toml
+indexing_service.py
+run-next-batch.ps1
+Прод URL checks:
+https://graver-studio.uz/
+https://graver-studio.uz/__build_id.txt
+https://graver-studio.uz/ru/blog
+https://graver-studio.uz/uz/blog
+https://graver-studio.uz/sitemap.xml
+PR DRAFT (если нужен отдельный PR в release-ветку)
+
+Title: fix(ui): prevent hero gradient text fade (define .to-cyan-400)
+Body:
+Summary: фикс визуального затухания правой части hero-gradient.
+Root cause: отсутствовал/неполно определён utility-класс для конечного цвета градиента.
+Fix: добавлен .to-cyan-400 в App.css.
+QA: локальная визуальная проверка + npm run build (при необходимости).
+URLs: главная страница + /__build_id.txt + blog hubs.
+Post-merge: дождаться Pages deploy, проверить прод.
+Rollback: git revert <sha>.

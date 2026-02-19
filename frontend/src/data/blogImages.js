@@ -1,4 +1,5 @@
 const blogCardImageBySlug = {
+    'polniy-gid-po-korporativnym-podarkam': '/images/blog/polniy-gid-po-korporativnym-podarkam.jfif',
   'brendirovanie-suvenirov': '/images/blog/souvenir-branding-ru.png',
   'brendirovannye-zazhigalki-i-chasy-s-logotipom': '/images/blog/article-16.png',
   'chasy-s-logotipom-korporativnye-podarki-tashkent': '/images/blog/corporate-gifts-roi-article.png',
@@ -17,6 +18,7 @@ const blogCardImageBySlug = {
   'korporativ-sovga-toplamlari': '/images/blog/article-content.png',
   'lazer-gravirovka-sovgalar': '/images/blog/article-27.png',
   'lazer-gravyurasi-texnologiyasi': '/images/blog/oymakorlik-materiallari.png',
+  'lazer-gravirovka-sovgalar-tehnologiyasi': '/images/blog/oymakorlik-materiallari.png',
   'lazernaya-gravirovka-podarkov': '/images/blog/laser-engraving-gifts-draft.png',
   'lazernaya-gravirovka-podarkov-tehnologiya': '/images/blog/logo-application-technologies.png',
   'logotipli-sovga-toplami': '/images/blog/article-28.png',

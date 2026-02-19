@@ -8,6 +8,98 @@ import { getMappedAlternateSlug } from '../config/blogSlugMap.js';
 export const blogPosts = {
   ru: [
     {
+      slug: 'polniy-gid-po-korporativnym-podarkam',
+      title: 'Полный гид по корпоративным подаркам в Узбекистане | Graver Studio',
+      description: 'Все о корпоративных подарках в Ташкенте и Узбекистане: от выбора идеи и поставщика до брендирования и вручения с учетом делового этикета. Советы для HR, маркетинга и закупок.',
+      date: '2026-02-19',
+      category: 'Гайды',
+      keywords: [
+        'корпоративные подарки',
+        'подарки сотрудникам',
+        'брендирование',
+        'этикет',
+        'бюджет подарков',
+        'идеи подарков',
+        'Ташкент',
+        'Uzbekistan',
+        'HR',
+        'маркетинг'
+      ],
+      relatedPosts: [],
+      h1: 'Полный гид по корпоративным подаркам в Узбекистане: от идеи до вручения',
+      linksOut: [
+        'idei-vip-podarkov',
+        'kak-vybrat-podarki-dlya-sotrudnikov',
+        'korporativniy-merch-kak-instrument-marketinga',
+        'eko-podarki-dlya-biznesa',
+        'korporativnye-podarki-na-navruz',
+        'gravirovka-na-biznes-podarkah',
+        'byudzhet-na-korporativnye-podarki',
+        'srochniy-zakaz-korporativnyh-podarkov',
+        'keys-brendirovannye-podarki-dlya-it'
+      ],
+      faq: [
+        {
+          question: 'Как выбрать корпоративный подарок, который понравится всем сотрудникам?',
+          answer: 'Ориентируйтесь на универсальные и практичные подарки, учитывайте корпоративные ценности и предпочтения команды. Лучше всего работают брендированные вещи, которые пригодятся в офисе или дома.'
+        },
+        {
+          question: 'Какие ошибки чаще всего допускают при заказе корпоративных подарков?',
+          answer: 'Главные ошибки — отсутствие чёткого брифа, выбор слишком сложных или дорогих подарков, игнорирование сроков и персонализации. Важно заранее согласовать макеты и тираж.'
+        },
+        {
+          question: 'Как организовать вручение подарков с учётом делового этикета?',
+          answer: 'Подарки лучше вручать на корпоративных мероприятиях или лично, с короткой речью и благодарностью. Не забывайте про упаковку и индивидуальный подход.'
+        },
+        {
+          question: 'Что учесть при брендировании подарков?',
+          answer: 'Выбирайте качественные методы нанесения логотипа (лазерная гравировка, УФ-печать), согласуйте макет и цветовую гамму, проверьте образцы перед запуском тиража.'
+        },
+        {
+          question: 'Как рассчитать бюджет на корпоративные подарки?',
+          answer: 'Определите количество получателей, среднюю стоимость подарка, учтите расходы на упаковку и доставку. Лучше заложить небольшой запас на непредвиденные расходы.'
+        },
+        {
+          question: 'Можно ли заказать срочные корпоративные подарки?',
+          answer: 'Да, но сроки и ассортимент будут ограничены. Важно сразу уточнить доступные варианты и согласовать макеты максимально быстро.'
+        }
+      ],
+      contentHtml: `<p><strong>Короткий ответ:</strong> чтобы корпоративный подарок работал на отношения и бренд, начните с цели и аудитории, учтите местный деловой этикет, выберите формат и брендирование, заложите бюджет и сроки, а затем найдите подрядчика, который гарантирует качество и аккуратную персонализацию.</p>
+<div class="toc"><p><strong>Оглавление:</strong></p>
+<ul>
+<li><a href="#goal">Шаг 1: Определяем цель подарка</a></li>
+<li><a href="#audience">Шаг 2: Анализируем аудиторию</a></li>
+<li><a href="#culture">Шаг 3: Деловой этикет Узбекистана</a></li>
+<li><a href="#ideas">Шаг 4: Идеи подарков</a></li>
+<li><a href="#branding">Шаг 5: Брендирование</a></li>
+<li><a href="#budget">Шаг 6: Бюджет и ROI</a></li>
+<li><a href="#vendor">Шаг 7: Выбор подрядчика</a></li>
+<li><a href="#faq">FAQ</a></li>
+<li><a href="#related">Читайте также</a></li>
+</ul></div>
+<h2 id="goal">Шаг 1: Определяем цель корпоративного подарка</h2>
+<p>Один и тот же предмет может быть “просто сувениром” или точным бизнес-инструментом — всё решает задача:</p>
+<ul>
+  <li><strong>Для клиентов и партнёров:</strong> укрепить доверие, подчеркнуть статус, открыть дверь к следующей сделке (смотрите идеи <a href="/blog/idei-vip-podarkov">VIP-подарков</a>).</li>
+  <li><strong>Для сотрудников:</strong> признание, мотивация и удержание команды (подбор — в статье <a href="/blog/kak-vybrat-podarki-dlya-sotrudnikov">как выбрать подарки для сотрудников</a>).</li>
+  <li><strong>Для маркетинга:</strong> мерч, который носят и показывают, а не прячут в ящик (подход — в материале <a href="/blog/korporativniy-merch-kak-instrument-marketinga">корпоративный мерч как инструмент маркетинга</a>).</li>
+</ul>
+<p>Зафиксируйте цель, бюджет и дедлайн заранее — это ускорит согласование и поможет выбрать правильную технологию персонализации.</p><h2 id="audience">Шаг 2: Анализируем аудиторию</h2> <p>Подарок для IT-специалиста и для главного бухгалтера — это два разных подарка. Учитывайте:</p> <ul> <li><strong>Должность и статус:</strong> Руководителю — премиальный ежедневник с тиснением, команде — качественные худи.</li> <li><strong>Сфера деятельности:</strong> Людям в "полях" — термокружки и пауэрбанки, офисным сотрудникам — стильные настольные аксессуары.</li> <li><strong>Ценности и интересы:</strong> Молодая команда оценит трендовый мерч, а компания с фокусом на устойчивое развитие — <a href="/blog/eko-podarki-dlya-biznesa">эко-подарки</a> .</li> </ul> <h2 id="culture">Шаг 3: Учитываем культурные особенности и деловой этикет Узбекистана</h2> <p>Успех в бизнесе в Узбекистане во многом зависит от построения доверительных личных отношений и уважения к местным традициям .</p> <ul> <li><strong>Вручение:</strong> Подарок принято вручать в конце встречи, преподнося его обеими руками в знак уважения .</li> <li><strong>Что дарить:</strong> Высоко ценятся качественные бизнес-аксессуары, изделия ручной работы, а также корзины с фруктами и сладостями . Особое внимание стоит уделить подаркам на <a href="/blog/korporativnye-podarki-na-navruz">праздник Навруз</a>, который имеет огромное культурное значение .</li> <li><strong>Чего избегать:</strong> Не стоит дарить алкоголь, если вы не уверены, что это будет уместно. Слишком дешевые сувениры могут быть восприняты как неуважение.</li> </ul> <h2 id="ideas">Шаг 4: Генерируем идеи (и где их брать)</h2> <p>Где найти свежие идеи, кроме банальных ручек?</p> <ul> <li><strong>Изучите тренды мерча:</strong> Стильные худи, сумки-шопперы, термосы. Подробнее — в статье <a href="/blog/korporativniy-merch-kak-instrument-marketinga">о корпоративном мерче</a>.</li> <li><strong>Отталкивайтесь от пользы:</strong> Вещь, которая используется каждый день (зажигалка, нож, powerbank), лучше, чем сувенир "в стол".</li> <li><strong>Используйте VIP-подход:</strong> Если подарки для ключевых партнеров — загляните в наш список <a href="/blog/idei-vip-podarkov">15 идей VIP-подарков</a>.</li> </ul> <h2 id="branding">Шаг 5: Выбираем технологию брендирования</h2> <p>Брендирование — это то, что превращает "предмет" в ваш фирменный знак. Самый популярный и долговечный способ — <a href="/blog/gravirovka-na-biznes-podarkah">лазерная гравировка</a>.</p> <ul> <li><strong>Гравировка:</strong> Премиально выглядит, не стирается, подходит для металла, дерева, кожи.</li> <li><strong>УФ-печать:</strong> Яркие цвета, подходит для пластика и стекла, но может со временем стираться.</li> <li><strong>Тиснение:</strong> Идеально для кожи и ежедневников, создает статусный вид.</li> </ul> <h2 id="budget">Шаг 6: Формируем бюджет и оцениваем ROI</h2> <p>Ошибка многих компаний — считать подарок "расходом". Правильнее воспринимать его как инвестицию в отношения.</p> <p>При формировании бюджета учитывайте не только стоимость изделия, но и:</p> <ul> <li>Брендирование (гравировка, печать)</li> <li>Упаковку (она создает первое впечатление)</li> <li>Логистику и доставку</li> </ul> <p>Подробнее о том, как рассчитать бюджет и избежать переплат, читайте в статье <a href="/blog/byudzhet-na-korporativnye-podarki">"Бюджет на корпоративные подарки"</a>.</p> <h2 id="vendor">Шаг 7: Выбираем подрядчика в Узбекистане</h2> <p>Вот чек-лист для выбора надежного подрядчика в Ташкенте:</p> <ol> <li><strong>Портфолио:</strong> Попросите показать реальные работы. Смотреть <a href="/#portfolio">наше портфолио</a>.</li> <li><strong>Сроки:</strong> Уточните реальные сроки производства. Если нужно срочно, выбирайте тех, кто специализируется на <a href="/blog/srochniy-zakaz-korporativnyh-podarkov">срочных заказах</a>.</li> <li><strong>Коммуникация:</strong> Важно, чтобы с вами работал менеджер, который понимает задачу и предлагает решения.</li> </ol> <p>Готовы обсудить ваш проект? <a href="/#contacts">Свяжитесь с нами</a> для консультации.</p> <h2 id="faq">FAQ: Частые вопросы о корпоративных подарках</h2> <details> <summary>Почему важно избегать "дежурных" сувениров?</summary> <p>Дешевые, бесполезные сувениры (пластиковые ручки, календарики) часто воспринимаются как формальность и быстро выбрасываются, не создавая никакой ценности для бренда.</p> </details> <details> <summary>Какой минимальный тираж для заказа?</summary> <p>Минимальный тираж зависит от типа продукции и технологии нанесения. Для гравировки мы часто работаем даже с единичными заказами, а для печати на мерче обычно требуется небольшой тираж. Уточните у менеджера.</p> </details> <details> <summary>Вы работаете только по Ташкенту?</summary> <p>Наше производство находится в Ташкенте, но мы организуем доставку готовой продукции по всему Узбекистану. Свяжитесь с нами, чтобы обсудить детали.</p> </details> <details> <summary>Можем ли мы предоставить свои изделия для гравировки?</summary> <p>Да, мы часто работаем с изделиями клиентов. Однако перед этим нам нужно оценить материал и его пригодность для выбранной технологии нанесения.</p> </details> <details> <summary>Сколько времени занимает изготовление заказа?</summary> <p>Сроки зависят от сложности, тиража и загруженности производства. Простая гравировка может быть готова за 1-2 дня, а крупный заказ на мерч потребует 7-14 дней. Для срочных заказов у нас есть <a href="/blog/srochniy-zakaz-korporativnyh-podarkov">специальные условия</a>.</p> </details> <details> <summary>Как подготовить макет для нанесения?</summary> <p>Идеально, если у вас есть логотип в векторном формате (AI, EPS, CDR, SVG). Если нет — не проблема. Наш дизайнер поможет подготовить макет для производства.</p> </details><h2 id="related">Читайте также</h2>
+<ul>
+  <li><a href="/blog/idei-vip-podarkov">15 идей VIP-подарков для партнёров и клиентов</a></li>
+  <li><a href="/blog/kak-vybrat-podarki-dlya-sotrudnikov">Как выбрать подарки для сотрудников</a></li>
+  <li><a href="/blog/gravirovka-na-biznes-podarkah">Гравировка на бизнес-подарках: что выбрать</a></li>
+  <li><a href="/blog/byudzhet-na-korporativnye-podarki">Как сформировать бюджет на корпоративные подарки</a></li>
+  <li><a href="/blog/srochniy-zakaz-korporativnyh-podarkov">Срочный заказ корпоративных подарков</a></li>
+  <li><a href="/blog/keys-brendirovannye-podarki-dlya-it">Кейс: брендированные подарки для IT-команды</a></li>
+  <li><a href="/#portfolio">Портфолио работ</a> · <a href="/#contacts">Связаться с нами</a></li>
+</ul>
+<div class="cta">
+  <p><strong>Нужны корпоративные подарки с гравировкой в Ташкенте?</strong> Напишите нам — подскажем варианты под вашу аудиторию, сроки и бюджет.</p>
+  <p><a href="/#contacts">Оставить заявку</a></p>
+</div>`
+    },
+    {
       slug: 'kak-vybrat-korporativnyj-podarok',
       title: 'Как выбрать корпоративный подарок для сотрудников',
       description: 'Практические советы по выбору корпоративных подарков: с логотипом компании, на любой бюджет, варианты сувенирной продукции и упаковки.',
@@ -63,7 +155,7 @@ export const blogPosts = {
 <p>Перед выдачей проверьте соответствие макету, целостность упаковки и корректность персонализации на выборочной партии.</p>
 <p><strong>Нужна помощь с подбором и запуском?</strong> Оставьте заявку через раздел контактов — команда подготовит рабочий план под ваш тираж.</p>
 <h2>Related articles</h2>
-<ul><li><a href="/ru/blog/korporativnye-podarki-s-logotipom-polnyy-gayd">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/kak-vybrat-korporativnyj-podarok">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/korporativnye-podarochnye-nabory">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/podarki-klientam-partneram-vip">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/lazernaya-gravirovka-podarkov">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/welcome-pack-dlya-sotrudnikov">Смотрите также: связанный материал</a></li></ul>`},
+<ul><li><a href="/ru/blog/korporativnye-podarki-s-logotipom-polnyy-gayd">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/kak-vybrat-korporativnyj-podarok">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/podarochnye-nabory-s-logotipom">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/podarki-klientam-partneram-vip">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/lazernaya-gravirovka-podarkov">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/welcome-pack-dlya-sotrudnikov">Смотрите также: связанный материал</a></li></ul>`},
     {
       slug: 'welcome-pack-dlya-sotrudnikov',
       title: 'Welcome Pack для новых сотрудников: что включить',
@@ -158,7 +250,7 @@ export const blogPosts = {
 <p>Перед выдачей проверьте соответствие макету, целостность упаковки и корректность персонализации на выборочной партии.</p>
 <p><strong>Нужна помощь с подбором и запуском?</strong> Оставьте заявку через раздел контактов — команда подготовит рабочий план под ваш тираж.</p>
 <h2>Related articles</h2>
-<ul><li><a href="/ru/blog/top-idei-podarkov-na-novyj-god">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/korporativnye-podarki-na-navruz">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/kak-vybrat-korporativnyj-podarok">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/lazernaya-gravirovka-podarkov">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/podarochnye-nabory-s-logotipom">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/welcome-pack-dlya-sotrudnikov">Смотрите также: связанный материал</a></li></ul>`},
+<ul><li><a href="/ru/blog/top-idei-podarkov-na-novyj-god">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/podarki-na-navruz">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/kak-vybrat-korporativnyj-podarok">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/lazernaya-gravirovka-podarkov">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/podarochnye-nabory-s-logotipom">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/welcome-pack-dlya-sotrudnikov">Смотрите также: связанный материал</a></li></ul>`},
     {
       slug: 'ekonomiya-na-korporativnyh-suvenirax',
       title: 'Как сэкономить на корпоративных сувенирах без потери качества',
@@ -257,7 +349,7 @@ export const blogPosts = {
     {
       slug: "merch-dlya-kompanii-brendirovanie",
       title: "Мерч для компании: брендирование сувениров в Ташкенте",
-      description: "Заказ мерча для компании в Ташкенте. Брендирование одежды, аксессуаров, сувениров. Лазерная гравировка логотипа для стартапов и корпораций.",
+      description: "Заказ merch для компании в Ташкенте. Брендирование одежды, аксессуаров, сувениров. Лазерная гравировка логотипа для стартапов и корпораций.",
       date: "2026-02-11",
       keywords: ["мерч для компании брендирование", "корпоративный мерч", "брендирование сувениров", "фирменная продукция", "подарки с логотипом", "корпоративные аксессуары", "welcome pack", "HR-подарки"],
       category: "Cluster",
@@ -352,7 +444,7 @@ export const blogPosts = {
     {
       slug: "korporativnye-podarki-na-navruz",
       title: "Корпоративные подарки на Навруз: идеи с узбекским акцентом и гравировкой",
-      description: "Идеи корпоративных подарков на Навруз: тематические сувениры, персонализация, упаковка, сценарии для сотрудников и партнеров. Производство в Ташкенте.",
+      description: "Идеи подарков на Навруз: тематические сувениры, персонализация, упаковка, сценарии для сотрудников и партнеров. Производство в Ташкенте.",
       date: "2026-02-11",
       keywords: ["корпоративные подарки на Навруз", "подарки на Навруз", "весенние сувениры", "узбекская тематика", "подарки сотрудникам", "подарки партнерам", "подарочные наборы", "персонализация"],
       category: "Cluster",
@@ -419,7 +511,7 @@ export const blogPosts = {
 <ol><li>Соответствие брендбуку и тону коммуникации</li><li>Надёжные материалы и стойкое нанесение</li><li>Контроль качества на тестовой партии</li></ol>
 <p><strong>Нужен закрытый каталог для финансового сектора?</strong> Запросите подборку под ваш формат клиентов и партнёров.</p>
 <h2>Related articles</h2>
-<ul><li><a href="/ru/blog/podarki-klientam-partneram-vip">Подарки клиентам и партнёрам</a></li><li><a href="/ru/blog/kak-podgotovit-maket-logotipa">Как подготовить макет логотипа</a></li><li><a href="/ru/blog/merch-dlya-it-kompaniy-tashkent">Мерч для IT-компаний</a></li><li><a href="/ru/blog/chasy-s-logotipom-korporativnye-podarki-tashkent">Часы с логотипом</a></li><li><a href="/ru/blog/podarki-na-korporativnye-sobytiya-tashkent">Подарки на корпоративные события</a></li><li><a href="/ru/blog/podarki-dlya-horeca-i-restoranov-tashkent">Подарки для HoReCa</a></li></ul>`},
+<ul><li><a href="/ru/blog/podarki-klientam-partneram-vip">Подарки клиентам и партнёрам</a></li><li><a href="/ru/blog/kak-podgotovit-maket-logotipa">Как подготовить макет логотипа</a></li><li><a href="/ru/blog/merch-dlya-it-kompaniy-tashkent">Мерч для IT-компаний</a></li><li><a href="/ru/blog/chasy-s-logotipom-korporativnye-podarki-tashkent">Часы с логотипом</a></li><li><a href="/ru/blog/podarki-na-korporativnye-sobytiya-tashkent">Подарки на корпоративные события</a></li><li><a href="/ru/blog/podarki-dlya-horeca-i-restoranov-tashkent">Решения для HoReCa</a></li></ul>`},
     {
       slug: "chasy-s-logotipom-korporativnye-podarki-tashkent",
       title: "Часы с логотипом на заказ в Ташкенте: премиальный корпоративный подарок",
@@ -435,7 +527,7 @@ export const blogPosts = {
 <ol><li>Точный макет и тестовая визуализация</li><li>Выбор модели под целевую аудиторию</li><li>Контроль качества гравировки и упаковки</li></ol>
 <p><strong>Нужен каталог моделей под гравировку?</strong> Подготовим подборку с вариантами персонализации.</p>
 <h2>Related articles</h2>
-<ul><li><a href="/ru/blog/podarki-klientam-partneram-vip">VIP-подарки для клиентов и партнёров</a></li><li><a href="/ru/blog/podarki-sotrudnikam-hr-gayd">Подарки для награждения сотрудников</a></li><li><a href="/ru/blog/merch-dlya-it-kompaniy-tashkent">Мерч для IT-компаний</a></li><li><a href="/ru/blog/podarki-dlya-bankov-i-finteha-tashkent">Подарки для банков и финтеха</a></li><li><a href="/ru/blog/podarki-na-korporativnye-sobytiya-tashkent">Подарки на корпоративные события</a></li><li><a href="/ru/blog/podarki-dlya-horeca-i-restoranov-tashkent">Подарки для HoReCa</a></li></ul>`},
+<ul><li><a href="/ru/blog/podarki-klientam-partneram-vip">VIP-подарки для клиентов и партнёров</a></li><li><a href="/ru/blog/podarki-sotrudnikam-hr-gayd">Подарки сотрудникам</a></li><li><a href="/ru/blog/merch-dlya-it-kompaniy-tashkent">Мерч для IT-компаний</a></li><li><a href="/ru/blog/podarki-dlya-bankov-i-finteha-tashkent">Подарки для банков и финтеха</a></li><li><a href="/ru/blog/chasy-s-logotipom-korporativnye-podarki-tashkent">Премиальные часы с логотипом</a></li><li><a href="/ru/blog/podarki-na-korporativnye-sobytiya-tashkent">Подарки на корпоративные события</a></li></ul>`},
     {
       slug: "podarki-na-korporativnye-sobytiya-tashkent",
       title: "Подарки на корпоративные события в Ташкенте: идеи и брендирование",
@@ -444,7 +536,7 @@ export const blogPosts = {
       keywords: ["подарки на корпоративные события", "тимбилдинг", "юбилей компании", "брендированные сувениры", "Ташкент"],
       category: "Pillar",
       relatedPosts: ['chasy-s-logotipom-korporativnye-podarki-tashkent', 'podarki-sotrudnikam-hr-gayd', 'welcome-pack-novym-sotrudnikam', 'merch-dlya-it-kompaniy-tashkent', 'podarki-dlya-bankov-i-finteha-tashkent', 'podarki-dlya-horeca-i-restoranov-tashkent'],
-      contentHtml: `<p>Событийные подарки помогают усилить эффект от корпоративных мероприятий: открытия офиса, годовщины, тимбилдинга и клиентских встреч. Важно выбрать формат под задачу события.</p>
+      contentHtml: `<p>Событийные подарки помогают усилить эффект от корпоративных мероприятий: открытие офиса, годовщины, тимбилдинга и клиентских встреч. Важно выбрать формат под задачу события.</p>
 <h2>Быстрый сценарий подбора</h2>
 <ul><li>Определите аудиторию: сотрудники, партнёры, гости</li><li>Согласуйте бюджет и сроки производства</li><li>Выберите носители и способ персонализации</li></ul>
 <h2>Что чаще всего заказывают</h2>
@@ -496,7 +588,7 @@ export const blogPosts = {
       date: '2026-02-06',
       keywords: ['lazer gravirovka', "sovg'alarga gravirovka", 'logotip gravirovka', 'Toshkent'],
       category: 'Texnologiyalar',
-      relatedPosts: ['lazer-gravyurasi-texnologiyasi', 'korporativ-sovgalar-gravyurasi-usullari', 'logotip-maketi-tayyorlash', 'logotipli-zajigalka-va-soat', 'korporativ-sovgani-qanday-tanlash', 'logotipli-sovga-toplami'],
+      relatedPosts: ['korporativ-sovgalar-gravyurasi-usullari', 'logotip-maketi-tayyorlash', 'logotipli-zajigalka-va-soat', 'korporativ-sovgani-qanday-tanlash', 'logotipli-sovga-toplami'],
       contentHtml: `<p>Ushbu maqola jamoaga jarayonni aniq boshqarishga yordam beradi: briefdan boshlab tiraj va topshirishgacha.</p>
 <p>Asosiy e’tibor amaliy yondashuvga qaratiladi: tanlov mezonlari, kelishuv bosqichlari va operatsion risklarni kamaytirish.</p>
 <h2>Boshlashdan oldin nimalar muhim</h2>
@@ -507,10 +599,10 @@ export const blogPosts = {
 <p>Topshirishdan oldin maketga moslik, qadoq sifati va personalizatsiya to‘g‘riligini namunaviy partiyada tekshiring.</p>
 <p><strong>Tanlash va ishga tushirishda yordam kerakmi?</strong> Kontaktlar bo‘limi orqali murojaat qiling — jamoa tirajingizga mos ish rejasini tayyorlaydi.</p>
 <h2>Bog‘liq maqolalar</h2>
-<ul><li><a href="/uz/blog/lazer-gravyurasi-texnologiyasi">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgalar-gravyurasi-usullari">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/logotip-maketi-tayyorlash">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/logotipli-zajigalka-va-soat">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgani-qanday-tanlash">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog‘liq maqola</a></li></ul>`},
+<ul><li><a href="/uz/blog/lazer-gravyurasi-texnologiyasi">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgalar-gravyurasi-usullari">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/logotip-maketi-tayyorlash">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgani-qanday-tanlash">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog‘liq maqola</a></li></ul>`},
     {
       slug: 'logotipli-sovga-toplami',
-      title: "Kompaniya logotipi bilan sovg'a to'plamlari",
+      title: "Kompaniya logotipli sovg'a to'plamlari",
       description: "Brendlangan korporativ sovg'a to'plamini qanday yig'ish: komplektatsiya, qadoqlash, turli byudjetlar uchun g'oyalar.",
       date: '2026-02-06',
       keywords: ["sovg'a to'plami", "korporativ to'plam", "logotipli sovg'alar", 'Toshkent'],
@@ -591,7 +683,7 @@ export const blogPosts = {
       date: '2026-02-10',
       keywords: ['logotip maketi', 'maket tayyorlash', 'lazer gravirovka', 'vektor'],
       category: 'Texnologiyalar',
-      relatedPosts: ['lazer-gravyurasi-texnologiyasi', 'lazer-gravirovka-sovgalar', 'korporativ-sovgalar-gravyurasi-usullari', 'logotipli-zajigalka-va-soat', 'korporativ-sovgani-qanday-tanlash', 'logotipli-sovga-toplami'],
+      relatedPosts: ['korporativ-sovgalar-gravyurasi-usullari', 'logotipli-zajigalka-va-soat', 'korporativ-sovgani-qanday-tanlash', 'logotipli-sovga-toplami'],
       contentHtml: `<p>Ushbu maqola jamoaga jarayonni aniq boshqarishga yordam beradi: briefdan boshlab tiraj va topshirishgacha.</p>
 <p>Asosiy e’tibor amaliy yondashuvga qaratiladi: tanlov mezonlari, kelishuv bosqichlari va operatsion risklarni kamaytirish.</p>
 <h2>Boshlashdan oldin nimalar muhim</h2>
@@ -621,7 +713,7 @@ export const blogPosts = {
 <p>Topshirishdan oldin maketga moslik, qadoq sifati va personalizatsiya to‘g‘riligini namunaviy partiyada tekshiring.</p>
 <p><strong>Tanlash va ishga tushirishda yordam kerakmi?</strong> Kontaktlar bo‘limi orqali murojaat qiling — jamoa tirajingizga mos ish rejasini tayyorlaydi.</p>
 <h2>Bog‘liq maqolalar</h2>
-<ul><li><a href="/uz/blog/yangi-yil-sovga-goyalari">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/navruz-uchun-korporativ-sovgalar">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgani-qanday-tanlash">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/welcome-pack-yangi-xodimlar">Shuningdek qarang: bog‘liq maqola</a></li></ul>`},
+<ul><li><a href="/uz/blog/yangi-yil-sovga-goyalari">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/navruz-sovgalari">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/navruz-uchun-korporativ-sovgalar">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/welcome-pack-yangi-xodimlar">Shuningdek qarang: bog‘liq maqola</a></li></ul>`},
     {
       slug: 'suvenir-byudjetini-tejash',
       title: "Korporativ suvenirlarda sifatni yo'qotmasdan qanday tejash mumkin",
@@ -686,7 +778,7 @@ export const blogPosts = {
       date: "2026-02-11",
       keywords: ["корпоративные подарки с гравировкой", "гравировка логотипа", "именная гравировка", "гравировка на металле", "гравировка на дереве", "гравировка на коже", "персонализация подарков", "макет перед производством"],
       category: "Cluster",
-      relatedPosts: ['lazer-gravyurasi-texnologiyasi', 'lazer-gravirovka-sovgalar', 'logotip-maketi-tayyorlash', 'logotipli-zajigalka-va-soat', 'korporativ-sovgani-qanday-tanlash', 'logotipli-sovga-toplami'],
+      relatedPosts: ['logotip-maketi-tayyorlash', 'logotipli-zajigalka-va-soat', 'korporativ-sovgani-qanday-tanlash', 'logotipli-sovga-toplami'],
       contentHtml: `<p>Ushbu maqola jamoaga jarayonni aniq boshqarishga yordam beradi: briefdan boshlab tiraj va topshirishgacha.</p>
 <p>Asosiy e’tibor amaliy yondashuvga qaratiladi: tanlov mezonlari, kelishuv bosqichlari va operatsion risklarni kamaytirish.</p>
 <h2>Boshlashdan oldin nimalar muhim</h2>
@@ -697,15 +789,15 @@ export const blogPosts = {
 <p>Topshirishdan oldin maketga moslik, qadoq sifati va personalizatsiya to‘g‘riligini namunaviy partiyada tekshiring.</p>
 <p><strong>Tanlash va ishga tushirishda yordam kerakmi?</strong> Kontaktlar bo‘limi orqali murojaat qiling — jamoa tirajingizga mos ish rejasini tayyorlaydi.</p>
 <h2>Bog‘liq maqolalar</h2>
-<ul><li><a href="/uz/blog/lazer-gravyurasi-texnologiyasi">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/logotip-maketi-tayyorlash">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/logotipli-zajigalka-va-soat">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgani-qanday-tanlash">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog‘liq maqola</a></li></ul>`},
+<ul><li><a href="/uz/blog/lazer-gravyurasi-texnologiyasi">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgalar-gravyurasi-usullari">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/logotip-maketi-tayyorlash">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgani-qanday-tanlash">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog‘liq maqola</a></li></ul>`},
     {
-      slug: "lazer-gravyurasi-texnologiyasi",
+      slug: "lazer-gravirovka-sovgalar-tehnologiyasi",
       title: "Lazer gravyurasi sovg'alar: texnologiyalar va afzalliklari",
       description: "Korporativ sovg'alar uchun lazer gravyurasi qanday ishlaydi. Fiber, CO2, MOPA texnologiyalari. Toshkentda biznes uchun afzalliklar.",
       date: "2026-02-11",
       keywords: ["лазерная гравировка подарков", "лазерная маркировка", "волоконный лазер", "CO2 лазер", "MOPA лазер", "UV лазер", "гравировка на заказ", "стойкость нанесения"],
       category: "Cluster",
-      relatedPosts: ['lazer-gravirovka-sovgalar', 'korporativ-sovgalar-gravyurasi-usullari', 'logotip-maketi-tayyorlash', 'logotipli-zajigalka-va-soat', 'korporativ-sovgani-qanday-tanlash', 'logotipli-sovga-toplami'],
+      relatedPosts: ['korporativ-sovgalar-gravyurasi-usullari', 'logotip-maketi-tayyorlash', 'logotipli-zajigalka-va-soat', 'korporativ-sovgani-qanday-tanlash', 'logotipli-sovga-toplami'],
       contentHtml: `<p>Ushbu maqola jamoaga jarayonni aniq boshqarishga yordam beradi: briefdan boshlab tiraj va topshirishgacha.</p>
 <p>Asosiy e’tibor amaliy yondashuvga qaratiladi: tanlov mezonlari, kelishuv bosqichlari va operatsion risklarni kamaytirish.</p>
 <h2>Boshlashdan oldin nimalar muhim</h2>
@@ -781,7 +873,7 @@ export const blogPosts = {
       date: "2026-02-11",
       keywords: ["брендированные зажигалки и часы", "зажигалки с логотипом", "часы с логотипом", "гравировка на зажигалках", "гравировка на часах", "подарки руководителю", "премиальные сувениры", "персонализация"],
       category: "Cluster",
-      relatedPosts: ['lazer-gravyurasi-texnologiyasi', 'lazer-gravirovka-sovgalar', 'korporativ-sovgalar-gravyurasi-usullari', 'logotip-maketi-tayyorlash', 'korporativ-sovgani-qanday-tanlash', 'logotipli-sovga-toplami'],
+      relatedPosts: ['lazer-gravirovka-sovgalar', 'korporativ-sovgalar-gravyurasi-usullari', 'logotip-maketi-tayyorlash', 'korporativ-sovgani-qanday-tanlash', 'logotipli-sovga-toplami'],
       contentHtml: `<p>Ushbu maqola jamoaga jarayonni aniq boshqarishga yordam beradi: briefdan boshlab tiraj va topshirishgacha.</p>
 <p>Asosiy e’tibor amaliy yondashuvga qaratiladi: tanlov mezonlari, kelishuv bosqichlari va operatsion risklarni kamaytirish.</p>
 <h2>Boshlashdan oldin nimalar muhim</h2>
@@ -796,7 +888,7 @@ export const blogPosts = {
     {
       slug: "korporativ-sovga-toplamlari",
       title: "Korporativ sovg'a to'plamlari: kompaniya logotipi bilan boks yig'ish",
-      description: "Korporativ sovg'a to'plamini qanday yig'ish: tarkib, brendlash, qadoqlash, ssenariylar (welcome pack, hamkorlar). Gravyura va nazorat.",
+      description: "Korporativ sovg'a to'plamini qanday yig'ish: tarkib, brendlash, qadoqlash, ssenariylar (welcome pack, hamkorlar). Gravirovka va nazorat.",
       date: "2026-02-11",
       keywords: ["корпоративные подарочные наборы", "подарочные боксы", "наборы с логотипом", "welcome pack набор", "корпоративные боксы", "упаковка", "комплектация набора", "персонализация"],
       category: "Cluster",
@@ -815,7 +907,7 @@ export const blogPosts = {
     {
       slug: "navruz-uchun-korporativ-sovgalar",
       title: "Navruz uchun korporativ sovg'alar: gravyura va milliy urg'u bilan g'oyalar",
-      description: "Navruz uchun korporativ sovg'a g'oyalari: mavzuli suvenirlar, shaxsiylashtirish, qadoqlash, xodimlar va hamkorlar uchun ssenariylar. Toshkentda ishlab chiqarish.",
+      description: "Navruz uchun korporativ sovg'a g'oyalari: mavzuli suvenir, shaxsiylashtirish, qadoqlash, xodimlar va hamkorlar uchun ssenariylar. Toshkentda ishlab chiqarish.",
       date: "2026-02-11",
       keywords: ["корпоративные подарки на Навруз", "подарки на Навруз", "весенние сувениры", "узбекская тематика", "подарки сотрудникам", "подарки партнерам", "подарочные наборы", "персонализация"],
       category: "Cluster",
@@ -830,7 +922,7 @@ export const blogPosts = {
 <p>Topshirishdan oldin maketga moslik, qadoq sifati va personalizatsiya to‘g‘riligini namunaviy partiyada tekshiring.</p>
 <p><strong>Tanlash va ishga tushirishda yordam kerakmi?</strong> Kontaktlar bo‘limi orqali murojaat qiling — jamoa tirajingizga mos ish rejasini tayyorlaydi.</p>
 <h2>Bog‘liq maqolalar</h2>
-<ul><li><a href="/uz/blog/yangi-yil-sovga-goyalari">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/navruz-sovgalari">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgani-qanday-tanlash">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/welcome-pack-yangi-xodimlar">Shuningdek qarang: bog‘liq maqola</a></li></ul>`},
+<ul><li><a href="/uz/blog/yangi-yil-sovga-goyalari">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/navruz-sovgalari">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/navruz-uchun-korporativ-sovgalar">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/welcome-pack-yangi-xodimlar">Shuningdek qarang: bog‘liq maqola</a></li></ul>`},
     {
       slug: "yangi-xodimlar-uchun-welcome-pack",
       title: "Yangi xodimlar uchun welcome pack: to'plamni yig'ish va brendlash",
@@ -847,7 +939,7 @@ export const blogPosts = {
 <ol><li>Brief va mahsulot tarkibini tasdiqlash</li><li>Brendlash va test namunani kelishish</li><li>Ishlab chiqarish va logistika jadvalini ishga tushirish</li></ol>
 <h2>Sifat va muddat nazorati</h2>
 <p>Topshirishdan oldin maketga moslik, qadoq sifati va personalizatsiya to‘g‘riligini namunaviy partiyada tekshiring.</p>
-<p><strong>Tanlash va ishga tushirishda yordam kerakmi?</strong> Kontaktlar bo‘limi orqali murojaat qiling — jamoa tirajingizga mos ish rejasini tayyorlaydi.</p>
+<p><strong>Byudjetga mos merch g‘oyalari kerakmi?</strong> Jamoamiz siz uchun mos katalogni tayyorlab beradi.</p>
 <h2>Bog‘liq maqolalar</h2>
 <ul><li><a href="/uz/blog/xodimlar-uchun-sovgalar-hr-qollanma">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/welcome-pack-yangi-xodimlar">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgani-qanday-tanlash">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/suvenir-brendlash">Shuningdek qarang: bog‘liq maqola</a></li></ul>`}
     ,
@@ -882,7 +974,7 @@ export const blogPosts = {
 <ol><li>Brandbook va kompaniya kommunikatsiyasiga moslik</li><li>Mustahkam material va sifatli gravirovka</li><li>Asosiy tirajdan oldin test nazorati</li></ol>
 <p><strong>Moliya sektori uchun yopiq katalog kerakmi?</strong> Talabingizga mos variantlarni tayyorlab beramiz.</p>
 <h2>Bog‘liq maqolalar</h2>
-<ul><li><a href="/uz/blog/mijoz-hamkorlar-uchun-sovgalar-vip">Mijozlar va hamkorlar uchun VIP sovg‘alar</a></li><li><a href="/uz/blog/logotip-maketi-tayyorlash">Logotip maketini tayyorlash</a></li><li><a href="/uz/blog/merch-dlya-it-kompaniy-tashkent">IT kompaniyalar uchun merch</a></li><li><a href="/uz/blog/chasy-s-logotipom-korporativnye-podarki-tashkent">Logotipli soatlar</a></li><li><a href="/uz/blog/podarki-na-korporativnye-sobytiya-tashkent">Korporativ tadbir sovg‘alari</a></li><li><a href="/uz/blog/podarki-dlya-horeca-i-restoranov-tashkent">HoReCa yechimlari</a></li></ul>`},
+<ul><li><a href="/uz/blog/mijoz-hamkorlar-uchun-sovgalar-vip">Mijozlar va hamkorlar uchun VIP sovg‘alar</a></li><li><a href="/uz/blog/logotip-maketi-tayyorlash">Logotip maketini tayyorlash</a></li><li><a href="/uz/blog/merch-dlya-it-kompaniy-tashkent">IT kompaniyalar uchun merch</a></li><li><a href="/uz/blog/chasy-s-logotipom-korporativnye-podarki-tashkent">Logotipli soatlar</a></li><li><a href="/uz/blog/podarki-na-korporativnye-sobytiya-tashkent">Korporativ tadbir sovg‘alari</a></li><li><a href="/uz/blog/podarki-dlya-horeca-i-restoranov-tashkent">HoReCa uchun sovg‘alar</a></li></ul>`},
     {
       slug: "chasy-s-logotipom-korporativnye-podarki-tashkent",
       title: "Toshkentda buyurtma asosida logotipli soatlar: premium sovg'a",
@@ -898,7 +990,7 @@ export const blogPosts = {
 <ol><li>Aniq maket va oldindan vizual ko‘rinish</li><li>Maqsadli auditoriyaga mos model tanlash</li><li>Gravyura va qadoq sifatini yakuniy tekshiruv</li></ol>
 <p><strong>Soat modellari katalogi kerakmi?</strong> Sizga mos personalizatsiya variantlarini tayyorlaymiz.</p>
 <h2>Bog‘liq maqolalar</h2>
-<ul><li><a href="/uz/blog/mijoz-hamkorlar-uchun-sovgalar-vip">Mijoz va hamkorlar uchun VIP sovg‘alar</a></li><li><a href="/uz/blog/xodimlar-uchun-sovgalar-hr-qollanma">Xodimlarni mukofotlash sovg‘alari</a></li><li><a href="/uz/blog/merch-dlya-it-kompaniy-tashkent">IT kompaniyalar uchun merch</a></li><li><a href="/uz/blog/podarki-dlya-bankov-i-finteha-tashkent">Banklar va fintex uchun sovg‘alar</a></li><li><a href="/uz/blog/podarki-na-korporativnye-sobytiya-tashkent">Korporativ tadbirlar sovg‘alari</a></li><li><a href="/uz/blog/podarki-dlya-horeca-i-restoranov-tashkent">HoReCa sovg‘a yechimlari</a></li></ul>`},
+<ul><li><a href="/uz/blog/mijoz-hamkorlar-uchun-sovgalar-vip">Mijoz va hamkorlar uchun VIP sovg‘alar</a></li><li><a href="/uz/blog/xodimlar-uchun-sovgalar-hr-qollanma">Xodimlarni mukofotlash sovg‘alari</a></li><li><a href="/uz/blog/merch-dlya-it-kompaniy-tashkent">IT kompaniyalar merchi</a></li><li><a href="/uz/blog/podarki-dlya-bankov-i-finteha-tashkent">Banklar va fintex uchun sovg‘alar</a></li><li><a href="/uz/blog/chasy-s-logotipom-korporativnye-podarki-tashkent">Logotipli premium soatlar</a></li><li><a href="/uz/blog/podarki-na-korporativnye-sobytiya-tashkent">Korporativ tadbir sovg‘alari</a></li></ul>`},
     {
       slug: "podarki-na-korporativnye-sobytiya-tashkent",
       title: "Toshkentda korporativ tadbirlar uchun sovg'alar: g'oyalar, brendlash",
@@ -914,7 +1006,7 @@ export const blogPosts = {
 <ol><li>Ommaviy tadbirlar uchun amaliy to‘plamlar</li><li>Yubiley va mukofotlash uchun premium pozitsiyalar</li><li>Onboarding uchun welcome formatlar</li></ol>
 <p><strong>Tadbiringiz uchun chek-list kerakmi?</strong> Maqsad va byudjetga mos variantlarni tayyorlaymiz.</p>
 <h2>Bog‘liq maqolalar</h2>
-<ul><li><a href="/uz/blog/chasy-s-logotipom-korporativnye-podarki-tashkent">Yubiley uchun logotipli soatlar</a></li><li><a href="/uz/blog/xodimlar-uchun-sovgalar-hr-qollanma">Xodimlar uchun sovg‘alar</a></li><li><a href="/uz/blog/yangi-xodimlar-uchun-welcome-pack">Yangi xodimlar uchun welcome pack</a></li><li><a href="/uz/blog/merch-dlya-it-kompaniy-tashkent">IT kompaniyalar merchi</a></li><li><a href="/uz/blog/podarki-dlya-bankov-i-finteha-tashkent">Banklar va fintex sovg‘alari</a></li><li><a href="/uz/blog/podarki-dlya-horeca-i-restoranov-tashkent">HoReCa uchun sovg‘alar</a></li></ul>`},
+<ul><li><a href="/uz/blog/chasy-s-logotipom-korporativnye-podarki-tashkent">Yubiley uchun logotipli soatlar</a></li><li><a href="/uz/blog/xodimlar-uchun-sovgalar-hr-qollanma">Xodimlarni mukofotlash sovg‘alari</a></li><li><a href="/uz/blog/yangi-xodimlar-uchun-welcome-pack">Yangi xodimlar uchun welcome pack</a></li><li><a href="/uz/blog/merch-dlya-it-kompaniy-tashkent">IT kompaniyalar merchi</a></li><li><a href="/uz/blog/podarki-dlya-bankov-i-finteha-tashkent">Banklar va fintex uchun sovg‘alar</a></li><li><a href="/uz/blog/podarki-dlya-horeca-i-restoranov-tashkent">HoReCa uchun sovg‘alar</a></li></ul>`},
     {
       slug: "podarki-dlya-horeca-i-restoranov-tashkent",
       title: "Toshkentda HoReCa uchun sovg'alar va merch: restoranlarni brendlash",
@@ -939,7 +1031,6 @@ const WORDS_PER_MINUTE = 200;
 function toPlainText(value) {
   return String(value || '')
     .replace(/<[^>]+>/g, ' ')
-    .replace(/\s+/g, ' ')
     .trim();
 }
 

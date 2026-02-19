@@ -1,0 +1,191 @@
+﻿{
+    "summary":  {
+                    "TOTAL":  68,
+                    "S200":  10,
+                    "S3XX":  58,
+                    "S4XX":  0,
+                    "S5XX":  0
+                },
+    "non200":  [
+                   {
+                       "url":  "https://graver-studio.uz/ru",
+                       "status":  308,
+                       "final":  "https://graver-studio.uz/ru",
+                       "ok":  false
+                   },
+                   {
+                       "url":  "https://graver-studio.uz/ru/process",
+                       "status":  308,
+                       "final":  "https://graver-studio.uz/ru/process",
+                       "ok":  false
+                   },
+                   {
+                       "url":  "https://graver-studio.uz/ru/guarantees",
+                       "status":  308,
+                       "final":  "https://graver-studio.uz/ru/guarantees",
+                       "ok":  false
+                   },
+                   {
+                       "url":  "https://graver-studio.uz/ru/contacts",
+                       "status":  308,
+                       "final":  "https://graver-studio.uz/ru/contacts",
+                       "ok":  false
+                   },
+                   {
+                       "url":  "https://graver-studio.uz/ru/catalog-products",
+                       "status":  308,
+                       "final":  "https://graver-studio.uz/ru/catalog-products",
+                       "ok":  false
+                   },
+                   {
+                       "url":  "https://graver-studio.uz/ru/watches-with-logo",
+                       "status":  308,
+                       "final":  "https://graver-studio.uz/ru/watches-with-logo",
+                       "ok":  false
+                   },
+                   {
+                       "url":  "https://graver-studio.uz/ru/products/lighters",
+                       "status":  308,
+                       "final":  "https://graver-studio.uz/ru/products/lighters",
+                       "ok":  false
+                   },
+                   {
+                       "url":  "https://graver-studio.uz/ru/engraved-gifts",
+                       "status":  308,
+                       "final":  "https://graver-studio.uz/ru/engraved-gifts",
+                       "ok":  false
+                   },
+                   {
+                       "url":  "https://graver-studio.uz/uz",
+                       "status":  308,
+                       "final":  "https://graver-studio.uz/uz",
+                       "ok":  false
+                   },
+                   {
+                       "url":  "https://graver-studio.uz/uz/process",
+                       "status":  308,
+                       "final":  "https://graver-studio.uz/uz/process",
+                       "ok":  false
+                   },
+                   {
+                       "url":  "https://graver-studio.uz/uz/guarantees",
+                       "status":  308,
+                       "final":  "https://graver-studio.uz/uz/guarantees",
+                       "ok":  false
+                   },
+                   {
+                       "url":  "https://graver-studio.uz/uz/contacts",
+                       "status":  308,
+                       "final":  "https://graver-studio.uz/uz/contacts",
+                       "ok":  false
+                   },
+                   {
+                       "url":  "https://graver-studio.uz/uz/mahsulotlar-katalogi",
+                       "status":  308,
+                       "final":  "https://graver-studio.uz/uz/mahsulotlar-katalogi",
+                       "ok":  false
+                   },
+                   {
+                       "url":  "https://graver-studio.uz/uz/logotipli-soat",
+                       "status":  308,
+                       "final":  "https://graver-studio.uz/uz/logotipli-soat",
+                       "ok":  false
+                   },
+                   {
+                       "url":  "https://graver-studio.uz/uz/products/lighters",
+                       "status":  308,
+                       "final":  "https://graver-studio.uz/uz/products/lighters",
+                       "ok":  false
+                   },
+                   {
+                       "url":  "https://graver-studio.uz/uz/gravirovkali-sovgalar",
+                       "status":  308,
+                       "final":  "https://graver-studio.uz/uz/gravirovkali-sovgalar",
+                       "ok":  false
+                   },
+                   {
+                       "url":  "https://graver-studio.uz/ru/blog",
+                       "status":  308,
+                       "final":  "https://graver-studio.uz/ru/blog",
+                       "ok":  false
+                   },
+                   {
+                       "url":  "https://graver-studio.uz/uz/blog",
+                       "status":  308,
+                       "final":  "https://graver-studio.uz/uz/blog",
+                       "ok":  false
+                   },
+                   {
+                       "url":  "https://graver-studio.uz/ru/blog/kak-vybrat-korporativnyj-podarok",
+                       "status":  308,
+                       "final":  "https://graver-studio.uz/ru/blog/kak-vybrat-korporativnyj-podarok",
+                       "ok":  false
+                   },
+                   {
+                       "url":  "https://graver-studio.uz/ru/blog/lazernaya-gravirovka-podarkov",
+                       "status":  308,
+                       "final":  "https://graver-studio.uz/ru/blog/lazernaya-gravirovka-podarkov",
+                       "ok":  false
+                   },
+                   {
+                       "url":  "https://graver-studio.uz/ru/blog/podarochnye-nabory-s-logotipom",
+                       "status":  308,
+                       "final":  "https://graver-studio.uz/ru/blog/podarochnye-nabory-s-logotipom",
+                       "ok":  false
+                   },
+                   {
+                       "url":  "https://graver-studio.uz/ru/blog/welcome-pack-dlya-sotrudnikov",
+                       "status":  308,
+                       "final":  "https://graver-studio.uz/ru/blog/welcome-pack-dlya-sotrudnikov",
+                       "ok":  false
+                   },
+                   {
+                       "url":  "https://graver-studio.uz/ru/blog/brendirovanie-suvenirov",
+                       "status":  308,
+                       "final":  "https://graver-studio.uz/ru/blog/brendirovanie-suvenirov",
+                       "ok":  false
+                   },
+                   {
+                       "url":  "https://graver-studio.uz/ru/blog/top-idei-podarkov-na-novyj-god",
+                       "status":  308,
+                       "final":  "https://graver-studio.uz/ru/blog/top-idei-podarkov-na-novyj-god",
+                       "ok":  false
+                   },
+                   {
+                       "url":  "https://graver-studio.uz/ru/blog/kak-podgotovit-maket-logotipa",
+                       "status":  308,
+                       "final":  "https://graver-studio.uz/ru/blog/kak-podgotovit-maket-logotipa",
+                       "ok":  false
+                   },
+                   {
+                       "url":  "https://graver-studio.uz/ru/blog/podarki-na-navruz",
+                       "status":  308,
+                       "final":  "https://graver-studio.uz/ru/blog/podarki-na-navruz",
+                       "ok":  false
+                   },
+                   {
+                       "url":  "https://graver-studio.uz/ru/blog/ekonomiya-na-korporativnyh-suvenirax",
+                       "status":  308,
+                       "final":  "https://graver-studio.uz/ru/blog/ekonomiya-na-korporativnyh-suvenirax",
+                       "ok":  false
+                   },
+                   {
+                       "url":  "https://graver-studio.uz/ru/blog/chek-list-zakupshchika-podarkov",
+                       "status":  308,
+                       "final":  "https://graver-studio.uz/ru/blog/chek-list-zakupshchika-podarkov",
+                       "ok":  false
+                   },
+                   {
+                       "url":  "https://graver-studio.uz/ru/blog/korporativnye-podarki-s-logotipom-polnyy-gayd",
+                       "status":  308,
+                       "final":  "https://graver-studio.uz/ru/blog/korporativnye-podarki-s-logotipom-polnyy-gayd",
+                       "ok":  false
+                   },
+                   {
+                       "url":  "https://graver-studio.uz/ru/blog/korporativnye-podarki-s-gravirovkoy-metody",
+                       "status":  308,
+                       "final":  "https://graver-studio.uz/ru/blog/korporativnye-podarki-s-gravirovkoy-metody",
+                       "ok":  false
+                   }
+               ]
+}

@@ -1,0 +1,10 @@
+﻿{
+    "url":  "https://graver-studio.uz/ru/blog/",
+    "canonicalTag":  "\u003clink href=\"https://graver-studio.uz/ru/blog\" rel=\"canonical\" data-seo-blog-index-meta=\"true\"\u003e",
+    "alternateTags":  [
+                          "\u003clink href=\"https://graver-studio.uz/ru/blog\" rel=\"alternate\" data-seo-blog-index-meta=\"true\" hreflang=\"ru-RU\"\u003e",
+                          "\u003clink href=\"https://graver-studio.uz/uz/blog\" rel=\"alternate\" data-seo-blog-index-meta=\"true\" hreflang=\"uz-UZ\"\u003e",
+                          "\u003clink href=\"https://graver-studio.uz/ru/blog\" rel=\"alternate\" data-seo-blog-index-meta=\"true\" hreflang=\"x-default\"\u003e"
+                      ],
+    "robotsTag":  "\u003cmeta content=\"index, follow\" data-seo-blog-index-meta=\"true\" name=\"robots\"\u003e"
+}

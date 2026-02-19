@@ -5,8 +5,7 @@ import { Phone, Send, Check, Zap, Users, Award, Package, Clock, MessageCircle, M
 import { useI18n, SUPPORTED_LOCALES } from './i18n';
 import SEOHead from './components/SEOHead';
 import LanguageSwitcher from './components/LanguageSwitcher';
-import { useMetaPageView } from './analytics/useMetaPageView';
-import { track } from './analytics/metaPixel';
+// ...existing code...
 
 const HomePortfolioSection = lazy(() => import('./components/home/HomePortfolioSection'));
 const HomeBlogPreviewSection = lazy(() => import('./components/home/HomeBlogPreviewSection'));
@@ -67,7 +66,16 @@ function App() {
   const location = useLocation();
   const { locale } = useParams();
   const { t, setLocale } = useI18n();
-  useMetaPageView();
+  // SPA PageView: отправлять fbq('track', 'PageView') при смене маршрута
+  // Guard по pathname+search для PageView
+  const lastPath = useRef(`${location.pathname}${location.search}`);
+  useEffect(() => {
+    const current = `${location.pathname}${location.search}`;
+    if (typeof window.fbq === 'function' && lastPath.current !== current) {
+      window.fbq('track', 'PageView');
+      lastPath.current = current;
+    }
+  }, [location.pathname, location.search]);
 
   // Set html lang attribute based on locale
   useEffect(() => {
@@ -95,59 +103,15 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    // Prevent double-submit
-    if (isSubmitting) {
-      console.log('⚠️ Already submitting, ignoring');
-      return;
-    }
-    
-    console.log('=== FORM SUBMIT START ===');
-    console.log('Backend URL:', BACKEND_URL);
-    console.log('Form data:', { ...formData, website: '[hidden]' });
-    
-    // Anti-spam: cooldown 10 seconds
+    if (isSubmitting) return;
     const now = Date.now();
-    if (now - lastSubmitTime < 10000) {
-      const remainingTime = Math.ceil((10000 - (now - lastSubmitTime)) / 1000);
-      alert(`Пожалуйста, подождите ${remainingTime} секунд перед повторной отправкой.`);
-      console.log('⏱️ Cooldown active');
-      return;
-    }
-    
-    // Honeypot check
-    if (formData.website) {
-      console.log('🤖 Bot detected - silent fail');
-      return; // Silent fail for bots
-    }
-    
-    // Basic validation
-    if (!formData.name || formData.name.trim().length < 2) {
-      alert('Пожалуйста, введите имя (минимум 2 символа)');
-      console.log('❌ Validation failed: name');
-      return;
-    }
-    
-    if (!formData.phone || formData.phone.length < 17) {
-      alert('Пожалуйста, введите полный номер телефона');
-      console.log('❌ Validation failed: phone');
-      return;
-    }
-    
+    if (now - lastSubmitTime < 10000) return;
+    if (formData.website) return;
+    if (!formData.name || formData.name.trim().length < 2) return;
+    if (!formData.phone || formData.phone.length < 17) return;
     setIsSubmitting(true);
-    console.log('📤 Sending request...');
-    
-    // Track form step 2 complete (non-blocking)
     try {
-      if (window.gtag) {
-        window.gtag('event', 'form_step_2_complete', { event_category: 'form' });
-      }
-    } catch (e) { /* ignore analytics errors */ }
-    
-    try {
-      // Build description from form data
       const description = `Тип: ${formData.orderType || 'Не указан'}\nТираж: ${formData.quantity || 'Не указан'}\n${formData.comment ? 'Комментарий: ' + formData.comment : ''}`.trim();
-      
       const payload = {
         name: formData.name,
         phone: formData.phone,
@@ -155,13 +119,8 @@ function App() {
         quantity: formData.quantity || '',
         description: description
       };
-      
-      console.log('Payload:', payload);
-      
-      // Create AbortController for timeout
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 15000); // 15s timeout
-      
+      const timeoutId = setTimeout(() => controller.abort(), 15000);
       const response = await fetch(`${BACKEND_URL}/api/leads`, {
         method: 'POST',
         headers: {
@@ -171,58 +130,20 @@ function App() {
         body: JSON.stringify(payload),
         signal: controller.signal
       });
-      
       clearTimeout(timeoutId);
-      console.log('Response status:', response.status);
-      
-      if (!response.ok) {
-        let errorMessage = 'Ошибка при отправке заявки';
-        try {
-          const errorData = await response.json();
-          console.log('Error data:', errorData);
-          errorMessage = errorData.detail || errorMessage;
-        } catch (e) {
-          console.log('Could not parse error JSON');
-        }
-        throw new Error(errorMessage);
-      }
-      
+      if (!response.ok) throw new Error('Ошибка при отправке заявки');
       const result = await response.json();
-      console.log('✅ Success! Lead ID:', result.id);
-      
       setLastSubmitTime(now);
-      
-      // Track lead success (Meta Pixel Lead event)
-      try {
-        track('Lead', { content_name: 'Lead Form' });
-      } catch (e) { /* ignore analytics errors */ }
-      try {
-        if (window.__trackLeadSuccess) {
-          window.__trackLeadSuccess();
-        }
-      } catch (e) { /* ignore analytics errors */ }
-      
-      // Redirect to thanks page with locale - use assign for better compatibility
-      const targetUrl = `/${locale || 'ru'}/thanks`;
-      console.log('🔄 Redirecting to:', targetUrl);
-      
-      // Small delay to ensure analytics fires
-      setTimeout(() => {
-        window.location.assign(targetUrl);
-      }, 100);
-      
-    } catch (error) {
-      console.error('❌ Error:', error);
-      setIsSubmitting(false);
-      
-      let errorMsg = 'Произошла ошибка при отправке заявки';
-      if (error.name === 'AbortError') {
-        errorMsg = 'Превышено время ожидания. Попробуйте ещё раз.';
-      } else if (error.message) {
-        errorMsg = error.message;
+      // Lead event строго после успеха, с задержкой перед редиректом
+      if (typeof window.fbq === 'function') {
+        window.fbq('track', 'Lead');
       }
-      
-      alert(`${errorMsg}\n\nПожалуйста, позвоните нам или напишите в Telegram: https://t.me/GraverAdm`);
+      await new Promise(r => setTimeout(r, 250));
+      const targetUrl = `/${locale || 'ru'}/thanks`;
+      window.location.assign(targetUrl);
+    } catch (error) {
+      setIsSubmitting(false);
+      alert('Произошла ошибка при отправке заявки. Пожалуйста, позвоните нам или напишите в Telegram: https://t.me/GraverAdm');
     }
   };
 

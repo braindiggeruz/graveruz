@@ -1,0 +1,172 @@
+/* 
+ * BlogCard Additional Styles
+ * Дополнительные стили для улучшенных карточек блога
+ * 
+ * Эти стили уже включены в Tailwind CSS классы компонента BlogCard,
+ * но здесь представлены для справки и возможной кастомизации
+ */
+
+/* Line Clamp Utility (если не поддерживается в вашей версии Tailwind) */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Hover Effects для карточек */
+.blog-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(20, 184, 166, 0.1),
+              0 10px 10px -5px rgba(20, 184, 166, 0.04);
+}
+
+/* Image Zoom Effect */
+.blog-card-image {
+  transition: transform 0.3s ease-in-out;
+}
+
+.blog-card:hover .blog-card-image {
+  transform: scale(1.05);
+}
+
+/* Category Badge Animation */
+.blog-card-category {
+  transition: all 0.2s ease;
+}
+
+.blog-card:hover .blog-card-category {
+  transform: scale(1.05);
+  box-shadow: 0 4px 6px -1px rgba(20, 184, 166, 0.3);
+}
+
+/* Read More Link Animation */
+.blog-card-read-more {
+  transition: transform 0.2s ease;
+}
+
+.blog-card:hover .blog-card-read-more {
+  transform: translateX(4px);
+}
+
+/* Loading Skeleton для картинок */
+.blog-card-image-skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(31, 41, 55, 1) 0%,
+    rgba(55, 65, 81, 1) 50%,
+    rgba(31, 41, 55, 1) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Responsive Grid для разных экранов */
+@media (min-width: 640px) {
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .blog-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1280px) {
+  .blog-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Pagination Styles */
+.pagination-button {
+  transition: all 0.2s ease;
+}
+
+.pagination-button:hover:not(:disabled) {
+  transform: scale(1.05);
+  border-color: rgba(20, 184, 166, 1);
+}
+
+.pagination-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination-button-active {
+  background: linear-gradient(135deg, #14b8a6 0%, #06b6d4 100%);
+  box-shadow: 0 4px 6px -1px rgba(20, 184, 166, 0.3);
+}
+
+/* Search Bar Styles */
+.blog-search-input {
+  transition: all 0.3s ease;
+}
+
+.blog-search-input:focus {
+  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.1);
+}
+
+/* Featured Articles Section */
+.featured-section {
+  background: linear-gradient(
+    135deg,
+    rgba(20, 184, 166, 0.1) 0%,
+    rgba(6, 182, 212, 0.1) 100%
+  );
+  border: 1px solid rgba(20, 184, 166, 0.3);
+}
+
+/* Category Counter Badge */
+.category-count {
+  background: rgba(31, 41, 55, 1);
+  backdrop-filter: blur(8px);
+}
+
+/* Smooth Scroll Behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus Styles для доступности */
+.blog-card:focus-visible {
+  outline: 2px solid rgba(20, 184, 166, 1);
+  outline-offset: 2px;
+}
+
+/* Dark Mode Optimization (если нужно) */
+@media (prefers-color-scheme: dark) {
+  .blog-card {
+    background: rgba(17, 24, 39, 1);
+  }
+}
+
+/* Print Styles */
+@media print {
+  .blog-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}

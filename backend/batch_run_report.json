@@ -1,0 +1,111 @@
+﻿{
+    "startedAt":  "2026-02-16T22:19:58",
+    "health":  {
+                   "ok":  true,
+                   "timestamp":  "2026-02-16T17:19:59.219471+00:00",
+                   "baseUrl":  "https://graver-studio.uz",
+                   "sitemap":  {
+                                   "path":  "F:\\projects\\graveruz\\frontend\\public\\sitemap.xml",
+                                   "exists":  true,
+                                   "urlCount":  68,
+                                   "error":  null
+                               },
+                   "google":  {
+                                  "serviceAccountPath":  "F:\\projects\\graveruz\\backend\\config\\google-service-account.json",
+                                  "serviceAccountExists":  true,
+                                  "clientReady":  true,
+                                  "error":  null,
+                                  "maxUrlsPerRun":  20,
+                                  "nextBatchSize":  10
+                              },
+                   "bing":  {
+                                "apiKeyConfigured":  true,
+                                "apiKeyMasked":  "31c0...c6d3",
+                                "indexNowEndpoint":  "https://www.bing.com/indexnow",
+                                "keyFile":  {
+                                                "url":  "https://graver-studio.uz/indexnow-key.txt",
+                                                "reachable":  true,
+                                                "statusCode":  200,
+                                                "matchesApiKey":  true,
+                                                "error":  null
+                                            }
+                            },
+                   "warnings":  [
+
+                                ]
+               },
+    "before":  {
+                   "cursor":  40,
+                   "cycles":  4,
+                   "totalPosts":  68,
+                   "progress":  "40/68 (58%)",
+                   "nextBatchStart":  40,
+                   "nextBatchEnd":  50,
+                   "batchSize":  10,
+                   "remaining":  28,
+                   "cycleCompleted":  false
+               },
+    "steps":  [
+                  {
+                      "step":  1,
+                      "googleSuccess":  0,
+                      "googleFailed":  1,
+                      "googleProcessed":  10,
+                      "googleRemaining":  0,
+                      "bingStatus":  403,
+                      "progress":  "50/68 (73%)",
+                      "cycleCompleted":  false,
+                      "cursor":  50,
+                      "cycles":  4
+                  },
+                  {
+                      "step":  2,
+                      "googleSuccess":  0,
+                      "googleFailed":  1,
+                      "googleProcessed":  10,
+                      "googleRemaining":  0,
+                      "bingStatus":  403,
+                      "progress":  "60/68 (88%)",
+                      "cycleCompleted":  false,
+                      "cursor":  60,
+                      "cycles":  4
+                  },
+                  {
+                      "step":  3,
+                      "googleSuccess":  0,
+                      "googleFailed":  1,
+                      "googleProcessed":  10,
+                      "googleRemaining":  0,
+                      "bingStatus":  403,
+                      "progress":  "60/68 (88%)",
+                      "cycleCompleted":  false,
+                      "cursor":  60,
+                      "cycles":  4
+                  },
+                  {
+                      "step":  4,
+                      "googleSuccess":  0,
+                      "googleFailed":  8,
+                      "googleProcessed":  8,
+                      "googleRemaining":  0,
+                      "bingStatus":  403,
+                      "progress":  "0/68 (0%)",
+                      "cycleCompleted":  true,
+                      "cursor":  0,
+                      "cycles":  5
+                  }
+              ],
+    "after":  {
+                  "cursor":  0,
+                  "cycles":  5,
+                  "totalPosts":  68,
+                  "progress":  "0/68 (0%)",
+                  "nextBatchStart":  0,
+                  "nextBatchEnd":  10,
+                  "batchSize":  10,
+                  "remaining":  68,
+                  "cycleCompleted":  true
+              },
+    "completed":  true,
+    "finishedAt":  "2026-02-16T22:29:28"
+}

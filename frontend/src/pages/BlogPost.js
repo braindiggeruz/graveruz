@@ -141,7 +141,8 @@ function BlogPostPage() {
   const altLocale = isRu ? 'uz' : 'ru';
   const altUrl = altSlug ? BASE_URL + '/' + altLocale + '/blog/' + altSlug + '/' : null;
   const ruUrl = isRu ? canonicalUrl : altUrl;
-  const uzUrl = isRu ? altUrl : canonicalUrl;
+  // Если нет altSlug, не рендерим hreflang для UZ (uzUrl=null)
+  const uzUrl = isRu ? (altUrl || null) : canonicalUrl;
 
   // Determine title: use override if exists, otherwise default
   const pageTitle = (seoOverride && (seoOverride.title || seoOverride.titleTag)) || (post ? post.title + ' — Graver.uz' : 'Graver.uz');
@@ -426,7 +427,10 @@ function BlogPostPage() {
       uzUrl: uzUrl,
       locale: locale,
       ogImage: pageOgImage,
-      ogType: 'article'
+      ogType: 'article',
+      isBlogPost: true,
+      faq: post && Array.isArray(post.faq) ? post.faq : [],
+      datePublished: post && post.date ? post.date : undefined
     }),
     React.createElement('header', { className: 'fixed top-0 left-0 right-0 bg-black/95 backdrop-blur-sm z-50 border-b border-gray-800' },
       React.createElement('div', { className: 'max-w-7xl mx-auto px-4 sm:px-6 lg:px-8' },

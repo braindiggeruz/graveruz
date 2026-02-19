@@ -1,0 +1,11 @@
+﻿{
+    "cursor":  10,
+    "cycles":  4,
+    "totalPosts":  68,
+    "progress":  "10/68 (14%)",
+    "nextBatchStart":  10,
+    "nextBatchEnd":  20,
+    "batchSize":  10,
+    "remaining":  58,
+    "cycleCompleted":  false
+}
