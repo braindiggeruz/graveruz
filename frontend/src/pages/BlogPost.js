@@ -6,7 +6,7 @@ import { BASE_URL } from '../config/seo';
 import { getPostBySlug, getPostReadTimeMinutes, getRelatedPostsWeighted } from '../data/blogPosts';
 import enhanceTocAndAnchors from './enhanceTocAndAnchors';
 import { getSeoOverride, getFaqData } from '../data/blogSeoOverrides';
-import { getBlogImageForSlug, getBlogOgImageForSlug, getResponsiveBlogImageForSlug } from '../data/blogImages';
+import { getBlogImageForSlug, getBlogOgImageForSlug, getResponsiveBlogImageForSlug, defaultBlogCover } from '../data/blogImages';
 import { getMappedAlternateSlug } from '../config/blogSlugMap';
 
 function normalizeBlogHref(href, locale) {
@@ -139,6 +139,8 @@ function BlogPostPage() {
 
   // --- DOM fallback for TOC: if ul.toc is empty, fill from headings ---
   const postSlug = post?.slug || "";
+  // Fix for ESLint: extract dependency to variable
+  const tocEffectDeps = postSlug;
   useEffect(() => {
     if (typeof window === "undefined") return;
     if (!postSlug) return;
@@ -162,7 +164,7 @@ function BlogPostPage() {
       li.appendChild(a);
       toc.appendChild(li);
     });
-  }, [postSlug]);
+  }, [tocEffectDeps]);
 
   const canonicalUrl = post ? BASE_URL + '/' + locale + '/blog/' + slug + '/' : '';
   const altSlug = slug ? getMappedAlternateSlug(locale, slug) : null;
@@ -176,7 +178,11 @@ function BlogPostPage() {
   const pageTitle = (seoOverride && (seoOverride.title || seoOverride.titleTag)) || (post ? post.title + ' — Graver.uz' : 'Graver.uz');
   const pageDescription = (seoOverride && (seoOverride.description || seoOverride.ogDescription)) || (post ? post.description : '');
   const pageOgImage = post ? BASE_URL + getBlogOgImageForSlug(slug) : BASE_URL + '/og-blog.png';
-  const heroImage = getResponsiveBlogImageForSlug(slug);
+  let heroImage = getResponsiveBlogImageForSlug(slug);
+  // Fallback to default cover if missing
+  if (!heroImage.fallbackSrc || heroImage.fallbackSrc === slug || heroImage.fallbackSrc === '') {
+    heroImage = getResponsiveBlogImageForSlug(defaultBlogCover);
+  }
 
   useEffect(function addSeoTags() {
     if (!post) return;

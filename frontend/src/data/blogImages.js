@@ -1,5 +1,6 @@
+const defaultBlogCover = '/images/blog/default-og.jpg';
 const blogCardImageBySlug = {
-    'polniy-gid-po-korporativnym-podarkam': '/images/blog/polniy-gid-po-korporativnym-podarkam.jfif',
+  'polniy-gid-po-korporativnym-podarkam': '/images/blog/article-1-og.jpg',
   'brendirovanie-suvenirov': '/images/blog/souvenir-branding-ru.png',
   'brendirovannye-zazhigalki-i-chasy-s-logotipom': '/images/blog/article-16.png',
   'chasy-s-logotipom-korporativnye-podarki-tashkent': '/images/blog/corporate-gifts-roi-article.png',
@@ -34,10 +35,6 @@ const blogCardImageBySlug = {
   'podarki-klientam-partneram-vip': '/images/blog/vip-gifts-article.png',
   'podarki-na-korporativnye-sobytiya-tashkent': '/images/blog/creative-gift-packaging-ideas.png',
   'podarki-na-navruz': '/images/blog/article-11.png',
-  'podarki-sotrudnikam-hr-gayd': '/images/blog/corporate-gifts-hr-guide.png',
-  'podarochnye-nabory-s-logotipom': '/images/blog/article-2.png',
-  'suvenir-brendlash': '/images/blog/suvenirlarni-brendlash.png',
-  'suvenir-byudjetini-tejash': '/images/blog/korporativ-suvenirlarni-tejash.png',
   'top-idei-podarkov-na-novyj-god': '/images/blog/article-7.png',
   'welcome-pack-dlya-sotrudnikov': '/images/blog/article-4.png',
   'welcome-pack-novym-sotrudnikam': '/images/blog/article-6.png',
@@ -45,8 +42,13 @@ const blogCardImageBySlug = {
   'xaridor-chek-listi-b2b': '/images/blog/article-20.png',
   'xodimlar-uchun-sovgalar-hr-qollanma': '/images/blog/xodimlarga-sovg-alar-hr-qollanma-uz.png',
   'yangi-xodimlar-uchun-welcome-pack': '/images/blog/personalized-gifts-uz.png',
-  'yangi-yil-sovga-goyalari': '/images/blog/new-year-corporate-gifts-uz.png'
+    'yangi-yil-sovga-goyalari': '/images/blog/new-year-corporate-gifts-uz.png',
+    'podarki-sotrudnikam-hr-gayd': defaultBlogCover,
+    'podarochnye-nabory-s-logotipom': defaultBlogCover,
+    'suvenir-byudjetini-tejash': defaultBlogCover,
+    'suvenir-brendlash': defaultBlogCover,
 };
+export const blogImages = blogCardImageBySlug;
 
 const blogCardImages = Array.from(new Set(Object.values(blogCardImageBySlug)));
 const responsiveWidths = [480, 768, 1200];
@@ -55,7 +57,6 @@ function toVariantPath(basePath, width, format) {
   if (typeof basePath !== 'string' || !basePath) {
     return basePath;
   }
-
   return basePath.replace(/\.png$/i, '-' + width + '.' + format);
 }
 
@@ -63,7 +64,6 @@ function toSrcSet(basePath, format) {
   if (typeof basePath !== 'string' || !basePath || !/\.png$/i.test(basePath)) {
     return '';
   }
-
   return responsiveWidths
     .map((width) => toVariantPath(basePath, width, format) + ' ' + width + 'w')
     .join(', ');
@@ -73,7 +73,6 @@ function toOgPath(basePath) {
   if (typeof basePath !== 'string' || !basePath || !/\.png$/i.test(basePath)) {
     return basePath;
   }
-
   return basePath.replace(/\.png$/i, '-og.jpg');
 }
 
@@ -87,17 +86,18 @@ function getStableIndexFromSlug(slug) {
 
 export function getBlogImageForSlug(slug) {
   if (!slug || !blogCardImages.length) {
-    return blogCardImages[0];
+    return defaultBlogCover;
   }
   if (blogCardImageBySlug[slug]) {
     return blogCardImageBySlug[slug];
   }
-  return blogCardImages[getStableIndexFromSlug(slug)];
+  return defaultBlogCover;
 }
+
+export { defaultBlogCover };
 
 export function getResponsiveBlogImageForSlug(slug) {
   const fallbackSrc = getBlogImageForSlug(slug);
-
   return {
     fallbackSrc,
     avifSrcSet: toSrcSet(fallbackSrc, 'avif'),
@@ -118,10 +118,8 @@ export function getBlogImageMappingCoverage(slugs) {
   const uniqueSlugs = Array.isArray(slugs)
     ? Array.from(new Set(slugs.filter(Boolean)))
     : [];
-
   const missing = uniqueSlugs.filter((slug) => !blogCardImageBySlug[slug]);
   const mapped = uniqueSlugs.length - missing.length;
-
   return {
     total: uniqueSlugs.length,
     mapped,
@@ -129,3 +127,4 @@ export function getBlogImageMappingCoverage(slugs) {
     coverage: uniqueSlugs.length ? mapped / uniqueSlugs.length : 1,
   };
 }
+
