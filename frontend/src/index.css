@@ -1,3 +1,25 @@
+/* TOC styles */
+.toc {
+    margin: 12px 0 20px;
+    padding-left: 20px;
+    list-style: disc;
+}
+.toc li {
+    margin: 6px 0;
+}
+.toc a {
+    text-decoration: underline;
+    color: #14b8a6;
+}
+.toc a:hover {
+    opacity: 0.9;
+}
+
+/* Anchor scroll offset for blog content */
+.blog-post-content h2,
+.blog-post-content h3 {
+    scroll-margin-top: 90px;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
