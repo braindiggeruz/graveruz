@@ -4,6 +4,7 @@ import SeoMeta from '../components/SeoMeta';
 import { ArrowLeft, Calendar, Tag, Lightbulb, BookOpen, HelpCircle, Clock } from 'lucide-react';
 import { BASE_URL } from '../config/seo';
 import { getPostBySlug, getPostReadTimeMinutes, getRelatedPostsWeighted } from '../data/blogPosts';
+import enhanceTocAndAnchors from './enhanceTocAndAnchors';
 import { getSeoOverride, getFaqData } from '../data/blogSeoOverrides';
 import { getBlogImageForSlug, getBlogOgImageForSlug, getResponsiveBlogImageForSlug } from '../data/blogImages';
 import { getMappedAlternateSlug } from '../config/blogSlugMap';
@@ -373,7 +374,8 @@ function BlogPostPage() {
 
   var contentBody = null;
   if (post && post.contentHtml) {
-    contentBody = React.createElement('div', { dangerouslySetInnerHTML: { __html: normalizeHtmlContent(post.contentHtml, locale) } });
+    const enhancedHtml = enhanceTocAndAnchors(normalizeHtmlContent(post.contentHtml, locale));
+    contentBody = React.createElement('div', { dangerouslySetInnerHTML: { __html: enhancedHtml } });
   } else if (post && post.content) {
     var contentParts = [];
     var lines = post.content.split('\n');
