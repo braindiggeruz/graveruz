@@ -138,12 +138,11 @@ function BlogPostPage() {
   const faqData = (getFaqData(slug) || []).filter(isValidFaqItem);
 
   // --- DOM fallback for TOC: if ul.toc is empty, fill from headings ---
-  const postSlug = post?.slug || "";
-  // Fix for ESLint: extract dependency to variable
-  const tocEffectDeps = postSlug;
+    const tocEffectSlug = post?.slug || "";
+    // Fix for ESLint: extract dependency to variable
   useEffect(() => {
     if (typeof window === "undefined") return;
-    if (!postSlug) return;
+      if (!tocEffectSlug) return;
     const root =
       document.querySelector(".blog-post-content") ||
       document.querySelector(".blog-post-content-inner") ||
@@ -164,7 +163,7 @@ function BlogPostPage() {
       li.appendChild(a);
       toc.appendChild(li);
     });
-  }, [tocEffectDeps]);
+    }, [tocEffectSlug]);
 
   const canonicalUrl = post ? BASE_URL + '/' + locale + '/blog/' + slug + '/' : '';
   const altSlug = slug ? getMappedAlternateSlug(locale, slug) : null;
