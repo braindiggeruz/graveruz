@@ -67,49 +67,85 @@ function App() {
     }
   }, [location.pathname, location.search]);
 
-  // Global Telegram click tracker
+  // Global Telegram CTA tracker (links + buttons, deduped)
   useEffect(() => {
-    // Throttle: prevent duplicate fbq events
-    let lastTracked = 0;
+    function isTelegramUrl(href) {
+      return (
+        typeof href === 'string' &&
+        (/t\.me\//.test(href) || /telegram\.me\//.test(href) || href.startsWith('tg://'))
+      );
+    }
+    function isTelegramText(txt) {
+      if (!txt) return false;
+      const t = txt.toLowerCase();
+      return t.includes('telegram') || t.includes('телеграм') || t.includes('tg');
+    }
+    function isTelegramButton(el) {
+      if (!el) return false;
+      // Check text
+      const txt = (el.innerText || el.textContent || '').toLowerCase();
+      if (isTelegramText(txt)) return true;
+      // Check class/id/aria-label
+      const attrs = [el.className, el.id, el.getAttribute?.('aria-label')].join(' ').toLowerCase();
+      return attrs.includes('telegram') || attrs.includes('tg');
+    }
+    function trackTelegramClick(placement) {
+      if (window.__tgTrackTs && Date.now() - window.__tgTrackTs < 800) return;
+      window.__tgTrackTs = Date.now();
+      if (window.fbq) window.fbq('track', 'Contact', {
+        source: 'telegram',
+        page: window.location.pathname,
+        placement
+      });
+    }
     const handler = (e) => {
-      const now = Date.now();
-      if (now - lastTracked < 500) return;
-      let el = e.target;
-      // Traverse up to find <a>
-      while (el && el.tagName !== 'A') el = el.parentNode;
-      if (!el) return;
-      const href = el.getAttribute('href');
-      if (!href) return;
-      // Telegram link: tg://, https://t.me/
-      if (/^(tg:\/\/|https:\/\/t\.me\/)/.test(href)) {
-        lastTracked = now;
-        if (window.fbq) {
-          window.fbq('track', 'Contact', {
-            source: 'telegram',
-            page: window.location.pathname,
-            placement: 'global'
-          });
+      // Layer 1: link
+      const link = e.target.closest && e.target.closest('a[href]');
+      if (link && isTelegramUrl(link.getAttribute('href'))) {
+        // dedupe
+        trackTelegramClick('global-link');
+        // prevent double fire for non-_blank
+        if (link.target !== '_blank') {
+          e.preventDefault();
+          setTimeout(() => {
+            window.location.href = link.href;
+          }, 120);
         }
+        return;
+      }
+      // Layer 2: button/cta
+      const el = e.target.closest && e.target.closest('button, [role="button"], a, div');
+      if (el && isTelegramButton(el)) {
+        trackTelegramClick('global-btn');
+        // do not block navigation for button scenario
       }
     };
     document.addEventListener('click', handler, true);
     // window.open override
     const origOpen = window.open;
     window.open = function(url, ...args) {
-      if (/^(tg:\/\/|https:\/\/t\.me\/)/.test(url)) {
-        if (window.fbq) {
-          window.fbq('track', 'Contact', {
-            source: 'telegram',
-            page: window.location.pathname,
-            placement: 'global-open'
-          });
-        }
+      if (isTelegramUrl(url)) {
+        trackTelegramClick('global-open');
       }
       return origOpen.apply(this, [url, ...args]);
     };
+    // location.assign/replace override (optional, safe)
+    try {
+      const origAssign = window.location.assign.bind(window.location);
+      window.location.assign = function(url) {
+        if (isTelegramUrl(url)) trackTelegramClick('global-assign');
+        return origAssign(url);
+      };
+      const origReplace = window.location.replace.bind(window.location);
+      window.location.replace = function(url) {
+        if (isTelegramUrl(url)) trackTelegramClick('global-replace');
+        return origReplace(url);
+      };
+    } catch {}
     return () => {
       document.removeEventListener('click', handler, true);
       window.open = origOpen;
+      // skip restoring assign/replace for safety
     };
   }, []);
 
