@@ -150,15 +150,55 @@ function App() {
   }, []);
 
   // Meta Pixel: track Telegram click
-  const handleTelegramClick = (source) => {
-    if (window.fbq) {
-      window.fbq('track', 'Contact', {
-        source: 'telegram',
-        page: window.location.pathname,
-        placement: source
-      });
-    }
-  };
+  // ...existing code...
+  // Global Telegram CTA tracker
+  function isTelegramUrl(url) {
+    return typeof url === 'string' && (url.includes('t.me/') || url.includes('telegram.me/') || url.startsWith('tg://'));
+  }
+  function isTelegramCtaElement(el) {
+    if (!el) return false;
+    const txt = (el.innerText || el.textContent || '').toLowerCase();
+    if (txt.includes('telegram') || txt.includes('телеграм') || txt.includes('tg')) return true;
+    const attrs = [el.className, el.id, el.getAttribute?.('aria-label'), el.getAttribute?.('title')].join(' ').toLowerCase();
+    return attrs.includes('telegram') || attrs.includes('tg');
+  }
+  function trackOnce(placement) {
+    if (!window.fbq) return;
+    if (window.__tgTrackTs && Date.now() - window.__tgTrackTs < 800) return;
+    window.__tgTrackTs = Date.now();
+    window.fbq('track', 'Contact', {
+      source: 'telegram',
+      page: window.location.pathname,
+      placement
+    });
+  }
+  useEffect(() => {
+    const handler = (e) => {
+      const a = e.target.closest?.('a[href]');
+      const clickable = e.target.closest?.('button, [role="button"], a, [data-cta]');
+      if (a && isTelegramUrl(a.href)) {
+        trackOnce('link');
+        if (a.target !== '_blank') {
+          e.preventDefault();
+          setTimeout(() => { window.location.href = a.href; }, 250);
+        }
+        return;
+      }
+      if (clickable && isTelegramCtaElement(clickable)) {
+        trackOnce('cta-text');
+      }
+    };
+    document.addEventListener('click', handler, true);
+    const origOpen = window.open;
+    window.open = function(url, ...args) {
+      if (isTelegramUrl(String(url||''))) trackOnce('window-open');
+      return origOpen.call(window, url, ...args);
+    };
+    return () => {
+      document.removeEventListener('click', handler, true);
+      window.open = origOpen;
+    };
+  }, []);
 
   // Set html lang attribute based on locale
   useEffect(() => {
