@@ -14,12 +14,14 @@ function DeferredSection({ id, placeholderClassName, rootMargin = '320px', child
   const containerRef = useRef(null);
   const [shouldRender, setShouldRender] = useState(false);
 
-  useEffect(() => {
-    if (shouldRender) {
-      return;
-    }
+      {shouldRender ? children : null}
 
-    const triggerRender = () => setShouldRender(true);
+function App() {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { locale } = useParams();
+  const { t, setLocale } = useI18n();
+  // ...existing code...
     if (typeof window === 'undefined') {
       triggerRender();
       return;
@@ -76,6 +78,52 @@ function App() {
       lastPath.current = current;
     }
   }, [location.pathname, location.search]);
+
+  // Global Telegram click tracker
+  useEffect(() => {
+    // Throttle: prevent duplicate fbq events
+    let lastTracked = 0;
+    const handler = (e) => {
+      const now = Date.now();
+      if (now - lastTracked < 500) return;
+      let el = e.target;
+      // Traverse up to find <a>
+      while (el && el.tagName !== 'A') el = el.parentNode;
+      if (!el) return;
+      const href = el.getAttribute('href');
+      if (!href) return;
+      // Telegram link: tg://, https://t.me/
+      if (/^(tg:\/\/|https:\/\/t\.me\/)/.test(href)) {
+        lastTracked = now;
+        if (window.fbq) {
+          window.fbq('track', 'Contact', {
+            source: 'telegram',
+            page: window.location.pathname,
+            placement: 'global'
+          });
+        }
+      }
+    };
+    document.addEventListener('click', handler, true);
+    // window.open override
+    const origOpen = window.open;
+    window.open = function(url, ...args) {
+      if (/^(tg:\/\/|https:\/\/t\.me\/)/.test(url)) {
+        if (window.fbq) {
+          window.fbq('track', 'Contact', {
+            source: 'telegram',
+            page: window.location.pathname,
+            placement: 'global-open'
+          });
+        }
+      }
+      return origOpen.apply(this, [url, ...args]);
+    };
+    return () => {
+      document.removeEventListener('click', handler, true);
+      window.open = origOpen;
+    };
+  }, []);
 
   // Meta Pixel: track Telegram click
   const handleTelegramClick = (source) => {
