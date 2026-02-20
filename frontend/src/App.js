@@ -14,30 +14,20 @@ function DeferredSection({ id, placeholderClassName, rootMargin = '320px', child
   const containerRef = useRef(null);
   const [shouldRender, setShouldRender] = useState(false);
 
-      {shouldRender ? children : null}
-
-function App() {
-  const navigate = useNavigate();
-  const location = useLocation();
-  const { locale } = useParams();
-  const { t, setLocale } = useI18n();
-  // ...existing code...
+  useEffect(() => {
+    if (shouldRender) return;
+    const triggerRender = () => setShouldRender(true);
     if (typeof window === 'undefined') {
       triggerRender();
       return;
     }
-
     if ('requestIdleCallback' in window) {
       window.requestIdleCallback(triggerRender, { timeout: 1200 });
     } else {
       setTimeout(triggerRender, 1200);
     }
-
     const target = containerRef.current;
-    if (!target || !('IntersectionObserver' in window)) {
-      return;
-    }
-
+    if (!target || !('IntersectionObserver' in window)) return;
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -49,11 +39,9 @@ function App() {
       },
       { rootMargin },
     );
-
     observer.observe(target);
     return () => observer.disconnect();
   }, [rootMargin, shouldRender]);
-
   return (
     <section id={id} ref={containerRef} className={placeholderClassName} style={{ contentVisibility: 'auto', containIntrinsicSize: '1000px' }}>
       {shouldRender ? children : null}
