@@ -60,7 +60,7 @@
     "start": "craco start",
     "prebuild": "npm run blog:validate",
     "build": "craco build",
-    "postbuild": "node scripts/postbuild-react-snap.js && node scripts/postbuild-fix-domain.js && node scripts/postbuild-root-noindex.js && node scripts/postbuild-build-stamp.js && node scripts/postbuild-sitemap.js",
+    "postbuild": "node scripts/postbuild-react-snap.js && node scripts/postbuild-inject-prerendered.js && node scripts/postbuild-fix-domain.js && node scripts/postbuild-root-noindex.js && node scripts/postbuild-build-stamp.js && node scripts/postbuild-sitemap.js",
     "images:optimize": "node scripts/optimize-images-webp.mjs",
     "images:audit": "node scripts/audit-images.mjs",
     "verify:images": "node scripts/verify-image-variants.mjs",
