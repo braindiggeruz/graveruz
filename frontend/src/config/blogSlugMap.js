@@ -25,7 +25,16 @@ export const BLOG_SLUG_MAP = {
     'podarki-dlya-bankov-i-finteha-tashkent': 'banklar-va-fintex-uchun-sovgalar-toshkent',
     'chasy-s-logotipom-korporativnye-podarki-tashkent': 'logotipli-soat-korporativ-sovgalar-toshkent',
     'podarki-na-korporativnye-sobytiya-tashkent': 'korporativ-tadbirlar-uchun-sovgalar-toshkent',
-    'podarki-dlya-horeca-i-restoranov-tashkent': 'horeca-va-restoranlar-uchun-sovgalar-toshkent'
+    'podarki-dlya-horeca-i-restoranov-tashkent': 'horeca-va-restoranlar-uchun-sovgalar-toshkent',
+    'idei-vip-podarkov': null,
+    'kak-vybrat-podarki-dlya-sotrudnikov': null,
+    'gravirovka-na-biznes-podarkah': null,
+    'korporativniy-merch-kak-instrument-marketinga': null,
+    'byudzhet-na-korporativnye-podarki': null,
+    'srochniy-zakaz-korporativnyh-podarkov': null,
+    'eko-podarki-dlya-biznesa': null,
+    'korporativnye-podarki-na-navruz': null,
+    'keys-brendirovannye-podarki-dlya-it': null,
   },
   uz: {
     'korporativ-sovgalar-boyicha-toliq-qollanma': 'polniy-gid-po-korporativnym-podarkam',
