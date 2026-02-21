@@ -1,3 +1,4 @@
+import { openTelegramWithTracking } from '../utils/pixel';
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Send, AlertTriangle } from 'lucide-react';
@@ -139,7 +140,9 @@ export default function EngravedGiftsPage() {
           </Link>
           <div className="flex items-center gap-4">
             <LanguageSwitcher />
-            <a href="https://t.me/GraverAdm" className="bg-teal-500 text-white px-4 py-2 rounded-lg font-medium hover:bg-teal-600 transition flex items-center">
+            <a href="https://t.me/GraverAdm" className="bg-teal-500 text-white px-4 py-2 rounded-lg font-medium hover:bg-teal-600 transition flex items-center"
+              onClick={(e) => openTelegramWithTracking(e, 'gifts-header')}
+            >
               <Send size={16} className="mr-2" />Telegram
             </a>
           </div>
