@@ -8,6 +8,7 @@ import enhanceTocAndAnchors from './enhanceTocAndAnchors';
 import { getSeoOverride, getFaqData } from '../data/blogSeoOverrides';
 import { getBlogImageForSlug, getBlogOgImageForSlug, getResponsiveBlogImageForSlug, defaultBlogCover } from '../data/blogImages';
 import { getMappedAlternateSlug } from '../config/blogSlugMap';
+import { trackViewContent } from '../utils/pixel';
 
 function normalizeBlogHref(href, locale) {
   if (!href || typeof href !== 'string') return href;
@@ -132,6 +133,13 @@ function BlogPostPage() {
   const post = getPostBySlug(locale, slug);
   const isRu = locale === 'ru';
   
+  // Track article view on mount
+  useEffect(() => {
+    if (post) {
+      trackViewContent(post.slug || slug, post.title || '', post.category || 'blog');
+    }
+  }, [post, slug]);
+
   // Get SEO override for this post
   const seoOverride = getSeoOverride(locale, slug);
   // Get FAQ data for FAQPage Schema

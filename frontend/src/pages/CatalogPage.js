@@ -1,4 +1,4 @@
-import { openTelegramWithTracking } from '../utils/pixel';
+import { openTelegramWithTracking, trackViewCategory } from '../utils/pixel';
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
@@ -74,6 +74,7 @@ export default function CatalogPage() {
   useEffect(() => {
     document.documentElement.lang = locale === 'uz' ? 'uz-Latn' : 'ru';
     window.scrollTo(0, 0);
+    trackViewCategory('catalog', locale === 'uz' ? 'Mahsulotlar katalogi' : 'Каталог продукции');
   }, [locale]);
 
   const catalogGraphSchema = {
