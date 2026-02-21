@@ -153,7 +153,15 @@
       "/uz/blog/logotip-maketi-tayyorlash",
       "/ru/blog/welcome-pack-dlya-sotrudnikov",
       "/uz/blog/welcome-pack-yangi-xodimlar",
-      "/404"
+      "/404",
+      "/ru/blog/idei-vip-podarkov",
+      "/ru/blog/kak-vybrat-podarki-dlya-sotrudnikov",
+      "/ru/blog/gravirovka-na-biznes-podarkah",
+      "/ru/blog/korporativniy-merch-kak-instrument-marketinga",
+      "/ru/blog/byudzhet-na-korporativnye-podarki",
+      "/ru/blog/srochniy-zakaz-korporativnyh-podarkov",
+      "/ru/blog/eko-podarki-dlya-biznesa",
+      "/ru/blog/keys-brendirovannye-podarki-dlya-it"
     ],
     "puppeteerArgs": [
       "--no-sandbox",
