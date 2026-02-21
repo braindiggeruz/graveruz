@@ -135,3 +135,120 @@ code {
         border-bottom-color: inherit;
     }
 }
+
+/* ── Blog post prose styles (replaces @tailwindcss/typography) ─────────────── */
+.prose-invert h1,
+.prose-invert h2,
+.prose-invert h3,
+.prose-invert h4 {
+  color: #ffffff;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-top: 1.75em;
+  margin-bottom: 0.6em;
+}
+.prose-invert h1 { font-size: 2rem; }
+.prose-invert h2 { font-size: 1.5rem; border-bottom: 1px solid #374151; padding-bottom: 0.3em; }
+.prose-invert h3 { font-size: 1.25rem; }
+.prose-invert h4 { font-size: 1.1rem; }
+
+.prose-invert p {
+  color: #d1d5db;
+  line-height: 1.8;
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+}
+
+.prose-invert a { color: #14b8a6; text-decoration: underline; }
+.prose-invert a:hover { color: #2dd4bf; }
+.prose-invert strong { color: #f9fafb; font-weight: 700; }
+.prose-invert em { color: #e5e7eb; font-style: italic; }
+
+.prose-invert ul,
+.prose-invert ol {
+  color: #d1d5db;
+  padding-left: 1.5rem;
+  margin: 0.75em 0;
+}
+.prose-invert ul { list-style-type: disc; }
+.prose-invert ol { list-style-type: decimal; }
+.prose-invert li { margin: 0.35em 0; line-height: 1.7; }
+
+/* Tables */
+.prose-invert table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  font-size: 0.95rem;
+  overflow-x: auto;
+  display: block;
+}
+.prose-invert thead tr {
+  background-color: #1f2937;
+  border-bottom: 2px solid #374151;
+}
+.prose-invert th {
+  color: #f9fafb;
+  font-weight: 700;
+  text-align: left;
+  padding: 0.65em 1em;
+  white-space: nowrap;
+}
+.prose-invert td {
+  color: #d1d5db;
+  padding: 0.6em 1em;
+  border-bottom: 1px solid #374151;
+  vertical-align: top;
+}
+.prose-invert tbody tr:hover { background-color: #1f2937; }
+
+/* Blockquote */
+.prose-invert blockquote {
+  border-left: 4px solid #14b8a6;
+  padding: 0.5em 1.25em;
+  margin: 1.25em 0;
+  background-color: rgba(20,184,166,0.06);
+  border-radius: 0 6px 6px 0;
+  color: #9ca3af;
+  font-style: italic;
+}
+.prose-invert blockquote p { color: #9ca3af; margin: 0; }
+
+/* Code */
+.prose-invert code {
+  background-color: #1f2937;
+  color: #34d399;
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-family: 'Courier New', monospace;
+}
+.prose-invert pre {
+  background-color: #111827;
+  border: 1px solid #374151;
+  border-radius: 8px;
+  padding: 1em 1.25em;
+  overflow-x: auto;
+  margin: 1.25em 0;
+}
+.prose-invert pre code { background: none; padding: 0; color: #d1fae5; font-size: 0.875rem; }
+
+/* HR */
+.prose-invert hr { border: none; border-top: 1px solid #374151; margin: 2em 0; }
+
+/* Images */
+.prose-invert img { max-width: 100%; border-radius: 8px; margin: 1.25em auto; display: block; }
+
+/* CTA blocks inside content */
+.prose-invert .cta-block,
+.prose-invert .cta-block-final {
+  background: rgba(20,184,166,0.08);
+  border: 1px solid rgba(20,184,166,0.3);
+  border-radius: 10px;
+  padding: 1.25em 1.5em;
+  margin: 1.5em 0;
+}
+.prose-invert .cta-block p,
+.prose-invert .cta-block-final p { color: #d1d5db; margin: 0 0 0.5em; }
+.prose-invert .cta-block a,
+.prose-invert .cta-block-final a { color: #14b8a6; font-weight: 600; }
