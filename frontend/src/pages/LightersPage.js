@@ -1,4 +1,4 @@
-import { trackTelegramContact } from '../utils/pixel';
+import { openTelegramWithTracking } from '../utils/pixel';
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
@@ -277,7 +277,7 @@ function LightersPage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center bg-gradient-to-r from-orange-500 to-red-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-orange-600 hover:to-red-700 transition"
                 data-testid="lighters-cta-models"
-                onClick={() => trackTelegramContact('lighters-hero-maket')}
+                onClick={(e) => openTelegramWithTracking(e, 'lighters-hero-maket')}
               >
                 {isRu ? 'Получить макет' : 'Maketni olish'}
                 <ChevronRight size={20} className="ml-2" />
@@ -288,7 +288,7 @@ function LightersPage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center bg-gray-800 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-700 transition border border-gray-700"
                 data-testid="lighters-cta-download"
-                onClick={() => trackTelegramContact('lighters-telegram')}
+                onClick={(e) => openTelegramWithTracking(e, 'lighters-telegram')}
               >
                 <Send size={20} className="mr-2" />
                 {isRu ? 'Написать в Telegram' : 'Telegramga yozish'}
@@ -462,7 +462,7 @@ function LightersPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center bg-gradient-to-r from-teal-500 to-cyan-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-teal-600 hover:to-cyan-700 transition"
               data-testid="lighters-cta-telegram"
-              onClick={() => trackTelegramContact('lighters-cta-maket')}
+              onClick={(e) => openTelegramWithTracking(e, 'lighters-cta-maket')}
             >
               <Send size={20} className="mr-2" />
               {isRu ? 'Получить макет' : 'Maketni olish'}
@@ -473,7 +473,7 @@ function LightersPage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center bg-gray-800 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-700 transition border border-gray-700"
                 data-testid="lighters-cta-phone"
-                onClick={() => trackTelegramContact('lighters-telegram')}
+                onClick={(e) => openTelegramWithTracking(e, 'lighters-telegram')}
               >
               <Send size={20} className="mr-2" />
               {isRu ? 'Написать в Telegram' : 'Telegramga yozish'}
@@ -595,7 +595,7 @@ function LightersPage() {
               <h4 className="text-white font-bold mb-4">{isRu ? 'Контакты' : 'Aloqa'}</h4>
               <div className="space-y-2 text-gray-400 text-sm">
                 <a href="tel:+998770802288" className="block hover:text-teal-500 transition">+998 77 080 22 88</a>
-                <a href="https://t.me/GraverAdm" target="_blank" rel="noopener noreferrer" className="block hover:text-teal-500 transition">Telegram</a>
+                <a href="https://t.me/GraverAdm" target="_blank" rel="noopener noreferrer" className="block hover:text-teal-500 transition" onClick={(e) => openTelegramWithTracking(e, 'lighters-footer')}>Telegram</a>
               </div>
             </div>
             <div>

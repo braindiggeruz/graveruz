@@ -1,3 +1,4 @@
+import { openTelegramWithTracking } from './utils/pixel';
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Send, Home, Check, Clock, Award, Package } from 'lucide-react';
@@ -154,6 +155,7 @@ function Thanks() {
               rel="noopener noreferrer"
               className="w-full sm:w-auto bg-gradient-to-r from-teal-500 to-cyan-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-teal-600 hover:to-cyan-700 transition shadow-lg shadow-teal-500/50 flex items-center justify-center group"
               data-testid="thanks-telegram-cta"
+              onClick={(e) => openTelegramWithTracking(e, 'thanks-cta')}
             >
               <Send className="mr-2 group-hover:translate-x-1 transition-transform" size={20} />
               {t.telegramCta}
@@ -264,6 +266,7 @@ function Thanks() {
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-white text-lg font-semibold hover:text-teal-500 transition flex items-center"
+                  onClick={(e) => openTelegramWithTracking(e, 'thanks-contact')}
                 >
                   <Send size={18} className="mr-2" />
                   @GraverAdm

@@ -1,3 +1,4 @@
+import { openTelegramWithTracking } from '../utils/pixel';
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
@@ -168,7 +169,9 @@ export default function CatalogPage() {
           </Link>
           <div className="flex items-center gap-4">
             <LanguageSwitcher />
-            <a href="https://t.me/GraverAdm" className="bg-teal-500 text-white px-4 py-2 rounded-lg font-medium hover:bg-teal-600 transition flex items-center">
+            <a href="https://t.me/GraverAdm" className="bg-teal-500 text-white px-4 py-2 rounded-lg font-medium hover:bg-teal-600 transition flex items-center"
+              onClick={(e) => openTelegramWithTracking(e, 'catalog-header')}
+            >
               <Send size={16} className="mr-2" />Telegram
             </a>
           </div>
@@ -229,7 +232,9 @@ export default function CatalogPage() {
             <AlertTriangle className="text-yellow-500 mr-3 flex-shrink-0 mt-0.5" size={20} />
             <div>
               <p className="text-yellow-200 font-medium mb-1">{t.disclaimer}</p>
-              <a href="https://t.me/GraverAdm" className="text-yellow-400 hover:text-yellow-300 text-sm">{t.disclaimerTg}</a>
+              <a href="https://t.me/GraverAdm" className="text-yellow-400 hover:text-yellow-300 text-sm"
+              onClick={(e) => openTelegramWithTracking(e, 'catalog-disclaimer')}
+            >{t.disclaimerTg}</a>
             </div>
           </div>
         </div>

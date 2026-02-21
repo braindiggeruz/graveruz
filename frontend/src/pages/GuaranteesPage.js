@@ -1,3 +1,4 @@
+import { openTelegramWithTracking } from '../utils/pixel';
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Send, Shield } from 'lucide-react';
@@ -79,7 +80,9 @@ export default function GuaranteesPage() {
           </Link>
           <div className="flex items-center gap-4">
             <LanguageSwitcher />
-            <a href="https://t.me/GraverAdm" className="bg-teal-500 text-white px-4 py-2 rounded-lg font-medium hover:bg-teal-600 transition flex items-center">
+            <a href="https://t.me/GraverAdm" className="bg-teal-500 text-white px-4 py-2 rounded-lg font-medium hover:bg-teal-600 transition flex items-center"
+              onClick={(e) => openTelegramWithTracking(e, 'guarantees-header')}
+            >
               <Send size={16} className="mr-2" />Telegram
             </a>
           </div>
@@ -125,7 +128,9 @@ export default function GuaranteesPage() {
             <Link to={`/${locale}#contact`} className="bg-gradient-to-r from-teal-500 to-cyan-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-teal-600 hover:to-cyan-700 transition">
               {cta}
             </Link>
-            <a href="https://t.me/GraverAdm" className="bg-gray-800 text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-700 transition border border-gray-700 flex items-center justify-center">
+            <a href="https://t.me/GraverAdm" className="bg-gray-800 text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-700 transition border border-gray-700 flex items-center justify-center"
+              onClick={(e) => openTelegramWithTracking(e, 'guarantees-cta')}
+            >
               <Send size={18} className="mr-2" />Telegram
             </a>
           </div>

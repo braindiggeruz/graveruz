@@ -1,4 +1,4 @@
-import { trackTelegramContact } from './utils/pixel';
+import { openTelegramWithTracking } from './utils/pixel';
 import React, { useState, useEffect, useRef, lazy, Suspense } from 'react';
 import { useNavigate, useParams, Link, useLocation } from 'react-router-dom';
 import './App.css';
@@ -309,7 +309,7 @@ function App() {
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto bg-transparent text-white px-8 py-4 rounded-lg font-semibold text-base hover:bg-white/10 transition border border-white/30 flex items-center justify-center group min-h-[56px]"
                 data-testid="hero-secondary-cta"
-                onClick={() => trackTelegramContact('home-telegram')}
+                onClick={(e) => openTelegramWithTracking(e, 'home-telegram')}
               >
                 <Send className="mr-2 group-hover:translate-x-1 transition-transform" size={18} />
                 {t('hero.ctaSecondary')}
@@ -469,7 +469,7 @@ function App() {
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-flex items-center mt-6 text-teal-500 hover:text-teal-400 font-semibold group/link"
-                  onClick={() => trackTelegramContact('service-gifts')}
+                  onClick={(e) => openTelegramWithTracking(e, 'service-gifts')}
                 >
                   Обсудить проект
                   <Send className="ml-2 group-hover/link:translate-x-1 transition-transform" size={16} />
@@ -507,7 +507,7 @@ function App() {
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-flex items-center mt-6 text-teal-500 hover:text-teal-400 font-semibold group/link"
-                  onClick={() => trackTelegramContact('service-awards')}
+                  onClick={(e) => openTelegramWithTracking(e, 'service-awards')}
                 >
                   Обсудить проект
                   <Send className="ml-2 group-hover/link:translate-x-1 transition-transform" size={16} />
@@ -545,7 +545,7 @@ function App() {
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-flex items-center mt-6 text-teal-500 hover:text-teal-400 font-semibold group/link"
-                  onClick={() => trackTelegramContact('service-branding')}
+                  onClick={(e) => openTelegramWithTracking(e, 'service-branding')}
                 >
                   Обсудить проект
                   <Send className="ml-2 group-hover/link:translate-x-1 transition-transform" size={16} />
@@ -583,7 +583,7 @@ function App() {
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-flex items-center mt-6 text-teal-500 hover:text-teal-400 font-semibold group/link"
-                  onClick={() => trackTelegramContact('service-custom')}
+                  onClick={(e) => openTelegramWithTracking(e, 'service-custom')}
                 >
                   Обсудить проект
                   <Send className="ml-2 group-hover/link:translate-x-1 transition-transform" size={16} />
@@ -995,7 +995,7 @@ function App() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-teal-500 hover:text-teal-400 font-semibold transition"
                 data-testid="form-telegram-alternative"
-                onClick={() => trackTelegramContact('form-alternative')}
+                onClick={(e) => openTelegramWithTracking(e, 'form-alternative')}
               >
                 <Send className="mr-2" size={18} />
                 Написать в Telegram
@@ -1133,7 +1133,7 @@ function App() {
               rel="noopener noreferrer"
               className="inline-flex items-center bg-gradient-to-r from-teal-500 to-cyan-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-teal-600 hover:to-cyan-700 transition"
               data-testid="faq-contact-cta"
-              onClick={() => trackTelegramContact('faq')}
+              onClick={(e) => openTelegramWithTracking(e, 'faq')}
             >
               <MessageCircle className="mr-2" size={20} />
               {t('faq.askTelegram')}
@@ -1170,7 +1170,7 @@ function App() {
                   <Phone size={16} className="mr-2" />
                   +998 97 480 22 88
                 </a>
-                <a href="https://t.me/GraverAdm" data-track="tg" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-teal-500 transition" data-testid="footer-telegram" onClick={() => trackTelegramContact('footer')}>
+                <a href="https://t.me/GraverAdm" data-track="tg" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-teal-500 transition" data-testid="footer-telegram" onClick={(e) => openTelegramWithTracking(e, 'footer')}>
                   <Send size={16} className="mr-2" />
                   @GraverAdm
                 </a>
@@ -1251,7 +1251,7 @@ function App() {
             aria-label="Написать в Telegram"
             className="bg-gray-800 text-white px-4 py-3 rounded-lg font-semibold text-center hover:bg-gray-700 transition flex items-center justify-center border border-gray-700 min-h-[48px]"
             data-testid="sticky-telegram-button"
-            onClick={() => trackTelegramContact('sticky-mobile')}
+            onClick={(e) => openTelegramWithTracking(e, 'sticky-mobile')}
           >
             <Send size={20} />
           </a>
