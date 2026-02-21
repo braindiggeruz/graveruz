@@ -35,6 +35,13 @@ export const BLOG_SLUG_MAP = {
     'eko-podarki-dlya-biznesa': null,
     'korporativnye-podarki-na-navruz': null,
     'keys-brendirovannye-podarki-dlya-it': null,
+    'loyalnost-sotrudnikov-korporativnye-podarki': null,
+    'delovoy-etiket-biznes-podarki-uzbekistan': null,
+    'kak-vybrat-korporativnyj-podarok-b2b': null,
+    'personalizatsiya-novyy-standart-gravirovka': null,
+    'process-zakaza-korporativnyh-podarkov': null,
+    'keys-welcome-pak-it-kompaniya-tashkent': null,
+    'godovoy-plan-korporativnyh-prazdnikov': null,
   },
   uz: {
     'korporativ-sovgalar-boyicha-toliq-qollanma': 'polniy-gid-po-korporativnym-podarkam',
