@@ -8,7 +8,7 @@ import enhanceTocAndAnchors from './enhanceTocAndAnchors';
 import { getSeoOverride, getFaqData } from '../data/blogSeoOverrides';
 import { getBlogImageForSlug, getBlogOgImageForSlug, getResponsiveBlogImageForSlug, defaultBlogCover } from '../data/blogImages';
 import { getMappedAlternateSlug } from '../config/blogSlugMap';
-import { trackViewContent } from '../utils/pixel';
+import { trackViewContent, trackCatalogDownload } from '../utils/pixel';
 
 function normalizeBlogHref(href, locale) {
   if (!href || typeof href !== 'string') return href;
@@ -495,6 +495,32 @@ function BlogPostPage() {
           )
         ),
         React.createElement('div', { className: 'prose prose-invert max-w-none' }, contentBody),
+        // Checklist Download Block (only for checklist article)
+        slug === 'chek-list-zakupshchika-podarkov' && React.createElement('div', {
+          className: 'my-8 p-6 bg-gradient-to-r from-teal-900/40 to-cyan-900/40 border border-teal-600/60 rounded-xl',
+          'data-testid': 'checklist-download-block'
+        },
+          React.createElement('div', { className: 'flex flex-col sm:flex-row items-start sm:items-center gap-4' },
+            React.createElement('div', { className: 'flex-1' },
+              React.createElement('h3', { className: 'text-lg font-bold text-white mb-1' },
+                isRu ? '📋 Скачайте чек-лист в PDF' : '📋 Chek-listni PDF formatida yuklab oling'
+              ),
+              React.createElement('p', { className: 'text-gray-300 text-sm' },
+                isRu
+                  ? 'Полный чек-лист закупщика корпоративных подарков — от планирования до вручения. Распечатайте и используйте при каждом заказе.'
+                  : 'Korporativ sovgalar xaridor uchun to\'liq chek-list — rejalashtirish va topshirishgacha.'
+              )
+            ),
+            React.createElement('a', {
+              href: '/catalogs/graver-checklist-b2b-buyer.pdf',
+              download: true,
+              className: 'inline-flex items-center gap-2 bg-teal-500 hover:bg-teal-400 text-white font-semibold px-5 py-3 rounded-lg transition whitespace-nowrap',
+              onClick: function() { trackCatalogDownload('blog-checklist-article'); }
+            },
+              '⬇ ' + (isRu ? 'Скачать PDF' : 'PDF yuklab olish')
+            )
+          )
+        ),
         // Related Articles Section (if exists)
         recommendedPosts.length > 0 && React.createElement('div', { 
           className: 'mt-12 p-6 bg-gray-900/50 border border-gray-800 rounded-xl',
