@@ -1,4 +1,4 @@
-import { openTelegramWithTracking } from './utils/pixel';
+import { openTelegramWithTracking, trackCatalogDownload } from './utils/pixel';
 import React, { useState, useEffect, useRef, lazy, Suspense } from 'react';
 import { useNavigate, useParams, Link, useLocation } from 'react-router-dom';
 import './App.css';
@@ -645,6 +645,7 @@ function App() {
                   download
                   className="inline-flex items-center justify-center bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-700 transition border border-gray-700"
                   data-testid="products-cta-download"
+                  onClick={() => trackCatalogDownload('home-products')}
                 >
                   <Download size={18} className="mr-2" />
                   {locale === 'uz' ? 'Katalogni yuklab olish' : 'Скачать каталог (PDF)'}

@@ -1,5 +1,5 @@
-import { openTelegramWithTracking } from '../utils/pixel';
-import React from 'react';
+import { openTelegramWithTracking, trackViewCategory, trackCatalogDownload } from '../utils/pixel';
+import React, { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import SeoMeta from '../components/SeoMeta';
@@ -87,6 +87,11 @@ const engravingTypes = [
 function LightersPage() {
   const { locale } = useParams();
   const isRu = locale === 'ru';
+
+  // Track category view on mount
+  useEffect(() => {
+    trackViewCategory('lighters', isRu ? 'Зажигалки с гравировкой' : 'Gravyurali zajigalkalar');
+  }, [isRu]);
 
   const pathname = `/${locale}/products/lighters`;
   const canonicalUrl = buildCanonical(pathname);
@@ -204,6 +209,7 @@ function LightersPage() {
                 href="/catalogs/graver-lighters-catalog-2026.pdf" 
                 download
                 className="hidden sm:flex items-center gap-2 text-teal-500 hover:text-teal-400 transition text-sm"
+                onClick={() => trackCatalogDownload('lighters-header')}
               >
                 <Download size={16} />
                 {isRu ? 'Скачать каталог' : 'Katalogni yuklab olish'}
@@ -489,6 +495,7 @@ function LightersPage() {
               href="/catalogs/graver-lighters-catalog-2026.pdf"
               download
               className="inline-flex items-center text-orange-400 hover:text-orange-300 transition"
+              onClick={() => trackCatalogDownload('lighters-cta')}
             >
               <Download size={18} className="mr-2" />
               {isRu ? 'Скачать полный каталог (PDF, 62 MB)' : 'To\'liq katalogni yuklab olish (PDF, 62 MB)'}
@@ -604,6 +611,7 @@ function LightersPage() {
                 href="/catalogs/graver-lighters-catalog-2026.pdf"
                 download
                 className="inline-flex items-center text-orange-400 hover:text-orange-300 transition text-sm"
+                onClick={() => trackCatalogDownload('lighters-footer')}
               >
                 <Download size={14} className="mr-2" />
                 {isRu ? 'Скачать PDF' : 'PDF yuklab olish'}
