@@ -463,8 +463,7 @@ export const blogPosts = {
 <h2>Контроль качества и сроков</h2>
 <p>Перед выдачей проверьте соответствие макету, целостность упаковки и корректность персонализации на выборочной партии.</p>
 <p><strong>Нужна помощь с подбором и запуском?</strong> Оставьте заявку через раздел контактов — команда подготовит рабочий план под ваш тираж.</p>
-<h2>Related articles</h2>
-<ul><li><a href="/ru/blog/korporativnye-podarki-s-logotipom-polnyy-gayd">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/podarochnye-nabory-s-logotipom">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/korporativnye-podarochnye-nabory">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/podarki-klientam-partneram-vip">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/lazernaya-gravirovka-podarkov">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/welcome-pack-dlya-sotrudnikov">Смотрите также: связанный материал</a></li></ul>`},
+`},
     {
       slug: 'lazernaya-gravirovka-podarkov',
       title: 'Лазерная гравировка подарков: полный гайд',
@@ -482,8 +481,7 @@ export const blogPosts = {
 <h2>Контроль качества и сроков</h2>
 <p>Перед выдачей проверьте соответствие макету, целостность упаковки и корректность персонализации на выборочной партии.</p>
 <p><strong>Нужна помощь с подбором и запуском?</strong> Оставьте заявку через раздел контактов — команда подготовит рабочий план под ваш тираж.</p>
-<h2>Related articles</h2>
-<ul><li><a href="/ru/blog/lazernaya-gravirovka-podarkov-tehnologiya">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/korporativnye-podarki-s-gravirovkoy-metody">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/kak-podgotovit-maket-logotipa">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/brendirovannye-zazhigalki-i-chasy-s-logotipom">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/kak-vybrat-korporativnyj-podarok">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/podarochnye-nabory-s-logotipom">Смотрите также: связанный материал</a></li></ul>`},
+`},
     {
       slug: 'podarochnye-nabory-s-logotipom',
       title: 'Подарочные наборы с логотипом компании',
@@ -501,8 +499,7 @@ export const blogPosts = {
 <h2>Контроль качества и сроков</h2>
 <p>Перед выдачей проверьте соответствие макету, целостность упаковки и корректность персонализации на выборочной партии.</p>
 <p><strong>Нужна помощь с подбором и запуском?</strong> Оставьте заявку через раздел контактов — команда подготовит рабочий план под ваш тираж.</p>
-<h2>Related articles</h2>
-<ul><li><a href="/ru/blog/korporativnye-podarki-s-logotipom-polnyy-gayd">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/kak-vybrat-korporativnyj-podarok">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/podarochnye-nabory-s-logotipom">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/podarki-klientam-partneram-vip">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/lazernaya-gravirovka-podarkov">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/welcome-pack-dlya-sotrudnikov">Смотрите также: связанный материал</a></li></ul>`},
+`},
     {
       slug: 'welcome-pack-dlya-sotrudnikov',
       title: 'Welcome Pack для новых сотрудников: что включить',
@@ -520,8 +517,7 @@ export const blogPosts = {
 <h2>Контроль качества и сроков</h2>
 <p>Перед выдачей проверьте соответствие макету, целостность упаковки и корректность персонализации на выборочной партии.</p>
 <p><strong>Нужна помощь с подбором и запуском?</strong> Оставьте заявку через раздел контактов — команда подготовит рабочий план под ваш тираж.</p>
-<h2>Related articles</h2>
-<ul><li><a href="/ru/blog/podarki-sotrudnikam-hr-gayd">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/welcome-pack-novym-sotrudnikam">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/kak-vybrat-korporativnyj-podarok">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/lazernaya-gravirovka-podarkov">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/podarochnye-nabory-s-logotipom">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/brendirovanie-suvenirov">Смотрите также: связанный материал</a></li></ul>`},
+`},
     {
       slug: 'brendirovanie-suvenirov',
       title: 'Брендирование сувениров: методы и материалы',
@@ -539,8 +535,7 @@ export const blogPosts = {
 <h2>Контроль качества и сроков</h2>
 <p>Перед выдачей проверьте соответствие макету, целостность упаковки и корректность персонализации на выборочной партии.</p>
 <p><strong>Нужна помощь с подбором и запуском?</strong> Оставьте заявку через раздел контактов — команда подготовит рабочий план под ваш тираж.</p>
-<h2>Related articles</h2>
-<ul><li><a href="/ru/blog/merch-dlya-kompanii-brendirovanie">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/ekonomiya-na-korporativnyh-suvenirax">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/kak-vybrat-korporativnyj-podarok">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/lazernaya-gravirovka-podarkov">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/podarochnye-nabory-s-logotipom">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/welcome-pack-dlya-sotrudnikov">Смотрите также: связанный материал</a></li></ul>`},
+`},
     {
       slug: 'top-idei-podarkov-na-novyj-god',
       title: 'Топ идей корпоративных подарков на Новый год',
@@ -558,8 +553,7 @@ export const blogPosts = {
 <h2>Контроль качества и сроков</h2>
 <p>Перед выдачей проверьте соответствие макету, целостность упаковки и корректность персонализации на выборочной партии.</p>
 <p><strong>Нужна помощь с подбором и запуском?</strong> Оставьте заявку через раздел контактов — команда подготовит рабочий план под ваш тираж.</p>
-<h2>Related articles</h2>
-<ul><li><a href="/ru/blog/podarki-na-navruz">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/korporativnye-podarki-na-navruz">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/kak-vybrat-korporativnyj-podarok">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/lazernaya-gravirovka-podarkov">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/podarochnye-nabory-s-logotipom">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/welcome-pack-dlya-sotrudnikov">Смотрите также: связанный материал</a></li></ul>`},
+`},
     {
       slug: 'kak-podgotovit-maket-logotipa',
       title: 'Как подготовить макет логотипа для гравировки',
@@ -577,8 +571,7 @@ export const blogPosts = {
 <h2>Контроль качества и сроков</h2>
 <p>Перед выдачей проверьте соответствие макету, целостность упаковки и корректность персонализации на выборочной партии.</p>
 <p><strong>Нужна помощь с подбором и запуском?</strong> Оставьте заявку через раздел контактов — команда подготовит рабочий план под ваш тираж.</p>
-<h2>Related articles</h2>
-<ul><li><a href="/ru/blog/lazernaya-gravirovka-podarkov-tehnologiya">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/lazernaya-gravirovka-podarkov">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/korporativnye-podarki-s-gravirovkoy-metody">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/brendirovannye-zazhigalki-i-chasy-s-logotipom">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/kak-vybrat-korporativnyj-podarok">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/podarochnye-nabory-s-logotipom">Смотрите также: связанный материал</a></li></ul>`},
+`},
     {
       slug: 'podarki-na-navruz',
       title: 'Корпоративные подарки на Навруз: традиции и идеи',
@@ -596,8 +589,7 @@ export const blogPosts = {
 <h2>Контроль качества и сроков</h2>
 <p>Перед выдачей проверьте соответствие макету, целостность упаковки и корректность персонализации на выборочной партии.</p>
 <p><strong>Нужна помощь с подбором и запуском?</strong> Оставьте заявку через раздел контактов — команда подготовит рабочий план под ваш тираж.</p>
-<h2>Related articles</h2>
-<ul><li><a href="/ru/blog/top-idei-podarkov-na-novyj-god">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/podarki-na-navruz">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/kak-vybrat-korporativnyj-podarok">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/lazernaya-gravirovka-podarkov">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/podarochnye-nabory-s-logotipom">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/welcome-pack-dlya-sotrudnikov">Смотрите также: связанный материал</a></li></ul>`},
+`},
     {
       slug: 'ekonomiya-na-korporativnyh-suvenirax',
       title: 'Как сэкономить на корпоративных сувенирах без потери качества',
@@ -615,8 +607,7 @@ export const blogPosts = {
 <h2>Контроль качества и сроков</h2>
 <p>Перед выдачей проверьте соответствие макету, целостность упаковки и корректность персонализации на выборочной партии.</p>
 <p><strong>Нужна помощь с подбором и запуском?</strong> Оставьте заявку через раздел контактов — команда подготовит рабочий план под ваш тираж.</p>
-<h2>Related articles</h2>
-<ul><li><a href="/ru/blog/merch-dlya-kompanii-brendirovanie">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/brendirovanie-suvenirov">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/kak-vybrat-korporativnyj-podarok">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/lazernaya-gravirovka-podarkov">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/podarochnye-nabory-s-logotipom">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/welcome-pack-dlya-sotrudnikov">Смотрите также: связанный материал</a></li></ul>`},
+`},
     {
       slug: 'chek-list-zakupshchika-podarkov',
       title: 'Чек-лист закупщика корпоративных подарков',
@@ -671,8 +662,7 @@ export const blogPosts = {
 <li><strong>Игнорировать персонализацию</strong> — имя, дата или фраза превращают сувенир в личный подарок.</li>
 </ol>
 <p>Хотите узнать, как выбрать подарок под конкретную задачу? Читайте: <a href="/ru/blog/kak-vybrat-korporativnyj-podarok">Как выбрать корпоративный подарок</a> и <a href="/ru/blog/gravirovka-na-biznes-podarkah">Гравировка на бизнес-подарках</a>.</p>
-<h2>Related articles</h2>
-<ul><li><a href="/ru/blog/kak-vybrat-korporativnyj-podarok">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/lazernaya-gravirovka-podarkov">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/podarochnye-nabory-s-logotipom">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/welcome-pack-dlya-sotrudnikov">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/brendirovanie-suvenirov">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/top-idei-podarkov-na-novyj-god">Смотрите также: связанный материал</a></li></ul>`},
+`},
     {
       slug: "korporativnye-podarki-s-logotipom-polnyy-gayd",
       title: "Корпоративные подарки с логотипом: полный гайд для бизнеса в Ташкенте",
@@ -690,8 +680,7 @@ export const blogPosts = {
 <h2>Контроль качества и сроков</h2>
 <p>Перед выдачей проверьте соответствие макету, целостность упаковки и корректность персонализации на выборочной партии.</p>
 <p><strong>Нужна помощь с подбором и запуском?</strong> Оставьте заявку через раздел контактов — команда подготовит рабочий план под ваш тираж.</p>
-<h2>Related articles</h2>
-<ul><li><a href="/ru/blog/kak-vybrat-korporativnyj-podarok">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/podarochnye-nabory-s-logotipom">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/korporativnye-podarochnye-nabory">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/podarki-klientam-partneram-vip">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/lazernaya-gravirovka-podarkov">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/welcome-pack-dlya-sotrudnikov">Смотрите также: связанный материал</a></li></ul>`},
+`},
     {
       slug: "korporativnye-podarki-s-gravirovkoy-metody",
       title: "Корпоративные подарки с гравировкой: методы и выбор материалов",
@@ -709,8 +698,7 @@ export const blogPosts = {
 <h2>Контроль качества и сроков</h2>
 <p>Перед выдачей проверьте соответствие макету, целостность упаковки и корректность персонализации на выборочной партии.</p>
 <p><strong>Нужна помощь с подбором и запуском?</strong> Оставьте заявку через раздел контактов — команда подготовит рабочий план под ваш тираж.</p>
-<h2>Related articles</h2>
-<ul><li><a href="/ru/blog/lazernaya-gravirovka-podarkov-tehnologiya">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/lazernaya-gravirovka-podarkov">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/kak-podgotovit-maket-logotipa">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/brendirovannye-zazhigalki-i-chasy-s-logotipom">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/kak-vybrat-korporativnyj-podarok">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/podarochnye-nabory-s-logotipom">Смотрите также: связанный материал</a></li></ul>`},
+`},
     {
       slug: "lazernaya-gravirovka-podarkov-tehnologiya",
       title: "Лазерная гравировка подарков: технологии и преимущества",
@@ -728,8 +716,7 @@ export const blogPosts = {
 <h2>Контроль качества и сроков</h2>
 <p>Перед выдачей проверьте соответствие макету, целостность упаковки и корректность персонализации на выборочной партии.</p>
 <p><strong>Нужна помощь с подбором и запуском?</strong> Оставьте заявку через раздел контактов — команда подготовит рабочий план под ваш тираж.</p>
-<h2>Related articles</h2>
-<ul><li><a href="/ru/blog/lazernaya-gravirovka-podarkov">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/korporativnye-podarki-s-gravirovkoy-metody">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/kak-podgotovit-maket-logotipa">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/brendirovannye-zazhigalki-i-chasy-s-logotipom">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/kak-vybrat-korporativnyj-podarok">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/podarochnye-nabory-s-logotipom">Смотрите также: связанный материал</a></li></ul>`},
+`},
     {
       slug: "merch-dlya-kompanii-brendirovanie",
       title: "Мерч для компании: брендирование сувениров в Ташкенте",
@@ -747,8 +734,7 @@ export const blogPosts = {
 <h2>Контроль качества и сроков</h2>
 <p>Перед выдачей проверьте соответствие макету, целостность упаковки и корректность персонализации на выборочной партии.</p>
 <p><strong>Нужна помощь с подбором и запуском?</strong> Оставьте заявку через раздел контактов — команда подготовит рабочий план под ваш тираж.</p>
-<h2>Related articles</h2>
-<ul><li><a href="/ru/blog/brendirovanie-suvenirov">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/ekonomiya-na-korporativnyh-suvenirax">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/kak-vybrat-korporativnyj-podarok">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/lazernaya-gravirovka-podarkov">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/podarochnye-nabory-s-logotipom">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/welcome-pack-dlya-sotrudnikov">Смотрите также: связанный материал</a></li></ul>`},
+`},
     {
       slug: "podarki-sotrudnikam-hr-gayd",
       title: "Подарки сотрудникам: HR-гайд по корпоративным сувенирам",
@@ -766,8 +752,7 @@ export const blogPosts = {
 <h2>Контроль качества и сроков</h2>
 <p>Перед выдачей проверьте соответствие макету, целостность упаковки и корректность персонализации на выборочной партии.</p>
 <p><strong>Нужна помощь с подбором и запуском?</strong> Оставьте заявку через раздел контактов — команда подготовит рабочий план под ваш тираж.</p>
-<h2>Related articles</h2>
-<ul><li><a href="/ru/blog/welcome-pack-dlya-sotrudnikov">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/welcome-pack-novym-sotrudnikam">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/kak-vybrat-korporativnyj-podarok">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/lazernaya-gravirovka-podarkov">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/podarochnye-nabory-s-logotipom">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/brendirovanie-suvenirov">Смотрите также: связанный материал</a></li></ul>`},
+`},
     {
       slug: "podarki-klientam-partneram-vip",
       title: "Подарки клиентам и партнерам: VIP-корпоративные сувениры в Ташкенте",
@@ -785,8 +770,7 @@ export const blogPosts = {
 <h2>Контроль качества и сроков</h2>
 <p>Перед выдачей проверьте соответствие макету, целостность упаковки и корректность персонализации на выборочной партии.</p>
 <p><strong>Нужна помощь с подбором и запуском?</strong> Оставьте заявку через раздел контактов — команда подготовит рабочий план под ваш тираж.</p>
-<h2>Related articles</h2>
-<ul><li><a href="/ru/blog/korporativnye-podarki-s-logotipom-polnyy-gayd">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/kak-vybrat-korporativnyj-podarok">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/podarochnye-nabory-s-logotipom">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/korporativnye-podarochnye-nabory">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/lazernaya-gravirovka-podarkov">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/welcome-pack-dlya-sotrudnikov">Смотрите также: связанный материал</a></li></ul>`},
+`},
     {
       slug: "brendirovannye-zazhigalki-i-chasy-s-logotipom",
       title: "Брендированные зажигалки и часы: как выбрать подарок с логотипом компании",
@@ -804,8 +788,7 @@ export const blogPosts = {
 <h2>Контроль качества и сроков</h2>
 <p>Перед выдачей проверьте соответствие макету, целостность упаковки и корректность персонализации на выборочной партии.</p>
 <p><strong>Нужна помощь с подбором и запуском?</strong> Оставьте заявку через раздел контактов — команда подготовит рабочий план под ваш тираж.</p>
-<h2>Related articles</h2>
-<ul><li><a href="/ru/blog/lazernaya-gravirovka-podarkov-tehnologiya">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/lazernaya-gravirovka-podarkov">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/korporativnye-podarki-s-gravirovkoy-metody">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/kak-podgotovit-maket-logotipa">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/kak-vybrat-korporativnyj-podarok">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/podarochnye-nabory-s-logotipom">Смотрите также: связанный материал</a></li></ul>`},
+`},
     {
       slug: "korporativnye-podarochnye-nabory",
       title: "Корпоративные подарочные наборы: как собрать бокс с логотипом компании",
@@ -823,8 +806,7 @@ export const blogPosts = {
 <h2>Контроль качества и сроков</h2>
 <p>Перед выдачей проверьте соответствие макету, целостность упаковки и корректность персонализации на выборочной партии.</p>
 <p><strong>Нужна помощь с подбором и запуском?</strong> Оставьте заявку через раздел контактов — команда подготовит рабочий план под ваш тираж.</p>
-<h2>Related articles</h2>
-<ul><li><a href="/ru/blog/korporativnye-podarki-s-logotipom-polnyy-gayd">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/kak-vybrat-korporativnyj-podarok">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/podarochnye-nabory-s-logotipom">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/podarki-klientam-partneram-vip">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/lazernaya-gravirovka-podarkov">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/welcome-pack-dlya-sotrudnikov">Смотрите также: связанный материал</a></li></ul>`},
+`},
     {
       slug: "welcome-pack-novym-sotrudnikam",
       title: "Welcome pack для новых сотрудников: как собрать набор и брендировать",
@@ -842,8 +824,7 @@ export const blogPosts = {
 <h2>Контроль качества и сроков</h2>
 <p>Перед выдачей проверьте соответствие макету, целостность упаковки и корректность персонализации на выборочной партии.</p>
 <p><strong>Нужна помощь с подбором и запуском?</strong> Оставьте заявку через раздел контактов — команда подготовит рабочий план под ваш тираж.</p>
-<h2>Related articles</h2>
-<ul><li><a href="/ru/blog/podarki-sotrudnikam-hr-gayd">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/welcome-pack-dlya-sotrudnikov">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/kak-vybrat-korporativnyj-podarok">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/lazernaya-gravirovka-podarkov">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/podarochnye-nabory-s-logotipom">Смотрите также: связанный материал</a></li><li><a href="/ru/blog/brendirovanie-suvenirov">Смотрите также: связанный материал</a></li></ul>`}
+`}
     ,
     {
       slug: "merch-dlya-it-kompaniy-tashkent",
@@ -859,8 +840,7 @@ export const blogPosts = {
 <h2>Как запустить без лишних рисков</h2>
 <ol><li>Согласовать цели и бюджет на получателя</li><li>Подготовить макет и тестовый образец</li><li>Утвердить тираж, упаковку и сценарий выдачи</li></ol>
 <p><strong>Нужен каталог идей под ваш бюджет?</strong> Оставьте заявку и команда подберёт IT-мерч под задачи найма и удержания.</p>
-<h2>Related articles</h2>
-<ul><li><a href="/ru/blog/podarki-dlya-bankov-i-finteha-tashkent">Корпоративные подарки для банков и финтеха</a></li><li><a href="/ru/blog/podarki-na-korporativnye-sobytiya-tashkent">Подарки на корпоративные события</a></li><li><a href="/ru/blog/welcome-pack-novym-sotrudnikam">Welcome pack для новых сотрудников</a></li><li><a href="/ru/blog/chasy-s-logotipom-korporativnye-podarki-tashkent">Часы с логотипом как премиальный подарок</a></li><li><a href="/ru/blog/podarki-dlya-horeca-i-restoranov-tashkent">Подарки и мерч для HoReCa</a></li><li><a href="/ru/blog/lazernaya-gravirovka-podarkov">Лазерная гравировка подарков</a></li></ul>`},
+`},
     {
       slug: "podarki-dlya-bankov-i-finteha-tashkent",
       title: "Корпоративные подарки для банков и финтеха в Ташкенте: VIP и статус",
@@ -875,8 +855,7 @@ export const blogPosts = {
 <h2>Критерии выбора</h2>
 <ol><li>Соответствие брендбуку и тону коммуникации</li><li>Надёжные материалы и стойкое нанесение</li><li>Контроль качества на тестовой партии</li></ol>
 <p><strong>Нужен закрытый каталог для финансового сектора?</strong> Запросите подборку под ваш формат клиентов и партнёров.</p>
-<h2>Related articles</h2>
-<ul><li><a href="/ru/blog/podarki-klientam-partneram-vip">Подарки клиентам и партнёрам</a></li><li><a href="/ru/blog/kak-podgotovit-maket-logotipa">Как подготовить макет логотипа</a></li><li><a href="/ru/blog/merch-dlya-it-kompaniy-tashkent">Мерч для IT-компаний</a></li><li><a href="/ru/blog/chasy-s-logotipom-korporativnye-podarki-tashkent">Часы с логотипом</a></li><li><a href="/ru/blog/podarki-na-korporativnye-sobytiya-tashkent">Подарки на корпоративные события</a></li><li><a href="/ru/blog/podarki-dlya-horeca-i-restoranov-tashkent">Решения для HoReCa</a></li></ul>`},
+`},
     {
       slug: "chasy-s-logotipom-korporativnye-podarki-tashkent",
       title: "Часы с логотипом на заказ в Ташкенте: премиальный корпоративный подарок",
@@ -891,8 +870,7 @@ export const blogPosts = {
 <h2>Что важно в производстве</h2>
 <ol><li>Точный макет и тестовая визуализация</li><li>Выбор модели под целевую аудиторию</li><li>Контроль качества гравировки и упаковки</li></ol>
 <p><strong>Нужен каталог моделей под гравировку?</strong> Подготовим подборку с вариантами персонализации.</p>
-<h2>Related articles</h2>
-<ul><li><a href="/ru/blog/podarki-klientam-partneram-vip">VIP-подарки для клиентов и партнёров</a></li><li><a href="/ru/blog/podarki-sotrudnikam-hr-gayd">Подарки сотрудникам</a></li><li><a href="/ru/blog/merch-dlya-it-kompaniy-tashkent">Мерч для IT-компаний</a></li><li><a href="/ru/blog/podarki-dlya-bankov-i-finteha-tashkent">Подарки для банков и финтеха</a></li><li><a href="/ru/blog/chasy-s-logotipom-korporativnye-podarki-tashkent">Премиальные часы с логотипом</a></li><li><a href="/ru/blog/podarki-na-korporativnye-sobytiya-tashkent">Подарки на корпоративные события</a></li></ul>`},
+`},
     {
       slug: "podarki-na-korporativnye-sobytiya-tashkent",
       title: "Подарки на корпоративные события в Ташкенте: идеи и брендирование",
@@ -907,8 +885,7 @@ export const blogPosts = {
 <h2>Что чаще всего заказывают</h2>
 <ol><li>Наборы и аксессуары для массовых событий</li><li>Статусные позиции для юбилеев и награждений</li><li>Welcome-формат для онбординга и новых команд</li></ol>
 <p><strong>Нужен чек-лист под ваше событие?</strong> Подготовим подборку форматов под бюджет и сроки.</p>
-<h2>Related articles</h2>
-<ul><li><a href="/ru/blog/chasy-s-logotipom-korporativnye-podarki-tashkent">Часы с юбилейной гравировкой</a></li><li><a href="/ru/blog/podarki-sotrudnikam-hr-gayd">Подарки сотрудникам</a></li><li><a href="/ru/blog/welcome-pack-novym-sotrudnikam">Welcome pack для новичков</a></li><li><a href="/ru/blog/merch-dlya-it-kompaniy-tashkent">Мерч для IT-компаний</a></li><li><a href="/ru/blog/podarki-dlya-bankov-i-finteha-tashkent">Подарки для банков и финтеха</a></li><li><a href="/ru/blog/podarki-dlya-horeca-i-restoranov-tashkent">Решения для HoReCa</a></li></ul>`},
+`},
     {
       slug: "podarki-dlya-horeca-i-restoranov-tashkent",
       title: "Подарки и мерч для HoReCa в Ташкенте: брендирование ресторанов",
@@ -923,8 +900,7 @@ export const blogPosts = {
 <h2>Как обеспечить стабильное качество</h2>
 <ol><li>Утвердить единый макет под все носители</li><li>Подобрать долговечные материалы</li><li>Провести контрольную проверку перед тиражом</li></ol>
 <p><strong>Нужен каталог решений для вашего заведения?</strong> Подготовим варианты брендирования под ваш формат и бюджет.</p>
-<h2>Related articles</h2>
-<ul><li><a href="/ru/blog/lazernaya-gravirovka-podarkov">Лазерная гравировка подарков</a></li><li><a href="/ru/blog/kak-podgotovit-maket-logotipa">Подготовка макета логотипа</a></li><li><a href="/ru/blog/merch-dlya-it-kompaniy-tashkent">Мерч для IT-компаний</a></li><li><a href="/ru/blog/podarki-dlya-bankov-i-finteha-tashkent">Подарки для банков и финтеха</a></li><li><a href="/ru/blog/chasy-s-logotipom-korporativnye-podarki-tashkent">Премиальные часы с логотипом</a></li><li><a href="/ru/blog/podarki-na-korporativnye-sobytiya-tashkent">Подарки на корпоративные события</a></li></ul>`}
+`}
 ,
   
 {
