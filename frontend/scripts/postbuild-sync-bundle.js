@@ -46,6 +46,12 @@ if (newCssFilename) console.log(`[sync-bundle] New CSS bundle: ${newCssFilename}
 const jsPattern = /main\.[a-f0-9]+\.js/g;
 const cssPattern = /main\.[a-f0-9]+\.css/g;
 
+// Regex to remove signals/config script tag (React Snap artifact — breaks pixel init order)
+const signalsConfigPattern = /<script[^>]*src="https:\/\/connect\.facebook\.net\/signals\/config\/[^"]*"[^>]*><\/script>/g;
+
+// Regex to remove standalone async fbevents.js tag (React Snap artifact — duplicates inline pixel snippet)
+const fbeventsDuplicatePattern = /<script\s+src="https:\/\/connect\.facebook\.net\/en_US\/fbevents\.js"\s+async><\/script>/g;
+
 let updatedCount = 0;
 
 function processDir(dir) {
@@ -58,10 +64,20 @@ function processDir(dir) {
     } else if (entry.name.endsWith('.html')) {
       let content = fs.readFileSync(fullPath, 'utf8');
       const original = content;
+      // 1. Update JS bundle hash
       content = content.replace(jsPattern, newJsFilename);
+
+      // 2. Update CSS bundle hash
       if (newCssFilename) {
         content = content.replace(cssPattern, newCssFilename);
       }
+
+      // 3. Remove signals/config hardcoded script tag
+      content = content.replace(signalsConfigPattern, '');
+
+      // 4. Remove duplicate standalone fbevents.js async tag
+      content = content.replace(fbeventsDuplicatePattern, '');
+
       if (content !== original) {
         fs.writeFileSync(fullPath, content, 'utf8');
         updatedCount++;
