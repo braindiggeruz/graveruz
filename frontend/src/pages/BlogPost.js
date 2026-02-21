@@ -512,7 +512,7 @@ function BlogPostPage() {
               )
             ),
             React.createElement('a', {
-              href: '/catalogs/graver-checklist-b2b-buyer.pdf',
+              href: '/downloads/checklist-zakupshchika.pdf',
               download: true,
               className: 'inline-flex items-center gap-2 bg-teal-500 hover:bg-teal-400 text-white font-semibold px-5 py-3 rounded-lg transition whitespace-nowrap',
               onClick: function() { trackCatalogDownload('blog-checklist-article'); }
