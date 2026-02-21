@@ -1,14 +1,4 @@
-// Telegram CTA tracker
-const trackTelegram = (placement) => {
-  if (!window.fbq) return;
-  if (window.__tgTrackTs && Date.now() - window.__tgTrackTs < 800) return;
-  window.__tgTrackTs = Date.now();
-  window.fbq('track', 'Contact', {
-    source: 'telegram',
-    page: window.location.pathname,
-    placement
-  });
-};
+import { trackTelegramContact } from '../utils/pixel';
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';

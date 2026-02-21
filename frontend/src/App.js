@@ -1,3 +1,4 @@
+import { trackTelegramContact } from './utils/pixel';
 import React, { useState, useEffect, useRef, lazy, Suspense } from 'react';
 import { useNavigate, useParams, Link, useLocation } from 'react-router-dom';
 import './App.css';
@@ -369,7 +370,7 @@ function App() {
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto bg-transparent text-white px-8 py-4 rounded-lg font-semibold text-base hover:bg-white/10 transition border border-white/30 flex items-center justify-center group min-h-[56px]"
                 data-testid="hero-secondary-cta"
-                onClick={() => trackTelegram('hero')}
+                onClick={() => trackTelegramContact('home-telegram')}
               >
                 <Send className="mr-2 group-hover:translate-x-1 transition-transform" size={18} />
                 {t('hero.ctaSecondary')}
