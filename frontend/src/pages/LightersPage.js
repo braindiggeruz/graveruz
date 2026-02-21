@@ -288,7 +288,7 @@ function LightersPage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center bg-gray-800 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-700 transition border border-gray-700"
                 data-testid="lighters-cta-download"
-                onClick={() => trackTelegram('lighters-cta')}
+                onClick={() => trackTelegramContact('lighters-telegram')}
               >
                 <Send size={20} className="mr-2" />
                 {isRu ? 'Написать в Telegram' : 'Telegramga yozish'}
@@ -473,7 +473,7 @@ function LightersPage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center bg-gray-800 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-700 transition border border-gray-700"
                 data-testid="lighters-cta-phone"
-                onClick={() => trackTelegram('lighters-cta')}
+                onClick={() => trackTelegramContact('lighters-telegram')}
               >
               <Send size={20} className="mr-2" />
               {isRu ? 'Написать в Telegram' : 'Telegramga yozish'}
