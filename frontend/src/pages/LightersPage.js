@@ -1,3 +1,14 @@
+// Telegram CTA tracker
+const trackTelegram = (placement) => {
+  if (!window.fbq) return;
+  if (window.__tgTrackTs && Date.now() - window.__tgTrackTs < 800) return;
+  window.__tgTrackTs = Date.now();
+  window.fbq('track', 'Contact', {
+    source: 'telegram',
+    page: window.location.pathname,
+    placement
+  });
+};
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
@@ -287,7 +298,7 @@ function LightersPage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center bg-gray-800 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-700 transition border border-gray-700"
                 data-testid="lighters-cta-download"
-                // ...existing code...
+                onClick={() => trackTelegram('lighters-cta')}
               >
                 <Send size={20} className="mr-2" />
                 {isRu ? 'Написать в Telegram' : 'Telegramga yozish'}
@@ -466,14 +477,14 @@ function LightersPage() {
               <Send size={20} className="mr-2" />
               {isRu ? 'Получить макет' : 'Maketni olish'}
             </a>
-            <a 
-              href="https://t.me/GraverAdm"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center bg-gray-800 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-700 transition border border-gray-700"
-              data-testid="lighters-cta-phone"
-              // ...existing code...
-            >
+              <a 
+                href="https://t.me/GraverAdm"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center bg-gray-800 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-700 transition border border-gray-700"
+                data-testid="lighters-cta-phone"
+                onClick={() => trackTelegram('lighters-cta')}
+              >
               <Send size={20} className="mr-2" />
               {isRu ? 'Написать в Telegram' : 'Telegramga yozish'}
             </a>

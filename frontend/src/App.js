@@ -67,87 +67,17 @@ function App() {
     }
   }, [location.pathname, location.search]);
 
-  // Global Telegram CTA tracker (links + buttons, deduped)
-  useEffect(() => {
-    function isTelegramUrl(href) {
-      return (
-        typeof href === 'string' &&
-        (/t\.me\//.test(href) || /telegram\.me\//.test(href) || href.startsWith('tg://'))
-      );
-    }
-    function isTelegramText(txt) {
-      if (!txt) return false;
-      const t = txt.toLowerCase();
-      return t.includes('telegram') || t.includes('телеграм') || t.includes('tg');
-    }
-    function isTelegramButton(el) {
-      if (!el) return false;
-      // Check text
-      const txt = (el.innerText || el.textContent || '').toLowerCase();
-      if (isTelegramText(txt)) return true;
-      // Check class/id/aria-label
-      const attrs = [el.className, el.id, el.getAttribute?.('aria-label')].join(' ').toLowerCase();
-      return attrs.includes('telegram') || attrs.includes('tg');
-    }
-    function trackTelegramClick(placement) {
-      if (window.__tgTrackTs && Date.now() - window.__tgTrackTs < 800) return;
-      window.__tgTrackTs = Date.now();
-      if (window.fbq) window.fbq('track', 'Contact', {
-        source: 'telegram',
-        page: window.location.pathname,
-        placement
-      });
-    }
-    const handler = (e) => {
-      // Layer 1: link
-      const link = e.target.closest && e.target.closest('a[href]');
-      if (link && isTelegramUrl(link.getAttribute('href'))) {
-        // dedupe
-        trackTelegramClick('global-link');
-        // prevent double fire for non-_blank
-        if (link.target !== '_blank') {
-          e.preventDefault();
-          setTimeout(() => {
-            window.location.href = link.href;
-          }, 120);
-        }
-        return;
-      }
-      // Layer 2: button/cta
-      const el = e.target.closest && e.target.closest('button, [role="button"], a, div');
-      if (el && isTelegramButton(el)) {
-        trackTelegramClick('global-btn');
-        // do not block navigation for button scenario
-      }
-    };
-    document.addEventListener('click', handler, true);
-    // window.open override
-    const origOpen = window.open;
-    window.open = function(url, ...args) {
-      if (isTelegramUrl(url)) {
-        trackTelegramClick('global-open');
-      }
-      return origOpen.apply(this, [url, ...args]);
-    };
-    // location.assign/replace override (optional, safe)
-    try {
-      const origAssign = window.location.assign.bind(window.location);
-      window.location.assign = function(url) {
-        if (isTelegramUrl(url)) trackTelegramClick('global-assign');
-        return origAssign(url);
-      };
-      const origReplace = window.location.replace.bind(window.location);
-      window.location.replace = function(url) {
-        if (isTelegramUrl(url)) trackTelegramClick('global-replace');
-        return origReplace(url);
-      };
-    } catch {}
-    return () => {
-      document.removeEventListener('click', handler, true);
-      window.open = origOpen;
-      // skip restoring assign/replace for safety
-    };
-  }, []);
+  // Explicit Telegram CTA tracker
+  const trackTelegram = (placement) => {
+    if (!window.fbq) return;
+    if (window.__tgTrackTs && Date.now() - window.__tgTrackTs < 800) return;
+    window.__tgTrackTs = Date.now();
+    window.fbq('track', 'Contact', {
+      source: 'telegram',
+      page: window.location.pathname,
+      placement
+    });
+  };
 
   // Meta Pixel: track Telegram click
   // ...existing code...
@@ -439,7 +369,7 @@ function App() {
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto bg-transparent text-white px-8 py-4 rounded-lg font-semibold text-base hover:bg-white/10 transition border border-white/30 flex items-center justify-center group min-h-[56px]"
                 data-testid="hero-secondary-cta"
-                onClick={() => handleTelegramClick('hero')}
+                onClick={() => trackTelegram('hero')}
               >
                 <Send className="mr-2 group-hover:translate-x-1 transition-transform" size={18} />
                 {t('hero.ctaSecondary')}
@@ -599,7 +529,7 @@ function App() {
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-flex items-center mt-6 text-teal-500 hover:text-teal-400 font-semibold group/link"
-                  onClick={() => handleTelegramClick('service-gifts')}
+                  onClick={() => trackTelegram('service-gifts')}
                 >
                   Обсудить проект
                   <Send className="ml-2 group-hover/link:translate-x-1 transition-transform" size={16} />
@@ -637,7 +567,7 @@ function App() {
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-flex items-center mt-6 text-teal-500 hover:text-teal-400 font-semibold group/link"
-                  onClick={() => handleTelegramClick('service-awards')}
+                  onClick={() => trackTelegram('service-awards')}
                 >
                   Обсудить проект
                   <Send className="ml-2 group-hover/link:translate-x-1 transition-transform" size={16} />
@@ -675,7 +605,7 @@ function App() {
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-flex items-center mt-6 text-teal-500 hover:text-teal-400 font-semibold group/link"
-                  onClick={() => handleTelegramClick('service-branding')}
+                  onClick={() => trackTelegram('service-branding')}
                 >
                   Обсудить проект
                   <Send className="ml-2 group-hover/link:translate-x-1 transition-transform" size={16} />
@@ -713,7 +643,7 @@ function App() {
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-flex items-center mt-6 text-teal-500 hover:text-teal-400 font-semibold group/link"
-                  onClick={() => handleTelegramClick('service-custom')}
+                  onClick={() => trackTelegram('service-custom')}
                 >
                   Обсудить проект
                   <Send className="ml-2 group-hover/link:translate-x-1 transition-transform" size={16} />
@@ -1125,7 +1055,7 @@ function App() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-teal-500 hover:text-teal-400 font-semibold transition"
                 data-testid="form-telegram-alternative"
-                onClick={() => handleTelegramClick('form-alternative')}
+                onClick={() => trackTelegram('form-alternative')}
               >
                 <Send className="mr-2" size={18} />
                 Написать в Telegram
@@ -1263,7 +1193,7 @@ function App() {
               rel="noopener noreferrer"
               className="inline-flex items-center bg-gradient-to-r from-teal-500 to-cyan-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-teal-600 hover:to-cyan-700 transition"
               data-testid="faq-contact-cta"
-              onClick={() => handleTelegramClick('faq')}
+              onClick={() => trackTelegram('faq')}
             >
               <MessageCircle className="mr-2" size={20} />
               {t('faq.askTelegram')}
@@ -1304,7 +1234,7 @@ function App() {
                   <Send size={16} className="mr-2" />
                   @GraverAdm
                   {/* Meta Pixel Telegram click */}
-                  <span style={{display:'none'}} onClick={() => handleTelegramClick('footer')}></span>
+                  <span style={{display:'none'}} onClick={() => trackTelegram('footer')}></span>
                 </a>
                 <div className="flex items-start">
                   <MapPin size={16} className="mr-2 mt-1 flex-shrink-0" />
@@ -1383,7 +1313,7 @@ function App() {
             aria-label="Написать в Telegram"
             className="bg-gray-800 text-white px-4 py-3 rounded-lg font-semibold text-center hover:bg-gray-700 transition flex items-center justify-center border border-gray-700 min-h-[48px]"
             data-testid="sticky-telegram-button"
-            onClick={() => handleTelegramClick('sticky-mobile')}
+            onClick={() => trackTelegram('sticky-mobile')}
           >
             <Send size={20} />
           </a>
