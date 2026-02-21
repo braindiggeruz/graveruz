@@ -58,11 +58,15 @@ function ensureChromium() {
   if (executable) return executable;
 
   console.log('[postbuild] Chromium not found, installing via @puppeteer/browsers...');
-  execSync('npx @puppeteer/browsers install chrome', { stdio: 'inherit' });
-  executable = findChromiumExecutable();
-  if (executable) return executable;
+  try {
+    execSync('npx @puppeteer/browsers install chrome', { stdio: 'inherit' });
+    executable = findChromiumExecutable();
+    if (executable) return executable;
+  } catch (e) {
+    console.warn('[postbuild] Failed to install Chromium:', e.message);
+  }
 
-  throw new Error('[postbuild] Chromium executable not found after install. Set PUPPETEER_EXECUTABLE_PATH manually.');
+  return null;
 }
 
 function ensureReactSnapNodeOptions() {
@@ -82,30 +86,57 @@ function ensureReactSnapNodeOptions() {
   return `${withoutHeap} --max-old-space-size=${minHeapMb}`.trim();
 }
 
+// Check if pre-rendered pages are available in the prerendered/ folder
+// If they are, react-snap is optional (inject-prerendered.js will handle it)
+const PRERENDERED_DIR = path.join(__dirname, '..', 'prerendered');
+const hasPrerenderedFallback = fs.existsSync(PRERENDERED_DIR) &&
+  fs.readdirSync(PRERENDERED_DIR).length > 0;
+
 const shouldSkip = String(process.env.SKIP_REACT_SNAP || '').toLowerCase();
 const pagesEnv = String(process.env.CF_PAGES_ENVIRONMENT || '').toLowerCase();
 const pagesBranch = String(process.env.CF_PAGES_BRANCH || '').toLowerCase();
 const isProduction = pagesEnv === 'production' || pagesBranch === 'main';
 
 if (shouldSkip === '1' || shouldSkip === 'true') {
-  if (isProduction) {
-    console.warn('[postbuild] SKIP_REACT_SNAP is set for production. Ignoring and continuing with react-snap.');
+  if (isProduction && !hasPrerenderedFallback) {
+    console.warn('[postbuild] SKIP_REACT_SNAP is set for production but no prerendered/ fallback exists. Continuing with react-snap.');
   } else {
-    console.log('[postbuild] SKIP_REACT_SNAP=1, skipping react-snap.');
+    if (hasPrerenderedFallback) {
+      console.log('[postbuild] SKIP_REACT_SNAP=1 and prerendered/ fallback exists — skipping react-snap (inject-prerendered.js will handle it).');
+    } else {
+      console.log('[postbuild] SKIP_REACT_SNAP=1, skipping react-snap.');
+    }
     process.exit(0);
   }
 }
 
-if (process.env.SKIP_REACT_SNAP === "1" || process.env.SKIP_REACT_SNAP === "true") {
-  console.log("[postbuild] SKIP_REACT_SNAP is set — skipping react-snap.");
-  process.exit(0);
+const chromiumPath = ensureChromium();
+
+if (!chromiumPath) {
+  if (hasPrerenderedFallback) {
+    console.warn('[postbuild] Chromium not available — skipping react-snap. Pre-rendered pages from prerendered/ folder will be injected by inject-prerendered.js.');
+    process.exit(0);
+  } else {
+    console.error('[postbuild] ERROR: Chromium not available and no prerendered/ fallback exists.');
+    console.error('[postbuild] Run the build locally with Chromium available to generate prerendered/ pages.');
+    process.exit(1);
+  }
 }
 
-const chromiumPath = ensureChromium();
 process.env.PUPPETEER_EXECUTABLE_PATH = chromiumPath;
 process.env.CHROME_BIN = chromiumPath;
 process.env.NODE_OPTIONS = ensureReactSnapNodeOptions();
 console.log('[postbuild] Using Chromium:', chromiumPath);
 console.log('[postbuild] NODE_OPTIONS for react-snap:', process.env.NODE_OPTIONS);
 
-execSync('react-snap', { stdio: 'inherit' });
+try {
+  execSync('react-snap', { stdio: 'inherit' });
+} catch (e) {
+  if (hasPrerenderedFallback) {
+    console.warn('[postbuild] react-snap failed but prerendered/ fallback exists — continuing. inject-prerendered.js will handle missing pages.');
+    process.exit(0);
+  } else {
+    console.error('[postbuild] react-snap failed and no prerendered/ fallback exists.');
+    throw e;
+  }
+}
