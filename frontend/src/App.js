@@ -469,7 +469,7 @@ function App() {
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-flex items-center mt-6 text-teal-500 hover:text-teal-400 font-semibold group/link"
-                  onClick={() => trackTelegram('service-gifts')}
+                  onClick={() => trackTelegramContact('service-gifts')}
                 >
                   Обсудить проект
                   <Send className="ml-2 group-hover/link:translate-x-1 transition-transform" size={16} />
@@ -507,7 +507,7 @@ function App() {
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-flex items-center mt-6 text-teal-500 hover:text-teal-400 font-semibold group/link"
-                  onClick={() => trackTelegram('service-awards')}
+                  onClick={() => trackTelegramContact('service-awards')}
                 >
                   Обсудить проект
                   <Send className="ml-2 group-hover/link:translate-x-1 transition-transform" size={16} />
@@ -545,7 +545,7 @@ function App() {
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-flex items-center mt-6 text-teal-500 hover:text-teal-400 font-semibold group/link"
-                  onClick={() => trackTelegram('service-branding')}
+                  onClick={() => trackTelegramContact('service-branding')}
                 >
                   Обсудить проект
                   <Send className="ml-2 group-hover/link:translate-x-1 transition-transform" size={16} />
@@ -583,7 +583,7 @@ function App() {
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-flex items-center mt-6 text-teal-500 hover:text-teal-400 font-semibold group/link"
-                  onClick={() => trackTelegram('service-custom')}
+                  onClick={() => trackTelegramContact('service-custom')}
                 >
                   Обсудить проект
                   <Send className="ml-2 group-hover/link:translate-x-1 transition-transform" size={16} />
@@ -995,7 +995,7 @@ function App() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-teal-500 hover:text-teal-400 font-semibold transition"
                 data-testid="form-telegram-alternative"
-                onClick={() => trackTelegram('form-alternative')}
+                onClick={() => trackTelegramContact('form-alternative')}
               >
                 <Send className="mr-2" size={18} />
                 Написать в Telegram
@@ -1133,7 +1133,7 @@ function App() {
               rel="noopener noreferrer"
               className="inline-flex items-center bg-gradient-to-r from-teal-500 to-cyan-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-teal-600 hover:to-cyan-700 transition"
               data-testid="faq-contact-cta"
-              onClick={() => trackTelegram('faq')}
+              onClick={() => trackTelegramContact('faq')}
             >
               <MessageCircle className="mr-2" size={20} />
               {t('faq.askTelegram')}
@@ -1170,11 +1170,9 @@ function App() {
                   <Phone size={16} className="mr-2" />
                   +998 97 480 22 88
                 </a>
-                <a href="https://t.me/GraverAdm" data-track="tg" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-teal-500 transition" data-testid="footer-telegram">
+                <a href="https://t.me/GraverAdm" data-track="tg" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-teal-500 transition" data-testid="footer-telegram" onClick={() => trackTelegramContact('footer')}>
                   <Send size={16} className="mr-2" />
                   @GraverAdm
-                  {/* Meta Pixel Telegram click */}
-                  <span style={{display:'none'}} onClick={() => trackTelegram('footer')}></span>
                 </a>
                 <div className="flex items-start">
                   <MapPin size={16} className="mr-2 mt-1 flex-shrink-0" />
@@ -1253,7 +1251,7 @@ function App() {
             aria-label="Написать в Telegram"
             className="bg-gray-800 text-white px-4 py-3 rounded-lg font-semibold text-center hover:bg-gray-700 transition flex items-center justify-center border border-gray-700 min-h-[48px]"
             data-testid="sticky-telegram-button"
-            onClick={() => trackTelegram('sticky-mobile')}
+            onClick={() => trackTelegramContact('sticky-mobile')}
           >
             <Send size={20} />
           </a>

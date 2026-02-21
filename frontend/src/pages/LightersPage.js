@@ -277,7 +277,7 @@ function LightersPage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center bg-gradient-to-r from-orange-500 to-red-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-orange-600 hover:to-red-700 transition"
                 data-testid="lighters-cta-models"
-                // ...existing code...
+                onClick={() => trackTelegramContact('lighters-hero-maket')}
               >
                 {isRu ? 'Получить макет' : 'Maketni olish'}
                 <ChevronRight size={20} className="ml-2" />
@@ -462,7 +462,7 @@ function LightersPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center bg-gradient-to-r from-teal-500 to-cyan-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-teal-600 hover:to-cyan-700 transition"
               data-testid="lighters-cta-telegram"
-              // ...existing code...
+              onClick={() => trackTelegramContact('lighters-cta-maket')}
             >
               <Send size={20} className="mr-2" />
               {isRu ? 'Получить макет' : 'Maketni olish'}
