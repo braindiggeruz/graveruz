@@ -496,7 +496,7 @@ function BlogPostPage() {
         ),
         React.createElement('div', { className: 'prose prose-invert max-w-none' }, contentBody),
         // Checklist Download Block (only for checklist article)
-        slug === 'chek-list-zakupshchika-podarkov' && React.createElement('div', {
+        (slug === 'chek-list-zakupshchika-podarkov' || slug === 'xaridor-chek-listi-b2b') && React.createElement('div', {
           className: 'my-8 p-6 bg-gradient-to-r from-teal-900/40 to-cyan-900/40 border border-teal-600/60 rounded-xl',
           'data-testid': 'checklist-download-block'
         },
