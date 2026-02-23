@@ -203,8 +203,8 @@ function BlogPostPage() {
       var hasHelmetRobots = document.head.querySelector('meta[name="robots"][data-rh="true"]');
       var hasHelmetDescription = document.head.querySelector('meta[name="description"][data-rh="true"]');
       var hasHelmetCanonical = document.head.querySelector('link[rel="canonical"][data-rh="true"]');
-      var hasHelmetRuAlt = document.head.querySelector('link[rel="alternate"][hreflang="ru-RU"][data-rh="true"]');
-      var hasHelmetUzAlt = document.head.querySelector('link[rel="alternate"][hreflang="uz-UZ"][data-rh="true"]');
+      var hasHelmetRuAlt = document.head.querySelector('link[rel="alternate"][hreflang="ru"][data-rh="true"]');
+      var hasHelmetUzAlt = document.head.querySelector('link[rel="alternate"][hreflang="uz-Latn"][data-rh="true"]');
       var hasHelmetDefaultAlt = document.head.querySelector('link[rel="alternate"][hreflang="x-default"][data-rh="true"]');
       return !!(hasHelmetRobots && hasHelmetDescription && hasHelmetCanonical && hasHelmetRuAlt && hasHelmetUzAlt && hasHelmetDefaultAlt);
     };
@@ -249,8 +249,8 @@ function BlogPostPage() {
       appendMeta('name', 'description', pageDescription);
       appendMeta('name', 'robots', 'index, follow');
       appendLink('canonical', canonicalUrl);
-      appendLink('alternate', ruUrl, 'ru-RU');
-      appendLink('alternate', uzUrl, 'uz-UZ');
+      appendLink('alternate', ruUrl, 'ru');
+      appendLink('alternate', uzUrl, 'uz-Latn');
       appendLink('alternate', ruUrl || canonicalUrl, 'x-default');
       appendMeta('property', 'og:title', pageTitle);
       appendMeta('property', 'og:description', pageDescription);
@@ -495,6 +495,26 @@ function BlogPostPage() {
           )
         ),
         React.createElement('div', { className: 'prose prose-invert max-w-none' }, contentBody),
+        // Author Block — E-E-A-T signal for Google (shows expertise and trustworthiness)
+        React.createElement('div', {
+          className: 'mt-10 p-5 bg-gray-900/60 border border-gray-800 rounded-xl flex items-start gap-4',
+          'data-testid': 'author-block',
+          itemScope: true,
+          itemType: 'https://schema.org/Organization'
+        },
+          React.createElement('div', { className: 'w-12 h-12 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-full flex items-center justify-center flex-shrink-0' },
+            React.createElement('span', { className: 'text-white font-bold text-xl' }, 'G')
+          ),
+          React.createElement('div', null,
+            React.createElement('p', { className: 'text-xs text-gray-500 mb-0.5' }, isRu ? 'Автор материала' : 'Maqola muallifi'),
+            React.createElement('p', { className: 'text-white font-semibold', itemProp: 'name' }, 'Graver.uz'),
+            React.createElement('p', { className: 'text-gray-400 text-sm mt-1' },
+              isRu
+                ? 'Команда Graver.uz — эксперты по лазерной гравировке и корпоративным подаркам в Ташкенте с опытом более 5 лет.'
+                : "Graver.uz jamoasi — Toshkentda 5 yildan ortiq tajribaga ega lazer gravirovka va korporativ sovgalar bo'yicha mutaxassislar."
+            )
+          )
+        ),
         // Checklist Download Block (only for checklist article)
         (slug === 'chek-list-zakupshchika-podarkov' || slug === 'xaridor-chek-listi-b2b') && React.createElement('div', {
           className: 'my-8 p-6 bg-gradient-to-r from-teal-900/40 to-cyan-900/40 border border-teal-600/60 rounded-xl',

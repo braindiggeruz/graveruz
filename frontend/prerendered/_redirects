@@ -1,6 +1,24 @@
-https://www.graver-studio.uz/*  https://graver-studio.uz/:splat 301
-/__build_id.txt  /__build_id.txt 200
-/sw.js           /sw.js 200
-/static/*        /static/:splat 200
-/               /index.html 200
+# Canonical domain: www → non-www (301)
+https://www.graver-studio.uz/*  https://graver-studio.uz/:splat  301
+
+# Static assets — serve directly
+/__build_id.txt  /__build_id.txt  200
+/sw.js           /sw.js           200
+/static/*        /static/:splat   200
+/images/*        /images/:splat   200
+/portfolio/*     /portfolio/:splat 200
+/manifest.json   /manifest.json   200
+/robots.txt      /robots.txt      200
+/sitemap.xml     /sitemap.xml     200
+/sitemap-index.xml /sitemap-index.xml 200
+/image-sitemap.xml /image-sitemap.xml 200
+/rss-ru.xml      /rss-ru.xml      200
+/rss-uz.xml      /rss-uz.xml      200
+/indexnow-key.txt /indexnow-key.txt 200
 /7vq9wduloq5ay37iyzt17l1v4k162j.html  /7vq9wduloq5ay37iyzt17l1v4k162j.html  200
+
+# Root redirect → React Router handles locale detection
+/  /index.html  200
+
+# SPA fallback — all routes render index.html (React Router handles routing)
+/*  /index.html  200

@@ -102,6 +102,8 @@ export default function SEOHead({
         noindex={noindex}
         ogType={ogType}
         ogImage={ogImage}
+        isContactsPage={page === 'contacts'}
+        showRssLinks={page === 'home'}
       />
       <Helmet>
         <script type="application/ld+json">

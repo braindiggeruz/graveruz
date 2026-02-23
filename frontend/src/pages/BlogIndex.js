@@ -121,8 +121,8 @@ export default function BlogIndex() {
     const hasHelmetRobots = document.head.querySelector('meta[name="robots"][data-rh="true"]');
     const hasHelmetDescription = document.head.querySelector('meta[name="description"][data-rh="true"]');
     const hasHelmetCanonical = document.head.querySelector('link[rel="canonical"][data-rh="true"]');
-    const hasHelmetRuAlt = document.head.querySelector('link[rel="alternate"][hreflang="ru-RU"][data-rh="true"]');
-    const hasHelmetUzAlt = document.head.querySelector('link[rel="alternate"][hreflang="uz-UZ"][data-rh="true"]');
+    const hasHelmetRuAlt = document.head.querySelector('link[rel="alternate"][hreflang="ru"][data-rh="true"]');
+    const hasHelmetUzAlt = document.head.querySelector('link[rel="alternate"][hreflang="uz-Latn"][data-rh="true"]');
     const hasHelmetDefaultAlt = document.head.querySelector('link[rel="alternate"][hreflang="x-default"][data-rh="true"]');
 
     if (hasHelmetRobots && hasHelmetDescription && hasHelmetCanonical && hasHelmetRuAlt && hasHelmetUzAlt && hasHelmetDefaultAlt) {
@@ -167,8 +167,8 @@ export default function BlogIndex() {
     appendMeta('name', 'description', pageDescription);
     appendMeta('name', 'robots', 'index, follow');
     appendLink('canonical', canonicalUrl);
-    appendLink('alternate', ruUrl, { hreflang: 'ru-RU' });
-    appendLink('alternate', uzUrl, { hreflang: 'uz-UZ' });
+    appendLink('alternate', ruUrl, { hreflang: 'ru' });
+    appendLink('alternate', uzUrl, { hreflang: 'uz-Latn' });
     appendLink('alternate', ruUrl || canonicalUrl, { hreflang: 'x-default' });
     appendMeta('property', 'og:title', pageTitle);
     appendMeta('property', 'og:description', pageDescription);
@@ -234,6 +234,7 @@ export default function BlogIndex() {
         uzUrl={uzUrl}
         locale={locale}
         ogType="website"
+        showRssLinks={true}
       />
       <Helmet>
         <script type="application/ld+json">

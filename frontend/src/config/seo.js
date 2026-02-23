@@ -20,10 +20,10 @@ export const ROUTE_MAP_REVERSE = Object.fromEntries(
   Object.entries(ROUTE_MAP).map(([ru, uz]) => [uz, ru])
 );
 
-// Hreflang codes
+// Hreflang codes — ISO 639-1 standard (Google recommends simple codes, uz-Latn for Latin Uzbek)
 export const HREFLANG_MAP = {
-  ru: 'ru-RU',
-  uz: 'uz-UZ'
+  ru: 'ru',
+  uz: 'uz-Latn'
 };
 
 function normalizeSeoPath(pathname) {

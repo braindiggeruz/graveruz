@@ -27,6 +27,30 @@ const moneyPaths = [
   '/ru/blog',
   '/uz/blog'
 ];
+const ROUTE_PAIRS = {
+  '/ru': '/uz',
+  '/ru/process': '/uz/process',
+  '/ru/guarantees': '/uz/guarantees',
+  '/ru/contacts': '/uz/contacts',
+  '/ru/catalog-products': '/uz/mahsulotlar-katalogi',
+  '/ru/watches-with-logo': '/uz/logotipli-soat',
+  '/ru/products/lighters': '/uz/products/lighters',
+  '/ru/engraved-gifts': '/uz/gravirovkali-sovgalar',
+  '/ru/blog': '/uz/blog'
+};
+function getHreflangLinks(pathname, baseUrl, ensureTrailingSlash) {
+  // Find the paired path
+  const ruPath = pathname.startsWith('/uz') ? null : pathname;
+  const uzPath = pathname.startsWith('/ru') ? ROUTE_PAIRS[pathname] || pathname.replace('/ru/', '/uz/') : pathname;
+  const ruLoc = baseUrl + ensureTrailingSlash(ruPath || pathname.replace('/uz/', '/ru/'));
+  const uzLoc = baseUrl + ensureTrailingSlash(uzPath || pathname.replace('/ru/', '/uz/'));
+  return [
+    { hreflang: 'ru', href: ruLoc },
+    { hreflang: 'uz-Latn', href: uzLoc },
+    { hreflang: 'x-default', href: ruLoc }
+  ];
+}
+
 
 function toDate(value) {
   if (!value) return null;
@@ -41,13 +65,24 @@ function ensureTrailingSlash(pathname) {
 }
 
 function buildXml(urls) {
-  const items = urls.map(({ loc, lastmod }) => (
-    `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${lastmod}</lastmod>\n  </url>`
-  ));
+  const items = urls.map(({ loc, lastmod, hreflangLinks }) => {
+    const parts = [
+      '  <url>',
+      `    <loc>${loc}</loc>`,
+      `    <lastmod>${lastmod}</lastmod>`
+    ];
+    if (Array.isArray(hreflangLinks) && hreflangLinks.length > 0) {
+      hreflangLinks.forEach(({ hreflang, href }) => {
+        parts.push(`    <xhtml:link rel="alternate" hreflang="${hreflang}" href="${href}"/>`);
+      });
+    }
+    parts.push('  </url>');
+    return parts.join('\n');
+  });
 
   return [
     '<?xml version="1.0" encoding="UTF-8"?>',
-    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">',
     items.join('\n'),
     '</urlset>',
     ''
@@ -97,10 +132,11 @@ async function main() {
 
   const urlMap = new Map();
 
-  const addUrl = (pathname, lastmod) => {
+  const addUrl = (pathname, lastmod, hreflangLinks) => {
     const loc = `${baseUrl}${ensureTrailingSlash(pathname)}`;
     const lm = lastmod || buildDate;
-    urlMap.set(loc, lm);
+    const links = hreflangLinks || getHreflangLinks(pathname, baseUrl, ensureTrailingSlash);
+    urlMap.set(loc, { lastmod: lm, hreflangLinks: links });
   };
 
   moneyPaths.forEach((pathname) => addUrl(pathname, buildDate));
@@ -123,7 +159,7 @@ async function main() {
 
   blogPosts.ru.forEach((post) => {
     const lastmod = toDate(post.date) || buildDate;
-    addUrl(`/ru/blog/${post.slug}`, lastmod);
+    addUrl(`/ru/blog/${post.slug}`, lastmod, null);
     addImageEntry({ pathname: `/ru/blog/${post.slug}`, slug: post.slug, title: post.title, lastmod });
   });
 
@@ -133,7 +169,11 @@ async function main() {
     addImageEntry({ pathname: `/uz/blog/${post.slug}`, slug: post.slug, title: post.title, lastmod });
   });
 
-  const urls = Array.from(urlMap.entries()).map(([loc, lastmod]) => ({ loc, lastmod }));
+  const urls = Array.from(urlMap.entries()).map(([loc, val]) => ({
+    loc,
+    lastmod: typeof val === 'object' ? val.lastmod : val,
+    hreflangLinks: typeof val === 'object' ? val.hreflangLinks : []
+  }));
   const sitemapXml = buildXml(urls);
   const imageSitemapXml = buildImageSitemapXml(Array.from(imageEntryMap.values()));
 
