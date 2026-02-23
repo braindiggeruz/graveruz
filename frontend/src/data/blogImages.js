@@ -63,6 +63,29 @@ const blogCardImageBySlug = {
     'podarochnye-nabory-s-logotipom': defaultBlogCover,
     'suvenir-byudjetini-tejash': defaultBlogCover,
     'suvenir-brendlash': defaultBlogCover,
+  // UZ translations of new RU posts - reuse same images
+  'korporativ-sovgalar-boyicha-toliq-qollanma': '/images/blog/article-1-og.jpg',
+  'vip-sovga-goyalari': '/images/blog/idei-vip-podarkov.jpg',
+  'xodimlar-uchun-sovga-tanlash-chek-list': '/images/blog/article-20.png',
+  'biznes-sovgalarda-gravyura': '/images/blog/gravirovka-na-biznes-podarkah.jpg',
+  'korporativ-merch-marketing-vositasi': '/images/blog/korporativniy-merch-kak-instrument-marketinga.jpg',
+  'korporativ-sovgalar-byudjeti': '/images/blog/byudzhet-na-korporativnye-podarki.jpg',
+  'shoshilinch-korporativ-sovga-buyurtmasi': '/images/blog/srochniy-zakaz-korporativnyh-podarkov.jpg',
+  'biznes-uchun-eko-sovgalar': '/images/blog/eko-podarki-dlya-biznesa.jpg',
+  'keys-brendlangan-sovgalar-it-kompaniya': '/images/blog/keys-brendirovannye-podarki-dlya-it.jpg',
+  'xodimlar-sadoqati-korporativ-sovgalar': '/images/blog/hr-loyalty-gifts.jpg',
+  // UZ translations of geo-targeted RU posts
+  'ishbilarmonlik-odobi-biznes-sovgalar-ozbekiston': '/images/blog/uzbek-business-etiquette.jpg',
+  'b2b-korporativ-sovga-tanlash': '/images/blog/b2b-gift-selection-guide.jpg',
+  'shaxsiylashtirish-yangi-standart-gravyura': '/images/blog/laser-engraving-personalization.jpg',
+  'korporativ-sovga-buyurtma-jarayoni': '/images/blog/corporate-gift-ordering-process.jpg',
+  'keys-welcome-pak-it-kompaniya-toshkent': '/images/blog/welcome-pack-it-company.jpg',
+  'korporativ-bayramlar-yillik-rejasi': '/images/blog/corporate-holiday-calendar-uzbekistan.jpg',
+  'it-kompaniyalar-uchun-merch-toshkent': '/images/blog/corporate-merch-article-45.png',
+  'banklar-va-fintex-uchun-sovgalar-toshkent': '/images/blog/corporate-gifts-legal-aspects.png',
+  'logotipli-soat-korporativ-sovgalar-toshkent': '/images/blog/article-16.png',
+  'korporativ-tadbirlar-uchun-sovgalar-toshkent': '/images/blog/creative-gift-packaging-ideas.png',
+  'horeca-va-restoranlar-uchun-sovgalar-toshkent': '/images/blog/eco-corporate-gifts.png',
 };
 export const blogImages = blogCardImageBySlug;
 
