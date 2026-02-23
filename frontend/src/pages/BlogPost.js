@@ -400,7 +400,8 @@ function BlogPostPage() {
       datePublished: post && post.date ? post.date : undefined,
       articleSection: post && post.category ? post.category : (locale === 'ru' ? 'Блог' : 'Blog'),
       readTime: post ? getPostReadTimeMinutes(post) : undefined,
-      keywords: post && Array.isArray(post.keywords) ? post.keywords.join(', ') : undefined
+      keywords: post && Array.isArray(post.keywords) ? post.keywords.join(', ') : undefined,
+      showRssLinks: true
     }),
     React.createElement('header', { className: 'fixed top-0 left-0 right-0 bg-black/95 backdrop-blur-sm z-50 border-b border-gray-800' },
       React.createElement('div', { className: 'max-w-7xl mx-auto px-4 sm:px-6 lg:px-8' },

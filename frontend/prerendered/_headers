@@ -34,3 +34,18 @@
   Cache-Control: public, max-age=86400
 /sitemap-index.xml
   Cache-Control: public, max-age=86400
+/rss-ru.xml
+  Cache-Control: public, max-age=3600
+  Content-Type: application/rss+xml; charset=utf-8
+/rss-uz.xml
+  Cache-Control: public, max-age=3600
+  Content-Type: application/rss+xml; charset=utf-8
+
+/ru/*
+  X-Robots-Tag: index, follow
+  Link: <https://fonts.googleapis.com>; rel=preconnect
+  Link: <https://fonts.gstatic.com>; rel=preconnect; crossorigin
+/uz/*
+  X-Robots-Tag: index, follow
+  Link: <https://fonts.googleapis.com>; rel=preconnect
+  Link: <https://fonts.gstatic.com>; rel=preconnect; crossorigin
