@@ -14,10 +14,125 @@ CACHE_TTL_SECONDS = "3600"
 RENDER_TIMEOUT_MS = "12000"
 BOT_RATE_LIMIT_PER_MIN = "30"
 
+# Blog routes
 [[routes]]
 pattern = "graver-studio.uz/ru/blog*"
 zone_name = "graver-studio.uz"
 
 [[routes]]
 pattern = "graver-studio.uz/uz/blog*"
+zone_name = "graver-studio.uz"
+
+# Homepage routes
+[[routes]]
+pattern = "graver-studio.uz/ru"
+zone_name = "graver-studio.uz"
+
+[[routes]]
+pattern = "graver-studio.uz/ru/"
+zone_name = "graver-studio.uz"
+
+[[routes]]
+pattern = "graver-studio.uz/uz"
+zone_name = "graver-studio.uz"
+
+[[routes]]
+pattern = "graver-studio.uz/uz/"
+zone_name = "graver-studio.uz"
+
+# Category pages
+[[routes]]
+pattern = "graver-studio.uz/ru/catalog-products"
+zone_name = "graver-studio.uz"
+
+[[routes]]
+pattern = "graver-studio.uz/ru/catalog-products/"
+zone_name = "graver-studio.uz"
+
+[[routes]]
+pattern = "graver-studio.uz/uz/mahsulotlar-katalogi"
+zone_name = "graver-studio.uz"
+
+[[routes]]
+pattern = "graver-studio.uz/uz/mahsulotlar-katalogi/"
+zone_name = "graver-studio.uz"
+
+[[routes]]
+pattern = "graver-studio.uz/ru/products/lighters"
+zone_name = "graver-studio.uz"
+
+[[routes]]
+pattern = "graver-studio.uz/ru/products/lighters/"
+zone_name = "graver-studio.uz"
+
+[[routes]]
+pattern = "graver-studio.uz/uz/products/lighters"
+zone_name = "graver-studio.uz"
+
+[[routes]]
+pattern = "graver-studio.uz/uz/products/lighters/"
+zone_name = "graver-studio.uz"
+
+[[routes]]
+pattern = "graver-studio.uz/ru/watches-with-logo"
+zone_name = "graver-studio.uz"
+
+[[routes]]
+pattern = "graver-studio.uz/ru/watches-with-logo/"
+zone_name = "graver-studio.uz"
+
+[[routes]]
+pattern = "graver-studio.uz/uz/logotipli-soat"
+zone_name = "graver-studio.uz"
+
+[[routes]]
+pattern = "graver-studio.uz/uz/logotipli-soat/"
+zone_name = "graver-studio.uz"
+
+[[routes]]
+pattern = "graver-studio.uz/ru/engraved-gifts"
+zone_name = "graver-studio.uz"
+
+[[routes]]
+pattern = "graver-studio.uz/ru/engraved-gifts/"
+zone_name = "graver-studio.uz"
+
+[[routes]]
+pattern = "graver-studio.uz/uz/gravirovkali-sovgalar"
+zone_name = "graver-studio.uz"
+
+[[routes]]
+pattern = "graver-studio.uz/uz/gravirovkali-sovgalar/"
+zone_name = "graver-studio.uz"
+
+[[routes]]
+pattern = "graver-studio.uz/ru/process"
+zone_name = "graver-studio.uz"
+
+[[routes]]
+pattern = "graver-studio.uz/ru/process/"
+zone_name = "graver-studio.uz"
+
+[[routes]]
+pattern = "graver-studio.uz/uz/process"
+zone_name = "graver-studio.uz"
+
+[[routes]]
+pattern = "graver-studio.uz/uz/process/"
+zone_name = "graver-studio.uz"
+
+[[routes]]
+pattern = "graver-studio.uz/ru/contacts"
+zone_name = "graver-studio.uz"
+
+[[routes]]
+pattern = "graver-studio.uz/ru/contacts/"
+zone_name = "graver-studio.uz"
+
+[[routes]]
+pattern = "graver-studio.uz/uz/contacts"
+zone_name = "graver-studio.uz"
+
+[[routes]]
+pattern = "graver-studio.uz/uz/contacts/"
 zone_name = "graver-studio.uz"
