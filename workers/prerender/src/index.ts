@@ -15,12 +15,35 @@ type Env = {
 };
 
 const BLOG_PREFIXES = ['/ru/blog', '/uz/blog'];
+
+// Non-blog pages that also need prerendering for bots (homepage + category pages)
+const STATIC_PRERENDER_PATHS = new Set([
+  '/ru', '/ru/',
+  '/uz', '/uz/',
+  '/ru/catalog-products', '/ru/catalog-products/',
+  '/uz/mahsulotlar-katalogi', '/uz/mahsulotlar-katalogi/',
+  '/ru/products/lighters', '/ru/products/lighters/',
+  '/uz/products/lighters', '/uz/products/lighters/',
+  '/ru/watches-with-logo', '/ru/watches-with-logo/',
+  '/uz/logotipli-soat', '/uz/logotipli-soat/',
+  '/ru/engraved-gifts', '/ru/engraved-gifts/',
+  '/uz/gravirovkali-sovgalar', '/uz/gravirovkali-sovgalar/',
+  '/ru/process', '/ru/process/',
+  '/uz/process', '/uz/process/',
+  '/ru/contacts', '/ru/contacts/',
+  '/uz/contacts', '/uz/contacts/',
+]);
+
 const RATE_WINDOW_MS = 60_000;
 const rateBuckets = new Map<string, { count: number; windowStart: number }>();
 const inflightRenders = new Map<string, Promise<Response>>();
 
 function isBlogPath(pathname: string): boolean {
   return BLOG_PREFIXES.some((prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`));
+}
+
+function shouldPrerender(pathname: string): boolean {
+  return isBlogPath(pathname) || STATIC_PRERENDER_PATHS.has(pathname);
 }
 
 function isGetRequest(request: Request): boolean {
@@ -249,7 +272,7 @@ export default {
       return fetchOrigin(request);
     }
 
-    if (!isGetRequest(request) || !isBlogPath(incomingUrl.pathname)) {
+    if (!isGetRequest(request) || !shouldPrerender(incomingUrl.pathname)) {
       return fetchOrigin(request);
     }
 
