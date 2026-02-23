@@ -120,6 +120,9 @@ async function main() {
   const blogImagesModule = await import(
     pathToFileURL(path.resolve(__dirname, '..', 'src', 'data', 'blogImages.js')).href
   );
+  const blogSlugMapModule = await import(
+    pathToFileURL(path.resolve(__dirname, '..', 'src', 'config', 'blogSlugMap.js')).href
+  );
 
   const blogPosts = blogModule.blogPosts;
   const getBlogOgImageForSlug = blogImagesModule.getBlogOgImageForSlug;
@@ -165,7 +168,15 @@ async function main() {
 
   blogPosts.uz.forEach((post) => {
     const lastmod = toDate(post.date) || buildDate;
-    addUrl(`/uz/blog/${post.slug}`, lastmod);
+    // Use slug map to get correct RU slug for hreflang (fixes broken cross-references)
+    const ruSlug = blogSlugMapModule.getMappedAlternateSlug('uz', post.slug) || post.slug;
+    const uzLoc = `${baseUrl}/uz/blog/${post.slug}/`;
+    const uzHreflangLinks = [
+      { hreflang: 'ru', href: `${baseUrl}/ru/blog/${ruSlug}/` },
+      { hreflang: 'uz-Latn', href: uzLoc },
+      { hreflang: 'x-default', href: `${baseUrl}/ru/blog/${ruSlug}/` }
+    ];
+    addUrl(`/uz/blog/${post.slug}`, lastmod, uzHreflangLinks);
     addImageEntry({ pathname: `/uz/blog/${post.slug}`, slug: post.slug, title: post.title, lastmod });
   });
 
