@@ -8,7 +8,21 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/"/>
   </url>
   <url>
+    <loc>https://graver-studio.uz/uz/</loc>
+    <lastmod>2026-02-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/"/>
+  </url>
+  <url>
     <loc>https://graver-studio.uz/ru/process/</loc>
+    <lastmod>2026-02-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/process/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/process/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/process/"/>
+  </url>
+  <url>
+    <loc>https://graver-studio.uz/uz/process/</loc>
     <lastmod>2026-02-23</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/process/"/>
     <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/process/"/>
@@ -22,60 +36,18 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/guarantees/"/>
   </url>
   <url>
-    <loc>https://graver-studio.uz/ru/contacts/</loc>
-    <lastmod>2026-02-23</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/contacts/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/contacts/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/contacts/"/>
-  </url>
-  <url>
-    <loc>https://graver-studio.uz/ru/catalog-products/</loc>
-    <lastmod>2026-02-23</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/catalog-products/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/mahsulotlar-katalogi/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/catalog-products/"/>
-  </url>
-  <url>
-    <loc>https://graver-studio.uz/ru/watches-with-logo/</loc>
-    <lastmod>2026-02-23</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/watches-with-logo/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/logotipli-soat/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/watches-with-logo/"/>
-  </url>
-  <url>
-    <loc>https://graver-studio.uz/ru/products/lighters/</loc>
-    <lastmod>2026-02-23</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/products/lighters/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/products/lighters/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/products/lighters/"/>
-  </url>
-  <url>
-    <loc>https://graver-studio.uz/ru/engraved-gifts/</loc>
-    <lastmod>2026-02-23</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/engraved-gifts/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/gravirovkali-sovgalar/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/engraved-gifts/"/>
-  </url>
-  <url>
-    <loc>https://graver-studio.uz/uz/</loc>
-    <lastmod>2026-02-23</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/uz/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/uz/"/>
-  </url>
-  <url>
-    <loc>https://graver-studio.uz/uz/process/</loc>
-    <lastmod>2026-02-23</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/process/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/process/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/process/"/>
-  </url>
-  <url>
     <loc>https://graver-studio.uz/uz/guarantees/</loc>
     <lastmod>2026-02-23</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/guarantees/"/>
     <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/guarantees/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/guarantees/"/>
+  </url>
+  <url>
+    <loc>https://graver-studio.uz/ru/contacts/</loc>
+    <lastmod>2026-02-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/contacts/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/contacts/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/contacts/"/>
   </url>
   <url>
     <loc>https://graver-studio.uz/uz/contacts/</loc>
@@ -85,32 +57,18 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/contacts/"/>
   </url>
   <url>
-    <loc>https://graver-studio.uz/uz/mahsulotlar-katalogi/</loc>
+    <loc>https://graver-studio.uz/ru/catalog/</loc>
     <lastmod>2026-02-23</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/mahsulotlar-katalogi/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/mahsulotlar-katalogi/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/mahsulotlar-katalogi/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/catalog/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/catalog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/catalog/"/>
   </url>
   <url>
-    <loc>https://graver-studio.uz/uz/logotipli-soat/</loc>
+    <loc>https://graver-studio.uz/uz/catalog/</loc>
     <lastmod>2026-02-23</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/logotipli-soat/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/logotipli-soat/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/logotipli-soat/"/>
-  </url>
-  <url>
-    <loc>https://graver-studio.uz/uz/products/lighters/</loc>
-    <lastmod>2026-02-23</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/products/lighters/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/products/lighters/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/products/lighters/"/>
-  </url>
-  <url>
-    <loc>https://graver-studio.uz/uz/gravirovkali-sovgalar/</loc>
-    <lastmod>2026-02-23</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/gravirovkali-sovgalar/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/gravirovkali-sovgalar/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/gravirovkali-sovgalar/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/catalog/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/catalog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/catalog/"/>
   </url>
   <url>
     <loc>https://graver-studio.uz/ru/blog/</loc>
@@ -127,577 +85,631 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/"/>
   </url>
   <url>
+    <loc>https://graver-studio.uz/uz/blog/korporativ-sovgalar-boyicha-toliq-qollanma/</loc>
+    <lastmod>2026-02-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/polniy-gid-po-korporativnym-podarkam/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/korporativ-sovgalar-boyicha-toliq-qollanma/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/polniy-gid-po-korporativnym-podarkam/"/>
+  </url>
+  <url>
     <loc>https://graver-studio.uz/ru/blog/polniy-gid-po-korporativnym-podarkam/</loc>
     <lastmod>2026-02-19</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/polniy-gid-po-korporativnym-podarkam/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/polniy-gid-po-korporativnym-podarkam/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/korporativ-sovgalar-boyicha-toliq-qollanma/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/polniy-gid-po-korporativnym-podarkam/"/>
+  </url>
+  <url>
+    <loc>https://graver-studio.uz/uz/blog/vip-sovga-goyalari/</loc>
+    <lastmod>2026-02-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/idei-vip-podarkov/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/vip-sovga-goyalari/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/idei-vip-podarkov/"/>
   </url>
   <url>
     <loc>https://graver-studio.uz/ru/blog/idei-vip-podarkov/</loc>
     <lastmod>2026-02-20</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/idei-vip-podarkov/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/idei-vip-podarkov/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/vip-sovga-goyalari/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/idei-vip-podarkov/"/>
+  </url>
+  <url>
+    <loc>https://graver-studio.uz/uz/blog/xodimlar-uchun-sovga-tanlash-chek-list/</loc>
+    <lastmod>2026-02-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/kak-vybrat-podarki-dlya-sotrudnikov/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/xodimlar-uchun-sovga-tanlash-chek-list/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/kak-vybrat-podarki-dlya-sotrudnikov/"/>
   </url>
   <url>
     <loc>https://graver-studio.uz/ru/blog/kak-vybrat-podarki-dlya-sotrudnikov/</loc>
     <lastmod>2026-02-20</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/kak-vybrat-podarki-dlya-sotrudnikov/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/kak-vybrat-podarki-dlya-sotrudnikov/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/xodimlar-uchun-sovga-tanlash-chek-list/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/kak-vybrat-podarki-dlya-sotrudnikov/"/>
+  </url>
+  <url>
+    <loc>https://graver-studio.uz/uz/blog/biznes-sovgalarda-gravyura/</loc>
+    <lastmod>2026-02-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/gravirovka-na-biznes-podarkah/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/biznes-sovgalarda-gravyura/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/gravirovka-na-biznes-podarkah/"/>
   </url>
   <url>
     <loc>https://graver-studio.uz/ru/blog/gravirovka-na-biznes-podarkah/</loc>
     <lastmod>2026-02-20</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/gravirovka-na-biznes-podarkah/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/gravirovka-na-biznes-podarkah/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/biznes-sovgalarda-gravyura/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/gravirovka-na-biznes-podarkah/"/>
+  </url>
+  <url>
+    <loc>https://graver-studio.uz/uz/blog/korporativ-merch-marketing-vositasi/</loc>
+    <lastmod>2026-02-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/korporativniy-merch-kak-instrument-marketinga/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/korporativ-merch-marketing-vositasi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/korporativniy-merch-kak-instrument-marketinga/"/>
   </url>
   <url>
     <loc>https://graver-studio.uz/ru/blog/korporativniy-merch-kak-instrument-marketinga/</loc>
     <lastmod>2026-02-20</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/korporativniy-merch-kak-instrument-marketinga/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/korporativniy-merch-kak-instrument-marketinga/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/korporativ-merch-marketing-vositasi/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/korporativniy-merch-kak-instrument-marketinga/"/>
+  </url>
+  <url>
+    <loc>https://graver-studio.uz/uz/blog/korporativ-sovgalar-byudjeti/</loc>
+    <lastmod>2026-02-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/byudzhet-na-korporativnye-podarki/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/korporativ-sovgalar-byudjeti/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/byudzhet-na-korporativnye-podarki/"/>
   </url>
   <url>
     <loc>https://graver-studio.uz/ru/blog/byudzhet-na-korporativnye-podarki/</loc>
     <lastmod>2026-02-20</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/byudzhet-na-korporativnye-podarki/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/byudzhet-na-korporativnye-podarki/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/korporativ-sovgalar-byudjeti/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/byudzhet-na-korporativnye-podarki/"/>
+  </url>
+  <url>
+    <loc>https://graver-studio.uz/uz/blog/shoshilinch-korporativ-sovga-buyurtmasi/</loc>
+    <lastmod>2026-02-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/srochniy-zakaz-korporativnyh-podarkov/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/shoshilinch-korporativ-sovga-buyurtmasi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/srochniy-zakaz-korporativnyh-podarkov/"/>
   </url>
   <url>
     <loc>https://graver-studio.uz/ru/blog/srochniy-zakaz-korporativnyh-podarkov/</loc>
     <lastmod>2026-02-20</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/srochniy-zakaz-korporativnyh-podarkov/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/srochniy-zakaz-korporativnyh-podarkov/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/shoshilinch-korporativ-sovga-buyurtmasi/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/srochniy-zakaz-korporativnyh-podarkov/"/>
+  </url>
+  <url>
+    <loc>https://graver-studio.uz/uz/blog/biznes-uchun-eko-sovgalar/</loc>
+    <lastmod>2026-02-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/eko-podarki-dlya-biznesa/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/biznes-uchun-eko-sovgalar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/eko-podarki-dlya-biznesa/"/>
   </url>
   <url>
     <loc>https://graver-studio.uz/ru/blog/eko-podarki-dlya-biznesa/</loc>
     <lastmod>2026-02-20</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/eko-podarki-dlya-biznesa/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/eko-podarki-dlya-biznesa/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/biznes-uchun-eko-sovgalar/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/eko-podarki-dlya-biznesa/"/>
+  </url>
+  <url>
+    <loc>https://graver-studio.uz/uz/blog/navruz-uchun-korporativ-sovgalar/</loc>
+    <lastmod>2026-02-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/korporativnye-podarki-na-navruz/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/navruz-uchun-korporativ-sovgalar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/korporativnye-podarki-na-navruz/"/>
   </url>
   <url>
     <loc>https://graver-studio.uz/ru/blog/korporativnye-podarki-na-navruz/</loc>
     <lastmod>2026-02-20</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/korporativnye-podarki-na-navruz/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/korporativnye-podarki-na-navruz/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/navruz-uchun-korporativ-sovgalar/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/korporativnye-podarki-na-navruz/"/>
+  </url>
+  <url>
+    <loc>https://graver-studio.uz/uz/blog/keys-brendlangan-sovgalar-it-kompaniya/</loc>
+    <lastmod>2026-02-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/keys-brendirovannye-podarki-dlya-it/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/keys-brendlangan-sovgalar-it-kompaniya/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/keys-brendirovannye-podarki-dlya-it/"/>
   </url>
   <url>
     <loc>https://graver-studio.uz/ru/blog/keys-brendirovannye-podarki-dlya-it/</loc>
     <lastmod>2026-02-20</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/keys-brendirovannye-podarki-dlya-it/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/keys-brendirovannye-podarki-dlya-it/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/keys-brendlangan-sovgalar-it-kompaniya/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/keys-brendirovannye-podarki-dlya-it/"/>
+  </url>
+  <url>
+    <loc>https://graver-studio.uz/uz/blog/korporativ-sovgani-qanday-tanlash/</loc>
+    <lastmod>2026-02-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/kak-vybrat-korporativnyj-podarok/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/korporativ-sovgani-qanday-tanlash/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/kak-vybrat-korporativnyj-podarok/"/>
   </url>
   <url>
     <loc>https://graver-studio.uz/ru/blog/kak-vybrat-korporativnyj-podarok/</loc>
     <lastmod>2026-02-06</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/kak-vybrat-korporativnyj-podarok/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/kak-vybrat-korporativnyj-podarok/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/korporativ-sovgani-qanday-tanlash/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/kak-vybrat-korporativnyj-podarok/"/>
+  </url>
+  <url>
+    <loc>https://graver-studio.uz/uz/blog/lazer-gravirovka-sovgalar/</loc>
+    <lastmod>2026-02-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/lazernaya-gravirovka-podarkov/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/lazer-gravirovka-sovgalar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/lazernaya-gravirovka-podarkov/"/>
   </url>
   <url>
     <loc>https://graver-studio.uz/ru/blog/lazernaya-gravirovka-podarkov/</loc>
     <lastmod>2026-02-06</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/lazernaya-gravirovka-podarkov/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/lazernaya-gravirovka-podarkov/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/lazer-gravirovka-sovgalar/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/lazernaya-gravirovka-podarkov/"/>
+  </url>
+  <url>
+    <loc>https://graver-studio.uz/uz/blog/logotipli-sovga-toplami/</loc>
+    <lastmod>2026-02-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/podarochnye-nabory-s-logotipom/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/logotipli-sovga-toplami/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/podarochnye-nabory-s-logotipom/"/>
   </url>
   <url>
     <loc>https://graver-studio.uz/ru/blog/podarochnye-nabory-s-logotipom/</loc>
     <lastmod>2026-02-06</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/podarochnye-nabory-s-logotipom/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/podarochnye-nabory-s-logotipom/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/logotipli-sovga-toplami/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/podarochnye-nabory-s-logotipom/"/>
+  </url>
+  <url>
+    <loc>https://graver-studio.uz/uz/blog/welcome-pack-yangi-xodimlar/</loc>
+    <lastmod>2026-02-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/welcome-pack-dlya-sotrudnikov/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/welcome-pack-yangi-xodimlar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/welcome-pack-dlya-sotrudnikov/"/>
   </url>
   <url>
     <loc>https://graver-studio.uz/ru/blog/welcome-pack-dlya-sotrudnikov/</loc>
     <lastmod>2026-02-07</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/welcome-pack-dlya-sotrudnikov/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/welcome-pack-dlya-sotrudnikov/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/welcome-pack-yangi-xodimlar/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/welcome-pack-dlya-sotrudnikov/"/>
+  </url>
+  <url>
+    <loc>https://graver-studio.uz/uz/blog/suvenir-brendlash/</loc>
+    <lastmod>2026-02-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/brendirovanie-suvenirov/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/suvenir-brendlash/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/brendirovanie-suvenirov/"/>
   </url>
   <url>
     <loc>https://graver-studio.uz/ru/blog/brendirovanie-suvenirov/</loc>
     <lastmod>2026-02-08</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/brendirovanie-suvenirov/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/brendirovanie-suvenirov/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/suvenir-brendlash/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/brendirovanie-suvenirov/"/>
+  </url>
+  <url>
+    <loc>https://graver-studio.uz/uz/blog/yangi-yil-sovga-goyalari/</loc>
+    <lastmod>2026-02-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/top-idei-podarkov-na-novyj-god/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/yangi-yil-sovga-goyalari/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/top-idei-podarkov-na-novyj-god/"/>
   </url>
   <url>
     <loc>https://graver-studio.uz/ru/blog/top-idei-podarkov-na-novyj-god/</loc>
     <lastmod>2026-02-09</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/top-idei-podarkov-na-novyj-god/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/top-idei-podarkov-na-novyj-god/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/yangi-yil-sovga-goyalari/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/top-idei-podarkov-na-novyj-god/"/>
+  </url>
+  <url>
+    <loc>https://graver-studio.uz/uz/blog/logotip-maketi-tayyorlash/</loc>
+    <lastmod>2026-02-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/kak-podgotovit-maket-logotipa/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/logotip-maketi-tayyorlash/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/kak-podgotovit-maket-logotipa/"/>
   </url>
   <url>
     <loc>https://graver-studio.uz/ru/blog/kak-podgotovit-maket-logotipa/</loc>
     <lastmod>2026-02-10</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/kak-podgotovit-maket-logotipa/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/kak-podgotovit-maket-logotipa/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/logotip-maketi-tayyorlash/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/kak-podgotovit-maket-logotipa/"/>
+  </url>
+  <url>
+    <loc>https://graver-studio.uz/uz/blog/navruz-sovgalari/</loc>
+    <lastmod>2026-02-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/podarki-na-navruz/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/navruz-sovgalari/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/podarki-na-navruz/"/>
   </url>
   <url>
     <loc>https://graver-studio.uz/ru/blog/podarki-na-navruz/</loc>
     <lastmod>2026-02-11</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/podarki-na-navruz/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/podarki-na-navruz/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/navruz-sovgalari/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/podarki-na-navruz/"/>
+  </url>
+  <url>
+    <loc>https://graver-studio.uz/uz/blog/suvenir-byudjetini-tejash/</loc>
+    <lastmod>2026-02-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/ekonomiya-na-korporativnyh-suvenirax/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/suvenir-byudjetini-tejash/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/ekonomiya-na-korporativnyh-suvenirax/"/>
   </url>
   <url>
     <loc>https://graver-studio.uz/ru/blog/ekonomiya-na-korporativnyh-suvenirax/</loc>
     <lastmod>2026-02-12</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/ekonomiya-na-korporativnyh-suvenirax/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/ekonomiya-na-korporativnyh-suvenirax/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/suvenir-byudjetini-tejash/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/ekonomiya-na-korporativnyh-suvenirax/"/>
+  </url>
+  <url>
+    <loc>https://graver-studio.uz/uz/blog/xaridor-chek-listi-b2b/</loc>
+    <lastmod>2026-02-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/chek-list-zakupshchika-podarkov/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/xaridor-chek-listi-b2b/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/chek-list-zakupshchika-podarkov/"/>
   </url>
   <url>
     <loc>https://graver-studio.uz/ru/blog/chek-list-zakupshchika-podarkov/</loc>
     <lastmod>2026-02-13</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/chek-list-zakupshchika-podarkov/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/chek-list-zakupshchika-podarkov/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/xaridor-chek-listi-b2b/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/chek-list-zakupshchika-podarkov/"/>
+  </url>
+  <url>
+    <loc>https://graver-studio.uz/uz/blog/korporativ-sovgalar-logotip-bilan-to-liq-qollanma/</loc>
+    <lastmod>2026-02-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/korporativnye-podarki-s-logotipom-polnyy-gayd/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/korporativ-sovgalar-logotip-bilan-to-liq-qollanma/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/korporativnye-podarki-s-logotipom-polnyy-gayd/"/>
   </url>
   <url>
     <loc>https://graver-studio.uz/ru/blog/korporativnye-podarki-s-logotipom-polnyy-gayd/</loc>
     <lastmod>2026-02-11</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/korporativnye-podarki-s-logotipom-polnyy-gayd/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/korporativnye-podarki-s-logotipom-polnyy-gayd/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/korporativ-sovgalar-logotip-bilan-to-liq-qollanma/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/korporativnye-podarki-s-logotipom-polnyy-gayd/"/>
+  </url>
+  <url>
+    <loc>https://graver-studio.uz/uz/blog/korporativ-sovgalar-gravyurasi-usullari/</loc>
+    <lastmod>2026-02-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/korporativnye-podarki-s-gravirovkoy-metody/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/korporativ-sovgalar-gravyurasi-usullari/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/korporativnye-podarki-s-gravirovkoy-metody/"/>
   </url>
   <url>
     <loc>https://graver-studio.uz/ru/blog/korporativnye-podarki-s-gravirovkoy-metody/</loc>
     <lastmod>2026-02-11</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/korporativnye-podarki-s-gravirovkoy-metody/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/korporativnye-podarki-s-gravirovkoy-metody/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/korporativ-sovgalar-gravyurasi-usullari/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/korporativnye-podarki-s-gravirovkoy-metody/"/>
   </url>
   <url>
     <loc>https://graver-studio.uz/ru/blog/lazernaya-gravirovka-podarkov-tehnologiya/</loc>
     <lastmod>2026-02-11</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/lazernaya-gravirovka-podarkov-tehnologiya/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/lazernaya-gravirovka-podarkov-tehnologiya/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/lazernaya-gravirovka-podarkov-tehnologiya/"/>
+  </url>
+  <url>
+    <loc>https://graver-studio.uz/uz/blog/kompaniya-merchi-brendlash/</loc>
+    <lastmod>2026-02-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/merch-dlya-kompanii-brendirovanie/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/kompaniya-merchi-brendlash/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/merch-dlya-kompanii-brendirovanie/"/>
   </url>
   <url>
     <loc>https://graver-studio.uz/ru/blog/merch-dlya-kompanii-brendirovanie/</loc>
     <lastmod>2026-02-11</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/merch-dlya-kompanii-brendirovanie/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/merch-dlya-kompanii-brendirovanie/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/kompaniya-merchi-brendlash/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/merch-dlya-kompanii-brendirovanie/"/>
+  </url>
+  <url>
+    <loc>https://graver-studio.uz/uz/blog/xodimlar-uchun-sovgalar-hr-qollanma/</loc>
+    <lastmod>2026-02-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/podarki-sotrudnikam-hr-gayd/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/xodimlar-uchun-sovgalar-hr-qollanma/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/podarki-sotrudnikam-hr-gayd/"/>
   </url>
   <url>
     <loc>https://graver-studio.uz/ru/blog/podarki-sotrudnikam-hr-gayd/</loc>
     <lastmod>2026-02-11</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/podarki-sotrudnikam-hr-gayd/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/podarki-sotrudnikam-hr-gayd/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/xodimlar-uchun-sovgalar-hr-qollanma/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/podarki-sotrudnikam-hr-gayd/"/>
+  </url>
+  <url>
+    <loc>https://graver-studio.uz/uz/blog/mijoz-hamkorlar-uchun-sovgalar-vip/</loc>
+    <lastmod>2026-02-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/podarki-klientam-partneram-vip/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/mijoz-hamkorlar-uchun-sovgalar-vip/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/podarki-klientam-partneram-vip/"/>
   </url>
   <url>
     <loc>https://graver-studio.uz/ru/blog/podarki-klientam-partneram-vip/</loc>
     <lastmod>2026-02-11</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/podarki-klientam-partneram-vip/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/podarki-klientam-partneram-vip/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/mijoz-hamkorlar-uchun-sovgalar-vip/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/podarki-klientam-partneram-vip/"/>
+  </url>
+  <url>
+    <loc>https://graver-studio.uz/uz/blog/logotipli-zajigalka-va-soat/</loc>
+    <lastmod>2026-02-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/brendirovannye-zazhigalki-i-chasy-s-logotipom/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/logotipli-zajigalka-va-soat/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/brendirovannye-zazhigalki-i-chasy-s-logotipom/"/>
   </url>
   <url>
     <loc>https://graver-studio.uz/ru/blog/brendirovannye-zazhigalki-i-chasy-s-logotipom/</loc>
     <lastmod>2026-02-11</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/brendirovannye-zazhigalki-i-chasy-s-logotipom/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/brendirovannye-zazhigalki-i-chasy-s-logotipom/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/logotipli-zajigalka-va-soat/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/brendirovannye-zazhigalki-i-chasy-s-logotipom/"/>
+  </url>
+  <url>
+    <loc>https://graver-studio.uz/uz/blog/korporativ-sovga-toplamlari/</loc>
+    <lastmod>2026-02-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/korporativnye-podarochnye-nabory/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/korporativ-sovga-toplamlari/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/korporativnye-podarochnye-nabory/"/>
   </url>
   <url>
     <loc>https://graver-studio.uz/ru/blog/korporativnye-podarochnye-nabory/</loc>
     <lastmod>2026-02-11</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/korporativnye-podarochnye-nabory/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/korporativnye-podarochnye-nabory/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/korporativ-sovga-toplamlari/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/korporativnye-podarochnye-nabory/"/>
+  </url>
+  <url>
+    <loc>https://graver-studio.uz/uz/blog/yangi-xodimlar-uchun-welcome-pack/</loc>
+    <lastmod>2026-02-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/welcome-pack-novym-sotrudnikam/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/yangi-xodimlar-uchun-welcome-pack/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/welcome-pack-novym-sotrudnikam/"/>
   </url>
   <url>
     <loc>https://graver-studio.uz/ru/blog/welcome-pack-novym-sotrudnikam/</loc>
     <lastmod>2026-02-11</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/welcome-pack-novym-sotrudnikam/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/welcome-pack-novym-sotrudnikam/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/yangi-xodimlar-uchun-welcome-pack/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/welcome-pack-novym-sotrudnikam/"/>
+  </url>
+  <url>
+    <loc>https://graver-studio.uz/uz/blog/it-kompaniyalar-uchun-merch-toshkent/</loc>
+    <lastmod>2026-02-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/merch-dlya-it-kompaniy-tashkent/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/it-kompaniyalar-uchun-merch-toshkent/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/merch-dlya-it-kompaniy-tashkent/"/>
   </url>
   <url>
     <loc>https://graver-studio.uz/ru/blog/merch-dlya-it-kompaniy-tashkent/</loc>
     <lastmod>2026-02-14</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/merch-dlya-it-kompaniy-tashkent/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/merch-dlya-it-kompaniy-tashkent/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/it-kompaniyalar-uchun-merch-toshkent/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/merch-dlya-it-kompaniy-tashkent/"/>
+  </url>
+  <url>
+    <loc>https://graver-studio.uz/uz/blog/banklar-va-fintex-uchun-sovgalar-toshkent/</loc>
+    <lastmod>2026-02-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/podarki-dlya-bankov-i-finteha-tashkent/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/banklar-va-fintex-uchun-sovgalar-toshkent/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/podarki-dlya-bankov-i-finteha-tashkent/"/>
   </url>
   <url>
     <loc>https://graver-studio.uz/ru/blog/podarki-dlya-bankov-i-finteha-tashkent/</loc>
     <lastmod>2026-02-14</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/podarki-dlya-bankov-i-finteha-tashkent/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/podarki-dlya-bankov-i-finteha-tashkent/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/banklar-va-fintex-uchun-sovgalar-toshkent/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/podarki-dlya-bankov-i-finteha-tashkent/"/>
+  </url>
+  <url>
+    <loc>https://graver-studio.uz/uz/blog/logotipli-soat-korporativ-sovgalar-toshkent/</loc>
+    <lastmod>2026-02-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/chasy-s-logotipom-korporativnye-podarki-tashkent/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/logotipli-soat-korporativ-sovgalar-toshkent/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/chasy-s-logotipom-korporativnye-podarki-tashkent/"/>
   </url>
   <url>
     <loc>https://graver-studio.uz/ru/blog/chasy-s-logotipom-korporativnye-podarki-tashkent/</loc>
     <lastmod>2026-02-14</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/chasy-s-logotipom-korporativnye-podarki-tashkent/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/chasy-s-logotipom-korporativnye-podarki-tashkent/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/logotipli-soat-korporativ-sovgalar-toshkent/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/chasy-s-logotipom-korporativnye-podarki-tashkent/"/>
+  </url>
+  <url>
+    <loc>https://graver-studio.uz/uz/blog/korporativ-tadbirlar-uchun-sovgalar-toshkent/</loc>
+    <lastmod>2026-02-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/podarki-na-korporativnye-sobytiya-tashkent/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/korporativ-tadbirlar-uchun-sovgalar-toshkent/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/podarki-na-korporativnye-sobytiya-tashkent/"/>
   </url>
   <url>
     <loc>https://graver-studio.uz/ru/blog/podarki-na-korporativnye-sobytiya-tashkent/</loc>
     <lastmod>2026-02-14</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/podarki-na-korporativnye-sobytiya-tashkent/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/podarki-na-korporativnye-sobytiya-tashkent/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/korporativ-tadbirlar-uchun-sovgalar-toshkent/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/podarki-na-korporativnye-sobytiya-tashkent/"/>
+  </url>
+  <url>
+    <loc>https://graver-studio.uz/uz/blog/horeca-va-restoranlar-uchun-sovgalar-toshkent/</loc>
+    <lastmod>2026-02-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/podarki-dlya-horeca-i-restoranov-tashkent/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/horeca-va-restoranlar-uchun-sovgalar-toshkent/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/podarki-dlya-horeca-i-restoranov-tashkent/"/>
   </url>
   <url>
     <loc>https://graver-studio.uz/ru/blog/podarki-dlya-horeca-i-restoranov-tashkent/</loc>
     <lastmod>2026-02-14</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/podarki-dlya-horeca-i-restoranov-tashkent/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/podarki-dlya-horeca-i-restoranov-tashkent/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/horeca-va-restoranlar-uchun-sovgalar-toshkent/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/podarki-dlya-horeca-i-restoranov-tashkent/"/>
+  </url>
+  <url>
+    <loc>https://graver-studio.uz/uz/blog/xodimlar-sadoqati-korporativ-sovgalar/</loc>
+    <lastmod>2026-02-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/loyalnost-sotrudnikov-korporativnye-podarki/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/xodimlar-sadoqati-korporativ-sovgalar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/loyalnost-sotrudnikov-korporativnye-podarki/"/>
   </url>
   <url>
     <loc>https://graver-studio.uz/ru/blog/loyalnost-sotrudnikov-korporativnye-podarki/</loc>
     <lastmod>2026-02-21</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/loyalnost-sotrudnikov-korporativnye-podarki/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/loyalnost-sotrudnikov-korporativnye-podarki/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/xodimlar-sadoqati-korporativ-sovgalar/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/loyalnost-sotrudnikov-korporativnye-podarki/"/>
+  </url>
+  <url>
+    <loc>https://graver-studio.uz/uz/blog/ishbilarmonlik-odobi-biznes-sovgalar-ozbekiston/</loc>
+    <lastmod>2026-02-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/delovoy-etiket-biznes-podarki-uzbekistan/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/ishbilarmonlik-odobi-biznes-sovgalar-ozbekiston/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/delovoy-etiket-biznes-podarki-uzbekistan/"/>
   </url>
   <url>
     <loc>https://graver-studio.uz/ru/blog/delovoy-etiket-biznes-podarki-uzbekistan/</loc>
     <lastmod>2026-02-21</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/delovoy-etiket-biznes-podarki-uzbekistan/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/delovoy-etiket-biznes-podarki-uzbekistan/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/ishbilarmonlik-odobi-biznes-sovgalar-ozbekiston/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/delovoy-etiket-biznes-podarki-uzbekistan/"/>
+  </url>
+  <url>
+    <loc>https://graver-studio.uz/uz/blog/b2b-korporativ-sovga-tanlash/</loc>
+    <lastmod>2026-02-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/kak-vybrat-korporativnyj-podarok-b2b/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/b2b-korporativ-sovga-tanlash/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/kak-vybrat-korporativnyj-podarok-b2b/"/>
   </url>
   <url>
     <loc>https://graver-studio.uz/ru/blog/kak-vybrat-korporativnyj-podarok-b2b/</loc>
     <lastmod>2026-02-21</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/kak-vybrat-korporativnyj-podarok-b2b/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/kak-vybrat-korporativnyj-podarok-b2b/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/b2b-korporativ-sovga-tanlash/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/kak-vybrat-korporativnyj-podarok-b2b/"/>
+  </url>
+  <url>
+    <loc>https://graver-studio.uz/uz/blog/shaxsiylashtirish-yangi-standart-gravyura/</loc>
+    <lastmod>2026-02-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/personalizatsiya-novyy-standart-gravirovka/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/shaxsiylashtirish-yangi-standart-gravyura/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/personalizatsiya-novyy-standart-gravirovka/"/>
   </url>
   <url>
     <loc>https://graver-studio.uz/ru/blog/personalizatsiya-novyy-standart-gravirovka/</loc>
     <lastmod>2026-02-21</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/personalizatsiya-novyy-standart-gravirovka/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/personalizatsiya-novyy-standart-gravirovka/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/shaxsiylashtirish-yangi-standart-gravyura/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/personalizatsiya-novyy-standart-gravirovka/"/>
+  </url>
+  <url>
+    <loc>https://graver-studio.uz/uz/blog/korporativ-sovga-buyurtma-jarayoni/</loc>
+    <lastmod>2026-02-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/process-zakaza-korporativnyh-podarkov/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/korporativ-sovga-buyurtma-jarayoni/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/process-zakaza-korporativnyh-podarkov/"/>
   </url>
   <url>
     <loc>https://graver-studio.uz/ru/blog/process-zakaza-korporativnyh-podarkov/</loc>
     <lastmod>2026-02-21</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/process-zakaza-korporativnyh-podarkov/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/process-zakaza-korporativnyh-podarkov/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/korporativ-sovga-buyurtma-jarayoni/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/process-zakaza-korporativnyh-podarkov/"/>
+  </url>
+  <url>
+    <loc>https://graver-studio.uz/uz/blog/keys-welcome-pak-it-kompaniya-toshkent/</loc>
+    <lastmod>2026-02-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/keys-welcome-pak-it-kompaniya-tashkent/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/keys-welcome-pak-it-kompaniya-toshkent/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/keys-welcome-pak-it-kompaniya-tashkent/"/>
   </url>
   <url>
     <loc>https://graver-studio.uz/ru/blog/keys-welcome-pak-it-kompaniya-tashkent/</loc>
     <lastmod>2026-02-21</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/keys-welcome-pak-it-kompaniya-tashkent/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/keys-welcome-pak-it-kompaniya-tashkent/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/keys-welcome-pak-it-kompaniya-toshkent/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/keys-welcome-pak-it-kompaniya-tashkent/"/>
+  </url>
+  <url>
+    <loc>https://graver-studio.uz/uz/blog/korporativ-bayramlar-yillik-rejasi/</loc>
+    <lastmod>2026-02-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/godovoy-plan-korporativnyh-prazdnikov/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/korporativ-bayramlar-yillik-rejasi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/godovoy-plan-korporativnyh-prazdnikov/"/>
   </url>
   <url>
     <loc>https://graver-studio.uz/ru/blog/godovoy-plan-korporativnyh-prazdnikov/</loc>
     <lastmod>2026-02-21</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/godovoy-plan-korporativnyh-prazdnikov/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/godovoy-plan-korporativnyh-prazdnikov/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/korporativ-bayramlar-yillik-rejasi/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/godovoy-plan-korporativnyh-prazdnikov/"/>
   </url>
   <url>
-    <loc>https://graver-studio.uz/uz/blog/korporativ-sovgani-qanday-tanlash/</loc>
-    <lastmod>2026-02-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/korporativ-sovgani-qanday-tanlash/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/korporativ-sovgani-qanday-tanlash/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/korporativ-sovgani-qanday-tanlash/"/>
+    <loc>https://graver-studio.uz/uz/blog/gastronomic-toplamlar-navruzga-toshkent/</loc>
+    <lastmod>2026-02-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/gastronomicheskie-nabory-na-navruz-tashkent/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/gastronomic-toplamlar-navruzga-toshkent/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/gastronomicheskie-nabory-na-navruz-tashkent/"/>
   </url>
   <url>
-    <loc>https://graver-studio.uz/uz/blog/lazer-gravirovka-sovgalar/</loc>
-    <lastmod>2026-02-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/lazer-gravirovka-sovgalar/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/lazer-gravirovka-sovgalar/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/lazer-gravirovka-sovgalar/"/>
+    <loc>https://graver-studio.uz/ru/blog/gastronomicheskie-nabory-na-navruz-tashkent/</loc>
+    <lastmod>2026-02-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/gastronomicheskie-nabory-na-navruz-tashkent/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/gastronomic-toplamlar-navruzga-toshkent/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/gastronomicheskie-nabory-na-navruz-tashkent/"/>
   </url>
   <url>
-    <loc>https://graver-studio.uz/uz/blog/logotipli-sovga-toplami/</loc>
-    <lastmod>2026-02-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/logotipli-sovga-toplami/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/logotipli-sovga-toplami/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/logotipli-sovga-toplami/"/>
+    <loc>https://graver-studio.uz/uz/blog/vip-hamkor-uchun-sovgani-qanday-tanlash-ozbekiston/</loc>
+    <lastmod>2026-02-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/kak-vybrat-vip-podarok-partneru-uzbekistan/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/vip-hamkor-uchun-sovgani-qanday-tanlash-ozbekiston/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/kak-vybrat-vip-podarok-partneru-uzbekistan/"/>
   </url>
   <url>
-    <loc>https://graver-studio.uz/uz/blog/welcome-pack-yangi-xodimlar/</loc>
-    <lastmod>2026-02-07</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/welcome-pack-yangi-xodimlar/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/welcome-pack-yangi-xodimlar/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/welcome-pack-yangi-xodimlar/"/>
+    <loc>https://graver-studio.uz/ru/blog/kak-vybrat-vip-podarok-partneru-uzbekistan/</loc>
+    <lastmod>2026-02-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/kak-vybrat-vip-podarok-partneru-uzbekistan/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/vip-hamkor-uchun-sovgani-qanday-tanlash-ozbekiston/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/kak-vybrat-vip-podarok-partneru-uzbekistan/"/>
   </url>
   <url>
-    <loc>https://graver-studio.uz/uz/blog/suvenir-brendlash/</loc>
-    <lastmod>2026-02-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/suvenir-brendlash/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/suvenir-brendlash/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/suvenir-brendlash/"/>
+    <loc>https://graver-studio.uz/uz/blog/it-kompaniya-uchun-welcome-pack-toshkent/</loc>
+    <lastmod>2026-02-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/welcome-pack-dlya-it-kompanii-tashkent/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/it-kompaniya-uchun-welcome-pack-toshkent/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/welcome-pack-dlya-it-kompanii-tashkent/"/>
   </url>
   <url>
-    <loc>https://graver-studio.uz/uz/blog/yangi-yil-sovga-goyalari/</loc>
-    <lastmod>2026-02-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/yangi-yil-sovga-goyalari/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/yangi-yil-sovga-goyalari/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/yangi-yil-sovga-goyalari/"/>
+    <loc>https://graver-studio.uz/ru/blog/welcome-pack-dlya-it-kompanii-tashkent/</loc>
+    <lastmod>2026-02-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/welcome-pack-dlya-it-kompanii-tashkent/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/it-kompaniya-uchun-welcome-pack-toshkent/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/welcome-pack-dlya-it-kompanii-tashkent/"/>
   </url>
   <url>
-    <loc>https://graver-studio.uz/uz/blog/logotip-maketi-tayyorlash/</loc>
-    <lastmod>2026-02-10</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/logotip-maketi-tayyorlash/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/logotip-maketi-tayyorlash/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/logotip-maketi-tayyorlash/"/>
+    <loc>https://graver-studio.uz/uz/blog/lazerli-oyma-va-uf-pechat-nimani-tanlash/</loc>
+    <lastmod>2026-02-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/lazernaya-gravirovka-protiv-uf-pechati-chto-vybrat/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/lazerli-oyma-va-uf-pechat-nimani-tanlash/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/lazernaya-gravirovka-protiv-uf-pechati-chto-vybrat/"/>
   </url>
   <url>
-    <loc>https://graver-studio.uz/uz/blog/navruz-sovgalari/</loc>
-    <lastmod>2026-02-11</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/navruz-sovgalari/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/navruz-sovgalari/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/navruz-sovgalari/"/>
-  </url>
-  <url>
-    <loc>https://graver-studio.uz/uz/blog/suvenir-byudjetini-tejash/</loc>
-    <lastmod>2026-02-12</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/suvenir-byudjetini-tejash/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/suvenir-byudjetini-tejash/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/suvenir-byudjetini-tejash/"/>
-  </url>
-  <url>
-    <loc>https://graver-studio.uz/uz/blog/xaridor-chek-listi-b2b/</loc>
-    <lastmod>2026-02-13</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/xaridor-chek-listi-b2b/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/xaridor-chek-listi-b2b/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/xaridor-chek-listi-b2b/"/>
-  </url>
-  <url>
-    <loc>https://graver-studio.uz/uz/blog/korporativ-sovgalar-logotip-bilan-to-liq-qollanma/</loc>
-    <lastmod>2026-02-11</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/korporativ-sovgalar-logotip-bilan-to-liq-qollanma/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/korporativ-sovgalar-logotip-bilan-to-liq-qollanma/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/korporativ-sovgalar-logotip-bilan-to-liq-qollanma/"/>
-  </url>
-  <url>
-    <loc>https://graver-studio.uz/uz/blog/korporativ-sovgalar-gravyurasi-usullari/</loc>
-    <lastmod>2026-02-11</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/korporativ-sovgalar-gravyurasi-usullari/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/korporativ-sovgalar-gravyurasi-usullari/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/korporativ-sovgalar-gravyurasi-usullari/"/>
+    <loc>https://graver-studio.uz/ru/blog/lazernaya-gravirovka-protiv-uf-pechati-chto-vybrat/</loc>
+    <lastmod>2026-02-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/lazernaya-gravirovka-protiv-uf-pechati-chto-vybrat/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/lazerli-oyma-va-uf-pechat-nimani-tanlash/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/lazernaya-gravirovka-protiv-uf-pechati-chto-vybrat/"/>
   </url>
   <url>
     <loc>https://graver-studio.uz/uz/blog/lazer-gravirovka-sovgalar-tehnologiyasi/</loc>
     <lastmod>2026-02-11</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/lazer-gravirovka-sovgalar-tehnologiyasi/"/>
     <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/lazer-gravirovka-sovgalar-tehnologiyasi/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/lazer-gravirovka-sovgalar-tehnologiyasi/"/>
-  </url>
-  <url>
-    <loc>https://graver-studio.uz/uz/blog/kompaniya-merchi-brendlash/</loc>
-    <lastmod>2026-02-11</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/kompaniya-merchi-brendlash/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/kompaniya-merchi-brendlash/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/kompaniya-merchi-brendlash/"/>
-  </url>
-  <url>
-    <loc>https://graver-studio.uz/uz/blog/xodimlar-uchun-sovgalar-hr-qollanma/</loc>
-    <lastmod>2026-02-11</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/xodimlar-uchun-sovgalar-hr-qollanma/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/xodimlar-uchun-sovgalar-hr-qollanma/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/xodimlar-uchun-sovgalar-hr-qollanma/"/>
-  </url>
-  <url>
-    <loc>https://graver-studio.uz/uz/blog/mijoz-hamkorlar-uchun-sovgalar-vip/</loc>
-    <lastmod>2026-02-11</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/mijoz-hamkorlar-uchun-sovgalar-vip/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/mijoz-hamkorlar-uchun-sovgalar-vip/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/mijoz-hamkorlar-uchun-sovgalar-vip/"/>
-  </url>
-  <url>
-    <loc>https://graver-studio.uz/uz/blog/logotipli-zajigalka-va-soat/</loc>
-    <lastmod>2026-02-11</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/logotipli-zajigalka-va-soat/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/logotipli-zajigalka-va-soat/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/logotipli-zajigalka-va-soat/"/>
-  </url>
-  <url>
-    <loc>https://graver-studio.uz/uz/blog/korporativ-sovga-toplamlari/</loc>
-    <lastmod>2026-02-11</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/korporativ-sovga-toplamlari/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/korporativ-sovga-toplamlari/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/korporativ-sovga-toplamlari/"/>
-  </url>
-  <url>
-    <loc>https://graver-studio.uz/uz/blog/navruz-uchun-korporativ-sovgalar/</loc>
-    <lastmod>2026-02-11</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/navruz-uchun-korporativ-sovgalar/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/navruz-uchun-korporativ-sovgalar/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/navruz-uchun-korporativ-sovgalar/"/>
-  </url>
-  <url>
-    <loc>https://graver-studio.uz/uz/blog/yangi-xodimlar-uchun-welcome-pack/</loc>
-    <lastmod>2026-02-11</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/yangi-xodimlar-uchun-welcome-pack/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/yangi-xodimlar-uchun-welcome-pack/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/yangi-xodimlar-uchun-welcome-pack/"/>
-  </url>
-  <url>
-    <loc>https://graver-studio.uz/uz/blog/it-kompaniyalar-uchun-merch-toshkent/</loc>
-    <lastmod>2026-02-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/it-kompaniyalar-uchun-merch-toshkent/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/it-kompaniyalar-uchun-merch-toshkent/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/it-kompaniyalar-uchun-merch-toshkent/"/>
-  </url>
-  <url>
-    <loc>https://graver-studio.uz/uz/blog/banklar-va-fintex-uchun-sovgalar-toshkent/</loc>
-    <lastmod>2026-02-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/banklar-va-fintex-uchun-sovgalar-toshkent/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/banklar-va-fintex-uchun-sovgalar-toshkent/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/banklar-va-fintex-uchun-sovgalar-toshkent/"/>
-  </url>
-  <url>
-    <loc>https://graver-studio.uz/uz/blog/logotipli-soat-korporativ-sovgalar-toshkent/</loc>
-    <lastmod>2026-02-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/logotipli-soat-korporativ-sovgalar-toshkent/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/logotipli-soat-korporativ-sovgalar-toshkent/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/logotipli-soat-korporativ-sovgalar-toshkent/"/>
-  </url>
-  <url>
-    <loc>https://graver-studio.uz/uz/blog/korporativ-tadbirlar-uchun-sovgalar-toshkent/</loc>
-    <lastmod>2026-02-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/korporativ-tadbirlar-uchun-sovgalar-toshkent/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/korporativ-tadbirlar-uchun-sovgalar-toshkent/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/korporativ-tadbirlar-uchun-sovgalar-toshkent/"/>
-  </url>
-  <url>
-    <loc>https://graver-studio.uz/uz/blog/horeca-va-restoranlar-uchun-sovgalar-toshkent/</loc>
-    <lastmod>2026-02-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/horeca-va-restoranlar-uchun-sovgalar-toshkent/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/horeca-va-restoranlar-uchun-sovgalar-toshkent/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/horeca-va-restoranlar-uchun-sovgalar-toshkent/"/>
-  </url>
-  <url>
-    <loc>https://graver-studio.uz/uz/blog/korporativ-sovgalar-boyicha-toliq-qollanma/</loc>
-    <lastmod>2026-02-19</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/korporativ-sovgalar-boyicha-toliq-qollanma/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/korporativ-sovgalar-boyicha-toliq-qollanma/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/korporativ-sovgalar-boyicha-toliq-qollanma/"/>
-  </url>
-  <url>
-    <loc>https://graver-studio.uz/uz/blog/vip-sovga-goyalari/</loc>
-    <lastmod>2026-02-19</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/vip-sovga-goyalari/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/vip-sovga-goyalari/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/vip-sovga-goyalari/"/>
-  </url>
-  <url>
-    <loc>https://graver-studio.uz/uz/blog/xodimlar-uchun-sovga-tanlash-chek-list/</loc>
-    <lastmod>2026-02-19</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/xodimlar-uchun-sovga-tanlash-chek-list/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/xodimlar-uchun-sovga-tanlash-chek-list/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/xodimlar-uchun-sovga-tanlash-chek-list/"/>
-  </url>
-  <url>
-    <loc>https://graver-studio.uz/uz/blog/biznes-sovgalarda-gravyura/</loc>
-    <lastmod>2026-02-19</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/biznes-sovgalarda-gravyura/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/biznes-sovgalarda-gravyura/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/biznes-sovgalarda-gravyura/"/>
-  </url>
-  <url>
-    <loc>https://graver-studio.uz/uz/blog/korporativ-merch-marketing-vositasi/</loc>
-    <lastmod>2026-02-19</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/korporativ-merch-marketing-vositasi/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/korporativ-merch-marketing-vositasi/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/korporativ-merch-marketing-vositasi/"/>
-  </url>
-  <url>
-    <loc>https://graver-studio.uz/uz/blog/korporativ-sovgalar-byudjeti/</loc>
-    <lastmod>2026-02-19</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/korporativ-sovgalar-byudjeti/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/korporativ-sovgalar-byudjeti/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/korporativ-sovgalar-byudjeti/"/>
-  </url>
-  <url>
-    <loc>https://graver-studio.uz/uz/blog/shoshilinch-korporativ-sovga-buyurtmasi/</loc>
-    <lastmod>2026-02-19</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/shoshilinch-korporativ-sovga-buyurtmasi/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/shoshilinch-korporativ-sovga-buyurtmasi/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/shoshilinch-korporativ-sovga-buyurtmasi/"/>
-  </url>
-  <url>
-    <loc>https://graver-studio.uz/uz/blog/biznes-uchun-eko-sovgalar/</loc>
-    <lastmod>2026-02-19</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/biznes-uchun-eko-sovgalar/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/biznes-uchun-eko-sovgalar/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/biznes-uchun-eko-sovgalar/"/>
-  </url>
-  <url>
-    <loc>https://graver-studio.uz/uz/blog/keys-brendlangan-sovgalar-it-kompaniya/</loc>
-    <lastmod>2026-02-19</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/keys-brendlangan-sovgalar-it-kompaniya/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/keys-brendlangan-sovgalar-it-kompaniya/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/keys-brendlangan-sovgalar-it-kompaniya/"/>
-  </url>
-  <url>
-    <loc>https://graver-studio.uz/uz/blog/xodimlar-sadoqati-korporativ-sovgalar/</loc>
-    <lastmod>2026-02-19</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/xodimlar-sadoqati-korporativ-sovgalar/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/xodimlar-sadoqati-korporativ-sovgalar/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/xodimlar-sadoqati-korporativ-sovgalar/"/>
-  </url>
-  <url>
-    <loc>https://graver-studio.uz/uz/blog/ishbilarmonlik-odobi-biznes-sovgalar-ozbekiston/</loc>
-    <lastmod>2026-02-19</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/ishbilarmonlik-odobi-biznes-sovgalar-ozbekiston/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/ishbilarmonlik-odobi-biznes-sovgalar-ozbekiston/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/ishbilarmonlik-odobi-biznes-sovgalar-ozbekiston/"/>
-  </url>
-  <url>
-    <loc>https://graver-studio.uz/uz/blog/b2b-korporativ-sovga-tanlash/</loc>
-    <lastmod>2026-02-19</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/b2b-korporativ-sovga-tanlash/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/b2b-korporativ-sovga-tanlash/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/b2b-korporativ-sovga-tanlash/"/>
-  </url>
-  <url>
-    <loc>https://graver-studio.uz/uz/blog/shaxsiylashtirish-yangi-standart-gravyura/</loc>
-    <lastmod>2026-02-19</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/shaxsiylashtirish-yangi-standart-gravyura/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/shaxsiylashtirish-yangi-standart-gravyura/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/shaxsiylashtirish-yangi-standart-gravyura/"/>
-  </url>
-  <url>
-    <loc>https://graver-studio.uz/uz/blog/korporativ-sovga-buyurtma-jarayoni/</loc>
-    <lastmod>2026-02-19</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/korporativ-sovga-buyurtma-jarayoni/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/korporativ-sovga-buyurtma-jarayoni/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/korporativ-sovga-buyurtma-jarayoni/"/>
-  </url>
-  <url>
-    <loc>https://graver-studio.uz/uz/blog/keys-welcome-pak-it-kompaniya-toshkent/</loc>
-    <lastmod>2026-02-19</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/keys-welcome-pak-it-kompaniya-toshkent/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/keys-welcome-pak-it-kompaniya-toshkent/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/keys-welcome-pak-it-kompaniya-toshkent/"/>
-  </url>
-  <url>
-    <loc>https://graver-studio.uz/uz/blog/korporativ-bayramlar-yillik-rejasi/</loc>
-    <lastmod>2026-02-19</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/blog/korporativ-bayramlar-yillik-rejasi/"/>
-    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/blog/korporativ-bayramlar-yillik-rejasi/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/blog/korporativ-bayramlar-yillik-rejasi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/uz/blog/lazer-gravirovka-sovgalar-tehnologiyasi/"/>
   </url>
 </urlset>

@@ -86,6 +86,15 @@ const blogCardImageBySlug = {
   'logotipli-soat-korporativ-sovgalar-toshkent': '/images/blog/article-16.png',
   'korporativ-tadbirlar-uchun-sovgalar-toshkent': '/images/blog/creative-gift-packaging-ideas.png',
   'horeca-va-restoranlar-uchun-sovgalar-toshkent': '/images/blog/eco-corporate-gifts.png',
+  // New articles from 15статейNew.docx
+  'gastronomicheskie-nabory-na-navruz-tashkent': '/images/blog/gastronomicheskie-nabory-navruz-tashkent.jpg',
+  'kak-vybrat-vip-podarok-partneru-uzbekistan': '/images/blog/vip-podarok-partneru-uzbekistan.jpg',
+  'welcome-pack-dlya-it-kompanii-tashkent': '/images/blog/welcome-pack-it-kompaniya-tashkent.jpg',
+  'lazernaya-gravirovka-protiv-uf-pechati-chto-vybrat': '/images/blog/lazernaya-gravirovka-vs-uf-pechat.jpg',
+  'gastronomic-toplamlar-navruzga-toshkent': '/images/blog/gastronomicheskie-nabory-navruz-tashkent.jpg',
+  'vip-hamkor-uchun-sovgani-qanday-tanlash-ozbekiston': '/images/blog/vip-podarok-partneru-uzbekistan.jpg',
+  'it-kompaniya-uchun-welcome-pack-toshkent': '/images/blog/welcome-pack-it-kompaniya-tashkent.jpg',
+  'lazerli-oyma-va-uf-pechat-nimani-tanlash': '/images/blog/lazernaya-gravirovka-vs-uf-pechat.jpg',
 };
 export const blogImages = blogCardImageBySlug;
 

@@ -41,6 +41,10 @@ export const BLOG_SLUG_MAP = {
     'process-zakaza-korporativnyh-podarkov': 'korporativ-sovga-buyurtma-jarayoni',
     'keys-welcome-pak-it-kompaniya-tashkent': 'keys-welcome-pak-it-kompaniya-toshkent',
     'godovoy-plan-korporativnyh-prazdnikov': 'korporativ-bayramlar-yillik-rejasi',
+    'gastronomicheskie-nabory-na-navruz-tashkent': 'gastronomic-toplamlar-navruzga-toshkent',
+    'kak-vybrat-vip-podarok-partneru-uzbekistan': 'vip-hamkor-uchun-sovgani-qanday-tanlash-ozbekiston',
+    'welcome-pack-dlya-it-kompanii-tashkent': 'it-kompaniya-uchun-welcome-pack-toshkent',
+    'lazernaya-gravirovka-protiv-uf-pechati-chto-vybrat': 'lazerli-oyma-va-uf-pechat-nimani-tanlash',
   },
   uz: {
     'korporativ-sovgalar-boyicha-toliq-qollanma': 'polniy-gid-po-korporativnym-podarkam',
@@ -68,7 +72,11 @@ export const BLOG_SLUG_MAP = {
     'banklar-va-fintex-uchun-sovgalar-toshkent': 'podarki-dlya-bankov-i-finteha-tashkent',
     'logotipli-soat-korporativ-sovgalar-toshkent': 'chasy-s-logotipom-korporativnye-podarki-tashkent',
     'korporativ-tadbirlar-uchun-sovgalar-toshkent': 'podarki-na-korporativnye-sobytiya-tashkent',
-    'horeca-va-restoranlar-uchun-sovgalar-toshkent': 'podarki-dlya-horeca-i-restoranov-tashkent'
+    'horeca-va-restoranlar-uchun-sovgalar-toshkent': 'podarki-dlya-horeca-i-restoranov-tashkent',
+    'gastronomic-toplamlar-navruzga-toshkent': 'gastronomicheskie-nabory-na-navruz-tashkent',
+    'vip-hamkor-uchun-sovgani-qanday-tanlash-ozbekiston': 'kak-vybrat-vip-podarok-partneru-uzbekistan',
+    'it-kompaniya-uchun-welcome-pack-toshkent': 'welcome-pack-dlya-it-kompanii-tashkent',
+    'lazerli-oyma-va-uf-pechat-nimani-tanlash': 'lazernaya-gravirovka-protiv-uf-pechati-chto-vybrat'
   }
 };
 
