@@ -75,6 +75,35 @@ export default function SEOHead({
     "inLanguage": locale === 'ru' ? 'ru' : 'uz'
   };
   
+  // Organization Schema - for homepage
+  const organizationSchema = page === 'home' ? {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Graver.uz",
+    "url": BASE_URL,
+    "logo": `${BASE_URL}/logo.png`,
+    "description": locale === 'ru' 
+      ? "Премиальная лазерная гравировка для бизнеса в Ташкенте. Корпоративные подарки, мерч, сувениры с логотипом на заказ."
+      : "Toshkentda biznes uchun premium lazer gravyurasi. Korporativ sovgalar, merch, logotipli suvenirlar buyurtmasi.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": locale === 'ru' ? "ул. Мукими" : "Mukimi ko'chasi",
+      "addressLocality": "Tashkent",
+      "addressCountry": "UZ"
+    },
+    "telephone": "+998 77 080 22 88",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Customer Service",
+      "telephone": "+998 77 080 22 88",
+      "url": "https://t.me/GraverAdm"
+    },
+    "sameAs": [
+      "https://t.me/GraverAdm",
+      "https://instagram.com/graver.uz"
+    ]
+  } : null;
+  
   // FAQ Schema - only for home page where FAQ is visible
   const faqItems = page === 'home' ? t('faq.items') : null;
   const faqSchema = faqItems && Array.isArray(faqItems) ? {
@@ -109,6 +138,11 @@ export default function SEOHead({
         <script type="application/ld+json">
           {JSON.stringify(websiteSchema)}
         </script>
+        {organizationSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(organizationSchema)}
+          </script>
+        )}
         {faqSchema && (
           <script type="application/ld+json">
             {JSON.stringify(faqSchema)}
