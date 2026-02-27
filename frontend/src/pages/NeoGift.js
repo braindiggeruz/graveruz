@@ -4,7 +4,7 @@ import SEOHead from '../components/SEOHead';
 import { Phone, Send, Heart, Gift, Users, Star, MessageCircle, Mail, MapPin } from 'lucide-react';
 import './NeoGift.css';
 
-export default function NeoGift() {
+const NeoGift = () => {
   const { locale, t } = useI18n();
   const [formData, setFormData] = useState({ name: '', phone: '', recipient: '', occasion: '', message: '' });
 
@@ -251,4 +251,6 @@ export default function NeoGift() {
       </div>
     </>
   );
-}
+};
+
+export default NeoGift;
