@@ -206,13 +206,13 @@ function App() {
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-8">
-              <button onClick={() => scrollToSection('services')} className="text-gray-300 hover:text-teal-500 transition">{t('nav.services')}</button>
+              <a href="#services" onClick={(e) => { e.preventDefault(); scrollToSection('services'); }} className="text-gray-300 hover:text-teal-500 transition" role="button" tabIndex="0">{t('nav.services')}</a>
               <Link to={`/${locale}/products/lighters`} className="text-gray-300 hover:text-teal-500 transition" data-testid="nav-catalog">{t('nav.catalog')}</Link>
-              <button onClick={() => scrollToSection('portfolio')} className="text-gray-300 hover:text-teal-500 transition">{t('nav.portfolio')}</button>
-              <button onClick={() => scrollToSection('process')} className="text-gray-300 hover:text-teal-500 transition">{t('nav.process')}</button>
-              <button onClick={() => scrollToSection('faq')} className="text-gray-300 hover:text-teal-500 transition">{t('nav.faq')}</button>
+              <a href="#portfolio" onClick={(e) => { e.preventDefault(); scrollToSection('portfolio'); }} className="text-gray-300 hover:text-teal-500 transition" role="button" tabIndex="0">{t('nav.portfolio')}</a>
+              <a href="#process" onClick={(e) => { e.preventDefault(); scrollToSection('process'); }} className="text-gray-300 hover:text-teal-500 transition" role="button" tabIndex="0">{t('nav.process')}</a>
+              <a href="#faq" onClick={(e) => { e.preventDefault(); scrollToSection('faq'); }} className="text-gray-300 hover:text-teal-500 transition" role="button" tabIndex="0">{t('nav.faq')}</a>
               <Link to={`/${locale}/blog`} className="text-gray-300 hover:text-teal-500 transition" data-testid="nav-blog">{t('nav.blog')}</Link>
-              <button onClick={() => scrollToSection('contact')} className="text-gray-300 hover:text-teal-500 transition">{t('nav.contacts')}</button>
+              <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }} className="text-gray-300 hover:text-teal-500 transition" role="button" tabIndex="0">{t('nav.contacts')}</a>
               <LanguageSwitcher />
             </nav>
 
@@ -245,13 +245,13 @@ function App() {
           {showMobileMenu && (
             <div id="mobile-navigation" className="lg:hidden pb-4 border-t border-gray-800 mt-4 pt-4">
               <nav className="flex flex-col space-y-3">
-                <button onClick={() => scrollToSection('services')} className="text-gray-300 hover:text-teal-500 transition text-left">{t('nav.services')}</button>
+                <a href="#services" onClick={(e) => { e.preventDefault(); scrollToSection('services'); }} className="text-gray-300 hover:text-teal-500 transition text-left" role="button" tabIndex="0">{t('nav.services')}</a>
                 <Link to={`/${locale}/products/lighters`} className="text-gray-300 hover:text-teal-500 transition text-left">{t('nav.catalog')}</Link>
-                <button onClick={() => scrollToSection('portfolio')} className="text-gray-300 hover:text-teal-500 transition text-left">{t('nav.portfolio')}</button>
-                <button onClick={() => scrollToSection('process')} className="text-gray-300 hover:text-teal-500 transition text-left">{t('nav.process')}</button>
-                <button onClick={() => scrollToSection('faq')} className="text-gray-300 hover:text-teal-500 transition text-left">{t('nav.faq')}</button>
+                <a href="#portfolio" onClick={(e) => { e.preventDefault(); scrollToSection('portfolio'); }} className="text-gray-300 hover:text-teal-500 transition text-left" role="button" tabIndex="0">{t('nav.portfolio')}</a>
+                <a href="#process" onClick={(e) => { e.preventDefault(); scrollToSection('process'); }} className="text-gray-300 hover:text-teal-500 transition text-left" role="button" tabIndex="0">{t('nav.process')}</a>
+                <a href="#faq" onClick={(e) => { e.preventDefault(); scrollToSection('faq'); }} className="text-gray-300 hover:text-teal-500 transition text-left" role="button" tabIndex="0">{t('nav.faq')}</a>
                 <Link to={`/${locale}/blog`} className="text-gray-300 hover:text-teal-500 transition text-left">{t('nav.blog')}</Link>
-                <button onClick={() => scrollToSection('contact')} className="text-gray-300 hover:text-teal-500 transition text-left">{t('nav.contacts')}</button>
+                <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }} className="text-gray-300 hover:text-teal-500 transition text-left" role="button" tabIndex="0">{t('nav.contacts')}</a>
                 <div className="pt-2 border-t border-gray-800">
                   <LanguageSwitcher />
                 </div>
