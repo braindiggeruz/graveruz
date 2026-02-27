@@ -728,6 +728,7 @@ function App() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Левая колонка — текст */}
             <div>
               <div className="inline-flex items-center gap-2 bg-teal-500/20 text-teal-400 px-4 py-2 rounded-full text-sm mb-6">
                 <Watch size={16} />
@@ -736,11 +737,34 @@ function App() {
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 {locale === 'uz' ? 'NEO soatlar' : 'Часы NEO'}
               </h2>
-              <p className="text-xl text-gray-400 mb-8 leading-relaxed">
+              <p className="text-xl text-gray-400 mb-6 leading-relaxed">
                 {locale === 'uz' 
                   ? "Shaxsiy gravyura bilan premium soatlar. Quartz va Automatic modellar. Korporativ sovg'a yoki o'zingiz uchun."
                   : "Премиальные часы с персональной гравировкой. Модели Quartz и Automatic. Идеальный корпоративный подарок или личный аксессуар."}
               </p>
+              {/* Характеристики */}
+              <div className="grid grid-cols-2 gap-3 mb-8">
+                <div className="bg-teal-500/10 border border-teal-500/20 rounded-xl p-4">
+                  <Watch size={20} className="text-teal-400 mb-2" />
+                  <p className="text-white font-semibold text-sm">Quartz</p>
+                  <p className="text-teal-400 font-bold text-sm">750 000 {locale === 'uz' ? "so'm" : 'сум'}</p>
+                </div>
+                <div className="bg-cyan-500/10 border border-cyan-500/20 rounded-xl p-4">
+                  <Watch size={20} className="text-cyan-400 mb-2" />
+                  <p className="text-white font-semibold text-sm">Automatic</p>
+                  <p className="text-cyan-400 font-bold text-sm">1 100 000 {locale === 'uz' ? "so'm" : 'сум'}</p>
+                </div>
+                <div className="bg-teal-500/10 border border-teal-500/20 rounded-xl p-4">
+                  <Briefcase size={20} className="text-teal-400 mb-2" />
+                  <p className="text-white font-semibold text-sm">{locale === 'uz' ? 'Korporativ' : 'Корпоративные'}</p>
+                  <p className="text-teal-400 font-bold text-sm">{locale === 'uz' ? 'Optom narx' : 'Оптовые цены'}</p>
+                </div>
+                <div className="bg-cyan-500/10 border border-cyan-500/20 rounded-xl p-4">
+                  <Gift size={20} className="text-cyan-400 mb-2" />
+                  <p className="text-white font-semibold text-sm">{locale === 'uz' ? 'Sovg\'a' : 'Подарок'}</p>
+                  <p className="text-cyan-400 font-bold text-sm">{locale === 'uz' ? 'Premium qadoq' : 'Премиум упаковка'}</p>
+                </div>
+              </div>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link 
                   to={`/${locale}/products/neo-watches`}
@@ -750,45 +774,50 @@ function App() {
                   {locale === 'uz' ? 'Barcha modellarni ko\'rish' : 'Смотреть все модели'}
                   <ChevronRight size={18} className="ml-2" />
                 </Link>
-                <a 
-                  href={`/${locale}/${locale === 'uz' ? 'mahsulotlar-katalogi' : 'catalog-products'}`}
+                <Link 
+                  to={`/${locale}/${locale === 'uz' ? 'mahsulotlar-katalogi' : 'catalog-products'}`}
                   className="inline-flex items-center justify-center bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-700 transition border border-gray-700"
                   data-testid="neo-cta-catalog"
                 >
                   {locale === 'uz' ? 'Katalogga o\'tish' : 'Перейти в каталог'}
-                </a>
+                </Link>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              {/* NEO Watch Cards Preview */}
-              <div className="bg-gradient-to-br from-teal-600 to-teal-800 aspect-square rounded-2xl flex items-center justify-center">
-                <div className="text-center">
-                  <Watch size={48} className="text-teal-200 mx-auto mb-2" />
-                  <span className="text-white font-semibold">Quartz</span>
-                  <p className="text-teal-300 font-bold">750,000 {locale === 'uz' ? "so'm" : 'сум'}</p>
+            {/* Правая колонка — красивое изображение */}
+            <div className="relative">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-teal-500/20">
+                <img
+                  src="/neo-watches-hero.jpg"
+                  alt={locale === 'uz' ? 'NEO soatlar gravyura bilan' : 'Часы NEO с гравировкой'}
+                  className="w-full h-auto object-cover"
+                  style={{ maxHeight: '480px', objectFit: 'cover' }}
+                  loading="lazy"
+                />
+                {/* Оверлей с ценой */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6">
+                  <div className="flex items-end justify-between">
+                    <div>
+                      <p className="text-teal-400 text-xs font-semibold uppercase tracking-widest mb-1">
+                        {locale === 'uz' ? 'Narx' : 'Цена'}
+                      </p>
+                      <p className="text-white text-2xl font-bold">
+                        {locale === 'uz' ? '750 000 – 1 100 000 so\'m' : '750 000 – 1 100 000 сум'}
+                      </p>
+                    </div>
+                    <Link
+                      to={`/${locale}/products/neo-watches`}
+                      className="bg-teal-500 hover:bg-teal-400 text-white px-4 py-2 rounded-xl font-semibold text-sm transition flex items-center gap-2"
+                    >
+                      {locale === 'uz' ? 'Ko\'rish' : 'Смотреть'}
+                      <ChevronRight size={16} />
+                    </Link>
+                  </div>
                 </div>
               </div>
-              <div className="bg-gradient-to-br from-cyan-600 to-cyan-800 aspect-square rounded-2xl flex items-center justify-center">
-                <div className="text-center">
-                  <Watch size={48} className="text-cyan-200 mx-auto mb-2" />
-                  <span className="text-white font-semibold">Automatic</span>
-                  <p className="text-cyan-300 font-bold">1,100,000 {locale === 'uz' ? "so'm" : 'сум'}</p>
-                </div>
-              </div>
-              <div className="bg-gradient-to-br from-teal-700 to-teal-900 aspect-square rounded-2xl flex items-center justify-center">
-                <div className="text-center">
-                  <Briefcase size={48} className="text-teal-300 mx-auto mb-2" />
-                  <span className="text-white font-semibold">{locale === 'uz' ? 'Korporativ' : 'Корпоративные'}</span>
-                  <p className="text-teal-300 font-bold">{locale === 'uz' ? 'Optom' : 'Опт'}</p>
-                </div>
-              </div>
-              <div className="bg-gradient-to-br from-cyan-700 to-cyan-900 aspect-square rounded-2xl flex items-center justify-center">
-                <div className="text-center">
-                  <Gift size={48} className="text-cyan-300 mx-auto mb-2" />
-                  <span className="text-white font-semibold">{locale === 'uz' ? 'Sovg\'a' : 'Подарок'}</span>
-                  <p className="text-cyan-300 font-bold">{locale === 'uz' ? 'Premium' : 'Premium'}</p>
-                </div>
-              </div>
+              {/* Декоративный элемент */}
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-teal-500/10 rounded-full blur-2xl" />
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-cyan-500/10 rounded-full blur-2xl" />
             </div>
           </div>
         </div>

@@ -2,7 +2,7 @@ import { openTelegramWithTracking, trackViewCategory } from '../utils/pixel';
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { Send, AlertTriangle, Check } from 'lucide-react';
+import { Send, AlertTriangle, Check, Watch, Flame, Gift, ChevronRight } from 'lucide-react';
 import B2CForm from '../components/B2CForm';
 import B2CSeo from '../components/B2CSeo';
 import LanguageSwitcher from '../components/LanguageSwitcher';
@@ -18,7 +18,17 @@ const ruContent = {
   important: 'Важно',
   importantText: 'Работаем на наших часах из каталога (не на изделиях клиента).',
   price: 'Цена: 450 000 – 2 000 000 сум',
-  priceNote: 'Зависит от модели, механизма и футляра'
+  priceNote: 'Зависит от модели, механизма и футляра',
+  relatedTitle: 'Другие продукты с гравировкой',
+  relatedSubtitle: 'Выберите подходящий продукт для персонализации',
+  neoLabel: 'Часы NEO',
+  neoDesc: 'Премиум часы с гравировкой',
+  lightersLabel: 'Зажигалки',
+  lightersDesc: 'Металлические с гравировкой',
+  giftsLabel: 'Подарки',
+  giftsDesc: 'Ручки и сувениры',
+  neoTag: 'Новинка',
+  fromPrice: 'от',
 };
 
 const uzContent = {
@@ -31,7 +41,17 @@ const uzContent = {
   important: 'Muhim',
   importantText: 'Katalogdagi soatlarimizda ishlaymiz (mijoz mahsulotlarida emas).',
   price: 'Narx: 450 000 – 2 000 000 so\'m',
-  priceNote: 'Model, mexanizm va qutiga bog\'liq'
+  priceNote: 'Model, mexanizm va qutiga bog\'liq',
+  relatedTitle: 'Boshqa gravirovkali mahsulotlar',
+  relatedSubtitle: 'Shaxsiylashtirish uchun mos mahsulotni tanlang',
+  neoLabel: 'NEO soatlar',
+  neoDesc: 'Premium soatlar bilan gravyura',
+  lightersLabel: 'Zajigalkalar',
+  lightersDesc: 'Metall bilan gravyura',
+  giftsLabel: 'Sovg\'alar',
+  giftsDesc: 'Ruchkalar va suvenirlар',
+  neoTag: 'Yangi',
+  fromPrice: 'dan',
 };
 
 const ruFeatures = ['Кварцевые и механические модели', 'Гравировка логотипа, инициалов', 'Цифровой макет до производства', 'Подарочная упаковка'];
@@ -166,6 +186,67 @@ export default function WatchesPage() {
         </div>
       </header>
 
+      {/* ===== КРАСИВАЯ СЕКЦИЯ "ДРУГИЕ ПРОДУКТЫ" СВЕРХУ ===== */}
+      <section className="bg-gradient-to-r from-gray-900 via-black to-gray-900 border-b border-gray-800/60 py-5">
+        <div className="max-w-7xl mx-auto px-4">
+          <p className="text-xs text-gray-500 uppercase tracking-widest text-center mb-4 font-medium">
+            {t.relatedTitle}
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center items-stretch">
+            {/* NEO Часы — Новинка */}
+            <Link
+              to={`/${locale}/products/neo-watches`}
+              className="group relative flex items-center gap-4 bg-gradient-to-r from-teal-900/40 to-cyan-900/30 border border-teal-500/40 hover:border-teal-400 rounded-2xl px-5 py-4 transition-all duration-300 hover:shadow-lg hover:shadow-teal-500/20 flex-1 max-w-xs"
+            >
+              <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                <Watch size={22} className="text-white" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2 mb-0.5">
+                  <span className="text-white font-semibold text-sm">{t.neoLabel}</span>
+                  <span className="bg-teal-500 text-white text-xs px-2 py-0.5 rounded-full font-bold">{t.neoTag}</span>
+                </div>
+                <p className="text-gray-400 text-xs truncate">{t.neoDesc}</p>
+                <p className="text-teal-400 text-xs font-semibold mt-1">{t.fromPrice} 750 000 {locale === 'uz' ? "so'm" : 'сум'}</p>
+              </div>
+              <ChevronRight size={16} className="text-teal-500 group-hover:translate-x-1 transition-transform flex-shrink-0" />
+            </Link>
+
+            {/* Зажигалки */}
+            <Link
+              to={`/${locale}/products/lighters`}
+              className="group flex items-center gap-4 bg-gray-900/60 border border-gray-700/60 hover:border-orange-500/50 rounded-2xl px-5 py-4 transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/10 flex-1 max-w-xs"
+            >
+              <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                <Flame size={22} className="text-white" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <span className="text-white font-semibold text-sm block mb-0.5">{t.lightersLabel}</span>
+                <p className="text-gray-400 text-xs truncate">{t.lightersDesc}</p>
+                <p className="text-orange-400 text-xs font-semibold mt-1">{t.fromPrice} 160 000 {locale === 'uz' ? "so'm" : 'сум'}</p>
+              </div>
+              <ChevronRight size={16} className="text-gray-500 group-hover:translate-x-1 transition-transform flex-shrink-0" />
+            </Link>
+
+            {/* Подарки */}
+            <Link
+              to={`/${locale}/${locale === 'uz' ? 'gravirovkali-sovgalar' : 'engraved-gifts'}`}
+              className="group flex items-center gap-4 bg-gray-900/60 border border-gray-700/60 hover:border-purple-500/50 rounded-2xl px-5 py-4 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/10 flex-1 max-w-xs"
+            >
+              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                <Gift size={22} className="text-white" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <span className="text-white font-semibold text-sm block mb-0.5">{t.giftsLabel}</span>
+                <p className="text-gray-400 text-xs truncate">{t.giftsDesc}</p>
+                <p className="text-purple-400 text-xs font-semibold mt-1">{t.fromPrice} 80 000 {locale === 'uz' ? "so'm" : 'сум'}</p>
+              </div>
+              <ChevronRight size={16} className="text-gray-500 group-hover:translate-x-1 transition-transform flex-shrink-0" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <nav className="bg-gray-900/50 border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-4 py-3">
           <ol className="flex items-center space-x-2 text-sm flex-wrap">
@@ -212,20 +293,67 @@ export default function WatchesPage() {
         </div>
       </section>
 
+      {/* ===== КРАСИВАЯ ГАЛЕРЕЯ ЧАСОВ ===== */}
       <section className="py-8">
-        <div className="max-w-4xl mx-auto px-4">
-          <div className="grid grid-cols-3 gap-4">
-            {[1, 2, 3].map((i, index) => (
-              <div key={i} className="aspect-square bg-gray-800 rounded-xl overflow-hidden">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {/* Главное большое изображение */}
+            <div className="md:col-span-2 relative rounded-2xl overflow-hidden group" style={{ minHeight: '300px' }}>
+              <img 
+                src="/portfolio/10.webp" 
+                alt={locale === 'uz' ? 'Logotipli soat' : 'Часы с логотипом'}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                style={{ minHeight: '300px' }}
+                loading="eager"
+                fetchpriority="high"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+              <div className="absolute bottom-4 left-4">
+                <span className="bg-teal-500 text-white text-xs px-3 py-1 rounded-full font-semibold">
+                  {locale === 'uz' ? 'Bizning ishlarimiz' : 'Наши работы'}
+                </span>
+              </div>
+            </div>
+            {/* Правая колонка: 2 маленьких */}
+            <div className="flex flex-col gap-4">
+              <div className="relative rounded-2xl overflow-hidden group flex-1" style={{ minHeight: '140px' }}>
                 <img 
                   src="/portfolio/10.webp" 
-                  alt="Часы" 
-                  className="w-full h-full object-cover" 
-                  loading={index === 0 ? "eager" : "lazy"}
-                  fetchpriority={index === 0 ? "high" : undefined}
+                  alt={locale === 'uz' ? 'Soat gravirovkasi' : 'Гравировка часов'}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  style={{ minHeight: '140px' }}
+                  loading="lazy"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
               </div>
-            ))}
+              {/* NEO Промо карточка */}
+              <Link
+                to={`/${locale}/products/neo-watches`}
+                className="group relative flex-1 rounded-2xl overflow-hidden border border-teal-500/40 hover:border-teal-400 transition-all duration-300"
+                style={{ minHeight: '140px' }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-teal-900/80 to-black" />
+                <div className="relative z-10 p-5 h-full flex flex-col justify-between">
+                  <div>
+                    <span className="bg-teal-500 text-white text-xs px-2 py-1 rounded-full font-bold">
+                      {locale === 'uz' ? 'Yangi' : 'Новинка'}
+                    </span>
+                    <h3 className="text-white font-bold text-lg mt-3">
+                      {locale === 'uz' ? 'NEO soatlar' : 'Часы NEO'}
+                    </h3>
+                    <p className="text-teal-300 text-sm mt-1">
+                      {locale === 'uz' ? 'Premium seriya' : 'Премиум серия'}
+                    </p>
+                  </div>
+                  <div className="flex items-center justify-between mt-3">
+                    <span className="text-teal-400 font-bold text-sm">
+                      {locale === 'uz' ? '750 000 so\'mdan' : 'от 750 000 сум'}
+                    </span>
+                    <ChevronRight size={18} className="text-teal-400 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -254,7 +382,7 @@ export default function WatchesPage() {
       </section>
 
       <footer className="bg-black border-t border-gray-800 py-6">
-        <div className="max-w-7xl mx-auto px-4 text-center text-gray-500 text-sm">© 2025 Graver.uz</div>
+        <div className="max-w-7xl mx-auto px-4 text-center text-gray-500 text-sm">© 2026 Graver.uz</div>
       </footer>
     </div>
   );
