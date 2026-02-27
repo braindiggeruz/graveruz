@@ -4,7 +4,7 @@ import SEOHead from '../components/SEOHead';
 import { Phone, Send, Check, Users, Award, Package, Clock, MessageCircle, Mail, MapPin, ChevronRight } from 'lucide-react';
 import './NeoCorporate.css';
 
-export default function NeoCorporate() {
+const NeoCorporate = () => {
   const { locale, t } = useI18n();
   const [formData, setFormData] = useState({ name: '', phone: '', company: '', quantity: '', message: '' });
 
@@ -224,4 +224,6 @@ export default function NeoCorporate() {
       </div>
     </>
   );
-}
+};
+
+export default NeoCorporate;
