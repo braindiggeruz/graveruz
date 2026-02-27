@@ -20,6 +20,7 @@ const CatalogPage = lazy(() => import("@/pages/CatalogPage"));
 const WatchesPage = lazy(() => import("@/pages/WatchesPage"));
 const LightersPage = lazy(() => import("@/pages/LightersPage"));
 const EngravedGiftsPage = lazy(() => import("@/pages/EngravedGiftsPage"));
+const NeoCorporate = lazy(() => import("@/pages/NeoCorporate"));
 const NeoWatchesLanding = lazy(() => import("@/pages/NeoWatchesLanding"));
 // Blog Pages
 const BlogIndex = lazy(() => import("@/pages/BlogIndex"));
@@ -133,6 +134,8 @@ root.render(
               <Route path="/:locale/engraved-gifts" element={<LocaleRoute element={<EngravedGiftsPage />} />} />
               <Route path="/:locale/gravirovkali-sovgalar" element={<LocaleRoute element={<EngravedGiftsPage />} />} />
               <Route path="/:locale/products/neo-watches" element={<LocaleRoute element={<NeoWatchesLanding />} />} />
+              <Route path="/:locale/products/neo-corporate" element={<LocaleRoute element={<NeoCorporate />} />} />
+              <Route path="/:locale/neo-korporativ" element={<LocaleRoute element={<NeoCorporate />} />} />
               <Route path="/:locale/neo-soatlar" element={<LocaleRoute element={<NeoWatchesLanding />} />} />
               
               {/* Blog Routes */}
