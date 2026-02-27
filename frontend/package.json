@@ -60,7 +60,7 @@
     "start": "craco start",
     "prebuild": "npm run blog:validate",
     "build": "craco build",
-    "postbuild": "node scripts/postbuild-react-snap.js && node scripts/postbuild-sync-bundle.js && node scripts/postbuild-inject-prerendered.js && node scripts/postbuild-fix-domain.js && node scripts/postbuild-root-noindex.js && node scripts/postbuild-build-stamp.js && node scripts/postbuild-sitemap.js && node scripts/postbuild-rss.js && node scripts/postbuild-indexnow.js",
+    "postbuild": "node scripts/postbuild-react-snap.js && node scripts/postbuild-sync-bundle.js && node scripts/postbuild-inject-prerendered.js && node scripts/postbuild-inject-seo-meta.js && node scripts/postbuild-fix-domain.js && node scripts/postbuild-root-noindex.js && node scripts/postbuild-build-stamp.js && node scripts/postbuild-sitemap.js && node scripts/postbuild-rss.js && node scripts/postbuild-indexnow.js",
     "images:optimize": "node scripts/optimize-images-webp.mjs",
     "images:audit": "node scripts/audit-images.mjs",
     "verify:images": "node scripts/verify-image-variants.mjs",
@@ -72,6 +72,7 @@
     "verify:prod": "npm run verify:images && npm run verify:indexability && node scripts/verify-prod.mjs",
     "verify:slugmap": "node scripts/verify-blog-slug-map.mjs",
     "verify:hydrated-seo": "node scripts/verify-hydrated-seo.mjs",
+    "inject:seo": "node scripts/postbuild-inject-seo-meta.js",
     "blog:validate": "node scripts/validate-blog-data.mjs"
   },
   "reactSnap": {
