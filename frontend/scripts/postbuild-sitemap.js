@@ -160,6 +160,45 @@ async function main() {
     });
   };
 
+  // Add portfolio images to image sitemap
+  const portfolioImages = [
+    { pathname: '/ru', imagePath: '/og-blog.png', title: 'Graver.uz' },
+    { pathname: '/uz', imagePath: '/og-blog.png', title: 'Graver.uz' },
+    { pathname: '/ru/catalog-products', imagePath: '/og-blog.png', title: 'Корпоративные подарки с логотипом' },
+    { pathname: '/uz/mahsulotlar-katalogi', imagePath: '/og-blog.png', title: 'Logotipli korporativ sovgalar' },
+    { pathname: '/ru/engraved-gifts', imagePath: '/og-blog.png', title: 'Подарки с гравировкой' },
+    { pathname: '/uz/gravirovkali-sovgalar', imagePath: '/og-blog.png', title: 'Gravirovkali sovgalar' },
+    { pathname: '/ru/watches-with-logo', imagePath: '/og-blog.png', title: 'Часы с логотипом' },
+    { pathname: '/uz/logotipli-soat', imagePath: '/og-blog.png', title: 'Logotipli soatlar' },
+    { pathname: '/ru/products/lighters', imagePath: '/og-blog.png', title: 'Зажигалки с логотипом' },
+    { pathname: '/uz/products/lighters', imagePath: '/og-blog.png', title: 'Logotipli zajigalkalar' }
+  ];
+
+  portfolioImages.forEach(({ pathname, imagePath, title }) => {
+    const loc = `${baseUrl}${ensureTrailingSlash(pathname)}`;
+    if (!imageEntryMap.has(loc)) {
+      imageEntryMap.set(loc, {
+        loc,
+        imageLoc: `${baseUrl}${imagePath}`,
+        title,
+        lastmod: buildDate
+      });
+    }
+  });
+
+  // Add money pages to image sitemap
+  moneyPaths.forEach((pathname) => {
+    const loc = `${baseUrl}${ensureTrailingSlash(pathname)}`;
+    if (!imageEntryMap.has(loc)) {
+      imageEntryMap.set(loc, {
+        loc,
+        imageLoc: `${baseUrl}/og-blog.png`,
+        title: pathname.split('/').pop() || 'Graver.uz',
+        lastmod: buildDate
+      });
+    }
+  });
+
   blogPosts.ru.forEach((post) => {
     const lastmod = toDate(post.date) || buildDate;
     addUrl(`/ru/blog/${post.slug}`, lastmod, null);
@@ -227,7 +266,7 @@ async function main() {
   });
 
   console.log('[postbuild-sitemap] Generated sitemap.xml with ' + urls.length + ' URLs');
-  console.log('[postbuild-sitemap] Generated image-sitemap.xml with ' + imageEntryMap.size + ' entries');
+  console.log('[postbuild-sitemap] Generated image-sitemap.xml with ' + imageEntryMap.size + ' image entries (expanded from blog + portfolio)');
   console.log('[postbuild-sitemap] Generated sitemap-index.xml');
 }
 
