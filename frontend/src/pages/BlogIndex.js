@@ -36,10 +36,10 @@ export default function BlogIndex() {
   const POSTS_PER_PAGE = 12;
 
   const isRu = locale === 'ru';
-  const pageTitle = isRu ? 'Блог — Graver.uz' : 'Blog — Graver.uz';
+  const pageTitle = isRu ? 'Блог о корпоративных подарках и гравировке | Graver.uz' : "Korporativ sovg'alar va gravyura haqida blog | Graver.uz";
   const pageDescription = isRu 
-    ? 'Статьи о корпоративных подарках, лазерной гравировке и брендировании в Ташкенте.'
-    : "Toshkentda korporativ sovg'alar, lazer gravyurasi va brendlash haqida maqolalar.";
+    ? 'Полные гайды, статьи и кейсы о выборе корпоративных подарков, лазерной гравировке и брендировании в Ташкенте.'
+    : "Korporativ sovg'alar tanlash, lazer gravyurasi, brending va merch haqida to'liq qo'llanmalar, maqolalar va keyslar.";
 
   // Get featured posts for "Popular" section
   const featuredSlugs = isRu ? featuredSlugsRu : featuredSlugsUz;
