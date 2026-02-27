@@ -129,6 +129,9 @@
       "/ru/guarantees",
       "/ru/process",
       "/ru/products/lighters",
+      "/ru/products/neo-watches",
+      "/ru/products/neo-corporate",
+      "/ru/products/neo-gift",
       "/ru/watches-with-logo",
       "/uz",
       "/uz/blog",
@@ -180,7 +183,10 @@
       "/uz/logotipli-soat",
       "/uz/mahsulotlar-katalogi",
       "/uz/process",
-      "/uz/products/lighters"
+      "/uz/products/lighters",
+      "/uz/neo-soatlar",
+      "/uz/neo-korporativ",
+      "/uz/neo-sovga"
     ],
     "puppeteerArgs": [
       "--no-sandbox",

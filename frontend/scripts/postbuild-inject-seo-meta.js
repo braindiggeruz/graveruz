@@ -93,6 +93,38 @@ const SEO_CONFIG = {
   '/uz/products/lighters/': {
     title: 'Logotipli yoqilg\'i | Graver.uz',
     description: 'Premium yoqilg\'i logotip gravyurasi bilan. Chekuvchi mijozlar va hamkorlar uchun ideal sovga.'
+  },
+  '/ru/products/neo-watches/': {
+    title: 'Часы NEO с гравировкой на заказ | Премиум подарок | Graver.uz',
+    description: 'Часы NEO Quartz (750K) и Automatic (1.1M) с персональной гравировкой. Бесплатный макет, доставка 1-3 дня. Идеальный подарок для VIP клиентов и партнёров.'
+  },
+  '/uz/products/neo-watches/': {
+    title: 'NEO soatlar gravyura bilan | Graver.uz',
+    description: 'NEO soatlar gravyura bilan. Quartz va Automatic modellar. Tez ishlab chiqarish, chiroyli o\'ramga.'
+  },
+  '/ru/neo-soatlar/': {
+    title: 'Часы NEO с гравировкой на заказ | Премиум подарок | Graver.uz',
+    description: 'Часы NEO Quartz (750K) и Automatic (1.1M) с персональной гравировкой. Бесплатный макет, доставка 1-3 дня. Идеальный подарок для VIP клиентов и партнёров.'
+  },
+  '/uz/neo-soatlar/': {
+    title: 'NEO soatlar gravyura bilan | Graver.uz',
+    description: 'NEO soatlar gravyura bilan. Quartz va Automatic modellar. Tez ishlab chiqarish, chiroyli o\'ramga.'
+  },
+  '/ru/products/neo-corporate/': {
+    title: 'Корпоративные часы NEO с логотипом | Премиум подарок компании | Graver.uz',
+    description: 'Часы NEO с логотипом компании для VIP-клиентов и партнеров. Персональная гравировка, бесплатный макет, доставка 1-3 дня. От 1 до 10,000+ единиц.'
+  },
+  '/uz/neo-korporativ/': {
+    title: 'Korporativ NEO soatlar logotip bilan | Premium sovga | Graver.uz',
+    description: 'NEO soatlar kompaniya logotipi bilan VIP-mijozlar va hamkorlar uchun. Shaxsiy gravyura, bepul maketi, 1-3 kunlik yetkazib berish. 1 dan 10,000+ donagacha.'
+  },
+  '/ru/products/neo-gift/': {
+    title: 'Часы NEO в подарок с персональной гравировкой | Graver.uz',
+    description: 'Часы NEO - идеальный подарок с персональной гравировкой. Запечатли важный момент на металле. Бесплатный макет, быстрая доставка по Узбекистану.'
+  },
+  '/uz/neo-sovga/': {
+    title: 'NEO soatlar sovga sifatida shaxsiy gravyura bilan | Graver.uz',
+    description: 'NEO soatlar - muhim momentni metalda fiksirlash uchun ideal sovga. Bepul maketi, Ozbekistanga tez yetkazib berish.'
   }
 };
 

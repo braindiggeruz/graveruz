@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet';
+import { useI18n } from '../i18n';
+import SEOHead from '../components/SEOHead';
 import './NeoWatchesLanding.css';
 
-const NeoWatchesLanding = ({ isRu = true }) => {
+const NeoWatchesLanding = () => {
+  const { locale, t } = useI18n();
+  const isRu = locale === 'ru';
   const [currentSlide, setCurrentSlide] = useState(0);
   const [selectedColor, setSelectedColor] = useState('gold-black');
 
@@ -72,14 +75,44 @@ const NeoWatchesLanding = ({ isRu = true }) => {
 
   return (
     <>
-      <Helmet>
-        <title>Часы NEO с гравировкой на заказ в Ташкенте | Graver.uz</title>
-        <meta name="description" content="Купить часы NEO (Quartz, Automatic) с индивидуальной гравировкой. Бесплатный макет. Доставка по Узбекистану. Тиражи от 1 до 10000+ единиц." />
-        <meta name="keywords" content="часы NEO, гравировка часов, часы с логотипом, корпоративные часы, часы в подарок" />
-        <meta property="og:title" content="Часы NEO с гравировкой | Graver.uz" />
-        <meta property="og:description" content="Создай уникальные часы NEO с персональной гравировкой. Бесплатный макет и доставка." />
-        <meta property="og:image" content="/images/neo/2.jpg" />
-      </Helmet>
+      <SEOHead
+        title={isRu ? "Часы NEO с гравировкой на заказ | Премиум подарок | Graver.uz" : "NEO soatlar gravyura bilan | Graver.uz"}
+        description={isRu ? "Часы NEO Quartz (750K) и Automatic (1.1M) с персональной гравировкой. Бесплатный макет, доставка 1-3 дня. Идеальный подарок для VIP клиентов и партнёров." : "NEO soatlar gravyura bilan. Quartz va Automatic modellar. Tez ishlab chiqarish, chiroyli o'ramga."}
+        canonicalUrl={`https://graver-studio.uz/${locale}/products/neo-watches`}
+        ruUrl="https://graver-studio.uz/ru/products/neo-watches"
+        uzUrl="https://graver-studio.uz/uz/products/neo-watches"
+        locale={locale}
+        ogImage="/images/neo/og-watches.jpg"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": isRu ? "Часы NEO" : "NEO soatlar",
+          "description": isRu ? "Премиум часы с персональной гравировкой" : "Premium soatlar gravyura bilan",
+          "image": "/images/neo/og-watches.jpg",
+          "brand": {
+            "@type": "Brand",
+            "name": "Graver.uz"
+          },
+          "offers": {
+            "@type": "AggregateOffer",
+            "priceCurrency": "UZS",
+            "offers": [
+              {
+                "@type": "Offer",
+                "name": "NEO Quartz",
+                "price": "750000",
+                "priceCurrency": "UZS"
+              },
+              {
+                "@type": "Offer",
+                "name": "NEO Automatic",
+                "price": "1100000",
+                "priceCurrency": "UZS"
+              }
+            ]
+          }
+        }}
+      />
 
       <div className="neo-landing">
         {/* Hero Section */}
