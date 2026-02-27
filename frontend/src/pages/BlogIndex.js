@@ -285,12 +285,12 @@ export default function BlogIndex() {
           </nav>
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              {isRu ? 'Блог' : 'Blog'} <span className="text-teal-500">Graver.uz</span>
+              {isRu ? 'Статьи о корпоративных подарках и гравировке' : "Korporativ sovg'alar va gravyura haqida maqolalar"}
             </h1>
             <p className="text-xl text-gray-400">
               {isRu 
-                ? 'Статьи о корпоративных подарках и брендировании'
-                : "Korporativ sovg'alar va brendlash haqida maqolalar"}
+                ? 'Полезные советы, гайды и кейсы от Graver.uz'
+                : "Graver.uz dan foydali maslahatlar, qo'llanmalar va keyslar"}
             </p>
           </div>
 
