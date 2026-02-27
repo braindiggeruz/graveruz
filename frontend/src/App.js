@@ -2,10 +2,11 @@ import { openTelegramWithTracking, trackCatalogDownload } from './utils/pixel';
 import React, { useState, useEffect, useRef, lazy, Suspense } from 'react';
 import { useNavigate, useParams, Link, useLocation } from 'react-router-dom';
 import './App.css';
-import { Phone, Send, Check, Zap, Users, Award, Package, Clock, MessageCircle, Mail, MapPin, ChevronDown, Flame, Download, ChevronRight } from 'lucide-react';
+import { Phone, Send, Check, Zap, Users, Award, Package, Clock, MessageCircle, Mail, MapPin, ChevronDown, Flame, Download, ChevronRight, Watch, Briefcase, Gift } from 'lucide-react';
 import { useI18n, SUPPORTED_LOCALES } from './i18n';
 import SEOHead from './components/SEOHead';
 import LanguageSwitcher from './components/LanguageSwitcher';
+import { Helmet } from 'react-helmet-async';
 // ...existing code...
 
 const HomePortfolioSection = lazy(() => import('./components/home/HomePortfolioSection'));
@@ -192,6 +193,37 @@ function App() {
   return (
     <div className="App">
       <SEOHead />
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Organization",
+                "@id": "https://graver-studio.uz/#organization",
+                "name": "Graver.uz",
+                "url": "https://graver-studio.uz",
+                "logo": "https://graver-studio.uz/logo192.png",
+                "description": "Премиальная лазерная гравировка и брендирование для бизнеса в Ташкенте",
+                "sameAs": ["https://t.me/GraverAdm"]
+              },
+              {
+                "@type": "LocalBusiness",
+                "@id": "https://graver-studio.uz/#localbusiness",
+                "name": "Graver.uz",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "улица Мукими",
+                  "addressLocality": "Ташкент",
+                  "addressCountry": "UZ"
+                },
+                "telephone": "+998770802288",
+                "url": "https://graver-studio.uz"
+              }
+            ]
+          })}
+        </script>
+      </Helmet>
       
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 bg-black/95 backdrop-blur-sm z-50 border-b border-gray-800" data-testid="main-header">
@@ -687,6 +719,81 @@ function App() {
         </div>
       </section>
 
+      {/* NEO Watches Section */}
+      <section
+        className="py-20 bg-gradient-to-b from-gray-900 to-black"
+        id="neo-watches"
+        data-testid="neo-watches-section"
+        style={{ contentVisibility: 'auto', containIntrinsicSize: '900px' }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 bg-teal-500/20 text-teal-400 px-4 py-2 rounded-full text-sm mb-6">
+                <Watch size={16} />
+                {locale === 'uz' ? 'Premium soatlar' : 'Премиум часы'}
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                {locale === 'uz' ? 'NEO soatlar' : 'Часы NEO'}
+              </h2>
+              <p className="text-xl text-gray-400 mb-8 leading-relaxed">
+                {locale === 'uz' 
+                  ? "Shaxsiy gravyura bilan premium soatlar. Quartz va Automatic modellar. Korporativ sovg'a yoki o'zingiz uchun."
+                  : "Премиальные часы с персональной гравировкой. Модели Quartz и Automatic. Идеальный корпоративный подарок или личный аксессуар."}
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link 
+                  to={`/${locale}/products/neo-watches`}
+                  className="inline-flex items-center justify-center bg-gradient-to-r from-teal-500 to-cyan-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-teal-600 hover:to-cyan-700 transition"
+                  data-testid="neo-cta-view"
+                >
+                  {locale === 'uz' ? 'Barcha modellarni ko\'rish' : 'Смотреть все модели'}
+                  <ChevronRight size={18} className="ml-2" />
+                </Link>
+                <a 
+                  href={`/${locale}/${locale === 'uz' ? 'mahsulotlar-katalogi' : 'catalog-products'}`}
+                  className="inline-flex items-center justify-center bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-700 transition border border-gray-700"
+                  data-testid="neo-cta-catalog"
+                >
+                  {locale === 'uz' ? 'Katalogga o\'tish' : 'Перейти в каталог'}
+                </a>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              {/* NEO Watch Cards Preview */}
+              <div className="bg-gradient-to-br from-teal-600 to-teal-800 aspect-square rounded-2xl flex items-center justify-center">
+                <div className="text-center">
+                  <Watch size={48} className="text-teal-200 mx-auto mb-2" />
+                  <span className="text-white font-semibold">Quartz</span>
+                  <p className="text-teal-300 font-bold">750,000 {locale === 'uz' ? "so'm" : 'сум'}</p>
+                </div>
+              </div>
+              <div className="bg-gradient-to-br from-cyan-600 to-cyan-800 aspect-square rounded-2xl flex items-center justify-center">
+                <div className="text-center">
+                  <Watch size={48} className="text-cyan-200 mx-auto mb-2" />
+                  <span className="text-white font-semibold">Automatic</span>
+                  <p className="text-cyan-300 font-bold">1,100,000 {locale === 'uz' ? "so'm" : 'сум'}</p>
+                </div>
+              </div>
+              <div className="bg-gradient-to-br from-teal-700 to-teal-900 aspect-square rounded-2xl flex items-center justify-center">
+                <div className="text-center">
+                  <Briefcase size={48} className="text-teal-300 mx-auto mb-2" />
+                  <span className="text-white font-semibold">{locale === 'uz' ? 'Korporativ' : 'Корпоративные'}</span>
+                  <p className="text-teal-300 font-bold">{locale === 'uz' ? 'Optom' : 'Опт'}</p>
+                </div>
+              </div>
+              <div className="bg-gradient-to-br from-cyan-700 to-cyan-900 aspect-square rounded-2xl flex items-center justify-center">
+                <div className="text-center">
+                  <Gift size={48} className="text-cyan-300 mx-auto mb-2" />
+                  <span className="text-white font-semibold">{locale === 'uz' ? 'Sovg\'a' : 'Подарок'}</span>
+                  <p className="text-cyan-300 font-bold">{locale === 'uz' ? 'Premium' : 'Premium'}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <DeferredSection id="portfolio" placeholderClassName="py-20 bg-gray-900" rootMargin="400px">
         <Suspense fallback={<div className="h-40" aria-busy="true" />}>
           <HomePortfolioSection t={t} scrollToSection={scrollToSection} />
@@ -1147,7 +1254,7 @@ function App() {
       {/* Footer */}
       <footer className="bg-black border-t border-gray-800 py-12" data-testid="footer">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
+          <div className="grid md:grid-cols-5 gap-8 mb-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <div className="w-10 h-10 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-lg flex items-center justify-center">
@@ -1225,6 +1332,21 @@ function App() {
                 <a href="#contact" className="block hover:text-teal-500 transition">
                   {locale === 'uz' ? 'Aloqa' : 'Контакты'}
                 </a>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-white font-bold mb-4">{t('products.title')}</h3>
+              <div className="space-y-2 text-gray-300 text-sm">
+                {t('products.items').map((product, index) => (
+                  <Link 
+                    key={index}
+                    to={`/${locale}/${product.link}`}
+                    className="block hover:text-teal-500 transition line-clamp-2"
+                  >
+                    {product.name}
+                  </Link>
+                ))}
               </div>
             </div>
           </div>

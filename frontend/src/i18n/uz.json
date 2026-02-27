@@ -296,6 +296,18 @@
       }
     ]
   },
+  "products": {
+    "title": "Mahsulotlar",
+    "items": [
+      { "name": "Logotipli soat", "link": "logotipli-soat" },
+      { "name": "NEO soatlar", "link": "products/neo-watches" },
+      { "name": "NEO soatlar Korporativ", "link": "products/neo-corporate" },
+      { "name": "NEO soatlar Sovg'a", "link": "products/neo-gift" },
+      { "name": "Zajigalkalar", "link": "products/lighters" },
+      { "name": "Ruchkalar va sovg'alar", "link": "gravirovkali-sovgalar" },
+      { "name": "To'liq katalog", "link": "mahsulotlar-katalogi" }
+    ]
+  },
   "footer": {
     "description": "Toshkentda biznes uchun premium lazer gravyurasi va brendlash. Korporativ sovg'alar, mukofotlar, markirovka.",
     "contacts": "Kontaktlar",

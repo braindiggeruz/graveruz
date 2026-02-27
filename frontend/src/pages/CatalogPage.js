@@ -34,6 +34,7 @@ const uzContent = {
 
 const ruCategories = [
   { id: 'watches', name: 'Часы с логотипом', price: '450 000 – 2 000 000 сум', desc: 'Наши модели', link: 'watches-with-logo', img: '/catalog/watches.png' },
+  { id: 'neo-watches', name: 'Часы NEO (премиум)', price: '750 000 – 1 100 000 сум', desc: 'Quartz и Automatic', link: 'products/neo-watches', img: '/catalog/neo-watches.png' },
   { id: 'lighters', name: 'Зажигалки (аналог Zippo)', price: '140 000 – 290 000 сум', desc: '1 или 2 стороны', link: 'products/lighters', img: '/catalog/lighters.png' },
   { id: 'pen', name: 'Ручки с гравировкой', price: '25 000 – 200 000 сум', desc: 'Зависит от модели', link: 'engraved-gifts', img: '/catalog/pen.png' },
   { id: 'powerbank', name: 'Повербанки', price: '90 000 – 600 000 сум', desc: 'Зависит от бренда', link: 'engraved-gifts', img: '/catalog/powerbank.png' },
@@ -42,6 +43,7 @@ const ruCategories = [
 
 const uzCategories = [
   { id: 'watches', name: 'Logotipli soat', price: '450 000 – 2 000 000', desc: 'Bizning modellar', link: 'logotipli-soat', img: '/catalog/watches.png' },
+  { id: 'neo-watches', name: 'NEO soatlar (premium)', price: '750 000 – 1 100 000', desc: 'Quartz va Automatic', link: 'products/neo-watches', img: '/catalog/neo-watches.png' },
   { id: 'lighters', name: 'Zajigalka (Zippo)', price: '140 000 – 290 000', desc: '1 yoki 2 tomon', link: 'products/lighters', img: '/catalog/lighters.png' },
   { id: 'pen', name: 'Gravirovkali ruchka', price: '25 000 – 200 000', desc: 'Modelga qarab', link: 'gravirovkali-sovgalar', img: '/catalog/pen.png' },
   { id: 'powerbank', name: 'Powerbank', price: '90 000 – 600 000', desc: 'Brendga qarab', link: 'gravirovkali-sovgalar', img: '/catalog/powerbank.png' },

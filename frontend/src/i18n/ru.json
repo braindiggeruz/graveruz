@@ -296,6 +296,18 @@
       }
     ]
   },
+  "products": {
+    "title": "Продукция",
+    "items": [
+      { "name": "Часы с логотипом", "link": "watches-with-logo" },
+      { "name": "Часы NEO", "link": "products/neo-watches" },
+      { "name": "Часы NEO Корпоративные", "link": "products/neo-corporate" },
+      { "name": "Часы NEO Подарок", "link": "products/neo-gift" },
+      { "name": "Зажигалки", "link": "products/lighters" },
+      { "name": "Ручки и подарки", "link": "engraved-gifts" },
+      { "name": "Весь каталог", "link": "catalog-products" }
+    ]
+  },
   "footer": {
     "description": "Премиальная лазерная гравировка и брендирование для бизнеса в Ташкенте. Корпоративные подарки, награды, маркировка.",
     "contacts": "Контакты",
