@@ -239,7 +239,16 @@ function App() {
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-8">
               <Link to="/#services" className="text-gray-300 hover:text-teal-500 transition">{t('nav.services')}</Link>
-              <Link to={`/${locale}/products/lighters`} className="text-gray-300 hover:text-teal-500 transition" data-testid="nav-catalog">{t('nav.catalog')}</Link>
+              <div className="relative group">
+                <Link to={`/${locale}/catalog-products`} className="text-gray-300 hover:text-teal-500 transition flex items-center" data-testid="nav-products">{t('nav.products')}<ChevronDown size={16} className="ml-1" /></Link>
+                <div className="absolute top-full left-0 mt-2 w-48 bg-black/90 border border-gray-800 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50">
+                  <Link to={`/${locale}/products/neo-watches`} className="block px-4 py-2 text-gray-300 hover:bg-gray-800">{t('nav.watches')}</Link>
+                  <Link to={`/${locale}/products/lighters`} className="block px-4 py-2 text-gray-300 hover:bg-gray-800">{t('nav.lighters')}</Link>
+                  <Link to={`/${locale}/products/pens`} className="block px-4 py-2 text-gray-300 hover:bg-gray-800">{t('nav.pens')}</Link>
+                  <Link to={`/${locale}/products/powerbanks`} className="block px-4 py-2 text-gray-300 hover:bg-gray-800">{t('nav.powerbanks')}</Link>
+                  <Link to={`/${locale}/products/notebooks`} className="block px-4 py-2 text-gray-300 hover:bg-gray-800">{t('nav.notebooks')}</Link>
+                </div>
+              </div>
               <Link to="/#portfolio" className="text-gray-300 hover:text-teal-500 transition">{t('nav.portfolio')}</Link>
               <Link to="/#process" className="text-gray-300 hover:text-teal-500 transition">{t('nav.process')}</Link>
               <Link to="/#faq" className="text-gray-300 hover:text-teal-500 transition">{t('nav.faq')}</Link>

@@ -18,6 +18,7 @@ const ContactsPage = lazy(() => import("@/pages/ContactsPage"));
 // B2C Catalog Pages
 const CatalogPage = lazy(() => import("@/pages/CatalogPage"));
 const WatchesPage = lazy(() => import("@/pages/WatchesPage"));
+const WatchesWithLogoPage = lazy(() => import("@/pages/WatchesWithLogoPage"));
 const LightersPage = lazy(() => import("@/pages/LightersPage"));
 const EngravedGiftsPage = lazy(() => import("@/pages/EngravedGiftsPage"));
 const NeoGift = lazy(() => import("@/pages/NeoGift"));
@@ -129,6 +130,7 @@ root.render(
               <Route path="/:locale/mahsulotlar-katalogi" element={<LocaleRoute element={<CatalogPage />} />} />
               <Route path="/:locale/watches-with-logo" element={<LocaleRoute element={<WatchesPage />} />} />
               <Route path="/:locale/logotipli-soat" element={<LocaleRoute element={<WatchesPage />} />} />
+              <Route path="/:locale/products/watches-with-logo" element={<LocaleRoute element={<WatchesWithLogoPage />} />} />
               <Route path="/:locale/lighters-engraving" element={<LocaleRoute element={<LightersRedirect />} />} />
               <Route path="/:locale/gravirovkali-zajigalka" element={<LocaleRoute element={<LightersRedirect />} />} />
               <Route path="/:locale/products/lighters" element={<LocaleRoute element={<LightersPage />} />} />

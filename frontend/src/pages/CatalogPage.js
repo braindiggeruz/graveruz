@@ -33,8 +33,8 @@ const uzContent = {
 };
 
 const ruCategories = [
-  { id: 'watches', name: 'Часы с логотипом', price: '450 000 – 2 000 000 сум', desc: 'Наши модели', link: 'watches-with-logo', img: '/catalog/watches.png' },
-  { id: 'neo-watches', name: 'Часы NEO (премиум)', price: '750 000 – 1 100 000 сум', desc: 'Quartz и Automatic', link: 'products/neo-watches', img: '/catalog/neo-watches.png' },
+  { id: 'watches', name: 'Часы с логотипом', price: '450 000 – 2 000 000 сум', desc: 'Наши модели', link: 'products/watches-with-logo', img: '/images/products/neo-watch-hero.jpg' },
+  { id: 'neo-watches', name: 'Часы NEO (премиум)', price: '750 000 – 1 100 000 сум', desc: 'Quartz и Automatic', link: 'products/neo-watches', img: '/images/products/neo-watch-quartz.jpg' },
   { id: 'lighters', name: 'Зажигалки (аналог Zippo)', price: '140 000 – 290 000 сум', desc: '1 или 2 стороны', link: 'products/lighters', img: '/catalog/lighters.png' },
   { id: 'pen', name: 'Ручки с гравировкой', price: '25 000 – 200 000 сум', desc: 'Зависит от модели', link: 'engraved-gifts', img: '/catalog/pen.png' },
   { id: 'powerbank', name: 'Повербанки', price: '90 000 – 600 000 сум', desc: 'Зависит от бренда', link: 'engraved-gifts', img: '/catalog/powerbank.png' },
