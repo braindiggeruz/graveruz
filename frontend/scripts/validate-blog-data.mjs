@@ -39,7 +39,7 @@ function logValidation(validation, imageCoverage) {
         console.log(`  broken relatedPosts: ${entry.slug} -> ${entry.refs.join(', ')}`);
       });
     }
-    if (result.errors.length > 0) {
+    if (result.errors && result.errors.length > 0) {
       const sample = result.errors.slice(0, 5);
       sample.forEach((entry) => {
         console.log(`  invalid post: slug=${entry.slug} errors=${entry.errors.join('|')}`);

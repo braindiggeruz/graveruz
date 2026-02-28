@@ -183,9 +183,20 @@ export function getAllSlugs() {
 export function validateAllBlogData() {
   const results = [];
   Object.entries(blogPosts).forEach(([locale, posts]) => {
-    const localeResult = { locale, total: posts.length, valid: 0, invalid: 0 };
+    const localeResult = { locale, total: posts.length, valid: 0, invalid: 0, duplicateSlugs: [], missingRelatedRefs: [] };
+    const slugs = new Set();
     posts.forEach((post) => {
       const hasRequiredFields = post.slug && post.title && post.description && post.date && post.category;
+      if (post.slug && slugs.has(post.slug)) {
+        localeResult.duplicateSlugs.push(post.slug);
+      }
+      if (post.slug) slugs.add(post.slug);
+      if (post.relatedPosts && Array.isArray(post.relatedPosts)) {
+        const missingRefs = post.relatedPosts.filter((ref) => !posts.some((p) => p.slug === ref));
+        if (missingRefs.length > 0) {
+          localeResult.missingRelatedRefs.push({ slug: post.slug, refs: missingRefs });
+        }
+      }
       if (hasRequiredFields) {
         localeResult.valid++;
       } else {
