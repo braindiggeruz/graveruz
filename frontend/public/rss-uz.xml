@@ -1,371 +1,511 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Graver Studio blogi — Toshkentda lazerli o&apos;ymakorlik va korporativ sovg&apos;alar</title>
+    <title>Graver.uz — Korporativ sovgalar va gravirovka haqida blog</title>
     <link>https://graver-studio.uz/uz/blog/</link>
-    <description>O&apos;zbekistonda lazerli o&apos;ymakorlik, korporativ sovg&apos;alar va brendlash haqida maqolalar</description>
+    <description>Toshkentdagi biznes uchun korporativ sovgalar, lazer gravirovka va brendlash haqida foydali maqolalar.</description>
     <language>uz</language>
-    <lastBuildDate>Mon, 23 Feb 2026 00:00:00 +0500</lastBuildDate>
-    <atom:link href="https://graver-studio.uz/rss-uz.xml" rel="self" type="application/rss+xml"/>
+    <lastBuildDate>Sat, 28 Feb 2026 01:07:17 GMT</lastBuildDate>
+    <atom:link href="https://graver-studio.uz/rss-uz.xml" rel="self" type="application/rss+xml" />
+    <image>
+      <url>https://graver-studio.uz/og-blog.png</url>
+      <title>Graver.uz — Korporativ sovgalar va gravirovka haqida blog</title>
+      <link>https://graver-studio.uz/uz/blog/</link>
+    </image>
+    <item>
+      <title>8 Mart xodim ayollarga sovg&apos;alar: 15 ta o&apos;yma bilan g&apos;oya | Graver Studio</title>
+      <link>https://graver-studio.uz/uz/blog/8-mart-xodimlarga-sovgalar/</link>
+      <guid isPermaLink="true">https://graver-studio.uz/uz/blog/8-mart-xodimlarga-sovgalar/</guid>
+      <description>8 Mart uchun xodim ayollarga eng yaxshi sovg&apos;alar. Shaxsiylashtirilgan o&apos;yma bilan sovg&apos;alar: zajigelkadan kundaliklargacha. 1 dona buyurtma, Toshkentga yetkazib berish.</description>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <category>G&apos;oyalar</category>
+      <enclosure url="https://graver-studio.uz/images/blog/march8-gifts-employees.jpg" type="image/png" length="0" />
+    </item>
+    <item>
+      <title>8-martga original sovg&apos;alar | Graver Studio</title>
+      <link>https://graver-studio.uz/uz/blog/originalnye-podarki-na-8-marta-uz/</link>
+      <guid isPermaLink="true">https://graver-studio.uz/uz/blog/originalnye-podarki-na-8-marta-uz/</guid>
+      <description>8-martga gravirovka qilingan 5 ta original sovg&apos;a g&apos;oyasi. Soat, zajigalka, ismi tushirilgan taqinchoqlar — Graver Studio, Toshkent.</description>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <category>G&apos;oyalar</category>
+      <enclosure url="https://graver-studio.uz/images/blog/march8-original-gifts.jpg" type="image/png" length="0" />
+    </item>
+    <item>
+      <title>Toshkentda 8-martga korporativ sovg&apos;alar | Graver Studio</title>
+      <link>https://graver-studio.uz/uz/blog/korporativnye-podarki-na-8-marta-v-tashkente-uz/</link>
+      <guid isPermaLink="true">https://graver-studio.uz/uz/blog/korporativnye-podarki-na-8-marta-v-tashkente-uz/</guid>
+      <description>Butun jamoa uchun 8-martga eng yaxshi korporativ sovg&apos;alar. Kompaniya logotipi tushirilgan zajigalka, ruchka, soatlar. 10 donadan chegirma. Toshkent bo&apos;ylab yetkazib berish.</description>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <category>Korporativ</category>
+      <enclosure url="https://graver-studio.uz/images/blog/march8-corporate-gifts.jpg" type="image/png" length="0" />
+    </item>
+    <item>
+      <title>8-martga onaga nima sovg&apos;a qilish kerak | Graver Studio</title>
+      <link>https://graver-studio.uz/uz/blog/chto-podarit-mame-na-8-marta-uz/</link>
+      <guid isPermaLink="true">https://graver-studio.uz/uz/blog/chto-podarit-mame-na-8-marta-uz/</guid>
+      <description>8-martga onaga eng yaxshi sovg&apos;a g&apos;oyalari. Yozuvli soat, fotoramka, gravirovka qilingan quticha. Umrbod esda qoladigan shaxsiy sovg&apos;a.</description>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <category>G&apos;oyalar</category>
+      <enclosure url="https://graver-studio.uz/images/blog/march8-mom-gift.jpg" type="image/png" length="0" />
+    </item>
+    <item>
+      <title>8-martga hamkasbga nima sovg&apos;a qilish kerak | Graver Studio</title>
+      <link>https://graver-studio.uz/uz/blog/chto-podarit-kollege-na-8-marta-uz/</link>
+      <guid isPermaLink="true">https://graver-studio.uz/uz/blog/chto-podarit-kollege-na-8-marta-uz/</guid>
+      <description>Hamkasb uchun 8-martga sovg&apos;a g&apos;oyalari. Gravirovka qilingan ruchka, krujka, brelok — zamonaviy va arzon variantlar. Toshkentda 1 donadan buyurtma.</description>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <category>G&apos;oyalar</category>
+      <enclosure url="https://graver-studio.uz/images/blog/march8-colleague-gift.jpg" type="image/png" length="0" />
+    </item>
+    <item>
+      <title>8-martga rahbarga nima sovg&apos;a qilish kerak | Graver Studio</title>
+      <link>https://graver-studio.uz/uz/blog/chto-podarit-rukovoditelyu-na-8-marta-uz/</link>
+      <guid isPermaLink="true">https://graver-studio.uz/uz/blog/chto-podarit-rukovoditelyu-na-8-marta-uz/</guid>
+      <description>Rahbarga 8-martga statusli sovg&apos;a g&apos;oyalari. Soat, kundalik, gravirovka qilingan stol to&apos;plami. Direktor va top-menejment uchun sovg&apos;alar.</description>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <category>G&apos;oyalar</category>
+      <enclosure url="https://graver-studio.uz/images/blog/march8-boss-gift.jpg" type="image/png" length="0" />
+    </item>
+    <item>
+      <title>8-martga qiz do&apos;stga nima sovg&apos;a qilish kerak | Graver Studio</title>
+      <link>https://graver-studio.uz/uz/blog/chto-podarit-devushke-na-8-marta-uz/</link>
+      <guid isPermaLink="true">https://graver-studio.uz/uz/blog/chto-podarit-devushke-na-8-marta-uz/</guid>
+      <description>Qiz do&apos;stga 8-martga romantik sovg&apos;alar gravirovka bilan. Bosh harflari tushirilgan taqinchoqlar, e&apos;tirof bitilgan soat, juft breloklar. Kunini unutilmas qiling.</description>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <category>G&apos;oyalar</category>
+      <enclosure url="https://graver-studio.uz/images/blog/march8-girlfriend-gift.jpg" type="image/png" length="0" />
+    </item>
+    <item>
+      <title>8-martga nima sovg&apos;a qilish kerak: sovg&apos;a tanlash qo&apos;llanmasi | Graver Studio</title>
+      <link>https://graver-studio.uz/uz/blog/chto-podarit-na-8-marta-devushke-mame-kollege-uz/</link>
+      <guid isPermaLink="true">https://graver-studio.uz/uz/blog/chto-podarit-na-8-marta-devushke-mame-kollege-uz/</guid>
+      <description>8-martga sovg&apos;a tanlash bo&apos;yicha to&apos;liq qo&apos;llanma. Ona, qiz do&apos;st, hamkasb yoki rahbar uchun sovg&apos;ani qanday tanlash kerak. Har qanday byudjetga g&apos;oyalar.</description>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <category>Qo&apos;llanmalar</category>
+      <enclosure url="https://graver-studio.uz/images/blog/what-to-give-on-march8.jpg" type="image/png" length="0" />
+    </item>
+    <item>
+      <title>8-martga arzon sovg&apos;alar gravirovka bilan | Graver Studio</title>
+      <link>https://graver-studio.uz/uz/blog/nedorogie-podarki-na-8-marta-uz/</link>
+      <guid isPermaLink="true">https://graver-studio.uz/uz/blog/nedorogie-podarki-na-8-marta-uz/</guid>
+      <description>8-martga 80 000 so&apos;mdan boshlanadigan zamonaviy va arzon sovg&apos;alar. Breloklar, ruchkalar, krujkalar, otkritkalar. Toshkentda 1 donadan buyurtma.</description>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <category>G&apos;oyalar</category>
+      <enclosure url="https://graver-studio.uz/images/blog/march8-cheap-gifts.jpg" type="image/png" length="0" />
+    </item>
+    <item>
+      <title>Toshkentda 8-martga gravirovka | Graver Studio</title>
+      <link>https://graver-studio.uz/uz/blog/gravirovka-v-tashkente-na-8-marta-uz/</link>
+      <guid isPermaLink="true">https://graver-studio.uz/uz/blog/gravirovka-v-tashkente-na-8-marta-uz/</guid>
+      <description>Toshkentda 8-martga sovg&apos;alarga lazerli gravirovka. Har qanday sovg&apos;ani shaxsiylashtiramiz: soat, taqinchoqlar, ruchkalar, termoslar. Tez, sifatli, arzon.</description>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <category>Xizmatlar</category>
+      <enclosure url="https://graver-studio.uz/images/blog/march8-engraving-tashkent.jpg" type="image/png" length="0" />
+    </item>
     <item>
       <title>Korporativ sovg&apos;alar Navro&apos;zga: Toshkentda logotip tushirilgan gastronomik to&apos;plamlar</title>
       <link>https://graver-studio.uz/uz/blog/gastronomic-toplamlar-navruzga-toshkent/</link>
       <guid isPermaLink="true">https://graver-studio.uz/uz/blog/gastronomic-toplamlar-navruzga-toshkent/</guid>
       <description>Navro&apos;zga korporativ sovg&apos;alar qidiryapsizmi? Toshkentda brendlangan gastronomik to&apos;plamlarga buyurtma bering: quruq mevalar, asal, yong&apos;oqlar sizning logotipingiz tushirilgan o&apos;ramda.</description>
-      <pubDate>Mon, 23 Feb 2026 00:00:00 +0500</pubDate>
+      <pubDate>Mon, 23 Feb 2026 00:00:00 GMT</pubDate>
       <category>Bayramlar</category>
+      <enclosure url="https://graver-studio.uz/images/blog/gastronomicheskie-nabory-navruz-tashkent.jpg" type="image/png" length="0" />
     </item>
     <item>
       <title>O&apos;zbekistondagi VIP-hamkor uchun ideal biznes sovg&apos;asini qanday tanlash mumkin?</title>
       <link>https://graver-studio.uz/uz/blog/vip-hamkor-uchun-sovgani-qanday-tanlash-ozbekiston/</link>
       <guid isPermaLink="true">https://graver-studio.uz/uz/blog/vip-hamkor-uchun-sovgani-qanday-tanlash-ozbekiston/</guid>
       <description>O&apos;zbekistondagi VIP-hamkor yoki direktorga nima sovg&apos;a qilishni bilmayapsizmi? Premium biznes-sovg&apos;alarni tanlash bo&apos;yicha to&apos;liq qo&apos;llanma: o&apos;yma naqshli soatlardan eksklyuziv to&apos;plamlargacha.</description>
-      <pubDate>Mon, 23 Feb 2026 00:00:00 +0500</pubDate>
+      <pubDate>Mon, 23 Feb 2026 00:00:00 GMT</pubDate>
       <category>Qo&apos;llanmalar</category>
+      <enclosure url="https://graver-studio.uz/images/blog/vip-podarok-partneru-uzbekistan.jpg" type="image/png" length="0" />
     </item>
     <item>
       <title>Toshkentdagi IT-kompaniya uchun Welcome Pack: to&apos;liq chek-list</title>
       <link>https://graver-studio.uz/uz/blog/it-kompaniya-uchun-welcome-pack-toshkent/</link>
       <guid isPermaLink="true">https://graver-studio.uz/uz/blog/it-kompaniya-uchun-welcome-pack-toshkent/</guid>
       <description>IT sohasidagi yangi xodim uchun Welcome Pack yig&apos;yapsizmi? Toshkentda to&apos;plam uchun g&apos;oyalar va chek-list: xudi, poverbank, krujka, stikerlar. Sevib ishlatiladigan merch yarating.</description>
-      <pubDate>Mon, 23 Feb 2026 00:00:00 +0500</pubDate>
+      <pubDate>Mon, 23 Feb 2026 00:00:00 GMT</pubDate>
       <category>Merch</category>
+      <enclosure url="https://graver-studio.uz/images/blog/welcome-pack-it-kompaniya-tashkent.jpg" type="image/png" length="0" />
     </item>
     <item>
       <title>Lazerli o&apos;yma vs UF-bosma: qaysi brendlash texnologiyasini tanlash kerak?</title>
       <link>https://graver-studio.uz/uz/blog/lazerli-oyma-va-uf-pechat-nimani-tanlash/</link>
       <guid isPermaLink="true">https://graver-studio.uz/uz/blog/lazerli-oyma-va-uf-pechat-nimani-tanlash/</guid>
       <description>Suvenirlar uchun lazerli o&apos;yma va UF-bosmani taqqoslash. Sizning logotipingiz uchun metall, plastmassa, yog&apos;och yoki shishaga qaysi texnologiya yaxshiroq mos kelishini bilib oling.</description>
-      <pubDate>Mon, 23 Feb 2026 00:00:00 +0500</pubDate>
+      <pubDate>Mon, 23 Feb 2026 00:00:00 GMT</pubDate>
       <category>Texnologiyalar</category>
+      <enclosure url="https://graver-studio.uz/images/blog/lazernaya-gravirovka-vs-uf-pechat.jpg" type="image/png" length="0" />
     </item>
     <item>
       <title>O&apos;zbekistonda korporativ sovg&apos;alar bo&apos;yicha to&apos;liq qo&apos;llanma | Graver Studio</title>
       <link>https://graver-studio.uz/uz/blog/korporativ-sovgalar-boyicha-toliq-qollanma/</link>
       <guid isPermaLink="true">https://graver-studio.uz/uz/blog/korporativ-sovgalar-boyicha-toliq-qollanma/</guid>
       <description>Toshkent va O&apos;zbekistonda korporativ sovg&apos;alar haqida barchasi: g&apos;oya tanlashdan brendlash va topshirishgacha. HR, marketing va xaridlar uchun maslahatlar.</description>
-      <pubDate>Thu, 19 Feb 2026 00:00:00 +0500</pubDate>
+      <pubDate>Thu, 19 Feb 2026 00:00:00 GMT</pubDate>
       <category>Qo&apos;llanmalar</category>
+      <enclosure url="https://graver-studio.uz/images/blog/article-1-og.jpg" type="image/png" length="0" />
     </item>
     <item>
       <title>Hamkorlar va mijozlar uchun 15 ta VIP sovg&apos;a g&apos;oyasi | Graver Studio</title>
       <link>https://graver-studio.uz/uz/blog/vip-sovga-goyalari/</link>
       <guid isPermaLink="true">https://graver-studio.uz/uz/blog/vip-sovga-goyalari/</guid>
       <description>Hamkorlar va VIP mijozlar uchun eng yaxshi sovg&apos;a g&apos;oyalari: premium gravyura, shaxsiylashtirilgan aksessuarlar va eksklyuziv to&apos;plamlar.</description>
-      <pubDate>Thu, 19 Feb 2026 00:00:00 +0500</pubDate>
+      <pubDate>Thu, 19 Feb 2026 00:00:00 GMT</pubDate>
       <category>Qo&apos;llanmalar</category>
+      <enclosure url="https://graver-studio.uz/images/blog/idei-vip-podarkov.jpg" type="image/png" length="0" />
     </item>
     <item>
       <title>Xodimlar uchun sovg&apos;a tanlash: HR uchun chek-list | Graver Studio</title>
       <link>https://graver-studio.uz/uz/blog/xodimlar-uchun-sovga-tanlash-chek-list/</link>
       <guid isPermaLink="true">https://graver-studio.uz/uz/blog/xodimlar-uchun-sovga-tanlash-chek-list/</guid>
       <description>Xodimlar uchun korporativ sovg&apos;a tanlash bo&apos;yicha HR chek-listi: byudjet, shaxsiylashtirish, muddatlar va brendlash maslahatlar.</description>
-      <pubDate>Thu, 19 Feb 2026 00:00:00 +0500</pubDate>
+      <pubDate>Thu, 19 Feb 2026 00:00:00 GMT</pubDate>
       <category>Qo&apos;llanmalar</category>
+      <enclosure url="https://graver-studio.uz/images/blog/article-20-og.jpg" type="image/png" length="0" />
     </item>
     <item>
       <title>Biznes sovg&apos;alarda gravyura: texnologiyalar, materiallar va vau-effekt | Graver Studio</title>
       <link>https://graver-studio.uz/uz/blog/biznes-sovgalarda-gravyura/</link>
       <guid isPermaLink="true">https://graver-studio.uz/uz/blog/biznes-sovgalarda-gravyura/</guid>
       <description>Biznes sovg&apos;alar uchun gravyura usullari: lazer, mexanik, UV-bosma. Materiallar tanlash va premium natija olish bo&apos;yicha qo&apos;llanma.</description>
-      <pubDate>Thu, 19 Feb 2026 00:00:00 +0500</pubDate>
+      <pubDate>Thu, 19 Feb 2026 00:00:00 GMT</pubDate>
       <category>Texnologiyalar</category>
+      <enclosure url="https://graver-studio.uz/images/blog/gravirovka-na-biznes-podarkah.jpg" type="image/png" length="0" />
     </item>
     <item>
       <title>Korporativ merch marketing va HR vositasi sifatida | Graver Studio</title>
       <link>https://graver-studio.uz/uz/blog/korporativ-merch-marketing-vositasi/</link>
       <guid isPermaLink="true">https://graver-studio.uz/uz/blog/korporativ-merch-marketing-vositasi/</guid>
       <description>Korporativ merch qanday qilib marketing va HR strategiyasini kuchaytiradi: ROI hisoblash, brend taniqlilik va xodimlar sadoqati.</description>
-      <pubDate>Thu, 19 Feb 2026 00:00:00 +0500</pubDate>
+      <pubDate>Thu, 19 Feb 2026 00:00:00 GMT</pubDate>
       <category>Qo&apos;llanmalar</category>
+      <enclosure url="https://graver-studio.uz/images/blog/korporativniy-merch-kak-instrument-marketinga.jpg" type="image/png" length="0" />
     </item>
     <item>
       <title>Korporativ sovg&apos;alar byudjeti: ROI hisoblash va tejash | Graver Studio</title>
       <link>https://graver-studio.uz/uz/blog/korporativ-sovgalar-byudjeti/</link>
       <guid isPermaLink="true">https://graver-studio.uz/uz/blog/korporativ-sovgalar-byudjeti/</guid>
       <description>Korporativ sovg&apos;alar byudjetini qanday rejalashtirish: ROI formulasi, tejash usullari va optimal taqsimlash strategiyasi.</description>
-      <pubDate>Thu, 19 Feb 2026 00:00:00 +0500</pubDate>
+      <pubDate>Thu, 19 Feb 2026 00:00:00 GMT</pubDate>
       <category>Qo&apos;llanmalar</category>
+      <enclosure url="https://graver-studio.uz/images/blog/byudzhet-na-korporativnye-podarki.jpg" type="image/png" length="0" />
     </item>
     <item>
       <title>Shoshilinch korporativ sovg&apos;alar: dedlayngacha bir hafta qolganda nima qilish | Graver Studio</title>
       <link>https://graver-studio.uz/uz/blog/shoshilinch-korporativ-sovga-buyurtmasi/</link>
       <guid isPermaLink="true">https://graver-studio.uz/uz/blog/shoshilinch-korporativ-sovga-buyurtmasi/</guid>
       <description>Shoshilinch korporativ sovg&apos;a buyurtmasi: tezkor yechimlar, tayyor variantlar va muddatlarni boshqarish bo&apos;yicha amaliy maslahatlar.</description>
-      <pubDate>Thu, 19 Feb 2026 00:00:00 +0500</pubDate>
+      <pubDate>Thu, 19 Feb 2026 00:00:00 GMT</pubDate>
       <category>Qo&apos;llanmalar</category>
+      <enclosure url="https://graver-studio.uz/images/blog/srochniy-zakaz-korporativnyh-podarkov.jpg" type="image/png" length="0" />
     </item>
     <item>
       <title>Biznes uchun eko-sovg&apos;alar: mijozlar va sayyoramiz haqida g&apos;amxo&apos;rlik | Graver Studio</title>
       <link>https://graver-studio.uz/uz/blog/biznes-uchun-eko-sovgalar/</link>
       <guid isPermaLink="true">https://graver-studio.uz/uz/blog/biznes-uchun-eko-sovgalar/</guid>
       <description>Ekologik korporativ sovg&apos;alar: bambuk, qayta ishlangan materiallar va barqaror brendlash. Biznes uchun yashil sovg&apos;a g&apos;oyalari.</description>
-      <pubDate>Thu, 19 Feb 2026 00:00:00 +0500</pubDate>
+      <pubDate>Thu, 19 Feb 2026 00:00:00 GMT</pubDate>
       <category>Qo&apos;llanmalar</category>
+      <enclosure url="https://graver-studio.uz/images/blog/eko-podarki-dlya-biznesa.jpg" type="image/png" length="0" />
     </item>
     <item>
       <title>Keys: Welcome Pack IT-kompaniyada sadoqatni (eNPS) qanday oshirdi | Graver Studio</title>
       <link>https://graver-studio.uz/uz/blog/keys-brendlangan-sovgalar-it-kompaniya/</link>
       <guid isPermaLink="true">https://graver-studio.uz/uz/blog/keys-brendlangan-sovgalar-it-kompaniya/</guid>
       <description>Haqiqiy keys: IT-kompaniyada brendlangan welcome pack orqali xodimlar sadoqatini oshirish tajribasi va natijalari.</description>
-      <pubDate>Thu, 19 Feb 2026 00:00:00 +0500</pubDate>
+      <pubDate>Thu, 19 Feb 2026 00:00:00 GMT</pubDate>
       <category>Keyslar</category>
+      <enclosure url="https://graver-studio.uz/images/blog/keys-brendirovannye-podarki-dlya-it.jpg" type="image/png" length="0" />
     </item>
     <item>
       <title>Korporativ sovg&apos;alar kadrlar oqimini qanday kamaytiradi | Graver Studio</title>
       <link>https://graver-studio.uz/uz/blog/xodimlar-sadoqati-korporativ-sovgalar/</link>
       <guid isPermaLink="true">https://graver-studio.uz/uz/blog/xodimlar-sadoqati-korporativ-sovgalar/</guid>
       <description>Korporativ sovg&apos;alar orqali xodimlar sadoqatini oshirish va kadrlar oqimini kamaytirish: strategiya, misollar va ROI.</description>
-      <pubDate>Thu, 19 Feb 2026 00:00:00 +0500</pubDate>
+      <pubDate>Thu, 19 Feb 2026 00:00:00 GMT</pubDate>
       <category>Qo&apos;llanmalar</category>
+      <enclosure url="https://graver-studio.uz/images/blog/hr-loyalty-gifts.jpg" type="image/png" length="0" />
     </item>
     <item>
       <title>O&apos;zbekistonda ishbilarmonlik odobi: qanday biznes sovg&apos;alar berish kerak | Graver Studio</title>
       <link>https://graver-studio.uz/uz/blog/ishbilarmonlik-odobi-biznes-sovgalar-ozbekiston/</link>
       <guid isPermaLink="true">https://graver-studio.uz/uz/blog/ishbilarmonlik-odobi-biznes-sovgalar-ozbekiston/</guid>
       <description>O&apos;zbekistonda biznes sovg&apos;alar bo&apos;yicha ishbilarmonlik odobi: an&apos;analar, qoidalar va amaliy maslahatlar.</description>
-      <pubDate>Thu, 19 Feb 2026 00:00:00 +0500</pubDate>
+      <pubDate>Thu, 19 Feb 2026 00:00:00 GMT</pubDate>
       <category>Qo&apos;llanmalar</category>
+      <enclosure url="https://graver-studio.uz/images/blog/uzbek-business-etiquette.jpg" type="image/png" length="0" />
     </item>
     <item>
       <title>B2B korporativ sovg&apos;a tanlash: HR va marketing uchun qo&apos;llanma | Graver Studio</title>
       <link>https://graver-studio.uz/uz/blog/b2b-korporativ-sovga-tanlash/</link>
       <guid isPermaLink="true">https://graver-studio.uz/uz/blog/b2b-korporativ-sovga-tanlash/</guid>
       <description>B2B segmentda korporativ sovg&apos;a tanlash bo&apos;yicha to&apos;liq qo&apos;llanma: mezonlar, byudjet va brendlash strategiyasi.</description>
-      <pubDate>Thu, 19 Feb 2026 00:00:00 +0500</pubDate>
+      <pubDate>Thu, 19 Feb 2026 00:00:00 GMT</pubDate>
       <category>Qo&apos;llanmalar</category>
+      <enclosure url="https://graver-studio.uz/images/blog/b2b-gift-selection-guide.jpg" type="image/png" length="0" />
     </item>
     <item>
       <title>Sovg&apos;alarni shaxsiylashtirish: gravyura nima uchun logotipdan samaraliroq | Graver Studio</title>
       <link>https://graver-studio.uz/uz/blog/shaxsiylashtirish-yangi-standart-gravyura/</link>
       <guid isPermaLink="true">https://graver-studio.uz/uz/blog/shaxsiylashtirish-yangi-standart-gravyura/</guid>
       <description>Sovg&apos;alarni shaxsiylashtirish yangi standart: gravyura nima uchun oddiy logotip bosishdan ko&apos;ra samaraliroq va qanday qo&apos;llash kerak.</description>
-      <pubDate>Thu, 19 Feb 2026 00:00:00 +0500</pubDate>
+      <pubDate>Thu, 19 Feb 2026 00:00:00 GMT</pubDate>
       <category>Texnologiyalar</category>
+      <enclosure url="https://graver-studio.uz/images/blog/laser-engraving-personalization.jpg" type="image/png" length="0" />
     </item>
     <item>
       <title>Korporativ sovg&apos;a buyurtma jarayoni: bosqichma-bosqich qo&apos;llanma | Graver Studio</title>
       <link>https://graver-studio.uz/uz/blog/korporativ-sovga-buyurtma-jarayoni/</link>
       <guid isPermaLink="true">https://graver-studio.uz/uz/blog/korporativ-sovga-buyurtma-jarayoni/</guid>
       <description>Korporativ sovg&apos;a buyurtma jarayoni: briefdan tortib topshirishgacha 8 ta keng tarqalgan xato va ulardan qochish usullari.</description>
-      <pubDate>Thu, 19 Feb 2026 00:00:00 +0500</pubDate>
+      <pubDate>Thu, 19 Feb 2026 00:00:00 GMT</pubDate>
       <category>Qo&apos;llanmalar</category>
+      <enclosure url="https://graver-studio.uz/images/blog/corporate-gift-ordering-process.jpg" type="image/png" length="0" />
     </item>
     <item>
       <title>Keys: Toshkentdagi IT-kompaniya uchun welcome-paklar | Graver Studio</title>
       <link>https://graver-studio.uz/uz/blog/keys-welcome-pak-it-kompaniya-toshkent/</link>
       <guid isPermaLink="true">https://graver-studio.uz/uz/blog/keys-welcome-pak-it-kompaniya-toshkent/</guid>
       <description>Haqiqiy keys: Toshkentdagi IT-kompaniya uchun welcome-paklarni qanday yig&apos;ish va brendlash — jarayon va natijalar.</description>
-      <pubDate>Thu, 19 Feb 2026 00:00:00 +0500</pubDate>
+      <pubDate>Thu, 19 Feb 2026 00:00:00 GMT</pubDate>
       <category>Keyslar</category>
+      <enclosure url="https://graver-studio.uz/images/blog/welcome-pack-it-company.jpg" type="image/png" length="0" />
     </item>
     <item>
       <title>O&apos;zbekiston korporativ bayramlarining yillik rejasi sovg&apos;a g&apos;oyalari bilan | Graver Studio</title>
       <link>https://graver-studio.uz/uz/blog/korporativ-bayramlar-yillik-rejasi/</link>
       <guid isPermaLink="true">https://graver-studio.uz/uz/blog/korporativ-bayramlar-yillik-rejasi/</guid>
       <description>O&apos;zbekiston korporativ bayramlari kalendari: har bir sana uchun sovg&apos;a g&apos;oyalari, byudjet va brendlash maslahatlar.</description>
-      <pubDate>Thu, 19 Feb 2026 00:00:00 +0500</pubDate>
+      <pubDate>Thu, 19 Feb 2026 00:00:00 GMT</pubDate>
       <category>Qo&apos;llanmalar</category>
+      <enclosure url="https://graver-studio.uz/images/blog/corporate-holiday-calendar-uzbekistan.jpg" type="image/png" length="0" />
     </item>
     <item>
       <title>Toshkentdagi IT-kompaniyalar uchun merch: Qanday qilib ajralib turish va HR-brendni kuchaytirish</title>
       <link>https://graver-studio.uz/uz/blog/it-kompaniyalar-uchun-merch-toshkent/</link>
       <guid isPermaLink="true">https://graver-studio.uz/uz/blog/it-kompaniyalar-uchun-merch-toshkent/</guid>
       <description>Toshkentdagi IT-kompaniyalar uchun premium merch: xudi, powerbank, welcome pack va lazerli gravyura. Ishlab chiqarishdan oldin maket.</description>
-      <pubDate>Sat, 14 Feb 2026 00:00:00 +0500</pubDate>
+      <pubDate>Sat, 14 Feb 2026 00:00:00 GMT</pubDate>
       <category>Pillar</category>
+      <enclosure url="https://graver-studio.uz/images/blog/corporate-merch-article-45-og.jpg" type="image/png" length="0" />
     </item>
     <item>
       <title>Toshkentdagi banklar va fintex uchun korporativ sovg&apos;alar: VIP, maqom</title>
       <link>https://graver-studio.uz/uz/blog/banklar-va-fintex-uchun-sovgalar-toshkent/</link>
       <guid isPermaLink="true">https://graver-studio.uz/uz/blog/banklar-va-fintex-uchun-sovgalar-toshkent/</guid>
       <description>Banklar, sug&apos;urta va fintex uchun premium korporativ sovg&apos;alar: VIP to&apos;plamlar, Parker ruchkalari, gravyurali charm buyumlar. Maket oldindan tasdiqlanadi.</description>
-      <pubDate>Sat, 14 Feb 2026 00:00:00 +0500</pubDate>
+      <pubDate>Sat, 14 Feb 2026 00:00:00 GMT</pubDate>
       <category>Pillar</category>
+      <enclosure url="https://graver-studio.uz/images/blog/corporate-gifts-legal-aspects-og.jpg" type="image/png" length="0" />
     </item>
     <item>
       <title>Toshkentda buyurtma asosida logotipli soatlar: premium sovg&apos;a</title>
       <link>https://graver-studio.uz/uz/blog/logotipli-soat-korporativ-sovgalar-toshkent/</link>
       <guid isPermaLink="true">https://graver-studio.uz/uz/blog/logotipli-soat-korporativ-sovgalar-toshkent/</guid>
       <description>Kompaniya logotipi tushirilgan soatlar: xodimlar va hamkorlar uchun premium korporativ sovg&apos;a. Siferblat va qopqoqqa lazerli gravyura.</description>
-      <pubDate>Sat, 14 Feb 2026 00:00:00 +0500</pubDate>
+      <pubDate>Sat, 14 Feb 2026 00:00:00 GMT</pubDate>
       <category>Pillar</category>
+      <enclosure url="https://graver-studio.uz/images/blog/article-16-og.jpg" type="image/png" length="0" />
     </item>
     <item>
       <title>Toshkentda korporativ tadbirlar uchun sovg&apos;alar: g&apos;oyalar, brendlash</title>
       <link>https://graver-studio.uz/uz/blog/korporativ-tadbirlar-uchun-sovgalar-toshkent/</link>
       <guid isPermaLink="true">https://graver-studio.uz/uz/blog/korporativ-tadbirlar-uchun-sovgalar-toshkent/</guid>
       <description>Ofis ochilishi, kompaniya yubileyi va timbilding uchun brendlangan sovg&apos;a g&apos;oyalari. Toshkentda logotipli korporativ sovg&apos;alar buyurtmasi.</description>
-      <pubDate>Sat, 14 Feb 2026 00:00:00 +0500</pubDate>
+      <pubDate>Sat, 14 Feb 2026 00:00:00 GMT</pubDate>
       <category>Pillar</category>
+      <enclosure url="https://graver-studio.uz/images/blog/creative-gift-packaging-ideas-og.jpg" type="image/png" length="0" />
     </item>
     <item>
       <title>Toshkentda HoReCa uchun sovg&apos;alar va merch: restoranlarni brendlash</title>
       <link>https://graver-studio.uz/uz/blog/horeca-va-restoranlar-uchun-sovgalar-toshkent/</link>
       <guid isPermaLink="true">https://graver-studio.uz/uz/blog/horeca-va-restoranlar-uchun-sovgalar-toshkent/</guid>
       <description>HoReCa uchun brendlash va merch: menyu papkalari, tablichkalar, forma va logotipli aksessuarlar. Restoran va mehmonxonalar uchun lazerli gravyura.</description>
-      <pubDate>Sat, 14 Feb 2026 00:00:00 +0500</pubDate>
+      <pubDate>Sat, 14 Feb 2026 00:00:00 GMT</pubDate>
       <category>Pillar</category>
+      <enclosure url="https://graver-studio.uz/images/blog/eco-corporate-gifts-og.jpg" type="image/png" length="0" />
     </item>
     <item>
       <title>B2B xaridor uchun korporativ sovg&apos;alar chek-listi</title>
       <link>https://graver-studio.uz/uz/blog/xaridor-chek-listi-b2b/</link>
       <guid isPermaLink="true">https://graver-studio.uz/uz/blog/xaridor-chek-listi-b2b/</guid>
       <description>HR va xaridorlar uchun to&apos;liq chek-list: rejalashtirishdan topshirishgacha. Xatolar, muddatlar, hujjatlar.</description>
-      <pubDate>Fri, 13 Feb 2026 00:00:00 +0500</pubDate>
+      <pubDate>Fri, 13 Feb 2026 00:00:00 GMT</pubDate>
       <category>HR</category>
+      <enclosure url="https://graver-studio.uz/images/blog/article-20-og.jpg" type="image/png" length="0" />
     </item>
     <item>
       <title>Korporativ suvenirlarda sifatni yo&apos;qotmasdan qanday tejash mumkin</title>
       <link>https://graver-studio.uz/uz/blog/suvenir-byudjetini-tejash/</link>
       <guid isPermaLink="true">https://graver-studio.uz/uz/blog/suvenir-byudjetini-tejash/</guid>
       <description>Korporativ sovg&apos;alar byudjetini optimallashtirish usullari: material tanlash, partiyalar, mavsumiylik. Amaliy maslahatlar.</description>
-      <pubDate>Thu, 12 Feb 2026 00:00:00 +0500</pubDate>
+      <pubDate>Thu, 12 Feb 2026 00:00:00 GMT</pubDate>
       <category>Qo&apos;llanmalar</category>
+      <enclosure url="https://graver-studio.uz/images/blog/default-og.jpg" type="image/png" length="0" />
     </item>
     <item>
       <title>Navro&apos;zga korporativ sovg&apos;alar: an&apos;analar va g&apos;oyalar</title>
       <link>https://graver-studio.uz/uz/blog/navruz-sovgalari/</link>
       <guid isPermaLink="true">https://graver-studio.uz/uz/blog/navruz-sovgalari/</guid>
       <description>Xodimlar va hamkorlar uchun Navro&apos;z sovg&apos;a g&apos;oyalari. An&apos;anaviy va zamonaviy korporativ suvenir variantlari.</description>
-      <pubDate>Wed, 11 Feb 2026 00:00:00 +0500</pubDate>
+      <pubDate>Wed, 11 Feb 2026 00:00:00 GMT</pubDate>
       <category>Mavsumiy</category>
+      <enclosure url="https://graver-studio.uz/images/blog/uzbek-article-og.jpg" type="image/png" length="0" />
     </item>
     <item>
       <title>Korporativ sovg&apos;alar logotip bilan: Toshkentda biznes uchun to&apos;liq qo&apos;llanma</title>
       <link>https://graver-studio.uz/uz/blog/korporativ-sovgalar-logotip-bilan-to-liq-qollanma/</link>
       <guid isPermaLink="true">https://graver-studio.uz/uz/blog/korporativ-sovgalar-logotip-bilan-to-liq-qollanma/</guid>
       <description>Toshkentda kompaniya logotipi bilan korporativ sovg&apos;alarni qanday tanlash. Nanesish usullari, muddatlar, byudjet. Graver.uz dan lazer gravyurasi — ishlab chiqarishdan oldin maket.</description>
-      <pubDate>Wed, 11 Feb 2026 00:00:00 +0500</pubDate>
+      <pubDate>Wed, 11 Feb 2026 00:00:00 GMT</pubDate>
       <category>Pillar</category>
+      <enclosure url="https://graver-studio.uz/images/blog/corporate-gifts-uz-og.jpg" type="image/png" length="0" />
     </item>
     <item>
       <title>Korporativ sovg&apos;alar gravyurasi: usullar va materiallar tanlash</title>
       <link>https://graver-studio.uz/uz/blog/korporativ-sovgalar-gravyurasi-usullari/</link>
       <guid isPermaLink="true">https://graver-studio.uz/uz/blog/korporativ-sovgalar-gravyurasi-usullari/</guid>
       <description>Korporativ sovg&apos;alar uchun gravyura usullarini solishtirish. Lazer, mexanik, kimyoviy gravyura. Toshkentda mos usulni qanday tanlash.</description>
-      <pubDate>Wed, 11 Feb 2026 00:00:00 +0500</pubDate>
+      <pubDate>Wed, 11 Feb 2026 00:00:00 GMT</pubDate>
       <category>Cluster</category>
+      <enclosure url="https://graver-studio.uz/images/blog/article-22-og.jpg" type="image/png" length="0" />
     </item>
     <item>
       <title>Lazer gravyurasi sovg&apos;alar: texnologiyalar va afzalliklari</title>
       <link>https://graver-studio.uz/uz/blog/lazer-gravirovka-sovgalar-tehnologiyasi/</link>
       <guid isPermaLink="true">https://graver-studio.uz/uz/blog/lazer-gravirovka-sovgalar-tehnologiyasi/</guid>
       <description>Korporativ sovg&apos;alar uchun lazer gravyurasi qanday ishlaydi. Fiber, CO2, MOPA texnologiyalari. Toshkentda biznes uchun afzalliklar.</description>
-      <pubDate>Wed, 11 Feb 2026 00:00:00 +0500</pubDate>
+      <pubDate>Wed, 11 Feb 2026 00:00:00 GMT</pubDate>
       <category>Cluster</category>
+      <enclosure url="https://graver-studio.uz/images/blog/oymakorlik-materiallari-og.jpg" type="image/png" length="0" />
     </item>
     <item>
       <title>Kompaniya merchi: Toshkentda suvenirlarni brendlash</title>
       <link>https://graver-studio.uz/uz/blog/kompaniya-merchi-brendlash/</link>
       <guid isPermaLink="true">https://graver-studio.uz/uz/blog/kompaniya-merchi-brendlash/</guid>
       <description>Toshkentda kompaniya uchun merch buyurtma qilish. Kiyim, aksessuarlar, suvenirlar brendlashi. Startaplar va korporatsiyalar uchun lazer gravyurasi.</description>
-      <pubDate>Wed, 11 Feb 2026 00:00:00 +0500</pubDate>
+      <pubDate>Wed, 11 Feb 2026 00:00:00 GMT</pubDate>
       <category>Cluster</category>
+      <enclosure url="https://graver-studio.uz/images/blog/corporate-gifting-trends-2026-uz-og.jpg" type="image/png" length="0" />
     </item>
     <item>
       <title>Xodimlarga sovg&apos;alar: korporativ suvenirlar bo&apos;yicha HR-qo&apos;llanma</title>
       <link>https://graver-studio.uz/uz/blog/xodimlar-uchun-sovgalar-hr-qollanma/</link>
       <guid isPermaLink="true">https://graver-studio.uz/uz/blog/xodimlar-uchun-sovgalar-hr-qollanma/</guid>
       <description>Toshkentda xodimlarga sovg&apos;alarni qanday tanlash. HR uchun g&apos;oyalar, byudjetlar, muddatlar. Graver.uz dan shaxsiylashtirilgan gravyurali sovg&apos;alar.</description>
-      <pubDate>Wed, 11 Feb 2026 00:00:00 +0500</pubDate>
+      <pubDate>Wed, 11 Feb 2026 00:00:00 GMT</pubDate>
       <category>Cluster</category>
+      <enclosure url="https://graver-studio.uz/images/blog/xodimlarga-sovg-alar-hr-qollanma-uz-og.jpg" type="image/png" length="0" />
     </item>
     <item>
       <title>Mijozlar va hamkorlar uchun sovg&apos;alar: Toshkentda VIP korporativ sovg&apos;alar</title>
       <link>https://graver-studio.uz/uz/blog/mijoz-hamkorlar-uchun-sovgalar-vip/</link>
       <guid isPermaLink="true">https://graver-studio.uz/uz/blog/mijoz-hamkorlar-uchun-sovgalar-vip/</guid>
       <description>Mijoz va hamkorlar uchun sovg&apos;ani qanday tanlash: maqom, shaxsiylashtirish, qadoqlash. Gravyura, ishlab chiqarishdan oldin maket, muddatlar.</description>
-      <pubDate>Wed, 11 Feb 2026 00:00:00 +0500</pubDate>
+      <pubDate>Wed, 11 Feb 2026 00:00:00 GMT</pubDate>
       <category>Cluster</category>
+      <enclosure url="https://graver-studio.uz/images/blog/vip-gifts-article-44-og.jpg" type="image/png" length="0" />
     </item>
     <item>
       <title>Logotipli zajigalka va soat: kompaniya sovg&apos;asini qanday tanlash</title>
       <link>https://graver-studio.uz/uz/blog/logotipli-zajigalka-va-soat/</link>
       <guid isPermaLink="true">https://graver-studio.uz/uz/blog/logotipli-zajigalka-va-soat/</guid>
       <description>Logotipli zajigalka va soat tanlash chek-listi: material, gravyura, maket, qadoqlash va sifat nazorati. Toshkent uchun amaliy yo&apos;riqnoma.</description>
-      <pubDate>Wed, 11 Feb 2026 00:00:00 +0500</pubDate>
+      <pubDate>Wed, 11 Feb 2026 00:00:00 GMT</pubDate>
       <category>Cluster</category>
+      <enclosure url="https://graver-studio.uz/images/blog/personalized-gifts-og.jpg" type="image/png" length="0" />
     </item>
     <item>
       <title>Korporativ sovg&apos;a to&apos;plamlari: kompaniya logotipi bilan boks yig&apos;ish</title>
       <link>https://graver-studio.uz/uz/blog/korporativ-sovga-toplamlari/</link>
       <guid isPermaLink="true">https://graver-studio.uz/uz/blog/korporativ-sovga-toplamlari/</guid>
       <description>Korporativ sovg&apos;a to&apos;plamini qanday yig&apos;ish: tarkib, brendlash, qadoqlash, ssenariylar (welcome pack, hamkorlar). Gravirovka va nazorat.</description>
-      <pubDate>Wed, 11 Feb 2026 00:00:00 +0500</pubDate>
+      <pubDate>Wed, 11 Feb 2026 00:00:00 GMT</pubDate>
       <category>Cluster</category>
+      <enclosure url="https://graver-studio.uz/images/blog/article-content-og.jpg" type="image/png" length="0" />
     </item>
     <item>
       <title>Navruz uchun korporativ sovg&apos;alar: gravyura va milliy urg&apos;u bilan g&apos;oyalar</title>
       <link>https://graver-studio.uz/uz/blog/navruz-uchun-korporativ-sovgalar/</link>
       <guid isPermaLink="true">https://graver-studio.uz/uz/blog/navruz-uchun-korporativ-sovgalar/</guid>
       <description>Navruz uchun korporativ sovg&apos;a g&apos;oyalari: mavzuli suvenir, shaxsiylashtirish, qadoqlash, xodimlar va hamkorlar uchun ssenariylar. Toshkentda ishlab chiqarish.</description>
-      <pubDate>Wed, 11 Feb 2026 00:00:00 +0500</pubDate>
+      <pubDate>Wed, 11 Feb 2026 00:00:00 GMT</pubDate>
       <category>Cluster</category>
+      <enclosure url="https://graver-studio.uz/images/blog/23-fevralga-nima-sovg-a-qilish-kerak-korporativ-goyalar-og.jpg" type="image/png" length="0" />
     </item>
     <item>
       <title>Yangi xodimlar uchun welcome pack: to&apos;plamni yig&apos;ish va brendlash</title>
       <link>https://graver-studio.uz/uz/blog/yangi-xodimlar-uchun-welcome-pack/</link>
       <guid isPermaLink="true">https://graver-studio.uz/uz/blog/yangi-xodimlar-uchun-welcome-pack/</guid>
       <description>Yangi xodim uchun welcome pack: tarkib, logotip/gravyura, maket, qadoqlash, muddatlar. Toshkentdagi HR uchun amaliy qo&apos;llanma.</description>
-      <pubDate>Wed, 11 Feb 2026 00:00:00 +0500</pubDate>
+      <pubDate>Wed, 11 Feb 2026 00:00:00 GMT</pubDate>
       <category>Cluster</category>
+      <enclosure url="https://graver-studio.uz/images/blog/personalized-gifts-uz-og.jpg" type="image/png" length="0" />
     </item>
     <item>
       <title>Gravirovka uchun logotip maketini tayyorlash</title>
       <link>https://graver-studio.uz/uz/blog/logotip-maketi-tayyorlash/</link>
       <guid isPermaLink="true">https://graver-studio.uz/uz/blog/logotip-maketi-tayyorlash/</guid>
       <description>Lazer gravirovka uchun maketga texnik talablar: fayl formatlari, razreshen, ranglar. Tayyorgarlik chek-listi.</description>
-      <pubDate>Tue, 10 Feb 2026 00:00:00 +0500</pubDate>
+      <pubDate>Tue, 10 Feb 2026 00:00:00 GMT</pubDate>
       <category>Texnologiyalar</category>
+      <enclosure url="https://graver-studio.uz/images/blog/logotip-maketini-qanday-tayyorlash-kerak-og.jpg" type="image/png" length="0" />
     </item>
     <item>
       <title>Yangi yilga korporativ sovg&apos;a g&apos;oyalari</title>
       <link>https://graver-studio.uz/uz/blog/yangi-yil-sovga-goyalari/</link>
       <guid isPermaLink="true">https://graver-studio.uz/uz/blog/yangi-yil-sovga-goyalari/</guid>
       <description>Xodimlar va hamkorlar uchun eng yaxshi yangi yil sovg&apos;a g&apos;oyalari: byudjetdan premiumgacha. Toshkentda nima sovg&apos;a qilish kerak.</description>
-      <pubDate>Mon, 09 Feb 2026 00:00:00 +0500</pubDate>
+      <pubDate>Mon, 09 Feb 2026 00:00:00 GMT</pubDate>
       <category>Mavsumiy</category>
+      <enclosure url="https://graver-studio.uz/images/blog/new-year-corporate-gifts-uz-og.jpg" type="image/png" length="0" />
     </item>
     <item>
       <title>Suvenirlarni brendlash: usullar va materiallar</title>
       <link>https://graver-studio.uz/uz/blog/suvenir-brendlash/</link>
       <guid isPermaLink="true">https://graver-studio.uz/uz/blog/suvenir-brendlash/</guid>
       <description>Suvenir mahsulotlariga logotip qo&apos;llash usullari: lazer gravirovka, tampoprint, shelkografiya, UV-bosma.</description>
-      <pubDate>Sun, 08 Feb 2026 00:00:00 +0500</pubDate>
+      <pubDate>Sun, 08 Feb 2026 00:00:00 GMT</pubDate>
       <category>Texnologiyalar</category>
+      <enclosure url="https://graver-studio.uz/images/blog/default-og.jpg" type="image/png" length="0" />
     </item>
     <item>
       <title>Yangi xodimlar uchun Welcome Pack</title>
       <link>https://graver-studio.uz/uz/blog/welcome-pack-yangi-xodimlar/</link>
       <guid isPermaLink="true">https://graver-studio.uz/uz/blog/welcome-pack-yangi-xodimlar/</guid>
       <description>Welcome Pack tuzish bo&apos;yicha qo&apos;llanma: tarkibi, brendlash, tashkil etish. HR uchun amaliy maslahatlar.</description>
-      <pubDate>Sat, 07 Feb 2026 00:00:00 +0500</pubDate>
+      <pubDate>Sat, 07 Feb 2026 00:00:00 GMT</pubDate>
       <category>HR</category>
+      <enclosure url="https://graver-studio.uz/images/blog/welcome-pack-uz-og.jpg" type="image/png" length="0" />
     </item>
     <item>
       <title>Xodimlar uchun korporativ sovg&apos;ani qanday tanlash</title>
       <link>https://graver-studio.uz/uz/blog/korporativ-sovgani-qanday-tanlash/</link>
       <guid isPermaLink="true">https://graver-studio.uz/uz/blog/korporativ-sovgani-qanday-tanlash/</guid>
       <description>Korporativ sovg&apos;alarni tanlash bo&apos;yicha amaliy tavsiyalar: logotipli mahsulotlar, byudjet, suvenir turlari.</description>
-      <pubDate>Fri, 06 Feb 2026 00:00:00 +0500</pubDate>
+      <pubDate>Fri, 06 Feb 2026 00:00:00 GMT</pubDate>
       <category>Qo&apos;llanmalar</category>
+      <enclosure url="https://graver-studio.uz/images/blog/korporativ-sovg-ani-qanday-tanlash-kerak-og.jpg" type="image/png" length="0" />
     </item>
     <item>
       <title>Sovg&apos;alarga lazer gravirovka: to&apos;liq qo&apos;llanma</title>
       <link>https://graver-studio.uz/uz/blog/lazer-gravirovka-sovgalar/</link>
       <guid isPermaLink="true">https://graver-studio.uz/uz/blog/lazer-gravirovka-sovgalar/</guid>
       <description>Korporativ sovg&apos;alarga lazer gravirovka haqida hammasi: materiallar, texnologiyalar, maket tayyorlash, muddatlar.</description>
-      <pubDate>Fri, 06 Feb 2026 00:00:00 +0500</pubDate>
+      <pubDate>Fri, 06 Feb 2026 00:00:00 GMT</pubDate>
       <category>Texnologiyalar</category>
+      <enclosure url="https://graver-studio.uz/images/blog/article-27-og.jpg" type="image/png" length="0" />
     </item>
     <item>
       <title>Kompaniya logotipli sovg&apos;a to&apos;plamlari</title>
       <link>https://graver-studio.uz/uz/blog/logotipli-sovga-toplami/</link>
       <guid isPermaLink="true">https://graver-studio.uz/uz/blog/logotipli-sovga-toplami/</guid>
       <description>Brendlangan korporativ sovg&apos;a to&apos;plamini qanday yig&apos;ish: komplektatsiya, qadoqlash, turli byudjetlar uchun g&apos;oyalar.</description>
-      <pubDate>Fri, 06 Feb 2026 00:00:00 +0500</pubDate>
+      <pubDate>Fri, 06 Feb 2026 00:00:00 GMT</pubDate>
       <category>G&apos;oyalar</category>
+      <enclosure url="https://graver-studio.uz/images/blog/article-28-og.jpg" type="image/png" length="0" />
     </item>
   </channel>
 </rss>

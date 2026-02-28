@@ -45,6 +45,16 @@ export const BLOG_SLUG_MAP = {
     'kak-vybrat-vip-podarok-partneru-uzbekistan': 'vip-hamkor-uchun-sovgani-qanday-tanlash-ozbekiston',
     'welcome-pack-dlya-it-kompanii-tashkent': 'it-kompaniya-uchun-welcome-pack-toshkent',
     'lazernaya-gravirovka-protiv-uf-pechati-chto-vybrat': 'lazerli-oyma-va-uf-pechat-nimani-tanlash',
+    'podarki-na-8-marta-sotrudnicam': '8-mart-xodimlarga-sovgalar',
+    'originalnye-podarki-na-8-marta': 'originalnye-podarki-na-8-marta-uz',
+    'korporativnye-podarki-na-8-marta-v-tashkente': 'korporativnye-podarki-na-8-marta-v-tashkente-uz',
+    'chto-podarit-mame-na-8-marta': 'chto-podarit-mame-na-8-marta-uz',
+    'chto-podarit-kollege-na-8-marta': 'chto-podarit-kollege-na-8-marta-uz',
+    'chto-podarit-rukovoditelyu-na-8-marta': 'chto-podarit-rukovoditelyu-na-8-marta-uz',
+    'chto-podarit-devushke-na-8-marta': 'chto-podarit-devushke-na-8-marta-uz',
+    'chto-podarit-na-8-marta-devushke-mame-kollege': 'chto-podarit-na-8-marta-devushke-mame-kollege-uz',
+    'nedorogie-podarki-na-8-marta': 'nedorogie-podarki-na-8-marta-uz',
+    'gravirovka-v-tashkente-na-8-marta': 'gravirovka-v-tashkente-na-8-marta-uz',
   },
   uz: {
     'korporativ-sovgalar-boyicha-toliq-qollanma': 'polniy-gid-po-korporativnym-podarkam',
@@ -76,7 +86,17 @@ export const BLOG_SLUG_MAP = {
     'gastronomic-toplamlar-navruzga-toshkent': 'gastronomicheskie-nabory-na-navruz-tashkent',
     'vip-hamkor-uchun-sovgani-qanday-tanlash-ozbekiston': 'kak-vybrat-vip-podarok-partneru-uzbekistan',
     'it-kompaniya-uchun-welcome-pack-toshkent': 'welcome-pack-dlya-it-kompanii-tashkent',
-    'lazerli-oyma-va-uf-pechat-nimani-tanlash': 'lazernaya-gravirovka-protiv-uf-pechati-chto-vybrat'
+    'lazerli-oyma-va-uf-pechat-nimani-tanlash': 'lazernaya-gravirovka-protiv-uf-pechati-chto-vybrat',
+    '8-mart-xodimlarga-sovgalar': 'podarki-na-8-marta-sotrudnicam',
+    'originalnye-podarki-na-8-marta-uz': 'originalnye-podarki-na-8-marta',
+    'korporativnye-podarki-na-8-marta-v-tashkente-uz': 'korporativnye-podarki-na-8-marta-v-tashkente',
+    'chto-podarit-mame-na-8-marta-uz': 'chto-podarit-mame-na-8-marta',
+    'chto-podarit-kollege-na-8-marta-uz': 'chto-podarit-kollege-na-8-marta',
+    'chto-podarit-rukovoditelyu-na-8-marta-uz': 'chto-podarit-rukovoditelyu-na-8-marta',
+    'chto-podarit-devushke-na-8-marta-uz': 'chto-podarit-devushke-na-8-marta',
+    'chto-podarit-na-8-marta-devushke-mame-kollege-uz': 'chto-podarit-na-8-marta-devushke-mame-kollege',
+    'nedorogie-podarki-na-8-marta-uz': 'nedorogie-podarki-na-8-marta',
+    'gravirovka-v-tashkente-na-8-marta-uz': 'gravirovka-v-tashkente-na-8-marta'
   }
 };
 
