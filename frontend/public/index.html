@@ -11,6 +11,41 @@
         <link rel="preconnect" href="https://connect.facebook.net" />
         <title>Graver.uz</title>
 
+        <!-- Disable Stape in GTM before GTM loads -->
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        
+        // Disable Stape tags by preventing them from firing
+        window.gtag = window.gtag || function() {
+          window.dataLayer.push(arguments);
+        };
+        
+        // Intercept GTM events to block Stape
+        var originalPush = window.dataLayer.push;
+        window.dataLayer.push = function() {
+          var args = Array.prototype.slice.call(arguments);
+          
+          // Block Stape-related events
+          for (var i = 0; i < args.length; i++) {
+            var arg = args[i];
+            if (typeof arg === 'object' && arg !== null) {
+              // Check if this is a Stape event
+              if (arg.event && (arg.event.includes('stape') || arg.event.includes('Stape'))) {
+                console.log('[GTM Blocker] Blocked Stape event:', arg.event);
+                return;
+              }
+              // Check if config contains Stape
+              if (arg.config && typeof arg.config === 'string' && arg.config.includes('stape')) {
+                console.log('[GTM Blocker] Blocked Stape config');
+                return;
+              }
+            }
+          }
+          
+          return originalPush.apply(window.dataLayer, arguments);
+        };
+        </script>
+
         <!-- Meta Pixel Code -->
         <script>
         !function(f,b,e,v,n,t,s)
