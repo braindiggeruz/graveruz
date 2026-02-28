@@ -127,6 +127,7 @@ function buildMoneyLinks(locale, slug, isRu) {
 }
 
 function BlogPostPage() {
+  const [toc, setToc] = useState([]);
   const params = useParams();
   const locale = params.locale || 'ru';
   const slug = params.slug || '';
@@ -340,6 +341,18 @@ function BlogPostPage() {
   var contentBody = null;
   if (post && post.contentHtml) {
     const enhancedHtml = enhanceTocAndAnchors(normalizeHtmlContent(post.contentHtml, locale));
+    const headings = [];
+    const matches = enhancedHtml.matchAll(/<h([2-3]) id="([^"]+)">([^<]+)<\/h[2-3]>/g);
+
+    for (const match of matches) {
+      headings.push({
+        level: parseInt(match[1], 10),
+        id: match[2],
+        text: match[3],
+      });
+    }
+
+    setToc(headings);
     contentBody = React.createElement('div', { dangerouslySetInnerHTML: { __html: enhancedHtml } });
   } else if (post && post.content) {
     var contentParts = [];
@@ -495,7 +508,23 @@ function BlogPostPage() {
             )
           )
         ),
-        React.createElement('div', { className: 'prose prose-invert max-w-none' }, contentBody),
+        React.createElement('div', { className: 'grid grid-cols-1 lg:grid-cols-4 gap-8' },
+          React.createElement('div', { className: 'lg:col-span-3' },
+            React.createElement('div', { className: 'prose prose-invert max-w-none' }, contentBody)
+          ),
+          React.createElement('aside', { className: 'lg:col-span-1 lg:sticky top-24 self-start' },
+            React.createElement('div', { className: 'p-6 bg-gray-900 rounded-2xl border border-gray-800' },
+              React.createElement('h3', { className: 'text-lg font-bold text-white mb-4' }, isRu ? 'Содержание' : 'Mundarija'),
+              React.createElement('ul', { className: 'space-y-2' },
+                toc.map((item) => (
+                  React.createElement('li', { key: item.id, className: `ml-${(item.level - 2) * 4}` },
+                    React.createElement('a', { href: `#${item.id}`, className: 'text-gray-400 hover:text-teal-500 transition' }, item.text)
+                  )
+                ))
+              )
+            )
+          )
+        ),
         // Author Block — E-E-A-T signal for Google (shows expertise and trustworthiness)
         React.createElement('div', {
           className: 'mt-10 p-5 bg-gray-900/60 border border-gray-800 rounded-xl flex items-start gap-4',

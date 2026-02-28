@@ -28,6 +28,4 @@ Sitemap: https://graver-studio.uz/sitemap-index.xml
 Sitemap: https://graver-studio.uz/sitemap.xml
 Sitemap: https://graver-studio.uz/image-sitemap.xml
 
-# RSS Feeds — listed as Sitemap so crawlers discover them
-Sitemap: https://graver-studio.uz/rss-ru.xml
-Sitemap: https://graver-studio.uz/rss-uz.xml
+

@@ -2,6 +2,7 @@ import { openTelegramWithTracking } from '../utils/pixel';
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Phone, Send, MapPin, Clock } from 'lucide-react';
+import { YMaps, Map, Placemark } from 'react-yandex-maps';
 import LanguageSwitcher from '../components/LanguageSwitcher';
 import { BASE_URL, buildCanonical, buildAlternate, HREFLANG_MAP } from '../config/seo';
 import { useI18n } from '../i18n';
@@ -101,6 +102,13 @@ export default function ContactsPage() {
 
       <section className="py-16">
         <div className="max-w-6xl mx-auto px-4">
+            <div className="mb-12">
+              <YMaps>
+                <Map defaultState={{ center: [41.2995, 69.2401], zoom: 15 }} width="100%" height="400px">
+                  <Placemark geometry={[41.2995, 69.2401]} />
+                </Map>
+              </YMaps>
+            </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 hover:border-teal-500/30 transition">
               <div className="w-12 h-12 bg-teal-500/10 rounded-xl flex items-center justify-center mb-4">

@@ -1,26 +1,26 @@
 import { openTelegramWithTracking } from '../utils/pixel';
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Send } from 'lucide-react';
+import { Send, FileText, CheckCircle, Package, Truck, Star } from 'lucide-react';
 import LanguageSwitcher from '../components/LanguageSwitcher';
 import { BASE_URL, buildCanonical, buildAlternate, HREFLANG_MAP } from '../config/seo';
 import { useI18n } from '../i18n';
 import SEOHead from '../components/SEOHead';
 
 const stepsRu = [
-  { title: "1. Заявка и консультация", time: "15-30 минут", desc: "Вы описываете задачу: что нужно брендировать, тираж, сроки." },
-  { title: "2. Создание макета", time: "1-2 часа", desc: "Дизайнер создаёт цифровой макет с точным размещением вашего логотипа." },
-  { title: "3. Утверждение", time: "По вашему графику", desc: "Вы согласовываете макет, вносите правки при необходимости." },
-  { title: "4. Производство", time: "1-3 рабочих дня", desc: "Гравируем партию согласно утверждённому макету. Контроль качества." },
-  { title: "5. Выдача", time: "В оговорённый срок", desc: "Доставка или самовывоз. Все документы для юрлиц." }
+  { title: "1. Заявка и консультация", time: "15-30 минут", desc: "Вы описываете задачу: что нужно брендировать, тираж, сроки.", icon: FileText },
+  { title: "2. Создание макета", time: "1-2 часа", desc: "Дизайнер создаёт цифровой макет с точным размещением вашего логотипа.", icon: CheckCircle },
+  { title: "3. Утверждение", time: "По вашему графику", desc: "Вы согласовываете макет, вносите правки при необходимости.", icon: Package },
+  { title: "4. Производство", time: "1-3 рабочих дня", desc: "Гравируем партию согласно утверждённому макету. Контроль качества.", icon: Truck },
+  { title: "5. Выдача", time: "В оговорённый срок", desc: "Доставка или самовывоз. Все документы для юрлиц.", icon: Star }
 ];
 
 const stepsUz = [
-  { title: "1. Ariza va maslahat", time: "15-30 daqiqa", desc: "Siz vazifani tasvirlaysiz: nimani brendlash kerak, tiraj, muddatlar." },
-  { title: "2. Maket yaratish", time: "1-2 soat", desc: "Dizayner logotipingizning aniq joylashuvi bilan raqamli maket yaratadi." },
-  { title: "3. Tasdiqlash", time: "Sizning jadvalingiz bo'yicha", desc: "Siz maketni tasdiqlaysiz, kerak bo'lsa o'zgartirishlar kiritasiz." },
-  { title: "4. Ishlab chiqarish", time: "1-3 ish kuni", desc: "Tasdiqlangan maketga muvofiq partiyani gravyura qilamiz." },
-  { title: "5. Topshirish", time: "Kelishilgan muddatda", desc: "Yetkazib berish yoki olib ketish. Barcha hujjatlar." }
+  { title: "1. Ariza va maslahat", time: "15-30 daqiqa", desc: "Siz vazifani tasvirlaysiz: nimani brendlash kerak, tiraj, muddatlar.", icon: FileText },
+  { title: "2. Maket yaratish", time: "1-2 soat", desc: "Dizayner logotipingizning aniq joylashuvi bilan raqamli maket yaratadi.", icon: CheckCircle },
+  { title: "3. Tasdiqlash", time: "Sizning jadvalingiz bo'yicha", desc: "Siz maketni tasdiqlaysiz, kerak bo'lsa o'zgartirishlar kiritasiz.", icon: Package },
+  { title: "4. Ishlab chiqarish", time: "1-3 ish kuni", desc: "Tasdiqlangan maketga muvofiq partiyani gravyura qilamiz.", icon: Truck },
+  { title: "5. Topshirish", time: "Kelishilgan muddatda", desc: "Yetkazib berish yoki olib ketish. Barcha hujjatlar.", icon: Star }
 ];
 
 export default function ProcessPage() {
@@ -111,7 +111,10 @@ export default function ProcessPage() {
       <section className="py-16">
         <div className="max-w-4xl mx-auto px-4 space-y-6">
           {steps.map((step, i) => (
-            <div key={i} className="bg-gray-900 border border-gray-800 rounded-2xl p-8 hover:border-teal-500/30 transition">
+            <div key={i} className="relative pl-16 bg-gray-900 border border-gray-800 rounded-2xl p-8 hover:border-teal-500/30 transition">
+              <div className="absolute left-8 top-8 w-12 h-12 bg-teal-500/10 rounded-xl flex items-center justify-center">
+                <step.icon className="text-teal-500" size={24} />
+              </div>
               <div className="flex items-center justify-between mb-3">
                 <h2 className="text-2xl font-bold text-white">{step.title}</h2>
                 <span className="text-teal-500 text-sm font-medium">{step.time}</span>

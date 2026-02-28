@@ -48,6 +48,18 @@ const blogCardImageBySlug = {
   'gravirovka-na-biznes-podarkah': '/images/blog/gravirovka-na-biznes-podarkah.jpg',
   'korporativniy-merch-kak-instrument-marketinga': '/images/blog/korporativniy-merch-kak-instrument-marketinga.jpg',
   'byudzhet-na-korporativnye-podarki': '/images/blog/byudzhet-na-korporativnye-podarki.jpg',
+  'podarki-na-8-marta-sotrudnicam': '/images/blog/march8-gifts-employees.jpg',
+  'originalnye-podarki-na-8-marta': '/images/blog/march8-original-gifts.jpg',
+  'korporativnye-podarki-na-8-marta-v-tashkente': '/images/blog/march8-corporate-gifts.jpg',
+  'chto-podarit-mame-na-8-marta': '/images/blog/march8-mom-gift.jpg',
+  'chto-podarit-kollege-na-8-marta': '/images/blog/march8-colleague-gift.jpg',
+  'chto-podarit-rukovoditelyu-na-8-marta': '/images/blog/march8-boss-gift.jpg',
+  'chto-podarit-devushke-na-8-marta': '/images/blog/march8-girlfriend-gift.jpg',
+  'chto-podarit-na-8-marta-devushke-mame-kollege': '/images/blog/what-to-give-on-march8.jpg',
+  'nedorogie-podarki-na-8-marta': '/images/blog/march8-cheap-gifts.jpg',
+  'gravirovka-v-tashkente-na-8-marta': '/images/blog/march8-engraving-tashkent.jpg',
+  '8-mart-xodimlarga-sovgalar': '/images/blog/march8-gifts-employees.jpg',
+  'noyob-8-mart-sovgalari': '/images/blog/march8-original-gifts.jpg',
   'srochniy-zakaz-korporativnyh-podarkov': '/images/blog/srochniy-zakaz-korporativnyh-podarkov.jpg',
   'eko-podarki-dlya-biznesa': '/images/blog/eko-podarki-dlya-biznesa.jpg',
   'korporativnye-podarki-na-navruz': '/images/blog/korporativnye-podarki-na-navruz.jpg',
@@ -188,6 +200,7 @@ export function getBlogImageMappingCoverage(slugs) {
     : [];
   const missing = uniqueSlugs.filter((slug) => !blogCardImageBySlug[slug]);
   const mapped = uniqueSlugs.length - missing.length;
+
   return {
     total: uniqueSlugs.length,
     mapped,
