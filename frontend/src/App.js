@@ -192,7 +192,7 @@ function App() {
 
   return (
     <div className="App">
-      <SEOHead />
+      <SEOHead ogImage="https://graver-studio.uz/images/og/og-home.jpg" />
       <Helmet>
         <script type="application/ld+json">
           {JSON.stringify({

@@ -70,7 +70,7 @@ export default function ProcessPage() {
 
   return (
     <div className="min-h-screen bg-black">
-      <SEOHead page="process" />
+      <SEOHead page="process" ogImage="https://graver-studio.uz/images/og/og-home.jpg" />
 
       <header className="bg-black/95 border-b border-gray-800 py-4">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">

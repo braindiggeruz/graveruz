@@ -174,13 +174,13 @@ export default function BlogIndex() {
     appendMeta('property', 'og:description', pageDescription);
     appendMeta('property', 'og:type', 'website');
     appendMeta('property', 'og:url', canonicalUrl);
-    appendMeta('property', 'og:image', `${BASE_URL}/og-blog.png`);
+    appendMeta('property', 'og:image', `${BASE_URL}/images/og/og-blog.jpg`);
     appendMeta('property', 'og:site_name', 'Graver.uz');
     appendMeta('property', 'og:locale', isRu ? 'ru_RU' : 'uz_UZ');
     appendMeta('name', 'twitter:card', 'summary_large_image');
     appendMeta('name', 'twitter:title', pageTitle);
     appendMeta('name', 'twitter:description', pageDescription);
-    appendMeta('name', 'twitter:image', `${BASE_URL}/og-blog.png`);
+    appendMeta('name', 'twitter:image', `${BASE_URL}/images/og/og-blog.jpg`);
   }, [isRu, pageTitle, pageDescription, canonicalUrl, ruUrl, uzUrl]);
 
   const breadcrumbSchema = {

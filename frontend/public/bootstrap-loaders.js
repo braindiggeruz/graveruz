@@ -36,9 +36,5 @@
     window.addEventListener(eventName, loadAnalyticsBootstrap, { once: true, passive: true });
   });
 
-  if (window.self !== window.top) {
-    window.addEventListener('load', function () {
-      appendScript('https://assets.emergent.sh/scripts/emergent-main.js');
-    }, { once: true });
-  }
+
 })();
