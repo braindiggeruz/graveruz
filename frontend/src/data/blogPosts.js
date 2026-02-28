@@ -9,21 +9,21 @@ export const blogPosts = {
     {
       slug: 'podarki-na-8-marta-sotrudnicam',
       title: 'Подарки на 8 марта сотрудницам: 15 идей с гравировкой | Graver Studio',
-      description: 'Лучшие подарки на 8 марта для сотрудниц компании. Персонализированные подарки с гравировкой: от зажигалок до ежедневников. Заказ от 1 шт., доставка по Ташкенту.',
+      description: 'Подарки на 8 марта сотрудницам с гравировкой: часы, ручки, украшения. Доставка по Ташкенту. Заказать подарок →',
       date: '2026-03-01',
       category: 'Идеи',
       keywords: ['подарки на 8 марта сотрудницам', 'корпоративные подарки на 8 марта', 'подарки с гравировкой 8 марта'],
-      relatedPosts: ['originalnye-podarki-na-8-marta', 'korporativnye-podarki-na-8-marta-v-tashkente'],
+      relatedPosts: ['originalnye-podarki-na-8-marta', 'korporativnye-podarki-na-8-marta-v-tashkente', 'chto-podarit-kollege-na-8-marta'],
       content: 'Подарки на 8 марта сотрудницам — это способ показать благодарность. Лучшие идеи с гравировкой.'
     },
     {
       slug: 'originalnye-podarki-na-8-marta',
       title: 'Оригинальные подарки на 8 марта: 10 идей, которые точно понравятся',
-      description: 'Оригинальные и необычные подарки на 8 марта. Идеи для подарков, которые выделяются и запоминаются.',
+      description: 'Оригинальные подарки на 8 марта: часы NEO, зажигалки, украшения с гравировкой. Необычные идеи, которые запомнятся. Заказать →',
       date: '2026-03-02',
       category: 'Идеи',
       keywords: ['оригинальные подарки на 8 марта', 'необычные подарки', 'креативные подарки'],
-      relatedPosts: ['podarki-na-8-marta-sotrudnicam', 'chto-podarit-mame-na-8-marta'],
+      relatedPosts: ['podarki-na-8-marta-sotrudnicam', 'chto-podarit-mame-na-8-marta', 'nedorogie-podarki-na-8-marta'],
       contentHtml: `<h2 id="why-original-gifts">Почему оригинальные подарки?</h2>
 <p>Стандартные подарки забываются. Оригинальные подарки остаются в памяти навсегда.</p>
 
@@ -41,11 +41,11 @@ export const blogPosts = {
     {
       slug: 'korporativnye-podarki-na-8-marta-v-tashkente',
       title: 'Корпоративные подарки на 8 марта в Ташкенте: заказ, доставка, гравировка',
-      description: 'Корпоративные подарки на 8 марта в Ташкенте. Заказ от 1 шт., гравировка, доставка.',
+      description: 'Корпоративные подарки на 8 марта в Ташкенте: часы, ручки, украшения. Гравировка логотипа. Доставка. Заказать →',
       date: '2026-03-03',
       category: 'Гайды',
       keywords: ['корпоративные подарки на 8 марта Ташкент', 'заказ подарков 8 марта'],
-      relatedPosts: ['podarki-na-8-marta-sotrudnicam', 'chto-podarit-kollege-na-8-marta'],
+      relatedPosts: ['podarki-na-8-marta-sotrudnicam', 'chto-podarit-kollege-na-8-marta', 'chto-podarit-rukovoditelyu-na-8-marta'],
       contentHtml: `<h2 id="corporate-gifts-importance">Значение корпоративных подарков</h2>
 <p>Корпоративные подарки на 8 марта показывают уважение к сотрудницам и укрепляют командный дух.</p>
 
@@ -65,11 +65,11 @@ export const blogPosts = {
     {
       slug: 'chto-podarit-mame-na-8-marta',
       title: 'Что подарить маме на 8 марта: 20 идей подарков с гравировкой',
-      description: 'Идеи подарков для мамы на 8 марта. От практичных до романтичных.',
+      description: 'Что подарить маме на 8 марта: украшения, часы, фото-кубик с гравировкой. Сентиментальные и люксовые идеи. Заказать →',
       date: '2026-03-04',
       category: 'Идеи',
       keywords: ['подарок маме на 8 марта', 'что подарить маме', 'идеи подарков для мамы'],
-      relatedPosts: ['originalnye-podarki-na-8-marta', 'chto-podarit-devushke-na-8-marta'],
+      relatedPosts: ['originalnye-podarki-na-8-marta', 'chto-podarit-devushke-na-8-marta', 'chto-podarit-na-8-marta-devushke-mame-kollege'],
       contentHtml: `<h2 id="gift-for-mom">Подарок для мамы на 8 марта</h2>
 <p>Мама заслуживает самого лучшего подарка. Вот идеи, которые точно понравятся.</p>
 
@@ -90,11 +90,11 @@ export const blogPosts = {
     {
       slug: 'chto-podarit-kollege-na-8-marta',
       title: 'Что подарить коллеге на 8 марта: 15 идей корпоративных подарков',
-      description: 'Идеи подарков для коллеги на 8 марта. Корпоративные подарки с гравировкой.',
+      description: 'Подарок коллеге на 8 марта: ручки, часы, украшения, powerbank. Профессиональные подарки с гравировкой. Заказать →',
       date: '2026-03-05',
       category: 'Гайды',
       keywords: ['подарок коллеге на 8 марта', 'что подарить коллеге', 'корпоративные подарки'],
-      relatedPosts: ['korporativnye-podarki-na-8-marta-v-tashkente', 'chto-podarit-rukovoditelyu-na-8-marta'],
+      relatedPosts: ['korporativnye-podarki-na-8-marta-v-tashkente', 'chto-podarit-rukovoditelyu-na-8-marta', 'podarki-na-8-marta-sotrudnicam'],
       contentHtml: `<h2 id="colleague-gift">Подарок для коллеги на 8 марта</h2>
 <p>Коллеги — это люди, с которыми мы проводим большую часть времени. Подарок должен быть уважительным и профессиональным.</p>
 
@@ -115,11 +115,11 @@ export const blogPosts = {
     {
       slug: 'chto-podarit-rukovoditelyu-na-8-marta',
       title: 'Что подарить руководителю на 8 марта: 10 идей премиальных подарков',
-      description: 'Идеи подарков для руководителя на 8 марта. Премиальные подарки с гравировкой.',
+      description: 'Подарок руководителю на 8 марта: часы NEO Premium, украшения, кошелек кожаный. Люксовые идеи с гравировкой. Заказать →',
       date: '2026-03-06',
       category: 'Гайды',
       keywords: ['подарок руководителю на 8 марта', 'подарок начальнице', 'премиальные подарки'],
-      relatedPosts: ['chto-podarit-kollege-na-8-marta', 'korporativnye-podarki-na-8-marta-v-tashkente'],
+      relatedPosts: ['chto-podarit-kollege-na-8-marta', 'korporativnye-podarki-na-8-marta-v-tashkente', 'chto-podarit-na-8-marta-devushke-mame-kollege'],
       contentHtml: `<h2 id="boss-gift">Подарок для руководителя на 8 марта</h2>
 <p>Подарок для начальницы должен быть элегантным, дорогим и уважительным.</p>
 
@@ -140,11 +140,11 @@ export const blogPosts = {
     {
       slug: 'chto-podarit-devushke-na-8-marta',
       title: 'Что подарить девушке на 8 марта: 25 романтичных идей подарков',
-      description: 'Идеи подарков для девушки на 8 марта. От романтичных до практичных.',
+      description: 'Подарок девушке на 8 марта: украшения, часы, фото-кубик с гравировкой. Романтичные и люксовые идеи. Заказать →',
       date: '2026-03-07',
       category: 'Идеи',
       keywords: ['подарок девушке на 8 марта', 'что подарить девушке', 'романтичные подарки'],
-      relatedPosts: ['chto-podarit-mame-na-8-marta', 'originalnye-podarki-na-8-marta'],
+      relatedPosts: ['chto-podarit-mame-na-8-marta', 'originalnye-podarki-na-8-marta', 'chto-podarit-na-8-marta-devushke-mame-kollege'],
       contentHtml: `<h2 id="girlfriend-gift">Подарок для девушки на 8 марта</h2>
 <p>Подарок для любимой должен быть романтичным, красивым и полным любви.</p>
 
@@ -165,11 +165,11 @@ export const blogPosts = {
     {
       slug: 'chto-podarit-na-8-marta-devushke-mame-kollege',
       title: 'Что подарить на 8 марта: полный гид по выбору подарков для всех',
-      description: 'Полный гид по выбору подарков на 8 марта для девушки, мамы, коллеги, руководителя.',
+      description: 'Полный гид подарков на 8 марта: для девушки, мамы, коллеги, руководителя. Идеи, цены, гравировка. Заказать →',
       date: '2026-03-08',
       category: 'Гайды',
       keywords: ['что подарить на 8 марта', 'идеи подарков 8 марта', 'подарки для всех'],
-      relatedPosts: ['chto-podarit-devushke-na-8-marta', 'chto-podarit-mame-na-8-marta', 'chto-podarit-kollege-na-8-marta'],
+      relatedPosts: ['chto-podarit-devushke-na-8-marta', 'chto-podarit-mame-na-8-marta', 'chto-podarit-kollege-na-8-marta', 'nedorogie-podarki-na-8-marta'],
       contentHtml: `<h2 id="universal-guide">Универсальный гид по подаркам на 8 марта</h2>
 <p>Не знаете, что подарить? Этот гид поможет выбрать идеальный подарок для любой женщины.</p>
 
@@ -194,11 +194,11 @@ export const blogPosts = {
     {
       slug: 'nedorogie-podarki-na-8-marta',
       title: 'Недорогие подарки на 8 марта: 20 идей от 50 000 сум',
-      description: 'Недорогие подарки на 8 марта от 50 000 сум. Практичные и красивые подарки.',
+      description: 'Недорогие подарки на 8 марта: ручки, кружки, украшения до 100 000 сум. Красивые и практичные идеи. Заказать →',
       date: '2026-03-09',
       category: 'Гайды',
       keywords: ['недорогие подарки на 8 марта', 'подарки до 100 000 сум', 'бюджетные подарки'],
-      relatedPosts: ['podarki-na-8-marta-sotrudnicam', 'originalnye-podarki-na-8-marta'],
+      relatedPosts: ['podarki-na-8-marta-sotrudnicam', 'originalnye-podarki-na-8-marta', 'chto-podarit-na-8-marta-devushke-mame-kollege'],
       contentHtml: `<h2 id="budget-gifts">Недорогие подарки на 8 марта</h2>
 <p>Подарок не должен быть дорогим, чтобы быть ценным. Вот идеи недорогих, но красивых подарков.</p>
 
@@ -217,11 +217,11 @@ export const blogPosts = {
     {
       slug: 'gravirovka-v-tashkente-na-8-marta',
       title: 'Гравировка в Ташкенте на 8 марта: услуги, цены, сроки | Graver Studio',
-      description: 'Услуги гравировки в Ташкенте на 8 марта. Лазерная гравировка на подарках.',
+      description: 'Лазерная гравировка в Ташкенте на 8 марта: часы, украшения, ручки. Цены от 15 000 сум. Заказать →',
       date: '2026-03-10',
       category: 'Услуги',
       keywords: ['гравировка в Ташкенте', 'лазерная гравировка', 'гравировка подарков', 'гравировка на 8 марта'],
-      relatedPosts: ['podarki-na-8-marta-sotrudnicam', 'korporativnye-podarki-na-8-marta-v-tashkente'],
+      relatedPosts: ['podarki-na-8-marta-sotrudnicam', 'korporativnye-podarki-na-8-marta-v-tashkente', 'originalnye-podarki-na-8-marta'],
       contentHtml: `<h2 id="what-is-engraving">Что такое гравировка?</h2>
 <p>Гравировка — это способ нанесения изображения, текста или узора на поверхность предмета с помощью лазера. Это создаёт уникальный, долговечный подарок.</p>
 
