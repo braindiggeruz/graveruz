@@ -16,6 +16,9 @@ const moneyPaths = [
   '/ru/watches-with-logo',
   '/ru/products/lighters',
   '/ru/engraved-gifts',
+  '/ru/products/neo-watches',
+  '/ru/products/neo-corporate',
+  '/ru/products/neo-gift',
   '/uz',
   '/uz/process',
   '/uz/guarantees',
@@ -24,6 +27,9 @@ const moneyPaths = [
   '/uz/logotipli-soat',
   '/uz/products/lighters',
   '/uz/gravirovkali-sovgalar',
+  '/uz/neo-soatlar',
+  '/uz/neo-korporativ',
+  '/uz/neo-sovga',
   '/ru/blog',
   '/uz/blog'
 ];
@@ -36,14 +42,38 @@ const ROUTE_PAIRS = {
   '/ru/watches-with-logo': '/uz/logotipli-soat',
   '/ru/products/lighters': '/uz/products/lighters',
   '/ru/engraved-gifts': '/uz/gravirovkali-sovgalar',
+  '/ru/products/neo-watches': '/uz/neo-soatlar',
+  '/ru/products/neo-corporate': '/uz/neo-korporativ',
+  '/ru/products/neo-gift': '/uz/neo-sovga',
   '/ru/blog': '/uz/blog'
 };
+// Reverse mapping UZ -> RU for correct hreflang on UZ pages
+const ROUTE_PAIRS_REVERSE = {
+  '/uz': '/ru',
+  '/uz/process': '/ru/process',
+  '/uz/guarantees': '/ru/guarantees',
+  '/uz/contacts': '/ru/contacts',
+  '/uz/mahsulotlar-katalogi': '/ru/catalog-products',
+  '/uz/logotipli-soat': '/ru/watches-with-logo',
+  '/uz/products/lighters': '/ru/products/lighters',
+  '/uz/gravirovkali-sovgalar': '/ru/engraved-gifts',
+  '/uz/neo-soatlar': '/ru/products/neo-watches',
+  '/uz/neo-korporativ': '/ru/products/neo-corporate',
+  '/uz/neo-sovga': '/ru/products/neo-gift',
+  '/uz/blog': '/ru/blog'
+};
 function getHreflangLinks(pathname, baseUrl, ensureTrailingSlash) {
-  // Find the paired path
-  const ruPath = pathname.startsWith('/uz') ? null : pathname;
-  const uzPath = pathname.startsWith('/ru') ? ROUTE_PAIRS[pathname] || pathname.replace('/ru/', '/uz/') : pathname;
-  const ruLoc = baseUrl + ensureTrailingSlash(ruPath || pathname.replace('/uz/', '/ru/'));
-  const uzLoc = baseUrl + ensureTrailingSlash(uzPath || pathname.replace('/ru/', '/uz/'));
+  let ruPath, uzPath;
+  if (pathname.startsWith('/ru')) {
+    ruPath = pathname;
+    uzPath = ROUTE_PAIRS[pathname] || pathname.replace('/ru/', '/uz/');
+  } else {
+    // UZ page: use reverse map to get correct RU path
+    uzPath = pathname;
+    ruPath = ROUTE_PAIRS_REVERSE[pathname] || pathname.replace('/uz/', '/ru/');
+  }
+  const ruLoc = baseUrl + ensureTrailingSlash(ruPath);
+  const uzLoc = baseUrl + ensureTrailingSlash(uzPath);
   return [
     { hreflang: 'ru', href: ruLoc },
     { hreflang: 'uz-Latn', href: uzLoc },

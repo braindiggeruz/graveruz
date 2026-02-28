@@ -22,6 +22,3 @@ https://www.graver-studio.uz/*  https://graver-studio.uz/:splat  301
 
 # SPA fallback — all routes render index.html (React Router handles routing)
 /*  /index.html  200
-
-# SPA fallback
-/* /index.html 200
