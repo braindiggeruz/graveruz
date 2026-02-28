@@ -1,5 +1,5 @@
 import { initSWHardBlock } from "@/swHardBlock";
-import React, { Suspense, lazy, useEffect } from "react";
+import React, { Suspense, lazy } from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route, Navigate, useParams } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
@@ -78,11 +78,6 @@ const LightersRedirect = () => {
 
 initSWHardBlock();
 
-const rootElement = document.getElementById("root");
-
-// Determine if we should hydrate (page has prerendered content) or create new root
-const hasPrerenderedContent = rootElement && rootElement.innerHTML && rootElement.innerHTML.trim().length > 100;
-
 const AppRoutes = (
   <React.StrictMode>
     <HelmetProvider>
@@ -137,13 +132,7 @@ const AppRoutes = (
   </React.StrictMode>
 );
 
-if (hasPrerenderedContent) {
-  // Hydrate prerendered HTML (blog pages, etc.)
-  console.log("[Hydration] Detected prerendered content - using hydrateRoot");
-  ReactDOM.hydrateRoot(rootElement, AppRoutes);
-} else {
-  // Create new root for client-only pages
-  console.log("[Rendering] No prerendered content - using createRoot");
-  const root = ReactDOM.createRoot(rootElement);
-  root.render(AppRoutes);
-}
+// Always use createRoot - let React handle hydration automatically
+// React 18+ automatically detects prerendered content and hydrates correctly
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(AppRoutes);
