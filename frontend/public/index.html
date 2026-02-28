@@ -11,39 +11,56 @@
         <link rel="preconnect" href="https://connect.facebook.net" />
         <title>Graver.uz</title>
 
-        <!-- Disable Stape in GTM before GTM loads -->
+        <!-- Block Stape before GTM loads -->
         <script>
+        // Initialize dataLayer BEFORE GTM loads
         window.dataLayer = window.dataLayer || [];
         
-        // Disable Stape tags by preventing them from firing
-        window.gtag = window.gtag || function() {
-          window.dataLayer.push(arguments);
-        };
+        // Store original gtag function
+        var originalGtag = window.gtag;
         
-        // Intercept GTM events to block Stape
-        var originalPush = window.dataLayer.push;
-        window.dataLayer.push = function() {
+        // Create wrapper gtag that blocks Stape
+        window.gtag = function() {
           var args = Array.prototype.slice.call(arguments);
           
-          // Block Stape-related events
-          for (var i = 0; i < args.length; i++) {
-            var arg = args[i];
-            if (typeof arg === 'object' && arg !== null) {
-              // Check if this is a Stape event
-              if (arg.event && (arg.event.includes('stape') || arg.event.includes('Stape'))) {
-                console.log('[GTM Blocker] Blocked Stape event:', arg.event);
-                return;
-              }
-              // Check if config contains Stape
-              if (arg.config && typeof arg.config === 'string' && arg.config.includes('stape')) {
-                console.log('[GTM Blocker] Blocked Stape config');
-                return;
+          // Get event name (first argument)
+          var eventName = args[0];
+          var eventData = args[1];
+          
+          // Block Stape-related configs and events
+          if (eventName === 'config') {
+            // Check if this is a Stape config
+            if (typeof eventData === 'string' && eventData.includes('stape')) {
+              console.log('[Stape Blocker] Blocked Stape config:', eventData);
+              return;
+            }
+          }
+          
+          if (eventName === 'event') {
+            // Check if event name contains stape
+            if (typeof eventData === 'string' && eventData.toLowerCase().includes('stape')) {
+              console.log('[Stape Blocker] Blocked Stape event:', eventData);
+              return;
+            }
+            // Check if event data contains stape references
+            if (typeof eventData === 'object' && eventData !== null) {
+              for (var key in eventData) {
+                if (eventData[key] && eventData[key].toString().toLowerCase().includes('stape')) {
+                  console.log('[Stape Blocker] Blocked Stape event with stape data');
+                  return;
+                }
               }
             }
           }
           
-          return originalPush.apply(window.dataLayer, arguments);
+          // Pass through non-Stape events
+          if (originalGtag) {
+            return originalGtag.apply(window, arguments);
+          }
         };
+        
+        // Mark gtag as ready
+        window.gtag.l = new Date().getTime();
         </script>
 
         <!-- Meta Pixel Code -->
