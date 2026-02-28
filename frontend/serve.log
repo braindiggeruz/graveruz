@@ -1,0 +1,5 @@
+nohup: ignoring input
+npm warn exec The following package was not found and will be installed: serve@14.2.5
+ INFO  Accepting connections at http://localhost:33579
+
+ INFO  Gracefully shutting down. Please wait...
