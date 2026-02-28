@@ -1,0 +1,371 @@
+nohup: ignoring input
+
+> frontend@0.1.0 prebuild
+> npm run blog:validate
+
+
+> frontend@0.1.0 blog:validate
+> node scripts/validate-blog-data.mjs
+
+(node:4550) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/ubuntu/graveruz/frontend/src/data/blogPosts.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /home/ubuntu/graveruz/frontend/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[blog:validate] Blog data validation report
+- locale=ru total=10 valid=10 invalid=0
+- locale=uz total=2 valid=2 invalid=0
+  broken relatedPosts: 8-mart-xodimlarga-sovgalar -> korporativ-sovgalar-8-mart-toshkent
+  broken relatedPosts: noyob-8-mart-sovgalari -> xotinlarga-nima-berish-kerak-8-mart
+- images locale=ru mapped=10/10 coverage=100%
+- images locale=uz mapped=2/2 coverage=100%
+
+[blog:validate] OK
+
+> frontend@0.1.0 build
+> craco build
+
+Creating an optimized production build...
+Compiled successfully.
+
+File sizes after gzip:
+
+  111.69 kB  build/static/js/main.39cf0715.js
+  15.84 kB   build/static/js/762.31857783.chunk.js
+  14.44 kB   build/static/css/main.d8855ea4.css
+  8.66 kB    build/static/js/249.716f1a1e.chunk.js
+  8.29 kB    build/static/js/556.c2eedfab.chunk.js
+  7.9 kB     build/static/js/320.66ab2f72.chunk.js
+  7.74 kB    build/static/js/3.20aa19d0.chunk.js
+  5.38 kB    build/static/js/630.d397af0a.chunk.js
+  4.44 kB    build/static/js/451.c521de35.chunk.js
+  3.94 kB    build/static/js/859.d9905ca6.chunk.js
+  3.87 kB    build/static/js/941.067146cf.chunk.js
+  3.75 kB    build/static/js/185.18bc5d51.chunk.js
+  3.32 kB    build/static/js/805.936f6c54.chunk.js
+  3.2 kB     build/static/js/253.a819a2cc.chunk.js
+  3.04 kB    build/static/js/563.d9191ce8.chunk.js
+  2.49 kB    build/static/js/435.84def6a8.chunk.js
+  2.07 kB    build/static/js/467.3c0716d0.chunk.js
+  1.77 kB    build/static/css/467.bca85e60.chunk.css
+  1.69 kB    build/static/js/982.22ee3720.chunk.js
+  1.59 kB    build/static/css/941.8965a6ec.chunk.css
+  1.58 kB    build/static/js/761.381c1890.chunk.js
+  1.48 kB    build/static/css/805.b34529ab.chunk.css
+  1.11 kB    build/static/js/945.140f0930.chunk.js
+  892 B      build/static/js/928.440123b5.chunk.js
+
+The project was built assuming it is hosted at /.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+You may serve it with a static server:
+
+  npm install -g serve
+  serve -s build
+
+Find out more about deployment here:
+
+  https://cra.link/deployment
+
+
+> frontend@0.1.0 postbuild
+> node scripts/postbuild-react-snap.js && node scripts/postbuild-sync-bundle.js && node scripts/postbuild-inject-prerendered.js && node scripts/postbuild-inject-seo-meta.js && node scripts/postbuild-fix-domain.js && node scripts/postbuild-root-noindex.js && node scripts/postbuild-build-stamp.js && node scripts/postbuild-sitemap.js && node scripts/postbuild-rss.js && node scripts/postbuild-indexnow.js
+
+[postbuild] Using Chromium: /usr/bin/chromium-browser
+[postbuild] NODE_OPTIONS for react-snap: --max-old-space-size=6144
+️️️💬  console.log at /: Unrecognized feature: 'attribution-reporting'.
+️️️💬  console.log at /404: Unrecognized feature: 'attribution-reporting'.
+️️️💬  console.log at /ru/blog: Unrecognized feature: 'attribution-reporting'.
+️️️💬  console.log at /ru: Unrecognized feature: 'attribution-reporting'.
+️️️💬  console.log at /404: 404 Not Found: /404/
+️️️⚠️  warning at /: got 422 HTTP code for https://capig.stape.ma/events
+️️️💬  console.log at /404: Failed to load resource: the server responded with a status of 422 ()
+️️️⚠️  warning at /: got 422 HTTP code for https://capig.stape.ma/events
+️️️💬  console.log at /ru: Failed to load resource: the server responded with a status of 422 ()
+️️️⚠️  warning at /: got 422 HTTP code for https://capig.stape.ma/events
+️️️💬  console.log at /: Failed to load resource: the server responded with a status of 422 ()
+️️️⚠️  warning at /: got 422 HTTP code for https://capig.stape.ma/events
+️️️💬  console.log at /ru/blog: Failed to load resource: the server responded with a status of 422 ()
+✅  crawled 1 out of 119 (/ru/blog)
+️️️💬  console.log at /ru/blog/brendirovanie-suvenirov: Unrecognized feature: 'attribution-reporting'.
+️️️⚠️  warning at /: got 422 HTTP code for https://capig.stape.ma/events
+️️️💬  console.log at /ru/blog/brendirovanie-suvenirov: Failed to load resource: the server responded with a status of 422 ()
+/ru/blog
+💬  in browser redirect (/ru/blog)
+✅  crawled 2 out of 119 (/ru/blog/brendirovanie-suvenirov)
+️️️💬  console.log at /ru/blog/brendirovannye-zazhigalki-i-chasy-s-logotipom: Unrecognized feature: 'attribution-reporting'.
+️️️⚠️  warning at /: got 422 HTTP code for https://capig.stape.ma/events
+️️️💬  console.log at /ru/blog/brendirovannye-zazhigalki-i-chasy-s-logotipom: Failed to load resource: the server responded with a status of 422 ()
+/ru/blog
+💬  in browser redirect (/ru/blog)
+✅  crawled 3 out of 119 (/ru/blog/brendirovannye-zazhigalki-i-chasy-s-logotipom)
+️️️💬  console.log at /ru/blog/byudzhet-na-korporativnye-podarki: Unrecognized feature: 'attribution-reporting'.
+️️️⚠️  warning at /: got 422 HTTP code for https://capig.stape.ma/events
+️️️💬  console.log at /ru/blog/byudzhet-na-korporativnye-podarki: Failed to load resource: the server responded with a status of 422 ()
+/ru/blog
+💬  in browser redirect (/ru/blog)
+✅  crawled 4 out of 119 (/ru/blog/byudzhet-na-korporativnye-podarki)
+️️️💬  console.log at /ru/blog/chasy-s-logotipom-korporativnye-podarki-tashkent: Unrecognized feature: 'attribution-reporting'.
+️️️⚠️  warning at /: got 422 HTTP code for https://capig.stape.ma/events
+️️️💬  console.log at /ru/blog/chasy-s-logotipom-korporativnye-podarki-tashkent: Failed to load resource: the server responded with a status of 422 ()
+/ru/blog
+💬  in browser redirect (/ru/blog)
+✅  crawled 5 out of 119 (/ru/blog/chasy-s-logotipom-korporativnye-podarki-tashkent)
+️️️💬  console.log at /ru/blog/chek-list-zakupshchika-podarkov: Unrecognized feature: 'attribution-reporting'.
+️️️⚠️  warning at /: got 422 HTTP code for https://capig.stape.ma/events
+️️️💬  console.log at /ru/blog/chek-list-zakupshchika-podarkov: Failed to load resource: the server responded with a status of 422 ()
+/ru/blog
+💬  in browser redirect (/ru/blog)
+✅  crawled 6 out of 119 (/ru/blog/chek-list-zakupshchika-podarkov)
+️️️💬  console.log at /ru/blog/delovoy-etiket-biznes-podarki-uzbekistan: Unrecognized feature: 'attribution-reporting'.
+️️️⚠️  warning at /: got 422 HTTP code for https://capig.stape.ma/events
+️️️💬  console.log at /ru/blog/delovoy-etiket-biznes-podarki-uzbekistan: Failed to load resource: the server responded with a status of 422 ()
+/ru/blog
+💬  in browser redirect (/ru/blog)
+✅  crawled 7 out of 119 (/ru/blog/delovoy-etiket-biznes-podarki-uzbekistan)
+️️️💬  console.log at /ru/blog/eko-podarki-dlya-biznesa: Unrecognized feature: 'attribution-reporting'.
+️️️⚠️  warning at /: got 422 HTTP code for https://capig.stape.ma/events
+️️️💬  console.log at /ru/blog/eko-podarki-dlya-biznesa: Failed to load resource: the server responded with a status of 422 ()
+/ru/blog
+💬  in browser redirect (/ru/blog)
+✅  crawled 8 out of 119 (/ru/blog/eko-podarki-dlya-biznesa)
+️️️💬  console.log at /ru/blog/ekonomiya-na-korporativnyh-suvenirax: Unrecognized feature: 'attribution-reporting'.
+️️️⚠️  warning at /: got 422 HTTP code for https://capig.stape.ma/events
+️️️💬  console.log at /ru/blog/ekonomiya-na-korporativnyh-suvenirax: Failed to load resource: the server responded with a status of 422 ()
+/ru/blog
+💬  in browser redirect (/ru/blog)
+✅  crawled 9 out of 119 (/ru/blog/ekonomiya-na-korporativnyh-suvenirax)
+️️️💬  console.log at /ru/blog/godovoy-plan-korporativnyh-prazdnikov: Unrecognized feature: 'attribution-reporting'.
+️️️⚠️  warning at /: got 422 HTTP code for https://capig.stape.ma/events
+️️️💬  console.log at /ru/blog/godovoy-plan-korporativnyh-prazdnikov: Failed to load resource: the server responded with a status of 422 ()
+/ru/blog
+💬  in browser redirect (/ru/blog)
+✅  crawled 10 out of 119 (/ru/blog/godovoy-plan-korporativnyh-prazdnikov)
+️️️💬  console.log at /ru/blog/gravirovka-na-biznes-podarkah: Unrecognized feature: 'attribution-reporting'.
+️️️⚠️  warning at /: got 422 HTTP code for https://capig.stape.ma/events
+️️️💬  console.log at /ru/blog/gravirovka-na-biznes-podarkah: Failed to load resource: the server responded with a status of 422 ()
+/ru/blog
+💬  in browser redirect (/ru/blog)
+✅  crawled 11 out of 119 (/ru/blog/gravirovka-na-biznes-podarkah)
+️️️💬  console.log at /ru/blog/idei-vip-podarkov: Unrecognized feature: 'attribution-reporting'.
+️️️⚠️  warning at /: got 422 HTTP code for https://capig.stape.ma/events
+️️️💬  console.log at /ru/blog/idei-vip-podarkov: Failed to load resource: the server responded with a status of 422 ()
+/ru/blog
+💬  in browser redirect (/ru/blog)
+✅  crawled 12 out of 119 (/ru/blog/idei-vip-podarkov)
+️️️💬  console.log at /ru/blog/kak-podgotovit-maket-logotipa: Unrecognized feature: 'attribution-reporting'.
+️️️⚠️  warning at /: got 422 HTTP code for https://capig.stape.ma/events
+️️️💬  console.log at /ru/blog/kak-podgotovit-maket-logotipa: Failed to load resource: the server responded with a status of 422 ()
+/ru/blog
+💬  in browser redirect (/ru/blog)
+✅  crawled 13 out of 119 (/ru/blog/kak-podgotovit-maket-logotipa)
+️️️💬  console.log at /ru/blog/kak-vybrat-korporativnyj-podarok: Unrecognized feature: 'attribution-reporting'.
+️️️⚠️  warning at /: got 422 HTTP code for https://capig.stape.ma/events
+️️️💬  console.log at /ru/blog/kak-vybrat-korporativnyj-podarok: Failed to load resource: the server responded with a status of 422 ()
+/ru/blog
+💬  in browser redirect (/ru/blog)
+✅  crawled 14 out of 119 (/ru/blog/kak-vybrat-korporativnyj-podarok)
+️️️💬  console.log at /ru/blog/kak-vybrat-korporativnyj-podarok-b2b: Unrecognized feature: 'attribution-reporting'.
+️️️⚠️  warning at /: got 422 HTTP code for https://capig.stape.ma/events
+️️️💬  console.log at /ru/blog/kak-vybrat-korporativnyj-podarok-b2b: Failed to load resource: the server responded with a status of 422 ()
+/ru/blog
+💬  in browser redirect (/ru/blog)
+✅  crawled 15 out of 119 (/ru/blog/kak-vybrat-korporativnyj-podarok-b2b)
+️️️💬  console.log at /ru/blog/kak-vybrat-podarki-dlya-sotrudnikov: Unrecognized feature: 'attribution-reporting'.
+️️️⚠️  warning at /: got 422 HTTP code for https://capig.stape.ma/events
+️️️💬  console.log at /ru/blog/kak-vybrat-podarki-dlya-sotrudnikov: Failed to load resource: the server responded with a status of 422 ()
+/ru/blog
+💬  in browser redirect (/ru/blog)
+✅  crawled 16 out of 119 (/ru/blog/kak-vybrat-podarki-dlya-sotrudnikov)
+️️️💬  console.log at /ru/blog/keys-brendirovannye-podarki-dlya-it: Unrecognized feature: 'attribution-reporting'.
+️️️⚠️  warning at /: got 422 HTTP code for https://capig.stape.ma/events
+️️️💬  console.log at /ru/blog/keys-brendirovannye-podarki-dlya-it: Failed to load resource: the server responded with a status of 422 ()
+/ru/blog
+💬  in browser redirect (/ru/blog)
+✅  crawled 17 out of 119 (/ru/blog/keys-brendirovannye-podarki-dlya-it)
+️️️💬  console.log at /ru/blog/keys-welcome-pak-it-kompaniya-tashkent: Unrecognized feature: 'attribution-reporting'.
+️️️⚠️  warning at /: got 422 HTTP code for https://capig.stape.ma/events
+️️️💬  console.log at /ru/blog/keys-welcome-pak-it-kompaniya-tashkent: Failed to load resource: the server responded with a status of 422 ()
+/ru/blog
+💬  in browser redirect (/ru/blog)
+✅  crawled 18 out of 119 (/ru/blog/keys-welcome-pak-it-kompaniya-tashkent)
+️️️💬  console.log at /ru/blog/korporativniy-merch-kak-instrument-marketinga: Unrecognized feature: 'attribution-reporting'.
+️️️⚠️  warning at /: got 422 HTTP code for https://capig.stape.ma/events
+️️️💬  console.log at /ru/blog/korporativniy-merch-kak-instrument-marketinga: Failed to load resource: the server responded with a status of 422 ()
+/ru/blog
+💬  in browser redirect (/ru/blog)
+✅  crawled 19 out of 119 (/ru/blog/korporativniy-merch-kak-instrument-marketinga)
+🔥  error at /404 TimeoutError: Navigation Timeout Exceeded: 30000ms exceeded
+    at /home/ubuntu/graveruz/frontend/node_modules/puppeteer/lib/LifecycleWatcher.js:142:21
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:555:9)
+    at process.processTimers (node:internal/timers:529:7)
+  -- ASYNC --
+    at Frame.<anonymous> (/home/ubuntu/graveruz/frontend/node_modules/puppeteer/lib/helper.js:111:15)
+    at Page.goto (/home/ubuntu/graveruz/frontend/node_modules/puppeteer/lib/Page.js:674:49)
+    at Page.<anonymous> (/home/ubuntu/graveruz/frontend/node_modules/puppeteer/lib/helper.js:112:23)
+    at fetchPage (/home/ubuntu/graveruz/frontend/node_modules/react-snap/src/puppeteer_utils.js:232:22)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+️️️💬  console.log at /ru/blog/korporativnye-podarki-na-navruz: Unrecognized feature: 'attribution-reporting'.
+️️️⚠️  warning at /: got 422 HTTP code for https://capig.stape.ma/events
+️️️💬  console.log at /ru/blog/korporativnye-podarki-na-navruz: Failed to load resource: the server responded with a status of 422 ()
+/ru/blog
+💬  in browser redirect (/ru/blog)
+✅  crawled 119 out of 119 (/ru/blog/korporativnye-podarki-na-navruz)
+
+[postbuild] react-snap failed but prerendered/ fallback exists — continuing. inject-prerendered.js will handle missing pages.
+[sync-bundle] New JS bundle: main.39cf0715.js
+[sync-bundle] New CSS bundle: main.d8855ea4.css
+[sync-bundle] Done. Updated 0 prerendered files.
+[inject-prerendered] Found 93 pre-rendered pages to inject
+[inject-prerendered] Injected: index.html (82809 bytes)
+[inject-prerendered] Injected: ru/products/neo-corporate/index.html (6303 bytes)
+[inject-prerendered] Injected: ru/products/neo-gift/index.html (6293 bytes)
+[inject-prerendered] Injected: ru/products/neo-watches/index.html (6271 bytes)
+[inject-prerendered] Injected: uz/neo-korporativ/index.html (5891 bytes)
+[inject-prerendered] Injected: uz/neo-soatlar/index.html (5881 bytes)
+[inject-prerendered] Injected: uz/neo-sovga/index.html (5743 bytes)
+[inject-prerendered] Done: 7 injected, 86 already pre-rendered
+[inject-seo-meta] Начинаю инъекцию ПОЛНЫХ SEO мета-тегов (canonical, hreflang, og, robots)...
+[inject-seo-meta] ✓ /ru/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /404/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ / — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/blog/brendirovanie-suvenirov/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/blog/brendirovannye-zazhigalki-i-chasy-s-logotipom/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/blog/byudzhet-na-korporativnye-podarki/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/blog/chasy-s-logotipom-korporativnye-podarki-tashkent/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/blog/chek-list-zakupshchika-podarkov/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/blog/delovoy-etiket-biznes-podarki-uzbekistan/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/blog/eko-podarki-dlya-biznesa/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/blog/ekonomiya-na-korporativnyh-suvenirax/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/blog/godovoy-plan-korporativnyh-prazdnikov/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/blog/gravirovka-na-biznes-podarkah/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/blog/idei-vip-podarkov/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/blog/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/blog/kak-podgotovit-maket-logotipa/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/blog/kak-vybrat-korporativnyj-podarok/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/blog/kak-vybrat-korporativnyj-podarok-b2b/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/blog/kak-vybrat-podarki-dlya-sotrudnikov/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/blog/keys-brendirovannye-podarki-dlya-it/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/blog/keys-welcome-pak-it-kompaniya-tashkent/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/blog/korporativniy-merch-kak-instrument-marketinga/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/blog/korporativnye-podarki-na-navruz/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/blog/korporativnye-podarki-s-gravirovkoy-metody/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/blog/korporativnye-podarki-s-logotipom-polnyy-gayd/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/blog/korporativnye-podarochnye-nabory/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/blog/lazernaya-gravirovka-podarkov/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/blog/lazernaya-gravirovka-podarkov-tehnologiya/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/blog/loyalnost-sotrudnikov-korporativnye-podarki/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/blog/merch-dlya-it-kompaniy-tashkent/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/blog/merch-dlya-kompanii-brendirovanie/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/blog/personalizatsiya-novyy-standart-gravirovka/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/blog/podarki-dlya-bankov-i-finteha-tashkent/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/blog/podarki-dlya-horeca-i-restoranov-tashkent/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/blog/podarki-klientam-partneram-vip/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/blog/podarki-na-korporativnye-sobytiya-tashkent/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/blog/podarki-na-navruz/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/blog/podarki-sotrudnikam-hr-gayd/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/blog/podarochnye-nabory-s-logotipom/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/blog/polniy-gid-po-korporativnym-podarkam/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/blog/process-zakaza-korporativnyh-podarkov/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/blog/srochniy-zakaz-korporativnyh-podarkov/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/blog/top-idei-podarkov-na-novyj-god/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/blog/welcome-pack-dlya-sotrudnikov/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/blog/welcome-pack-novym-sotrudnikam/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/catalog-products/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/contacts/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/engraved-gifts/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/guarantees/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/process/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/products/lighters/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/products/neo-corporate/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/products/neo-gift/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/products/neo-watches/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /ru/watches-with-logo/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /uz/blog/banklar-va-fintex-uchun-sovgalar-toshkent/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /uz/blog/horeca-va-restoranlar-uchun-sovgalar-toshkent/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /uz/blog/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /uz/blog/it-kompaniyalar-uchun-merch-toshkent/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /uz/blog/kompaniya-merchi-brendlash/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /uz/blog/korporativ-sovga-toplamlari/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /uz/blog/korporativ-sovgalar-boyicha-toliq-qollanma/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /uz/blog/korporativ-sovgalar-gravyurasi-usullari/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /uz/blog/korporativ-sovgalar-logotip-bilan-to-liq-qollanma/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /uz/blog/korporativ-sovgani-qanday-tanlash/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /uz/blog/korporativ-tadbirlar-uchun-sovgalar-toshkent/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /uz/blog/lazer-gravirovka-sovgalar/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /uz/blog/lazer-gravyurasi-texnologiyasi/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /uz/blog/logotip-maketi-tayyorlash/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /uz/blog/logotipli-soat-korporativ-sovgalar-toshkent/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /uz/blog/logotipli-sovga-toplami/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /uz/blog/logotipli-zajigalka-va-soat/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /uz/blog/mijoz-hamkorlar-uchun-sovgalar-vip/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /uz/blog/navruz-sovgalari/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /uz/blog/navruz-uchun-korporativ-sovgalar/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /uz/blog/suvenir-brendlash/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /uz/blog/suvenir-byudjetini-tejash/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /uz/blog/welcome-pack-yangi-xodimlar/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /uz/blog/xaridor-chek-listi-b2b/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /uz/blog/xodimlar-uchun-sovgalar-hr-qollanma/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /uz/blog/yangi-xodimlar-uchun-welcome-pack/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /uz/blog/yangi-yil-sovga-goyalari/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /uz/contacts/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /uz/gravirovkali-sovgalar/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /uz/guarantees/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /uz/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /uz/logotipli-soat/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /uz/mahsulotlar-katalogi/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /uz/neo-korporativ/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /uz/neo-soatlar/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /uz/neo-sovga/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /uz/process/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ /uz/products/lighters/ — canonical, hreflang, og, title инъектированы
+[inject-seo-meta] ✓ Готово! Все canonical, hreflang и og теги инъектированы.
+[postbuild-fix-domain] Scanning build/ for localhost references...
+  Fixed: build/ru/blog/brendirovanie-suvenirov/index.html
+  Fixed: build/ru/blog/brendirovannye-zazhigalki-i-chasy-s-logotipom/index.html
+  Fixed: build/ru/blog/byudzhet-na-korporativnye-podarki/index.html
+  Fixed: build/ru/blog/chasy-s-logotipom-korporativnye-podarki-tashkent/index.html
+  Fixed: build/ru/blog/chek-list-zakupshchika-podarkov/index.html
+  Fixed: build/ru/blog/delovoy-etiket-biznes-podarki-uzbekistan/index.html
+  Fixed: build/ru/blog/eko-podarki-dlya-biznesa/index.html
+  Fixed: build/ru/blog/ekonomiya-na-korporativnyh-suvenirax/index.html
+  Fixed: build/ru/blog/godovoy-plan-korporativnyh-prazdnikov/index.html
+  Fixed: build/ru/blog/gravirovka-na-biznes-podarkah/index.html
+  Fixed: build/ru/blog/idei-vip-podarkov/index.html
+  Fixed: build/ru/blog/index.html
+  Fixed: build/ru/blog/kak-podgotovit-maket-logotipa/index.html
+  Fixed: build/ru/blog/kak-vybrat-korporativnyj-podarok/index.html
+  Fixed: build/ru/blog/kak-vybrat-korporativnyj-podarok-b2b/index.html
+  Fixed: build/ru/blog/kak-vybrat-podarki-dlya-sotrudnikov/index.html
+  Fixed: build/ru/blog/keys-brendirovannye-podarki-dlya-it/index.html
+  Fixed: build/ru/blog/keys-welcome-pak-it-kompaniya-tashkent/index.html
+  Fixed: build/ru/blog/korporativniy-merch-kak-instrument-marketinga/index.html
+  Fixed: build/ru/blog/korporativnye-podarki-na-navruz/index.html
+[postbuild-fix-domain] Done. Fixed 20 files.
+[postbuild] Production build: keep robots index/follow (skip noindex rewrite).
+(node:5440) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/ubuntu/graveruz/frontend/src/data/blogPosts.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /home/ubuntu/graveruz/frontend/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[postbuild-sitemap] Generated sitemap.xml with 36 URLs
+[postbuild-sitemap] Generated image-sitemap.xml with 36 image entries (expanded from blog + portfolio)
+[postbuild-sitemap] Generated sitemap-index.xml
+(node:5451) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/ubuntu/graveruz/frontend/src/data/blogPosts.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /home/ubuntu/graveruz/frontend/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[postbuild-rss] Written /home/ubuntu/graveruz/frontend/public/rss-ru.xml (10 items)
+[postbuild-rss] Written /home/ubuntu/graveruz/frontend/build/rss-ru.xml (10 items)
+[postbuild-rss] Written /home/ubuntu/graveruz/frontend/public/rss-uz.xml (2 items)
+[postbuild-rss] Written /home/ubuntu/graveruz/frontend/build/rss-uz.xml (2 items)
+(node:5462) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/ubuntu/graveruz/frontend/src/data/blogPosts.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /home/ubuntu/graveruz/frontend/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[postbuild-indexnow] Submitting 12 URLs to IndexNow...
+[postbuild-indexnow] Batch 1: HTTP 403
+[postbuild-indexnow] Warning: unexpected status 403: {"code":"UserForbiddedToAccessSite","message":"User is unauthorized to access the site. Please verify the site using the key and try again"}
+[postbuild-indexnow] Done. State saved to /home/ubuntu/graveruz/frontend/.indexnow-state.json
