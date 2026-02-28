@@ -11,56 +11,59 @@
         <link rel="preconnect" href="https://connect.facebook.net" />
         <title>Graver.uz</title>
 
-        <!-- Block Stape before GTM loads -->
+        <!-- Block Stape at fetch level BEFORE anything loads -->
         <script>
-        // Initialize dataLayer BEFORE GTM loads
-        window.dataLayer = window.dataLayer || [];
-        
-        // Store original gtag function
-        var originalGtag = window.gtag;
-        
-        // Create wrapper gtag that blocks Stape
-        window.gtag = function() {
-          var args = Array.prototype.slice.call(arguments);
+        // Override fetch to block Stape requests
+        var originalFetch = window.fetch;
+        window.fetch = function(resource, config) {
+          var url = typeof resource === 'string' ? resource : resource.url;
           
-          // Get event name (first argument)
-          var eventName = args[0];
-          var eventData = args[1];
-          
-          // Block Stape-related configs and events
-          if (eventName === 'config') {
-            // Check if this is a Stape config
-            if (typeof eventData === 'string' && eventData.includes('stape')) {
-              console.log('[Stape Blocker] Blocked Stape config:', eventData);
-              return;
-            }
+          // Block all Stape requests
+          if (url && (
+            url.includes('camie.stape.bg') ||
+            url.includes('sgw.stape.bg') ||
+            url.includes('capig.stape.ma') ||
+            url.includes('stape.bg') ||
+            url.includes('stape.ma')
+          )) {
+            console.log('[Stape Blocker] Blocked fetch to:', url);
+            // Return a rejected promise to simulate network error
+            return Promise.reject(new TypeError('Stape blocked'));
           }
           
-          if (eventName === 'event') {
-            // Check if event name contains stape
-            if (typeof eventData === 'string' && eventData.toLowerCase().includes('stape')) {
-              console.log('[Stape Blocker] Blocked Stape event:', eventData);
-              return;
-            }
-            // Check if event data contains stape references
-            if (typeof eventData === 'object' && eventData !== null) {
-              for (var key in eventData) {
-                if (eventData[key] && eventData[key].toString().toLowerCase().includes('stape')) {
-                  console.log('[Stape Blocker] Blocked Stape event with stape data');
-                  return;
-                }
-              }
-            }
-          }
-          
-          // Pass through non-Stape events
-          if (originalGtag) {
-            return originalGtag.apply(window, arguments);
-          }
+          return originalFetch.apply(this, arguments);
         };
         
-        // Mark gtag as ready
-        window.gtag.l = new Date().getTime();
+        // Override XMLHttpRequest to block Stape
+        var originalXHROpen = XMLHttpRequest.prototype.open;
+        XMLHttpRequest.prototype.open = function(method, url) {
+          if (url && (
+            url.includes('camie.stape.bg') ||
+            url.includes('sgw.stape.bg') ||
+            url.includes('capig.stape.ma') ||
+            url.includes('stape.bg') ||
+            url.includes('stape.ma')
+          )) {
+            console.log('[Stape Blocker] Blocked XHR to:', url);
+            // Mark as blocked
+            this.__stapeBlocked = true;
+            return;
+          }
+          return originalXHROpen.apply(this, arguments);
+        };
+        
+        // Override XMLHttpRequest.send to prevent blocked requests
+        var originalXHRSend = XMLHttpRequest.prototype.send;
+        XMLHttpRequest.prototype.send = function() {
+          if (this.__stapeBlocked) {
+            console.log('[Stape Blocker] Blocked XHR send');
+            return;
+          }
+          return originalXHRSend.apply(this, arguments);
+        };
+        
+        // Initialize dataLayer BEFORE GTM loads
+        window.dataLayer = window.dataLayer || [];
         </script>
 
         <!-- Meta Pixel Code -->
