@@ -10,61 +10,10 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link rel="preconnect" href="https://connect.facebook.net" />
         <title>Graver.uz</title>
-
-        <!-- Block Stape at fetch level BEFORE anything loads -->
-        <script>
-        // Override fetch to block Stape requests
-        var originalFetch = window.fetch;
-        window.fetch = function(resource, config) {
-          var url = typeof resource === 'string' ? resource : resource.url;
-          
-          // Block all Stape requests
-          if (url && (
-            url.includes('camie.stape.bg') ||
-            url.includes('sgw.stape.bg') ||
-            url.includes('capig.stape.ma') ||
-            url.includes('stape.bg') ||
-            url.includes('stape.ma')
-          )) {
-            console.log('[Stape Blocker] Blocked fetch to:', url);
-            // Return a rejected promise to simulate network error
-            return Promise.reject(new TypeError('Stape blocked'));
-          }
-          
-          return originalFetch.apply(this, arguments);
-        };
-        
-        // Override XMLHttpRequest to block Stape
-        var originalXHROpen = XMLHttpRequest.prototype.open;
-        XMLHttpRequest.prototype.open = function(method, url) {
-          if (url && (
-            url.includes('camie.stape.bg') ||
-            url.includes('sgw.stape.bg') ||
-            url.includes('capig.stape.ma') ||
-            url.includes('stape.bg') ||
-            url.includes('stape.ma')
-          )) {
-            console.log('[Stape Blocker] Blocked XHR to:', url);
-            // Mark as blocked
-            this.__stapeBlocked = true;
-            return;
-          }
-          return originalXHROpen.apply(this, arguments);
-        };
-        
-        // Override XMLHttpRequest.send to prevent blocked requests
-        var originalXHRSend = XMLHttpRequest.prototype.send;
-        XMLHttpRequest.prototype.send = function() {
-          if (this.__stapeBlocked) {
-            console.log('[Stape Blocker] Blocked XHR send');
-            return;
-          }
-          return originalXHRSend.apply(this, arguments);
-        };
-        
-        // Initialize dataLayer BEFORE GTM loads
-        window.dataLayer = window.dataLayer || [];
-        </script>
+    </head>
+    <body>
+        <noscript>You need to enable JavaScript to run this app.</noscript>
+        <div id="root"></div>
 
         <!-- Meta Pixel Code -->
         <script>
@@ -83,11 +32,6 @@
         src="https://www.facebook.com/tr?id=1358428289305229&ev=PageView&noscript=1"
         /></noscript>
         <!-- End Meta Pixel Code -->
-
-    </head>
-    <body>
-        <noscript>You need to enable JavaScript to run this app.</noscript>
-        <div id="root"></div>
 
         <!-- Service Worker Disabled in Production -->
         <script>
