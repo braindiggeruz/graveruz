@@ -48,14 +48,6 @@ const isReactSnap = () => {
   );
 };
 
-// Check if page is prerendered (has substantial HTML content already)
-const isPrerendered = () => {
-  if (typeof window === "undefined") return false;
-  const rootDiv = document.getElementById("root");
-  // If root has substantial content, it's prerendered
-  return rootDiv && rootDiv.innerHTML.trim().length > 500;
-};
-
 const RootRedirect = () => {
   const shouldRedirect = !isReactSnap();
 
@@ -111,72 +103,66 @@ initSWHardBlock();
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-// For prerendered pages, skip React rendering to avoid hydration mismatch
-// This keeps the static HTML as-is, which is perfect for SEO
-if (!isPrerendered()) {
-  root.render(
-    <React.StrictMode>
-      <HelmetProvider>
-        <BrowserRouter>
-          <I18nProvider>
-            <Suspense fallback={<LoadingFallback />}>
-              <Routes>
-                {/* Redirect root to default locale */}
-                <Route path="/" element={<RootRedirect />} />
-                
-                {/* Legacy redirects for SEO (old URLs without locale) */}
-                <Route path="/thanks" element={<Navigate to="/ru/thanks" replace />} />
-                <Route path="/process" element={<Navigate to="/ru/process" replace />} />
-                <Route path="/guarantees" element={<Navigate to="/ru/guarantees" replace />} />
-                <Route path="/contacts" element={<Navigate to="/ru/contacts" replace />} />
-                
-                {/* Localized routes with validation */}
-                <Route path="/:locale" element={<LocaleRoute element={<App />} />} />
-                <Route path="/:locale/thanks" element={<LocaleRoute element={<Thanks />} />} />
-                <Route path="/:locale/process" element={<LocaleRoute element={<ProcessPage />} />} />
-                <Route path="/:locale/guarantees" element={<LocaleRoute element={<GuaranteesPage />} />} />
-                <Route path="/:locale/contacts" element={<LocaleRoute element={<ContactsPage />} />} />
-                
-                {/* B2C Catalog Pages */}
-                <Route path="/:locale/catalog-products" element={<LocaleRoute element={<CatalogPage />} />} />
-                <Route path="/:locale/mahsulotlar-katalogi" element={<LocaleRoute element={<CatalogPage />} />} />
-                <Route path="/:locale/watches-with-logo" element={<LocaleRoute element={<WatchesPage />} />} />
-                <Route path="/:locale/logotipli-soat" element={<LocaleRoute element={<WatchesPage />} />} />
-                <Route path="/:locale/products/watches-with-logo" element={<LocaleRoute element={<WatchesWithLogoPage />} />} />
-                <Route path="/:locale/lighters-engraving" element={<LocaleRoute element={<LightersRedirect />} />} />
-                <Route path="/:locale/gravirovkali-zajigalka" element={<LocaleRoute element={<LightersRedirect />} />} />
-                <Route path="/:locale/products/lighters" element={<LocaleRoute element={<LightersPage />} />} />
-                <Route path="/:locale/engraved-gifts" element={<LocaleRoute element={<EngravedGiftsPage />} />} />
-                <Route path="/:locale/gravirovkali-sovgalar" element={<LocaleRoute element={<EngravedGiftsPage />} />} />
-                <Route path="/:locale/products/neo-watches" element={<LocaleRoute element={<NeoWatchesLanding />} />} />
-                <Route path="/:locale/products/neo-corporate" element={<LocaleRoute element={<NeoCorporate />} />} />
-                <Route path="/:locale/neo-korporativ" element={<LocaleRoute element={<NeoCorporate />} />} />
-                <Route path="/:locale/products/neo-gift" element={<LocaleRoute element={<NeoGift />} />} />
-                <Route path="/:locale/neo-sovga" element={<LocaleRoute element={<NeoGift />} />} />
-                <Route path="/:locale/neo-soatlar" element={<LocaleRoute element={<NeoWatchesLanding />} />} />
-                
-                {/* Blog Routes */}
-                <Route path="/:locale/blog" element={<LocaleRoute element={<BlogIndex />} />} />
-                <Route path="/:locale/blog/:slug" element={<LocaleRoute element={<BlogPost />} />} />
-                
-                {/* Legacy blog redirects (old URLs: /blog/ru -> /ru/blog) */}
-                <Route path="/blog" element={<Navigate to="/ru/blog" replace />} />
-                <Route path="/blog/ru" element={<Navigate to="/ru/blog" replace />} />
-                <Route path="/blog/uz" element={<Navigate to="/uz/blog" replace />} />
-                <Route path="/blog/ru/:slug" element={<BlogRedirect fromLocale="ru" />} />
-                <Route path="/blog/uz/:slug" element={<BlogRedirect fromLocale="uz" />} />
-                
-                {/* 404 for unmatched routes */}
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </Suspense>
-          </I18nProvider>
-        </BrowserRouter>
-      </HelmetProvider>
-    </React.StrictMode>,
-  );
-} else {
-  // For prerendered pages: just add minimal interactivity without hydration
-  // This preserves the static HTML and prevents hydration mismatches
-  console.log('[SEO Mode] Page is prerendered - using static HTML without React hydration');
-}
+// Always render React for interactivity (images, navigation, etc)
+// React will hydrate prerendered content without conflicts
+root.render(
+  <React.StrictMode>
+    <HelmetProvider>
+      <BrowserRouter>
+        <I18nProvider>
+          <Suspense fallback={<LoadingFallback />}>
+            <Routes>
+              {/* Redirect root to default locale */}
+              <Route path="/" element={<RootRedirect />} />
+              
+              {/* Legacy redirects for SEO (old URLs without locale) */}
+              <Route path="/thanks" element={<Navigate to="/ru/thanks" replace />} />
+              <Route path="/process" element={<Navigate to="/ru/process" replace />} />
+              <Route path="/guarantees" element={<Navigate to="/ru/guarantees" replace />} />
+              <Route path="/contacts" element={<Navigate to="/ru/contacts" replace />} />
+              
+              {/* Localized routes with validation */}
+              <Route path="/:locale" element={<LocaleRoute element={<App />} />} />
+              <Route path="/:locale/thanks" element={<LocaleRoute element={<Thanks />} />} />
+              <Route path="/:locale/process" element={<LocaleRoute element={<ProcessPage />} />} />
+              <Route path="/:locale/guarantees" element={<LocaleRoute element={<GuaranteesPage />} />} />
+              <Route path="/:locale/contacts" element={<LocaleRoute element={<ContactsPage />} />} />
+              
+              {/* B2C Catalog Pages */}
+              <Route path="/:locale/catalog-products" element={<LocaleRoute element={<CatalogPage />} />} />
+              <Route path="/:locale/mahsulotlar-katalogi" element={<LocaleRoute element={<CatalogPage />} />} />
+              <Route path="/:locale/watches-with-logo" element={<LocaleRoute element={<WatchesPage />} />} />
+              <Route path="/:locale/logotipli-soat" element={<LocaleRoute element={<WatchesPage />} />} />
+              <Route path="/:locale/products/watches-with-logo" element={<LocaleRoute element={<WatchesWithLogoPage />} />} />
+              <Route path="/:locale/lighters-engraving" element={<LocaleRoute element={<LightersRedirect />} />} />
+              <Route path="/:locale/gravirovkali-zajigalka" element={<LocaleRoute element={<LightersRedirect />} />} />
+              <Route path="/:locale/products/lighters" element={<LocaleRoute element={<LightersPage />} />} />
+              <Route path="/:locale/engraved-gifts" element={<LocaleRoute element={<EngravedGiftsPage />} />} />
+              <Route path="/:locale/gravirovkali-sovgalar" element={<LocaleRoute element={<EngravedGiftsPage />} />} />
+              <Route path="/:locale/products/neo-watches" element={<LocaleRoute element={<NeoWatchesLanding />} />} />
+              <Route path="/:locale/products/neo-corporate" element={<LocaleRoute element={<NeoCorporate />} />} />
+              <Route path="/:locale/neo-korporativ" element={<LocaleRoute element={<NeoCorporate />} />} />
+              <Route path="/:locale/products/neo-gift" element={<LocaleRoute element={<NeoGift />} />} />
+              <Route path="/:locale/neo-sovga" element={<LocaleRoute element={<NeoGift />} />} />
+              <Route path="/:locale/neo-soatlar" element={<LocaleRoute element={<NeoWatchesLanding />} />} />
+              
+              {/* Blog Routes */}
+              <Route path="/:locale/blog" element={<LocaleRoute element={<BlogIndex />} />} />
+              <Route path="/:locale/blog/:slug" element={<LocaleRoute element={<BlogPost />} />} />
+              
+              {/* Legacy blog redirects (old URLs: /blog/ru -> /ru/blog) */}
+              <Route path="/blog" element={<Navigate to="/ru/blog" replace />} />
+              <Route path="/blog/ru" element={<Navigate to="/ru/blog" replace />} />
+              <Route path="/blog/uz" element={<Navigate to="/uz/blog" replace />} />
+              <Route path="/blog/ru/:slug" element={<BlogRedirect fromLocale="ru" />} />
+              <Route path="/blog/uz/:slug" element={<BlogRedirect fromLocale="uz" />} />
+              
+              {/* 404 for unmatched routes */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
+        </I18nProvider>
+      </BrowserRouter>
+    </HelmetProvider>
+  </React.StrictMode>,
+);
