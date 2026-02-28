@@ -682,6 +682,38 @@ function BlogPostPage() {
             })
           )
         ),
+        // CTA Block - Call to Action for conversions
+        React.createElement('div', { 
+          className: 'mt-8 p-8 bg-gradient-to-r from-teal-900/40 to-cyan-900/40 border border-teal-600/60 rounded-xl',
+          'data-testid': 'cta-block'
+        },
+          React.createElement('div', { className: 'text-center' },
+            React.createElement('h3', { className: 'text-2xl font-bold text-white mb-3' },
+              isRu ? 'Готовы заказать?' : 'Buyurtma qilishga tayyormisiz?'
+            ),
+            React.createElement('p', { className: 'text-gray-300 mb-6 max-w-2xl mx-auto' },
+              isRu 
+                ? 'Свяжитесь с нами в Telegram для консультации и получите скидку на первый заказ.'
+                : 'Birinchi buyurtmada chegirma olish uchun Telegramda biz bilan boglanin.'
+            ),
+            React.createElement('div', { className: 'flex flex-col sm:flex-row gap-4 justify-center' },
+              React.createElement('a', { 
+                href: 'https://t.me/GraverAdm',
+                target: '_blank',
+                rel: 'noopener noreferrer',
+                className: 'inline-flex items-center justify-center px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white font-semibold rounded-lg transition'
+              },
+                '✉️ ' + (isRu ? 'Написать в Telegram' : 'Telegramga yozing')
+              ),
+              React.createElement(Link, { 
+                to: '/' + locale + '\/contacts',
+                className: 'inline-flex items-center justify-center px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white font-semibold rounded-lg transition'
+              },
+                '📞 ' + (isRu ? 'Контакты' : 'Kontaktlar')
+              )
+            )
+          )
+        ),
         // Related Services Section
         React.createElement('div', { 
           className: 'mt-6 p-6 bg-gray-900 border border-gray-800 rounded-xl',
