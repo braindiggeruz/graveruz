@@ -398,7 +398,46 @@ function BlogPostPage() {
     contentBody = contentParts;
   }
 
+  // BlogPosting Schema.org for SEO
+  var blogPostingSchema = post ? {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    '@id': canonicalUrl + '#article',
+    headline: pageTitle,
+    description: pageDescription,
+    image: pageOgImage,
+    datePublished: post.date,
+    dateModified: post.dateModified || post.date,
+    author: {
+      '@type': 'Organization',
+      name: 'Graver.uz',
+      url: BASE_URL
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Graver.uz',
+      url: BASE_URL,
+      logo: {
+        '@type': 'ImageObject',
+        url: BASE_URL + '/og-blog.png',
+        width: 1200,
+        height: 630
+      }
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': canonicalUrl
+    },
+    inLanguage: locale === 'ru' ? 'ru' : 'uz',
+    articleSection: post.category || (locale === 'ru' ? 'Blog' : 'Blog'),
+    keywords: post.keywords ? post.keywords.join(', ') : undefined
+  } : null;
+
   return React.createElement('div', { className: 'min-h-screen bg-black text-white' },
+    blogPostingSchema && React.createElement('script', {
+      type: 'application/ld+json',
+      dangerouslySetInnerHTML: { __html: JSON.stringify(blogPostingSchema) }
+    }),
     React.createElement(SeoMeta, {
       title: pageTitle,
       description: pageDescription,
