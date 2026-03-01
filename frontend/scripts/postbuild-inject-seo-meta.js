@@ -201,18 +201,23 @@ function generateSeoMeta(locale, pathKey) {
     return SEO_CONFIG[pathKey];
   }
   
-  // Fallback для блога - генерируем на основе slug
+  // Fallback для блога - НЕ перезаписывать существующие title/description для отдельных статей
   if (pathKey.includes('/blog/')) {
-    if (locale === 'uz') {
+    // Если это главная блог страница (/ru/blog/ или /uz/blog/), используем generic title
+    if (pathKey === '/ru/blog/' || pathKey === '/uz/blog/') {
+      if (locale === 'uz') {
+        return {
+          title: 'Korporativ sovgalar va gravyura haqida blog | Graver.uz',
+          description: 'Korporativ sovgalar tanlash, lazer gravyura, brending va merch haqida foydali maqolalar Ozbekistonda.'
+        };
+      }
       return {
-        title: 'Maqola | Graver.uz',
-        description: 'Graver.uz saytida korporativ sovgalar va gravyura haqida foydali maqolalarni o\'qing.'
+        title: 'Блог о корпоративных подарках и гравировке | Graver.uz',
+        description: 'Полезные статьи о выборе корпоративных подарков, лазерной гравировке, брендировании и мерче для бизнеса в Узбекистане.'
       };
     }
-    return {
-      title: 'Статья | Graver.uz',
-      description: 'Читайте полезные статьи о корпоративных подарках и гравировке на Graver.uz'
-    };
+    // Для отдельных статей - НЕ перезаписывать существующие title/description
+    return null;
   }
   
   // Default
@@ -248,6 +253,13 @@ function injectSeoMeta(htmlFilePath, pathKey) {
     
     // Получаем SEO конфиг
     const seo = generateSeoMeta(locale, pathKey);
+    
+    // Если generateSeoMeta вернул null (для отдельных блог статей), пропускаем
+    if (seo === null) {
+      console.log(`[inject-seo-meta] ⊘ ${pathKey} — пропускаю (используются существующие title/description из prerendered HTML)`);
+      return;
+    }
+    
     const isNoindex = seo.noindex || NOINDEX_PATHS.includes(pathKey);
     
     // Строим canonical и hreflang URLs
