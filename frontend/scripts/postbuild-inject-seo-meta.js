@@ -25,6 +25,55 @@
 const fs = require('fs');
 const path = require('path');
 
+// Импортируем blogSeoOverrides
+let blogSeoOverrides = {};
+try {
+  const blogSeoPath = path.join(__dirname, '..', 'src', 'data', 'blogSeoOverrides.js');
+  const content = fs.readFileSync(blogSeoPath, 'utf8');
+  
+  // Парсим export из файла
+  const startIdx = content.indexOf('export const blogSeoOverrides = {');
+  if (startIdx !== -1) {
+    let braceCount = 0;
+    let inString = false;
+    let stringChar = '';
+    let endIdx = startIdx + 'export const blogSeoOverrides = '.length;
+    
+    for (let i = endIdx; i < content.length; i++) {
+      const char = content[i];
+      
+      if ((char === '"' || char === "'" || char === '`') && (i === 0 || content[i-1] !== '\\')) {
+        if (!inString) {
+          inString = true;
+          stringChar = char;
+        } else if (char === stringChar) {
+          inString = false;
+        }
+      }
+      
+      if (!inString) {
+        if (char === '{') braceCount++;
+        if (char === '}') {
+          braceCount--;
+          if (braceCount === 0) {
+            endIdx = i + 1;
+            break;
+          }
+        }
+      }
+    }
+    
+    const objStr = content.substring(startIdx + 'export const blogSeoOverrides = '.length, endIdx);
+    try {
+      blogSeoOverrides = eval(`(${objStr})`);
+    } catch (e) {
+      console.warn('[postbuild-inject-seo-meta] Failed to parse blogSeoOverrides:', e.message);
+    }
+  }
+} catch (e) {
+  console.warn('[postbuild-inject-seo-meta] Failed to load blogSeoOverrides.js:', e.message);
+}
+
 const BASE_URL = 'https://graver-studio.uz';
 const OG_IMAGE = `${BASE_URL}/og-blog.png`;
 
@@ -201,7 +250,7 @@ function generateSeoMeta(locale, pathKey) {
     return SEO_CONFIG[pathKey];
   }
   
-  // Fallback для блога - НЕ перезаписывать существующие title/description для отдельных статей
+  // Для блог статей - получаем SEO данные из blogSeoOverrides.js
   if (pathKey.includes('/blog/')) {
     // Если это главная блог страница (/ru/blog/ или /uz/blog/), используем generic title
     if (pathKey === '/ru/blog/' || pathKey === '/uz/blog/') {
@@ -216,7 +265,24 @@ function generateSeoMeta(locale, pathKey) {
         description: 'Полезные статьи о выборе корпоративных подарков, лазерной гравировке, брендировании и мерче для бизнеса в Узбекистане.'
       };
     }
-    // Для отдельных статей - НЕ перезаписывать существующие title/description
+    
+    // Для отдельных статей - получаем SEO данные из blogSeoOverrides
+    // Извлекаем slug из пути (/ru/blog/slug/ или /uz/blog/slug/)
+    const slugMatch = pathKey.match(/\/blog\/([^/]+)/);
+    if (slugMatch && slugMatch[1]) {
+      const slug = slugMatch[1];
+      const override = blogSeoOverrides[slug];
+      if (override) {
+        return {
+          title: override.title,
+          description: override.description,
+          ogTitle: override.ogTitle,
+          ogDescription: override.ogDescription
+        };
+      }
+    }
+    
+    // Если нет SEO данных в blogSeoOverrides, пропускаем
     return null;
   }
   
