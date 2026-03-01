@@ -404,7 +404,18 @@ function injectSeoMeta(htmlFilePath, pathKey) {
       newTwitterImage
     ].join('\n');
     
-    html = html.replace(/<\/head>/, `${seoTags}\n</head>`);
+    // Проверяем, есть ли </head> в HTML
+    if (/<\/head>/.test(html)) {
+      html = html.replace(/<\/head>/, `${seoTags}\n</head>`);
+    } else {
+      // Если </head> не найден, добавляем перед </body>
+      if (/<\/body>/.test(html)) {
+        html = html.replace(/<\/body>/, `</head>\n${seoTags}\n</body>`);
+      } else {
+        // Если ничего не найдено, добавляем в конец
+        html += `\n</head>\n${seoTags}\n</body>\n</html>`;
+      }
+    }
     
     // Сохраняем обновленный HTML
     fs.writeFileSync(htmlFilePath, html, 'utf-8');
