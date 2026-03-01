@@ -61,7 +61,7 @@
     "start": "craco start",
     "prebuild": "npm run blog:validate",
     "build": "craco build",
-    "postbuild": "node scripts/postbuild-inject-seo-meta.js && node scripts/postbuild-fix-domain.js && node scripts/postbuild-root-noindex.js && node scripts/postbuild-build-stamp.js && node scripts/postbuild-sitemap.js && node scripts/postbuild-rss.js && node scripts/postbuild-indexnow.js",
+    "postbuild": "react-snap && node scripts/postbuild-inject-seo-meta.js && node scripts/postbuild-fix-domain.js && node scripts/postbuild-root-noindex.js && node scripts/postbuild-build-stamp.js && node scripts/postbuild-sitemap.js && node scripts/postbuild-rss.js && node scripts/postbuild-indexnow.js",
     "images:optimize": "node scripts/optimize-images-webp.mjs",
     "images:audit": "node scripts/audit-images.mjs",
     "verify:images": "node scripts/verify-image-variants.mjs",
@@ -77,7 +77,7 @@
     "blog:validate": "node scripts/validate-blog-data.mjs"
   },
   "reactSnap": {
-    "enabled": false,
+    "enabled": true,
     "timeout": 120000,
     "crawl": false,
     "include": [
