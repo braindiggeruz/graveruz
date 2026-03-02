@@ -17,12 +17,22 @@ const baseUrl = rawBaseUrl.replace(/\/+$/, '');
 const publicDir = path.resolve(__dirname, '..', 'public');
 const stateFile = path.resolve(__dirname, '..', '.indexnow-state.json');
 
-// Read IndexNow key from env or from key file
+// Read IndexNow key from env or from key file.
+// Priority: INDEXNOW_KEY env → indexnow-key.txt → {key}.txt (IndexNow standard naming)
 function getIndexNowKey() {
   if (process.env.INDEXNOW_KEY) return process.env.INDEXNOW_KEY;
+  // Try standard name first
   const keyFilePath = path.join(publicDir, 'indexnow-key.txt');
   if (fs.existsSync(keyFilePath)) {
-    return fs.readFileSync(keyFilePath, 'utf8').trim();
+    const key = fs.readFileSync(keyFilePath, 'utf8').trim();
+    // Verify that a properly-named {key}.txt also exists (required by IndexNow spec)
+    const namedKeyFile = path.join(publicDir, `${key}.txt`);
+    if (!fs.existsSync(namedKeyFile)) {
+      // Auto-create the {key}.txt file so IndexNow can verify ownership
+      fs.writeFileSync(namedKeyFile, key, 'utf8');
+      console.log(`[postbuild-indexnow] Auto-created ${key}.txt for IndexNow verification`);
+    }
+    return key;
   }
   return null;
 }

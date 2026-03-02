@@ -15,6 +15,7 @@ https://www.graver-studio.uz/*  https://graver-studio.uz/:splat  301
 /rss-ru.xml      /rss-ru.xml      200
 /rss-uz.xml      /rss-uz.xml      200
 /indexnow-key.txt /indexnow-key.txt 200
+/31c090ccfa2d43238b85b8d0c420c6d3.txt  /31c090ccfa2d43238b85b8d0c420c6d3.txt  200
 /7vq9wduloq5ay37iyzt17l1v4k162j.html  /7vq9wduloq5ay37iyzt17l1v4k162j.html  200
 
 # Root redirect → React Router handles locale detection
