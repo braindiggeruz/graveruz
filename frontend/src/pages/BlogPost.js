@@ -134,12 +134,22 @@ function BlogPostPage() {
   const post = getPostBySlug(locale, slug);
   const isRu = locale === 'ru';
   
-  // Track article view on mount
+  // P0 FIX: Prevent repeated tracking with useRef
+  // trackViewContent should only fire once per slug, not on every render
+  const trackedSlugs = React.useRef(new Set());
+  
+  // Track article view on mount (only once per slug)
   useEffect(() => {
-    if (post) {
-      trackViewContent(post.slug || slug, post.title || '', post.category || 'blog');
+    if (post && slug && !trackedSlugs.current.has(slug)) {
+      try {
+        trackViewContent(post.slug || slug, post.title || '', post.category || 'blog');
+        trackedSlugs.current.add(slug);
+      } catch (err) {
+        // Tracking errors should NOT affect UI or cause re-renders
+        console.warn('[tracking] ViewContent failed:', err);
+      }
     }
-  }, [post, slug]);
+  }, [slug]);
 
   // P0 FIX: Memoize seoOverride and faqData to prevent infinite re-renders
   // These were creating new object/array references on every render, causing useEffect deps to change
