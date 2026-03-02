@@ -231,7 +231,17 @@ async function main() {
 
   blogPosts.ru.forEach((post) => {
     const lastmod = toDate(post.date) || buildDate;
-    addUrl(`/ru/blog/${post.slug}`, lastmod, null);
+    // Use slug map to get correct UZ slug for hreflang (mirrors the UZ→RU logic below)
+    const uzSlug = blogSlugMapModule.getMappedAlternateSlug('ru', post.slug);
+    const ruLoc = `${baseUrl}/ru/blog/${post.slug}/`;
+    const ruHreflangLinks = [
+      { hreflang: 'ru', href: ruLoc },
+      { hreflang: 'x-default', href: ruLoc }
+    ];
+    if (uzSlug) {
+      ruHreflangLinks.push({ hreflang: 'uz-Latn', href: `${baseUrl}/uz/blog/${uzSlug}/` });
+    }
+    addUrl(`/ru/blog/${post.slug}`, lastmod, ruHreflangLinks);
     addImageEntry({ pathname: `/ru/blog/${post.slug}`, slug: post.slug, title: post.title, lastmod });
   });
 
