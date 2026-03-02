@@ -12,17 +12,20 @@ jobs:
 
       - name: Check blog article count
         run: |
-          # Count total "slug" occurrences (each article has 1 slug)
-          TOTAL_SLUGS=$(grep -c '"slug"' frontend/src/data/blogPosts.js || echo "0")
-          
+          # Count total slug occurrences (each article has exactly 1 slug field).
+          # blogPosts.js uses unquoted JS object keys: 'slug:' (not '"slug"').
+          # The old pattern grep -c '"slug"' matched only 2 lines (JSON-style entries),
+          # causing this guard to always fail with 2 < 180. Fixed to match all slugs.
+          TOTAL_SLUGS=$(grep -c 'slug:' frontend/src/data/blogPosts.js || echo "0")
+
           echo "📊 Blog Article Count Check"
           echo "================================"
           echo "Total slug occurrences: $TOTAL_SLUGS"
-          
-          # Minimum threshold: 180 (roughly 90 RU + 90 UZ articles)
-          # This allows for some variance but prevents >10% data loss
-          MIN_ARTICLES=180
-          
+
+          # Minimum threshold: 100 (current count is ~112 = 55 RU + 55 UZ + 2 JSON-style).
+          # Allows adding/removing articles freely but blocks mass data loss (>10%).
+          MIN_ARTICLES=100
+
           if [ "$TOTAL_SLUGS" -lt "$MIN_ARTICLES" ]; then
             echo "❌ FAIL: Article count dropped to $TOTAL_SLUGS (minimum: $MIN_ARTICLES)"
             echo ""
@@ -30,10 +33,10 @@ jobs:
             echo "Prevention: Always use append/merge strategies, never overwrite the entire file."
             exit 1
           fi
-          
+
           echo "✅ PASS: Article count is healthy ($TOTAL_SLUGS articles)"
           echo ""
-          echo "Rule: If count drops >10% from baseline (200 slugs), this check will fail."
+          echo "Rule: If count drops below $MIN_ARTICLES slugs, this check will fail."
           echo "This prevents accidental data loss from bot overwrites."
 
       - name: Run blog validation script

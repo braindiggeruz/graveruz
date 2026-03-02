@@ -20,5 +20,9 @@ https://www.graver-studio.uz/*  https://graver-studio.uz/:splat  301
 # Root redirect → React Router handles locale detection
 /  /index.html  200
 
-# SPA fallback — all routes render index.html (React Router handles routing)
-/*  /index.html  200
+# SPA fallback — only for routes that do NOT have a prerendered static HTML file.
+# Cloudflare Pages serves prerendered files (e.g. /ru/blog/slug/index.html) first.
+# This catch-all is intentionally REMOVED to allow prerendered HTML to be served.
+# React Router handles client-side navigation for all routes after hydration.
+# If a route has no prerendered file, Cloudflare returns 404 — which is correct
+# because all real routes ARE prerendered by react-snap during build.
