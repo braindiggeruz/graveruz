@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useParams, Navigate } from 'react-router-dom';
+import { Link, useParams, Navigate, useMemo } from 'react-router-dom';
 import SeoMeta from '../components/SeoMeta';
 import { ArrowLeft, Calendar, Tag, Lightbulb, BookOpen, HelpCircle, Clock } from 'lucide-react';
 import { BASE_URL } from '../config/seo';
@@ -141,10 +141,11 @@ function BlogPostPage() {
     }
   }, [post, slug]);
 
-  // Get SEO override for this post
-  const seoOverride = getSeoOverride(locale, slug);
-  // Get FAQ data for FAQPage Schema
-  const faqData = (getFaqData(slug) || []).filter(isValidFaqItem);
+  // P0 FIX: Memoize seoOverride and faqData to prevent infinite re-renders
+  // These were creating new object/array references on every render, causing useEffect deps to change
+  // This triggered infinite effect re-runs → Error #301 (Too many re-renders)
+  const seoOverride = useMemo(() => getSeoOverride(locale, slug), [locale, slug]);
+  const faqData = useMemo(() => (getFaqData(slug) || []).filter(isValidFaqItem), [slug]);
 
   // --- DOM fallback for TOC: if ul.toc is empty, fill from headings ---
     const tocEffectSlug = post?.slug || "";
