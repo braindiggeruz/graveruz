@@ -11,17 +11,15 @@
         <link rel="preconnect" href="https://connect.facebook.net" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <!-- Google tag (gtag.js) - GA4
-             ВАЖНО: замените G-MEASUREMENT_ID на реальный Measurement ID из
-             Google Analytics → Admin → Data Streams → Web Stream Details.
-             Формат: G-XXXXXXXXXX
-             send_page_view: false — потому что SPA page_view отправляется
-             вручную из App.js при каждой смене маршрута React Router. -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-MEASUREMENT_ID"></script>
+             Measurement ID: G-Z7V0FSGE4Y (graver-studio.uz / graver.uz)
+             send_page_view: false — SPA page_view отправляется вручную
+             из App.js при каждой смене маршрута React Router. -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z7V0FSGE4Y"></script>
         <script>
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'G-MEASUREMENT_ID', {
+          gtag('config', 'G-Z7V0FSGE4Y', {
             send_page_view: false,
             cookie_flags: 'SameSite=None;Secure'
           });
