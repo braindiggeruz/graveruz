@@ -78,7 +78,9 @@ const BASE_URL = 'https://graver-studio.uz';
 const OG_IMAGE = `${BASE_URL}/og-blog.png`;
 
 // Маппинг RU -> UZ и UZ -> RU слагов для hreflang
+// Обновлено 2026-03-02: добавлен полный маппинг блог-постов из blogSlugMap.js
 const ROUTE_MAP_RU_TO_UZ = {
+  // Страницы сайта
   'catalog-products': 'mahsulotlar-katalogi',
   'watches-with-logo': 'logotipli-soat',
   'lighters-engraving': 'gravirovkali-zajigalka',
@@ -86,6 +88,33 @@ const ROUTE_MAP_RU_TO_UZ = {
   'products/neo-watches': 'neo-soatlar',
   'products/neo-corporate': 'neo-korporativ',
   'products/neo-gift': 'neo-sovga',
+  // Блог-посты (только те, у которых есть реальный UZ эквивалент в prerendered/)
+  'blog/brendirovanie-suvenirov': 'blog/suvenir-brendlash',
+  'blog/brendirovannye-zazhigalki-i-chasy-s-logotipom': 'blog/logotipli-zajigalka-va-soat',
+  'blog/chasy-s-logotipom-korporativnye-podarki-tashkent': 'blog/logotipli-soat-korporativ-sovgalar-toshkent',
+  'blog/chek-list-zakupshchika-podarkov': 'blog/xaridor-chek-listi-b2b',
+  'blog/ekonomiya-na-korporativnyh-suvenirax': 'blog/suvenir-byudjetini-tejash',
+  'blog/kak-podgotovit-maket-logotipa': 'blog/logotip-maketi-tayyorlash',
+  'blog/kak-vybrat-korporativnyj-podarok': 'blog/korporativ-sovgani-qanday-tanlash',
+  'blog/korporativnye-podarki-na-navruz': 'blog/navruz-uchun-korporativ-sovgalar',
+  'blog/korporativnye-podarki-s-gravirovkoy-metody': 'blog/korporativ-sovgalar-gravyurasi-usullari',
+  'blog/korporativnye-podarki-s-logotipom-polnyy-gayd': 'blog/korporativ-sovgalar-logotip-bilan-to-liq-qollanma',
+  'blog/korporativnye-podarochnye-nabory': 'blog/korporativ-sovga-toplamlari',
+  'blog/lazernaya-gravirovka-podarkov': 'blog/lazer-gravirovka-sovgalar',
+  'blog/lazernaya-gravirovka-podarkov-tehnologiya': 'blog/lazer-gravyurasi-texnologiyasi',
+  'blog/merch-dlya-it-kompaniy-tashkent': 'blog/it-kompaniyalar-uchun-merch-toshkent',
+  'blog/merch-dlya-kompanii-brendirovanie': 'blog/kompaniya-merchi-brendlash',
+  'blog/podarki-dlya-bankov-i-finteha-tashkent': 'blog/banklar-va-fintex-uchun-sovgalar-toshkent',
+  'blog/podarki-dlya-horeca-i-restoranov-tashkent': 'blog/horeca-va-restoranlar-uchun-sovgalar-toshkent',
+  'blog/podarki-klientam-partneram-vip': 'blog/mijoz-hamkorlar-uchun-sovgalar-vip',
+  'blog/podarki-na-korporativnye-sobytiya-tashkent': 'blog/korporativ-tadbirlar-uchun-sovgalar-toshkent',
+  'blog/podarki-na-navruz': 'blog/navruz-sovgalari',
+  'blog/podarki-sotrudnikam-hr-gayd': 'blog/xodimlar-uchun-sovgalar-hr-qollanma',
+  'blog/podarochnye-nabory-s-logotipom': 'blog/logotipli-sovga-toplami',
+  'blog/polniy-gid-po-korporativnym-podarkam': 'blog/korporativ-sovgalar-boyicha-toliq-qollanma',
+  'blog/top-idei-podarkov-na-novyj-god': 'blog/yangi-yil-sovga-goyalari',
+  'blog/welcome-pack-dlya-sotrudnikov': 'blog/welcome-pack-yangi-xodimlar',
+  'blog/welcome-pack-novym-sotrudnikam': 'blog/yangi-xodimlar-uchun-welcome-pack',
 };
 const ROUTE_MAP_UZ_TO_RU = Object.fromEntries(
   Object.entries(ROUTE_MAP_RU_TO_UZ).map(([ru, uz]) => [uz, ru])
