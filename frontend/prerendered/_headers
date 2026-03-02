@@ -1,6 +1,6 @@
 /*
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
-  Content-Security-Policy: default-src 'self'; base-uri 'self'; frame-ancestors 'self'; form-action 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://connect.facebook.net https://sgw.stape.bg https://capig.stape.ma https://*.stape.bg https://*.stape.ma https://static.cloudflareinsights.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: https://www.facebook.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://region1.google-analytics.com https://connect.facebook.net https://www.facebook.com https://sgw.stape.bg https://capig.stape.ma https://*.stape.bg https://*.stape.ma https://cloudflareinsights.com https://*.cloudflareinsights.com;
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; frame-ancestors 'self'; form-action 'self'; script-src 'self' 'unsafe-inline' https://connect.facebook.net https://static.cloudflareinsights.com https://cdn.jsdelivr.net https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: https://www.facebook.com https://www.google-analytics.com https://www.googletagmanager.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://connect.facebook.net https://www.facebook.com https://cloudflareinsights.com https://*.cloudflareinsights.com https://api.cloudflareinsights.com https://www.google-analytics.com https://*.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://www.googletagmanager.com; object-src 'none';
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
@@ -11,7 +11,9 @@
 /
   Cache-Control: public, max-age=300, must-revalidate, stale-while-revalidate=86400
 /index.html
-  Cache-Control: public, max-age=300, must-revalidate, stale-while-revalidate=86400
+  Cache-Control: no-cache, no-store, must-revalidate, max-age=0
+  Pragma: no-cache
+  Expires: 0
 /ru
   Cache-Control: public, max-age=300, must-revalidate, stale-while-revalidate=86400
 /uz
@@ -41,6 +43,13 @@
   Cache-Control: public, max-age=3600
   Content-Type: application/rss+xml; charset=utf-8
 
+# P1 SEO fix: Noindex for thank-you and 404 pages
+/ru/thanks/
+  X-Robots-Tag: noindex, nofollow
+/uz/thanks/
+  X-Robots-Tag: noindex, nofollow
+/404/
+  X-Robots-Tag: noindex, nofollow
 /ru/*
   X-Robots-Tag: index, follow
   Link: <https://fonts.googleapis.com>; rel=preconnect
