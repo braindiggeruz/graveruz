@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useMemo } from 'react';
-import { Link, useParams, Navigate } from 'react-router-dom';
+import React, { useEffect, useMemo } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import SeoMeta from '../components/SeoMeta';
 import { ArrowLeft, Calendar, Tag, Lightbulb, BookOpen, HelpCircle, Clock } from 'lucide-react';
 import { BASE_URL } from '../config/seo';
@@ -127,7 +127,7 @@ function buildMoneyLinks(locale, slug, isRu) {
 }
 
 function BlogPostPage() {
-  const [toc, setToc] = useState([]);
+  // toc is now computed via useMemo (computedToc) instead of useState to avoid setState during render
   const params = useParams();
   const locale = params.locale || 'ru';
   const slug = params.slug || '';
@@ -138,18 +138,23 @@ function BlogPostPage() {
   // trackViewContent should only fire once per slug, not on every render
   const trackedSlugs = React.useRef(new Set());
   
+  // Extract primitives from post for tracking (avoids object dep → no infinite re-render)
+  const postSlug = post?.slug || '';
+  const postTitle = post?.title || '';
+  const postCategory = post?.category || 'blog';
+  
   // Track article view on mount (only once per slug)
   useEffect(() => {
-    if (post && slug && !trackedSlugs.current.has(slug)) {
+    if (postSlug && slug && !trackedSlugs.current.has(slug)) {
       try {
-        trackViewContent(post.slug || slug, post.title || '', post.category || 'blog');
+        trackViewContent(postSlug, postTitle, postCategory);
         trackedSlugs.current.add(slug);
       } catch (err) {
         // Tracking errors should NOT affect UI or cause re-renders
         console.warn('[tracking] ViewContent failed:', err);
       }
     }
-  }, [slug]);
+  }, [slug, postSlug, postTitle, postCategory]);
 
   // P0 FIX: Memoize seoOverride and faqData to prevent infinite re-renders
   // These were creating new object/array references on every render, causing useEffect deps to change
@@ -310,6 +315,70 @@ function BlogPostPage() {
     };
   }, [post, canonicalUrl, ruUrl, uzUrl, locale, seoOverride, faqData, pageOgImage, pageTitle, pageDescription]);
 
+  // P0 FIX: compute contentBody and headings via useMemo instead of setState during render
+  // Calling setToc(headings) in the render body caused infinite re-renders (Error #301)
+  // MUST be before early return to satisfy Rules of Hooks (no conditional hooks)
+  const { computedToc, contentBody } = useMemo(() => {
+    if (post && post.contentHtml) {
+      const enhancedHtml = enhanceTocAndAnchors(normalizeHtmlContent(post.contentHtml, locale));
+      const headings = [];
+      const matches = enhancedHtml.matchAll(/<h([2-3]) id="([^"]+)">([^<]+)<\/h[2-3]>/g);
+      for (const match of matches) {
+        headings.push({
+          level: parseInt(match[1], 10),
+          id: match[2],
+          text: match[3],
+        });
+      }
+      return {
+        computedToc: headings,
+        contentBody: React.createElement('div', { dangerouslySetInnerHTML: { __html: enhancedHtml } }),
+      };
+    }
+    if (post && post.content) {
+      var contentParts = [];
+      var lines = post.content.split('\n');
+      var listItems = [];
+      var listGroup = 0;
+      var flushList = function() {
+        if (!listItems.length) return;
+        contentParts.push(
+          React.createElement('ul', { key: 'ul-' + listGroup, className: 'list-disc ml-6 my-3 space-y-1' },
+            listItems.map(function(item, idx) {
+              return React.createElement('li', {
+                key: 'li-' + listGroup + '-' + idx,
+                className: 'text-gray-300',
+                dangerouslySetInnerHTML: { __html: normalizeInlineText(item, locale) }
+              });
+            })
+          )
+        );
+        listItems = [];
+        listGroup += 1;
+      };
+      for (var i = 0; i < lines.length; i++) {
+        var ln = lines[i];
+        if (ln.indexOf('# ') === 0) {
+          flushList();
+          contentParts.push(React.createElement('h2', { key: 'h-' + i, className: 'text-2xl font-bold text-white mt-6 mb-3', dangerouslySetInnerHTML: { __html: normalizeInlineText(ln.substring(2), locale) } }));
+        } else if (ln.indexOf('## ') === 0) {
+          flushList();
+          contentParts.push(React.createElement('h3', { key: 'hh-' + i, className: 'text-xl font-bold text-white mt-4 mb-2', dangerouslySetInnerHTML: { __html: normalizeInlineText(ln.substring(3), locale) } }));
+        } else if (ln.indexOf('- ') === 0) {
+          listItems.push(ln.substring(2));
+        } else if (ln.trim()) {
+          flushList();
+          contentParts.push(React.createElement('p', { key: 'p-' + i, className: 'text-gray-300 leading-relaxed my-3', dangerouslySetInnerHTML: { __html: normalizeInlineText(ln, locale) } }));
+        } else {
+          flushList();
+        }
+      }
+      flushList();
+      return { computedToc: [], contentBody: contentParts };
+    }
+    return { computedToc: [], contentBody: null };
+  }, [post, locale]);
+
   // P1 FIX: Guard against missing posts - render 404 page instead of crashing
   if (!post) {
     return (
@@ -386,66 +455,6 @@ function BlogPostPage() {
     href: '/' + locale + '/blog',
     label: isRu ? 'Все статьи блога' : 'Blogdagi barcha maqolalar'
   };
-
-  var contentBody = null;
-  if (post && post.contentHtml) {
-    const enhancedHtml = enhanceTocAndAnchors(normalizeHtmlContent(post.contentHtml, locale));
-    const headings = [];
-    const matches = enhancedHtml.matchAll(/<h([2-3]) id="([^"]+)">([^<]+)<\/h[2-3]>/g);
-
-    for (const match of matches) {
-      headings.push({
-        level: parseInt(match[1], 10),
-        id: match[2],
-        text: match[3],
-      });
-    }
-
-    setToc(headings);
-    contentBody = React.createElement('div', { dangerouslySetInnerHTML: { __html: enhancedHtml } });
-  } else if (post && post.content) {
-    var contentParts = [];
-    var lines = post.content.split('\n');
-    var listItems = [];
-    var listGroup = 0;
-
-    var flushList = function() {
-      if (!listItems.length) return;
-      contentParts.push(
-        React.createElement('ul', { key: 'ul-' + listGroup, className: 'list-disc ml-6 my-3 space-y-1' },
-          listItems.map(function(item, idx) {
-            return React.createElement('li', {
-              key: 'li-' + listGroup + '-' + idx,
-              className: 'text-gray-300',
-              dangerouslySetInnerHTML: { __html: normalizeInlineText(item, locale) }
-            });
-          })
-        )
-      );
-      listItems = [];
-      listGroup += 1;
-    };
-
-    for (var i = 0; i < lines.length; i++) {
-      var ln = lines[i];
-      if (ln.indexOf('# ') === 0) {
-        flushList();
-        contentParts.push(React.createElement('h2', { key: 'h-' + i, className: 'text-2xl font-bold text-white mt-6 mb-3', dangerouslySetInnerHTML: { __html: normalizeInlineText(ln.substring(2), locale) } }));
-      } else if (ln.indexOf('## ') === 0) {
-        flushList();
-        contentParts.push(React.createElement('h3', { key: 'hh-' + i, className: 'text-xl font-bold text-white mt-4 mb-2', dangerouslySetInnerHTML: { __html: normalizeInlineText(ln.substring(3), locale) } }));
-      } else if (ln.indexOf('- ') === 0) {
-        listItems.push(ln.substring(2));
-      } else if (ln.trim()) {
-        flushList();
-        contentParts.push(React.createElement('p', { key: 'p-' + i, className: 'text-gray-300 leading-relaxed my-3', dangerouslySetInnerHTML: { __html: normalizeInlineText(ln, locale) } }));
-      } else {
-        flushList();
-      }
-    }
-    flushList();
-    contentBody = contentParts;
-  }
 
   // BlogPosting Schema.org for SEO
   var blogPostingSchema = post ? {
@@ -604,7 +613,7 @@ function BlogPostPage() {
             React.createElement('div', { className: 'p-6 bg-gray-900 rounded-2xl border border-gray-800' },
               React.createElement('h3', { className: 'text-lg font-bold text-white mb-4' }, isRu ? 'Содержание' : 'Mundarija'),
               React.createElement('ul', { className: 'space-y-2' },
-                toc.map((item) => (
+                computedToc.map((item) => (
                   React.createElement('li', { key: item.id, className: `ml-${(item.level - 2) * 4}` },
                     React.createElement('a', { href: `#${item.id}`, className: 'text-gray-400 hover:text-teal-500 transition' }, item.text)
                   )
