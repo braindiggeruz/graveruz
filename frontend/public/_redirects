@@ -1,7 +1,12 @@
-# Canonical domain: www → non-www (301)
+# ============================================================
+# Graver Studio — Cloudflare Pages _redirects
+# Updated: 2026-03-02 (SEO audit fix)
+# ============================================================
+
+# --- Canonical domain: www → non-www (301) ---
 https://www.graver-studio.uz/*  https://graver-studio.uz/:splat  301
 
-# Static assets — serve directly
+# --- Static assets — serve directly (200) ---
 /__build_id.txt  /__build_id.txt  200
 /sw.js           /sw.js           200
 /static/*        /static/:splat   200
@@ -18,12 +23,154 @@ https://www.graver-studio.uz/*  https://graver-studio.uz/:splat  301
 /31c090ccfa2d43238b85b8d0c420c6d3.txt  /31c090ccfa2d43238b85b8d0c420c6d3.txt  200
 /7vq9wduloq5ay37iyzt17l1v4k162j.html  /7vq9wduloq5ay37iyzt17l1v4k162j.html  200
 
-# Root redirect → React Router handles locale detection
-/  /index.html  200
+# ============================================================
+# P1: Root redirect — / → /ru/ (301 permanent)
+# Fixes: "Страница является копией. Канонический вариант не выбран"
+# ============================================================
+/  /ru/  301
 
-# SPA fallback — only for routes that do NOT have a prerendered static HTML file.
-# Cloudflare Pages serves prerendered files (e.g. /ru/blog/slug/index.html) first.
-# This catch-all is intentionally REMOVED to allow prerendered HTML to be served.
-# React Router handles client-side navigation for all routes after hydration.
-# If a route has no prerendered file, Cloudflare returns 404 — which is correct
-# because all real routes ARE prerendered by react-snap during build.
+# ============================================================
+# P1+P3: Pages without locale prefix → canonical /ru/ versions (301)
+# Fixes: "Вариант страницы с тегом canonical" (22 pages)
+# Also converts 308 trailing-slash redirects to proper 301
+# ============================================================
+
+# Core pages without locale prefix
+/blog                   /ru/blog/                   301
+/blog/                  /ru/blog/                   301
+/contacts               /ru/contacts/               301
+/contacts/              /ru/contacts/               301
+/process                /ru/process/                301
+/process/               /ru/process/                301
+/guarantees             /ru/guarantees/             301
+/guarantees/            /ru/guarantees/             301
+/catalog-products       /ru/catalog-products/       301
+/catalog-products/      /ru/catalog-products/       301
+/watches-with-logo      /ru/watches-with-logo/      301
+/watches-with-logo/     /ru/watches-with-logo/      301
+/engraved-gifts         /ru/engraved-gifts/         301
+/engraved-gifts/        /ru/engraved-gifts/         301
+/lighters-engraving     /ru/lighters-engraving/     301
+/lighters-engraving/    /ru/lighters-engraving/     301
+/products               /ru/products/               301
+/products/              /ru/products/               301
+/products/lighters      /ru/products/lighters/      301
+/products/lighters/     /ru/products/lighters/      301
+/products/neo-watches   /ru/products/neo-watches/   301
+/products/neo-watches/  /ru/products/neo-watches/   301
+/products/neo-corporate /ru/products/neo-corporate/ 301
+/products/neo-corporate/ /ru/products/neo-corporate/ 301
+/products/neo-gift      /ru/products/neo-gift/      301
+/products/neo-gift/     /ru/products/neo-gift/      301
+
+# P3: Explicit 301 for /ru and /uz without trailing slash (instead of Cloudflare 308)
+/ru  /ru/  301
+/uz  /uz/  301
+
+# P3: Explicit 301 for locale pages without trailing slash
+/ru/blog                /ru/blog/                   301
+/uz/blog                /uz/blog/                   301
+/ru/contacts            /ru/contacts/               301
+/uz/contacts            /uz/contacts/               301
+/ru/process             /ru/process/                301
+/uz/process             /uz/process/                301
+/ru/guarantees          /ru/guarantees/             301
+/uz/guarantees          /uz/guarantees/             301
+/ru/catalog-products    /ru/catalog-products/       301
+/uz/mahsulotlar-katalogi /uz/mahsulotlar-katalogi/  301
+/ru/watches-with-logo   /ru/watches-with-logo/      301
+/uz/logotipli-soat      /uz/logotipli-soat/         301
+/ru/engraved-gifts      /ru/engraved-gifts/         301
+/uz/gravirovkali-sovgalar /uz/gravirovkali-sovgalar/ 301
+/ru/products/lighters   /ru/products/lighters/      301
+/uz/products/lighters   /uz/products/lighters/      301
+/ru/products/neo-watches /ru/products/neo-watches/  301
+/uz/neo-soatlar         /uz/neo-soatlar/            301
+/ru/products/neo-corporate /ru/products/neo-corporate/ 301
+/uz/neo-korporativ      /uz/neo-korporativ/         301
+/ru/products/neo-gift   /ru/products/neo-gift/      301
+/uz/neo-sovga           /uz/neo-sovga/              301
+
+# ============================================================
+# P2: Fix cross-language duplicate blog posts (301)
+# UZ blog posts accessible via RU slugs → redirect to /uz/blog/
+# ============================================================
+/uz/blog/brendirovanie-suvenirov/                         /uz/blog/  301
+/uz/blog/brendirovannye-zazhigalki-i-chasy-s-logotipom/   /uz/blog/  301
+/uz/blog/byudzhet-na-korporativnye-podarki/               /uz/blog/  301
+/uz/blog/chasy-s-logotipom-korporativnye-podarki-tashkent/ /uz/blog/ 301
+/uz/blog/chek-list-zakupshchika-podarkov/                 /uz/blog/  301
+/uz/blog/chto-podarit-devushke-na-8-marta/                /uz/blog/  301
+/uz/blog/chto-podarit-kollege-na-8-marta/                 /uz/blog/  301
+/uz/blog/chto-podarit-mame-na-8-marta/                    /uz/blog/  301
+/uz/blog/chto-podarit-na-8-marta-devushke-mame-kollege/   /uz/blog/  301
+/uz/blog/chto-podarit-rukovoditelyu-na-8-marta/           /uz/blog/  301
+/uz/blog/delovoy-etiket-biznes-podarki-uzbekistan/        /uz/blog/  301
+/uz/blog/eko-podarki-dlya-biznesa/                        /uz/blog/  301
+/uz/blog/ekonomiya-na-korporativnyh-suvenirax/            /uz/blog/  301
+/uz/blog/godovoy-plan-korporativnyh-prazdnikov/           /uz/blog/  301
+/uz/blog/gravirovka-na-biznes-podarkah/                   /uz/blog/  301
+/uz/blog/gravirovka-v-tashkente-na-8-marta/               /uz/blog/  301
+/uz/blog/idei-vip-podarkov/                               /uz/blog/  301
+/uz/blog/kak-podgotovit-maket-logotipa/                   /uz/blog/  301
+/uz/blog/kak-vybrat-korporativnyj-podarok/                /uz/blog/  301
+/uz/blog/kak-vybrat-korporativnyj-podarok-b2b/            /uz/blog/  301
+/uz/blog/kak-vybrat-podarki-dlya-sotrudnikov/             /uz/blog/  301
+/uz/blog/keys-brendirovannye-podarki-dlya-it/             /uz/blog/  301
+/uz/blog/keys-welcome-pak-it-kompaniya-tashkent/          /uz/blog/  301
+/uz/blog/korporativniy-merch-kak-instrument-marketinga/   /uz/blog/  301
+/uz/blog/korporativnye-podarki-na-8-marta-v-tashkente/    /uz/blog/  301
+/uz/blog/korporativnye-podarki-na-navruz/                 /uz/blog/  301
+/uz/blog/korporativnye-podarki-s-gravirovkoy-metody/      /uz/blog/  301
+/uz/blog/korporativnye-podarki-s-logotipom-polnyy-gayd/   /uz/blog/  301
+/uz/blog/korporativnye-podarochnye-nabory/                /uz/blog/  301
+/uz/blog/lazernaya-gravirovka-podarkov/                   /uz/blog/  301
+/uz/blog/lazernaya-gravirovka-podarkov-tehnologiya/       /uz/blog/  301
+/uz/blog/loyalnost-sotrudnikov-korporativnye-podarki/     /uz/blog/  301
+/uz/blog/merch-dlya-it-kompaniy-tashkent/                 /uz/blog/  301
+/uz/blog/merch-dlya-kompanii-brendirovanie/               /uz/blog/  301
+/uz/blog/nedorogie-podarki-na-8-marta/                    /uz/blog/  301
+/uz/blog/originalnye-podarki-na-8-marta/                  /uz/blog/  301
+/uz/blog/personalizatsiya-novyy-standart-gravirovka/      /uz/blog/  301
+/uz/blog/podarki-dlya-bankov-i-finteha-tashkent/          /uz/blog/  301
+/uz/blog/podarki-dlya-horeca-i-restoranov-tashkent/       /uz/blog/  301
+/uz/blog/podarki-klientam-partneram-vip/                  /uz/blog/  301
+/uz/blog/podarki-na-8-marta-sotrudnicam/                  /uz/blog/  301
+/uz/blog/podarki-na-korporativnye-sobytiya-tashkent/      /uz/blog/  301
+/uz/blog/podarki-na-navruz/                               /uz/blog/  301
+/uz/blog/podarki-sotrudnikam-hr-gayd/                     /uz/blog/  301
+/uz/blog/podarochnye-nabory-s-logotipom/                  /uz/blog/  301
+/uz/blog/polniy-gid-po-korporativnym-podarkam/            /uz/blog/  301
+/uz/blog/process-zakaza-korporativnyh-podarkov/           /uz/blog/  301
+/uz/blog/srochniy-zakaz-korporativnyh-podarkov/           /uz/blog/  301
+/uz/blog/top-idei-podarkov-na-novyj-god/                  /uz/blog/  301
+/uz/blog/welcome-pack-dlya-sotrudnikov/                   /uz/blog/  301
+/uz/blog/welcome-pack-novym-sotrudnikam/                  /uz/blog/  301
+
+# RU blog posts accessible via UZ slugs → redirect to /ru/blog/
+/ru/blog/banklar-va-fintex-uchun-sovgalar-toshkent/       /ru/blog/  301
+/ru/blog/horeca-va-restoranlar-uchun-sovgalar-toshkent/   /ru/blog/  301
+/ru/blog/it-kompaniyalar-uchun-merch-toshkent/            /ru/blog/  301
+/ru/blog/kompaniya-merchi-brendlash/                      /ru/blog/  301
+/ru/blog/korporativ-sovga-toplamlari/                     /ru/blog/  301
+/ru/blog/korporativ-sovgalar-boyicha-toliq-qollanma/      /ru/blog/  301
+/ru/blog/korporativ-sovgalar-gravyurasi-usullari/         /ru/blog/  301
+/ru/blog/korporativ-sovgalar-logotip-bilan-to-liq-qollanma/ /ru/blog/ 301
+/ru/blog/korporativ-sovgani-qanday-tanlash/               /ru/blog/  301
+/ru/blog/korporativ-tadbirlar-uchun-sovgalar-toshkent/    /ru/blog/  301
+/ru/blog/lazer-gravirovka-sovgalar/                       /ru/blog/  301
+/ru/blog/lazer-gravyurasi-texnologiyasi/                  /ru/blog/  301
+/ru/blog/logotip-maketi-tayyorlash/                       /ru/blog/  301
+/ru/blog/logotipli-soat-korporativ-sovgalar-toshkent/     /ru/blog/  301
+/ru/blog/logotipli-sovga-toplami/                         /ru/blog/  301
+/ru/blog/logotipli-zajigalka-va-soat/                     /ru/blog/  301
+/ru/blog/mijoz-hamkorlar-uchun-sovgalar-vip/              /ru/blog/  301
+/ru/blog/navruz-sovgalari/                                /ru/blog/  301
+/ru/blog/navruz-uchun-korporativ-sovgalar/                /ru/blog/  301
+/ru/blog/suvenir-brendlash/                               /ru/blog/  301
+/ru/blog/suvenir-byudjetini-tejash/                       /ru/blog/  301
+/ru/blog/welcome-pack-yangi-xodimlar/                     /ru/blog/  301
+/ru/blog/xaridor-chek-listi-b2b/                          /ru/blog/  301
+/ru/blog/xodimlar-uchun-sovgalar-hr-qollanma/             /ru/blog/  301
+/ru/blog/yangi-xodimlar-uchun-welcome-pack/               /ru/blog/  301
+/ru/blog/yangi-yil-sovga-goyalari/                        /ru/blog/  301
