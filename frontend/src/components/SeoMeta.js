@@ -95,9 +95,11 @@ export default function SeoMeta(props) {
   var location = useLocation();
   var isRootPath = location && location.pathname === '/';
   var rootCanonical = BASE_URL + '/ru/';
-  var resolvedCanonicalUrl = isRootPath ? rootCanonical : canonicalUrl;
-  var resolvedRuUrl = isRootPath ? BASE_URL + '/ru/' : ruUrl;
-  var resolvedUzUrl = isRootPath ? BASE_URL + '/uz/' : uzUrl;
+  // For blog posts, ALWAYS use the passed canonicalUrl (don't fallback to root)
+  // isRootPath check only applies to non-blog pages
+  var resolvedCanonicalUrl = isRootPath && !canonicalUrl ? rootCanonical : (canonicalUrl || rootCanonical);
+  var resolvedRuUrl = isRootPath && !ruUrl ? BASE_URL + '/ru/' : (ruUrl || rootCanonical);
+  var resolvedUzUrl = isRootPath && !uzUrl ? BASE_URL + '/uz/' : (uzUrl || null);
   var resolvedDescription = description || DEFAULT_DESCRIPTION;
 
   // Robots: max-image-preview:large for blog posts (Discover optimisation)
