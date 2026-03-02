@@ -211,10 +211,12 @@ const NeoWatchesLanding = () => {
           </div>
         </section>
 
+        <div className="neo-divider" />
+
         {/* ── PHOTO GALLERY ── */}
         <section className="neo-gallery">
-          <h2>{isRu ? 'Варианты исполнения' : 'Bajarilish variantlari'}</h2>
-          <p className="neo-gallery-subtitle">
+          <h2 className="neo-section-title">{isRu ? 'Варианты исполнения' : 'Bajarilish variantlari'}</h2>
+          <p className="neo-section-subtitle">
             {isRu
               ? 'Четыре цветовых решения — выберите то, что подходит именно вам.'
               : "To'rtta rang yechimi — o'zingizga mos kelganini tanlang."}
@@ -237,7 +239,7 @@ const NeoWatchesLanding = () => {
 
         {/* ── USE CASES ── */}
         <section className="neo-use-cases">
-          <h2>{isRu ? 'Кому подходят часы NEO?' : 'NEO soatlari kimga mos keladi?'}</h2>
+          <h2 className="neo-section-title">{isRu ? 'Кому подходят часы NEO?' : 'NEO soatlari kimga mos keladi?'}</h2>
           <div className="neo-use-cases-grid">
             {USE_CASES.map((item, i) => (
               <div key={i} className="neo-use-case-card">
@@ -251,7 +253,7 @@ const NeoWatchesLanding = () => {
 
         {/* ── HOW IT WORKS ── */}
         <section className="neo-how-it-works">
-          <h2>{isRu ? '3 шага до вашего подарка' : "Sovg'angizgacha 3 qadam"}</h2>
+          <h2 className="neo-section-title">{isRu ? '3 шага до вашего подарка' : "Sovg'angizgacha 3 qadam"}</h2>
           <div className="neo-steps">
             <div className="neo-step">
               <div className="neo-step-number">1</div>
@@ -279,7 +281,7 @@ const NeoWatchesLanding = () => {
 
         {/* ── FAQ ── */}
         <section className="neo-faq">
-          <h2>{isRu ? 'Частые вопросы' : 'Ko\'p so\'raladigan savollar'}</h2>
+          <h2 className="neo-section-title">{isRu ? 'Частые вопросы' : 'Ko\'p so\'raladigan savollar'}</h2>
           <div className="neo-faq-list">
             {faqItems.map((item, i) => (
               <div key={i} className={`neo-faq-item${openFaq === i ? ' open' : ''}`}>
