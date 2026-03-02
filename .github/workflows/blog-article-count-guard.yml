@@ -1,0 +1,42 @@
+name: Blog Article Count Guard
+
+on: [push, pull_request]
+
+jobs:
+  check-blog-article-count:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Check blog article count
+        run: |
+          # Count total "slug" occurrences (each article has 1 slug)
+          TOTAL_SLUGS=$(grep -c '"slug"' frontend/src/data/blogPosts.js || echo "0")
+          
+          echo "📊 Blog Article Count Check"
+          echo "================================"
+          echo "Total slug occurrences: $TOTAL_SLUGS"
+          
+          # Minimum threshold: 180 (roughly 90 RU + 90 UZ articles)
+          # This allows for some variance but prevents >10% data loss
+          MIN_ARTICLES=180
+          
+          if [ "$TOTAL_SLUGS" -lt "$MIN_ARTICLES" ]; then
+            echo "❌ FAIL: Article count dropped to $TOTAL_SLUGS (minimum: $MIN_ARTICLES)"
+            echo ""
+            echo "This likely means blogPosts.js was overwritten instead of merged."
+            echo "Prevention: Always use append/merge strategies, never overwrite the entire file."
+            exit 1
+          fi
+          
+          echo "✅ PASS: Article count is healthy ($TOTAL_SLUGS articles)"
+          echo ""
+          echo "Rule: If count drops >10% from baseline (200 slugs), this check will fail."
+          echo "This prevents accidental data loss from bot overwrites."
+
+      - name: Run blog validation script
+        run: |
+          cd frontend
+          npm run blog:validate
