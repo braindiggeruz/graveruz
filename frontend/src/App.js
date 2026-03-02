@@ -58,13 +58,24 @@ function App() {
   const location = useLocation();
   const { locale } = useParams();
   const { t, setLocale } = useI18n();
-  // SPA PageView: отправлять fbq('track', 'PageView') при смене маршрута
-  // Guard по pathname+search для PageView
+  // SPA PageView: отправлять события аналитики при смене маршрута.
+  // Guard по pathname+search предотвращает дублирование при ре-рендерах.
   const lastPath = useRef(`${location.pathname}${location.search}`);
   useEffect(() => {
     const current = `${location.pathname}${location.search}`;
-    if (typeof window.fbq === 'function' && lastPath.current !== current) {
-      window.fbq('track', 'PageView');
+    if (lastPath.current !== current) {
+      // Meta Pixel PageView
+      if (typeof window.fbq === 'function') {
+        window.fbq('track', 'PageView');
+      }
+      // GA4 page_view (send_page_view: false в gtag config, поэтому отправляем вручную)
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'page_view', {
+          page_path: location.pathname + location.search,
+          page_title: document.title,
+          page_location: window.location.href
+        });
+      }
       lastPath.current = current;
     }
   }, [location.pathname, location.search]);
