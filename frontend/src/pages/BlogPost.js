@@ -299,8 +299,45 @@ function BlogPostPage() {
     };
   }, [post, canonicalUrl, ruUrl, uzUrl, locale, seoOverride, faqData, pageOgImage, pageTitle, pageDescription]);
 
+  // P1 FIX: Guard against missing posts - render 404 page instead of crashing
   if (!post) {
-    return React.createElement(Navigate, { to: '/' + locale + '/blog', replace: true });
+    return (
+      <>
+        <SeoMeta 
+          title={isRu ? 'Статья не найдена | Graver.uz' : 'Maqola topilmadi | Graver.uz'}
+          description={isRu ? 'Запрошенная статья не существует или была удалена.' : 'Soʻralgan maqola mavjud emas yoki oʻchirilgan.'}
+          noindex={true}
+          canonical={BASE_URL + '/' + locale + '/blog/'}
+        />
+        <div className="blog-post-container" style={{ minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div className="blog-post-not-found" style={{ textAlign: 'center', padding: '40px 20px' }}>
+            <h1 style={{ fontSize: '2.5rem', marginBottom: '20px', color: '#333' }}>
+              {isRu ? '404 — Статья не найдена' : '404 — Maqola topilmadi'}
+            </h1>
+            <p style={{ fontSize: '1.1rem', color: '#666', marginBottom: '30px' }}>
+              {isRu 
+                ? 'К сожалению, запрошенная статья не существует или была удалена.' 
+                : 'Kechirasiz, soʻralgan maqola mavjud emas yoki oʻchirilgan.'}
+            </p>
+            <Link 
+              to={'/' + locale + '/blog'} 
+              style={{
+                display: 'inline-block',
+                padding: '12px 24px',
+                backgroundColor: '#14b8a6',
+                color: 'white',
+                textDecoration: 'none',
+                borderRadius: '6px',
+                fontSize: '1rem',
+                fontWeight: '500'
+              }}
+            >
+              {isRu ? '← Вернуться в блог' : '← Blogga qaytish'}
+            </Link>
+          </div>
+        </div>
+      </>
+    );
   }
 
   var services = isRu ? [
@@ -320,10 +357,11 @@ function BlogPostPage() {
   var dateStr = new Date(post.date).toLocaleDateString(isRu ? 'ru-RU' : 'uz-UZ', { year: 'numeric', month: 'long', day: 'numeric' });
   var readTime = getPostReadTimeMinutes(post);
 
+  // P1 FIX: Guard relatedPosts array
   var overrideRelatedSlugs = Array.isArray(seoOverride && seoOverride.relatedSlugs)
     ? seoOverride.relatedSlugs
     : [];
-  var recommendedPosts = getRelatedPostsWeighted(locale, slug, 5, overrideRelatedSlugs);
+  var recommendedPosts = (Array.isArray(getRelatedPostsWeighted(locale, slug, 5, overrideRelatedSlugs)) ? getRelatedPostsWeighted(locale, slug, 5, overrideRelatedSlugs) : []).filter(function(p) { return p && p.slug; });
 
   var moneyLinks = buildMoneyLinks(locale, slug, isRu);
 
