@@ -2254,6 +2254,212 @@ export const blogPosts = {
     }
   ],
   uz: [
+    {
+        slug: 'keys-welcome-pack-povysil-enps-v-it-kompanii-uz',
+        ruSlug: 'keys-welcome-pack-povysil-enps-v-it-kompanii',
+        title: 'Keys: Welcome Pack eNPSni 23% oshirdi — Toshkent',
+        description: 'Welcome pack natijalari: eNPS +23%. Tarkib, jarayon va HR fikri. Hisob-kitob so‘rang!',
+        date: '2026-03-03',
+        category: 'Keyslar',
+        keywords: ['welcome pack', 'onboarding', 'eNPS', 'IT kompaniya', 'Toshkent', 'lazer gravirovka', 'korporativ sovg‘a'],
+        relatedPosts: ['welcome-pack-yangi-xodimlar', 'it-kompaniyalar-uchun-merch-toshkent', 'xodimlar-sadoqati-korporativ-sovgalar'],
+        contentHtml: `
+<p>Agar onboarding “birinchi kun” bilan tugasa, xodimning ichki motivatsiyasi esa 3–4 haftada so‘nadi. Ushbu keysda Toshkentdagi IT-kompaniya welcome pack orqali yangi xodimlarda “men bu yerga tegishliman” hissini kuchaytirib, eNPS ko‘rsatkichini sezilarli yaxshiladi.</p>\n
+<h2>Muammo: yangi xodimlar sovuq start olardi</h2>\n<p>HR jamoasi uchta og‘riq nuqtani ko‘rdi: (1) birinchi haftada stress yuqori, (2) ichki kommunikatsiya sekin, (3) “qabul qilinish” hissi yetishmaydi. Natijada onboarding jarayoni uzayadi, savollar ko‘payadi, birinchi 30 kunda xatolar ko‘p uchraydi.</p>\n
+<h2>Maqsad: yangi xodimni birinchi kundan brendga “ulash”, kundalik ishga tezroq kiritish va ijobiy emosiyani mustahkamlash.</h2>\n
+<h2>Nima buyurtma qilindi: 3 darajali welcome pack konsepti</h2>\n<p>Kompaniya uchta profilni ajratdi: junior/middle, senior va lead/management. Har biri uchun umumiy brend elementlari + rolga mos foydali buyumlar tanlandi.</p>\n<ul>\n<li>Bir xil vizual kod: ranglar, minimalistik dizayn, bitta “unboxing” ssenariysi</li>\n<li>Har bir buyumda lazer gravirovka: logo, ism, lavozim yoki qisqa shior</li>\n<li>Qadoqlash: “premium, ammo ortiqcha dabdaba emas”</li>\n</ul>\n
+<h2>Jarayon: brifdan yetkazib berishgacha 10 kun</h2>\n<p>Graver Studio bilan ish jarayoni 4 bosqichga bo‘lindi: brif → maket → ishlab chiqarish → QC + yetkazish. Toshkent ichida logistika va yig‘ish jarayoni alohida nazorat qilindi, shunda HRga “qo‘lda yig‘ish” yuklamasi tushmadi.</p>\n<ol>\n<li><strong>Brif (1 kun)</strong>\n<ul>\n<li>xodimlar soni va rollar bo‘yicha taqsimot</li>\n<li>byudjet diapazoni va “must-have” buyumlar</li>\n<li>brend qo‘llanmasi: rang, shrift, logo variantlari</li>\n<li>gravirovka formatlari: logo/ism/QR-kod</li>\n</ul>\n</li>\n<li><strong>Maket va tasdiqlash (1–2 kun)</strong>\n<ul>\n<li>3 ta mockup varianti</li>\n<li>ism yozilishi (transliteratsiya) bo‘yicha ro‘yxat</li>\n<li>qadoqlash yorlig‘i va tabrik kartasi matni</li>\n</ul>\n</li>\n<li><strong>Ishlab chiqarish (5–6 kun)</strong><br>Asosiy texnologiya — lazer gravirovka. U logotipni aniq, toza va uzoq saqlanadigan qiladi, ayniqsa metall va yog‘och yuzalarda.</li>\n<li><strong>QC va yetkazib berish (1 kun)</strong>\n<ul>\n<li>namuna bilan solishtirib tekshiruv</li>\n<li>qadoqlash, komplektatsiya, ro‘yxat bo‘yicha nazorat</li>\n<li>ofisga yetkazib berish, akt</li>\n</ul>\n</li>\n</ol>\n
+<h2>Nabor tarkibi: “nima bor edi?”</h2>\n<ul>\n<li>Metall termo-krujka yoki termos (logo + ism lazer gravirovka)</li>\n<li>Brendli daftar + metal ruchka (ruchkada gravirovka)</li>\n<li>USB/Type-C adapter yoki kabel-organayzer</li>\n<li>ID-karta uchun lanyard yoki badge-holder</li>\n<li>Stikerlar to‘plami (brend ikonlari)</li>\n<li>Tabrik kartasi: “birinchi hafta yo‘l xaritasi”</li>\n<li>Premium quti + ichki to‘ldirgich (qadoqlash)</li>\n</ul>\n<p><em>Eslatma: Quyidagi pozitsiyalar — amaliy misol. Sizning brifingizga qarab tarkib o‘zgaradi.</em></p>\n
+<h2>Natija: eNPS +23% va onboarding hissiyotining o‘zgarishi</h2>\n<p>Welcome pack joriy qilingandan so‘ng ichki so‘rovnomada eNPS ko‘rsatkichi 23% ga oshdi. HR jamoasi eng katta o‘zgarishni “birinchi kun” taassurotida va jamoaga moslashuv tezligida qayd etdi.</p>\n
+<h3>HR fikri (qisqa iqtibos)</h3>\n<p>“Avval yangi xodimlar o‘zini mehmondek his qilardi. Endi esa birinchi kundan ‘men shu jamoaning bir qismiman’ degan signalni oladi. Eng zo‘ri — hammasi standart, ammo shaxsiy.”</p>\n
+<h3>Qaysi elementlar eng ko‘p “ta’sir qildi”</h3>\n<ul>\n<li>Ism bilan gravirovka (shaxsiylashtirish)</li>\n<li>Unboxing ssenariysi (quti ichidagi tartib)</li>\n<li>“Birinchi hafta yo‘l xaritasi” kartasi (amaliy qiymat)</li>\n</ul>\n
+<div class=\"cta\">\n  <p><strong>Buyurtma bermoqchimisiz?</strong> Telegram <a href=\"https://t.me/graveruz\">@graveruz</a> ga yozing yoki saytdagi shaklni to‘ldiring.</p>\n</div>\n`
+    },
+    {
+        slug: 'welcome-pack-hr-uchun-toliq-gid',
+        ruSlug: 'welcome-pack-dlya-sotrudnikov',
+        title: 'Welcome Pack: HR uchun to‘liq gid (tarkib, byudjet)',
+        description: 'Welcome packni to‘g‘ri tuzing: 3 daraja tarkib, byudjet formulasi, 5 xato. Toshkentda buyurtma qiling!',
+        date: '2026-03-03',
+        category: 'Gidlar',
+        keywords: ['welcome pack', 'onboarding', 'HR gid', 'xodimlarga sovg‘a', 'byudjet', 'Toshkent', 'lazer gravirovka'],
+        relatedPosts: ['keys-welcome-pack-povysil-enps-v-it-kompanii-uz', 'it-kompaniyalar-uchun-merch-toshkent'],
+        contentHtml: `
+<p>Welcome pack — bu shunchaki “sovg‘a quti” emas: u onboardingni tezlashtiradi, brendni his qildiradi va xodimga foydali narsalar beradi. Ushbu gid HR uchun: tarkib, byudjet, xatolar va Toshkentda buyurtma qilish yo‘li.</p>\n
+<h2>Welcome pack nima uchun kerak: biznes foydasi</h2>\n<ul>\n<li>Moslashuv tezlashadi: yangi xodim “nima qayerda?” deb kamroq chalg‘iydi</li>\n<li>Loyallik ortadi: “men qadrlanaman” signali</li>\n<li>Brend intizomi: bir xil standart, bir xil vizual kod</li>\n<li>Ichki kommunikatsiya: unboxing postlari, jamoa ichida ijobiy kontent</li>\n</ul>\n
+<h2>Tarkibni qanday tanlash: 3 daraja (bazaviy–standart–premium)</h2>\n<h3>Bazaviy (amaliy minimum)</h3>\n<ul>\n<li>Daftar + ruchka (gravirovka)</li>\n<li>Lanyard/badge-holder</li>\n<li>Stikerlar + tabrik karta</li>\n<li>Qadoqlash (oddiy, ammo chiroyli)</li>\n</ul>\n<h3>Standart (eng ko‘p tanlanadigan)</h3>\n<ul>\n<li>Termo-krujka yoki suv idishi (lazer gravirovka)</li>\n<li>Kabel/adapter, kichik organayzer</li>\n<li>Mini-souvenir: metal brelok (gravirovka)</li>\n<li>Brend quti + ichki dizayn</li>\n</ul>\n<h3>Premium (top rol va VIP onboarding)</h3>\n<ul>\n<li>Soat yoki premium ruchka (gravirovka)</li>\n<li>Zaryadlovchi (powerbank) yoki aksessuarlar to‘plami</li>\n<li>Yog‘och/plastik stendlar (desk set)</li>\n<li>Personal message + nomli qadoqlash</li>\n</ul>\n
+<h2>Byudjetni hisoblash: oddiy formula</h2>\n<p>Amaliy formula: (buyumlar qiymati + gravirovka/print + qadoqlash + komplektatsiya + logistika) × zaxira koeffitsienti.</p>\n<p>Zaxira koeffitsienti odatda 1.05–1.15: yo‘qotish, qayta gravirovka yoki qo‘shimcha xodimlar uchun.</p>\n<p>Agar jamoa tez o‘sayotgan bo‘lsa, “stock” qilish (10–20% zaxira) onboardingni soddalashtiradi.</p>\n
+<h2>Lazer gravirovka: nima uchun aynan u</h2>\n<ul>\n<li>Chidamlilik: yozuv o‘chmaydi, ayniqsa metall/yog‘ochda</li>\n<li>Premium ko‘rinish: “print”dan ko‘ra aniqroq va toza</li>\n<li>Shaxsiylashtirish: ism, lavozim, qisqa shior, QR-kod</li>\n<li>Katta tirajlarda ham bir xil sifat</li>\n</ul>\n
+<h2>5 tipik xato (va qanday tuzatish)</h2>\n<ol>\n<li><strong>Faqat “chiroy”ga ishlash</strong><br>Foydasi yo‘q buyumlar tezda chetga chiqadi. Har pozitsiyada “ishdagi value” bo‘lsin.</li>\n<li><strong>Haddan tashqari aralash brending</strong><br>Katta logo hamma joyda — arzon ko‘rinadi. Minimal, aniq gravirovka yetarli.</li>\n<li><strong>Rolga moslashtirmaslik</strong><br>Hamma uchun bir xil — ba’zi rollar uchun keraksiz. 2–3 segment yetarli.</li>\n<li><strong>Muddatni noto‘g‘ri rejalash</strong><br>Tadbir/ish boshlash sanasidan kamida 10–14 kun oldin start qiling (tiraj katta bo‘lsa — 3 hafta).</li>\n<li><strong>Ro‘yxat va transliteratsiya nazoratsiz</strong><br>Ism-xatolar brendga zarba. Excel ro‘yxat + ikki bosqichli tekshiruv qiling.</li>\n</ol>\n
+<h2>Toshkentda qanday buyurtma beriladi: qisqa yo‘l xaritasi</h2>\n<ol>\n<li>Brif: xodimlar soni, rollar, byudjet, deadline</li>\n<li>Maket: logo/ism formatlari, qadoqlash dizayni</li>\n<li>Namuna: 1–2 dona test</li>\n<li>Ishlab chiqarish: lazer gravirovka + komplektatsiya</li>\n<li>QC + yetkazib berish: ofisga yoki tadbir joyiga</li>\n</ol>\n
+<div class=\"cta\">\n  <p><strong>Buyurtma bermoqchimisiz?</strong> Telegram <a href=\"https://t.me/graveruz\">@graveruz</a> ga yozing yoki saytdagi shaklni to‘ldiring.</p>\n</div>\n`
+    },
+    {
+        slug: 'it-kompaniya-uchun-welcome-pack-chek-listi',
+        ruSlug: 'merch-dlya-it-kompaniy-tashkent',
+        title: 'Welcome Pack chek-list: 27 pozitsiya (IT)',
+        description: '27 pozitsiyali welcome pack chek-listi: brending tavsiyalari va byudjet darajalari. Hisob-kitob so‘rang!',
+        date: '2026-03-03',
+        category: 'Chek-listlar',
+        keywords: ['welcome pack chek-list', 'IT kompaniya', 'Toshkent', 'brending', 'lazer gravirovka', 'onboarding', 'korporativ sovg‘a'],
+        relatedPosts: ['welcome-pack-hr-uchun-toliq-gid', 'keys-welcome-pack-povysil-enps-v-it-kompanii-uz'],
+        contentHtml: `
+<p>IT-kompaniyada welcome pack “tez va toza” bo‘lishi kerak: foydali, brendga mos va tirajda barqaror. Quyidagi chek-list — 27 pozitsiya, brending usuli va byudjet darajasi bilan.</p>\n
+<h2>Qanday foydalaniladi: 5 daqiqalik tanlov usuli</h2>\n<ul>\n<li>1) Bazaviy 7–9 pozitsiyani tanlang (har kimga bir xil)</li>\n<li>2) Rolga mos 3–5 pozitsiya qo‘shing (dev/PM/design/ops)</li>\n<li>3) Premium segment uchun 1–2 “wow” item</li>\n<li>4) Gravirovka formatini belgilang: logo + ism / logo + shior</li>\n<li>5) Deadline va tirajga qarab ishlab chiqarish rejasini tuzing</li>\n</ul>\n
+<h2>27 pozitsiya: amaliy jadval</h2>\n<table>\n<thead>\n<tr>\n<th>#</th>\n<th>Pozitsiya</th>\n<th>Nima uchun</th>\n<th>Brending</th>\n<th>Byudjet darajasi</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>Daftar (A5)</td>\n<td>Brendli kundalik</td>\n<td>Muqova gravirovka / folga</td>\n<td>Byudjet/Standart</td>\n</tr>\n<tr>\n<td>2</td>\n<td>Metall ruchka</td>\n<td>Har kuni ishlatiladi</td>\n<td>Korpusga lazer gravirovka</td>\n<td>Byudjet/Standart/Premium</td>\n</tr>\n<tr>\n<td>3</td>\n<td>Termo-krujka</td>\n<td>Ofis/uy, yuqori “value”</td>\n<td>Logo + ism gravirovka</td>\n<td>Standart/Premium</td>\n</tr>\n<tr>\n<td>4</td>\n<td>Suv idishi</td>\n<td>Sog‘lom odat, sport</td>\n<td>Gravirovka / UV-print</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>5</td>\n<td>Brelok</td>\n<td>Arzon, ammo yoqimli</td>\n<td>Gravirovka</td>\n<td>Byudjet</td>\n</tr>\n<tr>\n<td>6</td>\n<td>Badge-holder</td>\n<td>Praktik onboarding</td>\n<td>Logo print</td>\n<td>Byudjet</td>\n</tr>\n<tr>\n<td>7</td>\n<td>Lanyard</td>\n<td>ID kartalar uchun</td>\n<td>Logo print</td>\n<td>Byudjet</td>\n</tr>\n<tr>\n<td>8</td>\n<td>Stikerlar seti</td>\n<td>Brend “vibe”</td>\n<td>Die-cut</td>\n<td>Byudjet</td>\n</tr>\n<tr>\n<td>9</td>\n<td>Mousepad</td>\n<td>Har kuni ko‘z oldida</td>\n<td>Print / lazer markirovka</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>10</td>\n<td>Kabel-organayzer</td>\n<td>Stol tartibi</td>\n<td>Gravirovka</td>\n<td>Byudjet/Standart</td>\n</tr>\n<tr>\n<td>11</td>\n<td>Type-C adapter</td>\n<td>Texnik zarurat</td>\n<td>Qadoqda brending</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>12</td>\n<td>USB flash</td>\n<td>Fayl ko‘chirish</td>\n<td>Korpus gravirovka</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>13</td>\n<td>Powerbank</td>\n<td>Safar/kunlik</td>\n<td>Logo gravirovka</td>\n<td>Premium</td>\n</tr>\n<tr>\n<td>14</td>\n<td>Mini-sumka (pouch)</td>\n<td>Aksessuarlar uchun</td>\n<td>Patch/print</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>15</td>\n<td>T-shirt</td>\n<td>Jamoa identiteti</td>\n<td>Print</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>16</td>\n<td>Hoodie</td>\n<td>Premium merch</td>\n<td>Print / kashta</td>\n<td>Premium</td>\n</tr>\n<tr>\n<td>17</td>\n<td>Shapkacha (cap)</td>\n<td>Brend merch</td>\n<td>Kashta/print</td>\n<td>Byudjet/Standart</td>\n</tr>\n<tr>\n<td>18</td>\n<td>Sovun/handcream</td>\n<td>Care element</td>\n<td>Qadoq brending</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>19</td>\n<td>Shokolad/snack</td>\n<td>Unboxing emosiyasi</td>\n<td>Qadoq stiker</td>\n<td>Byudjet</td>\n</tr>\n<tr>\n<td>20</td>\n<td>Kofe/Choy mini-set</td>\n<td>Ofis rituali</td>\n<td>Qadoq brending</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>21</td>\n<td>Desk stand (yog‘och)</td>\n<td>Ish joyi dizayni</td>\n<td>Lazer gravirovka</td>\n<td>Premium</td>\n</tr>\n<tr>\n<td>22</td>\n<td>Vizitka qutisi</td>\n<td>B2B roli uchun</td>\n<td>Gravirovka</td>\n<td>Premium</td>\n</tr>\n<tr>\n<td>23</td>\n<td>Notbuk stendi</td>\n<td>Ergonomika</td>\n<td>Gravirovka/print</td>\n<td>Premium</td>\n</tr>\n<tr>\n<td>24</td>\n<td>Kalendarchik</td>\n<td>Brend har kuni</td>\n<td>Print</td>\n<td>Byudjet</td>\n</tr>\n<tr>\n<td>25</td>\n<td>Tabrik karta</td>\n<td>Hissiyot + yo‘l xarita</td>\n<td>Personal matn</td>\n<td>Byudjet</td>\n</tr>\n<tr>\n<td>26</td>\n<td>Qadoqlash qutisi</td>\n<td>Premium ta’sir</td>\n<td>Logo + stiker/gravirovka</td>\n<td>Standart/Premium</td>\n</tr>\n<tr>\n<td>27</td>\n<td>Ichki to‘ldirgich</td>\n<td>Unboxing tartibi (estetika)</td>\n<td>Brendsiz</td>\n<td>Standart/Premium</td>\n</tr>\n</tbody>\n</table>\n<p><em>Eslatma: Narxlar o‘rniga “byudjet darajasi” berildi. Yakuniy narx tiraj, model va qadoqlashga bog‘liq.</em></p>\n
+<h2>Gravirovka bo‘yicha 4 qoida (sifat va premium ko‘rinish uchun)</h2>\n<ul>\n<li>Minimalizm: 1 logo + 1 personal element (ism yoki qisqa shior)</li>\n<li>Kontrast: metall/yog‘ochda gravirovka eng yaxshi ko‘rinadi</li>\n<li>O‘qiluvchanlik: kichik shriftlardan qoching, 6–9 mm balandlik ideal</li>\n<li>Ro‘yxat nazorati: ism-lavozim transliteratsiyasi ikki marta tekshirilsin</li>\n</ul>\n
+<h2>Toshkentda tiraj buyurtmasi: muddatlar bo‘yicha tavsiya</h2>\n<ul>\n<li>20–50 dona: odatda 7–10 ish kuni</li>\n<li>50–200 dona: 10–14 ish kuni (segment bo‘lsa — biroz ko‘proq)</li>\n<li>200+ dona: 3 hafta atrofida (material logistikasiga qarab)</li>\n</ul>\n
+<h2>Qanday qilib tez hisob-kitob olasiz</h2>\n<ul>\n<li>Tiraj (necha dona) + segmentlar (necha tur)</li>\n<li>1 dona byudjet diapazoni (past/o‘rta/yuqori)</li>\n<li>Qadoqlash darajasi (oddiy/premium)</li>\n<li>Logo fayli (SVG/AI/PDF) va ism ro‘yxati (Excel)</li>\n</ul>\n
+<div class=\"cta\">\n  <p><strong>Buyurtma bermoqchimisiz?</strong> Telegram <a href=\"https://t.me/graveruz\">@graveruz</a> ga yozing yoki saytdagi shaklni to‘ldiring.</p>\n</div>\n`
+    },
+    {
+        slug: 'korporativ-sovgalar-toliq-gid-2025-uzbekistan',
+        ruSlug: 'polniy-gid-po-korporativnym-podarkam',
+        title: 'Korporativ sovg‘alar 2025: O‘zbekistonda to‘liq gid',
+        description: 'Xodimlar, hamkorlar va mijozlar uchun sovg‘ani to‘g‘ri tanlang. Byudjet, g‘oya, gravirovka. Hisob-kitob so‘rang!',
+        date: '2026-03-03',
+        category: 'Gidlar',
+        keywords: ['korporativ sovg‘alar', 'O‘zbekiston', 'Toshkent', 'lazer gravirovka', 'VIP sovg‘a', 'xodimlarga sovg‘a', 'B2B sovg‘a'],
+        relatedPosts: ['xodimlar-uchun-sovga-tanlash-chek-list', 'b2b-korporativ-sovga-tanlash'],
+        contentHtml: `
+<p>Korporativ sovg‘a — bu xarajat emas, signal. U ichki motivatsiyani ham, tashqi sheriklikni ham mustahkamlaydi. Ushbu 2025 gid: kimga nima berish, byudjet, etiket va lazer gravirovka orqali qanday premium effekt qilish.</p>\n
+<h2>1) Sovg‘a strategiyasi: avval maqsadni aniqlang</h2>\n<ul>\n<li>Ichki maqsadlar: loyallik, eNPS, onboarding, yubiley/KPI</li>\n<li>Tashqi maqsadlar: hamkorlikni mustahkamlash, “top-of-mind”, PR/ko‘rgazma</li>\n<li>Qoidasi: bir xil buyum turli auditoriyada turlicha ishlaydi</li>\n</ul>\n
+<h2>2) Kimga sovg‘a: 3 asosiy segment</h2>\n<h3>Xodimlar (HR yo‘nalishi)</h3>\n<ul>\n<li>Tug‘ilgan kun, yubiley, KPI, yangi loyiha yakuni</li>\n<li>Welcome pack va jamoa merch</li>\n<li>Shaxsiylashtirish: ism bilan gravirovka</li>\n</ul>\n<h3>Hamkorlar va mijozlar (B2B)</h3>\n<ul>\n<li>Status darajasi bo‘yicha: top/middle/operatsion</li>\n<li>Etiket: haddan tashqari shaxsiy yoki juda arzon sovg‘adan qochish</li>\n<li>“Uzoq yashaydigan” buyumlar: soat, ruchka, setlar</li>\n</ul>\n<h3>Tadbirlar (event)</h3>\n<ul>\n<li>Ko‘rgazma/summit uchun bir xil tiraj</li>\n<li>Yengil, tashishga qulay, brend ko‘rinishi aniq</li>\n<li>QR-kodli kartalar/aksessuarlar (lead tracking)</li>\n</ul>\n
+<h2>3) Byudjet: diapazonlar va “value” qoidasi</h2>\n<p>Byudjetni “so‘m” bilan emas, “qabul qiluvchi uchun qiymat” bilan o‘lchang. Katta logo qo‘yib arzon buyumni qimmatga aylantirib bo‘lmaydi. Aksincha, o‘rtacha buyum to‘g‘ri qadoq + gravirovka bilan premium ko‘rinadi.</p>\n<ul>\n<li>Byudjet: bazaviy (tiraj katta) / standart (ko‘p holat) / premium (VIP)</li>\n<li>Qadoqlash har doim ta’sir qiladi: unboxing — marketing</li>\n<li>Shaxsiylashtirish — eng kuchli multiplikator</li>\n</ul>\n
+<h2>4) Texnologiyalar: brending va lazer gravirovka</h2>\n<h3>Lazer gravirovka qachon ideal</h3>\n<ul>\n<li>Metall: ruchka, termos, brelok, soat</li>\n<li>Yog‘och: desk set, quti qopqog‘i, stend</li>\n<li>Chidamlilik kerak bo‘lsa: “yuvilmaydi, o‘chmaydi”</li>\n</ul>\n<h3>Print/UV/kashta qachon yaxshi</h3>\n<ul>\n<li>Tekstil merch (t-shirt, hoodie)</li>\n<li>Rangli grafikalar kerak bo‘lsa</li>\n<li>Tez tiraj (ba’zan)</li>\n</ul>\n
+<h2>5) Buyurtma jarayoni: Toshkentda 7 bosqich</h2>\n<ol>\n<li>Brif: auditoriya, tiraj, byudjet, deadline</li>\n<li>Tanlov: 3–5 variant (narx/ta’sir)</li>\n<li>Maket: logo + gravirovka joylashuvi</li>\n<li>Namuna: 1–2 dona</li>\n<li>Ishlab chiqarish: gravirovka + komplektatsiya</li>\n<li>QC: sifat nazorati</li>\n<li>Yetkazish: ofis/tadbir joyi</li>\n</ol>\n
+<h2>6) Eng ko‘p uchraydigan xatolar</h2>\n<ul>\n<li>Noto‘g‘ri segment: xodimga “hamkor sovg‘asi” berish</li>\n<li>Muddatsiz start: bayram oldidan oxirgi hafta</li>\n<li>Ro‘yxat tartibsiz: ismlar xato gravirovka bo‘ladi</li>\n<li>Yomon qadoqlash: premium buyum ham arzon ko‘rinadi</li>\n</ul>\n
+<div class=\"cta\">\n  <p><strong>Buyurtma bermoqchimisiz?</strong> Telegram <a href=\"https://t.me/graveruz\">@graveruz</a> ga yozing yoki saytdagi shaklni to‘ldiring.</p>\n</div>\n`
+    },
+    {
+        slug: 'xodimlarga-sovga-loyalikni-oshirish',
+        ruSlug: 'podarki-sotrudnikam-hr-gayd',
+        title: 'Xodimlarga sovg‘a: loyallikni oshiradigan tanlov',
+        description: 'Xodimlar uchun sovg‘ani psixologiya bilan tanlang: sabablar, misollar, gravirovka. Hisob-kitob so‘rang!',
+        date: '2026-03-03',
+        category: 'HR',
+        keywords: ['xodimlarga sovg‘a', 'HR', 'motivatsiya', 'loyallik', 'Toshkent', 'lazer gravirovka', 'welcome pack'],
+        relatedPosts: ['welcome-pack-hr-uchun-toliq-gid', 'korporativ-sovgalar-toliq-gid-2025-uzbekistan'],
+        contentHtml: `
+<p>Xodim sovg‘asi — “bonus” emas. U munosabatni belgilaydi: kompaniya sizni ko‘ryaptimi, qadrlaydimi? To‘g‘ri tanlangan sovg‘a loyallikni kuchaytiradi va jamoaning ichki energiyasini ko‘taradi.</p>\n
+<h2>Sovg‘a psixologiyasi: 3 ta signal</h2>\n<ul>\n<li>1) E’tirof: “Sening hissang ko‘rindi”</li>\n<li>2) Tegishlilik: “Sen bizning jamoada”</li>\n<li>3) Kelajak: “Biz senga sarmoya qilyapmiz”</li>\n</ul>\n
+<h2>Qaysi holatlarda sovg‘a eng kuchli ishlaydi</h2>\n<h3>Tug‘ilgan kun va shaxsiy sanalar</h3>\n<ul>\n<li>Shaxsiylashtirish: ism + qisqa tabrik</li>\n<li>Kichik, ammo “o‘zi uchun” bo‘lsin</li>\n</ul>\n<h3>Yubiley (1 yil, 3 yil, 5 yil)</h3>\n<ul>\n<li>Ko‘proq “status”: soat, premium ruchka, set</li>\n<li>Qadoqlash va sertifikat (raqamli)</li>\n</ul>\n<h3>KPI / loyiha yakuni</h3>\n<ul>\n<li>Jamoaviy birlik: bir xil dizayn, bitta shior</li>\n<li>Individual detal: ismlar gravirovkasi</li>\n</ul>\n
+<h2>Nima tanlash: “foyda + hissiyot” formulasi</h2>\n<p>Eng yaxshi sovg‘a ikki narsani beradi: amaliy qiymat (ishlatiladi) va hissiyot (esdalik). Lazer gravirovka aynan shu yerda ishlaydi: buyumni shaxsiy qiladi, “brend”ni zo‘rlab tiqmaydi.</p>\n<ul>\n<li>Daftar+ruchka seti — universal</li>\n<li>Termos/termo-krujka — kundalik foydalanish</li>\n<li>Desk aksessuarlar — ofis estetika</li>\n<li>Welcome pack — onboarding uchun ideal</li>\n</ul>\n
+<h2>Lazer gravirovka bilan shaxsiylashtirish: 6 g‘oya</h2>\n<ul>\n<li>Ism + lavozim (minimal)</li>\n<li>Ism + “core value” (masalan: “Create. Deliver.”)</li>\n<li>Yubiley raqami: “3 years”</li>\n<li>Jamoa nomi: “Product Team”</li>\n<li>QR-kod: ichki portal / onboarding sahifasi</li>\n<li>Mikro-ikon: kompaniya belgisi (kichik)</li>\n</ul>\n
+<h2>Samarani qanday o‘lchash (HR uchun)</h2>\n<ul>\n<li>eNPS yoki mini-so‘rov: “1–10, onboarding qanday?”</li>\n<li>Birinchi 30 kun: savollar soni/tezligi</li>\n<li>Ichki kontent: unboxing postlar soni</li>\n<li>Kadrlar oqimi: 3–6 oyda trendni kuzatish</li>\n</ul>\n
+<div class=\"cta\">\n  <p><strong>Buyurtma bermoqchimisiz?</strong> Telegram <a href=\"https://t.me/graveruz\">@graveruz</a> ga yozing yoki saytdagi shaklni to‘ldiring.</p>\n</div>\n`
+    },
+    {
+        slug: 'b2b-hamkorlar-uchun-sovgalar-etiket-gid',
+        ruSlug: 'podarki-klientam-partneram-vip',
+        title: 'B2B sovg‘alar: hamkorlar uchun etiket va tanlov',
+        description: 'Hamkor/mijozga sovg‘a tanlang: status darajalari, taqiqlar, gravirovka. Toshkentda buyurtma qiling!',
+        date: '2026-03-03',
+        category: 'Biznes',
+        keywords: ['B2B sovg‘a', 'VIP sovg‘a', 'hamkorlar', 'mijozlar', 'etiket O‘zbekiston', 'Toshkent', 'lazer gravirovka'],
+        relatedPosts: ['vip-sovga-goyalari', 'korporativ-sovgalar-toliq-gid-2025-uzbekistan'],
+        contentHtml: `
+<p>B2B sovg‘a — bu muzokara tilida “hurmat” va “barqarorlik” degan signal. Noto‘g‘ri sovg‘a esa noqulaylik keltirishi mumkin. Ushbu gid: O‘zbekistonda biznes etiketi, status bo‘yicha darajalar va nimadan qochish.</p>\n
+<h2>O‘zbekistonda sovg‘a etiketi: 6 asosiy qoida</h2>\n<ul>\n<li>Hurmat va soddalik: haddan tashqari “dabdaba” ham noqulay bo‘lishi mumkin</li>\n<li>Brendni zo‘rlab tiqmang: minimal gravirovka ko‘proq premium</li>\n<li>Madaniy sezgirlik: juda shaxsiy buyumlar yoki bahsli mavzular yo‘q</li>\n<li>Kontrafakt/soxta brend — taqiqlangan signal</li>\n<li>Sovg‘a “poraxo‘rlik” ko‘rinishida bo‘lmasin: shaffof, o‘rtacha, protokolga mos</li>\n<li>Qadoqlash va tabrik — sovg‘aning yarmi</li>\n</ul>\n
+<h2>Status bo‘yicha 4 daraja: kimga nima mos</h2>\n<h3>1) Top rahbariyat (CEO/Director)</h3>\n<ul>\n<li>VIP set: soat, premium ruchka, desk aksessuarlar</li>\n<li>Gravirovka: ism yoki initsial + kichik logo</li>\n<li>Qadoqlash: premium quti</li>\n</ul>\n<h3>2) Bo‘lim rahbari / decision-maker</h3>\n<ul>\n<li>Termos/termo-krujka, premium daftar set</li>\n<li>B2B utilitar buyumlar: vizitka qutisi, stend</li>\n</ul>\n<h3>3) Operatsion aloqa (procurement/account)</h3>\n<ul>\n<li>Sifatli, lekin kamroq “VIP”: termos, desk accessory</li>\n<li>Praktik: ofisda ishlatiladigan buyum</li>\n</ul>\n<h3>4) Event/ko‘rgazma (tiraj)</h3>\n<ul>\n<li>Yengil sovg‘alar: brelok, mini-set, stiker+daftar</li>\n<li>QR-kodli kartalar/kuponlar</li>\n</ul>\n
+<h2>Nimani sovg‘a qilmaslik kerak: “qizil ro‘yxat”</h2>\n<ul>\n<li>Haddan tashqari shaxsiy buyumlar (parfyum, kiyim o‘lchami talab qiladigan narsalar)</li>\n<li>Siyosiy/mahalliy bahsli mavzudagi suvenirlar</li>\n<li>Sifatsiz gadjetlar (tez buziladi — brendga zarar)</li>\n<li>Juda arzon “promo” (VIPga mos emas)</li>\n<li>Noqonuniy yoki shubhali kelib chiqishli mahsulot</li>\n</ul>\n
+<h2>Lazer gravirovka: B2Bda eng xavfsiz premium instrument</h2>\n<ul>\n<li>Rangga bog‘liq emas: minimal va toza</li>\n<li>Logotipni “qichqirtirmaydi”</li>\n<li>Metall va yog‘ochda uzoq saqlanadi</li>\n<li>Ism/initsial qo‘shsa — darhol VIP darajaga o‘tadi</li>\n</ul>\n
+<h2>Toshkentda buyurtma: protokolga mos jarayon</h2>\n<ul>\n<li>Brif: kimga, qachon, qanday holat</li>\n<li>Variantlar: 3–5 ta daraja</li>\n<li>Namuna: protokol tasdiqlashi uchun</li>\n<li>Taqdimot: tabrik karta matni, qadoqlash</li>\n<li>Yetkazish: sanasi aniq, akt bilan</li>\n</ul>\n
+<div class=\"cta\">\n  <p><strong>Buyurtma bermoqchimisiz?</strong> Telegram <a href=\"https://t.me/graveruz\">@graveruz</a> ga yozing yoki saytdagi shaklni to‘ldiring.</p>\n</div>\n`
+    },
+    {
+        slug: 'korporativ-sovgalar-zakupshchik-chek-listi',
+        ruSlug: 'chek-list-zakupshchika-podarkov',
+        title: 'Zakupщик chek-list: korporativ sovg‘alar (8 qadam)',
+        description: 'Jarayonni xatosiz yuring: brif, maket, ishlab chiqarish, QC, yetkazish. Toshkentda hisob-kitob oling!',
+        date: '2026-03-03',
+        category: 'Chek-listlar',
+        keywords: ['zakup chek-list', 'korporativ sovg‘a jarayoni', 'yetkazib berish', 'sifat nazorati', 'Toshkent', 'brif', 'maket'],
+        relatedPosts: ['korporativ-sovgalar-toliq-gid-2025-uzbekistan', 'b2b-hamkorlar-uchun-sovgalar-etiket-gid'],
+        contentHtml: `
+<p>Korporativ sovg‘a xaridi ko‘pincha “oxirgi daqiqada” boshlangan stressli jarayonga aylanadi. Bu chek-list — operatsion: g‘oya emas, jarayon. 8 qadam bilan muddat, sifat va hujjatlarni nazorat qilasiz.</p>\n
+<h2>1-qadam: Brif (aniqlik — 50% natija)</h2>\n<ul>\n<li>Auditoriya: xodim/hamkor/mijoz/event</li>\n<li>Tiraj va segment: 1 turmi yoki 2–3 turmi</li>\n<li>Byudjet diapazoni va “must-have”</li>\n<li>Deadline: taqdimot sanasi</li>\n<li>Brend materiallari: logo, rang, shrift</li>\n</ul>\n
+<h2>2-qadam: Byudjet va risk zaxirasi</h2>\n<ul>\n<li>Narx tarkibi: buyum + brending + qadoqlash + komplektatsiya + logistika</li>\n<li>Zaxira: 5–15% (qayta gravirovka/qo‘shimcha dona)</li>\n<li>To‘lov shartlari va hujjatlar (schyot/faktura/akt)</li>\n</ul>\n
+<h2>3-qadam: Yetkazib beruvchini tanlash (10 mezon)</h2>\n<ul>\n<li>Portfolio va real namuna sifati</li>\n<li>Gravirovka aniqligi (metall/yog‘och)</li>\n<li>Tirajga tayyor quvvat</li>\n<li>QC tizimi bor-yo‘qligi</li>\n<li>Muddatga kafolat</li>\n<li>Hujjatlar, shartnoma</li>\n<li>Qadoqlash imkoniyatlari</li>\n<li>Toshkent bo‘yicha logistika</li>\n<li>Kommunikatsiya tezligi</li>\n<li>Avariya-reja (nima bo‘lsa?)</li>\n</ul>\n
+<h2>4-qadam: Maket va tasdiqlash (xatolar aynan shu yerda)</h2>\n<ul>\n<li>Logo formati: vektor (SVG/AI/PDF)</li>\n<li>Gravirovka joyi va o‘lchami</li>\n<li>Ismlar ro‘yxati (Excel) + transliteratsiya qoidasi</li>\n<li>Tabrik matni va qadoqlash yorlig‘i</li>\n</ul>\n
+<h2>5-qadam: Namuna (pilot)</h2>\n<ul>\n<li>1–2 dona tayyor namunani ko‘ring</li>\n<li>Kontrast, shrift o‘qiluvchanligi, joylashuv</li>\n<li>Qadoqlash “unboxing” tekshiruvi</li>\n<li>Tasdiq: yozma (chat/email)</li>\n</ul>\n
+<h2>6-qadam: Ishlab chiqarish va monitoring</h2>\n<ul>\n<li>Sana reja: kunma-kun</li>\n<li>Oraliq foto/video hisobot</li>\n<li>Segmentlar bo‘yicha komplektatsiya ro‘yxati</li>\n</ul>\n
+<h2>7-qadam: QC (sifat nazorati)</h2>\n<ul>\n<li>Namuna bilan solishtirish</li>\n<li>Ismlar xatosi yo‘qligi</li>\n<li>Qadoqlash shikastlanmagan</li>\n<li>Yetishmayotgan pozitsiyalar yo‘q</li>\n</ul>\n
+<h2>8-qadam: Yetkazib berish va hisobot</h2>\n<ul>\n<li>Qabul-berish akti</li>\n<li>Yakuniy ro‘yxat (necha dona, qanday segment)</li>\n<li>Ichki hisobot: byudjet, muddat, feedback</li>\n<li>Keyingi safar uchun “lessons learned”</li>\n</ul>\n
+<div class=\"cta\">\n  <p><strong>Buyurtma bermoqchimisiz?</strong> Telegram <a href=\"https://t.me/graveruz\">@graveruz</a> ga yozing yoki saytdagi shaklni to‘ldiring.</p>\n</div>\n`
+    },
+    {
+        slug: '8-mart-uchun-korporativ-sovgalar-goyalari',
+        ruSlug: 'podarki-na-8-marta-sotrudnicam',
+        title: '8 mart sovg‘alari: 20 g‘oya (korporativ, gravirovka)',
+        description: '8 martga jamoa uchun sovg‘a tanlang: 20 g‘oya, byudjet bo‘yicha. Toshkentda lazer gravirovka bilan buyurtma qiling!',
+        date: '2026-03-03',
+        category: 'G‘oyalar',
+        keywords: ['8 mart sovg‘a', 'korporativ sovg‘a', 'xodimalar', 'hamkasb', 'Toshkent', 'lazer gravirovka', 'g‘oyalar'],
+        relatedPosts: ['rahbar-uchun-8-mart-vip-goya', 'korporativ-sovgalar-toliq-gid-2025-uzbekistan'],
+        contentHtml: `
+<p>8 martda sovg‘a — bu “e’tibor”ning eng ko‘rinadigan shakli. B2Bda esa yana bir vazifa bor: hammasi bir xil standartda, tirajda, o‘z vaqtida va brendga mos bo‘lishi. Bu maqolada 20 g‘oya va amaliy tanlov qoidalari.</p>\n
+<h2>B2B nuqtai nazari: 8 mart sovg‘asining 4 maqsadi</h2>\n<ul>\n<li>E’tirof va hurmat (jamoa motivatsiyasi)</li>\n<li>Employer brand (ichki PR)</li>\n<li>Standartlashtirilgan jarayon (zakup uchun oson)</li>\n<li>Brendli, ammo elegant ko‘rinish (lazer gravirovka)</li>\n</ul>\n
+<h2>Byudjetni qanday tanlash: “kishi boshiga” yondashuv</h2>\n<p>Amaliy tavsiya: 3 paket qiling — byudjet, standart, premium. Shunda bir xil tiraj ichida ham segmentlash oson.</p>\n<ul>\n<li>Byudjet: kichik, ammo yoqimli (promo emas)</li>\n<li>Standart: eng balansli, ko‘pchilik uchun</li>\n<li>Premium: rahbarlar/kalit rol egalari uchun</li>\n</ul>\n
+<h2>20 g‘oya (gravirovka/branding bilan)</h2>\n<table>\n<thead>\n<tr>\n<th>#</th>\n<th>G‘oya</th>\n<th>Brending/gravirovka</th>\n<th>Byudjet darajasi</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>Ism gravirovkali termo-krujka</td>\n<td>Logo + ism, minimal</td>\n<td>Standart/Premium</td>\n</tr>\n<tr>\n<td>2</td>\n<td>Premium ruchka + daftar seti</td>\n<td>Ruchkada gravirovka</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>3</td>\n<td>Yog‘och qutida mini-set</td>\n<td>Qopqoqda gravirovka</td>\n<td>Premium</td>\n</tr>\n<tr>\n<td>4</td>\n<td>Brelok (metal) + karta</td>\n<td>Gravirovka, tabrik</td>\n<td>Byudjet</td>\n</tr>\n<tr>\n<td>5</td>\n<td>Suv idishi (sport)</td>\n<td>Logo + motivatsion so‘z</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>6</td>\n<td>Desk-organayzer</td>\n<td>Yog‘ochda gravirovka</td>\n<td>Premium</td>\n</tr>\n<tr>\n<td>7</td>\n<td>Kabel/adapter seti (pouch)</td>\n<td>Pouch brending</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>8</td>\n<td>Shokolad/snack + tabrik</td>\n<td>Qadoqqa stiker</td>\n<td>Byudjet</td>\n</tr>\n<tr>\n<td>9</td>\n<td>Kofe/Choy mini-set</td>\n<td>Qadoq brending</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>10</td>\n<td>Aroma sham (neytral)</td>\n<td>Yorliq brending</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>11</td>\n<td>Mini-kosmetika (care set)</td>\n<td>Qadoq brending</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>12</td>\n<td>T-shirt (jamoa merch)</td>\n<td>Print</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>13</td>\n<td>Cap/shapkacha</td>\n<td>Kashta/print</td>\n<td>Byudjet/Standart</td>\n</tr>\n<tr>\n<td>14</td>\n<td>Notbuk stendi</td>\n<td>Gravirovka</td>\n<td>Premium</td>\n</tr>\n<tr>\n<td>15</td>\n<td>Mousepad</td>\n<td>Print/markirovka</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>16</td>\n<td>Planner (2025/2026)</td>\n<td>Muqovada gravirovka</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>17</td>\n<td>Metall vizitka qutisi</td>\n<td>Gravirovka</td>\n<td>Premium</td>\n</tr>\n<tr>\n<td>18</td>\n<td>Zargarlik qutichasi (neytral)</td>\n<td>Gravirovka</td>\n<td>Premium</td>\n</tr>\n<tr>\n<td>19</td>\n<td>Mini-issiq ichimlik termos</td>\n<td>Logo + ism</td>\n<td>Premium</td>\n</tr>\n<tr>\n<td>20</td>\n<td>Gullar + brend karta (kombo)</td>\n<td>Karta brending</td>\n<td>Byudjet/Standart</td>\n</tr>\n</tbody>\n</table>\n<p><em>Eslatma: Narxlar bo‘yicha yakuniy hisob-kitob tiraj va modelga bog‘liq. Bu yerda byudjet darajasi ko‘rsatilgan.</em></p>\n
+<h2>Lazer gravirovka: 8 mart uchun eng toza premium effekt</h2>\n<ul>\n<li>Haddan tashqari rangli printdan ko‘ra elegantroq</li>\n<li>Metall buyumlarda juda chiroyli ko‘rinadi</li>\n<li>Ism qo‘shilsa — sovg‘a shaxsiylashadi</li>\n<li>Tirajda bir xil sifat saqlanadi</li>\n</ul>\n
+<h2>Muddat va logistika: kechikmaslik uchun</h2>\n<ul>\n<li>Eng yaxshi start: 8 martdan 2–3 hafta oldin</li>\n<li>Ro‘yxat: ismlar bo‘lsa, 2 bosqichli tekshiruv</li>\n<li>Qadoqlash: bir xil, ichki tartib bilan</li>\n<li>Yetkazish: ofisga yoki tadbir joyiga aniq sana</li>\n</ul>\n
+<div class=\"cta\">\n  <p><strong>Buyurtma bermoqchimisiz?</strong> Telegram <a href=\"https://t.me/graveruz\">@graveruz</a> ga yozing yoki saytdagi shaklni to‘ldiring.</p>\n</div>\n`
+    },
+    {
+        slug: 'rahbar-uchun-8-mart-vip-goya',
+        ruSlug: 'chto-podarit-rukovoditelyu-na-8-marta',
+        title: 'Rahbar uchun 8 mart: 10 VIP g‘oya (gravirovka)',
+        description: 'Rahbar uchun statusli sovg‘a tanlang: $50–$500 diapazonda 10 g‘oya. Toshkentda gravirovka bilan buyurtma qiling!',
+        date: '2026-03-03',
+        category: 'VIP',
+        keywords: ['rahbar sovg‘a 8 mart', 'VIP sovg‘a', 'lazer gravirovka', 'Toshkent', 'biznes etiket', 'soat', 'premium set'],
+        relatedPosts: ['vip-sovga-goyalari', 'b2b-hamkorlar-uchun-sovgalar-etiket-gid'],
+        contentHtml: `
+<p>Rahbarga sovg‘a — protokol. U haddan tashqari shaxsiy bo‘lmasligi, ammo statusni ko‘rsatishi kerak. Lazer gravirovka shu balansni beradi: minimal, premium va esdalik. Quyida $50–$500 diapazondagi 10 g‘oya.</p>\n
+<h2>Etiket: rahbar sovg‘asining 5 qoidasi</h2>\n<ul>\n<li>Shaxsiy chegarani hurmat qiling: juda “intim” buyumlar yo‘q</li>\n<li>Sifat birinchi o‘rinda: arzon ko‘rinish — yomon signal</li>\n<li>Minimal brending: kichik logo yoki initsial</li>\n<li>Qadoqlash: premium, ammo soddalik bilan</li>\n<li>Tabrik matni: qisqa, rasmiy va iliq</li>\n</ul>\n
+<h2>Narx diapazoni: $50–$500 qanday bo‘linadi</h2>\n<ul>\n<li>$50–$120: premium ruchka, setlar, sifatli aksessuarlar</li>\n<li>$120–$250: desk set, premium quti, shaxsiylashtirish ko‘proq</li>\n<li>$250–$500: soat, VIP komplekt, yuqori darajadagi qadoqlash</li>\n</ul>\n
+<h2>10 VIP g‘oya (gravirovka bilan)</h2>\n<ol>\n<li><strong>Premium ruchka + nomli quti ($50–$120)</strong><br>Ruchkada initsial/ism, qutida kichik logo. Juda protokolli va xavfsiz tanlov.</li>\n<li><strong>Brendli planner + metal vizitka qutisi ($60–$140)</strong><br>Agar rahbar ko‘p uchrashuv qilsa, bu amaliy sovg‘a.</li>\n<li><strong>Termos premium + tabrik karta ($70–$160)</strong><br>Har kuni ishlatiladi, gravirovka esa shaxsiy qiladi.</li>\n<li><strong>Yog‘och desk-organayzer seti ($120–$220)</strong><br>Ish stolida doim ko‘rinadi, brend eslatmasi yumshoq.</li>\n<li><strong>Premium qutida “office ritual” set ($120–$250)</strong><br>Choy/kofe mini-set + aksessuarlar. Brending qadoqda, buyumlarda gravirovka.</li>\n<li><strong>Zaryadlovchi/powerbank premium ($120–$250)</strong><br>Safar va uchrashuvlar uchun foydali. Logo minimal.</li>\n<li><strong>VIP sovg‘a qutisi: 3–5 buyumli kombo ($180–$320)</strong><br>Har bir buyumda “1 detal” gravirovka. Qadoqlash yuqori darajada.</li>\n<li><strong>Premium ruchka + soat kombo ($250–$450)</strong><br>Statusli, ammo shaxsiylik chegarasidan chiqmaydi.</li>\n<li><strong>Soat (gravirovka bilan) ($300–$500)</strong><br>Orqa qopqoqda initsial yoki qisqa tabrik gravirovkasi.</li>\n<li><strong>Individual VIP konsept ($200–$500+)</strong><br>Kompaniya tarixiga mos shior, nomli qadoqlash, premium materiallar.</li>\n</ol>\n
+<h2>Gravirovka matni: 6 tayyor variant</h2>\n<ul>\n<li>Hurmat bilan — [Kompaniya nomi]</li>\n<li>Rahmat! 8 Mart muborak!</li>\n<li>Sizga minnatdorchilik bilan</li>\n<li>Lead with strength</li>\n<li>Together we grow</li>\n<li>2026 • [Initsial]</li>\n</ul>\n
+<div class=\"cta\">\n  <p><strong>Buyurtma bermoqchimisiz?</strong> Telegram <a href=\"https://t.me/graveruz\">@graveruz</a> ga yozing yoki saytdagi shaklni to‘ldiring.</p>\n</div>\n`
+    },
+    {
+        slug: 'biznes-hamkorlar-uchun-vip-sovgalar',
+        ruSlug: 'idei-vip-podarkov',
+        title: 'VIP sovg‘alar: 15+ g‘oya (O‘zbekiston)',
+        description: 'VIP sovg‘ani statusga mos tanlang: 15+ g‘oya, $ diapazonlar. Toshkentda lazer gravirovka bilan buyurtma qiling!',
+        date: '2026-03-03',
+        category: 'VIP',
+        keywords: ['VIP sovg‘a', 'biznes sovg‘a', 'hamkorlar', 'O‘zbekiston', 'Toshkent', 'lazer gravirovka', 'narx diapazoni'],
+        relatedPosts: ['b2b-hamkorlar-uchun-sovgalar-etiket-gid', 'rahbar-uchun-8-mart-vip-goya'],
+        contentHtml: `
+<p>VIP sovg‘a — bu “munosabat darajasi”ni ko‘rsatadigan belgidir. U sifatsiz bo‘lsa — brendga zarar, to‘g‘ri tanlansa — hamkorlikni mustahkamlaydi. Quyida 15+ g‘oya va amaliy narx diapazonlari.</p>\n
+<h2>VIP sovg‘ani tanlash: 4 filtr</h2>\n<ul>\n<li>1) Qabul qiluvchining statusi (top/middle/operatsion)</li>\n<li>2) Holat (shartnoma, yubiley, bayram, minnatdorchilik)</li>\n<li>3) Etiket (shaxsiy chegaralar, madaniy sezgirlik)</li>\n<li>4) Shaxsiylashtirish (lazer gravirovka)</li>\n</ul>\n
+<h2>15+ g‘oya: katalog format</h2>\n<table>\n<thead>\n<tr>\n<th>#</th>\n<th>G‘oya</th>\n<th>Taxminiy diapazon</th>\n<th>Kimga mos</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>Gravirovkali soat</td>\n<td>$250–$500+</td>\n<td>Top rahbar, kalit hamkor</td>\n</tr>\n<tr>\n<td>2</td>\n<td>Premium ruchka + quti</td>\n<td>$50–$200</td>\n<td>Rahbar, decision-maker</td>\n</tr>\n<tr>\n<td>3</td>\n<td>Desk set (yog‘och/metall)</td>\n<td>$120–$350</td>\n<td>Rahbar, bo‘lim boshlig‘i</td>\n</tr>\n<tr>\n<td>4</td>\n<td>VIP gift box (3–6 buyum)</td>\n<td>$150–$450</td>\n<td>Hamkorlar, mijozlar</td>\n</tr>\n<tr>\n<td>5</td>\n<td>Termos premium (nomli)</td>\n<td>$40–$150</td>\n<td>Mijoz/hamkor</td>\n</tr>\n<tr>\n<td>6</td>\n<td>Vizitka qutisi (metall)</td>\n<td>$30–$120</td>\n<td>B2B aloqa</td>\n</tr>\n<tr>\n<td>7</td>\n<td>Powerbank premium</td>\n<td>$60–$200</td>\n<td>Safar qiladigan hamkor</td>\n</tr>\n<tr>\n<td>8</td>\n<td>Planner + aksessuarlar seti</td>\n<td>$50–$180</td>\n<td>Decision-maker</td>\n</tr>\n<tr>\n<td>9</td>\n<td>Mini-bar / aksessuar qutisi (neytral)</td>\n<td>$120–$300</td>\n<td>VIP hamkor (etikka mos)</td>\n</tr>\n<tr>\n<td>10</td>\n<td>Yog‘och qutida choy/kofe set</td>\n<td>$80–$220</td>\n<td>Ofis protokoli</td>\n</tr>\n<tr>\n<td>11</td>\n<td>Brendli “welcome for partner” set</td>\n<td>$90–$250</td>\n<td>Yangi hamkor</td>\n</tr>\n<tr>\n<td>12</td>\n<td>Metall brelok premium</td>\n<td>$15–$70</td>\n<td>Qisqa uchrashuv/komplement</td>\n</tr>\n<tr>\n<td>13</td>\n<td>Notbuk stendi premium</td>\n<td>$70–$220</td>\n<td>Tech hamkor</td>\n</tr>\n<tr>\n<td>14</td>\n<td>Konferensiya VIP seti</td>\n<td>$60–$200</td>\n<td>Event, ko‘rgazma VIP</td>\n</tr>\n<tr>\n<td>15</td>\n<td>Individual konsept (custom)</td>\n<td>$200–$600+</td>\n<td>Alohida protokol holatlari</td>\n</tr>\n<tr>\n<td>16</td>\n<td>Premium qadoqlash + tabrik kartasi</td>\n<td>$10–$40</td>\n<td>Har qanday sovg‘a uchun multiplikator</td>\n</tr>\n</tbody>\n</table>\n<p><em>Eslatma: Diapazonlar — yo‘l-yo‘riq. Yakuniy narx brif, model va tirajga bog‘liq.</em></p>\n
+<h2>Nima uchun lazer gravirovka VIP segmentda standart</h2>\n<ul>\n<li>Premium ko‘rinish: minimal, toza</li>\n<li>Chidamlilik: uzoq saqlanadi</li>\n<li>Shaxsiylashtirish: ism/initsial + kichik logo</li>\n<li>Qadoqlash bilan birga “wow” effekt</li>\n</ul>\n
+<h2>Toshkentda buyurtma qilish: qanday ma’lumot kerak</h2>\n<ul>\n<li>Kimga: lavozim/status (umumiy)</li>\n<li>Necha dona va qachonga</li>\n<li>Byudjet diapazoni</li>\n<li>Logo fayli (vektor)</li>\n<li>Gravirovka matni (1–2 variant)</li>\n</ul>\n
+<h2>VIP sovg‘a uchun tabrik matni: 5 qisqa variant</h2>\n<ul>\n<li>Hamkorligingiz uchun minnatdormiz.</li>\n<li>Hurmat bilan, [Kompaniya nomi].</li>\n<li>Birgalikdagi muvaffaqiyatlar uchun rahmat.</li>\n<li>Doimiy hamkorlik tilab qolamiz.</li>\n<li>Siz bilan ishlash — biz uchun qadriyat.</li>\n</ul>\n
+<div class=\"cta\">\n  <p><strong>Buyurtma bermoqchimisiz?</strong> Telegram <a href=\"https://t.me/graveruz\">@graveruz</a> ga yozing yoki saytdagi shaklni to‘ldiring.</p>\n</div>\n`
+    },
+    {
+        slug: 'uzbekistonda-biznes-sovga-etiketi',
+        ruSlug: 'delovoy-etiket-biznes-podarki-uzbekistan',
+        title: 'O‘zbekistonda biznes sovg‘a etiketi: VIP tanlov',
+        description: 'VIP sovg‘ada xatolardan qoching: etiket, madaniy kontekst, status darajalari. Ekspert gidini o‘qing.',
+        date: '2026-03-03',
+        category: 'Biznes',
+        keywords: ['biznes etiket', 'sovg‘a O‘zbekiston', 'VIP sovg‘a', 'hamkor', 'madaniy kontekst', 'Toshkent', 'protokol'],
+        relatedPosts: ['b2b-hamkorlar-uchun-sovgalar-etiket-gid', 'vip-sovga-goyalari'],
+        contentHtml: `
+<p>O‘zbekistonda sovg‘a — qadimiy mehmondo‘stlik kodining bir qismi. Biznesda esa u protokolga aylanadi: hurmat, chegaralar va maqsad. Bu maqola — sotuv emas, ekspertiza: qanday tanlash va nimadan qochish.</p>\n
+<h2>Madaniy kontekst: sovg‘a nimani anglatadi</h2>\n<p>Sovg‘a ko‘pincha “aloqa mustahkamligi”ni bildiradi. Biroq biznesda u shaffof bo‘lishi va noqulay vaziyat yaratmasligi kerak. Shuning uchun minimalizm, sifat va protokol — asosiy mezonlar.</p>\n
+<h2>5 ta “to‘g‘ri” belgi: sovg‘a qanday bo‘lsa yaxshi</h2>\n<ul>\n<li>Sifatli va neytral (har kimga mos)</li>\n<li>Uzoq yashaydi (tez buzilmaydi)</li>\n<li>Qadoqlash chiroyli (unboxing)</li>\n<li>Tabrik qisqa va hurmatli</li>\n<li>Brend minimal (lazer gravirovka — ideal)</li>\n</ul>\n
+<h2>Status bo‘yicha tanlash: protokol xaritasi</h2>\n<h3>Top rahbarlar</h3>\n<ul>\n<li>VIP setlar: soat, premium ruchka, desk set</li>\n<li>Ism/initsial gravirovkasi — eng toza personalizatsiya</li>\n</ul>\n<h3>Bo‘lim rahbarlari va decision-maker</h3>\n<ul>\n<li>Termos/daftar set, aksessuarlar</li>\n<li>Sifatli, ammo haddan tashqari “qimmat” ko‘rinmaydi</li>\n</ul>\n<h3>Operatsion aloqalar</h3>\n<ul>\n<li>Amaliy buyumlar: termos, organizer, vizitka qutisi</li>\n<li>Qadoqlash soddaroq bo‘lishi mumkin</li>\n</ul>\n
+<h2>Nimani bermaslik kerak: etik risklar</h2>\n<ul>\n<li>Juda shaxsiy buyumlar (didga bog‘liq)</li>\n<li>Bahsli mavzu yoki “hazil” suvenirlari</li>\n<li>Sifatsiz gadget/promo</li>\n<li>Soxta brendlar (reputatsion risk)</li>\n<li>Noaniq kelib chiqish (huquqiy risk)</li>\n</ul>\n
+<h2>Taqdimot va kommunikatsiya: sovg‘ani qanday berish</h2>\n<ul>\n<li>Taqdimot vaqti: uchrashuv oxiri yoki muhim bosqichdan keyin</li>\n<li>Tabrik karta: 1–2 gap, rasmiy ohang</li>\n<li>Qadoqlash: toza, brendli, ammo minimal</li>\n<li>Hisobdorlik: kompaniya ichida qayd (kimga, qachon, nima)</li>\n</ul>\n
+<div class=\"cta\">\n  <p><strong>Buyurtma bermoqchimisiz?</strong> Telegram <a href=\"https://t.me/graveruz\">@graveruz</a> ga yozing yoki saytdagi shaklni to‘ldiring.</p>\n</div>\n`
+    },
+
 {
     "slug": "8-mart-xodimlarga-sovgalar",
     "ruSlug": "podarki-na-8-marta-sotrudnicam",

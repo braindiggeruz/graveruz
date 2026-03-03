@@ -55,7 +55,17 @@ export const BLOG_SLUG_MAP = {
     'chto-podarit-na-8-marta-devushke-mame-kollege': 'chto-podarit-na-8-marta-devushke-mame-kollege-uz',
     'nedorogie-podarki-na-8-marta': 'nedorogie-podarki-na-8-marta-uz',
     'gravirovka-v-tashkente-na-8-marta': 'gravirovka-v-tashkente-na-8-marta-uz',
-    'keys-welcome-pack-povysil-enps-v-it-kompanii': 'keys-welcome-pack-povysil-enps-v-it-kompanii',
+    'keys-welcome-pack-povysil-enps-v-it-kompanii': 'keys-welcome-pack-povysil-enps-v-it-kompanii-uz',
+    'welcome-pack-dlya-sotrudnikov': 'welcome-pack-hr-uchun-toliq-gid',
+    'merch-dlya-it-kompaniy-tashkent': 'it-kompaniya-uchun-welcome-pack-chek-listi',
+    'polniy-gid-po-korporativnym-podarkam': 'korporativ-sovgalar-toliq-gid-2025-uzbekistan',
+    'podarki-sotrudnikam-hr-gayd': 'xodimlarga-sovga-loyalikni-oshirish',
+    'podarki-klientam-partneram-vip': 'b2b-hamkorlar-uchun-sovgalar-etiket-gid',
+    'chek-list-zakupshchika-podarkov': 'korporativ-sovgalar-zakupshchik-chek-listi',
+    'podarki-na-8-marta-sotrudnicam': '8-mart-uchun-korporativ-sovgalar-goyalari',
+    'chto-podarit-rukovoditelyu-na-8-marta': 'rahbar-uchun-8-mart-vip-goya',
+    'idei-vip-podarkov': 'biznes-hamkorlar-uchun-vip-sovgalar',
+    'delovoy-etiket-biznes-podarki-uzbekistan': 'uzbekistonda-biznes-sovga-etiketi',
   },
   uz: {
     'korporativ-sovgalar-boyicha-toliq-qollanma': 'polniy-gid-po-korporativnym-podarkam',
@@ -97,7 +107,18 @@ export const BLOG_SLUG_MAP = {
     'chto-podarit-devushke-na-8-marta-uz': 'chto-podarit-devushke-na-8-marta',
     'chto-podarit-na-8-marta-devushke-mame-kollege-uz': 'chto-podarit-na-8-marta-devushke-mame-kollege',
     'nedorogie-podarki-na-8-marta-uz': 'nedorogie-podarki-na-8-marta',
-    'gravirovka-v-tashkente-na-8-marta-uz': 'gravirovka-v-tashkente-na-8-marta'
+    'gravirovka-v-tashkente-na-8-marta-uz': 'gravirovka-v-tashkente-na-8-marta',
+    'keys-welcome-pack-povysil-enps-v-it-kompanii-uz': 'keys-welcome-pack-povysil-enps-v-it-kompanii',
+    'welcome-pack-hr-uchun-toliq-gid': 'welcome-pack-dlya-sotrudnikov',
+    'it-kompaniya-uchun-welcome-pack-chek-listi': 'merch-dlya-it-kompaniy-tashkent',
+    'korporativ-sovgalar-toliq-gid-2025-uzbekistan': 'polniy-gid-po-korporativnym-podarkam',
+    'xodimlarga-sovga-loyalikni-oshirish': 'podarki-sotrudnikam-hr-gayd',
+    'b2b-hamkorlar-uchun-sovgalar-etiket-gid': 'podarki-klientam-partneram-vip',
+    'korporativ-sovgalar-zakupshchik-chek-listi': 'chek-list-zakupshchika-podarkov',
+    '8-mart-uchun-korporativ-sovgalar-goyalari': 'podarki-na-8-marta-sotrudnicam',
+    'rahbar-uchun-8-mart-vip-goya': 'chto-podarit-rukovoditelyu-na-8-marta',
+    'biznes-hamkorlar-uchun-vip-sovgalar': 'idei-vip-podarkov',
+    'uzbekistonda-biznes-sovga-etiketi': 'delovoy-etiket-biznes-podarki-uzbekistan'
   }
 };
 
