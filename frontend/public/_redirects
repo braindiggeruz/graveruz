@@ -4,9 +4,6 @@
 # ============================================================
 
 # --- Canonical domain: www → non-www (301) ---
-# Прямой редирект корня www — избегаем двойного 301 (www/ → non-www/ → /ru/)
-https://www.graver-studio.uz/  https://graver-studio.uz/ru/  301
-# Все остальные www URL → non-www (301)
 https://www.graver-studio.uz/*  https://graver-studio.uz/:splat  301
 
 # --- Static assets — serve directly (200) ---
