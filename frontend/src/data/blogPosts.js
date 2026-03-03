@@ -2258,206 +2258,206 @@ export const blogPosts = {
         slug: 'keys-welcome-pack-povysil-enps-v-it-kompanii-uz',
         ruSlug: 'keys-welcome-pack-povysil-enps-v-it-kompanii',
         title: 'Keys: Welcome Pack eNPSni 23% oshirdi — Toshkent',
-        description: 'Welcome pack natijalari: eNPS +23%. Tarkib, jarayon va HR fikri. Hisob-kitob so‘rang!',
+        description: "Welcome pack natijalari: eNPS +23%. Tarkib, jarayon va HR fikri. Hisob-kitob so'rang!",
         date: '2026-03-03',
         category: 'Keyslar',
-        keywords: ['welcome pack', 'onboarding', 'eNPS', 'IT kompaniya', 'Toshkent', 'lazer gravirovka', 'korporativ sovg‘a'],
+        keywords: ['welcome pack', 'onboarding', 'eNPS', 'IT kompaniya', 'Toshkent', 'lazer gravirovka', "korporativ sovg'a"],
         relatedPosts: ['welcome-pack-yangi-xodimlar', 'it-kompaniyalar-uchun-merch-toshkent', 'xodimlar-sadoqati-korporativ-sovgalar'],
         contentHtml: `
-<p>Agar onboarding “birinchi kun” bilan tugasa, xodimning ichki motivatsiyasi esa 3–4 haftada so‘nadi. Ushbu keysda Toshkentdagi IT-kompaniya welcome pack orqali yangi xodimlarda “men bu yerga tegishliman” hissini kuchaytirib, eNPS ko‘rsatkichini sezilarli yaxshiladi.</p>\n
-<h2>Muammo: yangi xodimlar sovuq start olardi</h2>\n<p>HR jamoasi uchta og‘riq nuqtani ko‘rdi: (1) birinchi haftada stress yuqori, (2) ichki kommunikatsiya sekin, (3) “qabul qilinish” hissi yetishmaydi. Natijada onboarding jarayoni uzayadi, savollar ko‘payadi, birinchi 30 kunda xatolar ko‘p uchraydi.</p>\n
+<p>Agar onboarding “birinchi kun” bilan tugasa, xodimning ichki motivatsiyasi esa 3–4 haftada so'nadi. Ushbu keysda Toshkentdagi IT-kompaniya welcome pack orqali yangi xodimlarda “men bu yerga tegishliman” hissini kuchaytirib, eNPS ko'rsatkichini sezilarli yaxshiladi.</p>\n
+<h2>Muammo: yangi xodimlar sovuq start olardi</h2>\n<p>HR jamoasi uchta og'riq nuqtani ko'rdi: (1) birinchi haftada stress yuqori, (2) ichki kommunikatsiya sekin, (3) “qabul qilinish” hissi yetishmaydi. Natijada onboarding jarayoni uzayadi, savollar ko'payadi, birinchi 30 kunda xatolar ko'p uchraydi.</p>\n
 <h2>Maqsad: yangi xodimni birinchi kundan brendga “ulash”, kundalik ishga tezroq kiritish va ijobiy emosiyani mustahkamlash.</h2>\n
 <h2>Nima buyurtma qilindi: 3 darajali welcome pack konsepti</h2>\n<p>Kompaniya uchta profilni ajratdi: junior/middle, senior va lead/management. Har biri uchun umumiy brend elementlari + rolga mos foydali buyumlar tanlandi.</p>\n<ul>\n<li>Bir xil vizual kod: ranglar, minimalistik dizayn, bitta “unboxing” ssenariysi</li>\n<li>Har bir buyumda lazer gravirovka: logo, ism, lavozim yoki qisqa shior</li>\n<li>Qadoqlash: “premium, ammo ortiqcha dabdaba emas”</li>\n</ul>\n
-<h2>Jarayon: brifdan yetkazib berishgacha 10 kun</h2>\n<p>Graver Studio bilan ish jarayoni 4 bosqichga bo‘lindi: brif → maket → ishlab chiqarish → QC + yetkazish. Toshkent ichida logistika va yig‘ish jarayoni alohida nazorat qilindi, shunda HRga “qo‘lda yig‘ish” yuklamasi tushmadi.</p>\n<ol>\n<li><strong>Brif (1 kun)</strong>\n<ul>\n<li>xodimlar soni va rollar bo‘yicha taqsimot</li>\n<li>byudjet diapazoni va “must-have” buyumlar</li>\n<li>brend qo‘llanmasi: rang, shrift, logo variantlari</li>\n<li>gravirovka formatlari: logo/ism/QR-kod</li>\n</ul>\n</li>\n<li><strong>Maket va tasdiqlash (1–2 kun)</strong>\n<ul>\n<li>3 ta mockup varianti</li>\n<li>ism yozilishi (transliteratsiya) bo‘yicha ro‘yxat</li>\n<li>qadoqlash yorlig‘i va tabrik kartasi matni</li>\n</ul>\n</li>\n<li><strong>Ishlab chiqarish (5–6 kun)</strong><br>Asosiy texnologiya — lazer gravirovka. U logotipni aniq, toza va uzoq saqlanadigan qiladi, ayniqsa metall va yog‘och yuzalarda.</li>\n<li><strong>QC va yetkazib berish (1 kun)</strong>\n<ul>\n<li>namuna bilan solishtirib tekshiruv</li>\n<li>qadoqlash, komplektatsiya, ro‘yxat bo‘yicha nazorat</li>\n<li>ofisga yetkazib berish, akt</li>\n</ul>\n</li>\n</ol>\n
-<h2>Nabor tarkibi: “nima bor edi?”</h2>\n<ul>\n<li>Metall termo-krujka yoki termos (logo + ism lazer gravirovka)</li>\n<li>Brendli daftar + metal ruchka (ruchkada gravirovka)</li>\n<li>USB/Type-C adapter yoki kabel-organayzer</li>\n<li>ID-karta uchun lanyard yoki badge-holder</li>\n<li>Stikerlar to‘plami (brend ikonlari)</li>\n<li>Tabrik kartasi: “birinchi hafta yo‘l xaritasi”</li>\n<li>Premium quti + ichki to‘ldirgich (qadoqlash)</li>\n</ul>\n<p><em>Eslatma: Quyidagi pozitsiyalar — amaliy misol. Sizning brifingizga qarab tarkib o‘zgaradi.</em></p>\n
-<h2>Natija: eNPS +23% va onboarding hissiyotining o‘zgarishi</h2>\n<p>Welcome pack joriy qilingandan so‘ng ichki so‘rovnomada eNPS ko‘rsatkichi 23% ga oshdi. HR jamoasi eng katta o‘zgarishni “birinchi kun” taassurotida va jamoaga moslashuv tezligida qayd etdi.</p>\n
-<h3>HR fikri (qisqa iqtibos)</h3>\n<p>“Avval yangi xodimlar o‘zini mehmondek his qilardi. Endi esa birinchi kundan ‘men shu jamoaning bir qismiman’ degan signalni oladi. Eng zo‘ri — hammasi standart, ammo shaxsiy.”</p>\n
-<h3>Qaysi elementlar eng ko‘p “ta’sir qildi”</h3>\n<ul>\n<li>Ism bilan gravirovka (shaxsiylashtirish)</li>\n<li>Unboxing ssenariysi (quti ichidagi tartib)</li>\n<li>“Birinchi hafta yo‘l xaritasi” kartasi (amaliy qiymat)</li>\n</ul>\n
-<div class=\"cta\">\n  <p><strong>Buyurtma bermoqchimisiz?</strong> Telegram <a href=\"https://t.me/graveruz\">@graveruz</a> ga yozing yoki saytdagi shaklni to‘ldiring.</p>\n</div>\n`
+<h2>Jarayon: brifdan yetkazib berishgacha 10 kun</h2>\n<p>Graver Studio bilan ish jarayoni 4 bosqichga bo'lindi: brif → maket → ishlab chiqarish → QC + yetkazish. Toshkent ichida logistika va yig'ish jarayoni alohida nazorat qilindi, shunda HRga “qo'lda yig'ish” yuklamasi tushmadi.</p>\n<ol>\n<li><strong>Brif (1 kun)</strong>\n<ul>\n<li>xodimlar soni va rollar bo'yicha taqsimot</li>\n<li>byudjet diapazoni va “must-have” buyumlar</li>\n<li>brend qo'llanmasi: rang, shrift, logo variantlari</li>\n<li>gravirovka formatlari: logo/ism/QR-kod</li>\n</ul>\n</li>\n<li><strong>Maket va tasdiqlash (1–2 kun)</strong>\n<ul>\n<li>3 ta mockup varianti</li>\n<li>ism yozilishi (transliteratsiya) bo'yicha ro'yxat</li>\n<li>qadoqlash yorlig'i va tabrik kartasi matni</li>\n</ul>\n</li>\n<li><strong>Ishlab chiqarish (5–6 kun)</strong><br>Asosiy texnologiya — lazer gravirovka. U logotipni aniq, toza va uzoq saqlanadigan qiladi, ayniqsa metall va yog'och yuzalarda.</li>\n<li><strong>QC va yetkazib berish (1 kun)</strong>\n<ul>\n<li>namuna bilan solishtirib tekshiruv</li>\n<li>qadoqlash, komplektatsiya, ro'yxat bo'yicha nazorat</li>\n<li>ofisga yetkazib berish, akt</li>\n</ul>\n</li>\n</ol>\n
+<h2>Nabor tarkibi: “nima bor edi?”</h2>\n<ul>\n<li>Metall termo-krujka yoki termos (logo + ism lazer gravirovka)</li>\n<li>Brendli daftar + metal ruchka (ruchkada gravirovka)</li>\n<li>USB/Type-C adapter yoki kabel-organayzer</li>\n<li>ID-karta uchun lanyard yoki badge-holder</li>\n<li>Stikerlar to'plami (brend ikonlari)</li>\n<li>Tabrik kartasi: “birinchi hafta yo'l xaritasi”</li>\n<li>Premium quti + ichki to'ldirgich (qadoqlash)</li>\n</ul>\n<p><em>Eslatma: Quyidagi pozitsiyalar — amaliy misol. Sizning brifingizga qarab tarkib o'zgaradi.</em></p>\n
+<h2>Natija: eNPS +23% va onboarding hissiyotining o'zgarishi</h2>\n<p>Welcome pack joriy qilingandan so'ng ichki so'rovnomada eNPS ko'rsatkichi 23% ga oshdi. HR jamoasi eng katta o'zgarishni “birinchi kun” taassurotida va jamoaga moslashuv tezligida qayd etdi.</p>\n
+<h3>HR fikri (qisqa iqtibos)</h3>\n<p>“Avval yangi xodimlar o'zini mehmondek his qilardi. Endi esa birinchi kundan 'men shu jamoaning bir qismiman' degan signalni oladi. Eng zo'ri — hammasi standart, ammo shaxsiy.”</p>\n
+<h3>Qaysi elementlar eng ko'p “ta'sir qildi”</h3>\n<ul>\n<li>Ism bilan gravirovka (shaxsiylashtirish)</li>\n<li>Unboxing ssenariysi (quti ichidagi tartib)</li>\n<li>“Birinchi hafta yo'l xaritasi” kartasi (amaliy qiymat)</li>\n</ul>\n
+<div class=\"cta\">\n  <p><strong>Buyurtma bermoqchimisiz?</strong> Telegram <a href=\"https://t.me/graveruz\">@graveruz</a> ga yozing yoki saytdagi shaklni to'ldiring.</p>\n</div>\n`
     },
     {
         slug: 'welcome-pack-hr-uchun-toliq-gid',
         ruSlug: 'welcome-pack-dlya-sotrudnikov',
-        title: 'Welcome Pack: HR uchun to‘liq gid (tarkib, byudjet)',
-        description: 'Welcome packni to‘g‘ri tuzing: 3 daraja tarkib, byudjet formulasi, 5 xato. Toshkentda buyurtma qiling!',
+        title: "Welcome Pack: HR uchun to'liq gid (tarkib, byudjet)",
+        description: "Welcome packni to'g'ri tuzing: 3 daraja tarkib, byudjet formulasi, 5 xato. Toshkentda buyurtma qiling!",
         date: '2026-03-03',
         category: 'Gidlar',
-        keywords: ['welcome pack', 'onboarding', 'HR gid', 'xodimlarga sovg‘a', 'byudjet', 'Toshkent', 'lazer gravirovka'],
+        keywords: ['welcome pack', 'onboarding', 'HR gid', "xodimlarga sovg'a", 'byudjet', 'Toshkent', 'lazer gravirovka'],
         relatedPosts: ['keys-welcome-pack-povysil-enps-v-it-kompanii-uz', 'it-kompaniyalar-uchun-merch-toshkent'],
         contentHtml: `
-<p>Welcome pack — bu shunchaki “sovg‘a quti” emas: u onboardingni tezlashtiradi, brendni his qildiradi va xodimga foydali narsalar beradi. Ushbu gid HR uchun: tarkib, byudjet, xatolar va Toshkentda buyurtma qilish yo‘li.</p>\n
-<h2>Welcome pack nima uchun kerak: biznes foydasi</h2>\n<ul>\n<li>Moslashuv tezlashadi: yangi xodim “nima qayerda?” deb kamroq chalg‘iydi</li>\n<li>Loyallik ortadi: “men qadrlanaman” signali</li>\n<li>Brend intizomi: bir xil standart, bir xil vizual kod</li>\n<li>Ichki kommunikatsiya: unboxing postlari, jamoa ichida ijobiy kontent</li>\n</ul>\n
-<h2>Tarkibni qanday tanlash: 3 daraja (bazaviy–standart–premium)</h2>\n<h3>Bazaviy (amaliy minimum)</h3>\n<ul>\n<li>Daftar + ruchka (gravirovka)</li>\n<li>Lanyard/badge-holder</li>\n<li>Stikerlar + tabrik karta</li>\n<li>Qadoqlash (oddiy, ammo chiroyli)</li>\n</ul>\n<h3>Standart (eng ko‘p tanlanadigan)</h3>\n<ul>\n<li>Termo-krujka yoki suv idishi (lazer gravirovka)</li>\n<li>Kabel/adapter, kichik organayzer</li>\n<li>Mini-souvenir: metal brelok (gravirovka)</li>\n<li>Brend quti + ichki dizayn</li>\n</ul>\n<h3>Premium (top rol va VIP onboarding)</h3>\n<ul>\n<li>Soat yoki premium ruchka (gravirovka)</li>\n<li>Zaryadlovchi (powerbank) yoki aksessuarlar to‘plami</li>\n<li>Yog‘och/plastik stendlar (desk set)</li>\n<li>Personal message + nomli qadoqlash</li>\n</ul>\n
-<h2>Byudjetni hisoblash: oddiy formula</h2>\n<p>Amaliy formula: (buyumlar qiymati + gravirovka/print + qadoqlash + komplektatsiya + logistika) × zaxira koeffitsienti.</p>\n<p>Zaxira koeffitsienti odatda 1.05–1.15: yo‘qotish, qayta gravirovka yoki qo‘shimcha xodimlar uchun.</p>\n<p>Agar jamoa tez o‘sayotgan bo‘lsa, “stock” qilish (10–20% zaxira) onboardingni soddalashtiradi.</p>\n
-<h2>Lazer gravirovka: nima uchun aynan u</h2>\n<ul>\n<li>Chidamlilik: yozuv o‘chmaydi, ayniqsa metall/yog‘ochda</li>\n<li>Premium ko‘rinish: “print”dan ko‘ra aniqroq va toza</li>\n<li>Shaxsiylashtirish: ism, lavozim, qisqa shior, QR-kod</li>\n<li>Katta tirajlarda ham bir xil sifat</li>\n</ul>\n
-<h2>5 tipik xato (va qanday tuzatish)</h2>\n<ol>\n<li><strong>Faqat “chiroy”ga ishlash</strong><br>Foydasi yo‘q buyumlar tezda chetga chiqadi. Har pozitsiyada “ishdagi value” bo‘lsin.</li>\n<li><strong>Haddan tashqari aralash brending</strong><br>Katta logo hamma joyda — arzon ko‘rinadi. Minimal, aniq gravirovka yetarli.</li>\n<li><strong>Rolga moslashtirmaslik</strong><br>Hamma uchun bir xil — ba’zi rollar uchun keraksiz. 2–3 segment yetarli.</li>\n<li><strong>Muddatni noto‘g‘ri rejalash</strong><br>Tadbir/ish boshlash sanasidan kamida 10–14 kun oldin start qiling (tiraj katta bo‘lsa — 3 hafta).</li>\n<li><strong>Ro‘yxat va transliteratsiya nazoratsiz</strong><br>Ism-xatolar brendga zarba. Excel ro‘yxat + ikki bosqichli tekshiruv qiling.</li>\n</ol>\n
-<h2>Toshkentda qanday buyurtma beriladi: qisqa yo‘l xaritasi</h2>\n<ol>\n<li>Brif: xodimlar soni, rollar, byudjet, deadline</li>\n<li>Maket: logo/ism formatlari, qadoqlash dizayni</li>\n<li>Namuna: 1–2 dona test</li>\n<li>Ishlab chiqarish: lazer gravirovka + komplektatsiya</li>\n<li>QC + yetkazib berish: ofisga yoki tadbir joyiga</li>\n</ol>\n
-<div class=\"cta\">\n  <p><strong>Buyurtma bermoqchimisiz?</strong> Telegram <a href=\"https://t.me/graveruz\">@graveruz</a> ga yozing yoki saytdagi shaklni to‘ldiring.</p>\n</div>\n`
+<p>Welcome pack — bu shunchaki “sovg'a quti” emas: u onboardingni tezlashtiradi, brendni his qildiradi va xodimga foydali narsalar beradi. Ushbu gid HR uchun: tarkib, byudjet, xatolar va Toshkentda buyurtma qilish yo'li.</p>\n
+<h2>Welcome pack nima uchun kerak: biznes foydasi</h2>\n<ul>\n<li>Moslashuv tezlashadi: yangi xodim “nima qayerda?” deb kamroq chalg'iydi</li>\n<li>Loyallik ortadi: “men qadrlanaman” signali</li>\n<li>Brend intizomi: bir xil standart, bir xil vizual kod</li>\n<li>Ichki kommunikatsiya: unboxing postlari, jamoa ichida ijobiy kontent</li>\n</ul>\n
+<h2>Tarkibni qanday tanlash: 3 daraja (bazaviy–standart–premium)</h2>\n<h3>Bazaviy (amaliy minimum)</h3>\n<ul>\n<li>Daftar + ruchka (gravirovka)</li>\n<li>Lanyard/badge-holder</li>\n<li>Stikerlar + tabrik karta</li>\n<li>Qadoqlash (oddiy, ammo chiroyli)</li>\n</ul>\n<h3>Standart (eng ko'p tanlanadigan)</h3>\n<ul>\n<li>Termo-krujka yoki suv idishi (lazer gravirovka)</li>\n<li>Kabel/adapter, kichik organayzer</li>\n<li>Mini-souvenir: metal brelok (gravirovka)</li>\n<li>Brend quti + ichki dizayn</li>\n</ul>\n<h3>Premium (top rol va VIP onboarding)</h3>\n<ul>\n<li>Soat yoki premium ruchka (gravirovka)</li>\n<li>Zaryadlovchi (powerbank) yoki aksessuarlar to'plami</li>\n<li>Yog'och/plastik stendlar (desk set)</li>\n<li>Personal message + nomli qadoqlash</li>\n</ul>\n
+<h2>Byudjetni hisoblash: oddiy formula</h2>\n<p>Amaliy formula: (buyumlar qiymati + gravirovka/print + qadoqlash + komplektatsiya + logistika) × zaxira koeffitsienti.</p>\n<p>Zaxira koeffitsienti odatda 1.05–1.15: yo'qotish, qayta gravirovka yoki qo'shimcha xodimlar uchun.</p>\n<p>Agar jamoa tez o'sayotgan bo'lsa, “stock” qilish (10–20% zaxira) onboardingni soddalashtiradi.</p>\n
+<h2>Lazer gravirovka: nima uchun aynan u</h2>\n<ul>\n<li>Chidamlilik: yozuv o'chmaydi, ayniqsa metall/yog'ochda</li>\n<li>Premium ko'rinish: “print”dan ko'ra aniqroq va toza</li>\n<li>Shaxsiylashtirish: ism, lavozim, qisqa shior, QR-kod</li>\n<li>Katta tirajlarda ham bir xil sifat</li>\n</ul>\n
+<h2>5 tipik xato (va qanday tuzatish)</h2>\n<ol>\n<li><strong>Faqat “chiroy”ga ishlash</strong><br>Foydasi yo'q buyumlar tezda chetga chiqadi. Har pozitsiyada “ishdagi value” bo'lsin.</li>\n<li><strong>Haddan tashqari aralash brending</strong><br>Katta logo hamma joyda — arzon ko'rinadi. Minimal, aniq gravirovka yetarli.</li>\n<li><strong>Rolga moslashtirmaslik</strong><br>Hamma uchun bir xil — ba'zi rollar uchun keraksiz. 2–3 segment yetarli.</li>\n<li><strong>Muddatni noto'g'ri rejalash</strong><br>Tadbir/ish boshlash sanasidan kamida 10–14 kun oldin start qiling (tiraj katta bo'lsa — 3 hafta).</li>\n<li><strong>Ro'yxat va transliteratsiya nazoratsiz</strong><br>Ism-xatolar brendga zarba. Excel ro'yxat + ikki bosqichli tekshiruv qiling.</li>\n</ol>\n
+<h2>Toshkentda qanday buyurtma beriladi: qisqa yo'l xaritasi</h2>\n<ol>\n<li>Brif: xodimlar soni, rollar, byudjet, deadline</li>\n<li>Maket: logo/ism formatlari, qadoqlash dizayni</li>\n<li>Namuna: 1–2 dona test</li>\n<li>Ishlab chiqarish: lazer gravirovka + komplektatsiya</li>\n<li>QC + yetkazib berish: ofisga yoki tadbir joyiga</li>\n</ol>\n
+<div class=\"cta\">\n  <p><strong>Buyurtma bermoqchimisiz?</strong> Telegram <a href=\"https://t.me/graveruz\">@graveruz</a> ga yozing yoki saytdagi shaklni to'ldiring.</p>\n</div>\n`
     },
     {
         slug: 'it-kompaniya-uchun-welcome-pack-chek-listi',
         ruSlug: 'merch-dlya-it-kompaniy-tashkent',
         title: 'Welcome Pack chek-list: 27 pozitsiya (IT)',
-        description: '27 pozitsiyali welcome pack chek-listi: brending tavsiyalari va byudjet darajalari. Hisob-kitob so‘rang!',
+        description: "27 pozitsiyali welcome pack chek-listi: brending tavsiyalari va byudjet darajalari. Hisob-kitob so'rang!",
         date: '2026-03-03',
         category: 'Chek-listlar',
-        keywords: ['welcome pack chek-list', 'IT kompaniya', 'Toshkent', 'brending', 'lazer gravirovka', 'onboarding', 'korporativ sovg‘a'],
+        keywords: ['welcome pack chek-list', 'IT kompaniya', 'Toshkent', 'brending', 'lazer gravirovka', 'onboarding', "korporativ sovg'a"],
         relatedPosts: ['welcome-pack-hr-uchun-toliq-gid', 'keys-welcome-pack-povysil-enps-v-it-kompanii-uz'],
         contentHtml: `
-<p>IT-kompaniyada welcome pack “tez va toza” bo‘lishi kerak: foydali, brendga mos va tirajda barqaror. Quyidagi chek-list — 27 pozitsiya, brending usuli va byudjet darajasi bilan.</p>\n
-<h2>Qanday foydalaniladi: 5 daqiqalik tanlov usuli</h2>\n<ul>\n<li>1) Bazaviy 7–9 pozitsiyani tanlang (har kimga bir xil)</li>\n<li>2) Rolga mos 3–5 pozitsiya qo‘shing (dev/PM/design/ops)</li>\n<li>3) Premium segment uchun 1–2 “wow” item</li>\n<li>4) Gravirovka formatini belgilang: logo + ism / logo + shior</li>\n<li>5) Deadline va tirajga qarab ishlab chiqarish rejasini tuzing</li>\n</ul>\n
-<h2>27 pozitsiya: amaliy jadval</h2>\n<table>\n<thead>\n<tr>\n<th>#</th>\n<th>Pozitsiya</th>\n<th>Nima uchun</th>\n<th>Brending</th>\n<th>Byudjet darajasi</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>Daftar (A5)</td>\n<td>Brendli kundalik</td>\n<td>Muqova gravirovka / folga</td>\n<td>Byudjet/Standart</td>\n</tr>\n<tr>\n<td>2</td>\n<td>Metall ruchka</td>\n<td>Har kuni ishlatiladi</td>\n<td>Korpusga lazer gravirovka</td>\n<td>Byudjet/Standart/Premium</td>\n</tr>\n<tr>\n<td>3</td>\n<td>Termo-krujka</td>\n<td>Ofis/uy, yuqori “value”</td>\n<td>Logo + ism gravirovka</td>\n<td>Standart/Premium</td>\n</tr>\n<tr>\n<td>4</td>\n<td>Suv idishi</td>\n<td>Sog‘lom odat, sport</td>\n<td>Gravirovka / UV-print</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>5</td>\n<td>Brelok</td>\n<td>Arzon, ammo yoqimli</td>\n<td>Gravirovka</td>\n<td>Byudjet</td>\n</tr>\n<tr>\n<td>6</td>\n<td>Badge-holder</td>\n<td>Praktik onboarding</td>\n<td>Logo print</td>\n<td>Byudjet</td>\n</tr>\n<tr>\n<td>7</td>\n<td>Lanyard</td>\n<td>ID kartalar uchun</td>\n<td>Logo print</td>\n<td>Byudjet</td>\n</tr>\n<tr>\n<td>8</td>\n<td>Stikerlar seti</td>\n<td>Brend “vibe”</td>\n<td>Die-cut</td>\n<td>Byudjet</td>\n</tr>\n<tr>\n<td>9</td>\n<td>Mousepad</td>\n<td>Har kuni ko‘z oldida</td>\n<td>Print / lazer markirovka</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>10</td>\n<td>Kabel-organayzer</td>\n<td>Stol tartibi</td>\n<td>Gravirovka</td>\n<td>Byudjet/Standart</td>\n</tr>\n<tr>\n<td>11</td>\n<td>Type-C adapter</td>\n<td>Texnik zarurat</td>\n<td>Qadoqda brending</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>12</td>\n<td>USB flash</td>\n<td>Fayl ko‘chirish</td>\n<td>Korpus gravirovka</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>13</td>\n<td>Powerbank</td>\n<td>Safar/kunlik</td>\n<td>Logo gravirovka</td>\n<td>Premium</td>\n</tr>\n<tr>\n<td>14</td>\n<td>Mini-sumka (pouch)</td>\n<td>Aksessuarlar uchun</td>\n<td>Patch/print</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>15</td>\n<td>T-shirt</td>\n<td>Jamoa identiteti</td>\n<td>Print</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>16</td>\n<td>Hoodie</td>\n<td>Premium merch</td>\n<td>Print / kashta</td>\n<td>Premium</td>\n</tr>\n<tr>\n<td>17</td>\n<td>Shapkacha (cap)</td>\n<td>Brend merch</td>\n<td>Kashta/print</td>\n<td>Byudjet/Standart</td>\n</tr>\n<tr>\n<td>18</td>\n<td>Sovun/handcream</td>\n<td>Care element</td>\n<td>Qadoq brending</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>19</td>\n<td>Shokolad/snack</td>\n<td>Unboxing emosiyasi</td>\n<td>Qadoq stiker</td>\n<td>Byudjet</td>\n</tr>\n<tr>\n<td>20</td>\n<td>Kofe/Choy mini-set</td>\n<td>Ofis rituali</td>\n<td>Qadoq brending</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>21</td>\n<td>Desk stand (yog‘och)</td>\n<td>Ish joyi dizayni</td>\n<td>Lazer gravirovka</td>\n<td>Premium</td>\n</tr>\n<tr>\n<td>22</td>\n<td>Vizitka qutisi</td>\n<td>B2B roli uchun</td>\n<td>Gravirovka</td>\n<td>Premium</td>\n</tr>\n<tr>\n<td>23</td>\n<td>Notbuk stendi</td>\n<td>Ergonomika</td>\n<td>Gravirovka/print</td>\n<td>Premium</td>\n</tr>\n<tr>\n<td>24</td>\n<td>Kalendarchik</td>\n<td>Brend har kuni</td>\n<td>Print</td>\n<td>Byudjet</td>\n</tr>\n<tr>\n<td>25</td>\n<td>Tabrik karta</td>\n<td>Hissiyot + yo‘l xarita</td>\n<td>Personal matn</td>\n<td>Byudjet</td>\n</tr>\n<tr>\n<td>26</td>\n<td>Qadoqlash qutisi</td>\n<td>Premium ta’sir</td>\n<td>Logo + stiker/gravirovka</td>\n<td>Standart/Premium</td>\n</tr>\n<tr>\n<td>27</td>\n<td>Ichki to‘ldirgich</td>\n<td>Unboxing tartibi (estetika)</td>\n<td>Brendsiz</td>\n<td>Standart/Premium</td>\n</tr>\n</tbody>\n</table>\n<p><em>Eslatma: Narxlar o‘rniga “byudjet darajasi” berildi. Yakuniy narx tiraj, model va qadoqlashga bog‘liq.</em></p>\n
-<h2>Gravirovka bo‘yicha 4 qoida (sifat va premium ko‘rinish uchun)</h2>\n<ul>\n<li>Minimalizm: 1 logo + 1 personal element (ism yoki qisqa shior)</li>\n<li>Kontrast: metall/yog‘ochda gravirovka eng yaxshi ko‘rinadi</li>\n<li>O‘qiluvchanlik: kichik shriftlardan qoching, 6–9 mm balandlik ideal</li>\n<li>Ro‘yxat nazorati: ism-lavozim transliteratsiyasi ikki marta tekshirilsin</li>\n</ul>\n
-<h2>Toshkentda tiraj buyurtmasi: muddatlar bo‘yicha tavsiya</h2>\n<ul>\n<li>20–50 dona: odatda 7–10 ish kuni</li>\n<li>50–200 dona: 10–14 ish kuni (segment bo‘lsa — biroz ko‘proq)</li>\n<li>200+ dona: 3 hafta atrofida (material logistikasiga qarab)</li>\n</ul>\n
-<h2>Qanday qilib tez hisob-kitob olasiz</h2>\n<ul>\n<li>Tiraj (necha dona) + segmentlar (necha tur)</li>\n<li>1 dona byudjet diapazoni (past/o‘rta/yuqori)</li>\n<li>Qadoqlash darajasi (oddiy/premium)</li>\n<li>Logo fayli (SVG/AI/PDF) va ism ro‘yxati (Excel)</li>\n</ul>\n
-<div class=\"cta\">\n  <p><strong>Buyurtma bermoqchimisiz?</strong> Telegram <a href=\"https://t.me/graveruz\">@graveruz</a> ga yozing yoki saytdagi shaklni to‘ldiring.</p>\n</div>\n`
+<p>IT-kompaniyada welcome pack “tez va toza” bo'lishi kerak: foydali, brendga mos va tirajda barqaror. Quyidagi chek-list — 27 pozitsiya, brending usuli va byudjet darajasi bilan.</p>\n
+<h2>Qanday foydalaniladi: 5 daqiqalik tanlov usuli</h2>\n<ul>\n<li>1) Bazaviy 7–9 pozitsiyani tanlang (har kimga bir xil)</li>\n<li>2) Rolga mos 3–5 pozitsiya qo'shing (dev/PM/design/ops)</li>\n<li>3) Premium segment uchun 1–2 “wow” item</li>\n<li>4) Gravirovka formatini belgilang: logo + ism / logo + shior</li>\n<li>5) Deadline va tirajga qarab ishlab chiqarish rejasini tuzing</li>\n</ul>\n
+<h2>27 pozitsiya: amaliy jadval</h2>\n<table>\n<thead>\n<tr>\n<th>#</th>\n<th>Pozitsiya</th>\n<th>Nima uchun</th>\n<th>Brending</th>\n<th>Byudjet darajasi</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>Daftar (A5)</td>\n<td>Brendli kundalik</td>\n<td>Muqova gravirovka / folga</td>\n<td>Byudjet/Standart</td>\n</tr>\n<tr>\n<td>2</td>\n<td>Metall ruchka</td>\n<td>Har kuni ishlatiladi</td>\n<td>Korpusga lazer gravirovka</td>\n<td>Byudjet/Standart/Premium</td>\n</tr>\n<tr>\n<td>3</td>\n<td>Termo-krujka</td>\n<td>Ofis/uy, yuqori “value”</td>\n<td>Logo + ism gravirovka</td>\n<td>Standart/Premium</td>\n</tr>\n<tr>\n<td>4</td>\n<td>Suv idishi</td>\n<td>Sog'lom odat, sport</td>\n<td>Gravirovka / UV-print</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>5</td>\n<td>Brelok</td>\n<td>Arzon, ammo yoqimli</td>\n<td>Gravirovka</td>\n<td>Byudjet</td>\n</tr>\n<tr>\n<td>6</td>\n<td>Badge-holder</td>\n<td>Praktik onboarding</td>\n<td>Logo print</td>\n<td>Byudjet</td>\n</tr>\n<tr>\n<td>7</td>\n<td>Lanyard</td>\n<td>ID kartalar uchun</td>\n<td>Logo print</td>\n<td>Byudjet</td>\n</tr>\n<tr>\n<td>8</td>\n<td>Stikerlar seti</td>\n<td>Brend “vibe”</td>\n<td>Die-cut</td>\n<td>Byudjet</td>\n</tr>\n<tr>\n<td>9</td>\n<td>Mousepad</td>\n<td>Har kuni ko'z oldida</td>\n<td>Print / lazer markirovka</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>10</td>\n<td>Kabel-organayzer</td>\n<td>Stol tartibi</td>\n<td>Gravirovka</td>\n<td>Byudjet/Standart</td>\n</tr>\n<tr>\n<td>11</td>\n<td>Type-C adapter</td>\n<td>Texnik zarurat</td>\n<td>Qadoqda brending</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>12</td>\n<td>USB flash</td>\n<td>Fayl ko'chirish</td>\n<td>Korpus gravirovka</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>13</td>\n<td>Powerbank</td>\n<td>Safar/kunlik</td>\n<td>Logo gravirovka</td>\n<td>Premium</td>\n</tr>\n<tr>\n<td>14</td>\n<td>Mini-sumka (pouch)</td>\n<td>Aksessuarlar uchun</td>\n<td>Patch/print</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>15</td>\n<td>T-shirt</td>\n<td>Jamoa identiteti</td>\n<td>Print</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>16</td>\n<td>Hoodie</td>\n<td>Premium merch</td>\n<td>Print / kashta</td>\n<td>Premium</td>\n</tr>\n<tr>\n<td>17</td>\n<td>Shapkacha (cap)</td>\n<td>Brend merch</td>\n<td>Kashta/print</td>\n<td>Byudjet/Standart</td>\n</tr>\n<tr>\n<td>18</td>\n<td>Sovun/handcream</td>\n<td>Care element</td>\n<td>Qadoq brending</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>19</td>\n<td>Shokolad/snack</td>\n<td>Unboxing emosiyasi</td>\n<td>Qadoq stiker</td>\n<td>Byudjet</td>\n</tr>\n<tr>\n<td>20</td>\n<td>Kofe/Choy mini-set</td>\n<td>Ofis rituali</td>\n<td>Qadoq brending</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>21</td>\n<td>Desk stand (yog'och)</td>\n<td>Ish joyi dizayni</td>\n<td>Lazer gravirovka</td>\n<td>Premium</td>\n</tr>\n<tr>\n<td>22</td>\n<td>Vizitka qutisi</td>\n<td>B2B roli uchun</td>\n<td>Gravirovka</td>\n<td>Premium</td>\n</tr>\n<tr>\n<td>23</td>\n<td>Notbuk stendi</td>\n<td>Ergonomika</td>\n<td>Gravirovka/print</td>\n<td>Premium</td>\n</tr>\n<tr>\n<td>24</td>\n<td>Kalendarchik</td>\n<td>Brend har kuni</td>\n<td>Print</td>\n<td>Byudjet</td>\n</tr>\n<tr>\n<td>25</td>\n<td>Tabrik karta</td>\n<td>Hissiyot + yo'l xarita</td>\n<td>Personal matn</td>\n<td>Byudjet</td>\n</tr>\n<tr>\n<td>26</td>\n<td>Qadoqlash qutisi</td>\n<td>Premium ta'sir</td>\n<td>Logo + stiker/gravirovka</td>\n<td>Standart/Premium</td>\n</tr>\n<tr>\n<td>27</td>\n<td>Ichki to'ldirgich</td>\n<td>Unboxing tartibi (estetika)</td>\n<td>Brendsiz</td>\n<td>Standart/Premium</td>\n</tr>\n</tbody>\n</table>\n<p><em>Eslatma: Narxlar o'rniga “byudjet darajasi” berildi. Yakuniy narx tiraj, model va qadoqlashga bog'liq.</em></p>\n
+<h2>Gravirovka bo'yicha 4 qoida (sifat va premium ko'rinish uchun)</h2>\n<ul>\n<li>Minimalizm: 1 logo + 1 personal element (ism yoki qisqa shior)</li>\n<li>Kontrast: metall/yog'ochda gravirovka eng yaxshi ko'rinadi</li>\n<li>O'qiluvchanlik: kichik shriftlardan qoching, 6–9 mm balandlik ideal</li>\n<li>Ro'yxat nazorati: ism-lavozim transliteratsiyasi ikki marta tekshirilsin</li>\n</ul>\n
+<h2>Toshkentda tiraj buyurtmasi: muddatlar bo'yicha tavsiya</h2>\n<ul>\n<li>20–50 dona: odatda 7–10 ish kuni</li>\n<li>50–200 dona: 10–14 ish kuni (segment bo'lsa — biroz ko'proq)</li>\n<li>200+ dona: 3 hafta atrofida (material logistikasiga qarab)</li>\n</ul>\n
+<h2>Qanday qilib tez hisob-kitob olasiz</h2>\n<ul>\n<li>Tiraj (necha dona) + segmentlar (necha tur)</li>\n<li>1 dona byudjet diapazoni (past/o'rta/yuqori)</li>\n<li>Qadoqlash darajasi (oddiy/premium)</li>\n<li>Logo fayli (SVG/AI/PDF) va ism ro'yxati (Excel)</li>\n</ul>\n
+<div class=\"cta\">\n  <p><strong>Buyurtma bermoqchimisiz?</strong> Telegram <a href=\"https://t.me/graveruz\">@graveruz</a> ga yozing yoki saytdagi shaklni to'ldiring.</p>\n</div>\n`
     },
     {
         slug: 'korporativ-sovgalar-toliq-gid-2025-uzbekistan',
         ruSlug: 'polniy-gid-po-korporativnym-podarkam',
-        title: 'Korporativ sovg‘alar 2025: O‘zbekistonda to‘liq gid',
-        description: 'Xodimlar, hamkorlar va mijozlar uchun sovg‘ani to‘g‘ri tanlang. Byudjet, g‘oya, gravirovka. Hisob-kitob so‘rang!',
+        title: "Korporativ sovg'alar 2025: O'zbekistonda to'liq gid",
+        description: "Xodimlar, hamkorlar va mijozlar uchun sovg'ani to'g'ri tanlang. Byudjet, g'oya, gravirovka. Hisob-kitob so'rang!",
         date: '2026-03-03',
         category: 'Gidlar',
-        keywords: ['korporativ sovg‘alar', 'O‘zbekiston', 'Toshkent', 'lazer gravirovka', 'VIP sovg‘a', 'xodimlarga sovg‘a', 'B2B sovg‘a'],
+        keywords: ["korporativ sovg'alar", "O'zbekiston", 'Toshkent', 'lazer gravirovka', "VIP sovg'a", "xodimlarga sovg'a", "B2B sovg'a"],
         relatedPosts: ['xodimlar-uchun-sovga-tanlash-chek-list', 'b2b-korporativ-sovga-tanlash'],
         contentHtml: `
-<p>Korporativ sovg‘a — bu xarajat emas, signal. U ichki motivatsiyani ham, tashqi sheriklikni ham mustahkamlaydi. Ushbu 2025 gid: kimga nima berish, byudjet, etiket va lazer gravirovka orqali qanday premium effekt qilish.</p>\n
-<h2>1) Sovg‘a strategiyasi: avval maqsadni aniqlang</h2>\n<ul>\n<li>Ichki maqsadlar: loyallik, eNPS, onboarding, yubiley/KPI</li>\n<li>Tashqi maqsadlar: hamkorlikni mustahkamlash, “top-of-mind”, PR/ko‘rgazma</li>\n<li>Qoidasi: bir xil buyum turli auditoriyada turlicha ishlaydi</li>\n</ul>\n
-<h2>2) Kimga sovg‘a: 3 asosiy segment</h2>\n<h3>Xodimlar (HR yo‘nalishi)</h3>\n<ul>\n<li>Tug‘ilgan kun, yubiley, KPI, yangi loyiha yakuni</li>\n<li>Welcome pack va jamoa merch</li>\n<li>Shaxsiylashtirish: ism bilan gravirovka</li>\n</ul>\n<h3>Hamkorlar va mijozlar (B2B)</h3>\n<ul>\n<li>Status darajasi bo‘yicha: top/middle/operatsion</li>\n<li>Etiket: haddan tashqari shaxsiy yoki juda arzon sovg‘adan qochish</li>\n<li>“Uzoq yashaydigan” buyumlar: soat, ruchka, setlar</li>\n</ul>\n<h3>Tadbirlar (event)</h3>\n<ul>\n<li>Ko‘rgazma/summit uchun bir xil tiraj</li>\n<li>Yengil, tashishga qulay, brend ko‘rinishi aniq</li>\n<li>QR-kodli kartalar/aksessuarlar (lead tracking)</li>\n</ul>\n
-<h2>3) Byudjet: diapazonlar va “value” qoidasi</h2>\n<p>Byudjetni “so‘m” bilan emas, “qabul qiluvchi uchun qiymat” bilan o‘lchang. Katta logo qo‘yib arzon buyumni qimmatga aylantirib bo‘lmaydi. Aksincha, o‘rtacha buyum to‘g‘ri qadoq + gravirovka bilan premium ko‘rinadi.</p>\n<ul>\n<li>Byudjet: bazaviy (tiraj katta) / standart (ko‘p holat) / premium (VIP)</li>\n<li>Qadoqlash har doim ta’sir qiladi: unboxing — marketing</li>\n<li>Shaxsiylashtirish — eng kuchli multiplikator</li>\n</ul>\n
-<h2>4) Texnologiyalar: brending va lazer gravirovka</h2>\n<h3>Lazer gravirovka qachon ideal</h3>\n<ul>\n<li>Metall: ruchka, termos, brelok, soat</li>\n<li>Yog‘och: desk set, quti qopqog‘i, stend</li>\n<li>Chidamlilik kerak bo‘lsa: “yuvilmaydi, o‘chmaydi”</li>\n</ul>\n<h3>Print/UV/kashta qachon yaxshi</h3>\n<ul>\n<li>Tekstil merch (t-shirt, hoodie)</li>\n<li>Rangli grafikalar kerak bo‘lsa</li>\n<li>Tez tiraj (ba’zan)</li>\n</ul>\n
-<h2>5) Buyurtma jarayoni: Toshkentda 7 bosqich</h2>\n<ol>\n<li>Brif: auditoriya, tiraj, byudjet, deadline</li>\n<li>Tanlov: 3–5 variant (narx/ta’sir)</li>\n<li>Maket: logo + gravirovka joylashuvi</li>\n<li>Namuna: 1–2 dona</li>\n<li>Ishlab chiqarish: gravirovka + komplektatsiya</li>\n<li>QC: sifat nazorati</li>\n<li>Yetkazish: ofis/tadbir joyi</li>\n</ol>\n
-<h2>6) Eng ko‘p uchraydigan xatolar</h2>\n<ul>\n<li>Noto‘g‘ri segment: xodimga “hamkor sovg‘asi” berish</li>\n<li>Muddatsiz start: bayram oldidan oxirgi hafta</li>\n<li>Ro‘yxat tartibsiz: ismlar xato gravirovka bo‘ladi</li>\n<li>Yomon qadoqlash: premium buyum ham arzon ko‘rinadi</li>\n</ul>\n
-<div class=\"cta\">\n  <p><strong>Buyurtma bermoqchimisiz?</strong> Telegram <a href=\"https://t.me/graveruz\">@graveruz</a> ga yozing yoki saytdagi shaklni to‘ldiring.</p>\n</div>\n`
+<p>Korporativ sovg'a — bu xarajat emas, signal. U ichki motivatsiyani ham, tashqi sheriklikni ham mustahkamlaydi. Ushbu 2025 gid: kimga nima berish, byudjet, etiket va lazer gravirovka orqali qanday premium effekt qilish.</p>\n
+<h2>1) Sovg'a strategiyasi: avval maqsadni aniqlang</h2>\n<ul>\n<li>Ichki maqsadlar: loyallik, eNPS, onboarding, yubiley/KPI</li>\n<li>Tashqi maqsadlar: hamkorlikni mustahkamlash, “top-of-mind”, PR/ko'rgazma</li>\n<li>Qoidasi: bir xil buyum turli auditoriyada turlicha ishlaydi</li>\n</ul>\n
+<h2>2) Kimga sovg'a: 3 asosiy segment</h2>\n<h3>Xodimlar (HR yo'nalishi)</h3>\n<ul>\n<li>Tug'ilgan kun, yubiley, KPI, yangi loyiha yakuni</li>\n<li>Welcome pack va jamoa merch</li>\n<li>Shaxsiylashtirish: ism bilan gravirovka</li>\n</ul>\n<h3>Hamkorlar va mijozlar (B2B)</h3>\n<ul>\n<li>Status darajasi bo'yicha: top/middle/operatsion</li>\n<li>Etiket: haddan tashqari shaxsiy yoki juda arzon sovg'adan qochish</li>\n<li>“Uzoq yashaydigan” buyumlar: soat, ruchka, setlar</li>\n</ul>\n<h3>Tadbirlar (event)</h3>\n<ul>\n<li>Ko'rgazma/summit uchun bir xil tiraj</li>\n<li>Yengil, tashishga qulay, brend ko'rinishi aniq</li>\n<li>QR-kodli kartalar/aksessuarlar (lead tracking)</li>\n</ul>\n
+<h2>3) Byudjet: diapazonlar va “value” qoidasi</h2>\n<p>Byudjetni “so'm” bilan emas, “qabul qiluvchi uchun qiymat” bilan o'lchang. Katta logo qo'yib arzon buyumni qimmatga aylantirib bo'lmaydi. Aksincha, o'rtacha buyum to'g'ri qadoq + gravirovka bilan premium ko'rinadi.</p>\n<ul>\n<li>Byudjet: bazaviy (tiraj katta) / standart (ko'p holat) / premium (VIP)</li>\n<li>Qadoqlash har doim ta'sir qiladi: unboxing — marketing</li>\n<li>Shaxsiylashtirish — eng kuchli multiplikator</li>\n</ul>\n
+<h2>4) Texnologiyalar: brending va lazer gravirovka</h2>\n<h3>Lazer gravirovka qachon ideal</h3>\n<ul>\n<li>Metall: ruchka, termos, brelok, soat</li>\n<li>Yog'och: desk set, quti qopqog'i, stend</li>\n<li>Chidamlilik kerak bo'lsa: “yuvilmaydi, o'chmaydi”</li>\n</ul>\n<h3>Print/UV/kashta qachon yaxshi</h3>\n<ul>\n<li>Tekstil merch (t-shirt, hoodie)</li>\n<li>Rangli grafikalar kerak bo'lsa</li>\n<li>Tez tiraj (ba'zan)</li>\n</ul>\n
+<h2>5) Buyurtma jarayoni: Toshkentda 7 bosqich</h2>\n<ol>\n<li>Brif: auditoriya, tiraj, byudjet, deadline</li>\n<li>Tanlov: 3–5 variant (narx/ta'sir)</li>\n<li>Maket: logo + gravirovka joylashuvi</li>\n<li>Namuna: 1–2 dona</li>\n<li>Ishlab chiqarish: gravirovka + komplektatsiya</li>\n<li>QC: sifat nazorati</li>\n<li>Yetkazish: ofis/tadbir joyi</li>\n</ol>\n
+<h2>6) Eng ko'p uchraydigan xatolar</h2>\n<ul>\n<li>Noto'g'ri segment: xodimga “hamkor sovg'asi” berish</li>\n<li>Muddatsiz start: bayram oldidan oxirgi hafta</li>\n<li>Ro'yxat tartibsiz: ismlar xato gravirovka bo'ladi</li>\n<li>Yomon qadoqlash: premium buyum ham arzon ko'rinadi</li>\n</ul>\n
+<div class=\"cta\">\n  <p><strong>Buyurtma bermoqchimisiz?</strong> Telegram <a href=\"https://t.me/graveruz\">@graveruz</a> ga yozing yoki saytdagi shaklni to'ldiring.</p>\n</div>\n`
     },
     {
         slug: 'xodimlarga-sovga-loyalikni-oshirish',
         ruSlug: 'podarki-sotrudnikam-hr-gayd',
-        title: 'Xodimlarga sovg‘a: loyallikni oshiradigan tanlov',
-        description: 'Xodimlar uchun sovg‘ani psixologiya bilan tanlang: sabablar, misollar, gravirovka. Hisob-kitob so‘rang!',
+        title: "Xodimlarga sovg'a: loyallikni oshiradigan tanlov",
+        description: "Xodimlar uchun sovg'ani psixologiya bilan tanlang: sabablar, misollar, gravirovka. Hisob-kitob so'rang!",
         date: '2026-03-03',
         category: 'HR',
-        keywords: ['xodimlarga sovg‘a', 'HR', 'motivatsiya', 'loyallik', 'Toshkent', 'lazer gravirovka', 'welcome pack'],
+        keywords: ["xodimlarga sovg'a", 'HR', 'motivatsiya', 'loyallik', 'Toshkent', 'lazer gravirovka', 'welcome pack'],
         relatedPosts: ['welcome-pack-hr-uchun-toliq-gid', 'korporativ-sovgalar-toliq-gid-2025-uzbekistan'],
         contentHtml: `
-<p>Xodim sovg‘asi — “bonus” emas. U munosabatni belgilaydi: kompaniya sizni ko‘ryaptimi, qadrlaydimi? To‘g‘ri tanlangan sovg‘a loyallikni kuchaytiradi va jamoaning ichki energiyasini ko‘taradi.</p>\n
-<h2>Sovg‘a psixologiyasi: 3 ta signal</h2>\n<ul>\n<li>1) E’tirof: “Sening hissang ko‘rindi”</li>\n<li>2) Tegishlilik: “Sen bizning jamoada”</li>\n<li>3) Kelajak: “Biz senga sarmoya qilyapmiz”</li>\n</ul>\n
-<h2>Qaysi holatlarda sovg‘a eng kuchli ishlaydi</h2>\n<h3>Tug‘ilgan kun va shaxsiy sanalar</h3>\n<ul>\n<li>Shaxsiylashtirish: ism + qisqa tabrik</li>\n<li>Kichik, ammo “o‘zi uchun” bo‘lsin</li>\n</ul>\n<h3>Yubiley (1 yil, 3 yil, 5 yil)</h3>\n<ul>\n<li>Ko‘proq “status”: soat, premium ruchka, set</li>\n<li>Qadoqlash va sertifikat (raqamli)</li>\n</ul>\n<h3>KPI / loyiha yakuni</h3>\n<ul>\n<li>Jamoaviy birlik: bir xil dizayn, bitta shior</li>\n<li>Individual detal: ismlar gravirovkasi</li>\n</ul>\n
-<h2>Nima tanlash: “foyda + hissiyot” formulasi</h2>\n<p>Eng yaxshi sovg‘a ikki narsani beradi: amaliy qiymat (ishlatiladi) va hissiyot (esdalik). Lazer gravirovka aynan shu yerda ishlaydi: buyumni shaxsiy qiladi, “brend”ni zo‘rlab tiqmaydi.</p>\n<ul>\n<li>Daftar+ruchka seti — universal</li>\n<li>Termos/termo-krujka — kundalik foydalanish</li>\n<li>Desk aksessuarlar — ofis estetika</li>\n<li>Welcome pack — onboarding uchun ideal</li>\n</ul>\n
-<h2>Lazer gravirovka bilan shaxsiylashtirish: 6 g‘oya</h2>\n<ul>\n<li>Ism + lavozim (minimal)</li>\n<li>Ism + “core value” (masalan: “Create. Deliver.”)</li>\n<li>Yubiley raqami: “3 years”</li>\n<li>Jamoa nomi: “Product Team”</li>\n<li>QR-kod: ichki portal / onboarding sahifasi</li>\n<li>Mikro-ikon: kompaniya belgisi (kichik)</li>\n</ul>\n
-<h2>Samarani qanday o‘lchash (HR uchun)</h2>\n<ul>\n<li>eNPS yoki mini-so‘rov: “1–10, onboarding qanday?”</li>\n<li>Birinchi 30 kun: savollar soni/tezligi</li>\n<li>Ichki kontent: unboxing postlar soni</li>\n<li>Kadrlar oqimi: 3–6 oyda trendni kuzatish</li>\n</ul>\n
-<div class=\"cta\">\n  <p><strong>Buyurtma bermoqchimisiz?</strong> Telegram <a href=\"https://t.me/graveruz\">@graveruz</a> ga yozing yoki saytdagi shaklni to‘ldiring.</p>\n</div>\n`
+<p>Xodim sovg'asi — “bonus” emas. U munosabatni belgilaydi: kompaniya sizni ko'ryaptimi, qadrlaydimi? To'g'ri tanlangan sovg'a loyallikni kuchaytiradi va jamoaning ichki energiyasini ko'taradi.</p>\n
+<h2>Sovg'a psixologiyasi: 3 ta signal</h2>\n<ul>\n<li>1) E'tirof: “Sening hissang ko'rindi”</li>\n<li>2) Tegishlilik: “Sen bizning jamoada”</li>\n<li>3) Kelajak: “Biz senga sarmoya qilyapmiz”</li>\n</ul>\n
+<h2>Qaysi holatlarda sovg'a eng kuchli ishlaydi</h2>\n<h3>Tug'ilgan kun va shaxsiy sanalar</h3>\n<ul>\n<li>Shaxsiylashtirish: ism + qisqa tabrik</li>\n<li>Kichik, ammo “o'zi uchun” bo'lsin</li>\n</ul>\n<h3>Yubiley (1 yil, 3 yil, 5 yil)</h3>\n<ul>\n<li>Ko'proq “status”: soat, premium ruchka, set</li>\n<li>Qadoqlash va sertifikat (raqamli)</li>\n</ul>\n<h3>KPI / loyiha yakuni</h3>\n<ul>\n<li>Jamoaviy birlik: bir xil dizayn, bitta shior</li>\n<li>Individual detal: ismlar gravirovkasi</li>\n</ul>\n
+<h2>Nima tanlash: “foyda + hissiyot” formulasi</h2>\n<p>Eng yaxshi sovg'a ikki narsani beradi: amaliy qiymat (ishlatiladi) va hissiyot (esdalik). Lazer gravirovka aynan shu yerda ishlaydi: buyumni shaxsiy qiladi, “brend”ni zo'rlab tiqmaydi.</p>\n<ul>\n<li>Daftar+ruchka seti — universal</li>\n<li>Termos/termo-krujka — kundalik foydalanish</li>\n<li>Desk aksessuarlar — ofis estetika</li>\n<li>Welcome pack — onboarding uchun ideal</li>\n</ul>\n
+<h2>Lazer gravirovka bilan shaxsiylashtirish: 6 g'oya</h2>\n<ul>\n<li>Ism + lavozim (minimal)</li>\n<li>Ism + “core value” (masalan: “Create. Deliver.”)</li>\n<li>Yubiley raqami: “3 years”</li>\n<li>Jamoa nomi: “Product Team”</li>\n<li>QR-kod: ichki portal / onboarding sahifasi</li>\n<li>Mikro-ikon: kompaniya belgisi (kichik)</li>\n</ul>\n
+<h2>Samarani qanday o'lchash (HR uchun)</h2>\n<ul>\n<li>eNPS yoki mini-so'rov: “1–10, onboarding qanday?”</li>\n<li>Birinchi 30 kun: savollar soni/tezligi</li>\n<li>Ichki kontent: unboxing postlar soni</li>\n<li>Kadrlar oqimi: 3–6 oyda trendni kuzatish</li>\n</ul>\n
+<div class=\"cta\">\n  <p><strong>Buyurtma bermoqchimisiz?</strong> Telegram <a href=\"https://t.me/graveruz\">@graveruz</a> ga yozing yoki saytdagi shaklni to'ldiring.</p>\n</div>\n`
     },
     {
         slug: 'b2b-hamkorlar-uchun-sovgalar-etiket-gid',
         ruSlug: 'podarki-klientam-partneram-vip',
-        title: 'B2B sovg‘alar: hamkorlar uchun etiket va tanlov',
-        description: 'Hamkor/mijozga sovg‘a tanlang: status darajalari, taqiqlar, gravirovka. Toshkentda buyurtma qiling!',
+        title: "B2B sovg'alar: hamkorlar uchun etiket va tanlov",
+        description: "Hamkor/mijozga sovg'a tanlang: status darajalari, taqiqlar, gravirovka. Toshkentda buyurtma qiling!",
         date: '2026-03-03',
         category: 'Biznes',
-        keywords: ['B2B sovg‘a', 'VIP sovg‘a', 'hamkorlar', 'mijozlar', 'etiket O‘zbekiston', 'Toshkent', 'lazer gravirovka'],
+        keywords: ["B2B sovg'a", "VIP sovg'a", 'hamkorlar', 'mijozlar', "etiket O'zbekiston", 'Toshkent', 'lazer gravirovka'],
         relatedPosts: ['vip-sovga-goyalari', 'korporativ-sovgalar-toliq-gid-2025-uzbekistan'],
         contentHtml: `
-<p>B2B sovg‘a — bu muzokara tilida “hurmat” va “barqarorlik” degan signal. Noto‘g‘ri sovg‘a esa noqulaylik keltirishi mumkin. Ushbu gid: O‘zbekistonda biznes etiketi, status bo‘yicha darajalar va nimadan qochish.</p>\n
-<h2>O‘zbekistonda sovg‘a etiketi: 6 asosiy qoida</h2>\n<ul>\n<li>Hurmat va soddalik: haddan tashqari “dabdaba” ham noqulay bo‘lishi mumkin</li>\n<li>Brendni zo‘rlab tiqmang: minimal gravirovka ko‘proq premium</li>\n<li>Madaniy sezgirlik: juda shaxsiy buyumlar yoki bahsli mavzular yo‘q</li>\n<li>Kontrafakt/soxta brend — taqiqlangan signal</li>\n<li>Sovg‘a “poraxo‘rlik” ko‘rinishida bo‘lmasin: shaffof, o‘rtacha, protokolga mos</li>\n<li>Qadoqlash va tabrik — sovg‘aning yarmi</li>\n</ul>\n
-<h2>Status bo‘yicha 4 daraja: kimga nima mos</h2>\n<h3>1) Top rahbariyat (CEO/Director)</h3>\n<ul>\n<li>VIP set: soat, premium ruchka, desk aksessuarlar</li>\n<li>Gravirovka: ism yoki initsial + kichik logo</li>\n<li>Qadoqlash: premium quti</li>\n</ul>\n<h3>2) Bo‘lim rahbari / decision-maker</h3>\n<ul>\n<li>Termos/termo-krujka, premium daftar set</li>\n<li>B2B utilitar buyumlar: vizitka qutisi, stend</li>\n</ul>\n<h3>3) Operatsion aloqa (procurement/account)</h3>\n<ul>\n<li>Sifatli, lekin kamroq “VIP”: termos, desk accessory</li>\n<li>Praktik: ofisda ishlatiladigan buyum</li>\n</ul>\n<h3>4) Event/ko‘rgazma (tiraj)</h3>\n<ul>\n<li>Yengil sovg‘alar: brelok, mini-set, stiker+daftar</li>\n<li>QR-kodli kartalar/kuponlar</li>\n</ul>\n
-<h2>Nimani sovg‘a qilmaslik kerak: “qizil ro‘yxat”</h2>\n<ul>\n<li>Haddan tashqari shaxsiy buyumlar (parfyum, kiyim o‘lchami talab qiladigan narsalar)</li>\n<li>Siyosiy/mahalliy bahsli mavzudagi suvenirlar</li>\n<li>Sifatsiz gadjetlar (tez buziladi — brendga zarar)</li>\n<li>Juda arzon “promo” (VIPga mos emas)</li>\n<li>Noqonuniy yoki shubhali kelib chiqishli mahsulot</li>\n</ul>\n
-<h2>Lazer gravirovka: B2Bda eng xavfsiz premium instrument</h2>\n<ul>\n<li>Rangga bog‘liq emas: minimal va toza</li>\n<li>Logotipni “qichqirtirmaydi”</li>\n<li>Metall va yog‘ochda uzoq saqlanadi</li>\n<li>Ism/initsial qo‘shsa — darhol VIP darajaga o‘tadi</li>\n</ul>\n
+<p>B2B sovg'a — bu muzokara tilida “hurmat” va “barqarorlik” degan signal. Noto'g'ri sovg'a esa noqulaylik keltirishi mumkin. Ushbu gid: O'zbekistonda biznes etiketi, status bo'yicha darajalar va nimadan qochish.</p>\n
+<h2>O'zbekistonda sovg'a etiketi: 6 asosiy qoida</h2>\n<ul>\n<li>Hurmat va soddalik: haddan tashqari “dabdaba” ham noqulay bo'lishi mumkin</li>\n<li>Brendni zo'rlab tiqmang: minimal gravirovka ko'proq premium</li>\n<li>Madaniy sezgirlik: juda shaxsiy buyumlar yoki bahsli mavzular yo'q</li>\n<li>Kontrafakt/soxta brend — taqiqlangan signal</li>\n<li>Sovg'a “poraxo'rlik” ko'rinishida bo'lmasin: shaffof, o'rtacha, protokolga mos</li>\n<li>Qadoqlash va tabrik — sovg'aning yarmi</li>\n</ul>\n
+<h2>Status bo'yicha 4 daraja: kimga nima mos</h2>\n<h3>1) Top rahbariyat (CEO/Director)</h3>\n<ul>\n<li>VIP set: soat, premium ruchka, desk aksessuarlar</li>\n<li>Gravirovka: ism yoki initsial + kichik logo</li>\n<li>Qadoqlash: premium quti</li>\n</ul>\n<h3>2) Bo'lim rahbari / decision-maker</h3>\n<ul>\n<li>Termos/termo-krujka, premium daftar set</li>\n<li>B2B utilitar buyumlar: vizitka qutisi, stend</li>\n</ul>\n<h3>3) Operatsion aloqa (procurement/account)</h3>\n<ul>\n<li>Sifatli, lekin kamroq “VIP”: termos, desk accessory</li>\n<li>Praktik: ofisda ishlatiladigan buyum</li>\n</ul>\n<h3>4) Event/ko'rgazma (tiraj)</h3>\n<ul>\n<li>Yengil sovg'alar: brelok, mini-set, stiker+daftar</li>\n<li>QR-kodli kartalar/kuponlar</li>\n</ul>\n
+<h2>Nimani sovg'a qilmaslik kerak: “qizil ro'yxat”</h2>\n<ul>\n<li>Haddan tashqari shaxsiy buyumlar (parfyum, kiyim o'lchami talab qiladigan narsalar)</li>\n<li>Siyosiy/mahalliy bahsli mavzudagi suvenirlar</li>\n<li>Sifatsiz gadjetlar (tez buziladi — brendga zarar)</li>\n<li>Juda arzon “promo” (VIPga mos emas)</li>\n<li>Noqonuniy yoki shubhali kelib chiqishli mahsulot</li>\n</ul>\n
+<h2>Lazer gravirovka: B2Bda eng xavfsiz premium instrument</h2>\n<ul>\n<li>Rangga bog'liq emas: minimal va toza</li>\n<li>Logotipni “qichqirtirmaydi”</li>\n<li>Metall va yog'ochda uzoq saqlanadi</li>\n<li>Ism/initsial qo'shsa — darhol VIP darajaga o'tadi</li>\n</ul>\n
 <h2>Toshkentda buyurtma: protokolga mos jarayon</h2>\n<ul>\n<li>Brif: kimga, qachon, qanday holat</li>\n<li>Variantlar: 3–5 ta daraja</li>\n<li>Namuna: protokol tasdiqlashi uchun</li>\n<li>Taqdimot: tabrik karta matni, qadoqlash</li>\n<li>Yetkazish: sanasi aniq, akt bilan</li>\n</ul>\n
-<div class=\"cta\">\n  <p><strong>Buyurtma bermoqchimisiz?</strong> Telegram <a href=\"https://t.me/graveruz\">@graveruz</a> ga yozing yoki saytdagi shaklni to‘ldiring.</p>\n</div>\n`
+<div class=\"cta\">\n  <p><strong>Buyurtma bermoqchimisiz?</strong> Telegram <a href=\"https://t.me/graveruz\">@graveruz</a> ga yozing yoki saytdagi shaklni to'ldiring.</p>\n</div>\n`
     },
     {
         slug: 'korporativ-sovgalar-zakupshchik-chek-listi',
         ruSlug: 'chek-list-zakupshchika-podarkov',
-        title: 'Zakupщик chek-list: korporativ sovg‘alar (8 qadam)',
+        title: "Zakupщик chek-list: korporativ sovg'alar (8 qadam)",
         description: 'Jarayonni xatosiz yuring: brif, maket, ishlab chiqarish, QC, yetkazish. Toshkentda hisob-kitob oling!',
         date: '2026-03-03',
         category: 'Chek-listlar',
-        keywords: ['zakup chek-list', 'korporativ sovg‘a jarayoni', 'yetkazib berish', 'sifat nazorati', 'Toshkent', 'brif', 'maket'],
+        keywords: ['zakup chek-list', "korporativ sovg'a jarayoni", 'yetkazib berish', 'sifat nazorati', 'Toshkent', 'brif', 'maket'],
         relatedPosts: ['korporativ-sovgalar-toliq-gid-2025-uzbekistan', 'b2b-hamkorlar-uchun-sovgalar-etiket-gid'],
         contentHtml: `
-<p>Korporativ sovg‘a xaridi ko‘pincha “oxirgi daqiqada” boshlangan stressli jarayonga aylanadi. Bu chek-list — operatsion: g‘oya emas, jarayon. 8 qadam bilan muddat, sifat va hujjatlarni nazorat qilasiz.</p>\n
+<p>Korporativ sovg'a xaridi ko'pincha “oxirgi daqiqada” boshlangan stressli jarayonga aylanadi. Bu chek-list — operatsion: g'oya emas, jarayon. 8 qadam bilan muddat, sifat va hujjatlarni nazorat qilasiz.</p>\n
 <h2>1-qadam: Brif (aniqlik — 50% natija)</h2>\n<ul>\n<li>Auditoriya: xodim/hamkor/mijoz/event</li>\n<li>Tiraj va segment: 1 turmi yoki 2–3 turmi</li>\n<li>Byudjet diapazoni va “must-have”</li>\n<li>Deadline: taqdimot sanasi</li>\n<li>Brend materiallari: logo, rang, shrift</li>\n</ul>\n
-<h2>2-qadam: Byudjet va risk zaxirasi</h2>\n<ul>\n<li>Narx tarkibi: buyum + brending + qadoqlash + komplektatsiya + logistika</li>\n<li>Zaxira: 5–15% (qayta gravirovka/qo‘shimcha dona)</li>\n<li>To‘lov shartlari va hujjatlar (schyot/faktura/akt)</li>\n</ul>\n
-<h2>3-qadam: Yetkazib beruvchini tanlash (10 mezon)</h2>\n<ul>\n<li>Portfolio va real namuna sifati</li>\n<li>Gravirovka aniqligi (metall/yog‘och)</li>\n<li>Tirajga tayyor quvvat</li>\n<li>QC tizimi bor-yo‘qligi</li>\n<li>Muddatga kafolat</li>\n<li>Hujjatlar, shartnoma</li>\n<li>Qadoqlash imkoniyatlari</li>\n<li>Toshkent bo‘yicha logistika</li>\n<li>Kommunikatsiya tezligi</li>\n<li>Avariya-reja (nima bo‘lsa?)</li>\n</ul>\n
-<h2>4-qadam: Maket va tasdiqlash (xatolar aynan shu yerda)</h2>\n<ul>\n<li>Logo formati: vektor (SVG/AI/PDF)</li>\n<li>Gravirovka joyi va o‘lchami</li>\n<li>Ismlar ro‘yxati (Excel) + transliteratsiya qoidasi</li>\n<li>Tabrik matni va qadoqlash yorlig‘i</li>\n</ul>\n
-<h2>5-qadam: Namuna (pilot)</h2>\n<ul>\n<li>1–2 dona tayyor namunani ko‘ring</li>\n<li>Kontrast, shrift o‘qiluvchanligi, joylashuv</li>\n<li>Qadoqlash “unboxing” tekshiruvi</li>\n<li>Tasdiq: yozma (chat/email)</li>\n</ul>\n
-<h2>6-qadam: Ishlab chiqarish va monitoring</h2>\n<ul>\n<li>Sana reja: kunma-kun</li>\n<li>Oraliq foto/video hisobot</li>\n<li>Segmentlar bo‘yicha komplektatsiya ro‘yxati</li>\n</ul>\n
-<h2>7-qadam: QC (sifat nazorati)</h2>\n<ul>\n<li>Namuna bilan solishtirish</li>\n<li>Ismlar xatosi yo‘qligi</li>\n<li>Qadoqlash shikastlanmagan</li>\n<li>Yetishmayotgan pozitsiyalar yo‘q</li>\n</ul>\n
-<h2>8-qadam: Yetkazib berish va hisobot</h2>\n<ul>\n<li>Qabul-berish akti</li>\n<li>Yakuniy ro‘yxat (necha dona, qanday segment)</li>\n<li>Ichki hisobot: byudjet, muddat, feedback</li>\n<li>Keyingi safar uchun “lessons learned”</li>\n</ul>\n
-<div class=\"cta\">\n  <p><strong>Buyurtma bermoqchimisiz?</strong> Telegram <a href=\"https://t.me/graveruz\">@graveruz</a> ga yozing yoki saytdagi shaklni to‘ldiring.</p>\n</div>\n`
+<h2>2-qadam: Byudjet va risk zaxirasi</h2>\n<ul>\n<li>Narx tarkibi: buyum + brending + qadoqlash + komplektatsiya + logistika</li>\n<li>Zaxira: 5–15% (qayta gravirovka/qo'shimcha dona)</li>\n<li>To'lov shartlari va hujjatlar (schyot/faktura/akt)</li>\n</ul>\n
+<h2>3-qadam: Yetkazib beruvchini tanlash (10 mezon)</h2>\n<ul>\n<li>Portfolio va real namuna sifati</li>\n<li>Gravirovka aniqligi (metall/yog'och)</li>\n<li>Tirajga tayyor quvvat</li>\n<li>QC tizimi bor-yo'qligi</li>\n<li>Muddatga kafolat</li>\n<li>Hujjatlar, shartnoma</li>\n<li>Qadoqlash imkoniyatlari</li>\n<li>Toshkent bo'yicha logistika</li>\n<li>Kommunikatsiya tezligi</li>\n<li>Avariya-reja (nima bo'lsa?)</li>\n</ul>\n
+<h2>4-qadam: Maket va tasdiqlash (xatolar aynan shu yerda)</h2>\n<ul>\n<li>Logo formati: vektor (SVG/AI/PDF)</li>\n<li>Gravirovka joyi va o'lchami</li>\n<li>Ismlar ro'yxati (Excel) + transliteratsiya qoidasi</li>\n<li>Tabrik matni va qadoqlash yorlig'i</li>\n</ul>\n
+<h2>5-qadam: Namuna (pilot)</h2>\n<ul>\n<li>1–2 dona tayyor namunani ko'ring</li>\n<li>Kontrast, shrift o'qiluvchanligi, joylashuv</li>\n<li>Qadoqlash “unboxing” tekshiruvi</li>\n<li>Tasdiq: yozma (chat/email)</li>\n</ul>\n
+<h2>6-qadam: Ishlab chiqarish va monitoring</h2>\n<ul>\n<li>Sana reja: kunma-kun</li>\n<li>Oraliq foto/video hisobot</li>\n<li>Segmentlar bo'yicha komplektatsiya ro'yxati</li>\n</ul>\n
+<h2>7-qadam: QC (sifat nazorati)</h2>\n<ul>\n<li>Namuna bilan solishtirish</li>\n<li>Ismlar xatosi yo'qligi</li>\n<li>Qadoqlash shikastlanmagan</li>\n<li>Yetishmayotgan pozitsiyalar yo'q</li>\n</ul>\n
+<h2>8-qadam: Yetkazib berish va hisobot</h2>\n<ul>\n<li>Qabul-berish akti</li>\n<li>Yakuniy ro'yxat (necha dona, qanday segment)</li>\n<li>Ichki hisobot: byudjet, muddat, feedback</li>\n<li>Keyingi safar uchun “lessons learned”</li>\n</ul>\n
+<div class=\"cta\">\n  <p><strong>Buyurtma bermoqchimisiz?</strong> Telegram <a href=\"https://t.me/graveruz\">@graveruz</a> ga yozing yoki saytdagi shaklni to'ldiring.</p>\n</div>\n`
     },
     {
         slug: '8-mart-uchun-korporativ-sovgalar-goyalari',
         ruSlug: 'podarki-na-8-marta-sotrudnicam',
-        title: '8 mart sovg‘alari: 20 g‘oya (korporativ, gravirovka)',
-        description: '8 martga jamoa uchun sovg‘a tanlang: 20 g‘oya, byudjet bo‘yicha. Toshkentda lazer gravirovka bilan buyurtma qiling!',
+        title: "8 mart sovg'alari: 20 g'oya (korporativ, gravirovka)",
+        description: "8 martga jamoa uchun sovg'a tanlang: 20 g'oya, byudjet bo'yicha. Toshkentda lazer gravirovka bilan buyurtma qiling!",
         date: '2026-03-03',
-        category: 'G‘oyalar',
-        keywords: ['8 mart sovg‘a', 'korporativ sovg‘a', 'xodimalar', 'hamkasb', 'Toshkent', 'lazer gravirovka', 'g‘oyalar'],
+        category: "G'oyalar",
+        keywords: ["8 mart sovg'a", "korporativ sovg'a", 'xodimalar', 'hamkasb', 'Toshkent', 'lazer gravirovka', "g'oyalar"],
         relatedPosts: ['rahbar-uchun-8-mart-vip-goya', 'korporativ-sovgalar-toliq-gid-2025-uzbekistan'],
         contentHtml: `
-<p>8 martda sovg‘a — bu “e’tibor”ning eng ko‘rinadigan shakli. B2Bda esa yana bir vazifa bor: hammasi bir xil standartda, tirajda, o‘z vaqtida va brendga mos bo‘lishi. Bu maqolada 20 g‘oya va amaliy tanlov qoidalari.</p>\n
-<h2>B2B nuqtai nazari: 8 mart sovg‘asining 4 maqsadi</h2>\n<ul>\n<li>E’tirof va hurmat (jamoa motivatsiyasi)</li>\n<li>Employer brand (ichki PR)</li>\n<li>Standartlashtirilgan jarayon (zakup uchun oson)</li>\n<li>Brendli, ammo elegant ko‘rinish (lazer gravirovka)</li>\n</ul>\n
-<h2>Byudjetni qanday tanlash: “kishi boshiga” yondashuv</h2>\n<p>Amaliy tavsiya: 3 paket qiling — byudjet, standart, premium. Shunda bir xil tiraj ichida ham segmentlash oson.</p>\n<ul>\n<li>Byudjet: kichik, ammo yoqimli (promo emas)</li>\n<li>Standart: eng balansli, ko‘pchilik uchun</li>\n<li>Premium: rahbarlar/kalit rol egalari uchun</li>\n</ul>\n
-<h2>20 g‘oya (gravirovka/branding bilan)</h2>\n<table>\n<thead>\n<tr>\n<th>#</th>\n<th>G‘oya</th>\n<th>Brending/gravirovka</th>\n<th>Byudjet darajasi</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>Ism gravirovkali termo-krujka</td>\n<td>Logo + ism, minimal</td>\n<td>Standart/Premium</td>\n</tr>\n<tr>\n<td>2</td>\n<td>Premium ruchka + daftar seti</td>\n<td>Ruchkada gravirovka</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>3</td>\n<td>Yog‘och qutida mini-set</td>\n<td>Qopqoqda gravirovka</td>\n<td>Premium</td>\n</tr>\n<tr>\n<td>4</td>\n<td>Brelok (metal) + karta</td>\n<td>Gravirovka, tabrik</td>\n<td>Byudjet</td>\n</tr>\n<tr>\n<td>5</td>\n<td>Suv idishi (sport)</td>\n<td>Logo + motivatsion so‘z</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>6</td>\n<td>Desk-organayzer</td>\n<td>Yog‘ochda gravirovka</td>\n<td>Premium</td>\n</tr>\n<tr>\n<td>7</td>\n<td>Kabel/adapter seti (pouch)</td>\n<td>Pouch brending</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>8</td>\n<td>Shokolad/snack + tabrik</td>\n<td>Qadoqqa stiker</td>\n<td>Byudjet</td>\n</tr>\n<tr>\n<td>9</td>\n<td>Kofe/Choy mini-set</td>\n<td>Qadoq brending</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>10</td>\n<td>Aroma sham (neytral)</td>\n<td>Yorliq brending</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>11</td>\n<td>Mini-kosmetika (care set)</td>\n<td>Qadoq brending</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>12</td>\n<td>T-shirt (jamoa merch)</td>\n<td>Print</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>13</td>\n<td>Cap/shapkacha</td>\n<td>Kashta/print</td>\n<td>Byudjet/Standart</td>\n</tr>\n<tr>\n<td>14</td>\n<td>Notbuk stendi</td>\n<td>Gravirovka</td>\n<td>Premium</td>\n</tr>\n<tr>\n<td>15</td>\n<td>Mousepad</td>\n<td>Print/markirovka</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>16</td>\n<td>Planner (2025/2026)</td>\n<td>Muqovada gravirovka</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>17</td>\n<td>Metall vizitka qutisi</td>\n<td>Gravirovka</td>\n<td>Premium</td>\n</tr>\n<tr>\n<td>18</td>\n<td>Zargarlik qutichasi (neytral)</td>\n<td>Gravirovka</td>\n<td>Premium</td>\n</tr>\n<tr>\n<td>19</td>\n<td>Mini-issiq ichimlik termos</td>\n<td>Logo + ism</td>\n<td>Premium</td>\n</tr>\n<tr>\n<td>20</td>\n<td>Gullar + brend karta (kombo)</td>\n<td>Karta brending</td>\n<td>Byudjet/Standart</td>\n</tr>\n</tbody>\n</table>\n<p><em>Eslatma: Narxlar bo‘yicha yakuniy hisob-kitob tiraj va modelga bog‘liq. Bu yerda byudjet darajasi ko‘rsatilgan.</em></p>\n
-<h2>Lazer gravirovka: 8 mart uchun eng toza premium effekt</h2>\n<ul>\n<li>Haddan tashqari rangli printdan ko‘ra elegantroq</li>\n<li>Metall buyumlarda juda chiroyli ko‘rinadi</li>\n<li>Ism qo‘shilsa — sovg‘a shaxsiylashadi</li>\n<li>Tirajda bir xil sifat saqlanadi</li>\n</ul>\n
-<h2>Muddat va logistika: kechikmaslik uchun</h2>\n<ul>\n<li>Eng yaxshi start: 8 martdan 2–3 hafta oldin</li>\n<li>Ro‘yxat: ismlar bo‘lsa, 2 bosqichli tekshiruv</li>\n<li>Qadoqlash: bir xil, ichki tartib bilan</li>\n<li>Yetkazish: ofisga yoki tadbir joyiga aniq sana</li>\n</ul>\n
-<div class=\"cta\">\n  <p><strong>Buyurtma bermoqchimisiz?</strong> Telegram <a href=\"https://t.me/graveruz\">@graveruz</a> ga yozing yoki saytdagi shaklni to‘ldiring.</p>\n</div>\n`
+<p>8 martda sovg'a — bu “e'tibor”ning eng ko'rinadigan shakli. B2Bda esa yana bir vazifa bor: hammasi bir xil standartda, tirajda, o'z vaqtida va brendga mos bo'lishi. Bu maqolada 20 g'oya va amaliy tanlov qoidalari.</p>\n
+<h2>B2B nuqtai nazari: 8 mart sovg'asining 4 maqsadi</h2>\n<ul>\n<li>E'tirof va hurmat (jamoa motivatsiyasi)</li>\n<li>Employer brand (ichki PR)</li>\n<li>Standartlashtirilgan jarayon (zakup uchun oson)</li>\n<li>Brendli, ammo elegant ko'rinish (lazer gravirovka)</li>\n</ul>\n
+<h2>Byudjetni qanday tanlash: “kishi boshiga” yondashuv</h2>\n<p>Amaliy tavsiya: 3 paket qiling — byudjet, standart, premium. Shunda bir xil tiraj ichida ham segmentlash oson.</p>\n<ul>\n<li>Byudjet: kichik, ammo yoqimli (promo emas)</li>\n<li>Standart: eng balansli, ko'pchilik uchun</li>\n<li>Premium: rahbarlar/kalit rol egalari uchun</li>\n</ul>\n
+<h2>20 g'oya (gravirovka/branding bilan)</h2>\n<table>\n<thead>\n<tr>\n<th>#</th>\n<th>G'oya</th>\n<th>Brending/gravirovka</th>\n<th>Byudjet darajasi</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>Ism gravirovkali termo-krujka</td>\n<td>Logo + ism, minimal</td>\n<td>Standart/Premium</td>\n</tr>\n<tr>\n<td>2</td>\n<td>Premium ruchka + daftar seti</td>\n<td>Ruchkada gravirovka</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>3</td>\n<td>Yog'och qutida mini-set</td>\n<td>Qopqoqda gravirovka</td>\n<td>Premium</td>\n</tr>\n<tr>\n<td>4</td>\n<td>Brelok (metal) + karta</td>\n<td>Gravirovka, tabrik</td>\n<td>Byudjet</td>\n</tr>\n<tr>\n<td>5</td>\n<td>Suv idishi (sport)</td>\n<td>Logo + motivatsion so'z</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>6</td>\n<td>Desk-organayzer</td>\n<td>Yog'ochda gravirovka</td>\n<td>Premium</td>\n</tr>\n<tr>\n<td>7</td>\n<td>Kabel/adapter seti (pouch)</td>\n<td>Pouch brending</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>8</td>\n<td>Shokolad/snack + tabrik</td>\n<td>Qadoqqa stiker</td>\n<td>Byudjet</td>\n</tr>\n<tr>\n<td>9</td>\n<td>Kofe/Choy mini-set</td>\n<td>Qadoq brending</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>10</td>\n<td>Aroma sham (neytral)</td>\n<td>Yorliq brending</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>11</td>\n<td>Mini-kosmetika (care set)</td>\n<td>Qadoq brending</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>12</td>\n<td>T-shirt (jamoa merch)</td>\n<td>Print</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>13</td>\n<td>Cap/shapkacha</td>\n<td>Kashta/print</td>\n<td>Byudjet/Standart</td>\n</tr>\n<tr>\n<td>14</td>\n<td>Notbuk stendi</td>\n<td>Gravirovka</td>\n<td>Premium</td>\n</tr>\n<tr>\n<td>15</td>\n<td>Mousepad</td>\n<td>Print/markirovka</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>16</td>\n<td>Planner (2025/2026)</td>\n<td>Muqovada gravirovka</td>\n<td>Standart</td>\n</tr>\n<tr>\n<td>17</td>\n<td>Metall vizitka qutisi</td>\n<td>Gravirovka</td>\n<td>Premium</td>\n</tr>\n<tr>\n<td>18</td>\n<td>Zargarlik qutichasi (neytral)</td>\n<td>Gravirovka</td>\n<td>Premium</td>\n</tr>\n<tr>\n<td>19</td>\n<td>Mini-issiq ichimlik termos</td>\n<td>Logo + ism</td>\n<td>Premium</td>\n</tr>\n<tr>\n<td>20</td>\n<td>Gullar + brend karta (kombo)</td>\n<td>Karta brending</td>\n<td>Byudjet/Standart</td>\n</tr>\n</tbody>\n</table>\n<p><em>Eslatma: Narxlar bo'yicha yakuniy hisob-kitob tiraj va modelga bog'liq. Bu yerda byudjet darajasi ko'rsatilgan.</em></p>\n
+<h2>Lazer gravirovka: 8 mart uchun eng toza premium effekt</h2>\n<ul>\n<li>Haddan tashqari rangli printdan ko'ra elegantroq</li>\n<li>Metall buyumlarda juda chiroyli ko'rinadi</li>\n<li>Ism qo'shilsa — sovg'a shaxsiylashadi</li>\n<li>Tirajda bir xil sifat saqlanadi</li>\n</ul>\n
+<h2>Muddat va logistika: kechikmaslik uchun</h2>\n<ul>\n<li>Eng yaxshi start: 8 martdan 2–3 hafta oldin</li>\n<li>Ro'yxat: ismlar bo'lsa, 2 bosqichli tekshiruv</li>\n<li>Qadoqlash: bir xil, ichki tartib bilan</li>\n<li>Yetkazish: ofisga yoki tadbir joyiga aniq sana</li>\n</ul>\n
+<div class=\"cta\">\n  <p><strong>Buyurtma bermoqchimisiz?</strong> Telegram <a href=\"https://t.me/graveruz\">@graveruz</a> ga yozing yoki saytdagi shaklni to'ldiring.</p>\n</div>\n`
     },
     {
         slug: 'rahbar-uchun-8-mart-vip-goya',
         ruSlug: 'chto-podarit-rukovoditelyu-na-8-marta',
-        title: 'Rahbar uchun 8 mart: 10 VIP g‘oya (gravirovka)',
-        description: 'Rahbar uchun statusli sovg‘a tanlang: $50–$500 diapazonda 10 g‘oya. Toshkentda gravirovka bilan buyurtma qiling!',
+        title: "Rahbar uchun 8 mart: 10 VIP g'oya (gravirovka)",
+        description: "Rahbar uchun statusli sovg'a tanlang: $50–$500 diapazonda 10 g'oya. Toshkentda gravirovka bilan buyurtma qiling!",
         date: '2026-03-03',
         category: 'VIP',
-        keywords: ['rahbar sovg‘a 8 mart', 'VIP sovg‘a', 'lazer gravirovka', 'Toshkent', 'biznes etiket', 'soat', 'premium set'],
+        keywords: ["rahbar sovg'a 8 mart", "VIP sovg'a", 'lazer gravirovka', 'Toshkent', 'biznes etiket', 'soat', 'premium set'],
         relatedPosts: ['vip-sovga-goyalari', 'b2b-hamkorlar-uchun-sovgalar-etiket-gid'],
         contentHtml: `
-<p>Rahbarga sovg‘a — protokol. U haddan tashqari shaxsiy bo‘lmasligi, ammo statusni ko‘rsatishi kerak. Lazer gravirovka shu balansni beradi: minimal, premium va esdalik. Quyida $50–$500 diapazondagi 10 g‘oya.</p>\n
-<h2>Etiket: rahbar sovg‘asining 5 qoidasi</h2>\n<ul>\n<li>Shaxsiy chegarani hurmat qiling: juda “intim” buyumlar yo‘q</li>\n<li>Sifat birinchi o‘rinda: arzon ko‘rinish — yomon signal</li>\n<li>Minimal brending: kichik logo yoki initsial</li>\n<li>Qadoqlash: premium, ammo soddalik bilan</li>\n<li>Tabrik matni: qisqa, rasmiy va iliq</li>\n</ul>\n
-<h2>Narx diapazoni: $50–$500 qanday bo‘linadi</h2>\n<ul>\n<li>$50–$120: premium ruchka, setlar, sifatli aksessuarlar</li>\n<li>$120–$250: desk set, premium quti, shaxsiylashtirish ko‘proq</li>\n<li>$250–$500: soat, VIP komplekt, yuqori darajadagi qadoqlash</li>\n</ul>\n
-<h2>10 VIP g‘oya (gravirovka bilan)</h2>\n<ol>\n<li><strong>Premium ruchka + nomli quti ($50–$120)</strong><br>Ruchkada initsial/ism, qutida kichik logo. Juda protokolli va xavfsiz tanlov.</li>\n<li><strong>Brendli planner + metal vizitka qutisi ($60–$140)</strong><br>Agar rahbar ko‘p uchrashuv qilsa, bu amaliy sovg‘a.</li>\n<li><strong>Termos premium + tabrik karta ($70–$160)</strong><br>Har kuni ishlatiladi, gravirovka esa shaxsiy qiladi.</li>\n<li><strong>Yog‘och desk-organayzer seti ($120–$220)</strong><br>Ish stolida doim ko‘rinadi, brend eslatmasi yumshoq.</li>\n<li><strong>Premium qutida “office ritual” set ($120–$250)</strong><br>Choy/kofe mini-set + aksessuarlar. Brending qadoqda, buyumlarda gravirovka.</li>\n<li><strong>Zaryadlovchi/powerbank premium ($120–$250)</strong><br>Safar va uchrashuvlar uchun foydali. Logo minimal.</li>\n<li><strong>VIP sovg‘a qutisi: 3–5 buyumli kombo ($180–$320)</strong><br>Har bir buyumda “1 detal” gravirovka. Qadoqlash yuqori darajada.</li>\n<li><strong>Premium ruchka + soat kombo ($250–$450)</strong><br>Statusli, ammo shaxsiylik chegarasidan chiqmaydi.</li>\n<li><strong>Soat (gravirovka bilan) ($300–$500)</strong><br>Orqa qopqoqda initsial yoki qisqa tabrik gravirovkasi.</li>\n<li><strong>Individual VIP konsept ($200–$500+)</strong><br>Kompaniya tarixiga mos shior, nomli qadoqlash, premium materiallar.</li>\n</ol>\n
+<p>Rahbarga sovg'a — protokol. U haddan tashqari shaxsiy bo'lmasligi, ammo statusni ko'rsatishi kerak. Lazer gravirovka shu balansni beradi: minimal, premium va esdalik. Quyida $50–$500 diapazondagi 10 g'oya.</p>\n
+<h2>Etiket: rahbar sovg'asining 5 qoidasi</h2>\n<ul>\n<li>Shaxsiy chegarani hurmat qiling: juda “intim” buyumlar yo'q</li>\n<li>Sifat birinchi o'rinda: arzon ko'rinish — yomon signal</li>\n<li>Minimal brending: kichik logo yoki initsial</li>\n<li>Qadoqlash: premium, ammo soddalik bilan</li>\n<li>Tabrik matni: qisqa, rasmiy va iliq</li>\n</ul>\n
+<h2>Narx diapazoni: $50–$500 qanday bo'linadi</h2>\n<ul>\n<li>$50–$120: premium ruchka, setlar, sifatli aksessuarlar</li>\n<li>$120–$250: desk set, premium quti, shaxsiylashtirish ko'proq</li>\n<li>$250–$500: soat, VIP komplekt, yuqori darajadagi qadoqlash</li>\n</ul>\n
+<h2>10 VIP g'oya (gravirovka bilan)</h2>\n<ol>\n<li><strong>Premium ruchka + nomli quti ($50–$120)</strong><br>Ruchkada initsial/ism, qutida kichik logo. Juda protokolli va xavfsiz tanlov.</li>\n<li><strong>Brendli planner + metal vizitka qutisi ($60–$140)</strong><br>Agar rahbar ko'p uchrashuv qilsa, bu amaliy sovg'a.</li>\n<li><strong>Termos premium + tabrik karta ($70–$160)</strong><br>Har kuni ishlatiladi, gravirovka esa shaxsiy qiladi.</li>\n<li><strong>Yog'och desk-organayzer seti ($120–$220)</strong><br>Ish stolida doim ko'rinadi, brend eslatmasi yumshoq.</li>\n<li><strong>Premium qutida “office ritual” set ($120–$250)</strong><br>Choy/kofe mini-set + aksessuarlar. Brending qadoqda, buyumlarda gravirovka.</li>\n<li><strong>Zaryadlovchi/powerbank premium ($120–$250)</strong><br>Safar va uchrashuvlar uchun foydali. Logo minimal.</li>\n<li><strong>VIP sovg'a qutisi: 3–5 buyumli kombo ($180–$320)</strong><br>Har bir buyumda “1 detal” gravirovka. Qadoqlash yuqori darajada.</li>\n<li><strong>Premium ruchka + soat kombo ($250–$450)</strong><br>Statusli, ammo shaxsiylik chegarasidan chiqmaydi.</li>\n<li><strong>Soat (gravirovka bilan) ($300–$500)</strong><br>Orqa qopqoqda initsial yoki qisqa tabrik gravirovkasi.</li>\n<li><strong>Individual VIP konsept ($200–$500+)</strong><br>Kompaniya tarixiga mos shior, nomli qadoqlash, premium materiallar.</li>\n</ol>\n
 <h2>Gravirovka matni: 6 tayyor variant</h2>\n<ul>\n<li>Hurmat bilan — [Kompaniya nomi]</li>\n<li>Rahmat! 8 Mart muborak!</li>\n<li>Sizga minnatdorchilik bilan</li>\n<li>Lead with strength</li>\n<li>Together we grow</li>\n<li>2026 • [Initsial]</li>\n</ul>\n
-<div class=\"cta\">\n  <p><strong>Buyurtma bermoqchimisiz?</strong> Telegram <a href=\"https://t.me/graveruz\">@graveruz</a> ga yozing yoki saytdagi shaklni to‘ldiring.</p>\n</div>\n`
+<div class=\"cta\">\n  <p><strong>Buyurtma bermoqchimisiz?</strong> Telegram <a href=\"https://t.me/graveruz\">@graveruz</a> ga yozing yoki saytdagi shaklni to'ldiring.</p>\n</div>\n`
     },
     {
         slug: 'biznes-hamkorlar-uchun-vip-sovgalar',
         ruSlug: 'idei-vip-podarkov',
-        title: 'VIP sovg‘alar: 15+ g‘oya (O‘zbekiston)',
-        description: 'VIP sovg‘ani statusga mos tanlang: 15+ g‘oya, $ diapazonlar. Toshkentda lazer gravirovka bilan buyurtma qiling!',
+        title: "VIP sovg'alar: 15+ g'oya (O'zbekiston)",
+        description: "VIP sovg'ani statusga mos tanlang: 15+ g'oya, $ diapazonlar. Toshkentda lazer gravirovka bilan buyurtma qiling!",
         date: '2026-03-03',
         category: 'VIP',
-        keywords: ['VIP sovg‘a', 'biznes sovg‘a', 'hamkorlar', 'O‘zbekiston', 'Toshkent', 'lazer gravirovka', 'narx diapazoni'],
+        keywords: ["VIP sovg'a", "biznes sovg'a", 'hamkorlar', "O'zbekiston", 'Toshkent', 'lazer gravirovka', 'narx diapazoni'],
         relatedPosts: ['b2b-hamkorlar-uchun-sovgalar-etiket-gid', 'rahbar-uchun-8-mart-vip-goya'],
         contentHtml: `
-<p>VIP sovg‘a — bu “munosabat darajasi”ni ko‘rsatadigan belgidir. U sifatsiz bo‘lsa — brendga zarar, to‘g‘ri tanlansa — hamkorlikni mustahkamlaydi. Quyida 15+ g‘oya va amaliy narx diapazonlari.</p>\n
-<h2>VIP sovg‘ani tanlash: 4 filtr</h2>\n<ul>\n<li>1) Qabul qiluvchining statusi (top/middle/operatsion)</li>\n<li>2) Holat (shartnoma, yubiley, bayram, minnatdorchilik)</li>\n<li>3) Etiket (shaxsiy chegaralar, madaniy sezgirlik)</li>\n<li>4) Shaxsiylashtirish (lazer gravirovka)</li>\n</ul>\n
-<h2>15+ g‘oya: katalog format</h2>\n<table>\n<thead>\n<tr>\n<th>#</th>\n<th>G‘oya</th>\n<th>Taxminiy diapazon</th>\n<th>Kimga mos</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>Gravirovkali soat</td>\n<td>$250–$500+</td>\n<td>Top rahbar, kalit hamkor</td>\n</tr>\n<tr>\n<td>2</td>\n<td>Premium ruchka + quti</td>\n<td>$50–$200</td>\n<td>Rahbar, decision-maker</td>\n</tr>\n<tr>\n<td>3</td>\n<td>Desk set (yog‘och/metall)</td>\n<td>$120–$350</td>\n<td>Rahbar, bo‘lim boshlig‘i</td>\n</tr>\n<tr>\n<td>4</td>\n<td>VIP gift box (3–6 buyum)</td>\n<td>$150–$450</td>\n<td>Hamkorlar, mijozlar</td>\n</tr>\n<tr>\n<td>5</td>\n<td>Termos premium (nomli)</td>\n<td>$40–$150</td>\n<td>Mijoz/hamkor</td>\n</tr>\n<tr>\n<td>6</td>\n<td>Vizitka qutisi (metall)</td>\n<td>$30–$120</td>\n<td>B2B aloqa</td>\n</tr>\n<tr>\n<td>7</td>\n<td>Powerbank premium</td>\n<td>$60–$200</td>\n<td>Safar qiladigan hamkor</td>\n</tr>\n<tr>\n<td>8</td>\n<td>Planner + aksessuarlar seti</td>\n<td>$50–$180</td>\n<td>Decision-maker</td>\n</tr>\n<tr>\n<td>9</td>\n<td>Mini-bar / aksessuar qutisi (neytral)</td>\n<td>$120–$300</td>\n<td>VIP hamkor (etikka mos)</td>\n</tr>\n<tr>\n<td>10</td>\n<td>Yog‘och qutida choy/kofe set</td>\n<td>$80–$220</td>\n<td>Ofis protokoli</td>\n</tr>\n<tr>\n<td>11</td>\n<td>Brendli “welcome for partner” set</td>\n<td>$90–$250</td>\n<td>Yangi hamkor</td>\n</tr>\n<tr>\n<td>12</td>\n<td>Metall brelok premium</td>\n<td>$15–$70</td>\n<td>Qisqa uchrashuv/komplement</td>\n</tr>\n<tr>\n<td>13</td>\n<td>Notbuk stendi premium</td>\n<td>$70–$220</td>\n<td>Tech hamkor</td>\n</tr>\n<tr>\n<td>14</td>\n<td>Konferensiya VIP seti</td>\n<td>$60–$200</td>\n<td>Event, ko‘rgazma VIP</td>\n</tr>\n<tr>\n<td>15</td>\n<td>Individual konsept (custom)</td>\n<td>$200–$600+</td>\n<td>Alohida protokol holatlari</td>\n</tr>\n<tr>\n<td>16</td>\n<td>Premium qadoqlash + tabrik kartasi</td>\n<td>$10–$40</td>\n<td>Har qanday sovg‘a uchun multiplikator</td>\n</tr>\n</tbody>\n</table>\n<p><em>Eslatma: Diapazonlar — yo‘l-yo‘riq. Yakuniy narx brif, model va tirajga bog‘liq.</em></p>\n
-<h2>Nima uchun lazer gravirovka VIP segmentda standart</h2>\n<ul>\n<li>Premium ko‘rinish: minimal, toza</li>\n<li>Chidamlilik: uzoq saqlanadi</li>\n<li>Shaxsiylashtirish: ism/initsial + kichik logo</li>\n<li>Qadoqlash bilan birga “wow” effekt</li>\n</ul>\n
-<h2>Toshkentda buyurtma qilish: qanday ma’lumot kerak</h2>\n<ul>\n<li>Kimga: lavozim/status (umumiy)</li>\n<li>Necha dona va qachonga</li>\n<li>Byudjet diapazoni</li>\n<li>Logo fayli (vektor)</li>\n<li>Gravirovka matni (1–2 variant)</li>\n</ul>\n
-<h2>VIP sovg‘a uchun tabrik matni: 5 qisqa variant</h2>\n<ul>\n<li>Hamkorligingiz uchun minnatdormiz.</li>\n<li>Hurmat bilan, [Kompaniya nomi].</li>\n<li>Birgalikdagi muvaffaqiyatlar uchun rahmat.</li>\n<li>Doimiy hamkorlik tilab qolamiz.</li>\n<li>Siz bilan ishlash — biz uchun qadriyat.</li>\n</ul>\n
-<div class=\"cta\">\n  <p><strong>Buyurtma bermoqchimisiz?</strong> Telegram <a href=\"https://t.me/graveruz\">@graveruz</a> ga yozing yoki saytdagi shaklni to‘ldiring.</p>\n</div>\n`
+<p>VIP sovg'a — bu “munosabat darajasi”ni ko'rsatadigan belgidir. U sifatsiz bo'lsa — brendga zarar, to'g'ri tanlansa — hamkorlikni mustahkamlaydi. Quyida 15+ g'oya va amaliy narx diapazonlari.</p>\n
+<h2>VIP sovg'ani tanlash: 4 filtr</h2>\n<ul>\n<li>1) Qabul qiluvchining statusi (top/middle/operatsion)</li>\n<li>2) Holat (shartnoma, yubiley, bayram, minnatdorchilik)</li>\n<li>3) Etiket (shaxsiy chegaralar, madaniy sezgirlik)</li>\n<li>4) Shaxsiylashtirish (lazer gravirovka)</li>\n</ul>\n
+<h2>15+ g'oya: katalog format</h2>\n<table>\n<thead>\n<tr>\n<th>#</th>\n<th>G'oya</th>\n<th>Taxminiy diapazon</th>\n<th>Kimga mos</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>Gravirovkali soat</td>\n<td>$250–$500+</td>\n<td>Top rahbar, kalit hamkor</td>\n</tr>\n<tr>\n<td>2</td>\n<td>Premium ruchka + quti</td>\n<td>$50–$200</td>\n<td>Rahbar, decision-maker</td>\n</tr>\n<tr>\n<td>3</td>\n<td>Desk set (yog'och/metall)</td>\n<td>$120–$350</td>\n<td>Rahbar, bo'lim boshlig'i</td>\n</tr>\n<tr>\n<td>4</td>\n<td>VIP gift box (3–6 buyum)</td>\n<td>$150–$450</td>\n<td>Hamkorlar, mijozlar</td>\n</tr>\n<tr>\n<td>5</td>\n<td>Termos premium (nomli)</td>\n<td>$40–$150</td>\n<td>Mijoz/hamkor</td>\n</tr>\n<tr>\n<td>6</td>\n<td>Vizitka qutisi (metall)</td>\n<td>$30–$120</td>\n<td>B2B aloqa</td>\n</tr>\n<tr>\n<td>7</td>\n<td>Powerbank premium</td>\n<td>$60–$200</td>\n<td>Safar qiladigan hamkor</td>\n</tr>\n<tr>\n<td>8</td>\n<td>Planner + aksessuarlar seti</td>\n<td>$50–$180</td>\n<td>Decision-maker</td>\n</tr>\n<tr>\n<td>9</td>\n<td>Mini-bar / aksessuar qutisi (neytral)</td>\n<td>$120–$300</td>\n<td>VIP hamkor (etikka mos)</td>\n</tr>\n<tr>\n<td>10</td>\n<td>Yog'och qutida choy/kofe set</td>\n<td>$80–$220</td>\n<td>Ofis protokoli</td>\n</tr>\n<tr>\n<td>11</td>\n<td>Brendli “welcome for partner” set</td>\n<td>$90–$250</td>\n<td>Yangi hamkor</td>\n</tr>\n<tr>\n<td>12</td>\n<td>Metall brelok premium</td>\n<td>$15–$70</td>\n<td>Qisqa uchrashuv/komplement</td>\n</tr>\n<tr>\n<td>13</td>\n<td>Notbuk stendi premium</td>\n<td>$70–$220</td>\n<td>Tech hamkor</td>\n</tr>\n<tr>\n<td>14</td>\n<td>Konferensiya VIP seti</td>\n<td>$60–$200</td>\n<td>Event, ko'rgazma VIP</td>\n</tr>\n<tr>\n<td>15</td>\n<td>Individual konsept (custom)</td>\n<td>$200–$600+</td>\n<td>Alohida protokol holatlari</td>\n</tr>\n<tr>\n<td>16</td>\n<td>Premium qadoqlash + tabrik kartasi</td>\n<td>$10–$40</td>\n<td>Har qanday sovg'a uchun multiplikator</td>\n</tr>\n</tbody>\n</table>\n<p><em>Eslatma: Diapazonlar — yo'l-yo'riq. Yakuniy narx brif, model va tirajga bog'liq.</em></p>\n
+<h2>Nima uchun lazer gravirovka VIP segmentda standart</h2>\n<ul>\n<li>Premium ko'rinish: minimal, toza</li>\n<li>Chidamlilik: uzoq saqlanadi</li>\n<li>Shaxsiylashtirish: ism/initsial + kichik logo</li>\n<li>Qadoqlash bilan birga “wow” effekt</li>\n</ul>\n
+<h2>Toshkentda buyurtma qilish: qanday ma'lumot kerak</h2>\n<ul>\n<li>Kimga: lavozim/status (umumiy)</li>\n<li>Necha dona va qachonga</li>\n<li>Byudjet diapazoni</li>\n<li>Logo fayli (vektor)</li>\n<li>Gravirovka matni (1–2 variant)</li>\n</ul>\n
+<h2>VIP sovg'a uchun tabrik matni: 5 qisqa variant</h2>\n<ul>\n<li>Hamkorligingiz uchun minnatdormiz.</li>\n<li>Hurmat bilan, [Kompaniya nomi].</li>\n<li>Birgalikdagi muvaffaqiyatlar uchun rahmat.</li>\n<li>Doimiy hamkorlik tilab qolamiz.</li>\n<li>Siz bilan ishlash — biz uchun qadriyat.</li>\n</ul>\n
+<div class=\"cta\">\n  <p><strong>Buyurtma bermoqchimisiz?</strong> Telegram <a href=\"https://t.me/graveruz\">@graveruz</a> ga yozing yoki saytdagi shaklni to'ldiring.</p>\n</div>\n`
     },
     {
         slug: 'uzbekistonda-biznes-sovga-etiketi',
         ruSlug: 'delovoy-etiket-biznes-podarki-uzbekistan',
-        title: 'O‘zbekistonda biznes sovg‘a etiketi: VIP tanlov',
-        description: 'VIP sovg‘ada xatolardan qoching: etiket, madaniy kontekst, status darajalari. Ekspert gidini o‘qing.',
+        title: "O'zbekistonda biznes sovg'a etiketi: VIP tanlov",
+        description: "VIP sovg'ada xatolardan qoching: etiket, madaniy kontekst, status darajalari. Ekspert gidini o'qing.",
         date: '2026-03-03',
         category: 'Biznes',
-        keywords: ['biznes etiket', 'sovg‘a O‘zbekiston', 'VIP sovg‘a', 'hamkor', 'madaniy kontekst', 'Toshkent', 'protokol'],
+        keywords: ['biznes etiket', "sovg'a O'zbekiston", "VIP sovg'a", 'hamkor', 'madaniy kontekst', 'Toshkent', 'protokol'],
         relatedPosts: ['b2b-hamkorlar-uchun-sovgalar-etiket-gid', 'vip-sovga-goyalari'],
         contentHtml: `
-<p>O‘zbekistonda sovg‘a — qadimiy mehmondo‘stlik kodining bir qismi. Biznesda esa u protokolga aylanadi: hurmat, chegaralar va maqsad. Bu maqola — sotuv emas, ekspertiza: qanday tanlash va nimadan qochish.</p>\n
-<h2>Madaniy kontekst: sovg‘a nimani anglatadi</h2>\n<p>Sovg‘a ko‘pincha “aloqa mustahkamligi”ni bildiradi. Biroq biznesda u shaffof bo‘lishi va noqulay vaziyat yaratmasligi kerak. Shuning uchun minimalizm, sifat va protokol — asosiy mezonlar.</p>\n
-<h2>5 ta “to‘g‘ri” belgi: sovg‘a qanday bo‘lsa yaxshi</h2>\n<ul>\n<li>Sifatli va neytral (har kimga mos)</li>\n<li>Uzoq yashaydi (tez buzilmaydi)</li>\n<li>Qadoqlash chiroyli (unboxing)</li>\n<li>Tabrik qisqa va hurmatli</li>\n<li>Brend minimal (lazer gravirovka — ideal)</li>\n</ul>\n
-<h2>Status bo‘yicha tanlash: protokol xaritasi</h2>\n<h3>Top rahbarlar</h3>\n<ul>\n<li>VIP setlar: soat, premium ruchka, desk set</li>\n<li>Ism/initsial gravirovkasi — eng toza personalizatsiya</li>\n</ul>\n<h3>Bo‘lim rahbarlari va decision-maker</h3>\n<ul>\n<li>Termos/daftar set, aksessuarlar</li>\n<li>Sifatli, ammo haddan tashqari “qimmat” ko‘rinmaydi</li>\n</ul>\n<h3>Operatsion aloqalar</h3>\n<ul>\n<li>Amaliy buyumlar: termos, organizer, vizitka qutisi</li>\n<li>Qadoqlash soddaroq bo‘lishi mumkin</li>\n</ul>\n
-<h2>Nimani bermaslik kerak: etik risklar</h2>\n<ul>\n<li>Juda shaxsiy buyumlar (didga bog‘liq)</li>\n<li>Bahsli mavzu yoki “hazil” suvenirlari</li>\n<li>Sifatsiz gadget/promo</li>\n<li>Soxta brendlar (reputatsion risk)</li>\n<li>Noaniq kelib chiqish (huquqiy risk)</li>\n</ul>\n
-<h2>Taqdimot va kommunikatsiya: sovg‘ani qanday berish</h2>\n<ul>\n<li>Taqdimot vaqti: uchrashuv oxiri yoki muhim bosqichdan keyin</li>\n<li>Tabrik karta: 1–2 gap, rasmiy ohang</li>\n<li>Qadoqlash: toza, brendli, ammo minimal</li>\n<li>Hisobdorlik: kompaniya ichida qayd (kimga, qachon, nima)</li>\n</ul>\n
-<div class=\"cta\">\n  <p><strong>Buyurtma bermoqchimisiz?</strong> Telegram <a href=\"https://t.me/graveruz\">@graveruz</a> ga yozing yoki saytdagi shaklni to‘ldiring.</p>\n</div>\n`
+<p>O'zbekistonda sovg'a — qadimiy mehmondo'stlik kodining bir qismi. Biznesda esa u protokolga aylanadi: hurmat, chegaralar va maqsad. Bu maqola — sotuv emas, ekspertiza: qanday tanlash va nimadan qochish.</p>\n
+<h2>Madaniy kontekst: sovg'a nimani anglatadi</h2>\n<p>Sovg'a ko'pincha “aloqa mustahkamligi”ni bildiradi. Biroq biznesda u shaffof bo'lishi va noqulay vaziyat yaratmasligi kerak. Shuning uchun minimalizm, sifat va protokol — asosiy mezonlar.</p>\n
+<h2>5 ta “to'g'ri” belgi: sovg'a qanday bo'lsa yaxshi</h2>\n<ul>\n<li>Sifatli va neytral (har kimga mos)</li>\n<li>Uzoq yashaydi (tez buzilmaydi)</li>\n<li>Qadoqlash chiroyli (unboxing)</li>\n<li>Tabrik qisqa va hurmatli</li>\n<li>Brend minimal (lazer gravirovka — ideal)</li>\n</ul>\n
+<h2>Status bo'yicha tanlash: protokol xaritasi</h2>\n<h3>Top rahbarlar</h3>\n<ul>\n<li>VIP setlar: soat, premium ruchka, desk set</li>\n<li>Ism/initsial gravirovkasi — eng toza personalizatsiya</li>\n</ul>\n<h3>Bo'lim rahbarlari va decision-maker</h3>\n<ul>\n<li>Termos/daftar set, aksessuarlar</li>\n<li>Sifatli, ammo haddan tashqari “qimmat” ko'rinmaydi</li>\n</ul>\n<h3>Operatsion aloqalar</h3>\n<ul>\n<li>Amaliy buyumlar: termos, organizer, vizitka qutisi</li>\n<li>Qadoqlash soddaroq bo'lishi mumkin</li>\n</ul>\n
+<h2>Nimani bermaslik kerak: etik risklar</h2>\n<ul>\n<li>Juda shaxsiy buyumlar (didga bog'liq)</li>\n<li>Bahsli mavzu yoki “hazil” suvenirlari</li>\n<li>Sifatsiz gadget/promo</li>\n<li>Soxta brendlar (reputatsion risk)</li>\n<li>Noaniq kelib chiqish (huquqiy risk)</li>\n</ul>\n
+<h2>Taqdimot va kommunikatsiya: sovg'ani qanday berish</h2>\n<ul>\n<li>Taqdimot vaqti: uchrashuv oxiri yoki muhim bosqichdan keyin</li>\n<li>Tabrik karta: 1–2 gap, rasmiy ohang</li>\n<li>Qadoqlash: toza, brendli, ammo minimal</li>\n<li>Hisobdorlik: kompaniya ichida qayd (kimga, qachon, nima)</li>\n</ul>\n
+<div class=\"cta\">\n  <p><strong>Buyurtma bermoqchimisiz?</strong> Telegram <a href=\"https://t.me/graveruz\">@graveruz</a> ga yozing yoki saytdagi shaklni to'ldiring.</p>\n</div>\n`
     },
 
 {
@@ -2648,16 +2648,16 @@ export const blogPosts = {
       category: "Qo'llanmalar",
       relatedPosts: ['korporativ-sovgalar-logotip-bilan-to-liq-qollanma', 'logotipli-sovga-toplami', 'korporativ-sovga-toplamlari', 'mijoz-hamkorlar-uchun-sovgalar-vip', 'lazer-gravirovka-sovgalar', 'welcome-pack-yangi-xodimlar'],
       contentHtml: `<p>Ushbu maqola jamoaga jarayonni aniq boshqarishga yordam beradi: briefdan boshlab tiraj va topshirishgacha.</p>
-<p>Asosiy e’tibor amaliy yondashuvga qaratiladi: tanlov mezonlari, kelishuv bosqichlari va operatsion risklarni kamaytirish.</p>
+<p>Asosiy e'tibor amaliy yondashuvga qaratiladi: tanlov mezonlari, kelishuv bosqichlari va operatsion risklarni kamaytirish.</p>
 <h2>Boshlashdan oldin nimalar muhim</h2>
 <ul><li>Kampaniya maqsadi va natija metrikalari</li><li>Qabul qiluvchilar segmenti va ustuvorliklar</li><li>Byudjet va muddat cheklovlari</li></ul>
 <h2>Amaliy ish rejasi</h2>
 <ol><li>Brief va mahsulot tarkibini tasdiqlash</li><li>Brendlash va test namunani kelishish</li><li>Ishlab chiqarish va logistika jadvalini ishga tushirish</li></ol>
 <h2>Sifat va muddat nazorati</h2>
-<p>Topshirishdan oldin maketga moslik, qadoq sifati va personalizatsiya to‘g‘riligini namunaviy partiyada tekshiring.</p>
-<p><strong>Tanlash va ishga tushirishda yordam kerakmi?</strong> Kontaktlar bo‘limi orqali murojaat qiling — jamoa tirajingizga mos ish rejasini tayyorlaydi.</p>
-<h2>Bog‘liq maqolalar</h2>
-<ul><li><a href="/uz/blog/korporativ-sovgalar-logotip-bilan-to-liq-qollanma">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/korporativ-sovga-toplamlari">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/mijoz-hamkorlar-uchun-sovgalar-vip">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/welcome-pack-yangi-xodimlar">Shuningdek qarang: bog‘liq maqola</a></li></ul>`},
+<p>Topshirishdan oldin maketga moslik, qadoq sifati va personalizatsiya to'g'riligini namunaviy partiyada tekshiring.</p>
+<p><strong>Tanlash va ishga tushirishda yordam kerakmi?</strong> Kontaktlar bo'limi orqali murojaat qiling — jamoa tirajingizga mos ish rejasini tayyorlaydi.</p>
+<h2>Bog'liq maqolalar</h2>
+<ul><li><a href="/uz/blog/korporativ-sovgalar-logotip-bilan-to-liq-qollanma">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/korporativ-sovga-toplamlari">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/mijoz-hamkorlar-uchun-sovgalar-vip">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/welcome-pack-yangi-xodimlar">Shuningdek qarang: bog'liq maqola</a></li></ul>`},
     {
       slug: 'lazer-gravirovka-sovgalar',
       title: "Sovg'alarga lazer gravirovka: to'liq qo'llanma",
@@ -2667,16 +2667,16 @@ export const blogPosts = {
       category: 'Texnologiyalar',
       relatedPosts: ['korporativ-sovgalar-gravyurasi-usullari', 'logotip-maketi-tayyorlash', 'logotipli-zajigalka-va-soat', 'korporativ-sovgani-qanday-tanlash', 'logotipli-sovga-toplami'],
       contentHtml: `<p>Ushbu maqola jamoaga jarayonni aniq boshqarishga yordam beradi: briefdan boshlab tiraj va topshirishgacha.</p>
-<p>Asosiy e’tibor amaliy yondashuvga qaratiladi: tanlov mezonlari, kelishuv bosqichlari va operatsion risklarni kamaytirish.</p>
+<p>Asosiy e'tibor amaliy yondashuvga qaratiladi: tanlov mezonlari, kelishuv bosqichlari va operatsion risklarni kamaytirish.</p>
 <h2>Boshlashdan oldin nimalar muhim</h2>
 <ul><li>Kampaniya maqsadi va natija metrikalari</li><li>Qabul qiluvchilar segmenti va ustuvorliklar</li><li>Byudjet va muddat cheklovlari</li></ul>
 <h2>Amaliy ish rejasi</h2>
 <ol><li>Brief va mahsulot tarkibini tasdiqlash</li><li>Brendlash va test namunani kelishish</li><li>Ishlab chiqarish va logistika jadvalini ishga tushirish</li></ol>
 <h2>Sifat va muddat nazorati</h2>
-<p>Topshirishdan oldin maketga moslik, qadoq sifati va personalizatsiya to‘g‘riligini namunaviy partiyada tekshiring.</p>
-<p><strong>Tanlash va ishga tushirishda yordam kerakmi?</strong> Kontaktlar bo‘limi orqali murojaat qiling — jamoa tirajingizga mos ish rejasini tayyorlaydi.</p>
-<h2>Bog‘liq maqolalar</h2>
-<ul><li><a href="/uz/blog/lazer-gravirovka-sovgalar-tehnologiyasi">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgalar-gravyurasi-usullari">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/logotip-maketi-tayyorlash">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgani-qanday-tanlash">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog‘liq maqola</a></li></ul>`},
+<p>Topshirishdan oldin maketga moslik, qadoq sifati va personalizatsiya to'g'riligini namunaviy partiyada tekshiring.</p>
+<p><strong>Tanlash va ishga tushirishda yordam kerakmi?</strong> Kontaktlar bo'limi orqali murojaat qiling — jamoa tirajingizga mos ish rejasini tayyorlaydi.</p>
+<h2>Bog'liq maqolalar</h2>
+<ul><li><a href="/uz/blog/lazer-gravirovka-sovgalar-tehnologiyasi">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgalar-gravyurasi-usullari">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/logotip-maketi-tayyorlash">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgani-qanday-tanlash">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog'liq maqola</a></li></ul>`},
     {
       slug: 'logotipli-sovga-toplami',
       title: "Kompaniya logotipli sovg'a to'plamlari",
@@ -2686,16 +2686,16 @@ export const blogPosts = {
       category: "G'oyalar",
       relatedPosts: ['korporativ-sovgalar-logotip-bilan-to-liq-qollanma', 'korporativ-sovgani-qanday-tanlash', 'korporativ-sovga-toplamlari', 'mijoz-hamkorlar-uchun-sovgalar-vip', 'lazer-gravirovka-sovgalar', 'welcome-pack-yangi-xodimlar'],
       contentHtml: `<p>Ushbu maqola jamoaga jarayonni aniq boshqarishga yordam beradi: briefdan boshlab tiraj va topshirishgacha.</p>
-<p>Asosiy e’tibor amaliy yondashuvga qaratiladi: tanlov mezonlari, kelishuv bosqichlari va operatsion risklarni kamaytirish.</p>
+<p>Asosiy e'tibor amaliy yondashuvga qaratiladi: tanlov mezonlari, kelishuv bosqichlari va operatsion risklarni kamaytirish.</p>
 <h2>Boshlashdan oldin nimalar muhim</h2>
 <ul><li>Kampaniya maqsadi va natija metrikalari</li><li>Qabul qiluvchilar segmenti va ustuvorliklar</li><li>Byudjet va muddat cheklovlari</li></ul>
 <h2>Amaliy ish rejasi</h2>
 <ol><li>Brief va mahsulot tarkibini tasdiqlash</li><li>Brendlash va test namunani kelishish</li><li>Ishlab chiqarish va logistika jadvalini ishga tushirish</li></ol>
 <h2>Sifat va muddat nazorati</h2>
-<p>Topshirishdan oldin maketga moslik, qadoq sifati va personalizatsiya to‘g‘riligini namunaviy partiyada tekshiring.</p>
-<p><strong>Tanlash va ishga tushirishda yordam kerakmi?</strong> Kontaktlar bo‘limi orqali murojaat qiling — jamoa tirajingizga mos ish rejasini tayyorlaydi.</p>
-<h2>Bog‘liq maqolalar</h2>
-<ul><li><a href="/uz/blog/korporativ-sovgalar-logotip-bilan-to-liq-qollanma">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgani-qanday-tanlash">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/korporativ-sovga-toplamlari">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/mijoz-hamkorlar-uchun-sovgalar-vip">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/welcome-pack-yangi-xodimlar">Shuningdek qarang: bog‘liq maqola</a></li></ul>`},
+<p>Topshirishdan oldin maketga moslik, qadoq sifati va personalizatsiya to'g'riligini namunaviy partiyada tekshiring.</p>
+<p><strong>Tanlash va ishga tushirishda yordam kerakmi?</strong> Kontaktlar bo'limi orqali murojaat qiling — jamoa tirajingizga mos ish rejasini tayyorlaydi.</p>
+<h2>Bog'liq maqolalar</h2>
+<ul><li><a href="/uz/blog/korporativ-sovgalar-logotip-bilan-to-liq-qollanma">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgani-qanday-tanlash">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/korporativ-sovga-toplamlari">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/mijoz-hamkorlar-uchun-sovgalar-vip">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/welcome-pack-yangi-xodimlar">Shuningdek qarang: bog'liq maqola</a></li></ul>`},
     {
       slug: 'welcome-pack-yangi-xodimlar',
       title: "Yangi xodimlar uchun Welcome Pack",
@@ -2705,16 +2705,16 @@ export const blogPosts = {
       category: "HR",
       relatedPosts: ['xodimlar-uchun-sovgalar-hr-qollanma', 'yangi-xodimlar-uchun-welcome-pack', 'korporativ-sovgani-qanday-tanlash', 'lazer-gravirovka-sovgalar', 'logotipli-sovga-toplami', 'suvenir-brendlash'],
       contentHtml: `<p>Ushbu maqola jamoaga jarayonni aniq boshqarishga yordam beradi: briefdan boshlab tiraj va topshirishgacha.</p>
-<p>Asosiy e’tibor amaliy yondashuvga qaratiladi: tanlov mezonlari, kelishuv bosqichlari va operatsion risklarni kamaytirish.</p>
+<p>Asosiy e'tibor amaliy yondashuvga qaratiladi: tanlov mezonlari, kelishuv bosqichlari va operatsion risklarni kamaytirish.</p>
 <h2>Boshlashdan oldin nimalar muhim</h2>
 <ul><li>Kampaniya maqsadi va natija metrikalari</li><li>Qabul qiluvchilar segmenti va ustuvorliklar</li><li>Byudjet va muddat cheklovlari</li></ul>
 <h2>Amaliy ish rejasi</h2>
 <ol><li>Brief va mahsulot tarkibini tasdiqlash</li><li>Brendlash va test namunani kelishish</li><li>Ishlab chiqarish va logistika jadvalini ishga tushirish</li></ol>
 <h2>Sifat va muddat nazorati</h2>
-<p>Topshirishdan oldin maketga moslik, qadoq sifati va personalizatsiya to‘g‘riligini namunaviy partiyada tekshiring.</p>
-<p><strong>Tanlash va ishga tushirishda yordam kerakmi?</strong> Kontaktlar bo‘limi orqali murojaat qiling — jamoa tirajingizga mos ish rejasini tayyorlaydi.</p>
-<h2>Bog‘liq maqolalar</h2>
-<ul><li><a href="/uz/blog/xodimlar-uchun-sovgalar-hr-qollanma">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/yangi-xodimlar-uchun-welcome-pack">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgani-qanday-tanlash">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/suvenir-brendlash">Shuningdek qarang: bog‘liq maqola</a></li></ul>`},
+<p>Topshirishdan oldin maketga moslik, qadoq sifati va personalizatsiya to'g'riligini namunaviy partiyada tekshiring.</p>
+<p><strong>Tanlash va ishga tushirishda yordam kerakmi?</strong> Kontaktlar bo'limi orqali murojaat qiling — jamoa tirajingizga mos ish rejasini tayyorlaydi.</p>
+<h2>Bog'liq maqolalar</h2>
+<ul><li><a href="/uz/blog/xodimlar-uchun-sovgalar-hr-qollanma">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/yangi-xodimlar-uchun-welcome-pack">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgani-qanday-tanlash">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/suvenir-brendlash">Shuningdek qarang: bog'liq maqola</a></li></ul>`},
     {
       slug: 'suvenir-brendlash',
       title: "Suvenirlarni brendlash: usullar va materiallar",
@@ -2724,16 +2724,16 @@ export const blogPosts = {
       category: 'Texnologiyalar',
       relatedPosts: ['kompaniya-merchi-brendlash', 'suvenir-byudjetini-tejash', 'korporativ-sovgani-qanday-tanlash', 'lazer-gravirovka-sovgalar', 'logotipli-sovga-toplami', 'welcome-pack-yangi-xodimlar'],
       contentHtml: `<p>Ushbu maqola jamoaga jarayonni aniq boshqarishga yordam beradi: briefdan boshlab tiraj va topshirishgacha.</p>
-<p>Asosiy e’tibor amaliy yondashuvga qaratiladi: tanlov mezonlari, kelishuv bosqichlari va operatsion risklarni kamaytirish.</p>
+<p>Asosiy e'tibor amaliy yondashuvga qaratiladi: tanlov mezonlari, kelishuv bosqichlari va operatsion risklarni kamaytirish.</p>
 <h2>Boshlashdan oldin nimalar muhim</h2>
 <ul><li>Kampaniya maqsadi va natija metrikalari</li><li>Qabul qiluvchilar segmenti va ustuvorliklar</li><li>Byudjet va muddat cheklovlari</li></ul>
 <h2>Amaliy ish rejasi</h2>
 <ol><li>Brief va mahsulot tarkibini tasdiqlash</li><li>Brendlash va test namunani kelishish</li><li>Ishlab chiqarish va logistika jadvalini ishga tushirish</li></ol>
 <h2>Sifat va muddat nazorati</h2>
-<p>Topshirishdan oldin maketga moslik, qadoq sifati va personalizatsiya to‘g‘riligini namunaviy partiyada tekshiring.</p>
-<p><strong>Tanlash va ishga tushirishda yordam kerakmi?</strong> Kontaktlar bo‘limi orqali murojaat qiling — jamoa tirajingizga mos ish rejasini tayyorlaydi.</p>
-<h2>Bog‘liq maqolalar</h2>
-<ul><li><a href="/uz/blog/kompaniya-merchi-brendlash">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/suvenir-byudjetini-tejash">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgani-qanday-tanlash">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/welcome-pack-yangi-xodimlar">Shuningdek qarang: bog‘liq maqola</a></li></ul>`},
+<p>Topshirishdan oldin maketga moslik, qadoq sifati va personalizatsiya to'g'riligini namunaviy partiyada tekshiring.</p>
+<p><strong>Tanlash va ishga tushirishda yordam kerakmi?</strong> Kontaktlar bo'limi orqali murojaat qiling — jamoa tirajingizga mos ish rejasini tayyorlaydi.</p>
+<h2>Bog'liq maqolalar</h2>
+<ul><li><a href="/uz/blog/kompaniya-merchi-brendlash">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/suvenir-byudjetini-tejash">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgani-qanday-tanlash">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/welcome-pack-yangi-xodimlar">Shuningdek qarang: bog'liq maqola</a></li></ul>`},
     {
       slug: 'yangi-yil-sovga-goyalari',
       title: "Yangi yilga korporativ sovg'a g'oyalari",
@@ -2743,16 +2743,16 @@ export const blogPosts = {
       category: 'Mavsumiy',
       relatedPosts: ['navruz-sovgalari', 'navruz-uchun-korporativ-sovgalar', 'korporativ-sovgani-qanday-tanlash', 'lazer-gravirovka-sovgalar', 'logotipli-sovga-toplami', 'welcome-pack-yangi-xodimlar'],
       contentHtml: `<p>Ushbu maqola jamoaga jarayonni aniq boshqarishga yordam beradi: briefdan boshlab tiraj va topshirishgacha.</p>
-<p>Asosiy e’tibor amaliy yondashuvga qaratiladi: tanlov mezonlari, kelishuv bosqichlari va operatsion risklarni kamaytirish.</p>
+<p>Asosiy e'tibor amaliy yondashuvga qaratiladi: tanlov mezonlari, kelishuv bosqichlari va operatsion risklarni kamaytirish.</p>
 <h2>Boshlashdan oldin nimalar muhim</h2>
 <ul><li>Kampaniya maqsadi va natija metrikalari</li><li>Qabul qiluvchilar segmenti va ustuvorliklar</li><li>Byudjet va muddat cheklovlari</li></ul>
 <h2>Amaliy ish rejasi</h2>
 <ol><li>Brief va mahsulot tarkibini tasdiqlash</li><li>Brendlash va test namunani kelishish</li><li>Ishlab chiqarish va logistika jadvalini ishga tushirish</li></ol>
 <h2>Sifat va muddat nazorati</h2>
-<p>Topshirishdan oldin maketga moslik, qadoq sifati va personalizatsiya to‘g‘riligini namunaviy partiyada tekshiring.</p>
-<p><strong>Tanlash va ishga tushirishda yordam kerakmi?</strong> Kontaktlar bo‘limi orqali murojaat qiling — jamoa tirajingizga mos ish rejasini tayyorlaydi.</p>
-<h2>Bog‘liq maqolalar</h2>
-<ul><li><a href="/uz/blog/navruz-sovgalari">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/navruz-uchun-korporativ-sovgalar">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgani-qanday-tanlash">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/welcome-pack-yangi-xodimlar">Shuningdek qarang: bog‘liq maqola</a></li></ul>`},
+<p>Topshirishdan oldin maketga moslik, qadoq sifati va personalizatsiya to'g'riligini namunaviy partiyada tekshiring.</p>
+<p><strong>Tanlash va ishga tushirishda yordam kerakmi?</strong> Kontaktlar bo'limi orqali murojaat qiling — jamoa tirajingizga mos ish rejasini tayyorlaydi.</p>
+<h2>Bog'liq maqolalar</h2>
+<ul><li><a href="/uz/blog/navruz-sovgalari">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/navruz-uchun-korporativ-sovgalar">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgani-qanday-tanlash">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/welcome-pack-yangi-xodimlar">Shuningdek qarang: bog'liq maqola</a></li></ul>`},
     {
       slug: 'logotip-maketi-tayyorlash',
       title: "Gravirovka uchun logotip maketini tayyorlash",
@@ -2762,16 +2762,16 @@ export const blogPosts = {
       category: 'Texnologiyalar',
       relatedPosts: ['korporativ-sovgalar-gravyurasi-usullari', 'logotipli-zajigalka-va-soat', 'korporativ-sovgani-qanday-tanlash', 'logotipli-sovga-toplami'],
       contentHtml: `<p>Ushbu maqola jamoaga jarayonni aniq boshqarishga yordam beradi: briefdan boshlab tiraj va topshirishgacha.</p>
-<p>Asosiy e’tibor amaliy yondashuvga qaratiladi: tanlov mezonlari, kelishuv bosqichlari va operatsion risklarni kamaytirish.</p>
+<p>Asosiy e'tibor amaliy yondashuvga qaratiladi: tanlov mezonlari, kelishuv bosqichlari va operatsion risklarni kamaytirish.</p>
 <h2>Boshlashdan oldin nimalar muhim</h2>
 <ul><li>Kampaniya maqsadi va natija metrikalari</li><li>Qabul qiluvchilar segmenti va ustuvorliklar</li><li>Byudjet va muddat cheklovlari</li></ul>
 <h2>Amaliy ish rejasi</h2>
 <ol><li>Brief va mahsulot tarkibini tasdiqlash</li><li>Brendlash va test namunani kelishish</li><li>Ishlab chiqarish va logistika jadvalini ishga tushirish</li></ol>
 <h2>Sifat va muddat nazorati</h2>
-<p>Topshirishdan oldin maketga moslik, qadoq sifati va personalizatsiya to‘g‘riligini namunaviy partiyada tekshiring.</p>
-<p><strong>Tanlash va ishga tushirishda yordam kerakmi?</strong> Kontaktlar bo‘limi orqali murojaat qiling — jamoa tirajingizga mos ish rejasini tayyorlaydi.</p>
-<h2>Bog‘liq maqolalar</h2>
-<ul><li><a href="/uz/blog/lazer-gravirovka-sovgalar-tehnologiyasi">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgalar-gravyurasi-usullari">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/logotipli-zajigalka-va-soat">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgani-qanday-tanlash">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog‘liq maqola</a></li></ul>`},
+<p>Topshirishdan oldin maketga moslik, qadoq sifati va personalizatsiya to'g'riligini namunaviy partiyada tekshiring.</p>
+<p><strong>Tanlash va ishga tushirishda yordam kerakmi?</strong> Kontaktlar bo'limi orqali murojaat qiling — jamoa tirajingizga mos ish rejasini tayyorlaydi.</p>
+<h2>Bog'liq maqolalar</h2>
+<ul><li><a href="/uz/blog/lazer-gravirovka-sovgalar-tehnologiyasi">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgalar-gravyurasi-usullari">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/logotipli-zajigalka-va-soat">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgani-qanday-tanlash">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog'liq maqola</a></li></ul>`},
     {
       slug: 'navruz-sovgalari',
       title: "Navro'zga korporativ sovg'alar: an'analar va g'oyalar",
@@ -2781,16 +2781,16 @@ export const blogPosts = {
       category: 'Mavsumiy',
       relatedPosts: ['yangi-yil-sovga-goyalari', 'navruz-uchun-korporativ-sovgalar', 'korporativ-sovgani-qanday-tanlash', 'lazer-gravirovka-sovgalar', 'logotipli-sovga-toplami', 'welcome-pack-yangi-xodimlar'],
       contentHtml: `<p>Ushbu maqola jamoaga jarayonni aniq boshqarishga yordam beradi: briefdan boshlab tiraj va topshirishgacha.</p>
-<p>Asosiy e’tibor amaliy yondashuvga qaratiladi: tanlov mezonlari, kelishuv bosqichlari va operatsion risklarni kamaytirish.</p>
+<p>Asosiy e'tibor amaliy yondashuvga qaratiladi: tanlov mezonlari, kelishuv bosqichlari va operatsion risklarni kamaytirish.</p>
 <h2>Boshlashdan oldin nimalar muhim</h2>
 <ul><li>Kampaniya maqsadi va natija metrikalari</li><li>Qabul qiluvchilar segmenti va ustuvorliklar</li><li>Byudjet va muddat cheklovlari</li></ul>
 <h2>Amaliy ish rejasi</h2>
 <ol><li>Brief va mahsulot tarkibini tasdiqlash</li><li>Brendlash va test namunani kelishish</li><li>Ishlab chiqarish va logistika jadvalini ishga tushirish</li></ol>
 <h2>Sifat va muddat nazorati</h2>
-<p>Topshirishdan oldin maketga moslik, qadoq sifati va personalizatsiya to‘g‘riligini namunaviy partiyada tekshiring.</p>
-<p><strong>Tanlash va ishga tushirishda yordam kerakmi?</strong> Kontaktlar bo‘limi orqali murojaat qiling — jamoa tirajingizga mos ish rejasini tayyorlaydi.</p>
-<h2>Bog‘liq maqolalar</h2>
-<ul><li><a href="/uz/blog/yangi-yil-sovga-goyalari">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/navruz-sovgalari">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/navruz-uchun-korporativ-sovgalar">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/welcome-pack-yangi-xodimlar">Shuningdek qarang: bog‘liq maqola</a></li></ul>`},
+<p>Topshirishdan oldin maketga moslik, qadoq sifati va personalizatsiya to'g'riligini namunaviy partiyada tekshiring.</p>
+<p><strong>Tanlash va ishga tushirishda yordam kerakmi?</strong> Kontaktlar bo'limi orqali murojaat qiling — jamoa tirajingizga mos ish rejasini tayyorlaydi.</p>
+<h2>Bog'liq maqolalar</h2>
+<ul><li><a href="/uz/blog/yangi-yil-sovga-goyalari">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/navruz-sovgalari">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/navruz-uchun-korporativ-sovgalar">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/welcome-pack-yangi-xodimlar">Shuningdek qarang: bog'liq maqola</a></li></ul>`},
     {
       slug: 'suvenir-byudjetini-tejash',
       title: "Korporativ suvenirlarda sifatni yo'qotmasdan qanday tejash mumkin",
@@ -2800,16 +2800,16 @@ export const blogPosts = {
       category: "Qo'llanmalar",
       relatedPosts: ['kompaniya-merchi-brendlash', 'suvenir-brendlash', 'korporativ-sovgani-qanday-tanlash', 'lazer-gravirovka-sovgalar', 'logotipli-sovga-toplami', 'welcome-pack-yangi-xodimlar'],
       contentHtml: `<p>Ushbu maqola jamoaga jarayonni aniq boshqarishga yordam beradi: briefdan boshlab tiraj va topshirishgacha.</p>
-<p>Asosiy e’tibor amaliy yondashuvga qaratiladi: tanlov mezonlari, kelishuv bosqichlari va operatsion risklarni kamaytirish.</p>
+<p>Asosiy e'tibor amaliy yondashuvga qaratiladi: tanlov mezonlari, kelishuv bosqichlari va operatsion risklarni kamaytirish.</p>
 <h2>Boshlashdan oldin nimalar muhim</h2>
 <ul><li>Kampaniya maqsadi va natija metrikalari</li><li>Qabul qiluvchilar segmenti va ustuvorliklar</li><li>Byudjet va muddat cheklovlari</li></ul>
 <h2>Amaliy ish rejasi</h2>
 <ol><li>Brief va mahsulot tarkibini tasdiqlash</li><li>Brendlash va test namunani kelishish</li><li>Ishlab chiqarish va logistika jadvalini ishga tushirish</li></ol>
 <h2>Sifat va muddat nazorati</h2>
-<p>Topshirishdan oldin maketga moslik, qadoq sifati va personalizatsiya to‘g‘riligini namunaviy partiyada tekshiring.</p>
-<p><strong>Tanlash va ishga tushirishda yordam kerakmi?</strong> Kontaktlar bo‘limi orqali murojaat qiling — jamoa tirajingizga mos ish rejasini tayyorlaydi.</p>
-<h2>Bog‘liq maqolalar</h2>
-<ul><li><a href="/uz/blog/kompaniya-merchi-brendlash">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/suvenir-brendlash">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgani-qanday-tanlash">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/welcome-pack-yangi-xodimlar">Shuningdek qarang: bog‘liq maqola</a></li></ul>`},
+<p>Topshirishdan oldin maketga moslik, qadoq sifati va personalizatsiya to'g'riligini namunaviy partiyada tekshiring.</p>
+<p><strong>Tanlash va ishga tushirishda yordam kerakmi?</strong> Kontaktlar bo'limi orqali murojaat qiling — jamoa tirajingizga mos ish rejasini tayyorlaydi.</p>
+<h2>Bog'liq maqolalar</h2>
+<ul><li><a href="/uz/blog/kompaniya-merchi-brendlash">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/suvenir-brendlash">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgani-qanday-tanlash">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/welcome-pack-yangi-xodimlar">Shuningdek qarang: bog'liq maqola</a></li></ul>`},
     {
       slug: 'xaridor-chek-listi-b2b',
       title: "B2B xaridor uchun korporativ sovg'alar chek-listi",
@@ -2819,16 +2819,16 @@ export const blogPosts = {
       category: "HR",
       relatedPosts: ['korporativ-sovgani-qanday-tanlash', 'lazer-gravirovka-sovgalar', 'logotipli-sovga-toplami', 'welcome-pack-yangi-xodimlar', 'suvenir-brendlash', 'yangi-yil-sovga-goyalari'],
       contentHtml: `<p>Ushbu maqola jamoaga jarayonni aniq boshqarishga yordam beradi: briefdan boshlab tiraj va topshirishgacha.</p>
-<p>Asosiy e’tibor amaliy yondashuvga qaratiladi: tanlov mezonlari, kelishuv bosqichlari va operatsion risklarni kamaytirish.</p>
+<p>Asosiy e'tibor amaliy yondashuvga qaratiladi: tanlov mezonlari, kelishuv bosqichlari va operatsion risklarni kamaytirish.</p>
 <h2>Boshlashdan oldin nimalar muhim</h2>
 <ul><li>Kampaniya maqsadi va natija metrikalari</li><li>Qabul qiluvchilar segmenti va ustuvorliklar</li><li>Byudjet va muddat cheklovlari</li></ul>
 <h2>Amaliy ish rejasi</h2>
 <ol><li>Brief va mahsulot tarkibini tasdiqlash</li><li>Brendlash va test namunani kelishish</li><li>Ishlab chiqarish va logistika jadvalini ishga tushirish</li></ol>
 <h2>Sifat va muddat nazorati</h2>
-<p>Topshirishdan oldin maketga moslik, qadoq sifati va personalizatsiya to‘g‘riligini namunaviy partiyada tekshiring.</p>
-<p><strong>Tanlash va ishga tushirishda yordam kerakmi?</strong> Kontaktlar bo‘limi orqali murojaat qiling — jamoa tirajingizga mos ish rejasini tayyorlaydi.</p>
-<h2>Bog‘liq maqolalar</h2>
-<ul><li><a href="/uz/blog/korporativ-sovgani-qanday-tanlash">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/welcome-pack-yangi-xodimlar">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/suvenir-brendlash">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/yangi-yil-sovga-goyalari">Shuningdek qarang: bog‘liq maqola</a></li></ul>`},
+<p>Topshirishdan oldin maketga moslik, qadoq sifati va personalizatsiya to'g'riligini namunaviy partiyada tekshiring.</p>
+<p><strong>Tanlash va ishga tushirishda yordam kerakmi?</strong> Kontaktlar bo'limi orqali murojaat qiling — jamoa tirajingizga mos ish rejasini tayyorlaydi.</p>
+<h2>Bog'liq maqolalar</h2>
+<ul><li><a href="/uz/blog/korporativ-sovgani-qanday-tanlash">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/welcome-pack-yangi-xodimlar">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/suvenir-brendlash">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/yangi-yil-sovga-goyalari">Shuningdek qarang: bog'liq maqola</a></li></ul>`},
     {
       slug: "korporativ-sovgalar-logotip-bilan-to-liq-qollanma",
       title: "Korporativ sovg'alar logotip bilan: Toshkentda biznes uchun to'liq qo'llanma",
@@ -2838,16 +2838,16 @@ export const blogPosts = {
       category: "Pillar",
       relatedPosts: ['korporativ-sovgani-qanday-tanlash', 'logotipli-sovga-toplami', 'korporativ-sovga-toplamlari', 'mijoz-hamkorlar-uchun-sovgalar-vip', 'lazer-gravirovka-sovgalar', 'welcome-pack-yangi-xodimlar'],
       contentHtml: `<p>Ushbu maqola jamoaga jarayonni aniq boshqarishga yordam beradi: briefdan boshlab tiraj va topshirishgacha.</p>
-<p>Asosiy e’tibor amaliy yondashuvga qaratiladi: tanlov mezonlari, kelishuv bosqichlari va operatsion risklarni kamaytirish.</p>
+<p>Asosiy e'tibor amaliy yondashuvga qaratiladi: tanlov mezonlari, kelishuv bosqichlari va operatsion risklarni kamaytirish.</p>
 <h2>Boshlashdan oldin nimalar muhim</h2>
 <ul><li>Kampaniya maqsadi va natija metrikalari</li><li>Qabul qiluvchilar segmenti va ustuvorliklar</li><li>Byudjet va muddat cheklovlari</li></ul>
 <h2>Amaliy ish rejasi</h2>
 <ol><li>Brief va mahsulot tarkibini tasdiqlash</li><li>Brendlash va test namunani kelishish</li><li>Ishlab chiqarish va logistika jadvalini ishga tushirish</li></ol>
 <h2>Sifat va muddat nazorati</h2>
-<p>Topshirishdan oldin maketga moslik, qadoq sifati va personalizatsiya to‘g‘riligini namunaviy partiyada tekshiring.</p>
-<p><strong>Tanlash va ishga tushirishda yordam kerakmi?</strong> Kontaktlar bo‘limi orqali murojaat qiling — jamoa tirajingizga mos ish rejasini tayyorlaydi.</p>
-<h2>Bog‘liq maqolalar</h2>
-<ul><li><a href="/uz/blog/korporativ-sovgani-qanday-tanlash">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/korporativ-sovga-toplamlari">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/mijoz-hamkorlar-uchun-sovgalar-vip">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/welcome-pack-yangi-xodimlar">Shuningdek qarang: bog‘liq maqola</a></li></ul>`},
+<p>Topshirishdan oldin maketga moslik, qadoq sifati va personalizatsiya to'g'riligini namunaviy partiyada tekshiring.</p>
+<p><strong>Tanlash va ishga tushirishda yordam kerakmi?</strong> Kontaktlar bo'limi orqali murojaat qiling — jamoa tirajingizga mos ish rejasini tayyorlaydi.</p>
+<h2>Bog'liq maqolalar</h2>
+<ul><li><a href="/uz/blog/korporativ-sovgani-qanday-tanlash">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/korporativ-sovga-toplamlari">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/mijoz-hamkorlar-uchun-sovgalar-vip">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/welcome-pack-yangi-xodimlar">Shuningdek qarang: bog'liq maqola</a></li></ul>`},
     {
       slug: "korporativ-sovgalar-gravyurasi-usullari",
       title: "Korporativ sovg'alar gravyurasi: usullar va materiallar tanlash",
@@ -2857,16 +2857,16 @@ export const blogPosts = {
       category: "Cluster",
       relatedPosts: ['logotip-maketi-tayyorlash', 'logotipli-zajigalka-va-soat', 'korporativ-sovgani-qanday-tanlash', 'logotipli-sovga-toplami'],
       contentHtml: `<p>Ushbu maqola jamoaga jarayonni aniq boshqarishga yordam beradi: briefdan boshlab tiraj va topshirishgacha.</p>
-<p>Asosiy e’tibor amaliy yondashuvga qaratiladi: tanlov mezonlari, kelishuv bosqichlari va operatsion risklarni kamaytirish.</p>
+<p>Asosiy e'tibor amaliy yondashuvga qaratiladi: tanlov mezonlari, kelishuv bosqichlari va operatsion risklarni kamaytirish.</p>
 <h2>Boshlashdan oldin nimalar muhim</h2>
 <ul><li>Kampaniya maqsadi va natija metrikalari</li><li>Qabul qiluvchilar segmenti va ustuvorliklar</li><li>Byudjet va muddat cheklovlari</li></ul>
 <h2>Amaliy ish rejasi</h2>
 <ol><li>Brief va mahsulot tarkibini tasdiqlash</li><li>Brendlash va test namunani kelishish</li><li>Ishlab chiqarish va logistika jadvalini ishga tushirish</li></ol>
 <h2>Sifat va muddat nazorati</h2>
-<p>Topshirishdan oldin maketga moslik, qadoq sifati va personalizatsiya to‘g‘riligini namunaviy partiyada tekshiring.</p>
-<p><strong>Tanlash va ishga tushirishda yordam kerakmi?</strong> Kontaktlar bo‘limi orqali murojaat qiling — jamoa tirajingizga mos ish rejasini tayyorlaydi.</p>
-<h2>Bog‘liq maqolalar</h2>
-<ul><li><a href="/uz/blog/lazer-gravirovka-sovgalar-tehnologiyasi">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgalar-gravyurasi-usullari">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/logotip-maketi-tayyorlash">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgani-qanday-tanlash">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog‘liq maqola</a></li></ul>`},
+<p>Topshirishdan oldin maketga moslik, qadoq sifati va personalizatsiya to'g'riligini namunaviy partiyada tekshiring.</p>
+<p><strong>Tanlash va ishga tushirishda yordam kerakmi?</strong> Kontaktlar bo'limi orqali murojaat qiling — jamoa tirajingizga mos ish rejasini tayyorlaydi.</p>
+<h2>Bog'liq maqolalar</h2>
+<ul><li><a href="/uz/blog/lazer-gravirovka-sovgalar-tehnologiyasi">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgalar-gravyurasi-usullari">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/logotip-maketi-tayyorlash">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgani-qanday-tanlash">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog'liq maqola</a></li></ul>`},
     {
       slug: "lazer-gravirovka-sovgalar-tehnologiyasi",
       title: "Lazer gravyurasi sovg'alar: texnologiyalar va afzalliklari",
@@ -2876,16 +2876,16 @@ export const blogPosts = {
       category: "Cluster",
       relatedPosts: ['korporativ-sovgalar-gravyurasi-usullari', 'logotip-maketi-tayyorlash', 'logotipli-zajigalka-va-soat', 'korporativ-sovgani-qanday-tanlash', 'logotipli-sovga-toplami'],
       contentHtml: `<p>Ushbu maqola jamoaga jarayonni aniq boshqarishga yordam beradi: briefdan boshlab tiraj va topshirishgacha.</p>
-<p>Asosiy e’tibor amaliy yondashuvga qaratiladi: tanlov mezonlari, kelishuv bosqichlari va operatsion risklarni kamaytirish.</p>
+<p>Asosiy e'tibor amaliy yondashuvga qaratiladi: tanlov mezonlari, kelishuv bosqichlari va operatsion risklarni kamaytirish.</p>
 <h2>Boshlashdan oldin nimalar muhim</h2>
 <ul><li>Kampaniya maqsadi va natija metrikalari</li><li>Qabul qiluvchilar segmenti va ustuvorliklar</li><li>Byudjet va muddat cheklovlari</li></ul>
 <h2>Amaliy ish rejasi</h2>
 <ol><li>Brief va mahsulot tarkibini tasdiqlash</li><li>Brendlash va test namunani kelishish</li><li>Ishlab chiqarish va logistika jadvalini ishga tushirish</li></ol>
 <h2>Sifat va muddat nazorati</h2>
-<p>Topshirishdan oldin maketga moslik, qadoq sifati va personalizatsiya to‘g‘riligini namunaviy partiyada tekshiring.</p>
-<p><strong>Tanlash va ishga tushirishda yordam kerakmi?</strong> Kontaktlar bo‘limi orqali murojaat qiling — jamoa tirajingizga mos ish rejasini tayyorlaydi.</p>
-<h2>Bog‘liq maqolalar</h2>
-<ul><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgalar-gravyurasi-usullari">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/logotip-maketi-tayyorlash">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/logotipli-zajigalka-va-soat">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgani-qanday-tanlash">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog‘liq maqola</a></li></ul>`},
+<p>Topshirishdan oldin maketga moslik, qadoq sifati va personalizatsiya to'g'riligini namunaviy partiyada tekshiring.</p>
+<p><strong>Tanlash va ishga tushirishda yordam kerakmi?</strong> Kontaktlar bo'limi orqali murojaat qiling — jamoa tirajingizga mos ish rejasini tayyorlaydi.</p>
+<h2>Bog'liq maqolalar</h2>
+<ul><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgalar-gravyurasi-usullari">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/logotip-maketi-tayyorlash">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/logotipli-zajigalka-va-soat">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgani-qanday-tanlash">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog'liq maqola</a></li></ul>`},
     {
       slug: "kompaniya-merchi-brendlash",
       title: "Kompaniya merchi: Toshkentda suvenirlarni brendlash",
@@ -2895,16 +2895,16 @@ export const blogPosts = {
       category: "Cluster",
       relatedPosts: ['suvenir-brendlash', 'suvenir-byudjetini-tejash', 'korporativ-sovgani-qanday-tanlash', 'lazer-gravirovka-sovgalar', 'logotipli-sovga-toplami', 'welcome-pack-yangi-xodimlar'],
       contentHtml: `<p>Ushbu maqola jamoaga jarayonni aniq boshqarishga yordam beradi: briefdan boshlab tiraj va topshirishgacha.</p>
-<p>Asosiy e’tibor amaliy yondashuvga qaratiladi: tanlov mezonlari, kelishuv bosqichlari va operatsion risklarni kamaytirish.</p>
+<p>Asosiy e'tibor amaliy yondashuvga qaratiladi: tanlov mezonlari, kelishuv bosqichlari va operatsion risklarni kamaytirish.</p>
 <h2>Boshlashdan oldin nimalar muhim</h2>
 <ul><li>Kampaniya maqsadi va natija metrikalari</li><li>Qabul qiluvchilar segmenti va ustuvorliklar</li><li>Byudjet va muddat cheklovlari</li></ul>
 <h2>Amaliy ish rejasi</h2>
 <ol><li>Brief va mahsulot tarkibini tasdiqlash</li><li>Brendlash va test namunani kelishish</li><li>Ishlab chiqarish va logistika jadvalini ishga tushirish</li></ol>
 <h2>Sifat va muddat nazorati</h2>
-<p>Topshirishdan oldin maketga moslik, qadoq sifati va personalizatsiya to‘g‘riligini namunaviy partiyada tekshiring.</p>
-<p><strong>Tanlash va ishga tushirishda yordam kerakmi?</strong> Kontaktlar bo‘limi orqali murojaat qiling — jamoa tirajingizga mos ish rejasini tayyorlaydi.</p>
-<h2>Bog‘liq maqolalar</h2>
-<ul><li><a href="/uz/blog/suvenir-brendlash">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/suvenir-byudjetini-tejash">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgani-qanday-tanlash">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/welcome-pack-yangi-xodimlar">Shuningdek qarang: bog‘liq maqola</a></li></ul>`},
+<p>Topshirishdan oldin maketga moslik, qadoq sifati va personalizatsiya to'g'riligini namunaviy partiyada tekshiring.</p>
+<p><strong>Tanlash va ishga tushirishda yordam kerakmi?</strong> Kontaktlar bo'limi orqali murojaat qiling — jamoa tirajingizga mos ish rejasini tayyorlaydi.</p>
+<h2>Bog'liq maqolalar</h2>
+<ul><li><a href="/uz/blog/suvenir-brendlash">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/suvenir-byudjetini-tejash">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgani-qanday-tanlash">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/welcome-pack-yangi-xodimlar">Shuningdek qarang: bog'liq maqola</a></li></ul>`},
     {
       slug: "xodimlar-uchun-sovgalar-hr-qollanma",
       title: "Xodimlarga sovg'alar: korporativ suvenirlar bo'yicha HR-qo'llanma",
@@ -2914,16 +2914,16 @@ export const blogPosts = {
       category: "Cluster",
       relatedPosts: ['welcome-pack-yangi-xodimlar', 'yangi-xodimlar-uchun-welcome-pack', 'korporativ-sovgani-qanday-tanlash', 'lazer-gravirovka-sovgalar', 'logotipli-sovga-toplami', 'suvenir-brendlash'],
       contentHtml: `<p>Ushbu maqola jamoaga jarayonni aniq boshqarishga yordam beradi: briefdan boshlab tiraj va topshirishgacha.</p>
-<p>Asosiy e’tibor amaliy yondashuvga qaratiladi: tanlov mezonlari, kelishuv bosqichlari va operatsion risklarni kamaytirish.</p>
+<p>Asosiy e'tibor amaliy yondashuvga qaratiladi: tanlov mezonlari, kelishuv bosqichlari va operatsion risklarni kamaytirish.</p>
 <h2>Boshlashdan oldin nimalar muhim</h2>
 <ul><li>Kampaniya maqsadi va natija metrikalari</li><li>Qabul qiluvchilar segmenti va ustuvorliklar</li><li>Byudjet va muddat cheklovlari</li></ul>
 <h2>Amaliy ish rejasi</h2>
 <ol><li>Brief va mahsulot tarkibini tasdiqlash</li><li>Brendlash va test namunani kelishish</li><li>Ishlab chiqarish va logistika jadvalini ishga tushirish</li></ol>
 <h2>Sifat va muddat nazorati</h2>
-<p>Topshirishdan oldin maketga moslik, qadoq sifati va personalizatsiya to‘g‘riligini namunaviy partiyada tekshiring.</p>
-<p><strong>Tanlash va ishga tushirishda yordam kerakmi?</strong> Kontaktlar bo‘limi orqali murojaat qiling — jamoa tirajingizga mos ish rejasini tayyorlaydi.</p>
-<h2>Bog‘liq maqolalar</h2>
-<ul><li><a href="/uz/blog/welcome-pack-yangi-xodimlar">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/yangi-xodimlar-uchun-welcome-pack">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgani-qanday-tanlash">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/suvenir-brendlash">Shuningdek qarang: bog‘liq maqola</a></li></ul>`},
+<p>Topshirishdan oldin maketga moslik, qadoq sifati va personalizatsiya to'g'riligini namunaviy partiyada tekshiring.</p>
+<p><strong>Tanlash va ishga tushirishda yordam kerakmi?</strong> Kontaktlar bo'limi orqali murojaat qiling — jamoa tirajingizga mos ish rejasini tayyorlaydi.</p>
+<h2>Bog'liq maqolalar</h2>
+<ul><li><a href="/uz/blog/welcome-pack-yangi-xodimlar">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/yangi-xodimlar-uchun-welcome-pack">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgani-qanday-tanlash">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/suvenir-brendlash">Shuningdek qarang: bog'liq maqola</a></li></ul>`},
     {
       slug: "mijoz-hamkorlar-uchun-sovgalar-vip",
       title: "Mijozlar va hamkorlar uchun sovg'alar: Toshkentda VIP korporativ sovg'alar",
@@ -2933,16 +2933,16 @@ export const blogPosts = {
       category: "Cluster",
       relatedPosts: ['korporativ-sovgalar-logotip-bilan-to-liq-qollanma', 'korporativ-sovgani-qanday-tanlash', 'logotipli-sovga-toplami', 'korporativ-sovga-toplamlari', 'lazer-gravirovka-sovgalar', 'welcome-pack-yangi-xodimlar'],
       contentHtml: `<p>Ushbu maqola jamoaga jarayonni aniq boshqarishga yordam beradi: briefdan boshlab tiraj va topshirishgacha.</p>
-<p>Asosiy e’tibor amaliy yondashuvga qaratiladi: tanlov mezonlari, kelishuv bosqichlari va operatsion risklarni kamaytirish.</p>
+<p>Asosiy e'tibor amaliy yondashuvga qaratiladi: tanlov mezonlari, kelishuv bosqichlari va operatsion risklarni kamaytirish.</p>
 <h2>Boshlashdan oldin nimalar muhim</h2>
 <ul><li>Kampaniya maqsadi va natija metrikalari</li><li>Qabul qiluvchilar segmenti va ustuvorliklar</li><li>Byudjet va muddat cheklovlari</li></ul>
 <h2>Amaliy ish rejasi</h2>
 <ol><li>Brief va mahsulot tarkibini tasdiqlash</li><li>Brendlash va test namunani kelishish</li><li>Ishlab chiqarish va logistika jadvalini ishga tushirish</li></ol>
 <h2>Sifat va muddat nazorati</h2>
-<p>Topshirishdan oldin maketga moslik, qadoq sifati va personalizatsiya to‘g‘riligini namunaviy partiyada tekshiring.</p>
-<p><strong>Tanlash va ishga tushirishda yordam kerakmi?</strong> Kontaktlar bo‘limi orqali murojaat qiling — jamoa tirajingizga mos ish rejasini tayyorlaydi.</p>
-<h2>Bog‘liq maqolalar</h2>
-<ul><li><a href="/uz/blog/korporativ-sovgalar-logotip-bilan-to-liq-qollanma">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgani-qanday-tanlash">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/korporativ-sovga-toplamlari">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/welcome-pack-yangi-xodimlar">Shuningdek qarang: bog‘liq maqola</a></li></ul>`},
+<p>Topshirishdan oldin maketga moslik, qadoq sifati va personalizatsiya to'g'riligini namunaviy partiyada tekshiring.</p>
+<p><strong>Tanlash va ishga tushirishda yordam kerakmi?</strong> Kontaktlar bo'limi orqali murojaat qiling — jamoa tirajingizga mos ish rejasini tayyorlaydi.</p>
+<h2>Bog'liq maqolalar</h2>
+<ul><li><a href="/uz/blog/korporativ-sovgalar-logotip-bilan-to-liq-qollanma">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgani-qanday-tanlash">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/korporativ-sovga-toplamlari">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/welcome-pack-yangi-xodimlar">Shuningdek qarang: bog'liq maqola</a></li></ul>`},
     {
       slug: "logotipli-zajigalka-va-soat",
       title: "Logotipli zajigalka va soat: kompaniya sovg'asini qanday tanlash",
@@ -2952,16 +2952,16 @@ export const blogPosts = {
       category: "Cluster",
       relatedPosts: ['lazer-gravirovka-sovgalar', 'korporativ-sovgalar-gravyurasi-usullari', 'logotip-maketi-tayyorlash', 'korporativ-sovgani-qanday-tanlash', 'logotipli-sovga-toplami'],
       contentHtml: `<p>Ushbu maqola jamoaga jarayonni aniq boshqarishga yordam beradi: briefdan boshlab tiraj va topshirishgacha.</p>
-<p>Asosiy e’tibor amaliy yondashuvga qaratiladi: tanlov mezonlari, kelishuv bosqichlari va operatsion risklarni kamaytirish.</p>
+<p>Asosiy e'tibor amaliy yondashuvga qaratiladi: tanlov mezonlari, kelishuv bosqichlari va operatsion risklarni kamaytirish.</p>
 <h2>Boshlashdan oldin nimalar muhim</h2>
 <ul><li>Kampaniya maqsadi va natija metrikalari</li><li>Qabul qiluvchilar segmenti va ustuvorliklar</li><li>Byudjet va muddat cheklovlari</li></ul>
 <h2>Amaliy ish rejasi</h2>
 <ol><li>Brief va mahsulot tarkibini tasdiqlash</li><li>Brendlash va test namunani kelishish</li><li>Ishlab chiqarish va logistika jadvalini ishga tushirish</li></ol>
 <h2>Sifat va muddat nazorati</h2>
-<p>Topshirishdan oldin maketga moslik, qadoq sifati va personalizatsiya to‘g‘riligini namunaviy partiyada tekshiring.</p>
-<p><strong>Tanlash va ishga tushirishda yordam kerakmi?</strong> Kontaktlar bo‘limi orqali murojaat qiling — jamoa tirajingizga mos ish rejasini tayyorlaydi.</p>
-<h2>Bog‘liq maqolalar</h2>
-<ul><li><a href="/uz/blog/lazer-gravirovka-sovgalar-tehnologiyasi">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgalar-gravyurasi-usullari">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/logotip-maketi-tayyorlash">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgani-qanday-tanlash">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog‘liq maqola</a></li></ul>`},
+<p>Topshirishdan oldin maketga moslik, qadoq sifati va personalizatsiya to'g'riligini namunaviy partiyada tekshiring.</p>
+<p><strong>Tanlash va ishga tushirishda yordam kerakmi?</strong> Kontaktlar bo'limi orqali murojaat qiling — jamoa tirajingizga mos ish rejasini tayyorlaydi.</p>
+<h2>Bog'liq maqolalar</h2>
+<ul><li><a href="/uz/blog/lazer-gravirovka-sovgalar-tehnologiyasi">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgalar-gravyurasi-usullari">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/logotip-maketi-tayyorlash">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgani-qanday-tanlash">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog'liq maqola</a></li></ul>`},
     {
       slug: "korporativ-sovga-toplamlari",
       title: "Korporativ sovg'a to'plamlari: kompaniya logotipi bilan boks yig'ish",
@@ -2971,16 +2971,16 @@ export const blogPosts = {
       category: "Cluster",
       relatedPosts: ['korporativ-sovgalar-logotip-bilan-to-liq-qollanma', 'korporativ-sovgani-qanday-tanlash', 'logotipli-sovga-toplami', 'mijoz-hamkorlar-uchun-sovgalar-vip', 'lazer-gravirovka-sovgalar', 'welcome-pack-yangi-xodimlar'],
       contentHtml: `<p>Ushbu maqola jamoaga jarayonni aniq boshqarishga yordam beradi: briefdan boshlab tiraj va topshirishgacha.</p>
-<p>Asosiy e’tibor amaliy yondashuvga qaratiladi: tanlov mezonlari, kelishuv bosqichlari va operatsion risklarni kamaytirish.</p>
+<p>Asosiy e'tibor amaliy yondashuvga qaratiladi: tanlov mezonlari, kelishuv bosqichlari va operatsion risklarni kamaytirish.</p>
 <h2>Boshlashdan oldin nimalar muhim</h2>
 <ul><li>Kampaniya maqsadi va natija metrikalari</li><li>Qabul qiluvchilar segmenti va ustuvorliklar</li><li>Byudjet va muddat cheklovlari</li></ul>
 <h2>Amaliy ish rejasi</h2>
 <ol><li>Brief va mahsulot tarkibini tasdiqlash</li><li>Brendlash va test namunani kelishish</li><li>Ishlab chiqarish va logistika jadvalini ishga tushirish</li></ol>
 <h2>Sifat va muddat nazorati</h2>
-<p>Topshirishdan oldin maketga moslik, qadoq sifati va personalizatsiya to‘g‘riligini namunaviy partiyada tekshiring.</p>
-<p><strong>Tanlash va ishga tushirishda yordam kerakmi?</strong> Kontaktlar bo‘limi orqali murojaat qiling — jamoa tirajingizga mos ish rejasini tayyorlaydi.</p>
-<h2>Bog‘liq maqolalar</h2>
-<ul><li><a href="/uz/blog/korporativ-sovgalar-logotip-bilan-to-liq-qollanma">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgani-qanday-tanlash">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/mijoz-hamkorlar-uchun-sovgalar-vip">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/welcome-pack-yangi-xodimlar">Shuningdek qarang: bog‘liq maqola</a></li></ul>`},
+<p>Topshirishdan oldin maketga moslik, qadoq sifati va personalizatsiya to'g'riligini namunaviy partiyada tekshiring.</p>
+<p><strong>Tanlash va ishga tushirishda yordam kerakmi?</strong> Kontaktlar bo'limi orqali murojaat qiling — jamoa tirajingizga mos ish rejasini tayyorlaydi.</p>
+<h2>Bog'liq maqolalar</h2>
+<ul><li><a href="/uz/blog/korporativ-sovgalar-logotip-bilan-to-liq-qollanma">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgani-qanday-tanlash">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/mijoz-hamkorlar-uchun-sovgalar-vip">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/welcome-pack-yangi-xodimlar">Shuningdek qarang: bog'liq maqola</a></li></ul>`},
     {
       slug: "navruz-uchun-korporativ-sovgalar",
       title: "Navruz uchun korporativ sovg'alar: gravyura va milliy urg'u bilan g'oyalar",
@@ -2990,16 +2990,16 @@ export const blogPosts = {
       category: "Cluster",
       relatedPosts: ['yangi-yil-sovga-goyalari', 'navruz-sovgalari', 'korporativ-sovgani-qanday-tanlash', 'lazer-gravirovka-sovgalar', 'logotipli-sovga-toplami', 'welcome-pack-yangi-xodimlar'],
       contentHtml: `<p>Ushbu maqola jamoaga jarayonni aniq boshqarishga yordam beradi: briefdan boshlab tiraj va topshirishgacha.</p>
-<p>Asosiy e’tibor amaliy yondashuvga qaratiladi: tanlov mezonlari, kelishuv bosqichlari va operatsion risklarni kamaytirish.</p>
+<p>Asosiy e'tibor amaliy yondashuvga qaratiladi: tanlov mezonlari, kelishuv bosqichlari va operatsion risklarni kamaytirish.</p>
 <h2>Boshlashdan oldin nimalar muhim</h2>
 <ul><li>Kampaniya maqsadi va natija metrikalari</li><li>Qabul qiluvchilar segmenti va ustuvorliklar</li><li>Byudjet va muddat cheklovlari</li></ul>
 <h2>Amaliy ish rejasi</h2>
 <ol><li>Brief va mahsulot tarkibini tasdiqlash</li><li>Brendlash va test namunani kelishish</li><li>Ishlab chiqarish va logistika jadvalini ishga tushirish</li></ol>
 <h2>Sifat va muddat nazorati</h2>
-<p>Topshirishdan oldin maketga moslik, qadoq sifati va personalizatsiya to‘g‘riligini namunaviy partiyada tekshiring.</p>
-<p><strong>Tanlash va ishga tushirishda yordam kerakmi?</strong> Kontaktlar bo‘limi orqali murojaat qiling — jamoa tirajingizga mos ish rejasini tayyorlaydi.</p>
-<h2>Bog‘liq maqolalar</h2>
-<ul><li><a href="/uz/blog/yangi-yil-sovga-goyalari">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/navruz-sovgalari">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/navruz-uchun-korporativ-sovgalar">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/welcome-pack-yangi-xodimlar">Shuningdek qarang: bog‘liq maqola</a></li></ul>`},
+<p>Topshirishdan oldin maketga moslik, qadoq sifati va personalizatsiya to'g'riligini namunaviy partiyada tekshiring.</p>
+<p><strong>Tanlash va ishga tushirishda yordam kerakmi?</strong> Kontaktlar bo'limi orqali murojaat qiling — jamoa tirajingizga mos ish rejasini tayyorlaydi.</p>
+<h2>Bog'liq maqolalar</h2>
+<ul><li><a href="/uz/blog/yangi-yil-sovga-goyalari">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/navruz-sovgalari">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/navruz-uchun-korporativ-sovgalar">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/welcome-pack-yangi-xodimlar">Shuningdek qarang: bog'liq maqola</a></li></ul>`},
     {
       slug: "yangi-xodimlar-uchun-welcome-pack",
       title: "Yangi xodimlar uchun welcome pack: to'plamni yig'ish va brendlash",
@@ -3009,16 +3009,16 @@ export const blogPosts = {
       category: "Cluster",
       relatedPosts: ['xodimlar-uchun-sovgalar-hr-qollanma', 'welcome-pack-yangi-xodimlar', 'korporativ-sovgani-qanday-tanlash', 'lazer-gravirovka-sovgalar', 'logotipli-sovga-toplami', 'suvenir-brendlash'],
       contentHtml: `<p>Ushbu maqola jamoaga jarayonni aniq boshqarishga yordam beradi: briefdan boshlab tiraj va topshirishgacha.</p>
-<p>Asosiy e’tibor amaliy yondashuvga qaratiladi: tanlov mezonlari, kelishuv bosqichlari va operatsion risklarni kamaytirish.</p>
+<p>Asosiy e'tibor amaliy yondashuvga qaratiladi: tanlov mezonlari, kelishuv bosqichlari va operatsion risklarni kamaytirish.</p>
 <h2>Boshlashdan oldin nimalar muhim</h2>
 <ul><li>Kampaniya maqsadi va natija metrikalari</li><li>Qabul qiluvchilar segmenti va ustuvorliklar</li><li>Byudjet va muddat cheklovlari</li></ul>
 <h2>Amaliy ish rejasi</h2>
 <ol><li>Brief va mahsulot tarkibini tasdiqlash</li><li>Brendlash va test namunani kelishish</li><li>Ishlab chiqarish va logistika jadvalini ishga tushirish</li></ol>
 <h2>Sifat va muddat nazorati</h2>
-<p>Topshirishdan oldin maketga moslik, qadoq sifati va personalizatsiya to‘g‘riligini namunaviy partiyada tekshiring.</p>
-<p><strong>Byudjetga mos merch g‘oyalari kerakmi?</strong> Jamoamiz siz uchun mos katalogni tayyorlab beradi.</p>
-<h2>Bog‘liq maqolalar</h2>
-<ul><li><a href="/uz/blog/xodimlar-uchun-sovgalar-hr-qollanma">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/welcome-pack-yangi-xodimlar">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgani-qanday-tanlash">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog‘liq maqola</a></li><li><a href="/uz/blog/suvenir-brendlash">Shuningdek qarang: bog‘liq maqola</a></li></ul>`}
+<p>Topshirishdan oldin maketga moslik, qadoq sifati va personalizatsiya to'g'riligini namunaviy partiyada tekshiring.</p>
+<p><strong>Byudjetga mos merch g'oyalari kerakmi?</strong> Jamoamiz siz uchun mos katalogni tayyorlab beradi.</p>
+<h2>Bog'liq maqolalar</h2>
+<ul><li><a href="/uz/blog/xodimlar-uchun-sovgalar-hr-qollanma">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/welcome-pack-yangi-xodimlar">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/korporativ-sovgani-qanday-tanlash">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/logotipli-sovga-toplami">Shuningdek qarang: bog'liq maqola</a></li><li><a href="/uz/blog/suvenir-brendlash">Shuningdek qarang: bog'liq maqola</a></li></ul>`}
     ,
     {
       slug: "it-kompaniyalar-uchun-merch-toshkent",
@@ -3028,14 +3028,14 @@ export const blogPosts = {
       keywords: ["IT kompaniyalar uchun merch", "korporativ merch", "HR brend", "welcome pack", "Toshkent"],
       category: "Pillar",
       relatedPosts: ['banklar-va-fintex-uchun-sovgalar-toshkent', 'korporativ-tadbirlar-uchun-sovgalar-toshkent', 'yangi-xodimlar-uchun-welcome-pack', 'logotipli-soat-korporativ-sovgalar-toshkent', 'horeca-va-restoranlar-uchun-sovgalar-toshkent', 'lazer-gravirovka-sovgalar'],
-      contentHtml: `<p>IT kompaniyalarda merch nafaqat suvenir, balki ish beruvchi brendining bir qismidir. To‘g‘ri tanlangan to‘plam jamoa sadoqatini oshiradi va kompaniya uslubini kuchaytiradi.</p>
-<h2>To‘plamga nimalar kiritish kerak</h2>
+      contentHtml: `<p>IT kompaniyalarda merch nafaqat suvenir, balki ish beruvchi brendining bir qismidir. To'g'ri tanlangan to'plam jamoa sadoqatini oshiradi va kompaniya uslubini kuchaytiradi.</p>
+<h2>To'plamga nimalar kiritish kerak</h2>
 <ul><li>Amaliy mahsulotlar: xudi, termokrujka, powerbank, bloknot</li><li>Yagona vizual uslub va brandbook mosligi</li><li>Kalit xodimlar uchun shaxsiylashtirish</li></ul>
 <h2>Jarayonni qanday tashkil qilish</h2>
 <ol><li>Maqsad va byudjetni kelishish</li><li>Maket va test namunani tasdiqlash</li><li>Tiraj, qadoqlash va topshirishni rejalash</li></ol>
-<p><strong>Byudjetga mos merch g‘oyalari kerakmi?</strong> Jamoamiz siz uchun mos katalogni tayyorlab beradi.</p>
-<h2>Bog‘liq maqolalar</h2>
-<ul><li><a href="/uz/blog/banklar-va-fintex-uchun-sovgalar-toshkent">Banklar va fintex uchun sovg‘alar</a></li><li><a href="/uz/blog/korporativ-tadbirlar-uchun-sovgalar-toshkent">Korporativ tadbirlar uchun sovg‘alar</a></li><li><a href="/uz/blog/yangi-xodimlar-uchun-welcome-pack">Yangi xodimlar uchun welcome pack</a></li><li><a href="/uz/blog/logotipli-soat-korporativ-sovgalar-toshkent">Logotipli soatlar</a></li><li><a href="/uz/blog/horeca-va-restoranlar-uchun-sovgalar-toshkent">HoReCa uchun sovg‘a va merch</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Lazerli gravirovka</a></li></ul>`},
+<p><strong>Byudjetga mos merch g'oyalari kerakmi?</strong> Jamoamiz siz uchun mos katalogni tayyorlab beradi.</p>
+<h2>Bog'liq maqolalar</h2>
+<ul><li><a href="/uz/blog/banklar-va-fintex-uchun-sovgalar-toshkent">Banklar va fintex uchun sovg'alar</a></li><li><a href="/uz/blog/korporativ-tadbirlar-uchun-sovgalar-toshkent">Korporativ tadbirlar uchun sovg'alar</a></li><li><a href="/uz/blog/yangi-xodimlar-uchun-welcome-pack">Yangi xodimlar uchun welcome pack</a></li><li><a href="/uz/blog/logotipli-soat-korporativ-sovgalar-toshkent">Logotipli soatlar</a></li><li><a href="/uz/blog/horeca-va-restoranlar-uchun-sovgalar-toshkent">HoReCa uchun sovg'a va merch</a></li><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Lazerli gravirovka</a></li></ul>`},
     {
       slug: "banklar-va-fintex-uchun-sovgalar-toshkent",
       title: "Toshkentdagi banklar va fintex uchun korporativ sovg'alar: VIP, maqom",
@@ -3044,14 +3044,14 @@ export const blogPosts = {
       keywords: ["banklar uchun sovg'alar", "fintex sovg'alari", "VIP sovg'alar", "korporativ sovg'alar", "Toshkent"],
       category: "Pillar",
       relatedPosts: ['mijoz-hamkorlar-uchun-sovgalar-vip', 'logotip-maketi-tayyorlash', 'it-kompaniyalar-uchun-merch-toshkent', 'logotipli-soat-korporativ-sovgalar-toshkent', 'korporativ-tadbirlar-uchun-sovgalar-toshkent', 'horeca-va-restoranlar-uchun-sovgalar-toshkent'],
-      contentHtml: `<p>Bank va fintex segmentida sovg‘a ishonchni mustahkamlash vositasi hisoblanadi. Shu sababli maqom, sifat va aniq shaxsiylashtirish birinchi o‘rinda turadi.</p>
+      contentHtml: `<p>Bank va fintex segmentida sovg'a ishonchni mustahkamlash vositasi hisoblanadi. Shu sababli maqom, sifat va aniq shaxsiylashtirish birinchi o'rinda turadi.</p>
 <h2>Eng samarali formatlar</h2>
-<ul><li>VIP to‘plamlar: ruchka, kundalik, charm aksessuarlar</li><li>Qabul qiluvchiga mos shaxsiylashtirish</li><li>Premium qadoqlash va aniq yetkazib berish</li></ul>
+<ul><li>VIP to'plamlar: ruchka, kundalik, charm aksessuarlar</li><li>Qabul qiluvchiga mos shaxsiylashtirish</li><li>Premium qadoqlash va aniq yetkazib berish</li></ul>
 <h2>Tanlash mezonlari</h2>
 <ol><li>Brandbook va kompaniya kommunikatsiyasiga moslik</li><li>Mustahkam material va sifatli gravirovka</li><li>Asosiy tirajdan oldin test nazorati</li></ol>
 <p><strong>Moliya sektori uchun yopiq katalog kerakmi?</strong> Talabingizga mos variantlarni tayyorlab beramiz.</p>
-<h2>Bog‘liq maqolalar</h2>
-<ul><li><a href="/uz/blog/mijoz-hamkorlar-uchun-sovgalar-vip">Mijozlar va hamkorlar uchun VIP sovg‘alar</a></li><li><a href="/uz/blog/logotip-maketi-tayyorlash">Logotip maketini tayyorlash</a></li><li><a href="/uz/blog/it-kompaniyalar-uchun-merch-toshkent">IT kompaniyalar uchun merch</a></li><li><a href="/uz/blog/logotipli-soat-korporativ-sovgalar-toshkent">Logotipli soatlar</a></li><li><a href="/uz/blog/korporativ-tadbirlar-uchun-sovgalar-toshkent">Korporativ tadbir sovg‘alari</a></li><li><a href="/uz/blog/horeca-va-restoranlar-uchun-sovgalar-toshkent">HoReCa uchun sovg‘alar</a></li></ul>`},
+<h2>Bog'liq maqolalar</h2>
+<ul><li><a href="/uz/blog/mijoz-hamkorlar-uchun-sovgalar-vip">Mijozlar va hamkorlar uchun VIP sovg'alar</a></li><li><a href="/uz/blog/logotip-maketi-tayyorlash">Logotip maketini tayyorlash</a></li><li><a href="/uz/blog/it-kompaniyalar-uchun-merch-toshkent">IT kompaniyalar uchun merch</a></li><li><a href="/uz/blog/logotipli-soat-korporativ-sovgalar-toshkent">Logotipli soatlar</a></li><li><a href="/uz/blog/korporativ-tadbirlar-uchun-sovgalar-toshkent">Korporativ tadbir sovg'alari</a></li><li><a href="/uz/blog/horeca-va-restoranlar-uchun-sovgalar-toshkent">HoReCa uchun sovg'alar</a></li></ul>`},
     {
       slug: "logotipli-soat-korporativ-sovgalar-toshkent",
       title: "Toshkentda buyurtma asosida logotipli soatlar: premium sovg'a",
@@ -3060,14 +3060,14 @@ export const blogPosts = {
       keywords: ["logotipli soatlar", "premium sovg'a", "soat gravyurasi", "korporativ sovg'alar", "Toshkent"],
       category: "Pillar",
       relatedPosts: ['mijoz-hamkorlar-uchun-sovgalar-vip', 'xodimlar-uchun-sovgalar-hr-qollanma', 'it-kompaniyalar-uchun-merch-toshkent', 'banklar-va-fintex-uchun-sovgalar-toshkent', 'korporativ-tadbirlar-uchun-sovgalar-toshkent', 'horeca-va-restoranlar-uchun-sovgalar-toshkent'],
-      contentHtml: `<p>Logotipli soatlar rahbarlar, hamkorlar va eng yaxshi xodimlar uchun maqomli sovg‘a formatidir. U ham minnatdorchilik, ham uzoq muddatli hamkorlik qiymatini ko‘rsatadi.</p>
+      contentHtml: `<p>Logotipli soatlar rahbarlar, hamkorlar va eng yaxshi xodimlar uchun maqomli sovg'a formatidir. U ham minnatdorchilik, ham uzoq muddatli hamkorlik qiymatini ko'rsatadi.</p>
 <h2>Qaysi holatlarda mos keladi</h2>
-<ul><li>Kompaniya yubileyi va mukofotlash marosimlari</li><li>VIP-mijozlar va asosiy hamkorlar uchun sovg‘alar</li><li>Yopiq tadbirlar va rasmiy uchrashuvlar</li></ul>
+<ul><li>Kompaniya yubileyi va mukofotlash marosimlari</li><li>VIP-mijozlar va asosiy hamkorlar uchun sovg'alar</li><li>Yopiq tadbirlar va rasmiy uchrashuvlar</li></ul>
 <h2>Ishlab chiqarishda muhim bosqichlar</h2>
-<ol><li>Aniq maket va oldindan vizual ko‘rinish</li><li>Maqsadli auditoriyaga mos model tanlash</li><li>Gravyura va qadoq sifatini yakuniy tekshiruv</li></ol>
+<ol><li>Aniq maket va oldindan vizual ko'rinish</li><li>Maqsadli auditoriyaga mos model tanlash</li><li>Gravyura va qadoq sifatini yakuniy tekshiruv</li></ol>
 <p><strong>Soat modellari katalogi kerakmi?</strong> Sizga mos personalizatsiya variantlarini tayyorlaymiz.</p>
-<h2>Bog‘liq maqolalar</h2>
-<ul><li><a href="/uz/blog/mijoz-hamkorlar-uchun-sovgalar-vip">Mijoz va hamkorlar uchun VIP sovg‘alar</a></li><li><a href="/uz/blog/xodimlar-uchun-sovgalar-hr-qollanma">Xodimlarni mukofotlash sovg‘alari</a></li><li><a href="/uz/blog/it-kompaniyalar-uchun-merch-toshkent">IT kompaniyalar merchi</a></li><li><a href="/uz/blog/banklar-va-fintex-uchun-sovgalar-toshkent">Banklar va fintex uchun sovg‘alar</a></li><li><a href="/uz/blog/logotipli-soat-korporativ-sovgalar-toshkent">Logotipli premium soatlar</a></li><li><a href="/uz/blog/korporativ-tadbirlar-uchun-sovgalar-toshkent">Korporativ tadbir sovg‘alari</a></li></ul>`},
+<h2>Bog'liq maqolalar</h2>
+<ul><li><a href="/uz/blog/mijoz-hamkorlar-uchun-sovgalar-vip">Mijoz va hamkorlar uchun VIP sovg'alar</a></li><li><a href="/uz/blog/xodimlar-uchun-sovgalar-hr-qollanma">Xodimlarni mukofotlash sovg'alari</a></li><li><a href="/uz/blog/it-kompaniyalar-uchun-merch-toshkent">IT kompaniyalar merchi</a></li><li><a href="/uz/blog/banklar-va-fintex-uchun-sovgalar-toshkent">Banklar va fintex uchun sovg'alar</a></li><li><a href="/uz/blog/logotipli-soat-korporativ-sovgalar-toshkent">Logotipli premium soatlar</a></li><li><a href="/uz/blog/korporativ-tadbirlar-uchun-sovgalar-toshkent">Korporativ tadbir sovg'alari</a></li></ul>`},
     {
       slug: "korporativ-tadbirlar-uchun-sovgalar-toshkent",
       title: "Toshkentda korporativ tadbirlar uchun sovg'alar: g'oyalar, brendlash",
@@ -3076,14 +3076,14 @@ export const blogPosts = {
       keywords: ["korporativ tadbir sovg'alari", "timbilding", "kompaniya yubileyi", "brendlangan suvenir", "Toshkent"],
       category: "Pillar",
       relatedPosts: ['logotipli-soat-korporativ-sovgalar-toshkent', 'xodimlar-uchun-sovgalar-hr-qollanma', 'yangi-xodimlar-uchun-welcome-pack', 'it-kompaniyalar-uchun-merch-toshkent', 'banklar-va-fintex-uchun-sovgalar-toshkent', 'horeca-va-restoranlar-uchun-sovgalar-toshkent'],
-      contentHtml: `<p>Korporativ tadbirlar uchun to‘g‘ri tanlangan sovg‘a voqea taassurotini kuchaytiradi. Har bir format uchun auditoriya va maqsadga mos yechim tanlash muhim.</p>
+      contentHtml: `<p>Korporativ tadbirlar uchun to'g'ri tanlangan sovg'a voqea taassurotini kuchaytiradi. Har bir format uchun auditoriya va maqsadga mos yechim tanlash muhim.</p>
 <h2>Tanlovning tezkor sxemasi</h2>
 <ul><li>Auditoriyani aniqlang: xodim, hamkor yoki mehmon</li><li>Byudjet va muddatni oldindan kelishing</li><li>Nosiya va personalizatsiya usulini tasdiqlang</li></ul>
-<h2>Eng ko‘p buyurtma qilinadigan yechimlar</h2>
-<ol><li>Ommaviy tadbirlar uchun amaliy to‘plamlar</li><li>Yubiley va mukofotlash uchun premium pozitsiyalar</li><li>Onboarding uchun welcome formatlar</li></ol>
+<h2>Eng ko'p buyurtma qilinadigan yechimlar</h2>
+<ol><li>Ommaviy tadbirlar uchun amaliy to'plamlar</li><li>Yubiley va mukofotlash uchun premium pozitsiyalar</li><li>Onboarding uchun welcome formatlar</li></ol>
 <p><strong>Tadbiringiz uchun chek-list kerakmi?</strong> Maqsad va byudjetga mos variantlarni tayyorlaymiz.</p>
-<h2>Bog‘liq maqolalar</h2>
-<ul><li><a href="/uz/blog/logotipli-soat-korporativ-sovgalar-toshkent">Yubiley uchun logotipli soatlar</a></li><li><a href="/uz/blog/xodimlar-uchun-sovgalar-hr-qollanma">Xodimlarni mukofotlash sovg‘alari</a></li><li><a href="/uz/blog/yangi-xodimlar-uchun-welcome-pack">Yangi xodimlar uchun welcome pack</a></li><li><a href="/uz/blog/it-kompaniyalar-uchun-merch-toshkent">IT kompaniyalar merchi</a></li><li><a href="/uz/blog/banklar-va-fintex-uchun-sovgalar-toshkent">Banklar va fintex uchun sovg‘alar</a></li><li><a href="/uz/blog/horeca-va-restoranlar-uchun-sovgalar-toshkent">HoReCa uchun sovg‘alar</a></li></ul>`},
+<h2>Bog'liq maqolalar</h2>
+<ul><li><a href="/uz/blog/logotipli-soat-korporativ-sovgalar-toshkent">Yubiley uchun logotipli soatlar</a></li><li><a href="/uz/blog/xodimlar-uchun-sovgalar-hr-qollanma">Xodimlarni mukofotlash sovg'alari</a></li><li><a href="/uz/blog/yangi-xodimlar-uchun-welcome-pack">Yangi xodimlar uchun welcome pack</a></li><li><a href="/uz/blog/it-kompaniyalar-uchun-merch-toshkent">IT kompaniyalar merchi</a></li><li><a href="/uz/blog/banklar-va-fintex-uchun-sovgalar-toshkent">Banklar va fintex uchun sovg'alar</a></li><li><a href="/uz/blog/horeca-va-restoranlar-uchun-sovgalar-toshkent">HoReCa uchun sovg'alar</a></li></ul>`},
     {
       slug: "horeca-va-restoranlar-uchun-sovgalar-toshkent",
       title: "Toshkentda HoReCa uchun sovg'alar va merch: restoranlarni brendlash",
@@ -3093,13 +3093,13 @@ export const blogPosts = {
       category: "Pillar",
       relatedPosts: ['lazer-gravirovka-sovgalar', 'logotip-maketi-tayyorlash', 'it-kompaniyalar-uchun-merch-toshkent', 'banklar-va-fintex-uchun-sovgalar-toshkent', 'logotipli-soat-korporativ-sovgalar-toshkent', 'korporativ-tadbirlar-uchun-sovgalar-toshkent'],
       contentHtml: `<p>HoReCa segmentida mehmon taassuroti mayda detallar orqali shakllanadi. Menyu papkalari, tablichkalar va forma elementlarini brendlash muassasa imidjini kuchaytiradi.</p>
-<h2>Ko‘p ishlatiladigan yechimlar</h2>
+<h2>Ko'p ishlatiladigan yechimlar</h2>
 <ul><li>Menyu papkalari, tablichkalar va raqamlar</li><li>Xodimlar formasi va aksessuarlari</li><li>Mehmonlar hamda hamkorlar uchun suvenirlar</li></ul>
 <h2>Barqaror sifat uchun</h2>
 <ol><li>Barcha mahsulotlar uchun yagona maket tasdiqlash</li><li>Mustahkam material va mos texnologiya tanlash</li><li>Tirajdan oldin yakuniy nazorat namunasi</li></ol>
 <p><strong>Muassasangiz uchun yechimlar katalogi kerakmi?</strong> Format va byudjetga mos variantlarni taqdim etamiz.</p>
-<h2>Bog‘liq maqolalar</h2>
-<ul><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Lazerli gravirovka</a></li><li><a href="/uz/blog/logotip-maketi-tayyorlash">Logotip maketi tayyorlash</a></li><li><a href="/uz/blog/it-kompaniyalar-uchun-merch-toshkent">IT kompaniyalar uchun merch</a></li><li><a href="/uz/blog/banklar-va-fintex-uchun-sovgalar-toshkent">Banklar va fintex uchun sovg‘alar</a></li><li><a href="/uz/blog/logotipli-soat-korporativ-sovgalar-toshkent">Logotipli premium soatlar</a></li><li><a href="/uz/blog/korporativ-tadbirlar-uchun-sovgalar-toshkent">Korporativ tadbir sovg‘alari</a></li></ul>`},
+<h2>Bog'liq maqolalar</h2>
+<ul><li><a href="/uz/blog/lazer-gravirovka-sovgalar">Lazerli gravirovka</a></li><li><a href="/uz/blog/logotip-maketi-tayyorlash">Logotip maketi tayyorlash</a></li><li><a href="/uz/blog/it-kompaniyalar-uchun-merch-toshkent">IT kompaniyalar uchun merch</a></li><li><a href="/uz/blog/banklar-va-fintex-uchun-sovgalar-toshkent">Banklar va fintex uchun sovg'alar</a></li><li><a href="/uz/blog/logotipli-soat-korporativ-sovgalar-toshkent">Logotipli premium soatlar</a></li><li><a href="/uz/blog/korporativ-tadbirlar-uchun-sovgalar-toshkent">Korporativ tadbir sovg'alari</a></li></ul>`},
     {
       slug: 'korporativ-sovgalar-boyicha-toliq-qollanma',
       title: "O'zbekistonda korporativ sovg'alar bo'yicha to'liq qo'llanma | Graver Studio",
@@ -3449,67 +3449,67 @@ export const blogPosts = {
           answer: 'Narx to\'plam tarkibi va miqdoriga bog\'liq. Asosiy to\'plamlar 150 000 so\'mdan, gravyurali premium to\'plamlar 350 000 so\'mdan boshlanadi. Byudjetingizga mos hisob-kitob uchun biz bilan bog\'laning.'
         }
       ],
-      contentHtml: `<p>Navro‘z — yangilanish, mehmondo‘stlik va samimiy tilaklar fasli. O‘zbekistonning korporativ madaniyatida bu hamkorlar, mijozlar va xodimlar bilan munosabatlarni mustahkamlash uchun ajoyib imkoniyatdir. Hurmat va g‘amxo‘rlikni ifodalashning eng yaxshi usuli esa — milliy an’analarni zamonaviy ishbilarmonlik yondashuvi bilan uyg‘unlashtirgan sovg‘adir. Brendlangan gastronomik to‘plamlar — Toshkentda tobora ommalashib borayotgan ideal yechim.</p>
-<p>Standart suvenirlardan farqli o‘laroq, yeyiladigan sovg‘alar his-tuyg‘ularni hadya etadi va bayramona muhit yaratadi. Bu shunchaki e’tibor belgisi emas, balki ta’m va iliqlikni baham ko‘rish imkoniyatidir. Ushbu maqolada biz kompaniyangizga ajralib turishga va o‘zi haqida yoqimli taassurot qoldirishga yordam beradigan gastronomik to‘plamlar g‘oyalarini ko‘rib chiqamiz.</p>
+      contentHtml: `<p>Navro'z — yangilanish, mehmondo'stlik va samimiy tilaklar fasli. O'zbekistonning korporativ madaniyatida bu hamkorlar, mijozlar va xodimlar bilan munosabatlarni mustahkamlash uchun ajoyib imkoniyatdir. Hurmat va g'amxo'rlikni ifodalashning eng yaxshi usuli esa — milliy an'analarni zamonaviy ishbilarmonlik yondashuvi bilan uyg'unlashtirgan sovg'adir. Brendlangan gastronomik to'plamlar — Toshkentda tobora ommalashib borayotgan ideal yechim.</p>
+<p>Standart suvenirlardan farqli o'laroq, yeyiladigan sovg'alar his-tuyg'ularni hadya etadi va bayramona muhit yaratadi. Bu shunchaki e'tibor belgisi emas, balki ta'm va iliqlikni baham ko'rish imkoniyatidir. Ushbu maqolada biz kompaniyangizga ajralib turishga va o'zi haqida yoqimli taassurot qoldirishga yordam beradigan gastronomik to'plamlar g'oyalarini ko'rib chiqamiz.</p>
 
 <nav>
     <h2>Mundarija:</h2>
     <ul>
-        <li><a href="#why-gastro-uz">Nima uchun gastronomik to‘plamlar Navro‘z uchun ajoyib sovg‘a?</a></li>
-        <li><a href="#ideas-uz">Hamkorlar va mijozlar uchun brendlangan to‘plamlar g‘oyalari</a></li>
-        <li><a href="#packaging-uz">O‘ramning o‘rni: brendlash samarani qanday kuchaytiradi</a></li>
-        <li><a href="#how-to-order-uz">Toshkentda gastronomik to‘plamlarga qanday buyurtma berish mumkin?</a></li>
+        <li><a href="#why-gastro-uz">Nima uchun gastronomik to'plamlar Navro'z uchun ajoyib sovg'a?</a></li>
+        <li><a href="#ideas-uz">Hamkorlar va mijozlar uchun brendlangan to'plamlar g'oyalari</a></li>
+        <li><a href="#packaging-uz">O'ramning o'rni: brendlash samarani qanday kuchaytiradi</a></li>
+        <li><a href="#how-to-order-uz">Toshkentda gastronomik to'plamlarga qanday buyurtma berish mumkin?</a></li>
     </ul>
 </nav>
 
-<h2 id="why-gastro-uz">Nima uchun gastronomik to‘plamlar Navro‘z uchun ajoyib sovg‘a?</h2>
-<p>Yeyiladigan sovg‘alar bevosita hislarga murojaat qiladi. Yangi damlangan choy hidi, tabiiy asal va saralangan yong‘oqlarning ta’mi — bularning barchasi mustahkam hissiy aloqa yaratadi. Aynan shunday formatni tanlash uchun bir nechta sabablar:</p>
+<h2 id="why-gastro-uz">Nima uchun gastronomik to'plamlar Navro'z uchun ajoyib sovg'a?</h2>
+<p>Yeyiladigan sovg'alar bevosita hislarga murojaat qiladi. Yangi damlangan choy hidi, tabiiy asal va saralangan yong'oqlarning ta'mi — bularning barchasi mustahkam hissiy aloqa yaratadi. Aynan shunday formatni tanlash uchun bir nechta sabablar:</p>
 <ul>
-    <li><strong>Universallik:</strong> Bunday sovg‘a mutlaqo hammaga — erkaklarga ham, ayollarga ham, rahbarlarga ham, oddiy xodimlarga ham mos keladi.</li>
-    <li><strong>An’analar va mehmondo‘stlik:</strong> Dasturxon — madaniyatimizning muhim qismi. Mehmondorchilik to‘plamini sovg‘a qilib, siz milliy an’analarga hurmat ko‘rsatasiz.</li>
-    <li><strong>Foyda va ijobiy hissiyotlar:</strong> Sifatli va mazali mahsulotlar har doim minnatdorchilik bilan qabul qilinadi. Bu aniq ishlatiladigan sovg‘adir.</li>
+    <li><strong>Universallik:</strong> Bunday sovg'a mutlaqo hammaga — erkaklarga ham, ayollarga ham, rahbarlarga ham, oddiy xodimlarga ham mos keladi.</li>
+    <li><strong>An'analar va mehmondo'stlik:</strong> Dasturxon — madaniyatimizning muhim qismi. Mehmondorchilik to'plamini sovg'a qilib, siz milliy an'analarga hurmat ko'rsatasiz.</li>
+    <li><strong>Foyda va ijobiy hissiyotlar:</strong> Sifatli va mazali mahsulotlar har doim minnatdorchilik bilan qabul qilinadi. Bu aniq ishlatiladigan sovg'adir.</li>
 </ul>
 
-<h2 id="ideas-uz">Hamkorlar va mijozlar uchun brendlangan to‘plamlar g‘oyalari</h2>
-<p>Gastronomik to‘plamdagi eng muhim narsa — bu tarkibiy qismlarning uyg‘unligi va sifatli o‘ram. Byudjetingiz va maqsadlaringizga moslashtirilishi mumkin bo‘lgan bir nechta sinalgan g‘oyalar:</p>
-<h3>1. "O‘zbekiston ne’matlari" to‘plami</h3>
+<h2 id="ideas-uz">Hamkorlar va mijozlar uchun brendlangan to'plamlar g'oyalari</h2>
+<p>Gastronomik to'plamdagi eng muhim narsa — bu tarkibiy qismlarning uyg'unligi va sifatli o'ram. Byudjetingiz va maqsadlaringizga moslashtirilishi mumkin bo'lgan bir nechta sinalgan g'oyalar:</p>
+<h3>1. "O'zbekiston ne'matlari" to'plami</h3>
 <p>Klassik va har doim yutuqli variant. Unga quyidagilarni kiritish mumkin:</p>
 <ul>
     <li>Saralangan quruq mevalar: turshak, mayiz, anjir.</li>
-    <li>Har xil turdagi yong‘oqlar: bodom, grek yong‘og‘i, pista.</li>
-    <li>Tabiiy tog‘ asali yoki murabbo.</li>
+    <li>Har xil turdagi yong'oqlar: bodom, grek yong'og'i, pista.</li>
+    <li>Tabiiy tog' asali yoki murabbo.</li>
 </ul>
-<p>Bularning barchasi lazerli o‘yma usulida logotipingiz tushirilgan chiroyli yog‘och qutiga joylashtiriladi.</p>
+<p>Bularning barchasi lazerli o'yma usulida logotipingiz tushirilgan chiroyli yog'och qutiga joylashtiriladi.</p>
 
-<h3>2. Choy yoki qahva to‘plami</h3>
-<p>Choy marosimi — ishbilarmonlik uchrashuvlarining ajralmas qismi. Hamkorlaringizga sifatli ichimlikdan bahramand bo‘lish imkoniyatini sovg‘a qiling.</p>
+<h3>2. Choy yoki qahva to'plami</h3>
+<p>Choy marosimi — ishbilarmonlik uchrashuvlarining ajralmas qismi. Hamkorlaringizga sifatli ichimlikdan bahramand bo'lish imkoniyatini sovg'a qiling.</p>
 <ul>
-    <li>Xushbo‘y ko‘k yoki qora choy.</li>
-    <li>An’anaviy o‘zbek shirinliklari: novvot, parvarda, pashmak.</li>
+    <li>Xushbo'y ko'k yoki qora choy.</li>
+    <li>An'anaviy o'zbek shirinliklari: novvot, parvarda, pashmak.</li>
     <li>Brendlangan piyolalar yoki krujkalar.</li>
 </ul>
 
-<h3>3. Asosiy hamkorlar uchun VIP-to‘plam</h3>
-<p>Agar siz alohida taassurot qoldirmoqchi bo‘lsangiz, qimmatroq va eksklyuziv to‘plam yig‘ishingiz mumkin. Masalan, quruq mevalar va asal to‘plamiga bir shisha sifatli ichimlik yoki premium aksessuarlar (masalan, o‘yma naqshli pishloq pichog‘i) qo‘shish mumkin.</p>
+<h3>3. Asosiy hamkorlar uchun VIP-to'plam</h3>
+<p>Agar siz alohida taassurot qoldirmoqchi bo'lsangiz, qimmatroq va eksklyuziv to'plam yig'ishingiz mumkin. Masalan, quruq mevalar va asal to'plamiga bir shisha sifatli ichimlik yoki premium aksessuarlar (masalan, o'yma naqshli pishloq pichog'i) qo'shish mumkin.</p>
 
-<h2 id="packaging-uz">O‘ramning o‘rni: brendlash samarani qanday kuchaytiradi</h2>
-<p>Hatto eng yaxshi mahsulotlar ham munosib bezakka muhtoj. Brendlangan o‘ram shirinliklar to‘plamini to‘laqonli korporativ sovg‘aga aylantiradi.</p>
+<h2 id="packaging-uz">O'ramning o'rni: brendlash samarani qanday kuchaytiradi</h2>
+<p>Hatto eng yaxshi mahsulotlar ham munosib bezakka muhtoj. Brendlangan o'ram shirinliklar to'plamini to'laqonli korporativ sovg'aga aylantiradi.</p>
 <ul>
-    <li><strong>O‘yma naqshli yog‘och qutilar:</strong> Eng salobatli va esda qolarli variant. Lazer bilan tushirilgan logotip zamonaviy va qimmat ko‘rinadi. Bunday qutini tashlab yuborishmaydi, balki mayda-chuyda narsalarni saqlash uchun ishlatishadi va u doimo kompaniyangizni eslatib turadi.</li>
+    <li><strong>O'yma naqshli yog'och qutilar:</strong> Eng salobatli va esda qolarli variant. Lazer bilan tushirilgan logotip zamonaviy va qimmat ko'rinadi. Bunday qutini tashlab yuborishmaydi, balki mayda-chuyda narsalarni saqlash uchun ishlatishadi va u doimo kompaniyangizni eslatib turadi.</li>
     <li><strong>UF-bosmali karton qutilar:</strong> Zamonaviy UF-bosma texnologiyasi qutiga yorqin, rang-barang logotip yoki boshqa har qanday tasvirni tushirish imkonini beradi.</li>
-    <li><strong>Brendlangan lentalar va yorliqlar:</strong> Byudjet cheklangan bo‘lsa ham, standart o‘ramni logotipingiz tushirilgan atlas lenta yoki zamonaviy yorliq yordamida brendlash mumkin.</li>
+    <li><strong>Brendlangan lentalar va yorliqlar:</strong> Byudjet cheklangan bo'lsa ham, standart o'ramni logotipingiz tushirilgan atlas lenta yoki zamonaviy yorliq yordamida brendlash mumkin.</li>
 </ul>
 
-<h2 id="how-to-order-uz">Toshkentda gastronomik to‘plamlarga qanday buyurtma berish mumkin?</h2>
+<h2 id="how-to-order-uz">Toshkentda gastronomik to'plamlarga qanday buyurtma berish mumkin?</h2>
 <p>Buyurtma berish jarayoni odatda bir necha oddiy qadamdan iborat:</p>
 <ol>
-    <li><strong>Byudjet va tirajni aniqlang.</strong> Bir to‘plamga qancha sarflashga tayyor ekanligingizni va qancha miqdor kerakligini hal qiling.</li>
-    <li><strong>To‘plam tarkibini tanlang.</strong> Menejer bilan to‘ldirishning mumkin bo‘lgan variantlarini muhokama qiling.</li>
-    <li><strong>Logotip maketini tayyorlang.</strong> Sifatli tushirish (o‘yma yoki bosma) uchun logotipingiz vektor formatida (AI, CDR, EPS) kerak bo‘ladi.</li>
-    <li><strong>Dizayn va o‘ramni kelishib oling.</strong> Sizga tasdiqlash uchun bo‘lajak sovg‘aning vizualizatsiyasi taqdim etiladi.</li>
-    <li><strong>Tayyor bo‘lishini kuting.</strong> Muddatlar tiraj va buyurtma murakkabligiga bog‘liq, ularni menejerdan aniqlashtiring.</li>
+    <li><strong>Byudjet va tirajni aniqlang.</strong> Bir to'plamga qancha sarflashga tayyor ekanligingizni va qancha miqdor kerakligini hal qiling.</li>
+    <li><strong>To'plam tarkibini tanlang.</strong> Menejer bilan to'ldirishning mumkin bo'lgan variantlarini muhokama qiling.</li>
+    <li><strong>Logotip maketini tayyorlang.</strong> Sifatli tushirish (o'yma yoki bosma) uchun logotipingiz vektor formatida (AI, CDR, EPS) kerak bo'ladi.</li>
+    <li><strong>Dizayn va o'ramni kelishib oling.</strong> Sizga tasdiqlash uchun bo'lajak sovg'aning vizualizatsiyasi taqdim etiladi.</li>
+    <li><strong>Tayyor bo'lishini kuting.</strong> Muddatlar tiraj va buyurtma murakkabligiga bog'liq, ularni menejerdan aniqlashtiring.</li>
 </ol>
-<p><strong>Kompaniyangiz uchun g‘oyalarni muhokama qilishga tayyormisiz?</strong> Biz bilan aloqa sahifasi orqali bog‘laning va biz sizning ishbilarmonlik munosabatlaringizni mustahkamlaydigan Navro‘z uchun ideal gastronomik sovg‘alarni yaratishga yordam beramiz.</p>
+<p><strong>Kompaniyangiz uchun g'oyalarni muhokama qilishga tayyormisiz?</strong> Biz bilan aloqa sahifasi orqali bog'laning va biz sizning ishbilarmonlik munosabatlaringizni mustahkamlaydigan Navro'z uchun ideal gastronomik sovg'alarni yaratishga yordam beramiz.</p>
 
 Internal Links:
 /blog/polniy-gid-po-korporativnym-podarkam-v-uzbekistane (Hub Page)
@@ -3517,8 +3517,8 @@ Internal Links:
 /services/uf-pechat
 /contacts
 Image Ideas:
-Idea 1: Красиво скомпонованный подарочный набор в деревянной коробке с гравировкой. Внутри видны орехи, курага, мед. Alt-text (RU): Брендированный гастрономический набор на Навруз в деревянной коробке. Alt-text (UZ): Yog'och qutidagi Navro'z uchun brendlangan gastronomik to'plam.
-Idea 2: Крупный план лазерной гравировки логотипа на крышке деревянной коробки. Alt-text (RU): Лазерная гравировка логотипа на подарочной коробке. Alt-text (UZ): Sovg'a qutisiga lazer yordamida logotip o'yish.
+Idea 1: Красиво скомпонованный подарочный набор в деревянной коробке с гравировкой. Внутри видны орехи, курага, мед. Alt-text (RU): Брендированный гастрономический набор на Навруз в деревянной коробке. Alt-text (UZ): Yog'och qutidagi Navro\'z uchun brendlangan gastronomik to\'plam.
+Idea 2: Крупный план лазерной гравировки логотипа на крышке деревянной коробки. Alt-text (RU): Лазерная гравировка логотипа на подарочной коробке. Alt-text (UZ): Sovg'a qutisiga lazer yordamida logotip o\'yish.
 
 
 Я продолжу в том же духе, создавая каждую из 15 статей с таким же уровнем детализации, двуязычности и SEO-оптимизации. Из-за большого объема я буду генерировать их последовательно.
@@ -3528,7 +3528,7 @@ SEO Brief:
 Primary Query (RU): как выбрать vip подарок для партнера узбекистан
 Secondary Queries (RU): премиум бизнес сувениры ташкент, что подарить директору, эксклюзивные подарки с гравировкой, статусные подарки для мужчин
 Primary Query (UZ): vip hamkor uchun sovg'ani qanday tanlash mumkin
-Secondary Queries (UZ): premium biznes suvenirlar toshkent, direktorga nima sovg'a qilish, o'yma naqshli eksklyuziv sovg'alar
+Secondary Queries (UZ): premium biznes suvenirlar toshkent, direktorga nima sovg'a qilish, o\'yma naqshli eksklyuziv sovg\'alar
 Intent: Информационный
 SERP features to target: PAA, Numbered Lists
 Information Gain: Четкое руководство по выбору, основанное на статусе получателя, поводе и психологии, а не просто перечисление товаров. Сравнение подходов конкурентов (CaspiGroup, Dary.uz).
@@ -3562,58 +3562,58 @@ Entities: VIP-подарок, бизнес-партнер, директор, п
           answer: 'VIP-sovg\'alar byudjeti odatda 500 000 so\'mdan boshlanadi. Graver Studio gravyura va firma o\'rami bilan har qanday byudjetga mos individual yechimlar taklif etadi.'
         }
       ],
-      contentHtml: `<p>Asosiy hamkor, investor yoki rahbarga sovg‘a tanlash — bu shunchaki rasmiyatchilik emas, balki strategik qadamdir. To‘g‘ri tanlangan VIP-sovg‘a ishbilarmonlik munosabatlarini mustahkamlashga, hurmatni ta’kidlashga va kompaniyangiz maqomini namoyish etishga qodir. Mehmondo‘stlik an’analari va shaxsiy aloqalar katta rol o‘ynaydigan O‘zbekistonda bu masalaga alohida e’tibor bilan yondashish kerak. Adashish oson, ammo kerakli taassurot qoldirish — haqiqiy san’at.</p>
-<p>Ushbu maqolada biz sizning imijingizga xizmat qiladigan eksklyuziv biznes-sovg‘ani qanday tanlashni va sizning harakatingiz munosib baholanishi uchun qanday mezonlarga e’tibor berish kerakligini ko‘rib chiqamiz.</p>
+      contentHtml: `<p>Asosiy hamkor, investor yoki rahbarga sovg'a tanlash — bu shunchaki rasmiyatchilik emas, balki strategik qadamdir. To'g'ri tanlangan VIP-sovg'a ishbilarmonlik munosabatlarini mustahkamlashga, hurmatni ta'kidlashga va kompaniyangiz maqomini namoyish etishga qodir. Mehmondo'stlik an'analari va shaxsiy aloqalar katta rol o'ynaydigan O'zbekistonda bu masalaga alohida e'tibor bilan yondashish kerak. Adashish oson, ammo kerakli taassurot qoldirish — haqiqiy san'at.</p>
+<p>Ushbu maqolada biz sizning imijingizga xizmat qiladigan eksklyuziv biznes-sovg'ani qanday tanlashni va sizning harakatingiz munosib baholanishi uchun qanday mezonlarga e'tibor berish kerakligini ko'rib chiqamiz.</p>
 
 <nav>
     <h2>Mundarija:</h2>
     <ul>
-        <li><a href="#rules-uz">VIP-sovg‘a tanlashning uchta oltin qoidasi</a></li>
-        <li><a href="#ideas-vip-uz">Rahbarlar uchun premium-sovg‘alar g‘oyalari</a></li>
-        <li><a href="#personalization-uz">Shaxsiylashtirish: shunchaki logotipdan ko‘proq narsa</a></li>
-        <li><a href="#mistakes-uz">Qochish kerak bo‘lgan odatiy xatolar</a></li>
+        <li><a href="#rules-uz">VIP-sovg'a tanlashning uchta oltin qoidasi</a></li>
+        <li><a href="#ideas-vip-uz">Rahbarlar uchun premium-sovg'alar g'oyalari</a></li>
+        <li><a href="#personalization-uz">Shaxsiylashtirish: shunchaki logotipdan ko'proq narsa</a></li>
+        <li><a href="#mistakes-uz">Qochish kerak bo'lgan odatiy xatolar</a></li>
     </ul>
 </nav>
 
-<h2 id="rules-uz">VIP-sovg‘a tanlashning uchta oltin qoidasi</h2>
-<p>Kataloglarga o‘tishdan oldin uchta asosiy savolga javob bering:</p>
+<h2 id="rules-uz">VIP-sovg'a tanlashning uchta oltin qoidasi</h2>
+<p>Kataloglarga o'tishdan oldin uchta asosiy savolga javob bering:</p>
 <ol>
-    <li><strong>Qabul qiluvchi kim?</strong> Insonning qiziqishlari va maqomi haqida iloji boricha ko‘proq ma’lumot oling. U golf, ov, san’atga qiziqadimi? Qaysi uslubni afzal ko‘radi — klassikmi yoki zamonaviymi? Sovg‘a faqat sizning saxiyligingizni emas, balki uning shaxsiyatini aks ettirishi kerak.</li>
-    <li><strong>Sabab nima?</strong> Kompaniya yubileyiga berilgan sovg‘a muvaffaqiyatli kelishuvdan keyingi minnatdorchilik belgisidan farq qiladi. Sabab sovg‘aning rasmiylik darajasi va qiymatini belgilaydi.</li>
-    <li><strong>Qanday xabar yetkazmoqchisiz?</strong> Siz "rahmat", "hamkorligimizni qadrlaymiz" yoki "biz salobatli va ishonchli kompaniyamiz" demoqchimisiz? Sovg‘a — bu sizning og‘zaki bo‘lmagan xabaringiz.</li>
+    <li><strong>Qabul qiluvchi kim?</strong> Insonning qiziqishlari va maqomi haqida iloji boricha ko'proq ma'lumot oling. U golf, ov, san'atga qiziqadimi? Qaysi uslubni afzal ko'radi — klassikmi yoki zamonaviymi? Sovg'a faqat sizning saxiyligingizni emas, balki uning shaxsiyatini aks ettirishi kerak.</li>
+    <li><strong>Sabab nima?</strong> Kompaniya yubileyiga berilgan sovg'a muvaffaqiyatli kelishuvdan keyingi minnatdorchilik belgisidan farq qiladi. Sabab sovg'aning rasmiylik darajasi va qiymatini belgilaydi.</li>
+    <li><strong>Qanday xabar yetkazmoqchisiz?</strong> Siz "rahmat", "hamkorligimizni qadrlaymiz" yoki "biz salobatli va ishonchli kompaniyamiz" demoqchimisiz? Sovg'a — bu sizning og'zaki bo'lmagan xabaringiz.</li>
 </ol>
 
-<h2 id="ideas-vip-uz">Rahbarlar uchun premium-sovg‘alar g‘oyalari</h2>
-<p>Toshkent bozorida biz kabi eksklyuzivlikka e’tibor qaratadigan kompaniyalar mavjud. Masalan, <strong>Caspi Group</strong> qimmatbaho materiallar va to‘liq shaxsiylashtirishga urg‘u beradi, <strong>Dary.uz</strong> esa o‘z mahsulotlarini "biznes-klass" sifatida taqdim etadi. Trendlarga asoslanib, bir nechta yutuqli g‘oyalarni taqdim etamiz:</p>
+<h2 id="ideas-vip-uz">Rahbarlar uchun premium-sovg'alar g'oyalari</h2>
+<p>Toshkent bozorida biz kabi eksklyuzivlikka e'tibor qaratadigan kompaniyalar mavjud. Masalan, <strong>Caspi Group</strong> qimmatbaho materiallar va to'liq shaxsiylashtirishga urg'u beradi, <strong>Dary.uz</strong> esa o'z mahsulotlarini "biznes-klass" sifatida taqdim etadi. Trendlarga asoslanib, bir nechta yutuqli g'oyalarni taqdim etamiz:</p>
 
 <h3>1. Qimmatbaho yozuv anjomlari</h3>
-<p>Hech qachon urfdan qolmaydigan klassika. Taniqli brendning (masalan, Parker, Waterman) ism o‘yib yozilgan ruchkasi — bu maqomli va ayni paytda shaxsiy sovg‘adir. U har kuni hamkoringizning ish stolida sizni eslatib turadi.</p>
+<p>Hech qachon urfdan qolmaydigan klassika. Taniqli brendning (masalan, Parker, Waterman) ism o'yib yozilgan ruchkasi — bu maqomli va ayni paytda shaxsiy sovg'adir. U har kuni hamkoringizning ish stolida sizni eslatib turadi.</p>
 
 <h3>2. Naqsh bosilgan tabiiy charm mahsulotlari</h3>
-<p>Sifatli charm portfel, hujjatlar uchun papka yoki ism bosh harflari yoki logotipi bosilgan kundalik — bu nafis va amaliy sovg‘adir. U detallarga e’tibor va yaxshi didni ta’kidlaydi.</p>
+<p>Sifatli charm portfel, hujjatlar uchun papka yoki ism bosh harflari yoki logotipi bosilgan kundalik — bu nafis va amaliy sovg'adir. U detallarga e'tibor va yaxshi didni ta'kidlaydi.</p>
 
-<h3>3. Eksklyuziv stol usti to‘plamlari va soatlar</h3>
-<p>Tabiiy tosh yoki yog‘ochdan yasalgan stol usti to‘plami, shuningdek, orqa qopqog‘iga o‘yma naqsh tushirilgan zamonaviy soatlar — bu kabinetni bezatadigan va egasining yuksak maqomini ta’kidlaydigan sovg‘alardir.</p>
+<h3>3. Eksklyuziv stol usti to'plamlari va soatlar</h3>
+<p>Tabiiy tosh yoki yog'ochdan yasalgan stol usti to'plami, shuningdek, orqa qopqog'iga o'yma naqsh tushirilgan zamonaviy soatlar — bu kabinetni bezatadigan va egasining yuksak maqomini ta'kidlaydigan sovg'alardir.</p>
 
 <h3>4. Shisha yoki metalldan yasalgan mukofotlar va suvenirlar</h3>
-<p>Agar sabab — yutuq yoki yubiley bo‘lsa, eksklyuziv mukofot ajoyib yechim bo‘ladi. Zamonaviy texnologiyalar optik shisha yoki metalldan ichki 3D-o‘yma va rang-barang UF-bosma bilan noyob mahsulotlar yaratish imkonini beradi, bu juda samarali ko‘rinadi.</p>
+<p>Agar sabab — yutuq yoki yubiley bo'lsa, eksklyuziv mukofot ajoyib yechim bo'ladi. Zamonaviy texnologiyalar optik shisha yoki metalldan ichki 3D-o'yma va rang-barang UF-bosma bilan noyob mahsulotlar yaratish imkonini beradi, bu juda samarali ko'rinadi.</p>
 
-<h2 id="personalization-uz">Shaxsiylashtirish: shunchaki logotipdan ko‘proq narsa</h2>
-<p>VIP-sovg‘aning oddiy suvenirdan asosiy farqi — shaxsiylashtirish darajasidir. Logotip tushirish — bu standart. Taassurot qoldirish uchun bundan ham oldinga boring.</p>
+<h2 id="personalization-uz">Shaxsiylashtirish: shunchaki logotipdan ko'proq narsa</h2>
+<p>VIP-sovg'aning oddiy suvenirdan asosiy farqi — shaxsiylashtirish darajasidir. Logotip tushirish — bu standart. Taassurot qoldirish uchun bundan ham oldinga boring.</p>
 <ul>
-    <li><strong>Ismli o‘yma naqsh:</strong> Qabul qiluvchining ismi yoki bosh harflarini tushirish sovg‘aning uning nazaridagi qimmatini bir zumda oshiradi.</li>
-    <li><strong>Sovg‘a yozuvini bosish:</strong> Charm mahsulotiga yoki metall yorliqqa qisqa va mazmunli tilak.</li>
-    <li><strong>Individual dizayn:</strong> Hamkor kompaniyasining faoliyat sohasini aks ettiruvchi sovg‘ani "noldan" yaratish (masalan, neft minorasi yoki ko‘prik shaklidagi haykalcha).</li>
+    <li><strong>Ismli o'yma naqsh:</strong> Qabul qiluvchining ismi yoki bosh harflarini tushirish sovg'aning uning nazaridagi qimmatini bir zumda oshiradi.</li>
+    <li><strong>Sovg'a yozuvini bosish:</strong> Charm mahsulotiga yoki metall yorliqqa qisqa va mazmunli tilak.</li>
+    <li><strong>Individual dizayn:</strong> Hamkor kompaniyasining faoliyat sohasini aks ettiruvchi sovg'ani "noldan" yaratish (masalan, neft minorasi yoki ko'prik shaklidagi haykalcha).</li>
 </ul>
 
-<h2 id="mistakes-uz">Qochish kerak bo‘lgan odatiy xatolar</h2>
+<h2 id="mistakes-uz">Qochish kerak bo'lgan odatiy xatolar</h2>
 <ul>
-    <li><strong>Juda qimmat sovg‘a:</strong> U qabul qiluvchini noqulay ahvolga solishi va pora sifatida qabul qilinishi mumkin.</li>
-    <li><strong>Juda arzon sovg‘a:</strong> U haqorat qilishi va hurmatsizlikni namoyon etishi mumkin.</li>
-    <li><strong>Katta, ko‘zga tashlanadigan logotipli sovg‘a:</strong> VIP-sovg‘a reklama uchun emas, balki shaxsiy foydalanish uchun mo‘ljallangan. Brendlash nozik va nafis bo‘lishi kerak.</li>
-    <li><strong>Afzal ko‘rishlariga ishonchingiz komil bo‘lmasa, spirtli ichimlik sovg‘a qilish:</strong> Bu tavakkalli qadam. Yaxshisi, neytralroq, ammo maqomli sovg‘a tanlagan ma’qul.</li>
+    <li><strong>Juda qimmat sovg'a:</strong> U qabul qiluvchini noqulay ahvolga solishi va pora sifatida qabul qilinishi mumkin.</li>
+    <li><strong>Juda arzon sovg'a:</strong> U haqorat qilishi va hurmatsizlikni namoyon etishi mumkin.</li>
+    <li><strong>Katta, ko'zga tashlanadigan logotipli sovg'a:</strong> VIP-sovg'a reklama uchun emas, balki shaxsiy foydalanish uchun mo'ljallangan. Brendlash nozik va nafis bo'lishi kerak.</li>
+    <li><strong>Afzal ko'rishlariga ishonchingiz komil bo'lmasa, spirtli ichimlik sovg'a qilish:</strong> Bu tavakkalli qadam. Yaxshisi, neytralroq, ammo maqomli sovg'a tanlagan ma'qul.</li>
 </ul>
-<p>VIP-sovg‘a tanlash — bu munosabatlarga kiritilgan sarmoyadir. Bu jarayonga o‘ylab yondashib, siz nafaqat siz uchun muhim bo‘lgan insonga yoqimli hadya qilasiz, balki kelajakdagi muvaffaqiyatli hamkorlik uchun poydevorni mustahkamlaysiz. Agar sizga Toshkentda eksklyuziv sovg‘a tanlash va shaxsiylashtirishda yordam kerak bo‘lsa, bizning jamoamiz o‘z tajribasi va ishlab chiqarish imkoniyatlarini taklif qilishga tayyor.</p>
+<p>VIP-sovg'a tanlash — bu munosabatlarga kiritilgan sarmoyadir. Bu jarayonga o'ylab yondashib, siz nafaqat siz uchun muhim bo'lgan insonga yoqimli hadya qilasiz, balki kelajakdagi muvaffaqiyatli hamkorlik uchun poydevorni mustahkamlaysiz. Agar sizga Toshkentda eksklyuziv sovg'a tanlash va shaxsiylashtirishda yordam kerak bo'lsa, bizning jamoamiz o'z tajribasi va ishlab chiqarish imkoniyatlarini taklif qilishga tayyor.</p>
 
 Internal Links:
 /blog/polniy-gid-po-korporativnym-podarkam-v-uzbekistane (Hub Page)
@@ -3673,40 +3673,40 @@ Entities: Welcome Pack, IT-компания, новый сотрудник, м�
           answer: 'Asosiy to\'plam tarkibiga qarab 200 000 dan 500 000 so\'mgacha. Graver Studio logotip tushirish bilan byudjetingizga mos optimal variantni tanlashga yordam beradi.'
         }
       ],
-      contentHtml: `<p>O‘zbekistonda IT bozori jadal sur’atlar bilan o‘sib bormoqda va u bilan birga iste’dodlar uchun raqobat ham kuchaymoqda. Eng yaxshi mutaxassislar uchun kurashda kompaniyalar turli vositalardan foydalanadilar va eng samaralilaridan biri — bu puxta o‘ylangan Welcome Pack. Bu shunchaki suvenirlar to‘plami emas, balki yangi xodimning sadoqatini shakllantirish, uning oson moslashishi va korporativ madaniyatga sho‘ng‘ishi uchun birinchi qadamdir.</p>
-<p>Funksionallik, sifat va ijodkorlikni qadrlaydigan IT-mutaxassis uchun ruchka va bloknotdan iborat standart to‘plam endi ish bermaydi. Har kuni ishlatishni va do‘stlarga g‘urur bilan ko‘rsatishni xohlaydigan merch kerak. Ushbu maqolada biz Toshkentdagi IT-kompaniya uchun ideal Welcome Pack yaratish uchun to‘liq chek-list tuzdik.</p>
+      contentHtml: `<p>O'zbekistonda IT bozori jadal sur'atlar bilan o'sib bormoqda va u bilan birga iste'dodlar uchun raqobat ham kuchaymoqda. Eng yaxshi mutaxassislar uchun kurashda kompaniyalar turli vositalardan foydalanadilar va eng samaralilaridan biri — bu puxta o'ylangan Welcome Pack. Bu shunchaki suvenirlar to'plami emas, balki yangi xodimning sadoqatini shakllantirish, uning oson moslashishi va korporativ madaniyatga sho'ng'ishi uchun birinchi qadamdir.</p>
+<p>Funksionallik, sifat va ijodkorlikni qadrlaydigan IT-mutaxassis uchun ruchka va bloknotdan iborat standart to'plam endi ish bermaydi. Har kuni ishlatishni va do'stlarga g'urur bilan ko'rsatishni xohlaydigan merch kerak. Ushbu maqolada biz Toshkentdagi IT-kompaniya uchun ideal Welcome Pack yaratish uchun to'liq chek-list tuzdik.</p>
 
 <nav>
     <h2>Mundarija:</h2>
     <ul>
         <li><a href="#why-welcome-uz">Nima uchun IT-kompaniyaga Welcome Pack kerak?</a></li>
-        <li><a href="#checklist-uz">Chek-list: aytishnik uchun to‘plamga nimalarni kiritish kerak?</a></li>
-        <li><a href="#design-uz">Dizayn va brendlash: merchni qanday qilib zo‘r qilish mumkin</a></li>
+        <li><a href="#checklist-uz">Chek-list: aytishnik uchun to'plamga nimalarni kiritish kerak?</a></li>
+        <li><a href="#design-uz">Dizayn va brendlash: merchni qanday qilib zo'r qilish mumkin</a></li>
         <li><a href="#how-to-create-uz">Toshkentda Welcome Pack qanday yaratiladi va buyurtma qilinadi</a></li>
     </ul>
 </nav>
 
 <h2 id="why-welcome-uz">Nima uchun IT-kompaniyaga Welcome Pack kerak?</h2>
-<p>Puxta o‘ylangan xush kelibsiz to‘plami bir vaqtning o‘zida bir nechta HR va marketing vazifalarini hal qiladi:</p>
+<p>Puxta o'ylangan xush kelibsiz to'plami bir vaqtning o'zida bir nechta HR va marketing vazifalarini hal qiladi:</p>
 <ul>
-    <li><strong>Birinchi kundagi stressni kamaytiradi.</strong> Yangi xodim darhol g‘amxo‘rlik va e’tiborni his qiladi.</li>
-    <li><strong>Adaptatsiyani tezlashtiradi.</strong> Merch o‘zini tezroq jamoaning bir qismi sifatida his qilishga yordam beradi.</li>
+    <li><strong>Birinchi kundagi stressni kamaytiradi.</strong> Yangi xodim darhol g'amxo'rlik va e'tiborni his qiladi.</li>
+    <li><strong>Adaptatsiyani tezlashtiradi.</strong> Merch o'zini tezroq jamoaning bir qismi sifatida his qilishga yordam beradi.</li>
     <li><strong>Sadoqatni oshiradi.</strong> Sifatli va foydali narsalar kompaniya haqida ijobiy tasavvur hosil qiladi.</li>
-    <li><strong>HR-brend sifatida ishlaydi.</strong> Ijtimoiy tarmoqlarda zo‘r merch bilan rasm joylashtirgan xodimlar — yollash uchun eng yaxshi reklama.</li>
+    <li><strong>HR-brend sifatida ishlaydi.</strong> Ijtimoiy tarmoqlarda zo'r merch bilan rasm joylashtirgan xodimlar — yollash uchun eng yaxshi reklama.</li>
 </ul>
 
-<h2 id="checklist-uz">Chek-list: aytishnik uchun to‘plamga nimalarni kiritish kerak?</h2>
-<p>Toshkent bozorida allaqachon tayyor yechimlarni taklif qiluvchi kompaniyalar mavjud, masalan, <strong>Abstrakt.uz</strong>'dan "Welcome Box". Bu kompleks to‘plamlarga bo‘lgan tendensiyani ko‘rsatadi. Biz esa IT-mutaxassislarning ehtiyojlariga e’tibor qaratib, o‘z noyob pakingizni yig‘ishni taklif qilamiz.</p>
+<h2 id="checklist-uz">Chek-list: aytishnik uchun to'plamga nimalarni kiritish kerak?</h2>
+<p>Toshkent bozorida allaqachon tayyor yechimlarni taklif qiluvchi kompaniyalar mavjud, masalan, <strong>Abstrakt.uz</strong>'dan "Welcome Box". Bu kompleks to'plamlarga bo'lgan tendensiyani ko'rsatadi. Biz esa IT-mutaxassislarning ehtiyojlariga e'tibor qaratib, o'z noyob pakingizni yig'ishni taklif qilamiz.</p>
 
 <h3>Majburiy elementlar (Must-Have):</h3>
 <ul>
-    <li><strong>Sifatli tolstovka yoki xudi.</strong> Bu IT-olamining uniformasi. Materialga tejamang — u tanaga yoqimli bo‘lishi kerak. Brendlash — zamonaviy va ko‘zga tashlanmaydigan.</li>
-    <li><strong>Brendlangan krujka yoki termos.</strong> Qahva va choy — dasturchi uchun yoqilg‘i. Qulay shakldagi krujka yoki issiqlikni uzoq ushlab turadigan termos tanlang.</li>
-    <li><strong>Logotipli poverbank (Power Bank).</strong> Gadjetlarni zaryadlash kerak. Logotipingiz o‘yib yozilgan poverbank — bu maksimal darajada foydali sovg‘a.</li>
-    <li><strong>Stikerlar to‘plami (stikerpak).</strong> Aytishnikning noutbuki — bu uning ijodiy maydoni. Kompaniyaning ichki memlari, logotipi va maskoti bilan ijodiy stikerlar ishlab chiqing.</li>
+    <li><strong>Sifatli tolstovka yoki xudi.</strong> Bu IT-olamining uniformasi. Materialga tejamang — u tanaga yoqimli bo'lishi kerak. Brendlash — zamonaviy va ko'zga tashlanmaydigan.</li>
+    <li><strong>Brendlangan krujka yoki termos.</strong> Qahva va choy — dasturchi uchun yoqilg'i. Qulay shakldagi krujka yoki issiqlikni uzoq ushlab turadigan termos tanlang.</li>
+    <li><strong>Logotipli poverbank (Power Bank).</strong> Gadjetlarni zaryadlash kerak. Logotipingiz o'yib yozilgan poverbank — bu maksimal darajada foydali sovg'a.</li>
+    <li><strong>Stikerlar to'plami (stikerpak).</strong> Aytishnikning noutbuki — bu uning ijodiy maydoni. Kompaniyaning ichki memlari, logotipi va maskoti bilan ijodiy stikerlar ishlab chiqing.</li>
 </ul>
 
-<h3>Ma’qul qo‘shimchalar (Nice-to-Have):</h3>
+<h3>Ma'qul qo'shimchalar (Nice-to-Have):</h3>
 <ul>
     <li><strong>Eko-sumka (shopper).</strong> Noutbuk va shaxsiy narsalarni olib yurish uchun qulay.</li>
     <li><strong>Bloknot va ruchka.</strong> Raqamlashtirishga qaramay, ular tezkor yozuvlar uchun hali ham kerak. Yoqimli muqovali modellarni tanlang.</li>
@@ -3714,23 +3714,23 @@ Entities: Welcome Pack, IT-компания, новый сотрудник, м�
     <li><strong>Ruxsatnoma uchun lanyerd va kardholder.</strong></li>
 </ul>
 
-<h2 id="design-uz">Dizayn va brendlash: merchni qanday qilib zo‘r qilish mumkin</h2>
-<p>Muvaffaqiyatli merchning siri — dizaynda. Butun ko‘krakdagi ulkan logotipni unuting. Zamonaviy yondashuvlardan foydalaning:</p>
+<h2 id="design-uz">Dizayn va brendlash: merchni qanday qilib zo'r qilish mumkin</h2>
+<p>Muvaffaqiyatli merchning siri — dizaynda. Butun ko'krakdagi ulkan logotipni unuting. Zamonaviy yondashuvlardan foydalaning:</p>
 <ul>
-    <li><strong>Minimalizm:</strong> Kichik kashta tikilgan logotip, o‘yma naqsh yoki bosma naqsh qimmatroq va zamonaviyroq ko‘rinadi.</li>
+    <li><strong>Minimalizm:</strong> Kichik kashta tikilgan logotip, o'yma naqsh yoki bosma naqsh qimmatroq va zamonaviyroq ko'rinadi.</li>
     <li><strong>Kreativlik:</strong> Faqat sizning xodimlaringiz tushunadigan iboralarni yoki qiziqarli personaj-maskotni ishlating.</li>
-    <li><strong>Tushirish sifati:</strong> Xudi uchun kashtachilik yoki ipak bosmadan foydalaning. Poverbanklar, termoslar va ruchkalar uchun <strong>lazerli o‘yma</strong> ideal — u vaqt o‘tishi bilan o‘chib ketmaydi. Bloknotlar yoki qutilardagi rang-barang tasvirlar uchun — <strong>UF-bosma</strong>.</li>
+    <li><strong>Tushirish sifati:</strong> Xudi uchun kashtachilik yoki ipak bosmadan foydalaning. Poverbanklar, termoslar va ruchkalar uchun <strong>lazerli o'yma</strong> ideal — u vaqt o'tishi bilan o'chib ketmaydi. Bloknotlar yoki qutilardagi rang-barang tasvirlar uchun — <strong>UF-bosma</strong>.</li>
 </ul>
 
 <h2 id="how-to-create-uz">Toshkentda Welcome Pack qanday yaratiladi va buyurtma qilinadi</h2>
-<p>Firma to‘plamini yaratish — bu detallarga e’tibor talab qiladigan loyiha.</p>
+<p>Firma to'plamini yaratish — bu detallarga e'tibor talab qiladigan loyiha.</p>
 <ol>
     <li><strong>Byudjetni shakllantiring.</strong> Bir xodimga qancha summa ajratishga tayyor ekanligingizni aniqlang.</li>
-    <li><strong>Pudratchini tanlang.</strong> Faqat tovarlarni yetkazib bera oladigan emas, balki ularni turli usullar bilan (o‘yma, bosma, kashta) sifatli brendlay oladigan kompaniyani qidiring.</li>
+    <li><strong>Pudratchini tanlang.</strong> Faqat tovarlarni yetkazib bera oladigan emas, balki ularni turli usullar bilan (o'yma, bosma, kashta) sifatli brendlay oladigan kompaniyani qidiring.</li>
     <li><strong>Dizaynni ishlab chiqing.</strong> Har bir element uchun texnik talablarga muvofiq maketlarni tayyorlang.</li>
     <li><strong>Sinov namunasiga buyurtma bering.</strong> Butun partiyani buyurtma qilishdan oldin materiallar va tushirish sifatiga ishonch hosil qiling.</li>
 ol>
-<p>Yaxshi Welcome Pack — bu sizning jamoangiz va brendingizga uzoq muddatli sarmoyadir. U sizning odamlaringizni birinchi kundan boshlab qadrlashingizni ko‘rsatadi. Bizning Toshkentdagi studiyamiz sizga yangi iste’dodlaringiz uchun ideal xush kelibsiz to‘plamini yig‘ish va brendlashda yordam beradi.</p>
+<p>Yaxshi Welcome Pack — bu sizning jamoangiz va brendingizga uzoq muddatli sarmoyadir. U sizning odamlaringizni birinchi kundan boshlab qadrlashingizni ko'rsatadi. Bizning Toshkentdagi studiyamiz sizga yangi iste'dodlaringiz uchun ideal xush kelibsiz to'plamini yig'ish va brendlashda yordam beradi.</p>
 
 Internal Links:
 /blog/polniy-gid-po-korporativnym-podarkam-v-uzbekistane (Hub Page)
@@ -3748,7 +3748,7 @@ SEO Brief:
 Primary Query (RU): лазерная гравировка или уф печать что лучше
 Secondary Queries (RU): лазерная гравировка ташкент, уф печать на сувенирах, брендирование подарков, полноцветная печать на металле, стойкость уф печати
 Primary Query (UZ): lazerli o'yma yoki uf pechat qaysi biri yaxshiroq
-Secondary Queries (UZ): lazerli o'yma toshkent, suvenirlarga uf pechat, sovg'alarni brendlash, metallga rangli chop etish
+Secondary Queries (UZ): lazerli o'yma toshkent, suvenirlarga uf pechat, sovg\'alarni brendlash, metallga rangli chop etish
 Intent: Информационный (технический)
 SERP features to target: Comparison Table, PAA
 Information Gain: Прямое, беспристрастное сравнение двух ключевых технологий брендирования с четкими сценариями использования для каждой. Включает сравнительную таблицу для быстрого понимания.
@@ -3782,70 +3782,70 @@ Entities: Лазерная гравировка, УФ-печать, бренд�
           answer: 'Narx tushirish maydoni va miqdoriga bog\'liq. Minimal buyurtma — birligiga 50 000 so\'mdan. Aniq hisob-kitob uchun Graver Studio bilan bog\'laning.'
         }
       ],
-      contentHtml: `<p>Korporativ sovg‘alarni brendlash haqida gap ketganda, Toshkentda eng ommabop ikki usul — bu lazerli o‘yma va UF-bosma. Ikkala usul ham suvenirga logotip tushirish imkonini beradi, lekin buni mutlaqo boshqacha tarzda amalga oshiradi va natija keskin farq qiladi. Noto‘g‘ri texnologiyani tanlash hatto eng qimmat sovg‘ani ham buzishi mumkin, to‘g‘ri tanlov esa uning maqomi va sifatini ta’kidlaydi.</p>
-<p>Xo‘sh, nima yaxshiroq: o‘ymaning nafis qat’iyati yoki UF-bosmaning yorqin palitrasi? Javob uch omilga bog‘liq: mahsulot materiali, logotipingiz dizayni va siz yetkazmoqchi bo‘lgan xabar. Keling, har bir texnologiyaning afzalliklari va kamchiliklarini ko‘rib chiqaylik, toki siz ongli ravishda tanlov qila oling.</p>
+      contentHtml: `<p>Korporativ sovg'alarni brendlash haqida gap ketganda, Toshkentda eng ommabop ikki usul — bu lazerli o'yma va UF-bosma. Ikkala usul ham suvenirga logotip tushirish imkonini beradi, lekin buni mutlaqo boshqacha tarzda amalga oshiradi va natija keskin farq qiladi. Noto'g'ri texnologiyani tanlash hatto eng qimmat sovg'ani ham buzishi mumkin, to'g'ri tanlov esa uning maqomi va sifatini ta'kidlaydi.</p>
+<p>Xo'sh, nima yaxshiroq: o'ymaning nafis qat'iyati yoki UF-bosmaning yorqin palitrasi? Javob uch omilga bog'liq: mahsulot materiali, logotipingiz dizayni va siz yetkazmoqchi bo'lgan xabar. Keling, har bir texnologiyaning afzalliklari va kamchiliklarini ko'rib chiqaylik, toki siz ongli ravishda tanlov qila oling.</p>
 
 <nav>
     <h2>Mundarija:</h2>
     <ul>
-        <li><a href="#gravirovka-uz">Lazerli o‘yma nima va uni qachon ishlatish kerak?</a></li>
+        <li><a href="#gravirovka-uz">Lazerli o'yma nima va uni qachon ishlatish kerak?</a></li>
         <li><a href="#uf-print-uz">UF-bosma nima va uning kuchi nimada?</a></li>
-        <li><a href="#comparison-uz">Taqqoslash jadvali: O‘yma vs. UF-bosma</a></li>
-        <li><a href="#conclusion-uz">Xo‘sh, nimani tanlash kerak? Qisqa tavsiyalar</a></li>
+        <li><a href="#comparison-uz">Taqqoslash jadvali: O'yma vs. UF-bosma</a></li>
+        <li><a href="#conclusion-uz">Xo'sh, nimani tanlash kerak? Qisqa tavsiyalar</a></li>
     </ul>
 </nav>
 
-<h2 id="gravirovka-uz">Lazerli o‘yma nima va uni qachon ishlatish kerak?</h2>
-<p><strong>Lazerli o‘yma</strong> — bu fokuslangan lazer nuri materialning yuqori qatlamini "kuydiradigan" yoki bug‘lantiradigan jarayon bo‘lib, relyefli, monoxrom tasvir hosil qiladi. O‘yma rangi bo‘yoqqa emas, balki materialning o‘ziga va uning qizishga bo‘lgan reaksiyasiga bog‘liq.</p>
-<h3>O‘ymaning afzalliklari:</h3>
+<h2 id="gravirovka-uz">Lazerli o'yma nima va uni qachon ishlatish kerak?</h2>
+<p><strong>Lazerli o'yma</strong> — bu fokuslangan lazer nuri materialning yuqori qatlamini "kuydiradigan" yoki bug'lantiradigan jarayon bo'lib, relyefli, monoxrom tasvir hosil qiladi. O'yma rangi bo'yoqqa emas, balki materialning o'ziga va uning qizishga bo'lgan reaksiyasiga bog'liq.</p>
+<h3>O'ymaning afzalliklari:</h3>
 <ul>
-    <li><strong>Uzoq muddatlilik:</strong> Tasvir abadiydir. Uni o‘chirish yoki qirib tashlash mumkin emas, chunki u mahsulotning bir qismiga aylanadi.</li>
-    <li><strong>Premium ko‘rinish:</strong> O‘yma sifat, ishonchlilik va maqom bilan bog‘lanadi. U qimmat va nafis ko‘rinadi.</li>
+    <li><strong>Uzoq muddatlilik:</strong> Tasvir abadiydir. Uni o'chirish yoki qirib tashlash mumkin emas, chunki u mahsulotning bir qismiga aylanadi.</li>
+    <li><strong>Premium ko'rinish:</strong> O'yma sifat, ishonchlilik va maqom bilan bog'lanadi. U qimmat va nafis ko'rinadi.</li>
     <li><strong>Aniqlik:</strong> Lazer juda nozik chiziqlar va mayda detallarni tushirish imkonini beradi.</li>
 </ul>
-<h3>O‘ymani qachon tanlash kerak?</h3>
-<p>O‘yma bir rangli logotiplar, matn yoki naqshlarni quyidagi materiallarga tushirish uchun ideal:</p>
+<h3>O'ymani qachon tanlash kerak?</h3>
+<p>O'yma bir rangli logotiplar, matn yoki naqshlarni quyidagi materiallarga tushirish uchun ideal:</p>
 <ul>
     <li><strong>Metall:</strong> ruchkalar, termoslar, poverbanklar, zajigalkalar, soatlar, medallar.</li>
-    <li><strong>Yog‘och:</strong> sovg‘a qutilari, kundaliklar, fleshkalar.</li>
-    <li><strong>Charm va sun’iy charm:</strong> hamyonlar, kundaliklar, breloklar.</li>
-    <li><strong>Shisha va tosh:</strong> mukofotlar, bokallar, stol usti to‘plamlari.</li>
+    <li><strong>Yog'och:</strong> sovg'a qutilari, kundaliklar, fleshkalar.</li>
+    <li><strong>Charm va sun'iy charm:</strong> hamyonlar, kundaliklar, breloklar.</li>
+    <li><strong>Shisha va tosh:</strong> mukofotlar, bokallar, stol usti to'plamlari.</li>
 </ul>
-<p>Agar siz uzoq muddatlilik, maqom va klassik uslubni ta’kidlamoqchi bo‘lsangiz, o‘ymani tanlang.</p>
+<p>Agar siz uzoq muddatlilik, maqom va klassik uslubni ta'kidlamoqchi bo'lsangiz, o'ymani tanlang.</p>
 
 <h2 id="uf-print-uz">UF-bosma nima va uning kuchi nimada?</h2>
-<p><strong>UF-bosma (UV-pechat)</strong> — bu maxsus siyohlar sirtga surtiladigan va ultrabinafsha lampalar ta’sirida bir zumda qotib qoladigan (polimerlanadigan) oqimli bosma texnologiyasidir. Natijada sirtda mustahkam, biroz bo‘rtma rangli plyonka hosil bo‘ladi.</p>
+<p><strong>UF-bosma (UV-pechat)</strong> — bu maxsus siyohlar sirtga surtiladigan va ultrabinafsha lampalar ta'sirida bir zumda qotib qoladigan (polimerlanadigan) oqimli bosma texnologiyasidir. Natijada sirtda mustahkam, biroz bo'rtma rangli plyonka hosil bo'ladi.</p>
 <h3>UF-bosmaning afzalliklari:</h3>
 <ul>
-    <li><strong>To‘liq ranglilik:</strong> Har qanday tasvirni, jumladan, fotosuratlar, gradientlar va murakkab rangli logotiplarni chop etish mumkin.</li>
-    <li><strong>Universallik:</strong> Deyarli har qanday materialga, shu jumladan o‘yma uchun mos kelmaydiganlarga (masalan, ko‘p turdagi plastmassa) bosib chiqarish mumkin.</li>
-    <li><strong>Chidamlilik:</strong> Tasvir namlikka, o‘chishga va ishqalanishga chidamli.</li>
-    <li><strong>Oq rangda bosib chiqarish:</strong> UF-printerlar oq rangda chop etishi mumkin, bu esa qorong‘u va shaffof yuzalarga yorqin logotiplarni tushirish imkonini beradi.</li>
+    <li><strong>To'liq ranglilik:</strong> Har qanday tasvirni, jumladan, fotosuratlar, gradientlar va murakkab rangli logotiplarni chop etish mumkin.</li>
+    <li><strong>Universallik:</strong> Deyarli har qanday materialga, shu jumladan o'yma uchun mos kelmaydiganlarga (masalan, ko'p turdagi plastmassa) bosib chiqarish mumkin.</li>
+    <li><strong>Chidamlilik:</strong> Tasvir namlikka, o'chishga va ishqalanishga chidamli.</li>
+    <li><strong>Oq rangda bosib chiqarish:</strong> UF-printerlar oq rangda chop etishi mumkin, bu esa qorong'u va shaffof yuzalarga yorqin logotiplarni tushirish imkonini beradi.</li>
 </ul>
 <h3>UF-bosmani qachon tanlash kerak?</h3>
-<p>Agar sizda ko‘p rangli logotip bo‘lsa yoki yorqin, e’tiborni tortadigan tasvirni tushirmoqchi bo‘lsangiz, UF-bosma ajralmas hisoblanadi. U quyidagilar uchun juda mos keladi:</p>
+<p>Agar sizda ko'p rangli logotip bo'lsa yoki yorqin, e'tiborni tortadigan tasvirni tushirmoqchi bo'lsangiz, UF-bosma ajralmas hisoblanadi. U quyidagilar uchun juda mos keladi:</p>
 <ul>
-    <li><strong>Plastmassa:</strong> ruchkalar, fleshkalar, poverbanklar, breloklar, telefon g‘iloflari.</li>
-    <li><strong>Yog‘och va MDF:</strong> qutilar, tablichkalardagi to‘liq rangli tasvirlar.</li>
-    <li><strong>Metall va shisha:</strong> monoxrom o‘yma emas, aynan rangli logotip kerak bo‘lganda.</li>
+    <li><strong>Plastmassa:</strong> ruchkalar, fleshkalar, poverbanklar, breloklar, telefon g'iloflari.</li>
+    <li><strong>Yog'och va MDF:</strong> qutilar, tablichkalardagi to'liq rangli tasvirlar.</li>
+    <li><strong>Metall va shisha:</strong> monoxrom o'yma emas, aynan rangli logotip kerak bo'lganda.</li>
     <li><strong>Kundaliklar:</strong> muqovaga murakkab rangli printlarni tushirish uchun.</li>
 </ul>
-<p>Agar siz uchun yorqinlik, rang va fotografik sifatni uzatish imkoniyati muhim bo‘lsa, UF-bosmani tanlang.</p>
+<p>Agar siz uchun yorqinlik, rang va fotografik sifatni uzatish imkoniyati muhim bo'lsa, UF-bosmani tanlang.</p>
 
-<h2 id="comparison-uz">Taqqoslash jadvali: O‘yma vs. UF-bosma</h2>
+<h2 id="comparison-uz">Taqqoslash jadvali: O'yma vs. UF-bosma</h2>
 <table>
     <thead>
         <tr>
             <th>Xususiyat</th>
-            <th>Lazerli o‘yma</th>
+            <th>Lazerli o'yma</th>
             <th>UF-bosma</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td><strong>Ranglilik</strong></td>
-            <td>Monoxrom (rang materialga bog‘liq)</td>
-            <td>To‘liq rangli (CMYK + Oq)</td>
+            <td>Monoxrom (rang materialga bog'liq)</td>
+            <td>To'liq rangli (CMYK + Oq)</td>
         </tr>
         <tr>
             <td><strong>Chidamlilik</strong></td>
@@ -3855,29 +3855,29 @@ Entities: Лазерная гравировка, УФ-печать, бренд�
         <tr>
             <td><strong>Taktil hissiyotlar</strong></td>
             <td>Materialdagi chuqurlik</td>
-            <td>Sirtda yengil bo‘rtma</td>
+            <td>Sirtda yengil bo'rtma</td>
         </tr>
         <tr>
             <td><strong>Eng yaxshi materiallar</strong></td>
-            <td>Metall, yog‘och, shisha, charm</td>
-            <td>Plastmassa, metall, yog‘och, shisha, MDF</td>
+            <td>Metall, yog'och, shisha, charm</td>
+            <td>Plastmassa, metall, yog'och, shisha, MDF</td>
         </tr>
         <tr>
             <td><strong>Ideal...</strong></td>
-            <td>Maqomli, nafis sovg‘alar uchun</td>
+            <td>Maqomli, nafis sovg'alar uchun</td>
             <td>Yorqin, ijodiy, promo-suvenirlar uchun</td>
         </tr>
     </tbody>
 </table>
 
-<h2 id="conclusion-uz">Xo‘sh, nimani tanlash kerak? Qisqa tavsiyalar</h2>
+<h2 id="conclusion-uz">Xo'sh, nimani tanlash kerak? Qisqa tavsiyalar</h2>
 <ul>
-    <li>Sizning logotipingiz <strong>bir rangli</strong> va siz <strong>maqomni</strong> ta’kidlamoqchimisiz? Sizning tanlovingiz — <strong>lazerli o‘yma</strong>.</li>
-    <li>Sizning logotipingiz <strong>ko‘p rangli</strong>, gradientlarni o‘z ichiga oladi yoki siz <strong>yorqin rasm</strong> tushirmoqchimisiz? Sizning tanlovingiz — <strong>UF-bosma</strong>.</li>
-    <li>Siz VIP-hamkor uchun <strong>metall termosni</strong> brendlayapsizmi? Ehtimol, <strong>o‘yma</strong>.</li>
+    <li>Sizning logotipingiz <strong>bir rangli</strong> va siz <strong>maqomni</strong> ta'kidlamoqchimisiz? Sizning tanlovingiz — <strong>lazerli o'yma</strong>.</li>
+    <li>Sizning logotipingiz <strong>ko'p rangli</strong>, gradientlarni o'z ichiga oladi yoki siz <strong>yorqin rasm</strong> tushirmoqchimisiz? Sizning tanlovingiz — <strong>UF-bosma</strong>.</li>
+    <li>Siz VIP-hamkor uchun <strong>metall termosni</strong> brendlayapsizmi? Ehtimol, <strong>o'yma</strong>.</li>
     <li>Siz yorqin logotipli promo-aksiya uchun <strong>plastik fleshkalar</strong> tayyorlayapsizmi? Shubhasiz, <strong>UF-bosma</strong>.</li>
 </ul>
-<p>Ba’zan eng yaxshi natijani ikki texnologiyaning kombinatsiyasi beradi. Masalan, ruchkaga ism o‘yish va futlyarga to‘liq rangli UF-bosma bilan logotip tushirish. Bizning Toshkentdagi studiyamizda biz ikkala texnologiyani ham bilamiz va aynan sizning vazifangiz uchun qaysi yechim optimal bo‘lishini har doim aytib berishga tayyormiz.</p>
+<p>Ba'zan eng yaxshi natijani ikki texnologiyaning kombinatsiyasi beradi. Masalan, ruchkaga ism o'yish va futlyarga to'liq rangli UF-bosma bilan logotip tushirish. Bizning Toshkentdagi studiyamizda biz ikkala texnologiyani ham bilamiz va aynan sizning vazifangiz uchun qaysi yechim optimal bo'lishini har doim aytib berishga tayyormiz.</p>
 
 Internal Links:
 /blog/polniy-gid-po-korporativnym-podarkam-v-uzbekistane (Hub Page)
