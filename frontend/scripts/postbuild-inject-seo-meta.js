@@ -74,6 +74,36 @@ try {
   console.warn('[postbuild-inject-seo-meta] Failed to load blogSeoOverrides.js:', e.message);
 }
 
+// Импортируем blogSeoOverridesUz
+let blogSeoOverridesUz = {};
+try {
+  const blogSeoPath = path.join(__dirname, '..', 'src', 'data', 'blogSeoOverrides.js');
+  const content = fs.readFileSync(blogSeoPath, 'utf8');
+  const startIdx = content.indexOf('export const blogSeoOverridesUz = {');
+  if (startIdx !== -1) {
+    let braceCount = 0;
+    let inString = false;
+    let stringChar = '';
+    let endIdx = startIdx + 'export const blogSeoOverridesUz = '.length;
+    for (let i = endIdx; i < content.length; i++) {
+      const char = content[i];
+      if ((char === '"' || char === "'" || char === '`') && (i === 0 || content[i-1] !== '\\')) {
+        if (!inString) { inString = true; stringChar = char; }
+        else if (char === stringChar) { inString = false; }
+      }
+      if (!inString) {
+        if (char === '{') braceCount++;
+        if (char === '}') { braceCount--; if (braceCount === 0) { endIdx = i + 1; break; } }
+      }
+    }
+    const objStr = content.substring(startIdx + 'export const blogSeoOverridesUz = '.length, endIdx);
+    try { blogSeoOverridesUz = eval('(' + objStr + ')'); }
+    catch (e) { console.warn('[postbuild-inject-seo-meta] Failed to parse blogSeoOverridesUz:', e.message); }
+  }
+} catch (e) {
+  console.warn('[postbuild-inject-seo-meta] Failed to load blogSeoOverridesUz:', e.message);
+}
+
 const BASE_URL = 'https://graver-studio.uz';
 const OG_IMAGE = `${BASE_URL}/og-blog.png`;
 
@@ -295,24 +325,35 @@ function generateSeoMeta(locale, pathKey) {
       };
     }
     
-    // Для отдельных статей - получаем SEO данные из blogSeoOverrides
+    // Для отдельных статей - получаем SEO данные из blogSeoOverrides / blogSeoOverridesUz
     // Извлекаем slug из пути (/ru/blog/slug/ или /uz/blog/slug/)
     const slugMatch = pathKey.match(/\/blog\/([^/]+)/);
     if (slugMatch && slugMatch[1]) {
       const slug = slugMatch[1];
-      const override = blogSeoOverrides[slug];
+      // Выбираем правильный словарь по локали
+      const overrideDict = (locale === 'uz') ? blogSeoOverridesUz : blogSeoOverrides;
+      const override = overrideDict[slug];
       if (override) {
         return {
           title: override.title,
           description: override.description,
-          ogTitle: override.ogTitle,
-          ogDescription: override.ogDescription
+          ogTitle: override.ogTitle || override.title,
+          ogDescription: override.ogDescription || override.description
         };
       }
     }
     
-    // Если нет SEO данных в blogSeoOverrides, пропускаем
-    return null;
+    // Если нет SEO override — используем дефолтный title для блога (не пропускаем!)
+    if (locale === 'uz') {
+      return {
+        title: 'Maqola | Graver.uz',
+        description: 'Korporativ sovgalar va lazer gravyura haqida maqola.'
+      };
+    }
+    return {
+      title: 'Статья | Graver.uz',
+      description: 'Статья о корпоративных подарках и лазерной гравировке.'
+    };
   }
   
   // Default
@@ -374,14 +415,16 @@ function injectSeoMeta(htmlFilePath, pathKey) {
     const newOgTitle = `<meta property="og:title" content="${escapeHtml(seo.title)}" />`;
     const newOgDesc = `<meta property="og:description" content="${escapeHtml(seo.description)}" />`;
     const newOgUrl = `<meta property="og:url" content="${canonicalUrl}" />`;
-    const newOgImage = `<meta property="og:image" content="${OG_IMAGE}" />`;
+    // Per-post og:image: use override.ogImage if available, else fall back to OG_IMAGE
+    const postOgImage = (seo.ogImage) ? seo.ogImage : OG_IMAGE;
+    const newOgImage = `<meta property="og:image" content="${postOgImage}" />`;
     const newOgType = `<meta property="og:type" content="website" />`;
     const newOgSiteName = `<meta property="og:site_name" content="Graver.uz" />`;
     const newOgLocale = `<meta property="og:locale" content="${locale === 'uz' ? 'uz_UZ' : 'ru_RU'}" />`;
     const newTwitterCard = `<meta name="twitter:card" content="summary_large_image" />`;
     const newTwitterTitle = `<meta name="twitter:title" content="${escapeHtml(seo.title)}" />`;
     const newTwitterDesc = `<meta name="twitter:description" content="${escapeHtml(seo.description)}" />`;
-    const newTwitterImage = `<meta name="twitter:image" content="${OG_IMAGE}" />`;
+    const newTwitterImage = `<meta name="twitter:image" content="${postOgImage}" />`;
     
     // Заменяем или добавляем title
     if (/<title[^>]*>[^<]*<\/title>/.test(html)) {
@@ -435,15 +478,12 @@ function injectSeoMeta(htmlFilePath, pathKey) {
     
     // Проверяем, есть ли </head> в HTML
     if (/<\/head>/.test(html)) {
+      // Полный HTML (build/) — вставляем перед </head>
       html = html.replace(/<\/head>/, `${seoTags}\n</head>`);
     } else {
-      // Если </head> не найден, добавляем перед </body>
-      if (/<\/body>/.test(html)) {
-        html = html.replace(/<\/body>/, `</head>\n${seoTags}\n</body>`);
-      } else {
-        // Если ничего не найдено, добавляем в конец
-        html += `\n</head>\n${seoTags}\n</body>\n</html>`;
-      }
+      // prerendered/ head-фрагмент без </head> — просто добавляем в конец файла
+      // (inject-prerendered.js потом вставит этот фрагмент в build/index.html)
+      html = html.trimEnd() + '\n' + seoTags + '\n';
     }
     
     // Сохраняем обновленный HTML
