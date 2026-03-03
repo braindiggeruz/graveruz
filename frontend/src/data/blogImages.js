@@ -127,6 +127,19 @@ const blogCardImageBySlug = {
   'chto-podarit-na-8-marta-devushke-mame-kollege-uz': '/images/blog/what-to-give-on-march8.jpg',
   'nedorogie-podarki-na-8-marta-uz': '/images/blog/march8-cheap-gifts.jpg',
   'gravirovka-v-tashkente-na-8-marta-uz': '/images/blog/march8-engraving-tashkent.jpg',
+  // New posts added 2026-03-03
+  'keys-welcome-pack-povysil-enps-v-it-kompanii': '/images/blog/welcome-pack-it-company.jpg',
+  'keys-welcome-pack-povysil-enps-v-it-kompanii-uz': '/images/blog/welcome-pack-it-company.jpg',
+  'welcome-pack-hr-uchun-toliq-gid': '/images/blog/article-4.png',
+  'it-kompaniya-uchun-welcome-pack-chek-listi': '/images/blog/corporate-merch-article-45.png',
+  'korporativ-sovgalar-toliq-gid-2025-uzbekistan': '/images/blog/corporate-gifts-uz.png',
+  'xodimlarga-sovga-loyalikni-oshirish': '/images/blog/xodimlarga-sovg-alar-hr-qollanma-uz.png',
+  'b2b-hamkorlar-uchun-sovgalar-etiket-gid': '/images/blog/vip-gifts-article-44.png',
+  'korporativ-sovgalar-zakupshchik-chek-listi': '/images/blog/article-20.png',
+  '8-mart-uchun-korporativ-sovgalar-goyalari': '/images/blog/march8-gifts-employees.jpg',
+  'rahbar-uchun-8-mart-vip-goya': '/images/blog/march8-boss-gift.jpg',
+  'biznes-hamkorlar-uchun-vip-sovgalar': '/images/blog/vip-gifts-article-44.png',
+  'uzbekistonda-biznes-sovga-etiketi': '/images/blog/uzbek-business-etiquette.jpg',
 };
 export const blogImages = blogCardImageBySlug;
 
