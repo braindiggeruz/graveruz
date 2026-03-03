@@ -643,6 +643,181 @@ export const blogSeoOverrides = {
         "a": "Сравните сроки, процент брака, соблюдение бюджета и обратную связь от сотрудников/клиентов."
       }
     ]
+  },
+  // --- Добавлено 2026-03-03: SEO overrides для статей без метаданных ---
+  "byudzhet-na-korporativnye-podarki": {
+    "title": "Бюджет на корпоративные подарки: как планировать | Graver.uz",
+    "description": "Как правильно спланировать бюджет на корпоративные подарки. Советы по оптимизации затрат и выбору поставщика в Узбекистане.",
+    "ogTitle": "Бюджет на корпоративные подарки: как планировать | Graver.uz",
+    "ogDescription": "Как правильно спланировать бюджет на корпоративные подарки. Советы по оптимизации затрат и выбору поставщика в Узбекистане."
+  },
+  "chasy-s-logotipom-korporativnye-podarki-tashkent": {
+    "title": "Часы с логотипом — корпоративные подарки в Ташкенте | Graver.uz",
+    "description": "Часы с логотипом компании — премиальный корпоративный подарок в Ташкенте. Лазерная гравировка, быстрая доставка.",
+    "ogTitle": "Часы с логотипом — корпоративные подарки в Ташкенте | Graver.uz",
+    "ogDescription": "Часы с логотипом компании — премиальный корпоративный подарок в Ташкенте. Лазерная гравировка, быстрая доставка."
+  },
+  "chto-podarit-devushke-na-8-marta": {
+    "title": "Что подарить девушке на 8 марта: идеи с гравировкой | Graver.uz",
+    "description": "Идеи подарков девушке на 8 марта с персональной гравировкой. Уникальные и запоминающиеся подарки от Graver.uz.",
+    "ogTitle": "Что подарить девушке на 8 марта: идеи с гравировкой | Graver.uz",
+    "ogDescription": "Идеи подарков девушке на 8 марта с персональной гравировкой. Уникальные и запоминающиеся подарки от Graver.uz."
+  },
+  "chto-podarit-mame-na-8-marta": {
+    "title": "Что подарить маме на 8 марта: лучшие идеи | Graver.uz",
+    "description": "Лучшие идеи подарков маме на 8 марта с гравировкой. Персональные подарки с теплом и заботой.",
+    "ogTitle": "Что подарить маме на 8 марта: лучшие идеи | Graver.uz",
+    "ogDescription": "Лучшие идеи подарков маме на 8 марта с гравировкой. Персональные подарки с теплом и заботой."
+  },
+  "chto-podarit-rukovoditelyu-na-8-marta": {
+    "title": "Что подарить руководителю на 8 марта | Graver.uz",
+    "description": "Что подарить руководителю на 8 марта: премиальные варианты с гравировкой логотипа или инициалов.",
+    "ogTitle": "Что подарить руководителю на 8 марта | Graver.uz",
+    "ogDescription": "Что подарить руководителю на 8 марта: премиальные варианты с гравировкой логотипа или инициалов."
+  },
+  "delovoy-etiket-biznes-podarki-uzbekistan": {
+    "title": "Деловой этикет и бизнес-подарки в Узбекистане | Graver.uz",
+    "description": "Деловой этикет при вручении подарков в Узбекистане. Правила выбора бизнес-подарков для партнёров и клиентов.",
+    "ogTitle": "Деловой этикет и бизнес-подарки в Узбекистане | Graver.uz",
+    "ogDescription": "Деловой этикет при вручении подарков в Узбекистане. Правила выбора бизнес-подарков для партнёров и клиентов."
+  },
+  "eko-podarki-dlya-biznesa": {
+    "title": "Эко-подарки для бизнеса с гравировкой | Graver.uz",
+    "description": "Экологичные корпоративные подарки с гравировкой для бизнеса. Устойчивые материалы, персонализация, доставка по Узбекистану.",
+    "ogTitle": "Эко-подарки для бизнеса с гравировкой | Graver.uz",
+    "ogDescription": "Экологичные корпоративные подарки с гравировкой для бизнеса. Устойчивые материалы, персонализация, доставка по Узбекистану."
+  },
+  "godovoy-plan-korporativnyh-prazdnikov": {
+    "title": "Годовой план корпоративных праздников и подарков | Graver.uz",
+    "description": "Годовой план корпоративных праздников и подарков: как подготовиться заранее и сэкономить бюджет.",
+    "ogTitle": "Годовой план корпоративных праздников и подарков | Graver.uz",
+    "ogDescription": "Годовой план корпоративных праздников и подарков: как подготовиться заранее и сэкономить бюджет."
+  },
+  "gravirovka-na-biznes-podarkah": {
+    "title": "Гравировка на бизнес-подарках: полное руководство | Graver.uz",
+    "description": "Лазерная гравировка на бизнес-подарках: технологии, материалы, советы по выбору. Полное руководство от Graver.uz.",
+    "ogTitle": "Гравировка на бизнес-подарках: полное руководство | Graver.uz",
+    "ogDescription": "Лазерная гравировка на бизнес-подарках: технологии, материалы, советы по выбору. Полное руководство от Graver.uz."
+  },
+  "gravirovka-v-tashkente-na-8-marta": {
+    "title": "Гравировка в Ташкенте на 8 марта: идеи подарков | Graver.uz",
+    "description": "Гравировка подарков на 8 марта в Ташкенте. Быстро, качественно, с доставкой. Корпоративные и личные заказы.",
+    "ogTitle": "Гравировка в Ташкенте на 8 марта: идеи подарков | Graver.uz",
+    "ogDescription": "Гравировка подарков на 8 марта в Ташкенте. Быстро, качественно, с доставкой. Корпоративные и личные заказы."
+  },
+  "idei-vip-podarkov": {
+    "title": "Идеи VIP-подарков с гравировкой для партнёров | Graver.uz",
+    "description": "Идеи VIP-подарков с гравировкой для ключевых партнёров и клиентов. Премиальные решения от Graver.uz.",
+    "ogTitle": "Идеи VIP-подарков с гравировкой для партнёров | Graver.uz",
+    "ogDescription": "Идеи VIP-подарков с гравировкой для ключевых партнёров и клиентов. Премиальные решения от Graver.uz."
+  },
+  "kak-vybrat-korporativnyj-podarok-b2b": {
+    "title": "Как выбрать корпоративный подарок в B2B | Graver.uz",
+    "description": "Как выбрать корпоративный подарок в B2B-сегменте: критерии, бюджет, персонализация. Практическое руководство.",
+    "ogTitle": "Как выбрать корпоративный подарок в B2B | Graver.uz",
+    "ogDescription": "Как выбрать корпоративный подарок в B2B-сегменте: критерии, бюджет, персонализация. Практическое руководство."
+  },
+  "kak-vybrat-podarki-dlya-sotrudnikov": {
+    "title": "Как выбрать подарки для сотрудников: гайд HR | Graver.uz",
+    "description": "Как выбрать подарки для сотрудников: гайд для HR. Мотивация, лояльность и бюджет в одном решении.",
+    "ogTitle": "Как выбрать подарки для сотрудников: гайд HR | Graver.uz",
+    "ogDescription": "Как выбрать подарки для сотрудников: гайд для HR. Мотивация, лояльность и бюджет в одном решении."
+  },
+  "keys-brendirovannye-podarki-dlya-it": {
+    "title": "Кейс: брендированные подарки для IT-компании | Graver.uz",
+    "description": "Кейс: как IT-компания заказала брендированные подарки с гравировкой для 200+ сотрудников в Ташкенте.",
+    "ogTitle": "Кейс: брендированные подарки для IT-компании | Graver.uz",
+    "ogDescription": "Кейс: как IT-компания заказала брендированные подарки с гравировкой для 200+ сотрудников в Ташкенте."
+  },
+  "keys-welcome-pak-it-kompaniya-tashkent": {
+    "title": "Кейс: Welcome Pack для IT-компании в Ташкенте | Graver.uz",
+    "description": "Кейс: Welcome Pack для IT-компании в Ташкенте. Как мы создали набор для новых сотрудников с логотипом.",
+    "ogTitle": "Кейс: Welcome Pack для IT-компании в Ташкенте | Graver.uz",
+    "ogDescription": "Кейс: Welcome Pack для IT-компании в Ташкенте. Как мы создали набор для новых сотрудников с логотипом."
+  },
+  "korporativniy-merch-kak-instrument-marketinga": {
+    "title": "Корпоративный мерч как инструмент маркетинга | Graver.uz",
+    "description": "Корпоративный мерч как инструмент маркетинга: как брендированные подарки работают на узнаваемость.",
+    "ogTitle": "Корпоративный мерч как инструмент маркетинга | Graver.uz",
+    "ogDescription": "Корпоративный мерч как инструмент маркетинга: как брендированные подарки работают на узнаваемость."
+  },
+  "korporativnye-podarki-na-8-marta-v-tashkente": {
+    "title": "Корпоративные подарки на 8 марта в Ташкенте | Graver.uz",
+    "description": "Корпоративные подарки на 8 марта в Ташкенте: идеи, цены, сроки. Гравировка логотипа и персонализация.",
+    "ogTitle": "Корпоративные подарки на 8 марта в Ташкенте | Graver.uz",
+    "ogDescription": "Корпоративные подарки на 8 марта в Ташкенте: идеи, цены, сроки. Гравировка логотипа и персонализация."
+  },
+  "loyalnost-sotrudnikov-korporativnye-podarki": {
+    "title": "Лояльность сотрудников через корпоративные подарки | Graver.uz",
+    "description": "Как корпоративные подарки повышают лояльность сотрудников. Исследования, примеры, практические советы.",
+    "ogTitle": "Лояльность сотрудников через корпоративные подарки | Graver.uz",
+    "ogDescription": "Как корпоративные подарки повышают лояльность сотрудников. Исследования, примеры, практические советы."
+  },
+  "merch-dlya-it-kompaniy-tashkent": {
+    "title": "Мерч для IT-компаний в Ташкенте с гравировкой | Graver.uz",
+    "description": "Мерч для IT-компаний в Ташкенте: ноутбуки, ручки, кружки с гравировкой логотипа. От 1 до 10 000+ единиц.",
+    "ogTitle": "Мерч для IT-компаний в Ташкенте с гравировкой | Graver.uz",
+    "ogDescription": "Мерч для IT-компаний в Ташкенте: ноутбуки, ручки, кружки с гравировкой логотипа. От 1 до 10 000+ единиц."
+  },
+  "nedorogie-podarki-na-8-marta": {
+    "title": "Недорогие подарки на 8 марта с гравировкой | Graver.uz",
+    "description": "Недорогие подарки на 8 марта с гравировкой: идеи до 50 000 сум. Качество и персонализация без переплат.",
+    "ogTitle": "Недорогие подарки на 8 марта с гравировкой | Graver.uz",
+    "ogDescription": "Недорогие подарки на 8 марта с гравировкой: идеи до 50 000 сум. Качество и персонализация без переплат."
+  },
+  "originalnye-podarki-na-8-marta": {
+    "title": "Оригинальные подарки на 8 марта с персонализацией | Graver.uz",
+    "description": "Оригинальные подарки на 8 марта с персональной гравировкой. Уникальные идеи для коллег и близких.",
+    "ogTitle": "Оригинальные подарки на 8 марта с персонализацией | Graver.uz",
+    "ogDescription": "Оригинальные подарки на 8 марта с персональной гравировкой. Уникальные идеи для коллег и близких."
+  },
+  "personalizatsiya-novyy-standart-gravirovka": {
+    "title": "Персонализация — новый стандарт: гравировка подарков | Graver.uz",
+    "description": "Персонализация — новый стандарт корпоративных подарков. Как гравировка делает подарок незабываемым.",
+    "ogTitle": "Персонализация — новый стандарт: гравировка подарков | Graver.uz",
+    "ogDescription": "Персонализация — новый стандарт корпоративных подарков. Как гравировка делает подарок незабываемым."
+  },
+  "podarki-dlya-bankov-i-finteha-tashkent": {
+    "title": "Подарки для банков и финтех-компаний в Ташкенте | Graver.uz",
+    "description": "Корпоративные подарки для банков и финтех-компаний в Ташкенте. Премиальная гравировка, брендирование.",
+    "ogTitle": "Подарки для банков и финтех-компаний в Ташкенте | Graver.uz",
+    "ogDescription": "Корпоративные подарки для банков и финтех-компаний в Ташкенте. Премиальная гравировка, брендирование."
+  },
+  "podarki-dlya-horeca-i-restoranov-tashkent": {
+    "title": "Подарки для HoReCa и ресторанов в Ташкенте | Graver.uz",
+    "description": "Подарки для HoReCa и ресторанов в Ташкенте с гравировкой логотипа. Корпоративные решения для индустрии гостеприимства.",
+    "ogTitle": "Подарки для HoReCa и ресторанов в Ташкенте | Graver.uz",
+    "ogDescription": "Подарки для HoReCa и ресторанов в Ташкенте с гравировкой логотипа. Корпоративные решения для индустрии гостеприимства."
+  },
+  "podarki-na-8-marta-sotrudnicam": {
+    "title": "Подарки сотрудницам на 8 марта с гравировкой | Graver.uz",
+    "description": "Подарки сотрудницам на 8 марта с гравировкой: идеи для корпоративных заказов. Персонализация, быстрая доставка.",
+    "ogTitle": "Подарки сотрудницам на 8 марта с гравировкой | Graver.uz",
+    "ogDescription": "Подарки сотрудницам на 8 марта с гравировкой: идеи для корпоративных заказов. Персонализация, быстрая доставка."
+  },
+  "podarki-na-korporativnye-sobytiya-tashkent": {
+    "title": "Подарки на корпоративные события в Ташкенте | Graver.uz",
+    "description": "Подарки на корпоративные события в Ташкенте: конференции, юбилеи, тимбилдинги. Гравировка на заказ.",
+    "ogTitle": "Подарки на корпоративные события в Ташкенте | Graver.uz",
+    "ogDescription": "Подарки на корпоративные события в Ташкенте: конференции, юбилеи, тимбилдинги. Гравировка на заказ."
+  },
+  "polniy-gid-po-korporativnym-podarkam": {
+    "title": "Полный гид по корпоративным подаркам | Graver.uz",
+    "description": "Полный гид по корпоративным подаркам: от выбора до вручения. Всё о гравировке, брендировании и логистике.",
+    "ogTitle": "Полный гид по корпоративным подаркам | Graver.uz",
+    "ogDescription": "Полный гид по корпоративным подаркам: от выбора до вручения. Всё о гравировке, брендировании и логистике."
+  },
+  "process-zakaza-korporativnyh-podarkov": {
+    "title": "Процесс заказа корпоративных подарков с гравировкой | Graver.uz",
+    "description": "Как заказать корпоративные подарки с гравировкой: пошаговый процесс от заявки до доставки.",
+    "ogTitle": "Процесс заказа корпоративных подарков с гравировкой | Graver.uz",
+    "ogDescription": "Как заказать корпоративные подарки с гравировкой: пошаговый процесс от заявки до доставки."
+  },
+  "srochniy-zakaz-korporativnyh-podarkov": {
+    "title": "Срочный заказ корпоративных подарков в Ташкенте | Graver.uz",
+    "description": "Срочный заказ корпоративных подарков в Ташкенте: от 1 дня. Гравировка, упаковка, доставка.",
+    "ogTitle": "Срочный заказ корпоративных подарков в Ташкенте | Graver.uz",
+    "ogDescription": "Срочный заказ корпоративных подарков в Ташкенте: от 1 дня. Гравировка, упаковка, доставка."
   }
 };
 
@@ -1286,6 +1461,43 @@ export const blogSeoOverridesUz = {
         "a": "Muddatlar, brak ulushi, byudjet intizomi va qabul qiluvchilar fikrini birgalikda tahlil qiling."
       }
     ]
+  },
+  // --- Добавлено 2026-03-03: UZ overrides для статей без метаданных ---
+  "banklar-va-fintex-uchun-sovgalar-toshkent": {
+    "title": "Banklar va fintech kompaniyalar uchun sovg'alar Toshkentda | Graver.uz",
+    "description": "Toshkentdagi banklar va fintech kompaniyalar uchun korporativ sovg'alar. Premium gravyura, brendlash.",
+    "ogTitle": "Banklar va fintech kompaniyalar uchun sovg'alar Toshkentda | Graver.uz",
+    "ogDescription": "Toshkentdagi banklar va fintech kompaniyalar uchun korporativ sovg'alar. Premium gravyura, brendlash."
+  },
+  "horeca-va-restoranlar-uchun-sovgalar-toshkent": {
+    "title": "HoReCa va restoranlar uchun sovg'alar Toshkentda | Graver.uz",
+    "description": "Toshkentdagi HoReCa va restoranlar uchun logotipli sovg'alar. Mehmondo'stlik sanoati uchun korporativ yechimlar.",
+    "ogTitle": "HoReCa va restoranlar uchun sovg'alar Toshkentda | Graver.uz",
+    "ogDescription": "Toshkentdagi HoReCa va restoranlar uchun logotipli sovg'alar. Mehmondo'stlik sanoati uchun korporativ yechimlar."
+  },
+  "it-kompaniyalar-uchun-merch-toshkent": {
+    "title": "IT kompaniyalar uchun merch Toshkentda | Graver.uz",
+    "description": "Toshkentdagi IT kompaniyalar uchun logotipli merch: daftarlar, ruchkalar, krujkalar. 1 dan 10 000+ donagacha.",
+    "ogTitle": "IT kompaniyalar uchun merch Toshkentda | Graver.uz",
+    "ogDescription": "Toshkentdagi IT kompaniyalar uchun logotipli merch: daftarlar, ruchkalar, krujkalar. 1 dan 10 000+ donagacha."
+  },
+  "korporativ-sovgalar-boyicha-toliq-qollanma": {
+    "title": "Korporativ sovg'alar bo'yicha to'liq qo'llanma | Graver.uz",
+    "description": "Korporativ sovg'alar bo'yicha to'liq qo'llanma: tanlovdan topshirishgacha. Gravyura, brendlash va logistika.",
+    "ogTitle": "Korporativ sovg'alar bo'yicha to'liq qo'llanma | Graver.uz",
+    "ogDescription": "Korporativ sovg'alar bo'yicha to'liq qo'llanma: tanlovdan topshirishgacha. Gravyura, brendlash va logistika."
+  },
+  "korporativ-tadbirlar-uchun-sovgalar-toshkent": {
+    "title": "Korporativ tadbirlar uchun sovg'alar Toshkentda | Graver.uz",
+    "description": "Toshkentdagi korporativ tadbirlar uchun sovg'alar: konferensiyalar, yubileylar, team building. Buyurtmaga gravyura.",
+    "ogTitle": "Korporativ tadbirlar uchun sovg'alar Toshkentda | Graver.uz",
+    "ogDescription": "Toshkentdagi korporativ tadbirlar uchun sovg'alar: konferensiyalar, yubileylar, team building. Buyurtmaga gravyura."
+  },
+  "logotipli-soat-korporativ-sovgalar-toshkent": {
+    "title": "Logotipli soat — Toshkentda korporativ sovg'alar | Graver.uz",
+    "description": "Logotipli soat — Toshkentda premium korporativ sovg'a. Lazer gravyura, tez yetkazib berish.",
+    "ogTitle": "Logotipli soat — Toshkentda korporativ sovg'alar | Graver.uz",
+    "ogDescription": "Logotipli soat — Toshkentda premium korporativ sovg'a. Lazer gravyura, tez yetkazib berish."
   }
 };
 

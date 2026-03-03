@@ -25,53 +25,84 @@
 const fs = require('fs');
 const path = require('path');
 
-// Импортируем blogSeoOverrides
+/**
+ * Универсальный парсер ES-модульных export const { ... } объектов.
+ * Возвращает распарсенный объект или {}.
+ */
+function parseExportedObject(content, exportName) {
+  const marker = `export const ${exportName} = {`;
+  const startIdx = content.indexOf(marker);
+  if (startIdx === -1) return {};
+  let braceCount = 0;
+  let inString = false;
+  let stringChar = '';
+  let endIdx = startIdx + `export const ${exportName} = `.length;
+  for (let i = endIdx; i < content.length; i++) {
+    const char = content[i];
+    if ((char === '"' || char === "'" || char === '`') && content[i - 1] !== '\\') {
+      if (!inString) { inString = true; stringChar = char; }
+      else if (char === stringChar) { inString = false; }
+    }
+    if (!inString) {
+      if (char === '{') braceCount++;
+      if (char === '}') { braceCount--; if (braceCount === 0) { endIdx = i + 1; break; } }
+    }
+  }
+  const objStr = content.substring(startIdx + `export const ${exportName} = `.length, endIdx);
+  try {
+    return eval(`(${objStr})`);
+  } catch (e) {
+    console.warn(`[postbuild-inject-seo-meta] Failed to parse ${exportName}:`, e.message);
+    return {};
+  }
+}
+
+// Импортируем blogSeoOverrides (RU) и blogSeoOverridesUz (UZ)
 let blogSeoOverrides = {};
+let blogSeoOverridesUz = {};
 try {
   const blogSeoPath = path.join(__dirname, '..', 'src', 'data', 'blogSeoOverrides.js');
   const content = fs.readFileSync(blogSeoPath, 'utf8');
-  
-  // Парсим export из файла
-  const startIdx = content.indexOf('export const blogSeoOverrides = {');
-  if (startIdx !== -1) {
-    let braceCount = 0;
-    let inString = false;
-    let stringChar = '';
-    let endIdx = startIdx + 'export const blogSeoOverrides = '.length;
-    
-    for (let i = endIdx; i < content.length; i++) {
-      const char = content[i];
-      
-      if ((char === '"' || char === "'" || char === '`') && (i === 0 || content[i-1] !== '\\')) {
-        if (!inString) {
-          inString = true;
-          stringChar = char;
-        } else if (char === stringChar) {
-          inString = false;
-        }
-      }
-      
-      if (!inString) {
-        if (char === '{') braceCount++;
-        if (char === '}') {
-          braceCount--;
-          if (braceCount === 0) {
-            endIdx = i + 1;
-            break;
-          }
-        }
-      }
-    }
-    
-    const objStr = content.substring(startIdx + 'export const blogSeoOverrides = '.length, endIdx);
-    try {
-      blogSeoOverrides = eval(`(${objStr})`);
-    } catch (e) {
-      console.warn('[postbuild-inject-seo-meta] Failed to parse blogSeoOverrides:', e.message);
-    }
-  }
+  blogSeoOverrides = parseExportedObject(content, 'blogSeoOverrides');
+  blogSeoOverridesUz = parseExportedObject(content, 'blogSeoOverridesUz');
+  console.log(`[inject-seo-meta] Loaded blogSeoOverrides: ${Object.keys(blogSeoOverrides).length} RU, ${Object.keys(blogSeoOverridesUz).length} UZ slugs`);
 } catch (e) {
   console.warn('[postbuild-inject-seo-meta] Failed to load blogSeoOverrides.js:', e.message);
+}
+
+// Импортируем маппинг slug -> og:image из blogImages.js
+let blogOgImageBySlug = {};
+try {
+  const blogImagesPath = path.join(__dirname, '..', 'src', 'data', 'blogImages.js');
+  const imgContent = fs.readFileSync(blogImagesPath, 'utf8');
+  const defaultBlogCover = '/images/blog/default-og.jpg';
+  const imgStartIdx = imgContent.indexOf('const blogCardImageBySlug = {');
+  if (imgStartIdx !== -1) {
+    let braceCount = 0, inString = false, stringChar = '', endIdx = imgStartIdx + 'const blogCardImageBySlug = '.length;
+    for (let i = endIdx; i < imgContent.length; i++) {
+      const char = imgContent[i];
+      if ((char === '"' || char === "'" || char === '`') && imgContent[i - 1] !== '\\') {
+        if (!inString) { inString = true; stringChar = char; }
+        else if (char === stringChar) { inString = false; }
+      }
+      if (!inString) {
+        if (char === '{') braceCount++;
+        if (char === '}') { braceCount--; if (braceCount === 0) { endIdx = i + 1; break; } }
+      }
+    }
+    const objStr = imgContent.substring(imgStartIdx + 'const blogCardImageBySlug = '.length, endIdx);
+    const rawMap = eval(`(function(){ const defaultBlogCover='${defaultBlogCover}'; return ${objStr}; })()`);
+    // Конвертируем в og-пути (.png -> -og.jpg)
+    for (const [slug, imgPath] of Object.entries(rawMap)) {
+      let ogPath = imgPath;
+      if (ogPath.endsWith('.png')) { ogPath = ogPath.replace(/\.png$/i, '-og.jpg'); }
+      else if (!ogPath.endsWith('-og.jpg')) { ogPath = ogPath.replace(/\.[^.]+$/, '-og.jpg'); }
+      blogOgImageBySlug[slug] = ogPath;
+    }
+    console.log(`[inject-seo-meta] Loaded blogOgImageBySlug: ${Object.keys(blogOgImageBySlug).length} slugs`);
+  }
+} catch (e) {
+  console.warn('[postbuild-inject-seo-meta] Failed to load blogImages.js:', e.message);
 }
 
 const BASE_URL = 'https://graver-studio.uz';
@@ -300,15 +331,19 @@ function generateSeoMeta(locale, pathKey) {
     const slugMatch = pathKey.match(/\/blog\/([^/]+)/);
     if (slugMatch && slugMatch[1]) {
       const slug = slugMatch[1];
-      const override = blogSeoOverrides[slug];
+      // Выбираем нужный словарь в зависимости от locale
+      const overrideMap = locale === 'uz' ? blogSeoOverridesUz : blogSeoOverrides;
+      const override = overrideMap[slug];
       if (override) {
         return {
           title: override.title,
           description: override.description,
-          ogTitle: override.ogTitle,
-          ogDescription: override.ogDescription
+          ogTitle: override.ogTitle || override.title,
+          ogDescription: override.ogDescription || override.description
         };
       }
+      // Если override не найден, возвращаем null (будет использован title из prerendered HTML)
+      return null;
     }
     
     // Если нет SEO данных в blogSeoOverrides, пропускаем
@@ -374,14 +409,18 @@ function injectSeoMeta(htmlFilePath, pathKey) {
     const newOgTitle = `<meta property="og:title" content="${escapeHtml(seo.title)}" />`;
     const newOgDesc = `<meta property="og:description" content="${escapeHtml(seo.description)}" />`;
     const newOgUrl = `<meta property="og:url" content="${canonicalUrl}" />`;
-    const newOgImage = `<meta property="og:image" content="${OG_IMAGE}" />`;
-    const newOgType = `<meta property="og:type" content="website" />`;
+    // Per-post og:image: используем уникальное изображение из blogImages.js, если есть
+    const slugForOg = (pathKey.match(/\/blog\/([^/]+)/) || [])[1];
+    const perPostOgPath = slugForOg && blogOgImageBySlug[slugForOg] ? blogOgImageBySlug[slugForOg] : null;
+    const ogImageUrl = perPostOgPath ? `${BASE_URL}${perPostOgPath}` : OG_IMAGE;
+    const newOgImage = `<meta property="og:image" content="${ogImageUrl}" />`;
+    const newOgType = `<meta property="og:type" content="${pathKey.includes('/blog/') && slugForOg ? 'article' : 'website'}" />`;
     const newOgSiteName = `<meta property="og:site_name" content="Graver.uz" />`;
     const newOgLocale = `<meta property="og:locale" content="${locale === 'uz' ? 'uz_UZ' : 'ru_RU'}" />`;
     const newTwitterCard = `<meta name="twitter:card" content="summary_large_image" />`;
     const newTwitterTitle = `<meta name="twitter:title" content="${escapeHtml(seo.title)}" />`;
     const newTwitterDesc = `<meta name="twitter:description" content="${escapeHtml(seo.description)}" />`;
-    const newTwitterImage = `<meta name="twitter:image" content="${OG_IMAGE}" />`;
+    const newTwitterImage = `<meta name="twitter:image" content="${ogImageUrl}" />`;
     
     // Заменяем или добавляем title
     if (/<title[^>]*>[^<]*<\/title>/.test(html)) {
@@ -433,17 +472,18 @@ function injectSeoMeta(htmlFilePath, pathKey) {
       newTwitterImage
     ].join('\n');
     
-    // Проверяем, есть ли </head> в HTML
+    // Вставляем SEO-теги в правильное место
     if (/<\/head>/.test(html)) {
+      // Нормальный случай: вставляем перед </head>
       html = html.replace(/<\/head>/, `${seoTags}\n</head>`);
+    } else if (/<\/body>/.test(html)) {
+      // Файл есть, но </head> отсутствует — закрываем head и добавляем теги перед </body>
+      html = html.replace(/<\/body>/, `${seoTags}\n</head>\n</body>`);
+      console.warn(`[inject-seo-meta] ⚠️  ${pathKey} — </head> не найден, теги вставлены перед </body>`);
     } else {
-      // Если </head> не найден, добавляем перед </body>
-      if (/<\/body>/.test(html)) {
-        html = html.replace(/<\/body>/, `</head>\n${seoTags}\n</body>`);
-      } else {
-        // Если ничего не найдено, добавляем в конец
-        html += `\n</head>\n${seoTags}\n</body>\n</html>`;
-      }
+      // Файл оборван: добавляем закрывающие теги в конец файла
+      html += `\n${seoTags}\n</head>\n</body>\n</html>`;
+      console.warn(`[inject-seo-meta] ⚠️  ${pathKey} — ни </head>, ни </body> не найдены, теги добавлены в конец файла`);
     }
     
     // Сохраняем обновленный HTML
