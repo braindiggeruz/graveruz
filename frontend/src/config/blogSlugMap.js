@@ -55,6 +55,7 @@ export const BLOG_SLUG_MAP = {
     'chto-podarit-na-8-marta-devushke-mame-kollege': 'chto-podarit-na-8-marta-devushke-mame-kollege-uz',
     'nedorogie-podarki-na-8-marta': 'nedorogie-podarki-na-8-marta-uz',
     'gravirovka-v-tashkente-na-8-marta': 'gravirovka-v-tashkente-na-8-marta-uz',
+    'keys-welcome-pack-povysil-enps-v-it-kompanii': 'keys-welcome-pack-povysil-enps-v-it-kompanii',
   },
   uz: {
     'korporativ-sovgalar-boyicha-toliq-qollanma': 'polniy-gid-po-korporativnym-podarkam',
