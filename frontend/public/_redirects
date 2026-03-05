@@ -94,85 +94,14 @@ https://www.graver-studio.uz/*  https://graver-studio.uz/:splat  301
 /uz/neo-sovga           /uz/neo-sovga/              301
 
 # ============================================================
-# P2: Fix cross-language duplicate blog posts (301)
-# UZ blog posts accessible via RU slugs → redirect to /uz/blog/
+# REMOVED: Blog post redirects (2026-03-05)
+# These redirects were causing 81 blog posts to be marked as
+# "Page with redirect" instead of being indexed directly.
+# Blog posts now serve with 200 OK status.
 # ============================================================
-/uz/blog/brendirovanie-suvenirov/                         /uz/blog/  301
-/uz/blog/brendirovannye-zazhigalki-i-chasy-s-logotipom/   /uz/blog/  301
-/uz/blog/byudzhet-na-korporativnye-podarki/               /uz/blog/  301
-/uz/blog/chasy-s-logotipom-korporativnye-podarki-tashkent/ /uz/blog/ 301
-/uz/blog/chek-list-zakupshchika-podarkov/                 /uz/blog/  301
-/uz/blog/chto-podarit-devushke-na-8-marta/                /uz/blog/  301
-/uz/blog/chto-podarit-kollege-na-8-marta/                 /uz/blog/  301
-/uz/blog/chto-podarit-mame-na-8-marta/                    /uz/blog/  301
-/uz/blog/chto-podarit-na-8-marta-devushke-mame-kollege/   /uz/blog/  301
-/uz/blog/chto-podarit-rukovoditelyu-na-8-marta/           /uz/blog/  301
-/uz/blog/delovoy-etiket-biznes-podarki-uzbekistan/        /uz/blog/  301
-/uz/blog/eko-podarki-dlya-biznesa/                        /uz/blog/  301
-/uz/blog/ekonomiya-na-korporativnyh-suvenirax/            /uz/blog/  301
-/uz/blog/godovoy-plan-korporativnyh-prazdnikov/           /uz/blog/  301
-/uz/blog/gravirovka-na-biznes-podarkah/                   /uz/blog/  301
-/uz/blog/gravirovka-v-tashkente-na-8-marta/               /uz/blog/  301
-/uz/blog/idei-vip-podarkov/                               /uz/blog/  301
-/uz/blog/kak-podgotovit-maket-logotipa/                   /uz/blog/  301
-/uz/blog/kak-vybrat-korporativnyj-podarok/                /uz/blog/  301
-/uz/blog/kak-vybrat-korporativnyj-podarok-b2b/            /uz/blog/  301
-/uz/blog/kak-vybrat-podarki-dlya-sotrudnikov/             /uz/blog/  301
-/uz/blog/keys-brendirovannye-podarki-dlya-it/             /uz/blog/  301
-/uz/blog/keys-welcome-pak-it-kompaniya-tashkent/          /uz/blog/  301
-/uz/blog/korporativniy-merch-kak-instrument-marketinga/   /uz/blog/  301
-/uz/blog/korporativnye-podarki-na-8-marta-v-tashkente/    /uz/blog/  301
-/uz/blog/korporativnye-podarki-na-navruz/                 /uz/blog/  301
-/uz/blog/korporativnye-podarki-s-gravirovkoy-metody/      /uz/blog/  301
-/uz/blog/korporativnye-podarki-s-logotipom-polnyy-gayd/   /uz/blog/  301
-/uz/blog/korporativnye-podarochnye-nabory/                /uz/blog/  301
-/uz/blog/lazernaya-gravirovka-podarkov/                   /uz/blog/  301
-/uz/blog/lazernaya-gravirovka-podarkov-tehnologiya/       /uz/blog/  301
-/uz/blog/loyalnost-sotrudnikov-korporativnye-podarki/     /uz/blog/  301
-/uz/blog/merch-dlya-it-kompaniy-tashkent/                 /uz/blog/  301
-/uz/blog/merch-dlya-kompanii-brendirovanie/               /uz/blog/  301
-/uz/blog/nedorogie-podarki-na-8-marta/                    /uz/blog/  301
-/uz/blog/originalnye-podarki-na-8-marta/                  /uz/blog/  301
-/uz/blog/personalizatsiya-novyy-standart-gravirovka/      /uz/blog/  301
-/uz/blog/podarki-dlya-bankov-i-finteha-tashkent/          /uz/blog/  301
-/uz/blog/podarki-dlya-horeca-i-restoranov-tashkent/       /uz/blog/  301
-/uz/blog/podarki-klientam-partneram-vip/                  /uz/blog/  301
-/uz/blog/podarki-na-8-marta-sotrudnicam/                  /uz/blog/  301
-/uz/blog/podarki-na-korporativnye-sobytiya-tashkent/      /uz/blog/  301
-/uz/blog/podarki-na-navruz/                               /uz/blog/  301
-/uz/blog/podarki-sotrudnikam-hr-gayd/                     /uz/blog/  301
-/uz/blog/podarochnye-nabory-s-logotipom/                  /uz/blog/  301
-/uz/blog/polniy-gid-po-korporativnym-podarkam/            /uz/blog/  301
-/uz/blog/process-zakaza-korporativnyh-podarkov/           /uz/blog/  301
-/uz/blog/srochniy-zakaz-korporativnyh-podarkov/           /uz/blog/  301
-/uz/blog/top-idei-podarkov-na-novyj-god/                  /uz/blog/  301
-/uz/blog/welcome-pack-dlya-sotrudnikov/                   /uz/blog/  301
-/uz/blog/welcome-pack-novym-sotrudnikam/                  /uz/blog/  301
 
-# RU blog posts accessible via UZ slugs → redirect to /ru/blog/
-/ru/blog/banklar-va-fintex-uchun-sovgalar-toshkent/       /ru/blog/  301
-/ru/blog/horeca-va-restoranlar-uchun-sovgalar-toshkent/   /ru/blog/  301
-/ru/blog/it-kompaniyalar-uchun-merch-toshkent/            /ru/blog/  301
-/ru/blog/kompaniya-merchi-brendlash/                      /ru/blog/  301
-/ru/blog/korporativ-sovga-toplamlari/                     /ru/blog/  301
-/ru/blog/korporativ-sovgalar-boyicha-toliq-qollanma/      /ru/blog/  301
-/ru/blog/korporativ-sovgalar-gravyurasi-usullari/         /ru/blog/  301
-/ru/blog/korporativ-sovgalar-logotip-bilan-to-liq-qollanma/ /ru/blog/ 301
-/ru/blog/korporativ-sovgani-qanday-tanlash/               /ru/blog/  301
-/ru/blog/korporativ-tadbirlar-uchun-sovgalar-toshkent/    /ru/blog/  301
-/ru/blog/lazer-gravirovka-sovgalar/                       /ru/blog/  301
-/ru/blog/lazer-gravyurasi-texnologiyasi/                  /ru/blog/  301
-/ru/blog/logotip-maketi-tayyorlash/                       /ru/blog/  301
-/ru/blog/logotipli-soat-korporativ-sovgalar-toshkent/     /ru/blog/  301
-/ru/blog/logotipli-sovga-toplami/                         /ru/blog/  301
-/ru/blog/logotipli-zajigalka-va-soat/                     /ru/blog/  301
-/ru/blog/mijoz-hamkorlar-uchun-sovgalar-vip/              /ru/blog/  301
-/ru/blog/navruz-sovgalari/                                /ru/blog/  301
-/ru/blog/navruz-uchun-korporativ-sovgalar/                /ru/blog/  301
-/ru/blog/suvenir-brendlash/                               /ru/blog/  301
-/ru/blog/suvenir-byudjetini-tejash/                       /ru/blog/  301
-/ru/blog/welcome-pack-yangi-xodimlar/                     /ru/blog/  301
-/ru/blog/xaridor-chek-listi-b2b/                          /ru/blog/  301
-/ru/blog/xodimlar-uchun-sovgalar-hr-qollanma/             /ru/blog/  301
-/ru/blog/yangi-xodimlar-uchun-welcome-pack/               /ru/blog/  301
-/ru/blog/yangi-yil-sovga-goyalari/                        /ru/blog/  301
+# ============================================================
+# SPA Fallback: Route all unmatched URLs to index.html (200)
+# React Router handles client-side routing
+# ============================================================
+/*  /index.html  200
