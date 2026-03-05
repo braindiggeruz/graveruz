@@ -128,6 +128,13 @@ const blogCardImageBySlug = {
   'rahbar-uchun-8-mart-vip-goya': '/images/blog/march8-boss-gift.jpg',
   'biznes-hamkorlar-uchun-vip-sovgalar': '/images/blog/vip-gifts-article-44.png',
   'uzbekistonda-biznes-sovga-etiketi': '/images/blog/uzbek-business-etiquette.jpg',
+  // New pillar and cluster posts added 2026-03-05
+  'korporativnye-podarki-uzbekistan': '/images/blog/corporate-gifts-uzbekistan-guide.jpg',
+  'welcome-pack-dlya-sotrudnikov-gid': '/images/blog/welcome-pack-guide.jpg',
+  'podarki-sotrudnikam-loyalnost': '/images/blog/employee-gifts-loyalty.jpg',
+  'korporativnye-podarki-b2b-etiket': '/images/blog/b2b-gifts-etiquette.jpg',
+  'podarki-8-marta-20-idej': '/images/blog/march8-20-ideas.jpg',
+  'keys-welcome-pack-enps-uzbekistan': '/images/blog/welcome-pack-case-study.jpg',
 };
 export const blogImages = blogCardImageBySlug;
 
