@@ -101,8 +101,6 @@ https://www.graver-studio.uz/*  https://graver-studio.uz/:splat  301
 # ============================================================
 
 # ============================================================
-# P2: Cache headers for performance optimization (LCP fix)
-# ============================================================
 
 # Cache hashed assets forever (they have content hash in filename)
 /static/js/*.*.js         /static/js/:splat  200  Cache-Control: public, max-age=31536000, immutable
@@ -123,6 +121,22 @@ https://www.graver-studio.uz/*  https://graver-studio.uz/:splat  301
 /index.html               /index.html              200  Cache-Control: public, max-age=3600, must-revalidate
 /manifest.json            /manifest.json           200  Cache-Control: public, max-age=3600, must-revalidate
 /robots.txt               /robots.txt              200  Cache-Control: public, max-age=86400
+=======
+# MERGE redirects: Old/duplicate article URLs -> new canonical URLs (301)
+# Added: 2026-03-05 as part of SEO Content Remastering
+# ============================================================
+
+# Welcome Pack -- 2 old articles merged into 1 strong case study
+/ru/blog/keys-welcome-pak-it-kompaniya-tashkent/          /ru/blog/keys-welcome-pack-enps-uzbekistan/  301
+/ru/blog/keys-welcome-pak-it-kompaniya-tashkent           /ru/blog/keys-welcome-pack-enps-uzbekistan/  301
+/ru/blog/keys-welcome-pack-povysil-enps-v-it-kompanii/    /ru/blog/keys-welcome-pack-enps-uzbekistan/  301
+/ru/blog/keys-welcome-pack-povysil-enps-v-it-kompanii     /ru/blog/keys-welcome-pack-enps-uzbekistan/  301
+
+# 8 Marta -- 2 old articles merged into 1 comprehensive guide
+/ru/blog/chto-podarit-kollege-na-8-marta/                 /ru/blog/podarki-8-marta-20-idej/  301
+/ru/blog/chto-podarit-kollege-na-8-marta                  /ru/blog/podarki-8-marta-20-idej/  301
+/ru/blog/podarki-na-8-marta-sotrudnicam/                  /ru/blog/podarki-8-marta-20-idej/  301
+/ru/blog/podarki-na-8-marta-sotrudnicam                   /ru/blog/podarki-8-marta-20-idej/  301
 
 # ============================================================
 # SPA Fallback: Route all unmatched URLs to index.html (200)
