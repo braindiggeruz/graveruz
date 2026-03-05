@@ -101,6 +101,30 @@ https://www.graver-studio.uz/*  https://graver-studio.uz/:splat  301
 # ============================================================
 
 # ============================================================
+# P2: Cache headers for performance optimization (LCP fix)
+# ============================================================
+
+# Cache hashed assets forever (they have content hash in filename)
+/static/js/*.*.js         /static/js/:splat  200  Cache-Control: public, max-age=31536000, immutable
+/static/css/*.*.css       /static/css/:splat 200  Cache-Control: public, max-age=31536000, immutable
+/static/media/*.*         /static/media/:splat 200  Cache-Control: public, max-age=31536000, immutable
+
+# Cache images forever (they are versioned)
+/neo-watches-hero*.webp   /neo-watches-hero:splat  200  Cache-Control: public, max-age=31536000, immutable
+/neo-watches-hero*.avif   /neo-watches-hero:splat  200  Cache-Control: public, max-age=31536000, immutable
+/neo-watches-hero.jpg     /neo-watches-hero.jpg    200  Cache-Control: public, max-age=31536000, immutable
+/images/*                 /images/:splat           200  Cache-Control: public, max-age=31536000, immutable
+/*.jpg                    /:splat                  200  Cache-Control: public, max-age=31536000, immutable
+/*.png                    /:splat                  200  Cache-Control: public, max-age=31536000, immutable
+/*.webp                   /:splat                  200  Cache-Control: public, max-age=31536000, immutable
+/*.avif                   /:splat                  200  Cache-Control: public, max-age=31536000, immutable
+
+# Cache-bust non-hashed assets (short TTL)
+/index.html               /index.html              200  Cache-Control: public, max-age=3600, must-revalidate
+/manifest.json            /manifest.json           200  Cache-Control: public, max-age=3600, must-revalidate
+/robots.txt               /robots.txt              200  Cache-Control: public, max-age=86400
+
+# ============================================================
 # SPA Fallback: Route all unmatched URLs to index.html (200)
 # React Router handles client-side routing
 # ============================================================

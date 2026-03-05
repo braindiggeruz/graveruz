@@ -807,11 +807,20 @@ function App() {
             <div className="relative">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-teal-500/20">
                 <img
-                  src="/neo-watches-hero.jpg"
+                  src="/neo-watches-hero.webp"
+                  srcSet="
+                    /neo-watches-hero-mobile.webp 480w,
+                    /neo-watches-hero-tablet.webp 1024w,
+                    /neo-watches-hero.webp 2752w
+                  "
+                  sizes="(max-width: 480px) 480px, (max-width: 1024px) 1024px, 2752px"
                   alt={locale === 'uz' ? 'NEO soatlar gravyura bilan' : 'Часы NEO с гравировкой'}
                   className="w-full h-auto object-cover"
-                  style={{ maxHeight: '480px', objectFit: 'cover' }}
-                  loading="lazy"
+                  style={{ maxHeight: '480px', objectFit: 'cover', aspectRatio: '2752 / 1536' }}
+                  loading="eager"
+                  fetchPriority="high"
+                  width="2752"
+                  height="1536"
                 />
                 {/* Оверлей с ценой */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />

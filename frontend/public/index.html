@@ -8,6 +8,23 @@
         <link rel="manifest" href="/manifest.json" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        
+        <!-- Hero Image Preload (LCP Optimization) -->
+        <link rel="preload" 
+              as="image" 
+              href="/neo-watches-hero.webp"
+              fetchpriority="high"
+              imagesrcset="/neo-watches-hero-mobile.webp 480w, /neo-watches-hero-tablet.webp 1024w, /neo-watches-hero.webp 2752w"
+              imagesizes="(max-width: 480px) 480px, (max-width: 1024px) 1024px, 2752px"
+              type="image/webp">
+        <!-- Fallback for browsers without WebP support -->
+        <link rel="preload" 
+              as="image" 
+              href="/neo-watches-hero.jpg"
+              fetchpriority="high"
+              type="image/jpeg">
+        
+        <!-- Reduce preconnect bloat: keep only critical -->
         <link rel="preconnect" href="https://connect.facebook.net" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <!-- Google tag (gtag.js) - GA4
