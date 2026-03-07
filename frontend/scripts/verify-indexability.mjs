@@ -104,8 +104,8 @@ async function main() {
 
     const robots = robotsFromHtml(html);
 
-    const hreflangRu = countMatches(html, /hreflang="ru-RU"/gi);
-    const hreflangUz = countMatches(html, /hreflang="uz-UZ"/gi);
+    const hreflangRu = countMatches(html, /hreflang="ru(?:-[A-Z]{2})?"/gi);
+    const hreflangUz = countMatches(html, /hreflang="uz(?:-Latn|-[A-Z]{2})?"/gi);
     const hreflangDefault = countMatches(html, /hreflang="x-default"/gi);
 
     const h1Count = countMatches(html, /<h1[\s>]/gi);
