@@ -60,10 +60,11 @@ export const BLOG_SLUG_MAP = {
     'idei-vip-podarkov': 'biznes-hamkorlar-uchun-vip-sovgalar',
     'delovoy-etiket-biznes-podarki-uzbekistan': 'uzbekistonda-biznes-sovga-etiketi',
     'keys-welcome-pack-povysil-enps-v-it-kompanii': 'keys-welcome-pack-povysil-enps-v-it-kompanii-uz',
-    // New true-counterpart pairs added in hardening pass
-    'case-study-welcome-pack-enps': 'keys-brendlangan-sovgalar-it-kompaniya',
-    'korporativnye-podarki-b2b-etiket': 'b2b-korporativ-sovga-tanlash',
-    'podarki-sotrudnikam-loyalnost': 'xodimlar-sadoqati-korporativ-sovgalar',
+    // Note: case-study-welcome-pack-enps, korporativnye-podarki-b2b-etiket, podarki-sotrudnikam-loyalnost
+    // have no unique UZ counterpart — their UZ slugs are already claimed by the older RU articles below:
+    //   keys-brendirovannye-podarki-dlya-it → keys-brendlangan-sovgalar-it-kompaniya
+    //   kak-vybrat-korporativnyj-podarok-b2b → b2b-korporativ-sovga-tanlash
+    //   loyalnost-sotrudnikov-korporativnye-podarki → xodimlar-sadoqati-korporativ-sovgalar
   },
   uz: {
     'korporativ-sovgalar-boyicha-toliq-qollanma': 'polniy-gid-po-korporativnym-podarkam',
@@ -132,10 +133,10 @@ export const BLOG_SLUG_MAP = {
     'shaxsiylashtirish-yangi-standart-gravyura': 'personalizatsiya-novyy-standart-gravirovka',
     'shoshilinch-korporativ-sovga-buyurtmasi': 'srochniy-zakaz-korporativnyh-podarkov',
     'xodimlar-uchun-sovga-tanlash-chek-list': 'kak-vybrat-podarki-dlya-sotrudnikov',
-    // Reverse for new pairs added in this pass
-    'keys-brendlangan-sovgalar-it-kompaniya': 'case-study-welcome-pack-enps',
-    'b2b-korporativ-sovga-tanlash': 'korporativnye-podarki-b2b-etiket',
-    'xodimlar-sadoqati-korporativ-sovgalar': 'podarki-sotrudnikam-loyalnost',
+    // Reverse for new pairs added in this pass — aligned to match the pre-existing forward mappings
+    'keys-brendlangan-sovgalar-it-kompaniya': 'keys-brendirovannye-podarki-dlya-it',
+    'b2b-korporativ-sovga-tanlash': 'kak-vybrat-korporativnyj-podarok-b2b',
+    'xodimlar-sadoqati-korporativ-sovgalar': 'loyalnost-sotrudnikov-korporativnye-podarki',
   }
 };
 

@@ -74,7 +74,8 @@
     "verify:slugmap": "node scripts/verify-blog-slug-map.mjs",
     "verify:hydrated-seo": "node scripts/verify-hydrated-seo.mjs",
     "inject:seo": "node scripts/postbuild-inject-seo-meta.js",
-    "blog:validate": "node scripts/validate-blog-data.mjs"
+    "blog:validate": "node scripts/validate-blog-data.mjs",
+    "verify:canonical": "node scripts/validate-canonical-hreflang.mjs"
   },
   "reactSnap": {
     "enabled": true,
