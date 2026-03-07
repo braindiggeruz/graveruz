@@ -1,162 +1,106 @@
 <analysis>**original_problem_statement:**
-The user wants to build a high-conversion B2B corporate gifting website for their brand, Graver.uz, from scratch. The core requirements are to create a website with a premium dark theme (black + gold), using specific imagery provided by the user, and ensuring the primary call-to-action drives users to Telegram.
+The initial request was a repository-wide discovery and analysis of the  project. The goal was to understand the complex repository structure, identify the correct architectural baseline, find any hidden implementation tracks (like a rumored Next.js version), map out conflicts between different versions, and propose a safe, phased implementation roadmap. This initial phase was strictly for analysis, with no code modifications.
 
-The project involves several phases and detailed requirements:
-1.  **Initial Build & Design:** Create a visually appealing, production-quality website focusing on UX, copy, structure, and speed. The entire UI is built as a single-page React application.
-2.  **Portfolio and Image Handling:** Ensure 6 specific images are correctly displayed in the portfolio section without any placeholders or errors.
-3.  **Lead Form & Telegram Integration:** Implement a lead capture form that sends submission details to a specified Telegram bot via a secure backend endpoint.
-4.  **Thank You Page & Redirect:** After a successful form submission, the user must be redirected to a dedicated, premium-styled /thanks page.
-5.  **Advanced Tracking:** Implement comprehensive tracking using GA4 (G-Z7V0FSGE4Y) and Meta Pixel (1415140489470568), including page views for the SPA, conversion events (form submission, clicks on phone/Telegram), and UTM parameter capture.
-6.  **CRO & SEO Overhaul:** Implement a detailed plan for Conversion Rate Optimization and Technical SEO, including specific copy for headlines, service descriptions, FAQs, and improved page structure.
-7.  **Bug Fixes:** Address several outstanding issues, including blurry text, mismatched portfolio images, and a TLS/SSL error preventing Meta Pixel testing.
+Following the analysis, the user approved a series of narrow, sequential implementation passes:
+1.  **Phase 0/1 (Stabilization):** Lock the production baseline and fix any critical content/rendering issues. This led to the discovery that the blank article risk was already resolved, and culminated in fixing inconsistencies in the  file.
+2.  **Prerender Coverage Pass:** Generate and commit the 55 missing prerendered  fragments to achieve 100% SEO visibility for all configured routes.
+3.  **SEO Overrides Pass:** Add custom SEO titles and descriptions for the 55 articles that were using auto-generated metadata. This is the current, in-progress task.
 
-**User's preferred language**: Русский (Russian)
+**User's preferred language**: English
 
 **what currently exists?**
-The project is a full-stack application using a React frontend and a FastAPI backend.
--   **Frontend:** A single-page application built primarily within . It uses  to provide a  route, which is rendered by the  component.
--   **Backend:** A FastAPI server () with a  endpoint that receives form data, saves it to MongoDB, and forwards it to a Telegram bot.
--   **Tracking:** GA4 and Meta Pixel scripts, along with custom scripts for SPA page views, event tracking (, ), and UTM parameter capture, have been injected into .
--   **Styling:** The site uses Tailwind CSS.
+The project is a Create-React-App (CRA) application deployed on Cloudflare Pages. It uses a hybrid rendering strategy: a base client-side rendered app, pre-generated/committed  fragments for all 156 routes to ensure SEO visibility, and a Cloudflare Worker for bot-specific prerendering on some routes. The  branch is the confirmed source of truth. The repository has been stabilized, and 100% of the routes now have prerendered SEO  fragments.
 
 **Last working item**:
--   **Last item agent was working:** The agent was about to start fixing a bug where text on the  page appears blurry. The user identified this as a CSS issue, likely caused by a  or  being incorrectly applied to a container that includes the text, rather than to a separate background layer.
--   **Status:** NOT STARTED
+-   **Last item agent was working:** The agent is executing the blogSeoOverrides Completion pass. It has successfully re-confirmed the inventory of 55 slugs (14 RU, 41 UZ) that are missing custom metadata in . It then extracted the full content of these articles into a temporary file () to prepare for writing high-quality, context-aware SEO titles and descriptions. The next step is to generate these overrides and update the  file.
+-   **Status:** IN PROGRESS
 -   **Agent Testing Done:** N
--   **Which testing method agent to use?** screenshot tool to visually confirm the text is sharp and not blurry after the CSS fix.
+-   **Which testing method agent to use?** After modifying , the agent should run the project's validation scripts, specifically , , and  to ensure no breakages were introduced and that the new metadata is correctly processed.
 -   **User Testing Done:** N
 
 **All Pending/In progress Issue list**:
--   **Issue 1:** Fix blurry text on the  page (P0)
--   **Issue 2:** Fix mismatched images and categories in the portfolio section (P1)
--   **Issue 3:** Investigate and fix the  preventing Meta Pixel Test Events from loading the preview page (P1)
--   **Issue 4:** Telegram notifications and redirect to  fail for the user in the Preview environment (P2 - Recurring)
+There are no pending bugs. The work is focused on planned enhancements from the approved roadmap.
 
-**Issues Detail:**
--   **Issue 1: Fix blurry text on the  page**
-    -   **Attempted fixes:** None.
-    -   **Next debug checklist:**
-        1.  Inspect  and its associated CSS in .
-        2.  Identify any container holding the text that has CSS properties like , , or  less than 1.
-        3.  Refactor the CSS to apply the blur/opacity effect to a separate background element (e.g., a  pseudo-element or a dedicated ) with a lower , ensuring the text container has no such filters and a higher .
-    -   **Why fix this issue and what will be achieved with the fix?** To improve the user experience and maintain the premium aesthetic of the Thank You page by ensuring all text is crisp and readable.
-    -   **Status:** NOT STARTED
-    -   **Is recurring issue?** N
-    -   **Should Test frontend/backend/both after fix?** Frontend
-
--   **Issue 2: Fix mismatched images and categories in the portfolio section**
-    -   **Attempted fixes:** None.
-    -   **Next debug checklist:**
-        1.  Review the data structure (likely an array) for portfolio items in .
-        2.  The user reported that Corporate awards shows a thermos, Branded thermoses shows a gift box, and Watches shows an award.
-        3.  Correct the mapping between the item data (title, category) and the image URL (, etc.) to ensure they correspond correctly. The current mapping seems to be based on array index, which is fragile. A more robust key-based mapping should be implemented.
-    -   **Why fix this issue and what will be achieved with the fix?** To accurately represent the company's work in the portfolio, which is critical for building trust and generating relevant leads.
-    -   **Status:** NOT STARTED
-    -   **Is recurring issue?** N
-    -   **Should Test frontend/backend/both after fix?** Frontend
-
--   **Issue 3: Investigate and fix the **
-    -   **Attempted fixes:** None.
-    -   **Next debug checklist:** The user suggests this is a TLS/DNS issue, not a pixel issue.
-        1.  Check DNS records for the preview domain. Specifically, check for an AAAA (IPv6) record using . If an AAAA record exists and IPv6 is not correctly configured on the server, it could cause intermittent connection failures. The user suggests removing it as a quick fix.
-        2.  Examine the server's SSL/TLS configuration to ensure the full certificate chain is being served correctly.
-        3.  Temporarily disable any bot protection or WAF features that might be blocking Meta's testing agent.
-    -   **Why fix this issue and what will be achieved with the fix?** To enable successful testing of Meta Pixel events, which is crucial for ad campaign measurement and optimization.
-    -   **Status:** NOT STARTED
-    -   **Is recurring issue?** N
-    -   **Should Test frontend/backend/both after fix?** Both (Backend for server config, Frontend for testing the pixel)
-
--   **Issue 4: Telegram notifications and redirect fail for the user in Preview**
-    -   **Attempted fixes:**
-        -   Added more verbose logging.
-        -   Changed redirect method from  to .
-        -   Added a hardcoded fallback for the backend URL in the frontend code (this is bad practice and should be reverted).
-        -   None of the fixes worked.
-    -   **Next debug checklist:**
-        1.  **Revert the hardcoded fallback URL** in . Rely on the  environment variable.
-        2.  Add comprehensive error logging to the  block of the  function in . Log the entire  object to the console to see exactly what is failing (e.g., network error, CORS, DNS issue).
-        3.  Verify that the  in  is correct for the preview environment.
-        4.  Verify the backend is running and accessible from the frontend container.
-    -   **Why fix this issue and what will be achieved with the fix?** This is the core functionality of the lead capture form. Fixing it will ensure that leads are successfully received and the user gets a proper confirmation via the redirect.
+**In progress Task List**:
+-   **Task 1: Complete  Coverage (P0)**
+    -   **Where to resume:** The agent has gathered all necessary article data in . The immediate next step is to process this data, generate the 55 new SEO override entries (title, description), and append them to the  file.
+    -   **What will be achieved with this?** All blog articles will have custom, SEO-optimized titles and meta descriptions, significantly improving their organic search performance now that they are visible to crawlers.
     -   **Status:** IN PROGRESS
-    -   **Is recurring issue?** Y
-    -   **Should Test frontend/backend/both after fix?** Both
+    -   **Should Test frontend/backend/both after fix?** Frontend (via build and validation scripts).
+    -   **Blocked on something:** No.
 
 **Upcoming and Future Tasks**
--   **Upcoming Task (P0): Implement the comprehensive CRO/UX/SEO plan (from user prompt on message 248)**
-    -   This is a large-scale refactor of the entire landing page content and structure.
-    -   **Hero Section:** Update H1, sub-headline, and trust bullets with user-provided copy.
-    -   **Services/Segments Block:** Create a new block with 4 cards for different B2B segments.
-    -   **Portfolio Refactor:** Add filters and improve CTAs.
-    -   **Process Block:** Redesign the How we work section with 4 steps.
-    -   **FAQ Update:** Replace existing FAQ with 6 specific questions and answers.
-    -   **Form Simplification:** Change form fields to ,  (select), and  (select).
-    -   **Mobile Sticky Bar:** Add a sticky bottom bar with CTAs for mobile view.
-    -   **Tech SEO:** Implement new , ,  structure, and add Schema.org JSON-LD.
-    -   **Image Optimization:** Convert portfolio images to a modern format like WebP or AVIF.
+-   **Upcoming Tasks:**
+    -   **P0: RU↔UZ Slug Pair Completion:** Add mappings for the 9 RU slugs in  that currently lack a UZ counterpart. This will complete the hreflang alternate link setup for all bilingual content.
+    -   **P1: Image Variant Generation:** Generate the 217 missing AVIF/WebP responsive image variants for two specific article image sets. This will fix a known performance gap reported by .
+    -   **P2: Content Quality Pass:** Review and rewrite the content for 17 RU articles that currently use generic, boilerplate text in their  field.
 
 **Completed work in this session**
--   V1 of the landing page built from scratch in a single React component ().
--   Backend endpoint () created in FastAPI to process form submissions.
--   Integration of the form with a Telegram bot for lead notifications.
--   Creation of a  page and implementation of client-side routing.
--   Installation of GA4 and Meta Pixel tracking scripts, including custom event tracking for SPA navigation and user actions.
--   Addition of basic spam protection (client-side cooldown and honeypot field).
-
-**Earlier issues found/mentioned but not fixed**
--   **Issue 1:** The core recurring issue where Telegram notifications and redirects fail for the user in the Preview environment. Despite multiple attempts, the agent has not been able to resolve this. The agent's last attempts were ineffective and involved bad practices (hardcoding a URL).
+-   **Repository Analysis & Roadmap:** Performed a comprehensive repository-wide analysis, identified  as the source of truth, debunked the Next.js version myth, and established a phased implementation roadmap.
+-   **Baseline Lock:** Tagged the baseline commit  as .
+-   ** Fixes:** Removed 10 stale duplicate keys and corrected 1 broken RU→UZ mapping in , making the i18n slug mapping consistent.
+-   **Prerender Coverage Gap (100% Resolved):** Created a synthetic generator script () and used it to generate the 55 missing prerendered  fragments, achieving 100% coverage for all 156 configured routes.
 
 **Code Architecture**
-
+A monorepo containing:
+-   : The main Create React App (CRA) codebase.
+-   : A minimal FastAPI backend, primarily for a lead capture API.
+-   : A Cloudflare Worker that serves prerendered content to bots for  routes.
+-   **Rendering Strategy:** Hybrid model combining a client-side SPA with pre-generated/committed static  fragments for all pages to ensure crawler visibility.
 
 **Key Technical Concepts**
--   **Frontend:** React (Create React App), , Tailwind CSS
--   **Backend:** FastAPI (Python)
--   **Database:** MongoDB
--   **Integrations:** Telegram Bot API, Google Analytics (GA4), Meta Pixel
+-   **Frameworks:** React (with CRACO), FastAPI, Cloudflare Workers.
+-   **SEO:** A complex, custom post-build process generates sitemaps, RSS feeds, and injects prerendered  fragments into the static build output. SEO tags are managed with .
+-   **i18n:** Path-based routing (, ) with content sourced from data files () and UI strings from JSON files.  handles bilingual URL equivalents.
+-   **Build System:** Relies on a chain of over 10 post-build Node.js scripts located in .
 
 **key DB schema**
--   **leads** (in MongoDB): 
+-   N/A. The application is content-driven from files within the git repository, not a database.
 
 **All files of reference**
--   : Contains the entire UI and logic for the main landing page, including the form submission handler. **Needs significant refactoring based on the upcoming CRO task.**
--   : The Thank You page component. Needs CSS fix for blurry text.
--   : The FastAPI backend. Contains the logic for handling leads and sending Telegram notifications.
--   : The main HTML file where GA4 and Meta Pixel tracking scripts were injected.
--   : Contains the  and .
--   : Configuration file for Tailwind CSS.
+-   ****: (File to be modified) Contains custom SEO metadata for blog posts.
+-   ****: The main data source for all blog article content.
+-   ****: Manages the mapping between Russian and Uzbek article slugs for hreflang tags.
+-   ****: Directory containing the 156 static  fragments for all pages.
+-   ****: Home to the critical post-build and validation scripts.
+
+**key api endpoints**
+-   : Endpoint for the contact and lead generation forms.
 
 **Critical Info for New Agent**
--   **The Highest Priority is fixing the recurring bug where form submissions fail for the user in the Preview environment.** The agent's previous attempts were unsuccessful. Do not trust that the agent's tests are representative of the user's experience. A systematic debugging approach focusing on the frontend's ability to communicate with the backend in the preview environment is required. Start by adding detailed error logging in the  call's  block in .
--   The user has provided extremely detailed, expert-level prompts for the next set of tasks (CRO/SEO overhaul, tracking, and bug fixes). Adhere to these instructions closely.
--   The entire frontend is currently in one large file (). The upcoming CRO task is a good opportunity to break this down into smaller, more manageable components.
--   Revert the hardcoded  fallback in . This is not a scalable or secure solution. The problem lies elsewhere.
+-   The repository has a misleading history. **Only use the  branch.** Ignore branches like  as they belong to a different project.
+-   The build process is complex. The standard workflow for prerendering is to commit generated fragments, as  with Chromium is not available in the CI environment. Use  during builds.
+-   Use the project's validation scripts (, , etc.) after making changes to ensure integrity.
+-   Adhere strictly to the user's approved, narrow-scoped tasks. Do not expand work beyond the current approved phase.
+
+**documents and test reports created in this job**
+-   : A temporary analysis file with content for the 55 articles needing SEO overrides.
 
 **Last 10 User Messages and any pending HUMAN messages**
-1.  **Request:** Fix 3 bugs: blurry text on , mismatched portfolio images, and a TLS error () during Meta Pixel testing. **Status: IN PROGRESS**
-2.  **Info/Request:** Provided final, detailed instructions for implementing GA4 and Meta Pixel tracking. **Status: COMPLETED**
-3.  **Info:** Provided a screenshot containing the GA4 Measurement ID. **Status: ADDRESSED**
-4.  **Request:** A massive, expert-level prompt for a complete CRO, UX, and SEO overhaul. **Status: NOT STARTED**
-5.  **Feedback:** The Telegram integration and redirect *still* don't work in Preview. **Status: IN PROGRESS (Recurring Issue)**
-6.  **Feedback:** Reported that the Telegram integration wasn't working in Preview and the redirect to a thank you page was missing. **Status: ADDRESSED (but fix failed)**
-7.  **Request:** Provided detailed instructions to harden the Telegram integration. **Status: COMPLETED**
-8.  **Request:** Asked to integrate a Telegram bot with the form and provided the API token. **Status: COMPLETED**
-9.  **Request:** Asked the agent to critique its own work and propose improvements. **Status: ADDRESSED**
-10. **Feedback:** Reported a runtime error on the preview link. **Status: ADDRESSED (but likely not fully resolved)**
+-   The last three user messages were a sequence of approvals for narrow, specific implementation runs, each building on the last:
+    1.  **Approval for Stabilization Pass:** User approved locking the baseline and fixing critical rendering risks. (COMPLETED)
+    2.  **Approval for Prerender Coverage Pass:** User approved generating the 55 missing prerendered files. (COMPLETED)
+    3.  **Approval for SEO Overrides Pass:** User approved the current task of adding the 55 missing  entries. (IN PROGRESS)
 
 **Project Health Check:**
--   **Broken:**
-    -   The core lead submission and redirect functionality is broken for the user in the Preview environment.
-    -   Portfolio items display incorrect images.
-    -   The  page has a visual bug (blurry text).
-    -   Meta Pixel event testing is blocked by a TLS/SSL error.
+-   **Broken:** None. The application is stable and live.
+-   **Mocked:** N/A
 
 **3rd Party Integrations**
--   **Telegram Bot API:** Used for sending lead notifications. Requires  and  environment variables.
--   **Google Analytics (GA4):** . Implemented via script injection in .
--   **Meta Pixel:** . Implemented via script injection in .
+-   **Cloudflare Pages:** Hosting & Deployment.
+-   **Cloudflare Workers:** Server-side prerendering for bots.
+-   **Google Analytics (GA4):** Analytics.
+-   **Meta Pixel:** Analytics.
+-   **IndexNow:** Search engine indexing protocol.
+
+**Testing status**
+-   **Testing agent used:** NO
+-   **Troubleshoot agent used:** NO
+-   **Test files created:**  was created to solve the prerender gap.
+-   **Known regressions:** None. A pre-existing gap in responsive image variants was noted by validation scripts but is not a regression.
+
+**Credentials to test flow:**
+N/A
 
 **What agent forgot to execute**
--   The agent has repeatedly failed to fix the core issue of form submissions and redirects not working for the user in the Preview environment. It declares the issue fixed after its own tests pass, but fails to account for environmental differences affecting the user.
--   The agent did not implement the user's initial request for a redirect to a  page until the user pointed it out a second time, and even then, the implementation is not working for the user.
--   The agent has not started the comprehensive CRO/SEO overhaul requested by the user.</analysis>
+Nothing. The agent is methodically following the user's phased instructions and is in the middle of the currently approved task.</analysis>

@@ -767,6 +767,62 @@ export const blogSeoOverrides = {
   "srochniy-zakaz-korporativnyh-podarkov": {
     "title": "Срочный заказ корпоративных подарков с гравировкой | Graver.uz",
     "description": "Срочное производство корпоративных подарков с гравировкой в Ташкенте. Выполним заказ за 24-48 часов. Звоните: +998 77 080 22 88."
+  },
+  "case-study-welcome-pack-enps": {
+    "title": "Кейс: Welcome Pack поднял eNPS на 23% в IT-компании — Graver Studio",
+    "description": "Реальный кейс IT-компании в Ташкенте: брендированный welcome pack повысил eNPS с 15 до 38 за 6 месяцев. Состав набора, бюджет и выводы HR-команды."
+  },
+  "keys-welcome-pack-povysil-enps-v-it-kompanii": {
+    "title": "Welcome Pack повысил eNPS на 23%: цифры и кейс IT-компании | Graver Studio",
+    "description": "Как welcome pack для новых сотрудников поднял eNPS с 15 до 38 в IT-компании в Ташкенте: цифры, состав набора и прямой отзыв HR-специалиста."
+  },
+  "podarki-na-8-marta-sotrudnitsam": {
+    "title": "Подарки сотрудницам на 8 марта: 20+ идей с гравировкой | Graver.uz",
+    "description": "Подбираем корпоративные подарки сотрудницам на 8 марта в Ташкенте: более 20 вариантов с персонализацией, ценами и оформлением от 10 штук."
+  },
+  "podarki-na-den-rozhdeniya-sotrudnika": {
+    "title": "Подарок сотруднику на день рождения: идеи с гравировкой | Graver.uz",
+    "description": "Как поздравить сотрудника с днём рождения и не ошибиться с подарком. Идеи с персонализацией, этикет, бюджет и рекомендации для HR-команд."
+  },
+  "podarki-sotrudnikam-loyalnost": {
+    "title": "Корпоративные подарки для сотрудников: как повысить лояльность | Graver.uz",
+    "description": "Психология корпоративных подарков сотрудникам: как правильный выбор снижает текучку, повышает вовлечённость и укрепляет корпоративную культуру."
+  },
+  "gastronomicheskie-nabory-na-navruz-tashkent": {
+    "title": "Гастрономические наборы на Навруз с логотипом в Ташкенте | Graver.uz",
+    "description": "Брендированные гастрономические наборы на Навруз в Ташкенте: сухофрукты, орехи и мёд в фирменной упаковке с логотипом компании. Оптовые заказы."
+  },
+  "kak-vybrat-vip-podarok-partneru-uzbekistan": {
+    "title": "Как выбрать VIP бизнес-подарок для партнёра в Узбекистане | Graver.uz",
+    "description": "Полное руководство по выбору представительного подарка для VIP-партнёра или директора в Узбекистане: статусные варианты, ценовые уровни, гравировка."
+  },
+  "keys-welcome-pack-enps-uzbekistan": {
+    "title": "Welcome Pack повысил eNPS: кейс IT-компании Ташкент | Graver Studio",
+    "description": "Пошаговый кейс: IT-компания в Ташкенте внедрила welcome pack с гравировкой и за полгода подняла eNPS с 15 до 38 баллов. Состав набора, ROI."
+  },
+  "korporativnye-podarki-b2b-etiket": {
+    "title": "Деловой этикет корпоративных подарков для B2B-партнёров | Graver.uz",
+    "description": "Как выбирать подарки партнёрам и клиентам по статусу в Узбекистане: правила B2B-этикета, чего избегать и как правильно персонализировать."
+  },
+  "korporativnye-podarki-uzbekistan": {
+    "title": "Корпоративные подарки в Узбекистане 2025: полный гид | Graver Studio",
+    "description": "Корпоративные подарки в Узбекистане: тренды 2025, бюджетирование, популярные категории и лучшие идеи для сотрудников и партнёров от Graver Studio."
+  },
+  "welcome-pack-dlya-it-kompanii-tashkent": {
+    "title": "Welcome Pack для IT-компании в Ташкенте: чек-лист | Graver.uz",
+    "description": "Собираете welcome pack для IT-сотрудников в Ташкенте? Чек-лист: худи, повербанк, термос с гравировкой и мерч, которым реально будут пользоваться."
+  },
+  "lazernaya-gravirovka-protiv-uf-pechati-chto-vybrat": {
+    "title": "Лазерная гравировка против УФ-печати: что выбрать для сувениров | Graver.uz",
+    "description": "Сравниваем лазерную гравировку и УФ-печать для брендированных сувениров: стойкость, цена и внешний вид на металле, дереве и пластике."
+  },
+  "podarki-8-marta-20-idej": {
+    "title": "20 идей подарков на 8 марта для сотрудниц с ценами | Graver.uz",
+    "description": "Двадцать проверенных идей корпоративных подарков на 8 марта с ценами и примерами персонализации. Заказ от 10 штук с гравировкой, доставка по Узбекистану."
+  },
+  "welcome-pack-dlya-sotrudnikov-gid": {
+    "title": "Welcome Pack для новых сотрудников: полный HR-гайд | Graver Studio",
+    "description": "Полный HR-гайд по созданию welcome pack: что включить в набор, три уровня бюджета и как персонализация через гравировку повышает eNPS с первого дня."
   }
 };
 
@@ -1438,6 +1494,170 @@ export const blogSeoOverridesUz = {
   "logotipli-soat-korporativ-sovgalar-toshkent": {
     "title": "Logotipli soat korporativ sovgalar toshkent | Graver.uz",
     "description": "Korporativ sovgalar va lazer gravyura haqida maqola: logotipli soat korporativ sovgalar toshkent."
+  },
+  "keys-welcome-pack-povysil-enps-v-it-kompanii-uz": {
+    "title": "Welcome Pack eNPSni 23% oshirdi: IT-kompaniya keysi | Graver Studio",
+    "description": "Haqiqiy keys: Toshkentdagi IT-kompaniyada brendlangan welcome pack xodimlar eNPSini 15 dan 38 ga ko'tardi. Tarkib, byudjet va HR xulosalari."
+  },
+  "it-kompaniya-uchun-welcome-pack-chek-listi": {
+    "title": "IT-kompaniya uchun Welcome Pack chek-listi: 27 pozitsiya | Graver Studio",
+    "description": "IT sohasi yangi xodimlari uchun welcome pack tuzish chek-listi: 27 pozitsiya, 3 ta byudjet darajasi va brendlash tavsiyalari. Toshkentda buyurtma qiling."
+  },
+  "korporativ-sovgalar-toliq-gid-2025-uzbekistan": {
+    "title": "Korporativ sovg'alar O'zbekistonda: to'liq gid 2025 | Graver Studio",
+    "description": "O'zbekistonda korporativ sovg'alar bo'yicha to'liq gid: xodimlar va hamkorlar uchun g'oyalar, byudjet, gravirovka va 2025 yil trendlari."
+  },
+  "b2b-hamkorlar-uchun-sovgalar-etiket-gid": {
+    "title": "B2B hamkorlar uchun sovg'alar: etiket va tanlov qo'llanmasi | Graver.uz",
+    "description": "O'zbekistonda B2B sovg'alar etiketi: hamkor va mijozlarga sovg'a tanlash qoidalari, status darajalari va brendlangan gravirovkali variantlar."
+  },
+  "korporativ-sovgalar-zakupshchik-chek-listi": {
+    "title": "Korporativ sovg'alar xaridori: 8 qadamlik chek-list | Graver.uz",
+    "description": "Korporativ sovg'alar buyurtmasini xatosiz bajaring: brief, maket kelishish, ishlab chiqarish nazorati va yetkazib berishgacha 8 aniq qadam."
+  },
+  "8-mart-uchun-korporativ-sovgalar-goyalari": {
+    "title": "8 Martga korporativ sovg'alar: 20 ta gravirovkali g'oya | Graver.uz",
+    "description": "Jamoa ayol xodimlari uchun 8 Mart sovg'alari: byudjetga mos 20 ta variant, lazer gravirovka va tezkor buyurtma imkoniyati Toshkentda."
+  },
+  "biznes-hamkorlar-uchun-vip-sovgalar": {
+    "title": "Biznes hamkorlar uchun VIP sovg'alar: 15+ premium g'oya | Graver.uz",
+    "description": "O'zbekistonda VIP hamkorlar uchun premium sovg'alar: $50–$500 diapazonidagi 15+ g'oya, lazer gravirovka va shaxsiylashtirilgan brendlash."
+  },
+  "8-mart-xodimlarga-sovgalar": {
+    "title": "8 Mart uchun xodimlarga sovg'alar: 15 ta gravirovkali g'oya | Graver Studio",
+    "description": "8 Mart uchun xodim ayollarga eng yaxshi sovg'alar: lazer gravirovka bilan zajigalka, kundalik, termos va boshqalar. Toshkentda 1 donadan buyurtma qiling."
+  },
+  "korporativnye-podarki-na-8-marta-v-tashkente-uz": {
+    "title": "Toshkentda 8 Martga korporativ sovg'alar: optom va tez | Graver Studio",
+    "description": "8 Mart uchun korporativ sovg'alar Toshkentda: logotipli zajigalka, ruchka, soat. 10 donadan chegirma, tezkor ishlab chiqarish va yetkazib berish."
+  },
+  "chto-podarit-mame-na-8-marta-uz": {
+    "title": "8 Martga onaga nima sovg'a qilish: gravirovkali g'oyalar | Graver Studio",
+    "description": "8 Martga onaga unutilmas sovg'alar: ismi tushirilgan soat, fotoramka, zargarlik buyumlar — Toshkentda lazer gravirovka bilan shaxsiylashtirilgan."
+  },
+  "chto-podarit-kollege-na-8-marta-uz": {
+    "title": "8 Martga hamkasbga sovg'a: arzon va mazmunli g'oyalar | Graver Studio",
+    "description": "Hamkasb uchun 8 Martga sovg'a g'oyalari: gravirovkali ruchka, krujka, brelok. Toshkentda 1 donadan buyurtma, ish munosabatlariga mos byudjet variantlari."
+  },
+  "chto-podarit-rukovoditelyu-na-8-marta-uz": {
+    "title": "8 Martga rahbarga sovg'a: VIP tanlov va gravirovka | Graver Studio",
+    "description": "Rahbarga 8 Martga munosib sovg'a: soat, kundalik, stol to'plami — direktor va top-menejment uchun statusli variantlar gravirovka bilan."
+  },
+  "chto-podarit-devushke-na-8-marta-uz": {
+    "title": "8 Martga qiz do'stga sovg'a: gravirovkali romantik g'oyalar | Graver Studio",
+    "description": "Qiz do'stga 8 Martga shaxsiy sovg'alar: bosh harfli taqinchoqlar, juft breloklar, e'tirof bitilgan soat — gravirovka bilan unutilmas kun."
+  },
+  "chto-podarit-na-8-marta-devushke-mame-kollege-uz": {
+    "title": "8 Martga nima sovg'a qilish: ona, hamkasb, qiz do'st uchun | Graver Studio",
+    "description": "8 Mart sovg'a tanlash qo'llanmasi: ona, qiz do'st, hamkasb va rahbar uchun g'oyalar har qanday byudjetga. Shaxsiylashtirilgan gravirovkali variantlar."
+  },
+  "gravirovka-v-tashkente-na-8-marta-uz": {
+    "title": "Toshkentda 8 Martga sovg'alarga lazer gravirovka | Graver Studio",
+    "description": "8 Martga sovg'alarga lazer gravirovka Toshkentda: soat, taqinchoqlar, ruchka, termos — istalgan buyumni shaxsiylashtiramiz. Tez, sifatli, arzon narxda."
+  },
+  "welcome-pack-hr-uchun-toliq-gid": {
+    "title": "Welcome Pack tuzish: HR uchun to'liq gid va byudjet formulasi | Graver Studio",
+    "description": "Yangi xodimlar uchun welcome packni to'g'ri tuzing: 3 ta byudjet darajasi, tarkib tavsiyalari, 5 keng tarqalgan xato va Toshkentda buyurtma."
+  },
+  "xodimlarga-sovga-loyalikni-oshirish": {
+    "title": "Xodimlarga sovg'a: loyallikni oshiradigan to'g'ri tanlov | Graver Studio",
+    "description": "Xodim sovg'asi psixologiyasi: qachon, nima va qanday berish loyallikni kuchaytiradi. Misollar, strategiya va gravirovkali sovg'a g'oyalari."
+  },
+  "rahbar-uchun-8-mart-vip-goya": {
+    "title": "Rahbarga 8 Mart uchun VIP sovg'a: 10 ta premium g'oya | Graver Studio",
+    "description": "Direktor va menejer uchun 8 Martga statusli sovg'a: $50–$500 diapazonida 10 ta g'oya, lazer gravirovka, Toshkentda tezkor buyurtma imkoniyati."
+  },
+  "uzbekistonda-biznes-sovga-etiketi": {
+    "title": "O'zbekistonda biznes sovg'a etiketi: qoidalar va VIP tanlov | Graver Studio",
+    "description": "O'zbekistonda biznes sovg'a berish odobi: madaniy kontekst, taqiqlangan variantlar, status darajalari va VIP hamkorlar uchun to'g'ri tanlov."
+  },
+  "originalnye-podarki-na-8-marta-uz": {
+    "title": "8 Martga original sovg'alar gravirovka bilan | Graver Studio",
+    "description": "8 Martga standart sovg'alardan farqli: gravirovkali 5 ta original g'oya — soat, zajigalka, ismi tushirilgan taqinchoqlar. Graver Studio, Toshkent."
+  },
+  "nedorogie-podarki-na-8-marta-uz": {
+    "title": "8 Martga arzon sovg'alar gravirovka bilan: 80 000 so'mdan | Graver Studio",
+    "description": "8 Martga byudjetga mos va zamonaviy sovg'alar: breloklar, ruchkalar, krujkalar — 80 000 so'mdan boshlanadi. Toshkentda 1 donadan buyurtma qiling."
+  },
+  "lazer-gravirovka-sovgalar-tehnologiyasi": {
+    "title": "Sovg'alarga lazer gravirovka: Fiber, CO2, MOPA texnologiyalari | Graver Studio",
+    "description": "Korporativ sovg'alar uchun lazer gravirovka texnologiyalari: Fiber, CO2 va MOPA farqlari, qo'llanadigan materiallar va biznes uchun afzalliklar."
+  },
+  "vip-sovga-goyalari": {
+    "title": "Hamkorlar uchun VIP sovg'a g'oyalari: 15 ta premium variant | Graver Studio",
+    "description": "Hamkorlar va muhim mijozlar uchun VIP sovg'alar: shaxsiylashtirilgan aksessuarlar, premium gravyura va eksklyuziv to'plamlar. Graver Studio, Toshkent."
+  },
+  "xodimlar-uchun-sovga-tanlash-chek-list": {
+    "title": "Xodimlar uchun sovg'a tanlash: HR chek-listi | Graver Studio",
+    "description": "HR uchun xodimlar sovg'asi chek-listi: byudjet, shaxsiylashtirish, muddatlar va brendlash. Korporativ sovg'alar bo'yicha amaliy qo'llanma."
+  },
+  "xodimlar-sadoqati-korporativ-sovgalar": {
+    "title": "Korporativ sovg'alar xodimlar sadoqatini qanday oshiradi | Graver Studio",
+    "description": "Korporativ sovg'alar orqali xodimlar sadoqatini kuchaytirish va kadrlar oqimini kamaytirish: strategiya, ROI hisoblash va amaliy misollar."
+  },
+  "shaxsiylashtirish-yangi-standart-gravyura": {
+    "title": "Sovg'alarni shaxsiylashtirish: gravyura nima uchun samaraliroq | Graver Studio",
+    "description": "Nima uchun shaxsiylashtirilgan sovg'alar oddiy logotipli suvenirlardan kuchliroq: psixologiya, gravyura texnologiyasi va biznes natijalari."
+  },
+  "biznes-sovgalarda-gravyura": {
+    "title": "Biznes sovg'alarda gravyura: texnologiyalar va materiallar | Graver Studio",
+    "description": "Biznes sovg'alar uchun gravyura usullari: lazer, mexanik, UV-bosma. Materiallar tanlash va korporativ sovg'alarda maksimal natija olish qo'llanmasi."
+  },
+  "korporativ-merch-marketing-vositasi": {
+    "title": "Korporativ merch marketing va HR vositasi sifatida | Graver Studio",
+    "description": "Brendlangan merch va korporativ sovg'alar marketing va HR strategiyasini qanday kuchaytiradi: ROI, brend taniqlilik va xodimlar sadoqati."
+  },
+  "korporativ-sovgalar-byudjeti": {
+    "title": "Korporativ sovg'alar byudjeti: ROI hisoblash va optimallashtirish | Graver Studio",
+    "description": "Korporativ sovg'alar uchun byudjetni to'g'ri rejalashtirish: ROI formulasi, tejash usullari va xodim-hamkor bo'yicha optimal taqsimot."
+  },
+  "shoshilinch-korporativ-sovga-buyurtmasi": {
+    "title": "Shoshilinch korporativ sovg'a buyurtmasi: bir hafta qoldimi? | Graver Studio",
+    "description": "Korporativ sovg'a muddatiga yaqin qoldimi? Tezkor yechimlar, tayyor mahsulotlar va muddatlarni boshqarish bo'yicha amaliy maslahatlar Toshkentda."
+  },
+  "biznes-uchun-eko-sovgalar": {
+    "title": "Biznes uchun eko-sovg'alar: barqaror brendlash | Graver Studio",
+    "description": "Ekologik korporativ sovg'alar: bambuk, qayta ishlangan materiallar va yashil brendlash. Mijozlar va hamkorlar uchun ijtimoiy mas'uliyatli variantlar."
+  },
+  "keys-brendlangan-sovgalar-it-kompaniya": {
+    "title": "Keys: Brendlangan welcome pack IT-kompaniyada eNPS oshirdi | Graver Studio",
+    "description": "Haqiqiy keys: Toshkentdagi IT-kompaniyada brendlangan welcome pack xodimlar sadoqatini (eNPS) qanday oshirganini ko'ring — jarayon va natijalar."
+  },
+  "ishbilarmonlik-odobi-biznes-sovgalar-ozbekiston": {
+    "title": "O'zbekistonda biznes sovg'alar berish odobi va qoidalari | Graver Studio",
+    "description": "O'zbekistonda biznes sovg'alar bo'yicha ishbilarmonlik odobi: mahalliy an'analar, madaniy xususiyatlar va hamkorlar uchun mos variantlar tanlash."
+  },
+  "b2b-korporativ-sovga-tanlash": {
+    "title": "B2B korporativ sovg'a tanlash: HR va marketing qo'llanmasi | Graver Studio",
+    "description": "B2B segmentda korporativ sovg'a tanlash: mezonlar, byudjet darajalari va brendlash strategiyasi. HR va marketing mutaxassislari uchun amaliy qo'llanma."
+  },
+  "korporativ-sovga-buyurtma-jarayoni": {
+    "title": "Korporativ sovg'a buyurtma jarayoni: briefdan topshirishgacha | Graver Studio",
+    "description": "Korporativ sovg'a buyurtmasining 8 bosqichi: brief, maket, ishlab chiqarish, sifat nazorati. Keng tarqalgan xatolar va ulardan qochish yo'llari."
+  },
+  "keys-welcome-pak-it-kompaniya-toshkent": {
+    "title": "Keys: Toshkentdagi IT-kompaniya uchun welcome-pak | Graver Studio",
+    "description": "Haqiqiy keys: Toshkentdagi IT-kompaniya uchun welcome-pak to'plami qanday yig'ildi va brendlandi — jarayon bosqichlari va natijalar."
+  },
+  "korporativ-bayramlar-yillik-rejasi": {
+    "title": "O'zbekiston korporativ bayramlari: yillik reja va sovg'a g'oyalari | Graver Studio",
+    "description": "O'zbekistondagi korporativ bayramlar taqvimi: Yangi yil, 8 Mart, Navro'z va tug'ilgan kunlar uchun sovg'a g'oyalari, byudjet va buyurtma vaqti."
+  },
+  "gastronomic-toplamlar-navruzga-toshkent": {
+    "title": "Navro'zga brendlangan gastronomik to'plamlar Toshkentda | Graver.uz",
+    "description": "Navro'zga korporativ gastronomik sovg'a to'plamlari Toshkentda: quruq mevalar, asal, yong'oqlar — kompaniya logotipi tushirilgan o'ramda. Optom buyurtma."
+  },
+  "it-kompaniya-uchun-welcome-pack-toshkent": {
+    "title": "IT-kompaniya uchun Welcome Pack Toshkentda: to'liq chek-list | Graver Studio",
+    "description": "Toshkentdagi IT-kompaniyaning yangi xodimi uchun welcome pack: xudi, poverbank, gravirovkali termos va krujka. Sevib ishlatiladigan brendlangan merch."
+  },
+  "lazerli-oyma-va-uf-pechat-nimani-tanlash": {
+    "title": "Lazerli o'yma yoki UF-bosma: qaysi texnologiyani tanlash kerak? | Graver.uz",
+    "description": "Lazerli o'yma va UF-bosmani taqqoslash: metall, plastmassa, yog'och va shishaga qaysi texnologiya yaxshiroq mos kelishini bilib oling."
+  },
+  "vip-hamkor-uchun-sovgani-qanday-tanlash-ozbekiston": {
+    "title": "O'zbekistondagi VIP hamkor uchun biznes sovg'a qanday tanlash | Graver Studio",
+    "description": "O'zbekistondagi VIP hamkor yoki direktorga sovg'a tanlash: premium variantlar, status darajalari va o'yma naqshli eksklyuziv to'plamlar."
   }
 };
 

@@ -1,123 +1,68 @@
-# Graver.uz - Product Requirements Document
+# Graver.uz — Product Requirements Document
 
 ## Original Problem Statement
-Comprehensive technical SEO overhaul on bilingual (Russian/Uzbek) corporate gifting website "graver.uz" with product catalog integration.
+Repository-wide discovery and phased SEO/content implementation for the Graver.uz project — a Create-React-App site for a Tashkent-based corporate gifting & laser engraving company. Goal: achieve 100% SEO visibility and metadata coverage across all 131 blog articles and 156 configured routes.
+
+## Architecture
+- **Frontend:** Create React App (CRA) + CRACO, deployed on Cloudflare Pages
+- **Backend:** Minimal FastAPI (lead capture API only)
+- **Workers:** Cloudflare Worker — server-side prerendering for bots on /ru/blog/* routes
+- **Rendering:** Hybrid SPA + pre-committed static HEAD fragments for all routes
+- **i18n:** Path-based routing (/ru/, /uz/), blogSlugMap.js for hreflang pairs
+- **SEO pipeline:** Post-build Node.js scripts → sitemaps, RSS, HEAD fragment injection
+- **Source of truth:** `main` branch only
 
 ## What's Been Implemented
 
-### Phase 1-3: Blog & SEO Foundation (COMPLETED)
-- Blog system with 20 articles (RU/UZ)
-- SEO tags, canonical, hreflang
-- JSON-LD schemas (Article, BreadcrumbList, FAQPage)
+### Phase 0: Repository Analysis & Baseline (2026-03-05)
+- Full repo analysis, identified main as source of truth
+- Tagged baseline commit as `v-baseline-2026-03-05`
+- Debunked "Next.js version" myth
 
-### Phase 4: Second Pass SEO Fixes (COMPLETED)
-- Canonical/Hreflang in Helmet
-- Blog Hub Structure (Popular, Categories, Latest)
-- FAQPage Schema for articles
-- Footer Internal Linking
+### Phase 1: Stabilization
+- Removed 10 stale duplicate keys from `frontend/src/config/blogSlugMap.js`
+- Fixed 1 broken RU→UZ mapping
+- Created synthetic prerender generator `frontend/scripts/generate-missing-prerendered.mjs`
+- Generated 55 missing prerendered HEAD fragments → **100% coverage for all 156 routes**
 
-### Phase 5: Lighters Catalog Integration (COMPLETED - Feb 8, 2026)
+### Phase 2: SEO Overrides Completion (2026-02-current)
+- Added 55 missing `blogSeoOverrides` entries to `frontend/src/data/blogSeoOverrides.js`
+  - **14 RU slugs** (in `blogSeoOverrides` export)
+  - **41 UZ slugs** (in `blogSeoOverridesUz` export)
+- Total overrides: 78 → **133 entries** — 100% coverage for all 131 blog articles
+- All metadata is unique, topic-specific, premium B2B tone
+- Language-correct: RU entries in Russian, UZ entries in Uzbek Latin
+- Validation: `npm run blog:validate` PASS, `npm run verify:slugmap` PASS
 
-**New Product Landing Page: `/products/lighters`**
-
-| Feature | Status |
-|---------|--------|
-| URL: `/ru/products/lighters` | ✅ Works |
-| URL: `/uz/products/lighters` | ✅ Works |
-| SEO Title | ✅ 60 chars optimized |
-| Meta Description | ✅ 160 chars |
-| Canonical & Hreflang | ✅ In Helmet |
-| Product Schema (4 products) | ✅ JSON-LD |
-| BreadcrumbList Schema | ✅ JSON-LD |
-| Hero Section | ✅ With CTAs |
-| Product Cards (4) | ✅ With prices |
-| Engraving Types | ✅ 6 types |
-| Specifications | ✅ Tech specs |
-| CTA Section | ✅ Telegram + Phone |
-| PDF Download | ✅ `/catalogs/graver-lighters-catalog-2026.pdf` |
-
-**Homepage Updates:**
-- New "Наша продукция" section with product preview
-- "Смотреть все модели" + "Скачать каталог" CTAs
-- 4 product cards with prices
-
-**Navigation Updates:**
-- "Продукция" menu link → `/products/lighters`
-- Mobile menu updated
-
-**Sitemap Updates:**
-- Added `/ru/products/lighters` (priority 0.9)
-- Added `/uz/products/lighters` (priority 0.8)
-
-## Architecture
-
-```
-/app/frontend/
-├── public/
-│   ├── catalogs/
-│   │   └── graver-lighters-catalog-2026.pdf (61.7MB)
-│   ├── sitemap.xml (40+ URLs)
-│   └── robots.txt
-└── src/
-    ├── pages/
-    │   ├── LightersPage.js (NEW)
-    │   ├── BlogPost.js
-    │   ├── BlogIndex.js
-    │   └── ...
-    └── App.js (Products section added)
-```
-
-## Product Data (from PDF Catalog)
-
-| Model | SKU | Price (UZS) | Best For |
-|-------|-----|-------------|----------|
-| Silver Gloss | R-109 | 140,000 | Logos, text, contour |
-| Black Matte | R-110 | 150,000 | Photos, detailed |
-| Black Texture | R-111 | 170,000 | Graphic, deep |
-| Brushed Steel | R-112 | 160,000 | Text, universal |
-
-Specifications: 57x38x13mm, 55-60g
-
-## Current Status
-- **Local Codebase**: ✅ Ready for deployment
-- **Production**: ⏳ Awaiting deploy
-- **Testing**: ✅ All features verified
+## Key Files
+- `frontend/src/data/blogSeoOverrides.js` — SEO metadata overrides (133 entries)
+- `frontend/src/data/blogPosts.js` — Article content (65 RU + 66 UZ)
+- `frontend/src/config/blogSlugMap.js` — RU↔UZ hreflang slug pairs
+- `frontend/prerendered/` — 156 static HEAD fragments
+- `frontend/scripts/` — Post-build validation and generation scripts
 
 ## Prioritized Backlog
 
-### P0 - Critical (Blocked)
-- [ ] Production deployment
+### P0 — Next Up
+- **RU↔UZ Slug Pair Completion:** 9 RU slugs in blogSlugMap.js still lack a UZ counterpart
+  - Completing this finalizes hreflang alternate link setup for all bilingual content
 
-### P1 - High Priority (After Deploy)
-- [ ] Submit sitemap to GSC
-- [ ] Request indexing for `/products/lighters`
-- [ ] Validate Product Rich Results
+### P1
+- **Image Variant Generation:** 217 missing AVIF/WebP responsive image variants for two article image sets
+  - Fix performance gap reported by `npm run verify:images`
 
-### P2 - Medium Priority
-- [ ] Add real product images
-- [ ] More product catalogs (watches, gifts)
-- [ ] Product image gallery
+### P2
+- **Content Quality Pass:** Rewrite ~17 RU articles that use generic boilerplate text in `contentHtml`
 
-## Verify Commands (Post-Deploy)
-```powershell
-# Lighters page
-curl.exe -I https://www.graver-studio.uz/ru/products/lighters
-# Expected: 200 OK
-
-# PDF catalog
-curl.exe -I https://www.graver-studio.uz/catalogs/graver-lighters-catalog-2026.pdf
-# Expected: 200 OK, application/pdf
-
-# Product Schema
-curl.exe -s https://www.graver-studio.uz/ru/products/lighters | Select-String "Product"
-# Expected: 4 Product schemas
+## Validation Commands
+```bash
+npm run blog:validate        # Validate article data integrity
+npm run verify:slugmap       # Verify RU↔UZ slug mappings
+npm run verify:indexability  # Check prerendered HEAD fragments
+npm run verify:images        # Check image variant coverage
+SKIP_REACT_SNAP=1 npm run build  # Production build (skip Chromium prerender)
 ```
 
-## Key URLs
-- Preview: https://lighting-gallery.preview.emergentagent.com
-- Production: https://www.graver-studio.uz
-- Lighters: `/ru/products/lighters`, `/uz/products/lighters`
-- PDF Catalog: `/catalogs/graver-lighters-catalog-2026.pdf`
-
----
-Last Updated: February 8, 2026
+## Known Pre-existing Issues (Not Regressions)
+- `verify:indexability`: h1 count=0 and BlogPosting schema missing on ~30+ articles — pre-existing content structure issues, unrelated to SEO overrides
+- `verify:images`: 217 missing AVIF/WebP variants — tracked as P1 backlog item
