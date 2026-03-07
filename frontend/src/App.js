@@ -1,4 +1,4 @@
-import { openTelegramWithTracking, trackCatalogDownload } from './utils/pixel';
+import { openTelegramWithTracking, trackCatalogDownload, trackPhoneClick } from './utils/pixel';
 import React, { useState, useEffect, useRef, lazy, Suspense } from 'react';
 import { useNavigate, useParams, Link, useLocation } from 'react-router-dom';
 import './App.css';
@@ -87,6 +87,18 @@ function App() {
     const langCode = locale === 'uz' ? 'uz-Latn' : (locale || 'ru');
     document.documentElement.lang = langCode;
   }, [locale]);
+
+  // Global event delegation: track phone number clicks
+  useEffect(() => {
+    function handlePhoneClick(e) {
+      const link = e.target.closest('[data-track="tel"]');
+      if (!link) return;
+      const placement = link.dataset.testid || link.closest('[data-testid]')?.dataset.testid || 'nav';
+      trackPhoneClick(placement);
+    }
+    document.addEventListener('click', handlePhoneClick);
+    return () => document.removeEventListener('click', handlePhoneClick);
+  }, []);
   
   const [formStep, setFormStep] = useState(1); // Multi-step form
   const [formData, setFormData] = useState({
@@ -1381,15 +1393,15 @@ function App() {
                 <Link to={`/${locale}/blog`} className="block hover:text-teal-500 transition">
                   {locale === 'uz' ? 'Blog' : 'Блог'}
                 </Link>
-                <a href="#services" className="block hover:text-teal-500 transition">
+                <Link to={`/${locale}/#services`} className="block hover:text-teal-500 transition">
                   {locale === 'uz' ? 'Xizmatlar' : 'Услуги'}
-                </a>
-                <a href="#portfolio" className="block hover:text-teal-500 transition">
+                </Link>
+                <Link to={`/${locale}/#portfolio`} className="block hover:text-teal-500 transition">
                   {locale === 'uz' ? 'Portfolio' : 'Портфолио'}
-                </a>
-                <a href="#contact" className="block hover:text-teal-500 transition">
+                </Link>
+                <Link to={`/${locale}/#contact`} className="block hover:text-teal-500 transition">
                   {locale === 'uz' ? 'Aloqa' : 'Контакты'}
-                </a>
+                </Link>
               </div>
             </div>
 
