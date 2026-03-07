@@ -109,3 +109,26 @@ export function trackViewContent(contentId, contentName, contentCategory) {
     content_type: 'article',
   }, { eventID });
 }
+
+// ─── Phone click (tel: links) ────────────────────────────────────────────────
+
+/**
+ * Fires Contact event when a visitor clicks a phone number link.
+ * Wired via global event delegation in App.js for all [data-track="tel"].
+ */
+export function trackPhoneClick(placement) {
+  const eventID = makeEventID('phone_' + (placement || 'unknown'));
+  if (hasFbq()) {
+    window.fbq('track', 'Contact', {
+      source: 'phone',
+      page: typeof window !== 'undefined' ? window.location.pathname : '',
+      placement: placement || 'unknown',
+    }, { eventID });
+  }
+  if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+    window.gtag('event', 'phone_click', {
+      event_category: 'contact',
+      event_label: placement || 'unknown',
+    });
+  }
+}
