@@ -5,9 +5,9 @@ const samplePairs = [
   ['lazernaya-gravirovka-podarkov', 'lazer-gravirovka-sovgalar'],
   ['podarochnye-nabory-s-logotipom', 'logotipli-sovga-toplami'],
   ['brendirovanie-suvenirov', 'suvenir-brendlash'],
-  ['chek-list-zakupshchika-podarkov', 'xaridor-chek-listi-b2b'],
+  ['chek-list-zakupshchika-podarkov', 'korporativ-sovgalar-zakupshchik-chek-listi'],
   ['kak-podgotovit-maket-logotipa', 'logotip-maketi-tayyorlash'],
-  ['welcome-pack-dlya-sotrudnikov', 'welcome-pack-yangi-xodimlar'],
+  ['welcome-pack-dlya-sotrudnikov', 'welcome-pack-hr-uchun-toliq-gid'],
   ['korporativnye-podarki-s-logotipom-polnyy-gayd', 'korporativ-sovgalar-logotip-bilan-to-liq-qollanma'],
   ['korporativnye-podarochnye-nabory', 'korporativ-sovga-toplamlari'],
   ['welcome-pack-novym-sotrudnikam', 'yangi-xodimlar-uchun-welcome-pack']
