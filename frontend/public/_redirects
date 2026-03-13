@@ -1,6 +1,6 @@
 # ============================================================
 # Graver Studio — Cloudflare Pages _redirects
-# Updated: 2026-03-02 (SEO audit fix)
+# Updated: 2026-03-14 (SEO Surgeon — Phase 1 critical repair)
 # ============================================================
 
 # --- Canonical domain: www → non-www (301) ---
@@ -27,14 +27,12 @@ https://www.graver-studio.uz/*  https://graver-studio.uz/:splat  301
 
 # ============================================================
 # P1: Root redirect — / → /ru/ (301 permanent)
-# Fixes: "Страница является копией. Канонический вариант не выбран"
+# FIX 2026-03-14: Was returning 302 (temporary). Changed to 301 (permanent).
 # ============================================================
 /  /ru/  301
 
 # ============================================================
 # P1+P3: Pages without locale prefix → canonical /ru/ versions (301)
-# Fixes: "Вариант страницы с тегом canonical" (22 pages)
-# Also converts 308 trailing-slash redirects to proper 301
 # ============================================================
 
 # Core pages without locale prefix
@@ -94,14 +92,84 @@ https://www.graver-studio.uz/*  https://graver-studio.uz/:splat  301
 /uz/neo-sovga           /uz/neo-sovga/              301
 
 # ============================================================
-# REMOVED: Blog post redirects (2026-03-05)
-# These redirects were causing 81 blog posts to be marked as
-# "Page with redirect" instead of being indexed directly.
-# Blog posts now serve with 200 OK status.
+# MERGE redirects: Old/duplicate article URLs -> new canonical URLs (301)
+# Added: 2026-03-05 as part of SEO Content Remastering
 # ============================================================
 
+# Welcome Pack case study — 2 old articles merged into 1
+/ru/blog/keys-welcome-pak-it-kompaniya-tashkent/          /ru/blog/keys-welcome-pack-enps-uzbekistan/  301
+/ru/blog/keys-welcome-pak-it-kompaniya-tashkent           /ru/blog/keys-welcome-pack-enps-uzbekistan/  301
+/ru/blog/keys-welcome-pack-povysil-enps-v-it-kompanii/    /ru/blog/keys-welcome-pack-enps-uzbekistan/  301
+/ru/blog/keys-welcome-pack-povysil-enps-v-it-kompanii     /ru/blog/keys-welcome-pack-enps-uzbekistan/  301
+
+# 8 Marta — 2 old articles merged into 1 comprehensive guide
+/ru/blog/chto-podarit-kollege-na-8-marta/                 /ru/blog/podarki-8-marta-20-idej/  301
+/ru/blog/chto-podarit-kollege-na-8-marta                  /ru/blog/podarki-8-marta-20-idej/  301
+/ru/blog/podarki-na-8-marta-sotrudnicam/                  /ru/blog/podarki-8-marta-20-idej/  301
+/ru/blog/podarki-na-8-marta-sotrudnicam                   /ru/blog/podarki-8-marta-20-idej/  301
+
+# ============================================================
+# RESTORED: Cross-language slug redirects (2026-03-14)
+# These UZ-language slugs were appearing in /ru/blog/ path (cross-language contamination).
+# Redirecting them to the correct /ru/blog/ canonical equivalent.
+# Previously removed on 2026-03-05 — restored with precise per-slug targets.
 # ============================================================
 
+# UZ slugs in /ru/blog/ path → correct RU canonical equivalents
+/ru/blog/banklar-va-fintex-uchun-sovgalar-toshkent/       /ru/blog/podarki-dlya-bankov-i-finteha-tashkent/  301
+/ru/blog/banklar-va-fintex-uchun-sovgalar-toshkent        /ru/blog/podarki-dlya-bankov-i-finteha-tashkent/  301
+/ru/blog/horeca-va-restoranlar-uchun-sovgalar-toshkent/   /ru/blog/podarki-dlya-horeca-i-restoranov-tashkent/  301
+/ru/blog/horeca-va-restoranlar-uchun-sovgalar-toshkent    /ru/blog/podarki-dlya-horeca-i-restoranov-tashkent/  301
+/ru/blog/it-kompaniyalar-uchun-merch-toshkent/            /ru/blog/merch-dlya-it-kompaniy-tashkent/  301
+/ru/blog/it-kompaniyalar-uchun-merch-toshkent             /ru/blog/merch-dlya-it-kompaniy-tashkent/  301
+/ru/blog/kompaniya-merchi-brendlash/                      /ru/blog/merch-dlya-kompanii-brendirovanie/  301
+/ru/blog/kompaniya-merchi-brendlash                       /ru/blog/merch-dlya-kompanii-brendirovanie/  301
+/ru/blog/korporativ-sovga-toplamlari/                     /ru/blog/korporativnye-podarochnye-nabory/  301
+/ru/blog/korporativ-sovga-toplamlari                      /ru/blog/korporativnye-podarochnye-nabory/  301
+/ru/blog/korporativ-sovgalar-boyicha-toliq-qollanma/      /ru/blog/korporativnye-podarki-s-logotipom-polnyy-gayd/  301
+/ru/blog/korporativ-sovgalar-boyicha-toliq-qollanma       /ru/blog/korporativnye-podarki-s-logotipom-polnyy-gayd/  301
+/ru/blog/korporativ-sovgalar-gravyurasi-usullari/         /ru/blog/korporativnye-podarki-s-gravirovkoy-metody/  301
+/ru/blog/korporativ-sovgalar-gravyurasi-usullari          /ru/blog/korporativnye-podarki-s-gravirovkoy-metody/  301
+/ru/blog/korporativ-sovgalar-logotip-bilan-to-liq-qollanma/ /ru/blog/korporativnye-podarki-s-logotipom-polnyy-gayd/  301
+/ru/blog/korporativ-sovgalar-logotip-bilan-to-liq-qollanma /ru/blog/korporativnye-podarki-s-logotipom-polnyy-gayd/  301
+/ru/blog/korporativ-sovgani-qanday-tanlash/               /ru/blog/kak-vybrat-korporativnyj-podarok/  301
+/ru/blog/korporativ-sovgani-qanday-tanlash                /ru/blog/kak-vybrat-korporativnyj-podarok/  301
+/ru/blog/korporativ-tadbirlar-uchun-sovgalar-toshkent/    /ru/blog/podarki-na-korporativnye-sobytiya-tashkent/  301
+/ru/blog/korporativ-tadbirlar-uchun-sovgalar-toshkent     /ru/blog/podarki-na-korporativnye-sobytiya-tashkent/  301
+/ru/blog/lazer-gravirovka-sovgalar/                       /ru/blog/lazernaya-gravirovka-podarkov/  301
+/ru/blog/lazer-gravirovka-sovgalar                        /ru/blog/lazernaya-gravirovka-podarkov/  301
+/ru/blog/lazer-gravyurasi-texnologiyasi/                  /ru/blog/lazernaya-gravirovka-podarkov-tehnologiya/  301
+/ru/blog/lazer-gravyurasi-texnologiyasi                   /ru/blog/lazernaya-gravirovka-podarkov-tehnologiya/  301
+/ru/blog/logotip-maketi-tayyorlash/                       /ru/blog/kak-podgotovit-maket-logotipa/  301
+/ru/blog/logotip-maketi-tayyorlash                        /ru/blog/kak-podgotovit-maket-logotipa/  301
+/ru/blog/logotipli-soat-korporativ-sovgalar-toshkent/     /ru/blog/chasy-s-logotipom-korporativnye-podarki-tashkent/  301
+/ru/blog/logotipli-soat-korporativ-sovgalar-toshkent      /ru/blog/chasy-s-logotipom-korporativnye-podarki-tashkent/  301
+/ru/blog/logotipli-sovga-toplami/                         /ru/blog/podarochnye-nabory-s-logotipom/  301
+/ru/blog/logotipli-sovga-toplami                          /ru/blog/podarochnye-nabory-s-logotipom/  301
+/ru/blog/logotipli-zajigalka-va-soat/                     /ru/blog/brendirovannye-zazhigalki-i-chasy-s-logotipom/  301
+/ru/blog/logotipli-zajigalka-va-soat                      /ru/blog/brendirovannye-zazhigalki-i-chasy-s-logotipom/  301
+/ru/blog/mijoz-hamkorlar-uchun-sovgalar-vip/              /ru/blog/podarki-klientam-partneram-vip/  301
+/ru/blog/mijoz-hamkorlar-uchun-sovgalar-vip               /ru/blog/podarki-klientam-partneram-vip/  301
+/ru/blog/navruz-sovgalari/                                /ru/blog/podarki-na-navruz/  301
+/ru/blog/navruz-sovgalari                                 /ru/blog/podarki-na-navruz/  301
+/ru/blog/navruz-uchun-korporativ-sovgalar/                /ru/blog/korporativnye-podarki-na-navruz/  301
+/ru/blog/navruz-uchun-korporativ-sovgalar                 /ru/blog/korporativnye-podarki-na-navruz/  301
+/ru/blog/suvenir-brendlash/                               /ru/blog/brendirovanie-suvenirov/  301
+/ru/blog/suvenir-brendlash                                /ru/blog/brendirovanie-suvenirov/  301
+/ru/blog/suvenir-byudjetini-tejash/                       /ru/blog/ekonomiya-na-korporativnyh-suvenirax/  301
+/ru/blog/suvenir-byudjetini-tejash                        /ru/blog/ekonomiya-na-korporativnyh-suvenirax/  301
+/ru/blog/welcome-pack-yangi-xodimlar/                     /ru/blog/welcome-pack-dlya-sotrudnikov-gid/  301
+/ru/blog/welcome-pack-yangi-xodimlar                      /ru/blog/welcome-pack-dlya-sotrudnikov-gid/  301
+/ru/blog/xaridor-chek-listi-b2b/                          /ru/blog/chek-list-zakupshchika-podarkov/  301
+/ru/blog/xaridor-chek-listi-b2b                           /ru/blog/chek-list-zakupshchika-podarkov/  301
+/ru/blog/xodimlar-uchun-sovgalar-hr-qollanma/             /ru/blog/podarki-sotrudnikam-hr-gayd/  301
+/ru/blog/xodimlar-uchun-sovgalar-hr-qollanma              /ru/blog/podarki-sotrudnikam-hr-gayd/  301
+/ru/blog/yangi-xodimlar-uchun-welcome-pack/               /ru/blog/welcome-pack-novym-sotrudnikam/  301
+/ru/blog/yangi-xodimlar-uchun-welcome-pack                /ru/blog/welcome-pack-novym-sotrudnikam/  301
+/ru/blog/yangi-yil-sovga-goyalari/                        /ru/blog/top-idei-podarkov-na-novyj-god/  301
+/ru/blog/yangi-yil-sovga-goyalari                         /ru/blog/top-idei-podarkov-na-novyj-god/  301
+
+# ============================================================
 # Cache hashed assets forever (they have content hash in filename)
 /static/js/*.*.js         /static/js/:splat  200  Cache-Control: public, max-age=31536000, immutable
 /static/css/*.*.css       /static/css/:splat 200  Cache-Control: public, max-age=31536000, immutable
@@ -121,22 +189,6 @@ https://www.graver-studio.uz/*  https://graver-studio.uz/:splat  301
 /index.html               /index.html              200  Cache-Control: public, max-age=3600, must-revalidate
 /manifest.json            /manifest.json           200  Cache-Control: public, max-age=3600, must-revalidate
 /robots.txt               /robots.txt              200  Cache-Control: public, max-age=86400
-=======
-# MERGE redirects: Old/duplicate article URLs -> new canonical URLs (301)
-# Added: 2026-03-05 as part of SEO Content Remastering
-# ============================================================
-
-# Welcome Pack -- 2 old articles merged into 1 strong case study
-/ru/blog/keys-welcome-pak-it-kompaniya-tashkent/          /ru/blog/keys-welcome-pack-enps-uzbekistan/  301
-/ru/blog/keys-welcome-pak-it-kompaniya-tashkent           /ru/blog/keys-welcome-pack-enps-uzbekistan/  301
-/ru/blog/keys-welcome-pack-povysil-enps-v-it-kompanii/    /ru/blog/keys-welcome-pack-enps-uzbekistan/  301
-/ru/blog/keys-welcome-pack-povysil-enps-v-it-kompanii     /ru/blog/keys-welcome-pack-enps-uzbekistan/  301
-
-# 8 Marta -- 2 old articles merged into 1 comprehensive guide
-/ru/blog/chto-podarit-kollege-na-8-marta/                 /ru/blog/podarki-8-marta-20-idej/  301
-/ru/blog/chto-podarit-kollege-na-8-marta                  /ru/blog/podarki-8-marta-20-idej/  301
-/ru/blog/podarki-na-8-marta-sotrudnicam/                  /ru/blog/podarki-8-marta-20-idej/  301
-/ru/blog/podarki-na-8-marta-sotrudnicam                   /ru/blog/podarki-8-marta-20-idej/  301
 
 # ============================================================
 # SPA Fallback: Route all unmatched URLs to index.html (200)
