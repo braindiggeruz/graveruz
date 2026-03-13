@@ -91,6 +91,16 @@ https://www.graver-studio.uz/*  https://graver-studio.uz/:splat  301
 /ru/products/neo-gift   /ru/products/neo-gift/      301
 /uz/neo-sovga           /uz/neo-sovga/              301
 
+
+# ============================================================
+# P3: New commercial service hub pages (added 2026-03-14)
+# ============================================================
+/ru/korporativnye-podarki   /ru/korporativnye-podarki/  301
+/uz/korporativ-sovgalar     /uz/korporativ-sovgalar/    301
+/ru/welcome-packs           /ru/welcome-packs/          301
+/uz/welcome-paklar          /uz/welcome-paklar/         301
+/ru/vip-podarki             /ru/vip-podarki/            301
+/uz/vip-sovgalar            /uz/vip-sovgalar/           301
 # ============================================================
 # MERGE redirects: Old/duplicate article URLs -> new canonical URLs (301)
 # Added: 2026-03-05 as part of SEO Content Remastering

@@ -154,6 +154,57 @@
     <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/neo-sovga/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/products/neo-gift/"/>
   </url>
+
+  <!-- Commercial service hub pages — Phase 3 SEO (added 2026-03-14) -->
+  <url>
+    <loc>https://graver-studio.uz/ru/korporativnye-podarki/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/korporativnye-podarki/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/korporativ-sovgalar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/korporativnye-podarki/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://graver-studio.uz/uz/korporativ-sovgalar/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/korporativnye-podarki/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/korporativ-sovgalar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/korporativnye-podarki/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://graver-studio.uz/ru/welcome-packs/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/welcome-packs/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/welcome-paklar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/welcome-packs/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://graver-studio.uz/uz/welcome-paklar/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/welcome-packs/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/welcome-paklar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/welcome-packs/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://graver-studio.uz/ru/vip-podarki/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/vip-podarki/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/vip-sovgalar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/vip-podarki/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://graver-studio.uz/uz/vip-sovgalar/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://graver-studio.uz/ru/vip-podarki/"/>
+    <xhtml:link rel="alternate" hreflang="uz-Latn" href="https://graver-studio.uz/uz/vip-sovgalar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://graver-studio.uz/ru/vip-podarki/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <url>
     <loc>https://graver-studio.uz/ru/blog/</loc>
     <lastmod>2026-03-05</lastmod>

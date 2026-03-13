@@ -25,6 +25,9 @@ const NeoCorporate = lazy(() => import("@/pages/NeoCorporate"));
 const NeoWatchesLanding = lazy(() => import("@/pages/NeoWatchesLanding"));
 const BlogIndex = lazy(() => import("@/pages/BlogIndex"));
 const BlogPost = lazy(() => import("@/pages/BlogPost"));
+const KorporativnyePodarkiPage = lazy(() => import("@/pages/KorporativnyePodarkiPage"));
+const WelcomePacksPage = lazy(() => import("@/pages/WelcomePacksPage"));
+const VipPodarkiPage = lazy(() => import("@/pages/VipPodarkiPage"));
 
 const LoadingFallback = () => (
   <div className="min-h-screen bg-black flex items-center justify-center">
@@ -114,6 +117,14 @@ const AppRoutes = (
               <Route path="/:locale/neo-sovga" element={<LocaleRoute element={<NeoGift />} />} />
               <Route path="/:locale/neo-soatlar" element={<LocaleRoute element={<NeoWatchesLanding />} />} />
               
+              {/* Commercial service hub pages — Phase 3 SEO */}
+              <Route path="/:locale/korporativnye-podarki" element={<LocaleRoute element={<KorporativnyePodarkiPage />} />} />
+              <Route path="/:locale/korporativ-sovgalar" element={<LocaleRoute element={<KorporativnyePodarkiPage />} />} />
+              <Route path="/:locale/welcome-packs" element={<LocaleRoute element={<WelcomePacksPage />} />} />
+              <Route path="/:locale/welcome-paklar" element={<LocaleRoute element={<WelcomePacksPage />} />} />
+              <Route path="/:locale/vip-podarki" element={<LocaleRoute element={<VipPodarkiPage />} />} />
+              <Route path="/:locale/vip-sovgalar" element={<LocaleRoute element={<VipPodarkiPage />} />} />
+
               <Route path="/:locale/blog" element={<LocaleRoute element={<BlogIndex />} />} />
               <Route path="/:locale/blog/:slug" element={<LocaleRoute element={<BlogPost />} />} />
               

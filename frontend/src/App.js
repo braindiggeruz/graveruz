@@ -289,7 +289,15 @@ function App() {
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-8">
-              <Link to="/#services" className="text-gray-300 hover:text-teal-500 transition">{t('nav.services')}</Link>
+              <div className="relative group">
+                <span className="text-gray-300 hover:text-teal-500 transition cursor-pointer flex items-center">{locale === 'uz' ? 'Xizmatlar' : 'Услуги'}<ChevronDown size={16} className="ml-1" /></span>
+                <div className="absolute top-full left-0 mt-2 w-56 bg-black/90 border border-gray-800 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50">
+                  <Link to={`/${locale}/engraved-gifts`} className="block px-4 py-2 text-gray-300 hover:bg-gray-800 text-sm">{locale === 'uz' ? 'Gravirovkali sovgʼalar' : 'Гравированные подарки'}</Link>
+                  <Link to={`/${locale}/korporativnye-podarki`} className="block px-4 py-2 text-gray-300 hover:bg-gray-800 text-sm">{locale === 'uz' ? 'Korporativ sovgʼalar' : 'Корпоративные подарки'}</Link>
+                  <Link to={`/${locale}/welcome-packs`} className="block px-4 py-2 text-gray-300 hover:bg-gray-800 text-sm">{locale === 'uz' ? 'Welcome-paklar' : 'Welcome-паки'}</Link>
+                  <Link to={`/${locale}/vip-podarki`} className="block px-4 py-2 text-gray-300 hover:bg-gray-800 text-sm">{locale === 'uz' ? 'VIP-sovgʼalar' : 'VIP-подарки'}</Link>
+                </div>
+              </div>
               <div className="relative group">
                 <Link to={`/${locale}/catalog-products`} className="text-gray-300 hover:text-teal-500 transition flex items-center" data-testid="nav-products">{t('nav.products')}<ChevronDown size={16} className="ml-1" /></Link>
                 <div className="absolute top-full left-0 mt-2 w-48 bg-black/90 border border-gray-800 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50">
@@ -337,7 +345,9 @@ function App() {
           {showMobileMenu && (
             <div id="mobile-navigation" className="lg:hidden pb-4 border-t border-gray-800 mt-4 pt-4">
               <nav className="flex flex-col space-y-3">
-                <Link to="/#services" className="text-gray-300 hover:text-teal-500 transition text-left">{t('nav.services')}</Link>
+                <Link to={`/${locale}/korporativnye-podarki`} className="text-gray-300 hover:text-teal-500 transition text-left">{locale === 'uz' ? 'Korporativ sovgʼalar' : 'Корпоративные подарки'}</Link>
+                <Link to={`/${locale}/welcome-packs`} className="text-gray-300 hover:text-teal-500 transition text-left">{locale === 'uz' ? 'Welcome-paklar' : 'Welcome-паки'}</Link>
+                <Link to={`/${locale}/vip-podarki`} className="text-gray-300 hover:text-teal-500 transition text-left">{locale === 'uz' ? 'VIP-sovgʼalar' : 'VIP-подарки'}</Link>
                 <Link to={`/${locale}/products/lighters`} className="text-gray-300 hover:text-teal-500 transition text-left">{t('nav.catalog')}</Link>
                 <Link to="/#portfolio" className="text-gray-300 hover:text-teal-500 transition text-left">{t('nav.portfolio')}</Link>
                 <Link to="/#process" className="text-gray-300 hover:text-teal-500 transition text-left">{t('nav.process')}</Link>
