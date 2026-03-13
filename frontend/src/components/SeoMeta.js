@@ -24,7 +24,7 @@ var LOCAL_BUSINESS = {
   },
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'улица Мукими',
+    streetAddress: 'ул. Мукими, 59',
     addressLocality: 'Ташкент',
     addressRegion: 'Tashkent',
     postalCode: '100000',
@@ -236,7 +236,7 @@ export default function SeoMeta(props) {
       telephone: '+998770802288',
       address: {
         '@type': 'PostalAddress',
-        streetAddress: 'улица Мукими',
+        streetAddress: 'ул. Мукими, 59',
         addressLocality: 'Ташкент',
         addressRegion: 'Tashkent',
         postalCode: '100000',

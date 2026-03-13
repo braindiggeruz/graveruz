@@ -224,7 +224,8 @@ function App() {
               {
                 "@type": "Organization",
                 "@id": "https://graver-studio.uz/#organization",
-                "name": "Graver.uz",
+                "name": "Graver Studio",
+                "alternateName": "Graver.uz",
                 "url": "https://graver-studio.uz",
                 "logo": "https://graver-studio.uz/logo192.png",
                 "description": "Премиальная лазерная гравировка и брендирование для бизнеса в Ташкенте",
@@ -233,15 +234,42 @@ function App() {
               {
                 "@type": "LocalBusiness",
                 "@id": "https://graver-studio.uz/#localbusiness",
-                "name": "Graver.uz",
+                "name": "Graver Studio",
                 "address": {
                   "@type": "PostalAddress",
-                  "streetAddress": "улица Мукими",
+                  "streetAddress": "ул. Мукими, 59",
                   "addressLocality": "Ташкент",
+                  "postalCode": "100000",
                   "addressCountry": "UZ"
                 },
+                "geo": {
+                  "@type": "GeoCoordinates",
+                  "latitude": 41.2995,
+                  "longitude": 69.2401
+                },
                 "telephone": "+998770802288",
-                "url": "https://graver-studio.uz"
+                "url": "https://graver-studio.uz",
+                "openingHoursSpecification": {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+                  "opens": "10:00",
+                  "closes": "20:00"
+                },
+                "priceRange": "$$"
+              },
+              {
+                "@type": "FAQPage",
+                "@id": "https://graver-studio.uz/#faq",
+                "mainEntity": [
+                  {"@type":"Question","name":"Какой минимальный тираж для корпоративного заказа?","acceptedAnswer":{"@type":"Answer","text":"Минимального тиража нет. Делаем как 1 эксклюзивный подарок, так и серии на тысячи единиц. Цена за единицу снижается при объёмах от 50+ штук."}},
+                  {"@type":"Question","name":"Можно ли сделать персонализацию для каждого сотрудника?","acceptedAnswer":{"@type":"Answer","text":"Да, делаем индивидуальную гравировку имени, должности, даты для каждого изделия в тираже. Пришлите список — подготовим макеты для согласования."}},
+                  {"@type":"Question","name":"Работаете ли с юридическими лицами?","acceptedAnswer":{"@type":"Answer","text":"Да, работаем с юрлицами. Предоставляем все закрывающие документы, счета, акты. По согласованию возможна отсрочка платежа для постоянных клиентов."}},
+                  {"@type":"Question","name":"Сколько времени занимает производство?","acceptedAnswer":{"@type":"Answer","text":"Типовые заказы — 1-3 дня после утверждения макета. Крупные тиражи и сложные проекты — обсуждаем индивидуально. Срочное производство — по запросу."}},
+                  {"@type":"Question","name":"Что нужно от нас для начала работы?","acceptedAnswer":{"@type":"Answer","text":"Логотип в векторе (AI/SVG/PDF) или качественное фото. Описание: что наносим, на какие предметы, тираж, к какому сроку. Если нет готового макета — создадим сами."}},
+                  {"@type":"Question","name":"На каких материалах делаете гравировку?","acceptedAnswer":{"@type":"Answer","text":"Металл (сталь, алюминий, латунь), анодированный алюминий, дерево, кожа, стекло, акрил, премиальные пластики. Fiber, CO2, MOPA и UV-технологии."}},
+                  {"@type":"Question","name":"Можно ли увидеть результат до производства?","acceptedAnswer":{"@type":"Answer","text":"Обязательно. Это наш стандарт работы: вы получаете цифровой макет с точными размерами и размещением, утверждаете его, и только потом мы запускаем производство."}},
+                  {"@type":"Question","name":"Предоставляете ли подарочную упаковку?","acceptedAnswer":{"@type":"Answer","text":"Да, предлагаем премиальную упаковку под ключ: коробки, пакеты, ленты, открытки — всё под ваш корпоративный стиль."}}
+                ]
               }
             ]
           })}
