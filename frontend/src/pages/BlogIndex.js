@@ -525,7 +525,7 @@ export default function BlogIndex() {
       {/* Footer */}
       <footer className="bg-black border-t border-gray-800 py-8">
         <div className="max-w-7xl mx-auto px-4 text-center text-gray-500 text-sm">
-          <p>© 2025 Graver.uz — {isRu ? 'Премиальная лазерная гравировка в Ташкенте' : "Toshkentda premium lazer gravyurasi"}</p>
+          <p>© 2026 Graver.uz — {isRu ? 'Премиальная лазерная гравировка в Ташкенте' : "Toshkentda premium lazer gravyurasi"}</p>
         </div>
       </footer>
     </div>

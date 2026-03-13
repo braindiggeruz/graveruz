@@ -222,7 +222,7 @@ export default function EngravedGiftsPage() {
       </section>
 
       <footer className="bg-black border-t border-gray-800 py-6">
-        <div className="max-w-7xl mx-auto px-4 text-center text-gray-500 text-sm">© 2025 Graver.uz</div>
+        <div className="max-w-7xl mx-auto px-4 text-center text-gray-500 text-sm">© 2026 Graver.uz</div>
       </footer>
     </div>
   );

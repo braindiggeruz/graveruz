@@ -1,8 +1,8 @@
 import { openTelegramWithTracking } from '../utils/pixel';
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Phone, Send, MapPin, Clock } from 'lucide-react';
-import { YMaps, Map, Placemark } from 'react-yandex-maps';
+import { Phone, Send, MapPin, Clock, Mail, MessageCircle } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 import LanguageSwitcher from '../components/LanguageSwitcher';
 import { BASE_URL, buildCanonical, buildAlternate, HREFLANG_MAP } from '../config/seo';
 import { useI18n } from '../i18n';
@@ -14,55 +14,88 @@ export default function ContactsPage() {
   
   const home = locale === 'uz' ? 'Bosh sahifa' : 'Главная';
   const title = locale === 'uz' ? 'Kontaktlar' : 'Контакты';
-  const subtitle = locale === 'uz' ? 'Qulay usulda biz bilan bog\'laning' : 'Свяжитесь с нами удобным способом';
+  const subtitle = locale === 'uz' ? 'Qulay usulda biz bilan bog\'laning. Arizalar 24/7 qabul qilinadi.' : 'Свяжитесь с нами удобным способом. Заявки принимаем 24/7.';
   const cta = locale === 'uz' ? 'Ariza qoldirish' : 'Оставить заявку';
   const phones = locale === 'uz' ? 'Telefonlar' : 'Телефоны';
   const telegram = 'Telegram';
-  const telegramDesc = locale === 'uz' ? 'Tezkor javoblar' : 'Быстрые ответы';
+  const telegramDesc = locale === 'uz' ? 'Tezkor javoblar — odatda 15 daqiqa ichida' : 'Быстрые ответы — обычно в течение 15 минут';
   const address = locale === 'uz' ? 'Manzil' : 'Адрес';
-  const addressValue = locale === 'uz' ? 'Toshkent, Muqimiy ko\'chasi' : 'Ташкент, улица Мукими';
+  const addressValue = locale === 'uz' ? 'Toshkent shahri, Muqimiy ko\'chasi, 59' : 'г. Ташкент, ул. Мукими, 59';
+  const addressLandmark = locale === 'uz' ? 'Amir Temur metro bekatiga yaqin' : 'Рядом с метро Амира Темура';
   const hours = locale === 'uz' ? 'Ish vaqti' : 'Режим работы';
   const hoursValue = locale === 'uz' ? 'Du-Ya: 10:00 - 20:00' : 'Пн-Вс: 10:00 - 20:00';
   const hoursDesc = locale === 'uz' ? 'Arizalar 24/7' : 'Заявки 24/7';
+  const howToReach = locale === 'uz' ? 'Qanday yetib borish mumkin' : 'Как добраться';
+  const howToReachDesc = locale === 'uz' ? 'Amir Temur metro bekatidan 5 daqiqalik piyoda yo\'l. Muqimiy ko\'chasi bo\'ylab shimolga yuring.' : 'Пешком 5 минут от метро Амира Темура. Идите по ул. Мукими на север.';
   
   const pathname = `/${locale}/contacts`;
   const canonicalUrl = buildCanonical(pathname);
   const ruUrl = buildAlternate(pathname, locale, 'ru');
   const uzUrl = buildAlternate(pathname, locale, 'uz');
 
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": `${BASE_URL}/#localbusiness`,
+        "name": "Graver Studio",
+        "alternateName": "Graver.uz",
+        "description": locale === 'uz' 
+          ? "Toshkentda korporativ sovg'alar uchun lazer gravirovkasi. Soatlar, zajigalkalar, ruchkalar, paverbanklar logotip bilan."
+          : "Лазерная гравировка корпоративных подарков в Ташкенте. Часы, зажигалки, ручки, повербанки с логотипом.",
+        "url": BASE_URL,
+        "telephone": "+998770802288",
+        "email": "info@graver-studio.uz",
+        "image": `${BASE_URL}/images/og/og-home.jpg`,
+        "logo": `${BASE_URL}/logo192.png`,
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "ул. Мукими, 59",
+          "addressLocality": "Ташкент",
+          "addressCountry": "UZ",
+          "postalCode": "100000"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 41.2995,
+          "longitude": 69.2401
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "10:00",
+          "closes": "20:00"
+        },
+        "sameAs": [
+          "https://t.me/GraverAdm"
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${canonicalUrl}#breadcrumb`,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": home, "item": `${BASE_URL}/${locale}` },
+          { "@type": "ListItem", "position": 2, "name": title, "item": canonicalUrl }
+        ]
+      }
+    ]
+  };
+
   useEffect(() => {
     document.documentElement.lang = locale === 'uz' ? 'uz-Latn' : 'ru';
     window.scrollTo(0, 0);
-    
-    const breadcrumbSchema = {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": home, "item": `${BASE_URL}/${locale}` },
-        { "@type": "ListItem", "position": 2, "name": title, "item": canonicalUrl }
-      ]
-    };
-    
-    const oldSchema = document.getElementById('breadcrumb-schema');
-    if (oldSchema) oldSchema.remove();
-    
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.id = 'breadcrumb-schema';
-    script.textContent = JSON.stringify(breadcrumbSchema);
-    document.head.appendChild(script);
-    
-    return () => {
-      var breadcrumbSchemaEl = document.getElementById('breadcrumb-schema');
-      if (breadcrumbSchemaEl) {
-        breadcrumbSchemaEl.remove();
-      }
-    };
-  }, [locale, home, title, canonicalUrl]);
+  }, [locale]);
 
   return (
     <div className="min-h-screen bg-black">
       <SEOHead page="contacts" ogImage="https://graver-studio.uz/images/og/og-home.jpg" />
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(localBusinessSchema)}
+        </script>
+      </Helmet>
 
       <header className="bg-black/95 border-b border-gray-800 py-4">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
@@ -102,13 +135,6 @@ export default function ContactsPage() {
 
       <section className="py-16">
         <div className="max-w-6xl mx-auto px-4">
-            <div className="mb-12">
-              <YMaps>
-                <Map defaultState={{ center: [41.2995, 69.2401], zoom: 15 }} width="100%" height="400px">
-                  <Placemark geometry={[41.2995, 69.2401]} />
-                </Map>
-              </YMaps>
-            </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 hover:border-teal-500/30 transition">
               <div className="w-12 h-12 bg-teal-500/10 rounded-xl flex items-center justify-center mb-4">
@@ -136,6 +162,7 @@ export default function ContactsPage() {
               </div>
               <h3 className="text-lg font-bold text-white mb-3">{address}</h3>
               <p className="text-gray-300">{addressValue}</p>
+              <p className="text-gray-500 text-sm mt-1">{addressLandmark}</p>
             </div>
 
             <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 hover:border-teal-500/30 transition">
@@ -146,6 +173,26 @@ export default function ContactsPage() {
               <p className="text-gray-300 mb-1">{hoursValue}</p>
               <p className="text-teal-500 text-sm font-medium">{hoursDesc}</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Map Section */}
+      <section className="py-8">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-2xl font-bold text-white mb-6 text-center">{howToReach}</h2>
+          <p className="text-gray-400 text-center mb-8 max-w-xl mx-auto">{howToReachDesc}</p>
+          <div className="rounded-2xl overflow-hidden border border-gray-800">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2996.5!2d69.2401!3d41.2995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDE3JzU4LjIiTiA2OcKwMTQnMjQuNCJF!5e0!3m2!1sru!2s!4v1"
+              width="100%" 
+              height="400" 
+              style={{ border: 0 }} 
+              allowFullScreen="" 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+              title={howToReach}
+            />
           </div>
         </div>
       </section>
@@ -167,7 +214,7 @@ export default function ContactsPage() {
 
       <footer className="bg-black border-t border-gray-800 py-8">
         <div className="max-w-7xl mx-auto px-4 text-center text-gray-500 text-sm">
-          <p>© 2025 Graver.uz</p>
+          <p>© 2026 Graver.uz</p>
         </div>
       </footer>
     </div>

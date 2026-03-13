@@ -801,7 +801,7 @@ function BlogPostPage() {
     ),
     React.createElement('footer', { className: 'bg-black border-t border-gray-800 py-8' },
       React.createElement('div', { className: 'max-w-7xl mx-auto px-4 text-center text-gray-500 text-sm' },
-        React.createElement('p', null, '© 2025 Graver.uz — ' + (isRu ? 'Премиальная лазерная гравировка в Ташкенте' : 'Toshkentda premium lazer gravyurasi'))
+        React.createElement('p', null, '© 2026 Graver.uz — ' + (isRu ? 'Премиальная лазерная гравировка в Ташкенте' : 'Toshkentda premium lazer gravyurasi'))
       )
     )
   );

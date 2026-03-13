@@ -33,7 +33,7 @@ const thanksTranslations = {
     corporateDesc: 'мерч, награды, подарочные наборы для сотрудников и клиентов.',
     noSurprises: 'Без сюрпризов:',
     noSurprisesDesc: 'сначала макет с точным превью — потом производство. Полный контроль на каждом этапе.',
-    copyright: '© 2025 Graver.uz — Премиальная лазерная гравировка в Ташкенте'
+    copyright: '© 2026 Graver.uz — Премиальная лазерная гравировка в Ташкенте'
   },
   uz: {
     title: 'Ariza qabul qilindi.',
@@ -60,7 +60,7 @@ const thanksTranslations = {
     corporateDesc: 'merch, mukofotlar, xodimlar va mijozlar uchun sovg\'a to\'plamlari.',
     noSurprises: 'Kutilmagan hodisalarsiz:',
     noSurprisesDesc: 'avval aniq ko\'rib chiqish bilan maket — keyin ishlab chiqarish. Har bir bosqichda to\'liq nazorat.',
-    copyright: '© 2025 Graver.uz — Toshkentda premium lazer gravyurasi'
+    copyright: '© 2026 Graver.uz — Toshkentda premium lazer gravyurasi'
   }
 };
 
